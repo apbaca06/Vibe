@@ -63,15 +63,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
         QBSettings.enableXMPPLogging()
 
-        QBRTCConfig.answerTimeInterval()
-        QBRTCConfig.dialingTimeInterval()
-        QBRTCConfig.setStatsReportTimeInterval(5)
-
         SVProgressHUD.setDefaultStyle(.light)
         SVProgressHUD.setDefaultMaskType(.clear)
-
-        // Chat Service
-        Chat.shared.config()
 
         // Test
         QBRequest.logOut(successBlock: nil, errorBlock: nil)

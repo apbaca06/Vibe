@@ -27,11 +27,12 @@ class QuickBlox {
             QBChat.instance.connect(with: uuser!, completion: { (error) in
                 if error == nil {
 
+                    SVProgressHUD.show(withStatus: "Login Successfully")
+
                     let mainPageViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "MainPage")
 
                     AppDelegate.shared.window?.rootViewController = mainPageViewController
 
-                    SVProgressHUD.dismiss()
                 } else {
                     print("Unable to connect service")
                     DispatchQueue.main.async {
@@ -90,4 +91,7 @@ class QuickBlox {
         }
 
     }
+
+//    static func start
+
 }

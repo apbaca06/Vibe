@@ -14,20 +14,24 @@ class FirebaseManager {
 
     static func logIn(withEmail email: String, withPassword password: String) {
 
-        Auth.auth().signIn(withEmail: email, password: password) { (_, error) in
+        Auth.auth().signIn(withEmail: email, password: password) { (firebaseUser, error) in
 
             if error == nil {
 
                 SVProgressHUD.show(withStatus: "Registering")
 
-//                // MARK: Logged into Firebase successfully
-//                guard
-//                    let uuser = firebaseUser
-//                else { return }
-//                
-//
-//                // MARK: Logged into Quickblox
-//                QuickBlox.logInSync(withUserLogin: email, password: uuser.uid)
+                // MARK: Logged into Firebase successfully
+                guard
+                    let uuser = firebaseUser
+                else { return }
+
+                // MARK: Logged into Quickblox
+                QuickBlox.logInSync(
+
+                    withUserEmail: email,
+
+                    password: uuser.uid
+                )
             }
         }
     }

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		370832B01FE2847F00D4DC86 /* RingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 370832AF1FE2847F00D4DC86 /* RingViewController.swift */; };
 		3714597F1FDFAABF00C1F14A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3714597E1FDFAABF00C1F14A /* AppDelegate.swift */; };
 		371459811FDFAABF00C1F14A /* LogInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 371459801FDFAABF00C1F14A /* LogInViewController.swift */; };
 		371459841FDFAABF00C1F14A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 371459821FDFAABF00C1F14A /* Main.storyboard */; };
@@ -31,7 +32,6 @@
 		371459B01FDFACBC00C1F14A /* QuickbloxWebRTC.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 371459A31FDFAC9500C1F14A /* QuickbloxWebRTC.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		371459B51FDFB16900C1F14A /* APIKey.plist in Resources */ = {isa = PBXBuildFile; fileRef = 371459B41FDFB16900C1F14A /* APIKey.plist */; };
 		371459B91FDFD11100C1F14A /* Chat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 371459B81FDFD11100C1F14A /* Chat.swift */; };
-		371459BD1FE0262600C1F14A /* SettingForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 371459BC1FE0262600C1F14A /* SettingForm.swift */; };
 		3754E2881FE122E4002604CD /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3754E2871FE122E4002604CD /* RegisterViewController.swift */; };
 		3754E28A1FE12809002604CD /* QuickBlox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3754E2891FE12809002604CD /* QuickBlox.swift */; };
 		3754E28C1FE13607002604CD /* SwipeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3754E28B1FE13607002604CD /* SwipeViewController.swift */; };
@@ -59,6 +59,7 @@
 
 /* Begin PBXFileReference section */
 		3618AF86542D903ECA050532 /* Pods-i-Chat.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-i-Chat.release.xcconfig"; path = "Pods/Target Support Files/Pods-i-Chat/Pods-i-Chat.release.xcconfig"; sourceTree = "<group>"; };
+		370832AF1FE2847F00D4DC86 /* RingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RingViewController.swift; sourceTree = "<group>"; };
 		3714597B1FDFAABF00C1F14A /* i-Chat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "i-Chat.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3714597E1FDFAABF00C1F14A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		371459801FDFAABF00C1F14A /* LogInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInViewController.swift; sourceTree = "<group>"; };
@@ -82,7 +83,6 @@
 		371459B31FDFAF0300C1F14A /* Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Bridging-Header.h"; sourceTree = "<group>"; };
 		371459B41FDFB16900C1F14A /* APIKey.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = APIKey.plist; sourceTree = "<group>"; };
 		371459B81FDFD11100C1F14A /* Chat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Chat.swift; sourceTree = "<group>"; };
-		371459BC1FE0262600C1F14A /* SettingForm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingForm.swift; sourceTree = "<group>"; };
 		3754E2871FE122E4002604CD /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		3754E2891FE12809002604CD /* QuickBlox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuickBlox.swift; sourceTree = "<group>"; };
 		3754E28B1FE13607002604CD /* SwipeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipeViewController.swift; sourceTree = "<group>"; };
@@ -130,6 +130,36 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		370832AC1FE283D800D4DC86 /* Landing */ = {
+			isa = PBXGroup;
+			children = (
+				371459801FDFAABF00C1F14A /* LogInViewController.swift */,
+				3754E2871FE122E4002604CD /* RegisterViewController.swift */,
+			);
+			path = Landing;
+			sourceTree = "<group>";
+		};
+		370832AD1FE283EB00D4DC86 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				37CA181F1FE2304100C1171B /* AudioViewController.swift */,
+				3754E28B1FE13607002604CD /* SwipeViewController.swift */,
+				37CA18211FE2397100C1171B /* ChatroomViewController.swift */,
+				370832AF1FE2847F00D4DC86 /* RingViewController.swift */,
+				370832AC1FE283D800D4DC86 /* Landing */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		370832AE1FE2840E00D4DC86 /* Manager */ = {
+			isa = PBXGroup;
+			children = (
+				3754E2891FE12809002604CD /* QuickBlox.swift */,
+				37CA181D1FE2221500C1171B /* FirebaseManager.swift */,
+			);
+			path = Manager;
+			sourceTree = "<group>";
+		};
 		371459721FDFAABF00C1F14A = {
 			isa = PBXGroup;
 			children = (
@@ -152,21 +182,15 @@
 		3714597D1FDFAABF00C1F14A /* i-Chat */ = {
 			isa = PBXGroup;
 			children = (
+				371459BA1FDFD90500C1F14A /* Key */,
 				3714597E1FDFAABF00C1F14A /* AppDelegate.swift */,
 				371459B81FDFD11100C1F14A /* Chat.swift */,
-				371459801FDFAABF00C1F14A /* LogInViewController.swift */,
-				3754E2871FE122E4002604CD /* RegisterViewController.swift */,
-				3754E28B1FE13607002604CD /* SwipeViewController.swift */,
-				37CA18211FE2397100C1171B /* ChatroomViewController.swift */,
-				3754E2891FE12809002604CD /* QuickBlox.swift */,
-				37CA181D1FE2221500C1171B /* FirebaseManager.swift */,
-				371459BC1FE0262600C1F14A /* SettingForm.swift */,
+				370832AE1FE2840E00D4DC86 /* Manager */,
+				370832AD1FE283EB00D4DC86 /* ViewControllers */,
 				371459851FDFAABF00C1F14A /* Assets.xcassets */,
 				371459821FDFAABF00C1F14A /* Main.storyboard */,
-				37CA181F1FE2304100C1171B /* AudioViewController.swift */,
 				371459871FDFAABF00C1F14A /* LaunchScreen.storyboard */,
 				3714598A1FDFAABF00C1F14A /* Info.plist */,
-				371459BA1FDFD90500C1F14A /* Key */,
 				371459BB1FDFD9A200C1F14A /* Extension */,
 			);
 			path = "i-Chat";
@@ -375,10 +399,10 @@
 				3754E2881FE122E4002604CD /* RegisterViewController.swift in Sources */,
 				3754E28A1FE12809002604CD /* QuickBlox.swift in Sources */,
 				37CA18221FE2397100C1171B /* ChatroomViewController.swift in Sources */,
+				370832B01FE2847F00D4DC86 /* RingViewController.swift in Sources */,
 				371459B91FDFD11100C1F14A /* Chat.swift in Sources */,
 				37CA181E1FE2221500C1171B /* FirebaseManager.swift in Sources */,
 				37CA18201FE2304100C1171B /* AudioViewController.swift in Sources */,
-				371459BD1FE0262600C1F14A /* SettingForm.swift in Sources */,
 				3754E28C1FE13607002604CD /* SwipeViewController.swift in Sources */,
 				3714597F1FDFAABF00C1F14A /* AppDelegate.swift in Sources */,
 			);
