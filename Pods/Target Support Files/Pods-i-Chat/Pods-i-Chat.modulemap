@@ -1,0 +1,6 @@
+framework module Pods_i_Chat {
+  umbrella header "Pods-i-Chat-umbrella.h"
+
+  export *
+  module * { export * }
+}
