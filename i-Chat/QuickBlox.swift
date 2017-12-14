@@ -23,6 +23,7 @@ class QuickBlox: NSObject {
 
             // MARK: User logged in with Quickblox
             uuser = user
+            uuser?.email = email
             uuser?.password = password
 
             QBChat.instance.connect(with: uuser!, completion: { (error) in
@@ -74,10 +75,15 @@ class QuickBlox: NSObject {
         uuser.email = email
         uuser.password = password
         uuser.fullName = name
+        print("11111")
 
         QBRequest.signUp(uuser, successBlock: { (response, error) in
 
             SVProgressHUD.show(withStatus: "SignUp Successd")
+            
+            let mainPageController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "MainPage")
+            
+
 
         }) { (response) in
 
@@ -88,10 +94,6 @@ class QuickBlox: NSObject {
                 UIAlertController(error: error!).show()
             }
         }
-
-        SVProgressHUD.show(withStatus: "Registering")
-
-        SVProgressHUD.dismiss()
 
     }
 }
