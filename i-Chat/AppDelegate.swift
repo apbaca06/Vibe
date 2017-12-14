@@ -73,11 +73,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Chat Service
         Chat.shared.config()
 
+        // Test
+        QBRequest.logOut(successBlock: nil, errorBlock: nil)
+
 //        if
 //            let user = Auth.auth().currentUser,
 //            let email = user.email {
 //
-//            QuickBlox.logInSync(withUserLogin: email, password: user.uid)
+//            QuickBlox.logInSync(withUserEmail: email, password: user.uid)
 //        }
 
         // IQKeyBoardManager

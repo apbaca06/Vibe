@@ -10,11 +10,9 @@ import Foundation
 import UIKit
 import SVProgressHUD
 
-class QuickBlox: NSObject {
+class QuickBlox {
 
-    static func logInSync(withUserLogin email: String, password: String) {
-
-        let semaphore = DispatchSemaphore(value: 0)
+    static func logInSync(withUserEmail email: String, password: String) {
 
         var error: Error?
         var uuser: QBUUser?
@@ -56,18 +54,15 @@ class QuickBlox: NSObject {
                 UIAlertController(error: error!).show()
             }
 
-            semaphore.signal()
         }
 
         SVProgressHUD.show(withStatus: "Logging In")
-
-        _ = semaphore.wait(timeout: .distantFuture)
 
         SVProgressHUD.dismiss()
 
     }
 
-    static func signUpSync(name: String, uid: String, email: String, password: String) {
+    static func signUpSync(name: String, email: String, password: String) {
 
         var error: Error?
         let uuser = QBUUser()
@@ -75,15 +70,14 @@ class QuickBlox: NSObject {
         uuser.email = email
         uuser.password = password
         uuser.fullName = name
-        print("11111")
 
         QBRequest.signUp(uuser, successBlock: { (response, error) in
 
             SVProgressHUD.show(withStatus: "SignUp Successd")
-            
-            let mainPageController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "MainPage")
-            
 
+            let mainPageViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "MainPage")
+
+            AppDelegate.shared.window?.rootViewController = mainPageViewController
 
         }) { (response) in
 

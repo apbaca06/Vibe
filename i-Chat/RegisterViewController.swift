@@ -28,13 +28,15 @@ class RegisterViewController: UIViewController {
 
             let password = userPassword.text!
 
+            let name = userName.text!
+
             FirebaseManager.signUp(
+                name: name,
 
                 withEmail: email,
 
                 withPassword: password
             )
-
         }
     }
 
@@ -43,15 +45,4 @@ class RegisterViewController: UIViewController {
 
     }
 
-}
-
-extension RegisterViewController {
-    func didLoginSuccess(user: QBUUser) {
-        if user.fullName != nil {
-            let mainPage = SwipeViewController()
-            self.present(mainPage, animated: true, completion: nil)
-        } else {
-            // 去填user資料
-        }
-    }
 }

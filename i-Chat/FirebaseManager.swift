@@ -14,10 +14,10 @@ class FirebaseManager {
 
     static func logIn(withEmail email: String, withPassword password: String) {
 
-        Auth.auth().signIn(withEmail: email, password: password) { (firebaseUser, error) in
+        Auth.auth().signIn(withEmail: email, password: password) { (_, error) in
 
             if error == nil {
-                
+
                 SVProgressHUD.show(withStatus: "Registering")
 
 //                // MARK: Logged into Firebase successfully
@@ -32,9 +32,9 @@ class FirebaseManager {
         }
     }
 
-    static func signUp(withEmail email: String, withPassword password: String) {
+    static func signUp(name: String, withEmail email: String, withPassword password: String) {
 
-        Auth.auth().createUser(withEmail: email, password: password) { (_, error) in
+        Auth.auth().createUser(withEmail: email, password: password) { (firebaseUser, error) in
 
             // MARK: Failed to sign up for Firebase
             if error != nil {
@@ -48,8 +48,12 @@ class FirebaseManager {
             // MARK: Signed up for Firebase successfully
             if error == nil {
 
+                guard
+                    let user = firebaseUser
+                else { return }
+
                 // MARK: Signed up for Quickblox
-                QuickBlox.signUpSync(name: "cindy", uid: "12345", email: email, password: password)
+                QuickBlox.signUpSync(name: name, email: email, password: user.uid)
 
                 // MARK: Logged in for Firebase & Quickblox
                 self.logIn(
@@ -58,7 +62,6 @@ class FirebaseManager {
 
                     withPassword: password
                 )
-                
             }
         }
     }

@@ -17,6 +17,8 @@ class SwipeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        SVProgressHUD.dismiss()
+
         QBRTCClient.initializeRTC()
 
         // self class must conform to QBRTCClientDelegate protocol
@@ -42,7 +44,7 @@ class SwipeViewController: UIViewController {
 extension SwipeViewController: QBRTCClientDelegate {
 
     // MARK: Called when connection is initiated with user
-    func session(session: QBRTCSession!,startedConnectingToUser userID: NSNumber!) {
+    func session(session: QBRTCSession!, startedConnectingToUser userID: NSNumber!) {
         print("Started connecting to user \(userID)")
     }
 
