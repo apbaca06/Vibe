@@ -69,12 +69,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Test
         QBRequest.logOut(successBlock: nil, errorBlock: nil)
 
-//        if
-//            let user = Auth.auth().currentUser,
-//            let email = user.email {
-//
-//            QuickBlox.logInSync(withUserEmail: email, password: user.uid)
-//        }
+        if
+            let user = Auth.auth().currentUser,
+            let email = user.email {
+
+            QuickBlox.logInSync(withUserEmail: email, password: user.uid)
+        }
 
         // IQKeyBoardManager
         IQKeyboardManager.shared().isEnabled = true

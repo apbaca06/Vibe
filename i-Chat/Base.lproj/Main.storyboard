@@ -201,33 +201,65 @@
         <!--Ring View Controller-->
         <scene sceneID="Vjh-Hb-aWP">
             <objects>
-                <viewController id="gqM-jB-jPz" customClass="RingViewController" customModule="i_Chat" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="RingViewController" id="gqM-jB-jPz" customClass="RingViewController" customModule="i_Chat" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Fdj-Km-09S">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3Dw-3V-49k">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3Dw-3V-49k">
                                 <rect key="frame" x="237" y="514" width="87" height="60"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="1" green="0.0" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="87" id="dyW-2h-deD"/>
+                                    <constraint firstAttribute="height" constant="60" id="ikG-zs-0Cm"/>
+                                </constraints>
                                 <state key="normal" title="Accept"/>
                                 <connections>
                                     <action selector="acceptButton:" destination="gqM-jB-jPz" eventType="touchUpInside" id="rZ2-4p-9Nz"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JgN-mF-rCb">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JgN-mF-rCb">
                                 <rect key="frame" x="58" y="514" width="87" height="60"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.25098040700000002" green="0.50196081400000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="87" id="970-l6-9Tn"/>
+                                    <constraint firstAttribute="height" constant="60" id="TBC-sO-rA4"/>
+                                </constraints>
                                 <state key="normal" title="Reject"/>
                                 <connections>
                                     <action selector="rejectButton:" destination="gqM-jB-jPz" eventType="touchUpInside" id="OEX-Vj-pG1"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="UserName" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xVm-to-3Zn">
+                                <rect key="frame" x="127" y="107" width="120" height="31.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="26"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Call Desbribing" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eKg-v0-BQZ">
+                                <rect key="frame" x="129" y="185.5" width="117" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="eKg-v0-BQZ" firstAttribute="top" secondItem="xVm-to-3Zn" secondAttribute="bottom" constant="47" id="0RF-Yc-sxk"/>
+                            <constraint firstItem="o1Z-9J-hop" firstAttribute="trailing" secondItem="3Dw-3V-49k" secondAttribute="trailing" constant="51" id="CLh-FN-ot5"/>
+                            <constraint firstItem="JgN-mF-rCb" firstAttribute="leading" secondItem="o1Z-9J-hop" secondAttribute="leading" constant="58" id="Nau-MO-oeF"/>
+                            <constraint firstItem="o1Z-9J-hop" firstAttribute="bottom" secondItem="JgN-mF-rCb" secondAttribute="bottom" constant="93" id="QGU-9j-Tr8"/>
+                            <constraint firstItem="xVm-to-3Zn" firstAttribute="top" secondItem="o1Z-9J-hop" secondAttribute="top" constant="87" id="Y3d-9S-gV7"/>
+                            <constraint firstItem="eKg-v0-BQZ" firstAttribute="centerX" secondItem="o1Z-9J-hop" secondAttribute="centerX" id="hp8-SY-hMC"/>
+                            <constraint firstItem="xVm-to-3Zn" firstAttribute="centerX" secondItem="o1Z-9J-hop" secondAttribute="centerX" id="tIR-R1-wI2"/>
+                            <constraint firstItem="o1Z-9J-hop" firstAttribute="bottom" secondItem="3Dw-3V-49k" secondAttribute="bottom" constant="93" id="zkg-vU-K2i"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="o1Z-9J-hop"/>
                     </view>
+                    <connections>
+                        <outlet property="callDescription" destination="eKg-v0-BQZ" id="PgX-cv-ugu"/>
+                        <outlet property="name" destination="xVm-to-3Zn" id="uYr-76-DLt"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fCs-vJ-jrx" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
