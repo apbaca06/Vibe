@@ -28,6 +28,9 @@
                         <state key="normal" title="ButtonShow">
                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         </state>
+                        <connections>
+                            <action selector="callAction:" destination="gTV-IL-0wX" eventType="touchUpInside" id="fAj-hY-0Jj"/>
+                        </connections>
                     </button>
                 </subviews>
             </view>

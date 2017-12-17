@@ -12,21 +12,22 @@ class ChatCollectionViewCell: UICollectionViewCell {
 
     @IBOutlet weak var button: UIButton!
 
+    @IBAction func callAction(_ sender: UIButton) {
+        CallManager.audioCall(toUser: User(id: 1234, name: "john", gender: .male, imgURL: "ee", email: "john@gmail.com", quickbloxID: 38855767))
+        
+        //開始嘟嘟聲
+        
+    }
     override func awakeFromNib() {
         super.awakeFromNib()
 
-        setUpActionButton()
+        setUpCallButton()
 
     }
 
-    private func setUpActionButton() {
+    private func setUpCallButton() {
 
         let button = self.button!
-
-//        button.setTitle(
-//            button,
-//            for: .normal
-//        )
 
 //        button.setTitleColor(
 //            UIColor(
