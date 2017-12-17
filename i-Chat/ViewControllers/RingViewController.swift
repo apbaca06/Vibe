@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-class RingViewController: UIViewController, QBRTCClientDelegate {
+class RingViewController: UIViewController {
 
     @IBOutlet weak var callDescription: UILabel!
 
@@ -40,21 +40,16 @@ class RingViewController: UIViewController, QBRTCClientDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        QBRTCClient.initializeRTC()
-
-        // self class must conform to QBRTCClientDelegate protocol
-        QBRTCClient.instance().add(self)
-
     }
 
 }
-
-extension RingViewController {
-    
-    // MARK: 停止連接session到別的user
-    func session(_ session: QBRTCBaseSession, disconnectedFromUser userID: NSNumber) {
-        print("Disconnected from user \(userID)")
-        self.dismiss(animated: true, completion: nil)
-    }
-    
-}
+//
+//extension RingViewController {
+//
+//    // MARK: 停止連接session到別的user
+//    func session(_ session: QBRTCBaseSession, disconnectedFromUser userID: NSNumber) {
+//        print("Disconnected from user \(userID)")
+//        self.dismiss(animated: true, completion: nil)
+//    }
+//
+//}
