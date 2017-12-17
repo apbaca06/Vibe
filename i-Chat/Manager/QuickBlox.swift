@@ -30,7 +30,7 @@ class QuickBlox {
                     SVProgressHUD.show(withStatus: "Login Successfully")
 
 //                    let mainPageViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "MainPage")
-                    
+
                     let layout = UICollectionViewFlowLayout()
 
                     AppDelegate.shared.window?.rootViewController = HomeViewController(collectionViewLayout: layout)
@@ -79,9 +79,9 @@ class QuickBlox {
             SVProgressHUD.show(withStatus: "SignUp Successd")
 
 //            let mainPageViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "MainPage")
-            
+
             let layout = UICollectionViewFlowLayout()
-            
+
             AppDelegate.shared.window?.rootViewController = HomeViewController(collectionViewLayout: layout)
 
         }) { (response) in

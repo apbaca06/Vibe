@@ -34,6 +34,7 @@
 		371459B01FDFACBC00C1F14A /* QuickbloxWebRTC.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 371459A31FDFAC9500C1F14A /* QuickbloxWebRTC.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		371459B51FDFB16900C1F14A /* APIKey.plist in Resources */ = {isa = PBXBuildFile; fileRef = 371459B41FDFB16900C1F14A /* APIKey.plist */; };
 		371459B91FDFD11100C1F14A /* Chat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 371459B81FDFD11100C1F14A /* Chat.swift */; };
+		3717DD221FE66E35003CD462 /* HomeComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3717DD211FE66E35003CD462 /* HomeComponent.swift */; };
 		3754E2881FE122E4002604CD /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3754E2871FE122E4002604CD /* RegisterViewController.swift */; };
 		3754E28A1FE12809002604CD /* QuickBlox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3754E2891FE12809002604CD /* QuickBlox.swift */; };
 		3754E28C1FE13607002604CD /* SwipeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3754E28B1FE13607002604CD /* SwipeViewController.swift */; };
@@ -41,8 +42,8 @@
 		375F04B81FE3A787009D2671 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 375F04B71FE3A787009D2671 /* HomeViewController.swift */; };
 		37A5BB9B1FE61CE200C4F1E6 /* MenuCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37A5BB9A1FE61CE200C4F1E6 /* MenuCell.swift */; };
 		37A5BB9D1FE6223600C4F1E6 /* BaseCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37A5BB9C1FE6223600C4F1E6 /* BaseCell.swift */; };
-		37A5BBA01FE6288500C4F1E6 /* SettingCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37A5BB9E1FE6288500C4F1E6 /* SettingCollectionViewCell.swift */; };
-		37A5BBA11FE6288500C4F1E6 /* SettingCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 37A5BB9F1FE6288500C4F1E6 /* SettingCollectionViewCell.xib */; };
+		37A5BBA01FE6288500C4F1E6 /* ProfileCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37A5BB9E1FE6288500C4F1E6 /* ProfileCollectionViewCell.swift */; };
+		37A5BBA11FE6288500C4F1E6 /* ProfileCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 37A5BB9F1FE6288500C4F1E6 /* ProfileCollectionViewCell.xib */; };
 		37A5BBA41FE628A000C4F1E6 /* SwipingCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37A5BBA21FE628A000C4F1E6 /* SwipingCollectionViewCell.swift */; };
 		37A5BBA51FE628A000C4F1E6 /* SwipingCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 37A5BBA31FE628A000C4F1E6 /* SwipingCollectionViewCell.xib */; };
 		37A5BBA81FE628B900C4F1E6 /* ChatCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37A5BBA61FE628B900C4F1E6 /* ChatCollectionViewCell.swift */; };
@@ -98,6 +99,7 @@
 		371459B31FDFAF0300C1F14A /* Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Bridging-Header.h"; sourceTree = "<group>"; };
 		371459B41FDFB16900C1F14A /* APIKey.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = APIKey.plist; sourceTree = "<group>"; };
 		371459B81FDFD11100C1F14A /* Chat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Chat.swift; sourceTree = "<group>"; };
+		3717DD211FE66E35003CD462 /* HomeComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeComponent.swift; sourceTree = "<group>"; };
 		3754E2871FE122E4002604CD /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		3754E2891FE12809002604CD /* QuickBlox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuickBlox.swift; sourceTree = "<group>"; };
 		3754E28B1FE13607002604CD /* SwipeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipeViewController.swift; sourceTree = "<group>"; };
@@ -105,8 +107,8 @@
 		375F04B71FE3A787009D2671 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		37A5BB9A1FE61CE200C4F1E6 /* MenuCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuCell.swift; sourceTree = "<group>"; };
 		37A5BB9C1FE6223600C4F1E6 /* BaseCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseCell.swift; sourceTree = "<group>"; };
-		37A5BB9E1FE6288500C4F1E6 /* SettingCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingCollectionViewCell.swift; sourceTree = "<group>"; };
-		37A5BB9F1FE6288500C4F1E6 /* SettingCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SettingCollectionViewCell.xib; sourceTree = "<group>"; };
+		37A5BB9E1FE6288500C4F1E6 /* ProfileCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileCollectionViewCell.swift; sourceTree = "<group>"; };
+		37A5BB9F1FE6288500C4F1E6 /* ProfileCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProfileCollectionViewCell.xib; sourceTree = "<group>"; };
 		37A5BBA21FE628A000C4F1E6 /* SwipingCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipingCollectionViewCell.swift; sourceTree = "<group>"; };
 		37A5BBA31FE628A000C4F1E6 /* SwipingCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SwipingCollectionViewCell.xib; sourceTree = "<group>"; };
 		37A5BBA61FE628B900C4F1E6 /* ChatCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -173,12 +175,13 @@
 				370832AF1FE2847F00D4DC86 /* RingViewController.swift */,
 				37CA18211FE2397100C1171B /* ChatroomViewController.swift */,
 				375F04B71FE3A787009D2671 /* HomeViewController.swift */,
+				3717DD211FE66E35003CD462 /* HomeComponent.swift */,
 				37A5BBDE1FE6313000C4F1E6 /* HomeViewControllerExtension.swift */,
 				37A5BB9C1FE6223600C4F1E6 /* BaseCell.swift */,
 				375F04B51FE3A739009D2671 /* MenuBar.swift */,
 				37A5BB9A1FE61CE200C4F1E6 /* MenuCell.swift */,
-				37A5BB9E1FE6288500C4F1E6 /* SettingCollectionViewCell.swift */,
-				37A5BB9F1FE6288500C4F1E6 /* SettingCollectionViewCell.xib */,
+				37A5BB9E1FE6288500C4F1E6 /* ProfileCollectionViewCell.swift */,
+				37A5BB9F1FE6288500C4F1E6 /* ProfileCollectionViewCell.xib */,
 				37A5BBA21FE628A000C4F1E6 /* SwipingCollectionViewCell.swift */,
 				37A5BBA31FE628A000C4F1E6 /* SwipingCollectionViewCell.xib */,
 				37A5BBA61FE628B900C4F1E6 /* ChatCollectionViewCell.swift */,
@@ -337,7 +340,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				371459891FDFAABF00C1F14A /* LaunchScreen.storyboard in Resources */,
-				37A5BBA11FE6288500C4F1E6 /* SettingCollectionViewCell.xib in Resources */,
+				37A5BBA11FE6288500C4F1E6 /* ProfileCollectionViewCell.xib in Resources */,
 				37A5BBA91FE628B900C4F1E6 /* ChatCollectionViewCell.xib in Resources */,
 				371459B51FDFB16900C1F14A /* APIKey.plist in Resources */,
 				37CA181A1FE20C8F00C1171B /* GoogleService-Info.plist in Resources */,
@@ -451,7 +454,8 @@
 				37A5BBDF1FE6313000C4F1E6 /* HomeViewControllerExtension.swift in Sources */,
 				37A5BBA41FE628A000C4F1E6 /* SwipingCollectionViewCell.swift in Sources */,
 				375F04B81FE3A787009D2671 /* HomeViewController.swift in Sources */,
-				37A5BBA01FE6288500C4F1E6 /* SettingCollectionViewCell.swift in Sources */,
+				3717DD221FE66E35003CD462 /* HomeComponent.swift in Sources */,
+				37A5BBA01FE6288500C4F1E6 /* ProfileCollectionViewCell.swift in Sources */,
 				370832B81FE3806700D4DC86 /* User.swift in Sources */,
 				37A5BB9B1FE61CE200C4F1E6 /* MenuCell.swift in Sources */,
 				37CA18201FE2304100C1171B /* AudioViewController.swift in Sources */,

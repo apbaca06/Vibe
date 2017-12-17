@@ -11,26 +11,55 @@ import SVProgressHUD
 
 class HomeViewController: UICollectionViewController, UICollectionViewDelegateFlowLayout {
 
-    let settingCellId = "settingCellId"
-
-    let swipingCellId = "swipingCellId"
-
-    let chatCellId = "chatCellId"
-
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
         // self class must conform to QBRTCClientDelegate protocol
         QBRTCClient.instance().add(self)
-        
+
         QBRTCAudioSession.instance().initialize()
 
         SVProgressHUD.dismiss()
-        
+
         setupCollectionView()
 
         setupMenuBar()
 
+        setupNibCell()
+
+    }
+
+    func setupNibCell() {
+
+        let nib1 = UINib(
+            nibName: "ProfileCollectionViewCell",
+            bundle: nil
+        )
+
+        collectionView?.register(
+            nib: nib1,
+            forCellWithClass: ProfileCollectionViewCell.self
+        )
+
+        let nib2 = UINib(
+            nibName: "SwipingCollectionViewCell",
+            bundle: nil
+        )
+
+        collectionView?.register(
+            nib: nib2,
+            forCellWithClass: SwipingCollectionViewCell.self
+        )
+
+        let nib3 = UINib(
+            nibName: "ChatCollectionViewCell",
+            bundle: nil
+        )
+
+        collectionView?.register(
+            nib: nib3,
+            forCellWithClass: ChatCollectionViewCell.self
+        )
     }
 
     func setupCollectionView() {
@@ -41,13 +70,28 @@ class HomeViewController: UICollectionViewController, UICollectionViewDelegateFl
             flowLayout.minimumLineSpacing = 0
         }
 
-        collectionView?.backgroundColor = .white
+        collectionView?.backgroundColor = .gray
 
-        collectionView?.register(SettingCollectionViewCell.self, forCellWithReuseIdentifier: settingCellId)
+        collectionView?.register(
 
-        collectionView?.register(SwipingCollectionViewCell.self, forCellWithReuseIdentifier: swipingCellId)
+            ProfileCollectionViewCell.self,
 
-        collectionView?.register(ChatCollectionViewCell.self, forCellWithReuseIdentifier: chatCellId)
+            forCellWithReuseIdentifier: HomeComponent.profile.rawValue
+        )
+
+        collectionView?.register(
+
+            SwipingCollectionViewCell.self,
+
+            forCellWithReuseIdentifier: HomeComponent.swipe.rawValue
+        )
+
+        collectionView?.register(
+
+            ChatCollectionViewCell.self,
+
+            forCellWithReuseIdentifier: "ChatCollectionViewCell"
+        )
 
         collectionView?.contentInset = UIEdgeInsets(top: 50, left: 0, bottom: 0, right: 0)
 
@@ -58,9 +102,21 @@ class HomeViewController: UICollectionViewController, UICollectionViewDelegateFl
 
     func scrollToMenuIndex(_ menuIndex: Int) {
 
-        let indexPath = IndexPath(item: menuIndex, section: 0)
+        let indexPath = IndexPath(
 
-        collectionView?.scrollToItem(at: indexPath, at: UICollectionViewScrollPosition(), animated: true)
+            item: menuIndex,
+
+            section: 0
+        )
+
+        collectionView?.scrollToItem(
+
+            at: indexPath,
+
+            at: UICollectionViewScrollPosition(),
+
+            animated: true
+        )
 
     }
 
@@ -76,9 +132,9 @@ class HomeViewController: UICollectionViewController, UICollectionViewDelegateFl
     fileprivate func setupMenuBar() {
 
         view.addSubview(menuBar)
-        
+
         view.addConstraints(withFormat: "H:|[v0]|", views: menuBar)
-        
+
         view.addConstraints(withFormat: "V:[v0(50)]", views: menuBar)
 
         menuBar.topAnchor.constraint(equalTo: topLayoutGuide.bottomAnchor).isActive = true
@@ -115,23 +171,62 @@ class HomeViewController: UICollectionViewController, UICollectionViewDelegateFl
 
         let identifier: String
 
-        if indexPath.item == 1 {
+        if indexPath.item == 0 {
 
-            identifier = settingCellId
+            identifier = HomeComponent.profile.rawValue
 
-        } else if indexPath.item == 2 {
+            // swiftlint:disable force_cast
 
-            identifier = swipingCellId
+            let cell = collectionView.dequeueReusableCell(
+
+                withReuseIdentifier: identifier,
+
+                for: indexPath
+
+                ) as! ProfileCollectionViewCell
+
+            // swiftlint:enable force_cast
+
+            return cell
+
+        } else if indexPath.item == 1 {
+
+            identifier = HomeComponent.swipe.rawValue
+
+            // swiftlint:disable force_cast
+
+            let cell = collectionView.dequeueReusableCell(
+
+                withReuseIdentifier: identifier,
+
+                for: indexPath
+
+                ) as! SwipingCollectionViewCell
+
+                // swiftlint:enable force_cast
+
+            return cell
 
         } else {
 
-            identifier = chatCellId
+            identifier = "ChatCollectionViewCell"
+
+            // swiftlint:disable force_cast
+
+            let cell = collectionView.dequeueReusableCell(
+
+                withReuseIdentifier: identifier,
+
+                for: indexPath
+
+            ) as! ChatCollectionViewCell
+
+            // swiftlint:enable force_cast
+
+            return cell
 
         }
 
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: identifier, for: indexPath)
-
-        return cell
     }
 
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {

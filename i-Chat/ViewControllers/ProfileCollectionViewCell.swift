@@ -1,5 +1,5 @@
 //
-//  SettingCollectionViewCell.swift
+//  ProfileCollectionViewCell.swift
 //  i-Chat
 //
 //  Created by cindy on 2017/12/17.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class SettingCollectionViewCell: UICollectionViewCell {
+class ProfileCollectionViewCell: UICollectionViewCell {
 
     override func awakeFromNib() {
         super.awakeFromNib()

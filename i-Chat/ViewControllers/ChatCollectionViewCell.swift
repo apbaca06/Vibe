@@ -8,69 +8,57 @@
 
 import UIKit
 
-class ChatCollectionViewCell: UICollectionViewCell, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
+class ChatCollectionViewCell: UICollectionViewCell {
+
+    @IBOutlet weak var button: UIButton!
 
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
-    }
-    
-    lazy var collectionView: UICollectionView = {
-        
-        let layout = UICollectionViewFlowLayout()
-        
-        let cv = UICollectionView(frame: .zero, collectionViewLayout: layout)
-        
-        cv.backgroundColor = UIColor.white
 
-        
-        return cv
-    }()
-    
-    var videos: [Chatroom]?
-    
-    let cellId = "cellId"
-    
-    func setupViews() {
-        
-        backgroundColor = .brown
-        
-        addSubview(collectionView)
-        
-        addConstraints(withFormat: "H:|[v0]|", views: collectionView)
-        
-        addConstraints(withFormat: "V:|[v0]|", views: collectionView)
-        
-        collectionView.register(VideoCell.self, forCellWithReuseIdentifier: cellId)
+        setUpActionButton()
+
     }
-    
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return videos?.count ?? 0
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cellId", for: indexPath) as! VideoCell
-        
-        cell.video = videos?[indexPath.item]
-        
-        return cell
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        
-        let height = (frame.width - 16 - 16) * 9 / 16
-        
-        return CGSize(width: frame.width, height: height + 16 + 88)
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-        
-        return 0
-        
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+
+    private func setUpActionButton() {
+
+        let button = self.button!
+
+//        button.setTitle(
+//            button,
+//            for: .normal
+//        )
+
+//        button.setTitleColor(
+//            UIColor(
+//                red: 255.0 / 255.0,
+//                green: 94.0 / 255.0,
+//                blue: 89.0 / 255.0,
+//                alpha: 1.0
+//            ),
+//            for: .normal
+//        )
+
+        button.titleLabel?.font = UIFont.systemFont(
+            ofSize: 16.0,
+            weight: UIFont.Weight.semibold
+        )
+
+//        button.contentEdgeInsets = UIEdgeInsets(
+//            top: 6.0,
+//            left: 10.0,
+//            bottom: 6.0,
+//            right: 10.0
+//        )
+
+        button.layer.cornerRadius = 2.0
+
+        button.layer.shadowColor = UIColor.black.cgColor
+
+        button.layer.shadowOffset = CGSize(width: 0.0, height: 1.0)
+
+        button.layer.shadowOpacity = 0.3
+
+        button.layer.shadowRadius = 2.0
 
     }
 

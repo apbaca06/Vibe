@@ -64,7 +64,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         QBSettings.enableXMPPLogging()
 
         SVProgressHUD.setDefaultStyle(.light)
-        
+
         SVProgressHUD.setDefaultMaskType(.clear)
 
         // Test
