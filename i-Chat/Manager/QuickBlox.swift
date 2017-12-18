@@ -18,29 +18,34 @@ class QuickBlox {
         var uuser: QBUUser?
 
         QBRequest.logIn(withUserEmail: email, password: password, successBlock: { (response, user) in
+            
+            SVProgressHUD.show(withStatus: NSLocalizedString("Logging in...", comment: ""))
 
             // MARK: User logged in with Quickblox
             uuser = user
+            
             uuser?.email = email
+            
             uuser?.password = password
 
             QBChat.instance.connect(with: uuser!, completion: { (error) in
+
                 if error == nil {
 
-                    SVProgressHUD.show(withStatus: "Login Successfully")
-
-//                    let mainPageViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "MainPage")
+                    SVProgressHUD.show(withStatus: NSLocalizedString("Login Successfully", comment: ""))
 
                     let layout = UICollectionViewFlowLayout()
 
                     AppDelegate.shared.window?.rootViewController = HomeViewController(collectionViewLayout: layout)
 
                 } else {
-                    print("Unable to connect service")
+                    
+                    SVProgressHUD.dismiss()
+                    
                     DispatchQueue.main.async {
                         UIAlertController(error: error!).show()
                     }
-                    SVProgressHUD.dismiss()
+                    
                 }
 
             })
@@ -59,9 +64,9 @@ class QuickBlox {
 
         }
 
-        SVProgressHUD.show(withStatus: "Logging In")
-
-        SVProgressHUD.dismiss()
+//        SVProgressHUD.show(withStatus: "Logging In")
+//
+//        SVProgressHUD.dismiss()
 
     }
 
@@ -71,20 +76,24 @@ class QuickBlox {
         let uuser = QBUUser()
 
         uuser.email = email
+        
         uuser.password = password
+        
         uuser.fullName = name
+        
+        SVProgressHUD.show(withStatus: NSLocalizedString("Signing up...", comment: ""))
 
         QBRequest.signUp(uuser, successBlock: { (response, error) in
 
-            SVProgressHUD.show(withStatus: "SignUp Successd")
-
-//            let mainPageViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "MainPage")
+            SVProgressHUD.show(withStatus: NSLocalizedString("SignUp Successed", comment: ""))
 
             let layout = UICollectionViewFlowLayout()
 
             AppDelegate.shared.window?.rootViewController = HomeViewController(collectionViewLayout: layout)
 
         }) { (response) in
+            
+            SVProgressHUD.dismiss()
 
             error = response.error?.error
 
@@ -95,7 +104,4 @@ class QuickBlox {
         }
 
     }
-
-//    static func start
-
 }

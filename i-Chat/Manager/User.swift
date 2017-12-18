@@ -7,14 +7,6 @@
 //
 
 import Foundation
-import Firebase
-
-enum Gender: String {
-
-    case female
-
-    case male
-}
 
 struct User {
 
@@ -34,6 +26,13 @@ struct User {
 
         public static let quickbloxID = "quickbloxID"
 
+    }
+    
+    enum Gender: String {
+        
+        case female
+        
+        case male
     }
 
     // MARK: Property

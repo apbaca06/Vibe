@@ -49,7 +49,7 @@
 		37A5BBA81FE628B900C4F1E6 /* ChatCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37A5BBA61FE628B900C4F1E6 /* ChatCollectionViewCell.swift */; };
 		37A5BBA91FE628B900C4F1E6 /* ChatCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 37A5BBA71FE628B900C4F1E6 /* ChatCollectionViewCell.xib */; };
 		37A5BBDF1FE6313000C4F1E6 /* HomeViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37A5BBDE1FE6313000C4F1E6 /* HomeViewControllerExtension.swift */; };
-		37CA181A1FE20C8F00C1171B /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 37CA18191FE20C8F00C1171B /* GoogleService-Info.plist */; };
+		37C0FF1C1FE7672C002EACF3 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 37C0FF1B1FE7672C002EACF3 /* GoogleService-Info.plist */; };
 		37CA181E1FE2221500C1171B /* FirebaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37CA181D1FE2221500C1171B /* FirebaseManager.swift */; };
 		37CA18201FE2304100C1171B /* AudioViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37CA181F1FE2304100C1171B /* AudioViewController.swift */; };
 		37CA18221FE2397100C1171B /* ChatroomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37CA18211FE2397100C1171B /* ChatroomViewController.swift */; };
@@ -114,7 +114,7 @@
 		37A5BBA61FE628B900C4F1E6 /* ChatCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatCollectionViewCell.swift; sourceTree = "<group>"; };
 		37A5BBA71FE628B900C4F1E6 /* ChatCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChatCollectionViewCell.xib; sourceTree = "<group>"; };
 		37A5BBDE1FE6313000C4F1E6 /* HomeViewControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewControllerExtension.swift; sourceTree = "<group>"; };
-		37CA18191FE20C8F00C1171B /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		37C0FF1B1FE7672C002EACF3 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		37CA181D1FE2221500C1171B /* FirebaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseManager.swift; sourceTree = "<group>"; };
 		37CA181F1FE2304100C1171B /* AudioViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioViewController.swift; sourceTree = "<group>"; };
 		37CA18211FE2397100C1171B /* ChatroomViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatroomViewController.swift; sourceTree = "<group>"; };
@@ -242,7 +242,7 @@
 			isa = PBXGroup;
 			children = (
 				371459B41FDFB16900C1F14A /* APIKey.plist */,
-				37CA18191FE20C8F00C1171B /* GoogleService-Info.plist */,
+				37C0FF1B1FE7672C002EACF3 /* GoogleService-Info.plist */,
 			);
 			path = Key;
 			sourceTree = "<group>";
@@ -341,9 +341,9 @@
 			files = (
 				371459891FDFAABF00C1F14A /* LaunchScreen.storyboard in Resources */,
 				37A5BBA11FE6288500C4F1E6 /* ProfileCollectionViewCell.xib in Resources */,
+				37C0FF1C1FE7672C002EACF3 /* GoogleService-Info.plist in Resources */,
 				37A5BBA91FE628B900C4F1E6 /* ChatCollectionViewCell.xib in Resources */,
 				371459B51FDFB16900C1F14A /* APIKey.plist in Resources */,
-				37CA181A1FE20C8F00C1171B /* GoogleService-Info.plist in Resources */,
 				371459861FDFAABF00C1F14A /* Assets.xcassets in Resources */,
 				37A5BBA51FE628A000C4F1E6 /* SwipingCollectionViewCell.xib in Resources */,
 				371459841FDFAABF00C1F14A /* Main.storyboard in Resources */,
@@ -380,6 +380,7 @@
 				"${PODS_ROOT}/QuickBlox/Quickblox.framework",
 				"${BUILT_PRODUCTS_DIR}/SVProgressHUD/SVProgressHUD.framework",
 				"${BUILT_PRODUCTS_DIR}/SwifterSwift/SwifterSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 				"${BUILT_PRODUCTS_DIR}/pop/pop.framework",
 			);
@@ -392,6 +393,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Quickblox.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SVProgressHUD.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwifterSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/pop.framework",
 			);
@@ -599,7 +601,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = LFXX36W2L6;
+				DEVELOPMENT_TEAM = L8HW62WTEC;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -607,7 +609,7 @@
 				INFOPLIST_FILE = "i-Chat/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.hsin.chen.i-Chat";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.hsin.chen-i-Chat";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "Bridging-Header.h";
 				SWIFT_VERSION = 4.0;
@@ -621,7 +623,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = LFXX36W2L6;
+				DEVELOPMENT_TEAM = L8HW62WTEC;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -629,7 +631,7 @@
 				INFOPLIST_FILE = "i-Chat/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.hsin.chen.i-Chat";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.hsin.chen-i-Chat";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "Bridging-Header.h";
 				SWIFT_VERSION = 4.0;

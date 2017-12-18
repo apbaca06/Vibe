@@ -104,5 +104,12 @@ extension HomeViewController: QBRTCClientDelegate {
         print("Connection has failed with user \(userID)")
         //        CallManager.shared.session = nil
     }
+    
+    // MARK: 停止session
+    func sessionDidClose(_ session: QBRTCSession) {
+        
+        // release session instance
+        CallManager.shared.session = nil
+    }
 
 }

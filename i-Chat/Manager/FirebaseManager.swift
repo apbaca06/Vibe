@@ -11,6 +11,16 @@ import Firebase
 import SVProgressHUD
 
 class FirebaseManager {
+    
+    public struct DatabasePath {
+        
+        public static let databaseRoot = Database.database().reference()
+        
+        public static let userRef = databaseRoot.child("users")
+        
+        public static let userFriendRef = databaseRoot.child("user_friend")
+        
+    }
 
     static func logIn(withEmail email: String, withPassword password: String) {
 
@@ -18,7 +28,7 @@ class FirebaseManager {
 
             if error == nil {
 
-                SVProgressHUD.show(withStatus: "Registering")
+                SVProgressHUD.show(withStatus: NSLocalizedString("Logging in...", comment: ""))
 
                 // MARK: Logged into Firebase successfully
                 guard
@@ -69,5 +79,38 @@ class FirebaseManager {
             }
         }
     }
+//    
+//    static func requestUserInfo(user: User) {
+//        
+//        DatabasePath.userRef.observe(.value) { (snapshot) in
+//            <#code#>
+//        }
+//
+//        userMessageReference.observe(.childAdded, with: { (snapshot) in
+//            let messageId = snapshot.key
+//            let messagesRef = FirebaseRef.databaseMessages.child(messageId)
+//            messagesRef.observe(.value, with: { (snapshot) in
+//                guard
+//                    let messageObject = snapshot.value as? [String: AnyObject]
+//                    else { return }
+//        messageReference.updateChildValues(values) { (error, _) in
+//            if error != nil {
+//                print(error!)
+//                return
+//            }
+//            
+//            let messageId = messageReference.key
+//            let value = [messageId: 1]
+//            
+//            if self.isSeller {
+//                let storeID = self.store!.id
+//                let userMessageReference = FirebaseRef.databaseUserProductMessages.child(toID).child(productId)
+//                let storeProductMessageReference = FirebaseRef.databaseStoreProductMessages.child(storeID).child(productId).child(toID)
+//                
+//                userMessageReference.updateChildValues(value)
+//                storeProductMessageReference.updateChildValues(value)
+//            }
+//
+//    }
 
 }
