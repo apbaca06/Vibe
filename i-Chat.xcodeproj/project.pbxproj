@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		370832B01FE2847F00D4DC86 /* RingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 370832AF1FE2847F00D4DC86 /* RingViewController.swift */; };
+		370832B01FE2847F00D4DC86 /* IncomingCallViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 370832AF1FE2847F00D4DC86 /* IncomingCallViewController.swift */; };
 		370832B61FE3800200D4DC86 /* CallManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 370832B51FE3800200D4DC86 /* CallManager.swift */; };
 		370832B81FE3806700D4DC86 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 370832B71FE3806700D4DC86 /* User.swift */; };
 		3714597F1FDFAABF00C1F14A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3714597E1FDFAABF00C1F14A /* AppDelegate.swift */; };
@@ -37,7 +37,6 @@
 		3717DD221FE66E35003CD462 /* HomeComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3717DD211FE66E35003CD462 /* HomeComponent.swift */; };
 		3754E2881FE122E4002604CD /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3754E2871FE122E4002604CD /* RegisterViewController.swift */; };
 		3754E28A1FE12809002604CD /* QuickBlox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3754E2891FE12809002604CD /* QuickBlox.swift */; };
-		3754E28C1FE13607002604CD /* SwipeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3754E28B1FE13607002604CD /* SwipeViewController.swift */; };
 		375F04B61FE3A73A009D2671 /* MenuBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 375F04B51FE3A739009D2671 /* MenuBar.swift */; };
 		375F04B81FE3A787009D2671 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 375F04B71FE3A787009D2671 /* HomeViewController.swift */; };
 		37A5BB9B1FE61CE200C4F1E6 /* MenuCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37A5BB9A1FE61CE200C4F1E6 /* MenuCell.swift */; };
@@ -50,6 +49,7 @@
 		37A5BBA91FE628B900C4F1E6 /* ChatCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 37A5BBA71FE628B900C4F1E6 /* ChatCollectionViewCell.xib */; };
 		37A5BBDF1FE6313000C4F1E6 /* HomeViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37A5BBDE1FE6313000C4F1E6 /* HomeViewControllerExtension.swift */; };
 		37C0FF1C1FE7672C002EACF3 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 37C0FF1B1FE7672C002EACF3 /* GoogleService-Info.plist */; };
+		37C0FF1E1FE7A75E002EACF3 /* CallOutViewControllers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37C0FF1D1FE7A75E002EACF3 /* CallOutViewControllers.swift */; };
 		37CA181E1FE2221500C1171B /* FirebaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37CA181D1FE2221500C1171B /* FirebaseManager.swift */; };
 		37CA18201FE2304100C1171B /* AudioViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37CA181F1FE2304100C1171B /* AudioViewController.swift */; };
 		37CA18221FE2397100C1171B /* ChatroomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37CA18211FE2397100C1171B /* ChatroomViewController.swift */; };
@@ -73,7 +73,7 @@
 
 /* Begin PBXFileReference section */
 		3618AF86542D903ECA050532 /* Pods-i-Chat.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-i-Chat.release.xcconfig"; path = "Pods/Target Support Files/Pods-i-Chat/Pods-i-Chat.release.xcconfig"; sourceTree = "<group>"; };
-		370832AF1FE2847F00D4DC86 /* RingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RingViewController.swift; sourceTree = "<group>"; };
+		370832AF1FE2847F00D4DC86 /* IncomingCallViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IncomingCallViewController.swift; sourceTree = "<group>"; };
 		370832B51FE3800200D4DC86 /* CallManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CallManager.swift; sourceTree = "<group>"; };
 		370832B71FE3806700D4DC86 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		3714597B1FDFAABF00C1F14A /* i-Chat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "i-Chat.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -102,7 +102,6 @@
 		3717DD211FE66E35003CD462 /* HomeComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeComponent.swift; sourceTree = "<group>"; };
 		3754E2871FE122E4002604CD /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		3754E2891FE12809002604CD /* QuickBlox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuickBlox.swift; sourceTree = "<group>"; };
-		3754E28B1FE13607002604CD /* SwipeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipeViewController.swift; sourceTree = "<group>"; };
 		375F04B51FE3A739009D2671 /* MenuBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuBar.swift; sourceTree = "<group>"; };
 		375F04B71FE3A787009D2671 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		37A5BB9A1FE61CE200C4F1E6 /* MenuCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuCell.swift; sourceTree = "<group>"; };
@@ -115,6 +114,7 @@
 		37A5BBA71FE628B900C4F1E6 /* ChatCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChatCollectionViewCell.xib; sourceTree = "<group>"; };
 		37A5BBDE1FE6313000C4F1E6 /* HomeViewControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewControllerExtension.swift; sourceTree = "<group>"; };
 		37C0FF1B1FE7672C002EACF3 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		37C0FF1D1FE7A75E002EACF3 /* CallOutViewControllers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CallOutViewControllers.swift; sourceTree = "<group>"; };
 		37CA181D1FE2221500C1171B /* FirebaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseManager.swift; sourceTree = "<group>"; };
 		37CA181F1FE2304100C1171B /* AudioViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioViewController.swift; sourceTree = "<group>"; };
 		37CA18211FE2397100C1171B /* ChatroomViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatroomViewController.swift; sourceTree = "<group>"; };
@@ -171,8 +171,8 @@
 			isa = PBXGroup;
 			children = (
 				37CA181F1FE2304100C1171B /* AudioViewController.swift */,
-				3754E28B1FE13607002604CD /* SwipeViewController.swift */,
-				370832AF1FE2847F00D4DC86 /* RingViewController.swift */,
+				370832AF1FE2847F00D4DC86 /* IncomingCallViewController.swift */,
+				37C0FF1D1FE7A75E002EACF3 /* CallOutViewControllers.swift */,
 				37CA18211FE2397100C1171B /* ChatroomViewController.swift */,
 				375F04B71FE3A787009D2671 /* HomeViewController.swift */,
 				3717DD211FE66E35003CD462 /* HomeComponent.swift */,
@@ -443,6 +443,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				371459811FDFAABF00C1F14A /* LogInViewController.swift in Sources */,
+				37C0FF1E1FE7A75E002EACF3 /* CallOutViewControllers.swift in Sources */,
 				3754E2881FE122E4002604CD /* RegisterViewController.swift in Sources */,
 				37A5BBA81FE628B900C4F1E6 /* ChatCollectionViewCell.swift in Sources */,
 				375F04B61FE3A73A009D2671 /* MenuBar.swift in Sources */,
@@ -450,7 +451,7 @@
 				37A5BB9D1FE6223600C4F1E6 /* BaseCell.swift in Sources */,
 				3754E28A1FE12809002604CD /* QuickBlox.swift in Sources */,
 				37CA18221FE2397100C1171B /* ChatroomViewController.swift in Sources */,
-				370832B01FE2847F00D4DC86 /* RingViewController.swift in Sources */,
+				370832B01FE2847F00D4DC86 /* IncomingCallViewController.swift in Sources */,
 				371459B91FDFD11100C1F14A /* Chat.swift in Sources */,
 				37CA181E1FE2221500C1171B /* FirebaseManager.swift in Sources */,
 				37A5BBDF1FE6313000C4F1E6 /* HomeViewControllerExtension.swift in Sources */,
@@ -461,7 +462,6 @@
 				370832B81FE3806700D4DC86 /* User.swift in Sources */,
 				37A5BB9B1FE61CE200C4F1E6 /* MenuCell.swift in Sources */,
 				37CA18201FE2304100C1171B /* AudioViewController.swift in Sources */,
-				3754E28C1FE13607002604CD /* SwipeViewController.swift in Sources */,
 				3714597F1FDFAABF00C1F14A /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

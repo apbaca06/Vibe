@@ -32,10 +32,10 @@ class CallManager {
 
         let userInfo: [String: String] = ["Key": "Value"]
 
-        QBRTCConfig.setAnswerTimeInterval(60)
+        QBRTCConfig.setAnswerTimeInterval(15)
 
         newSession.startCall(userInfo)
-        
+
         CallManager.shared.session = newSession
     }
 

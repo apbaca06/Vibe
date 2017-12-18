@@ -14,9 +14,9 @@ class ChatCollectionViewCell: UICollectionViewCell {
 
     @IBAction func callAction(_ sender: UIButton) {
         CallManager.audioCall(toUser: User(id: 1234, name: "john", gender: .male, imgURL: "ee", email: "john1@gmail.com", quickbloxID: 39055386))
-        
+
         print("****,\(CallManager.shared.session)")
-        
+
         //開始嘟嘟聲
 
     }

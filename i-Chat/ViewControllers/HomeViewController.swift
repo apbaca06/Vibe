@@ -235,9 +235,9 @@ class HomeViewController: UICollectionViewController, UICollectionViewDelegateFl
         //切換到打電話畫面
 
         // swiftlint:disable force_cast
-        let ringViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "RingViewController") as! RingViewController
+        let callOutViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "CallOutViewController") as! CallOutViewController
         // swiftlint:enable force_cast
-        self.present(ringViewController, animated: true, completion: nil)
+        self.present(callOutViewController, animated: true, completion: nil)
     }
 
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {

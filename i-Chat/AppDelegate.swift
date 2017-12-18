@@ -95,10 +95,38 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
     func applicationWillEnterForeground(_ application: UIApplication) {
-        //&& QBUUser.isAuthorized
-        if !QBChat.instance.isConnected {
+//        if !QBChat.instance.isConnected {
 //            QBCore.instance().loginWithCurrentUser
-        }
+//        }
+//
+//        if QBChat.instance.isConnected == false {
+//
+//            UIApplication.shared.beginIgnoringInteractionEvents()
+//
+//            SVProgressHUD.show(withStatus: NSLocalizedString("SVProgress_Fetch_Data", comment: ""))
+//
+//            guard let user = Auth.auth().currentUser else {
+//
+//                let loginViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "LoginVC")
+//
+//                AppDelegate.shared.window?.rootViewController = loginViewController
+//
+//                UserManager.shared.currentUser = nil
+//
+//                return
+//
+//            }
+//
+//            if let email = user.email {
+//
+//                QBManager().logIn(
+//                    withEmail: email,
+//                    withPassword: user.uid
+//                )
+//
+//            }
+//
+//        }
     }
 
     func applicationDidBecomeActive(_ application: UIApplication) {

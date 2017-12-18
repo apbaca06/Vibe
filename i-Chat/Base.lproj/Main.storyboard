@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="jDX-dt-u6h">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -173,59 +173,97 @@
             </objects>
             <point key="canvasLocation" x="888.79999999999995" y="132.68365817091455"/>
         </scene>
-        <!--Swipe View Controller-->
-        <scene sceneID="DEX-mV-gjS">
+        <!--Call Out View Controller-->
+        <scene sceneID="J3f-TP-VT7">
             <objects>
-                <viewController storyboardIdentifier="MainPage" id="N4A-ly-3iI" customClass="SwipeViewController" customModule="i_Chat" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="MiX-iW-nkw">
+                <viewController restorationIdentifier="CallOutViewController" storyboardIdentifier="CallOutViewController" id="a74-Za-UCI" customClass="CallOutViewController" customModule="i_Chat" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="E3P-e6-wYa">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KLW-tL-tEN">
-                                <rect key="frame" x="164" y="486" width="46" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="UserName" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6Bp-w1-aEF">
+                                <rect key="frame" x="127.5" y="107" width="120" height="31.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="26"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Call Desbribing" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yha-73-9Gs">
+                                <rect key="frame" x="129" y="185.5" width="117" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ooI-BR-mer">
+                                <rect key="frame" x="148" y="481" width="80" height="80"/>
+                                <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="0.86999678940000003" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="80" id="DrH-8Y-U3n"/>
+                                    <constraint firstAttribute="width" constant="80" id="zoa-R2-ZLJ"/>
+                                </constraints>
+                                <state key="normal" image="recline"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="0.0"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="27"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                                 <connections>
-                                    <action selector="callAction:" destination="N4A-ly-3iI" eventType="touchUpInside" id="sWA-3m-WIC"/>
+                                    <action selector="cancelButton:" destination="a74-Za-UCI" eventType="touchUpInside" id="dv9-dy-Ble"/>
+                                    <action selector="rejectButton:" destination="gqM-jB-jPz" eventType="touchUpInside" id="QfF-6W-gfx"/>
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" red="0.64705882349999999" green="0.66666666669999997" blue="0.69803921570000005" alpha="1" colorSpace="calibratedRGB"/>
-                        <viewLayoutGuide key="safeArea" id="lFa-jm-Z4h"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="yha-73-9Gs" firstAttribute="centerX" secondItem="ZRB-Lr-Phf" secondAttribute="centerX" id="GC2-ph-9Cn"/>
+                            <constraint firstItem="ZRB-Lr-Phf" firstAttribute="bottom" secondItem="ooI-BR-mer" secondAttribute="bottom" constant="106" id="Idu-tV-eSU"/>
+                            <constraint firstItem="yha-73-9Gs" firstAttribute="top" secondItem="6Bp-w1-aEF" secondAttribute="bottom" constant="47" id="Pxr-YS-pZu"/>
+                            <constraint firstItem="ooI-BR-mer" firstAttribute="centerX" secondItem="ZRB-Lr-Phf" secondAttribute="centerX" id="fZ2-c9-R8q"/>
+                            <constraint firstItem="6Bp-w1-aEF" firstAttribute="top" secondItem="ZRB-Lr-Phf" secondAttribute="top" constant="87" id="q1l-Cb-IWu"/>
+                            <constraint firstItem="6Bp-w1-aEF" firstAttribute="centerX" secondItem="ZRB-Lr-Phf" secondAttribute="centerX" id="uey-T6-mgb"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="ZRB-Lr-Phf"/>
                     </view>
+                    <connections>
+                        <outlet property="callDescription" destination="yha-73-9Gs" id="zIu-tx-Zfa"/>
+                        <outlet property="cancelButton" destination="ooI-BR-mer" id="l1i-9W-6A8"/>
+                        <outlet property="recieverName" destination="6Bp-w1-aEF" id="yhM-J4-RbM"/>
+                    </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="fUr-Sa-nOe" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="en7-tW-uhp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1652" y="139"/>
+            <point key="canvasLocation" x="104.8" y="891.90404797601207"/>
         </scene>
-        <!--Ring View Controller-->
+        <!--Incoming Call View Controller-->
         <scene sceneID="Vjh-Hb-aWP">
             <objects>
-                <viewController storyboardIdentifier="RingViewController" id="gqM-jB-jPz" customClass="RingViewController" customModule="i_Chat" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="IncomingCallViewController" id="gqM-jB-jPz" customClass="IncomingCallViewController" customModule="i_Chat" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Fdj-Km-09S">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3Dw-3V-49k">
-                                <rect key="frame" x="237" y="514" width="87" height="60"/>
-                                <color key="backgroundColor" red="1" green="0.0" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <rect key="frame" x="237" y="487" width="87" height="87"/>
+                                <color key="backgroundColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="87" id="dyW-2h-deD"/>
-                                    <constraint firstAttribute="height" constant="60" id="ikG-zs-0Cm"/>
+                                    <constraint firstAttribute="height" constant="87" id="ikG-zs-0Cm"/>
                                 </constraints>
                                 <state key="normal" title="Accept"/>
                                 <connections>
                                     <action selector="acceptButton:" destination="gqM-jB-jPz" eventType="touchUpInside" id="rZ2-4p-9Nz"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JgN-mF-rCb">
-                                <rect key="frame" x="58" y="514" width="87" height="60"/>
-                                <color key="backgroundColor" red="0.25098040700000002" green="0.50196081400000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JgN-mF-rCb">
+                                <rect key="frame" x="58" y="487" width="87" height="87"/>
+                                <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="0.86999678938356162" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="87" id="970-l6-9Tn"/>
-                                    <constraint firstAttribute="height" constant="60" id="TBC-sO-rA4"/>
+                                    <constraint firstAttribute="height" constant="87" id="rt2-V2-dX0"/>
                                 </constraints>
-                                <state key="normal" title="Reject"/>
+                                <state key="normal" image="recline"/>
                                 <connections>
                                     <action selector="rejectButton:" destination="gqM-jB-jPz" eventType="touchUpInside" id="OEX-Vj-pG1"/>
                                 </connections>
@@ -257,13 +295,15 @@
                         <viewLayoutGuide key="safeArea" id="o1Z-9J-hop"/>
                     </view>
                     <connections>
+                        <outlet property="acceptButton" destination="3Dw-3V-49k" id="9hR-1k-cPV"/>
                         <outlet property="callDescription" destination="eKg-v0-BQZ" id="PgX-cv-ugu"/>
                         <outlet property="name" destination="xVm-to-3Zn" id="uYr-76-DLt"/>
+                        <outlet property="rejectButton" destination="JgN-mF-rCb" id="wlN-6H-wdu"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fCs-vJ-jrx" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1328.8" y="1017.84107946027"/>
+            <point key="canvasLocation" x="860" y="892"/>
         </scene>
         <!--Audio View Controller-->
         <scene sceneID="r9G-7t-bei">
@@ -278,7 +318,10 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Xkq-Md-wxF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2454" y="139"/>
+            <point key="canvasLocation" x="1958" y="97"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="recline" width="32" height="32"/>
+    </resources>
 </document>

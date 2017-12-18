@@ -19,17 +19,17 @@ extension HomeViewController: QBRTCClientDelegate {
             //            let userInfo: [String: String] = ["key": "value"]
             session.rejectCall(userInfo)
 
-            print("已有電話,拒接")
+            print("****已有電話,拒接")
 
         } else {
-            print("準備接電話")
+            print("****準備接電話")
             CallManager.shared.session = session
 
             // swiftlint:disable force_cast
-            let ringViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "RingViewController") as! RingViewController
+            let incomingCallViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "IncomingCallViewController") as! IncomingCallViewController
             // swiftlint:enable force_cast
 
-            self.present(ringViewController, animated: true, completion: nil)
+            self.present(incomingCallViewController, animated: true, completion: nil)
         }
     }
 
@@ -40,9 +40,10 @@ extension HomeViewController: QBRTCClientDelegate {
     }
 
     // MARK: 當別人沒接電話
+
     func session(_ session: QBRTCSession, userDidNotRespond userID: NSNumber) {
 
-        print("User \(userID) did not respond to your call within timeout")
+        print("****User \(userID) did not respond to your call within timeout")
 
         self.dismiss(animated: true, completion: nil)
     }
@@ -50,7 +51,7 @@ extension HomeViewController: QBRTCClientDelegate {
     // MARK: 當別人拒絕接電話
     func session(_ session: QBRTCSession, rejectedByUser userID: NSNumber, userInfo: [String: String]? = nil) {
 
-        print("Rejected by user \(userID)")
+        print("****Rejected by user \(userID)")
 
         CallManager.shared.session = nil
 
@@ -61,7 +62,7 @@ extension HomeViewController: QBRTCClientDelegate {
     // MARK: 當別人接受你的電話
     func session(_ session: QBRTCSession, acceptedByUser userID: NSNumber, userInfo: [String: String]? = nil) {
 
-        print("****Started connecting by user \(userID)")
+        print("****Accepted by user \(userID)")
 
     }
 
@@ -84,8 +85,10 @@ extension HomeViewController: QBRTCClientDelegate {
 //        }
         CallManager.shared.session = session
         print("****Hung up by user \(userID)")
-        
+
         CallManager.shared.session?.hangUp(userInfo)
+
+        CallManager.shared.session = nil
 
     }
 
@@ -120,11 +123,13 @@ extension HomeViewController: QBRTCClientDelegate {
     // MARK: 無法連接session
     func session(_ session: QBRTCBaseSession, connectionFailedForUser userID: NSNumber) {
         print("****Connection has failed with user \(userID)")
-        //        CallManager.shared.session = nil
+        CallManager.shared.session = nil
+        self.dismiss(animated: true, completion: nil)
     }
 
     // MARK: 停止session
     func sessionDidClose(_ session: QBRTCSession) {
+
         print("****Connection has closed with user")
         // release session instance
         CallManager.shared.session = nil
