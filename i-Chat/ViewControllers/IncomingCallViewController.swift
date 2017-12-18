@@ -38,6 +38,10 @@ class IncomingCallViewController: UIViewController, QBRTCClientDelegate {
         // userInfo - the custom user information dictionary for the accept call. May be nil.
         //        let userInfo: [String: String] = ["key": "value"]
         CallManager.shared.session?.acceptCall(nil)
+        
+        let audioViewController = AudioViewController()
+        
+        self.present(audioViewController, animated: true, completion: nil)
 
     }
 
@@ -49,9 +53,9 @@ class IncomingCallViewController: UIViewController, QBRTCClientDelegate {
         QBRTCClient.instance().add(self)
 
     }
-
     func sessionDidClose(_ session: QBRTCSession) {
-
+        print("++++sessionDidClose++++++")
+       
         CallManager.shared.session = nil
 
         self.dismiss(animated: true, completion: nil)

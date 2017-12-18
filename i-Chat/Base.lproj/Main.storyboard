@@ -308,11 +308,25 @@
         <!--Audio View Controller-->
         <scene sceneID="r9G-7t-bei">
             <objects>
-                <viewController id="hwu-5b-qNi" customClass="AudioViewController" customModule="i_Chat" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="AudioViewController" id="hwu-5b-qNi" customClass="AudioViewController" customModule="i_Chat" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="4AS-Hy-25r">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xgs-CT-a6g">
+                                <rect key="frame" x="144.5" y="455" width="87" height="87"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="87" id="JHD-fB-7ZE"/>
+                                    <constraint firstAttribute="height" constant="87" id="V7A-v0-1gw"/>
+                                </constraints>
+                                <state key="normal" image="microphone"/>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="vbS-BL-NJ4" firstAttribute="bottom" secondItem="Xgs-CT-a6g" secondAttribute="bottom" constant="125" id="Mno-iT-7ma"/>
+                            <constraint firstItem="Xgs-CT-a6g" firstAttribute="centerX" secondItem="vbS-BL-NJ4" secondAttribute="centerX" id="zZh-gr-daE"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="vbS-BL-NJ4"/>
                     </view>
                 </viewController>
@@ -322,6 +336,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="microphone" width="32" height="32"/>
         <image name="recline" width="32" height="32"/>
     </resources>
 </document>

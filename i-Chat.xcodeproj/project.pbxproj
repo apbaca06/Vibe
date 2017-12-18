@@ -174,12 +174,6 @@
 				370832AF1FE2847F00D4DC86 /* IncomingCallViewController.swift */,
 				37C0FF1D1FE7A75E002EACF3 /* CallOutViewControllers.swift */,
 				37CA18211FE2397100C1171B /* ChatroomViewController.swift */,
-				375F04B71FE3A787009D2671 /* HomeViewController.swift */,
-				3717DD211FE66E35003CD462 /* HomeComponent.swift */,
-				37A5BBDE1FE6313000C4F1E6 /* HomeViewControllerExtension.swift */,
-				37A5BB9C1FE6223600C4F1E6 /* BaseCell.swift */,
-				375F04B51FE3A739009D2671 /* MenuBar.swift */,
-				37A5BB9A1FE61CE200C4F1E6 /* MenuCell.swift */,
 				37A5BB9E1FE6288500C4F1E6 /* ProfileCollectionViewCell.swift */,
 				37A5BB9F1FE6288500C4F1E6 /* ProfileCollectionViewCell.xib */,
 				37A5BBA21FE628A000C4F1E6 /* SwipingCollectionViewCell.swift */,
@@ -196,7 +190,6 @@
 			children = (
 				3754E2891FE12809002604CD /* QuickBlox.swift */,
 				370832B51FE3800200D4DC86 /* CallManager.swift */,
-				370832B71FE3806700D4DC86 /* User.swift */,
 				37CA181D1FE2221500C1171B /* FirebaseManager.swift */,
 			);
 			path = Manager;
@@ -228,6 +221,8 @@
 				3714597E1FDFAABF00C1F14A /* AppDelegate.swift */,
 				371459B81FDFD11100C1F14A /* Chat.swift */,
 				370832AE1FE2840E00D4DC86 /* Manager */,
+				37C0FF201FE7D26A002EACF3 /* Model */,
+				37C0FF1F1FE7D245002EACF3 /* Home */,
 				370832AD1FE283EB00D4DC86 /* ViewControllers */,
 				371459851FDFAABF00C1F14A /* Assets.xcassets */,
 				371459821FDFAABF00C1F14A /* Main.storyboard */,
@@ -252,6 +247,27 @@
 			children = (
 			);
 			path = Extension;
+			sourceTree = "<group>";
+		};
+		37C0FF1F1FE7D245002EACF3 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				375F04B71FE3A787009D2671 /* HomeViewController.swift */,
+				3717DD211FE66E35003CD462 /* HomeComponent.swift */,
+				37A5BBDE1FE6313000C4F1E6 /* HomeViewControllerExtension.swift */,
+				375F04B51FE3A739009D2671 /* MenuBar.swift */,
+				37A5BB9A1FE61CE200C4F1E6 /* MenuCell.swift */,
+				37A5BB9C1FE6223600C4F1E6 /* BaseCell.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		37C0FF201FE7D26A002EACF3 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				370832B71FE3806700D4DC86 /* User.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		EF0351E21E5259D8657B3499 /* Frameworks */ = {

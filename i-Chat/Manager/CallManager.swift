@@ -19,7 +19,7 @@ class CallManager {
 
     var session: QBRTCSession?
 
-    static func audioCall(toUser opponetUser: User) {
+    func audioCall(toUser opponetUser: User) {
 
         let opponentsIDs: [NSNumber] = [opponetUser.quickbloxID]
 
@@ -32,11 +32,9 @@ class CallManager {
 
         let userInfo: [String: String] = ["Key": "Value"]
 
-        QBRTCConfig.setAnswerTimeInterval(15)
-
         newSession.startCall(userInfo)
 
-        CallManager.shared.session = newSession
+        self.session = newSession
     }
 
 }

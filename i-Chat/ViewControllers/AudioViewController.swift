@@ -9,9 +9,10 @@
 import Foundation
 import UIKit
 
-class AudioViewController: UIViewController, QBRTCClientDelegate {
+class AudioViewController: UIViewController {
 
     override func viewDidLoad() {
+        view.backgroundColor = .red
 
     }
 
