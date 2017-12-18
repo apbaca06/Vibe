@@ -26,6 +26,5 @@ class SwipeViewController: UIViewController {
 
     @IBAction func callAction(_ sender: UIButton) {
 
-
     }
 }

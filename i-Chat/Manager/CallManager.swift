@@ -35,6 +35,8 @@ class CallManager {
         QBRTCConfig.setAnswerTimeInterval(60)
 
         newSession.startCall(userInfo)
+        
+        CallManager.shared.session = newSession
     }
 
 }

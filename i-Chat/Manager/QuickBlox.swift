@@ -18,14 +18,14 @@ class QuickBlox {
         var uuser: QBUUser?
 
         QBRequest.logIn(withUserEmail: email, password: password, successBlock: { (response, user) in
-            
+
             SVProgressHUD.show(withStatus: NSLocalizedString("Logging in...", comment: ""))
 
             // MARK: User logged in with Quickblox
             uuser = user
-            
+
             uuser?.email = email
-            
+
             uuser?.password = password
 
             QBChat.instance.connect(with: uuser!, completion: { (error) in
@@ -39,13 +39,13 @@ class QuickBlox {
                     AppDelegate.shared.window?.rootViewController = HomeViewController(collectionViewLayout: layout)
 
                 } else {
-                    
+
                     SVProgressHUD.dismiss()
-                    
+
                     DispatchQueue.main.async {
                         UIAlertController(error: error!).show()
                     }
-                    
+
                 }
 
             })
@@ -76,11 +76,11 @@ class QuickBlox {
         let uuser = QBUUser()
 
         uuser.email = email
-        
+
         uuser.password = password
-        
+
         uuser.fullName = name
-        
+
         SVProgressHUD.show(withStatus: NSLocalizedString("Signing up...", comment: ""))
 
         QBRequest.signUp(uuser, successBlock: { (response, error) in
@@ -92,7 +92,7 @@ class QuickBlox {
             AppDelegate.shared.window?.rootViewController = HomeViewController(collectionViewLayout: layout)
 
         }) { (response) in
-            
+
             SVProgressHUD.dismiss()
 
             error = response.error?.error

@@ -27,11 +27,11 @@ struct User {
         public static let quickbloxID = "quickbloxID"
 
     }
-    
+
     enum Gender: String {
-        
+
         case female
-        
+
         case male
     }
 

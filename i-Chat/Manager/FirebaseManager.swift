@@ -11,15 +11,15 @@ import Firebase
 import SVProgressHUD
 
 class FirebaseManager {
-    
+
     public struct DatabasePath {
-        
+
         public static let databaseRoot = Database.database().reference()
-        
+
         public static let userRef = databaseRoot.child("users")
-        
+
         public static let userFriendRef = databaseRoot.child("user_friend")
-        
+
     }
 
     static func logIn(withEmail email: String, withPassword password: String) {

@@ -222,7 +222,7 @@ class HomeViewController: UICollectionViewController, UICollectionViewDelegateFl
             ) as! ChatCollectionViewCell
 
             // swiftlint:enable force_cast
-            
+
             cell.button.addTarget(self, action: #selector(callOther), for: .touchUpInside)
 
             return cell
@@ -230,10 +230,10 @@ class HomeViewController: UICollectionViewController, UICollectionViewDelegateFl
         }
 
     }
-    
+
     @objc func callOther() {
         //切換到打電話畫面
-        
+
         // swiftlint:disable force_cast
         let ringViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "RingViewController") as! RingViewController
         // swiftlint:enable force_cast

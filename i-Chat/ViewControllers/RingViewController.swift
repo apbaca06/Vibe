@@ -19,9 +19,10 @@ class RingViewController: UIViewController {
 
         print("Did reject")
 
-        CallManager.shared.session?.rejectCall(nil)
-
-        CallManager.shared.session = nil
+        CallManager.shared.session?.hangUp(nil)
+        
+//        CallManager.shared.session = nil
+        print("****\(CallManager.shared.session)")
 
         self.callDescription.text = NSLocalizedString("拒絕通話", comment: "")
 
@@ -43,13 +44,36 @@ class RingViewController: UIViewController {
     }
 
 }
-//
-//extension RingViewController {
-//
-//    // MARK: 停止連接session到別的user
-//    func session(_ session: QBRTCBaseSession, disconnectedFromUser userID: NSNumber) {
-//        print("Disconnected from user \(userID)")
-//        self.dismiss(animated: true, completion: nil)
-//    }
-//
-//}
+
+extension RingViewController: QBRTCClientDelegate {
+
+    // MARK: 當別人掛掉你的電話
+    func session(_ session: QBRTCSession, hungUpByUser userID: NSNumber, userInfo: [String: String]? = nil) {
+        //For example:Update GUI
+        // Or
+        /**
+         HangUp when initiator ended a call
+         */
+        if session.initiatorID.isEqual(to: userID) {
+
+            session.hangUp(userInfo)
+
+            print("****Hung up by user \(userID)")
+
+            CallManager.shared.session = nil
+
+            self.dismiss(animated: true, completion: nil)
+        }
+
+    }
+    
+    func hangUpCall(_ userInfo: [String: String]?) {
+    
+        
+        CallManager.shared.session?.hangUp(userInfo)
+        
+        CallManager.shared.session = nil
+        
+    }
+
+}
