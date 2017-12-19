@@ -41,7 +41,7 @@ extension HomeViewController: QBRTCClientDelegate {
 
         print("****Recieved remote audio track \(userID)")
 
-        let audioViewController = UIStoryboard.init(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "AudioViewController")
+        let audioViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "AudioViewController")
 
         self.present(audioViewController, animated: true, completion: nil)
         //開始算時間

@@ -55,7 +55,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
         QBSettings.authSecret = authSecret
 
-//        QBSettings.logLevel = .debug
+        QBSettings.logLevel = .debug
 
         QBSettings.enableXMPPLogging()
 
@@ -63,7 +63,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
         SVProgressHUD.setDefaultMaskType(.clear)
 
-        // Test
         QBRequest.logOut(successBlock: nil, errorBlock: nil)
 
         if
@@ -91,38 +90,27 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
     func applicationWillEnterForeground(_ application: UIApplication) {
-//        if !QBChat.instance.isConnected {
-//            QBCore.instance().loginWithCurrentUser
-//        }
-//
-//        if QBChat.instance.isConnected == false {
-//
+
+        if QBChat.instance.isConnected == false {
+
+            SVProgressHUD.show(withStatus: NSLocalizedString("Connecting to communication service", comment: ""))
+
+            guard let user = Auth.auth().currentUser
+
+            else {
+                    let registerViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "RegisterViewController")
+
+                    AppDelegate.shared.window?.rootViewController = registerViewController
+
+                    return
+            }
+
+            QuickBlox.logInSync(withUserEmail: user.email!, password: user.uid)
+
 //            UIApplication.shared.beginIgnoringInteractionEvents()
-//
-//            SVProgressHUD.show(withStatus: NSLocalizedString("SVProgress_Fetch_Data", comment: ""))
-//
-//            guard let user = Auth.auth().currentUser else {
-//
-//                let loginViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "LoginVC")
-//
-//                AppDelegate.shared.window?.rootViewController = loginViewController
-//
-//                UserManager.shared.currentUser = nil
-//
-//                return
-//
-//            }
-//
-//            if let email = user.email {
-//
-//                QBManager().logIn(
-//                    withEmail: email,
-//                    withPassword: user.uid
-//                )
-//
-//            }
-//
-//        }
+
+        }
+
     }
 
     func applicationDidBecomeActive(_ application: UIApplication) {

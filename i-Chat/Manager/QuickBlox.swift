@@ -17,9 +17,9 @@ class QuickBlox {
         var error: Error?
         var uuser: QBUUser?
 
-        QBRequest.logIn(withUserEmail: email, password: password, successBlock: { (response, user) in
+        SVProgressHUD.show(withStatus: NSLocalizedString("Logging in...", comment: ""))
 
-            SVProgressHUD.show(withStatus: NSLocalizedString("Logging in...", comment: ""))
+        QBRequest.logIn(withUserEmail: email, password: password, successBlock: { (response, user) in
 
             // MARK: User logged in with Quickblox
             uuser = user

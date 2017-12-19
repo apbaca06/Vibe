@@ -111,6 +111,11 @@ class AudioViewController: UIViewController {
 
     }
 
+    override func viewDidAppear(_ animated: Bool) {
+
+        timerLabel.start()
+    }
+
     func setUpButtonShape() {
 
         speakerButton.layer.cornerRadius = speakerButton.frame.width/2
