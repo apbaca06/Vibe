@@ -21,7 +21,7 @@ class IncomingCallViewController: UIViewController {
     @IBOutlet weak var rejectButton: UIButton!
 
     @IBAction func rejectButton(_ sender: UIButton) {
-        
+
         RingtoneManager.shared.ringPlayer.stop()
 
         print("***Did reject")
@@ -38,18 +38,14 @@ class IncomingCallViewController: UIViewController {
     }
 
     @IBAction func acceptButton(_ sender: UIButton) {
-        
+
         print("Did accept")
-        
+
         RingtoneManager.shared.ringPlayer.stop()
 
         // userInfo - the custom user information dictionary for the accept call. May be nil.
         //        let userInfo: [String: String] = ["key": "value"]
         CallManager.shared.session?.acceptCall(nil)
-
-        let audioViewController = UIStoryboard.init(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "AudioViewController")
-
-        self.present(audioViewController, animated: true, completion: nil)
 
     }
 

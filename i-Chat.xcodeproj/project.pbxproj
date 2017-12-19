@@ -119,6 +119,7 @@
 		37C0FF1D1FE7A75E002EACF3 /* CallOutViewControllers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CallOutViewControllers.swift; sourceTree = "<group>"; };
 		37C0FF491FE8BD34002EACF3 /* iphone.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = iphone.mp3; sourceTree = "<group>"; };
 		37C0FF4B1FE8BE58002EACF3 /* RingtoneManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RingtoneManager.swift; sourceTree = "<group>"; };
+		37C0FF4D1FE8F104002EACF3 /* i-Chat.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "i-Chat.entitlements"; sourceTree = "<group>"; };
 		37CA181D1FE2221500C1171B /* FirebaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseManager.swift; sourceTree = "<group>"; };
 		37CA181F1FE2304100C1171B /* AudioViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioViewController.swift; sourceTree = "<group>"; };
 		37CA18211FE2397100C1171B /* ChatroomViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatroomViewController.swift; sourceTree = "<group>"; };
@@ -222,6 +223,7 @@
 		3714597D1FDFAABF00C1F14A /* i-Chat */ = {
 			isa = PBXGroup;
 			children = (
+				37C0FF4D1FE8F104002EACF3 /* i-Chat.entitlements */,
 				371459BA1FDFD90500C1F14A /* Key */,
 				3714597E1FDFAABF00C1F14A /* AppDelegate.swift */,
 				371459B81FDFD11100C1F14A /* Chat.swift */,
@@ -335,6 +337,14 @@
 					3714597A1FDFAABF00C1F14A = {
 						CreatedOnToolsVersion = 9.1;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+							com.apple.InterAppAudio = {
+								enabled = 0;
+							};
+						};
 					};
 				};
 			};

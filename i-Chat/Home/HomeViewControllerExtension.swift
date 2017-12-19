@@ -35,7 +35,16 @@ extension HomeViewController: QBRTCClientDelegate {
 
     func session(_ session: QBRTCBaseSession, receivedRemoteAudioTrack audioTrack: QBRTCAudioTrack, fromUser userID: NSNumber) {
 
+        self.dismiss(animated: true, completion: nil)
+
+        RingtoneManager.shared.ringPlayer.stop()
+
         print("****Recieved remote audio track \(userID)")
+
+        let audioViewController = UIStoryboard.init(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "AudioViewController")
+
+        self.present(audioViewController, animated: true, completion: nil)
+        //開始算時間
 
     }
 
@@ -111,7 +120,7 @@ extension HomeViewController: QBRTCClientDelegate {
     // MARK: 已連接session到別的user
     func session(_ session: QBRTCBaseSession, connectedToUser userID: NSNumber) {
         print("****Connection is established with user \(userID)")
-        //開始算時間
+
     }
 
     // MARK: 停止連接session到別的user
@@ -131,6 +140,8 @@ extension HomeViewController: QBRTCClientDelegate {
     func sessionDidClose(_ session: QBRTCSession) {
 
         print("****Connection has closed with user")
+
+        RingtoneManager.shared.ringPlayer.stop()
         // release session instance
         CallManager.shared.session = nil
         self.dismiss(animated: true, completion: nil)
