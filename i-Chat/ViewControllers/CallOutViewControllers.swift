@@ -20,6 +20,8 @@ class CallOutViewController: UIViewController {
     @IBAction func cancelButton(_ sender: UIButton) {
 
         print("Did reject")
+        
+        RingtoneManager.shared.ringPlayer.stop()
 
         CallManager.shared.session?.hangUp(nil)
 
@@ -36,12 +38,13 @@ class CallOutViewController: UIViewController {
         super.viewDidLoad()
 
         setUpButtonShape()
+        
+        RingtoneManager.shared.playRingtone()
 
     }
 
     func setUpButtonShape() {
         cancelButton.layer.cornerRadius = cancelButton.frame.width/2
-
     }
 
 }

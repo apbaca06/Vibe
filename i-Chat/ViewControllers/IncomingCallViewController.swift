@@ -10,9 +10,7 @@ import Foundation
 import UIKit
 import AVFoundation
 
-class IncomingCallViewController: UIViewController, QBRTCClientDelegate {
-
-    var ringPlayer: AVAudioPlayer = AVAudioPlayer()
+class IncomingCallViewController: UIViewController {
 
     @IBOutlet weak var callDescription: UILabel!
 
@@ -23,7 +21,8 @@ class IncomingCallViewController: UIViewController, QBRTCClientDelegate {
     @IBOutlet weak var rejectButton: UIButton!
 
     @IBAction func rejectButton(_ sender: UIButton) {
-        ringPlayer.stop()
+        
+        RingtoneManager.shared.ringPlayer.stop()
 
         print("***Did reject")
 
@@ -39,8 +38,10 @@ class IncomingCallViewController: UIViewController, QBRTCClientDelegate {
     }
 
     @IBAction func acceptButton(_ sender: UIButton) {
+        
         print("Did accept")
-        ringPlayer.stop()
+        
+        RingtoneManager.shared.ringPlayer.stop()
 
         // userInfo - the custom user information dictionary for the accept call. May be nil.
         //        let userInfo: [String: String] = ["key": "value"]
@@ -57,34 +58,8 @@ class IncomingCallViewController: UIViewController, QBRTCClientDelegate {
 
         setUpButtonShape()
 
-        playRingtone()
+        RingtoneManager.shared.playRingtone()
 
-        QBRTCClient.instance().add(self)
-
-    }
-
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-
-    }
-
-    func playRingtone() {
-        do {
-            let audioPath = Bundle.main.path(forResource: "idiot_is_calling", ofType: "mp3")
-
-            try ringPlayer = AVAudioPlayer(contentsOf: URL.init(fileURLWithPath: audioPath!))
-            ringPlayer.play()
-        } catch {
-            let error = error
-        }
-    }
-
-    func sessionDidClose(_ session: QBRTCSession) {
-        print("++++sessionDidClose++++++")
-
-        CallManager.shared.session = nil
-
-        self.dismiss(animated: true, completion: nil)
     }
 
     func setUpButtonShape() {

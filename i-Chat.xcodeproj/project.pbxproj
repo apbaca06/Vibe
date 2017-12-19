@@ -50,7 +50,8 @@
 		37A5BBDF1FE6313000C4F1E6 /* HomeViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37A5BBDE1FE6313000C4F1E6 /* HomeViewControllerExtension.swift */; };
 		37C0FF1C1FE7672C002EACF3 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 37C0FF1B1FE7672C002EACF3 /* GoogleService-Info.plist */; };
 		37C0FF1E1FE7A75E002EACF3 /* CallOutViewControllers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37C0FF1D1FE7A75E002EACF3 /* CallOutViewControllers.swift */; };
-		37C0FF461FE8B78A002EACF3 /* idiot_is_calling.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 37C0FF451FE8B78A002EACF3 /* idiot_is_calling.mp3 */; };
+		37C0FF4A1FE8BD34002EACF3 /* iphone.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 37C0FF491FE8BD34002EACF3 /* iphone.mp3 */; };
+		37C0FF4C1FE8BE58002EACF3 /* RingtoneManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37C0FF4B1FE8BE58002EACF3 /* RingtoneManager.swift */; };
 		37CA181E1FE2221500C1171B /* FirebaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37CA181D1FE2221500C1171B /* FirebaseManager.swift */; };
 		37CA18201FE2304100C1171B /* AudioViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37CA181F1FE2304100C1171B /* AudioViewController.swift */; };
 		37CA18221FE2397100C1171B /* ChatroomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37CA18211FE2397100C1171B /* ChatroomViewController.swift */; };
@@ -116,7 +117,8 @@
 		37A5BBDE1FE6313000C4F1E6 /* HomeViewControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewControllerExtension.swift; sourceTree = "<group>"; };
 		37C0FF1B1FE7672C002EACF3 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		37C0FF1D1FE7A75E002EACF3 /* CallOutViewControllers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CallOutViewControllers.swift; sourceTree = "<group>"; };
-		37C0FF451FE8B78A002EACF3 /* idiot_is_calling.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = idiot_is_calling.mp3; sourceTree = "<group>"; };
+		37C0FF491FE8BD34002EACF3 /* iphone.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = iphone.mp3; sourceTree = "<group>"; };
+		37C0FF4B1FE8BE58002EACF3 /* RingtoneManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RingtoneManager.swift; sourceTree = "<group>"; };
 		37CA181D1FE2221500C1171B /* FirebaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseManager.swift; sourceTree = "<group>"; };
 		37CA181F1FE2304100C1171B /* AudioViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioViewController.swift; sourceTree = "<group>"; };
 		37CA18211FE2397100C1171B /* ChatroomViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatroomViewController.swift; sourceTree = "<group>"; };
@@ -192,6 +194,7 @@
 			children = (
 				3754E2891FE12809002604CD /* QuickBlox.swift */,
 				370832B51FE3800200D4DC86 /* CallManager.swift */,
+				37C0FF4B1FE8BE58002EACF3 /* RingtoneManager.swift */,
 				37CA181D1FE2221500C1171B /* FirebaseManager.swift */,
 			);
 			path = Manager;
@@ -227,7 +230,7 @@
 				37C0FF1F1FE7D245002EACF3 /* Home */,
 				370832AD1FE283EB00D4DC86 /* ViewControllers */,
 				371459851FDFAABF00C1F14A /* Assets.xcassets */,
-				37C0FF451FE8B78A002EACF3 /* idiot_is_calling.mp3 */,
+				37C0FF491FE8BD34002EACF3 /* iphone.mp3 */,
 				371459821FDFAABF00C1F14A /* Main.storyboard */,
 				371459871FDFAABF00C1F14A /* LaunchScreen.storyboard */,
 				3714598A1FDFAABF00C1F14A /* Info.plist */,
@@ -358,13 +361,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				37C0FF461FE8B78A002EACF3 /* idiot_is_calling.mp3 in Resources */,
 				371459891FDFAABF00C1F14A /* LaunchScreen.storyboard in Resources */,
 				37A5BBA11FE6288500C4F1E6 /* ProfileCollectionViewCell.xib in Resources */,
 				37C0FF1C1FE7672C002EACF3 /* GoogleService-Info.plist in Resources */,
 				37A5BBA91FE628B900C4F1E6 /* ChatCollectionViewCell.xib in Resources */,
 				371459B51FDFB16900C1F14A /* APIKey.plist in Resources */,
 				371459861FDFAABF00C1F14A /* Assets.xcassets in Resources */,
+				37C0FF4A1FE8BD34002EACF3 /* iphone.mp3 in Resources */,
 				37A5BBA51FE628A000C4F1E6 /* SwipingCollectionViewCell.xib in Resources */,
 				371459841FDFAABF00C1F14A /* Main.storyboard in Resources */,
 			);
@@ -469,6 +472,7 @@
 				3754E2881FE122E4002604CD /* RegisterViewController.swift in Sources */,
 				37A5BBA81FE628B900C4F1E6 /* ChatCollectionViewCell.swift in Sources */,
 				375F04B61FE3A73A009D2671 /* MenuBar.swift in Sources */,
+				37C0FF4C1FE8BE58002EACF3 /* RingtoneManager.swift in Sources */,
 				370832B61FE3800200D4DC86 /* CallManager.swift in Sources */,
 				37A5BB9D1FE6223600C4F1E6 /* BaseCell.swift in Sources */,
 				3754E28A1FE12809002604CD /* QuickBlox.swift in Sources */,
