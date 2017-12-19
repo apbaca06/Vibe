@@ -16,5 +16,5 @@ target 'i-Chat' do
   pod 'Firebase/Core'
   pod 'Firebase/Auth'
   pod 'Firebase/Database'
-  pod 'SwiftyTimer'
+  pod 'MZTimerLabel'
 end

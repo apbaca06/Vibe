@@ -16,10 +16,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
 
-    let kQBRingThickness: CGFloat  = 1
-
-    let kQBDialingTimeInterval: TimeInterval = 5
-
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
 
          FirebaseApp.configure()
@@ -48,8 +44,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // MARK: Set APIKey for QuickBlox
 
         QBRTCClient.initializeRTC()
-        
-        QBRTCConfig.setAnswerTimeInterval(15)
+
+        QBRTCConfig.setAnswerTimeInterval(30)
 
         QBSettings.accountKey = accountKey
 

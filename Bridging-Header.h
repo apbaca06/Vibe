@@ -13,6 +13,7 @@
 #import <SystemConfiguration/SystemConfiguration.h>
 #import <MobileCoreServices/MobileCoreServices.h>
 #import <QuickbloxWebRTC/QuickbloxWebRTC.h>
+#import <MZTimerLabel/MZTimerLabel.h>
 
 
 #endif /* Bridging_Header_h */

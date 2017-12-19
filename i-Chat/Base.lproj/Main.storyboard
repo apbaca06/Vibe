@@ -313,30 +313,79 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YXz-4A-8v9">
+                                <rect key="frame" x="64" y="455" width="87" height="87"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="87" id="ghv-4L-AUQ"/>
+                                    <constraint firstAttribute="height" constant="87" id="wNj-wP-Pdd"/>
+                                </constraints>
+                                <state key="normal" image="muted"/>
+                                <connections>
+                                    <action selector="tapMute:" destination="hwu-5b-qNi" eventType="touchUpInside" id="a26-cz-dIg"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Sin-Ai-Ezt" customClass="MZTimerLabel">
+                                <rect key="frame" x="112.5" y="249" width="150" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="150" id="kk0-wL-MNK"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DAO-86-7Uf">
+                                <rect key="frame" x="144" y="549" width="87" height="87"/>
+                                <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="0.86999678940000003" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="87" id="ENx-6O-YOV"/>
+                                    <constraint firstAttribute="height" constant="87" id="i0a-au-ZJH"/>
+                                </constraints>
+                                <state key="normal" image="recline"/>
+                                <connections>
+                                    <action selector="hangUpAction:" destination="hwu-5b-qNi" eventType="touchUpInside" id="r5r-Ai-2Cr"/>
+                                    <action selector="rejectButton:" destination="gqM-jB-jPz" eventType="touchUpInside" id="om8-pD-qZT"/>
+                                </connections>
+                            </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xgs-CT-a6g">
-                                <rect key="frame" x="144.5" y="455" width="87" height="87"/>
+                                <rect key="frame" x="221" y="455" width="87" height="87"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="87" id="JHD-fB-7ZE"/>
                                     <constraint firstAttribute="height" constant="87" id="V7A-v0-1gw"/>
                                 </constraints>
-                                <state key="normal" image="microphone"/>
+                                <state key="normal" image="megaphone"/>
+                                <connections>
+                                    <action selector="tapSpeaker:" destination="hwu-5b-qNi" eventType="touchUpInside" id="TkC-ZS-PUf"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="vbS-BL-NJ4" firstAttribute="bottom" secondItem="Xgs-CT-a6g" secondAttribute="bottom" constant="125" id="Mno-iT-7ma"/>
-                            <constraint firstItem="Xgs-CT-a6g" firstAttribute="centerX" secondItem="vbS-BL-NJ4" secondAttribute="centerX" id="zZh-gr-daE"/>
+                            <constraint firstItem="Sin-Ai-Ezt" firstAttribute="centerX" secondItem="vbS-BL-NJ4" secondAttribute="centerX" id="OHV-U9-wDi"/>
+                            <constraint firstItem="vbS-BL-NJ4" firstAttribute="bottom" secondItem="YXz-4A-8v9" secondAttribute="bottom" constant="125" id="RGc-6d-68u"/>
+                            <constraint firstItem="Sin-Ai-Ezt" firstAttribute="top" secondItem="vbS-BL-NJ4" secondAttribute="top" constant="229" id="VdN-e9-7Kx"/>
+                            <constraint firstItem="vbS-BL-NJ4" firstAttribute="bottom" secondItem="DAO-86-7Uf" secondAttribute="bottom" constant="31" id="Y2q-Av-oWV"/>
+                            <constraint firstItem="DAO-86-7Uf" firstAttribute="centerX" secondItem="vbS-BL-NJ4" secondAttribute="centerX" id="ePx-J2-GmS"/>
+                            <constraint firstItem="YXz-4A-8v9" firstAttribute="leading" secondItem="vbS-BL-NJ4" secondAttribute="leading" constant="64" id="hm8-88-YpR"/>
+                            <constraint firstItem="Xgs-CT-a6g" firstAttribute="centerX" secondItem="vbS-BL-NJ4" secondAttribute="centerX" constant="77" id="zZh-gr-daE"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="vbS-BL-NJ4"/>
                     </view>
+                    <connections>
+                        <outlet property="hangUpButton" destination="DAO-86-7Uf" id="htP-yB-O7I"/>
+                        <outlet property="mutedButton" destination="YXz-4A-8v9" id="uXd-3Y-SH1"/>
+                        <outlet property="speakerButton" destination="Xgs-CT-a6g" id="aaq-GY-2Li"/>
+                        <outlet property="timerLabel" destination="Sin-Ai-Ezt" id="mRs-C6-cEv"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Xkq-Md-wxF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1958" y="97"/>
+            <point key="canvasLocation" x="1580" y="892"/>
         </scene>
     </scenes>
     <resources>
-        <image name="microphone" width="32" height="32"/>
+        <image name="megaphone" width="32" height="32"/>
+        <image name="muted" width="32" height="32"/>
         <image name="recline" width="32" height="32"/>
     </resources>
 </document>

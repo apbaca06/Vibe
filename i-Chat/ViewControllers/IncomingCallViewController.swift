@@ -8,16 +8,22 @@
 
 import Foundation
 import UIKit
+import AVFoundation
 
 class IncomingCallViewController: UIViewController, QBRTCClientDelegate {
+
+    var ringPlayer: AVAudioPlayer = AVAudioPlayer()
 
     @IBOutlet weak var callDescription: UILabel!
 
     @IBOutlet weak var name: UILabel!
 
     @IBOutlet weak var acceptButton: UIButton!
+
     @IBOutlet weak var rejectButton: UIButton!
+
     @IBAction func rejectButton(_ sender: UIButton) {
+        ringPlayer.stop()
 
         print("***Did reject")
 
@@ -34,13 +40,14 @@ class IncomingCallViewController: UIViewController, QBRTCClientDelegate {
 
     @IBAction func acceptButton(_ sender: UIButton) {
         print("Did accept")
+        ringPlayer.stop()
 
         // userInfo - the custom user information dictionary for the accept call. May be nil.
         //        let userInfo: [String: String] = ["key": "value"]
         CallManager.shared.session?.acceptCall(nil)
-        
-        let audioViewController = AudioViewController()
-        
+
+        let audioViewController = UIStoryboard.init(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "AudioViewController")
+
         self.present(audioViewController, animated: true, completion: nil)
 
     }
@@ -50,12 +57,31 @@ class IncomingCallViewController: UIViewController, QBRTCClientDelegate {
 
         setUpButtonShape()
 
+        playRingtone()
+
         QBRTCClient.instance().add(self)
 
     }
+
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+
+    }
+
+    func playRingtone() {
+        do {
+            let audioPath = Bundle.main.path(forResource: "idiot_is_calling", ofType: "mp3")
+
+            try ringPlayer = AVAudioPlayer(contentsOf: URL.init(fileURLWithPath: audioPath!))
+            ringPlayer.play()
+        } catch {
+            let error = error
+        }
+    }
+
     func sessionDidClose(_ session: QBRTCSession) {
         print("++++sessionDidClose++++++")
-       
+
         CallManager.shared.session = nil
 
         self.dismiss(animated: true, completion: nil)
