@@ -145,6 +145,8 @@ class HomeViewController: UICollectionViewController, UICollectionViewDelegateFl
         menuBar.horizontalBarLeftAnchorConstraint?.constant = scrollView.contentOffset.x / 3
 
     }
+    
+
 
     override func scrollViewWillEndDragging(_ scrollView: UIScrollView, withVelocity velocity: CGPoint, targetContentOffset: UnsafeMutablePointer<CGPoint>) {
 
@@ -234,6 +236,8 @@ class HomeViewController: UICollectionViewController, UICollectionViewDelegateFl
     @objc func callOther() {
         //切換到打電話畫面
 
+        QBRTCAudioSession.instance().currentAudioDevice = .receiver
+        
         // swiftlint:disable force_cast
         let callOutViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "CallOutViewController") as! CallOutViewController
         // swiftlint:enable force_cast

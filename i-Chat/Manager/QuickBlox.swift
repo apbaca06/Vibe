@@ -100,6 +100,7 @@ class QuickBlox {
             DispatchQueue.main.async {
 
                 UIAlertController(error: error!).show()
+
             }
         }
 

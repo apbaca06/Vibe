@@ -62,15 +62,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         SVProgressHUD.setDefaultStyle(.light)
 
         SVProgressHUD.setDefaultMaskType(.clear)
+        
+        // TODO
+        QBRTCAudioSession.instance().initialize()
 
         QBRequest.logOut(successBlock: nil, errorBlock: nil)
 
-        if
-            let user = Auth.auth().currentUser,
-            let email = user.email {
-
-            QuickBlox.logInSync(withUserEmail: email, password: user.uid)
-        }
+//        if
+//            let user = Auth.auth().currentUser,
+//            let email = user.email {
+//
+        // Error
+//            QuickBlox.logInSync(withUserEmail: email, password: user.)
+//        }
 
         // IQKeyBoardManager
         IQKeyboardManager.shared().isEnabled = true
@@ -91,25 +95,26 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func applicationWillEnterForeground(_ application: UIApplication) {
 
-        if QBChat.instance.isConnected == false {
-
-            SVProgressHUD.show(withStatus: NSLocalizedString("Connecting to communication service", comment: ""))
-
-            guard let user = Auth.auth().currentUser
-
-            else {
-                    let registerViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "RegisterViewController")
-
-                    AppDelegate.shared.window?.rootViewController = registerViewController
-
-                    return
-            }
-
-            QuickBlox.logInSync(withUserEmail: user.email!, password: user.uid)
-
-//            UIApplication.shared.beginIgnoringInteractionEvents()
-
-        }
+//        if QBChat.instance.isConnected == false {
+//
+//            SVProgressHUD.show(withStatus: NSLocalizedString("Connecting to communication service", comment: ""))
+//
+//            guard let user = Auth.auth().currentUser
+//
+//            else {
+//                    let registerViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "RegisterViewController")
+//
+//                    AppDelegate.shared.window?.rootViewController = registerViewController
+//
+//                    return
+//            }
+//
+        // Error for password
+//            QuickBlox.logInSync(withUserEmail: user.email!, password: user.uid)
+//
+////            UIApplication.shared.beginIgnoringInteractionEvents()
+//
+//        }
 
     }
 

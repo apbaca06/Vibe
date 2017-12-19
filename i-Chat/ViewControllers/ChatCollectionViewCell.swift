@@ -13,7 +13,7 @@ class ChatCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var button: UIButton!
 
     @IBAction func callAction(_ sender: UIButton) {
-        CallManager.shared.audioCall(toUser: User(id: 1234, name: "john", gender: .male, imgURL: "ee", email: "john1@gmail.com", quickbloxID: 39055386))
+        CallManager.shared.audioCall(toUser: User(id: 1234, name: "john", gender: .male, imgURL: "ee", email: "john@gmail.com", quickbloxID: 39130138))
 
         print("****,\(CallManager.shared.session)")
 

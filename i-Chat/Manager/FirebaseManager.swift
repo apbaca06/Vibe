@@ -40,7 +40,7 @@ class FirebaseManager {
 
                     withUserEmail: email,
 
-                    password: uuser.uid
+                    password: password
                 )
             }
         }
@@ -67,18 +67,17 @@ class FirebaseManager {
                 else { return }
 
                 // MARK: Signed up for Quickblox
-                QuickBlox.signUpSync(name: name, email: email, password: user.uid)
+                QuickBlox.signUpSync(name: name, email: email, password: password)
 
-                // MARK: Logged in for Firebase & Quickblox
-                self.logIn(
-
-                    withEmail: email,
-
-                    withPassword: password
-                )
             }
         }
     }
+    
+//    static func insertUserInfo(qbID:Int) {
+//        
+//        DatabasePath.userRef.childByAutoId().setPriority(<#T##priority: Any?##Any?#>)
+//
+//    }
 //    
 //    static func requestUserInfo(user: User) {
 //        
