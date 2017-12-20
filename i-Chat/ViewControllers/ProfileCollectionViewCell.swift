@@ -8,25 +8,34 @@
 
 import UIKit
 import Firebase
+import SVProgressHUD
+
 class ProfileCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var toProfilePage: UIButton!
     @IBAction func toSettingPage(_ sender: Any) {
+
         let firebaseAuth = Auth.auth()
+
         do {
+            // MARK: Firebase Logout
             try firebaseAuth.signOut()
 
-            print("**", Auth.auth().currentUser)
             let loginViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "LogInViewController")
 
-            QBRequest.logOut(successBlock: { (response) in
-                print("**QB Logout")
+            AppDelegate.shared.window?.rootViewController = loginViewController
+
+            // MARK: Quickblox Logout
+            QBRequest.logOut(successBlock: { (_) in
+                SVProgressHUD.show(
+                    withStatus: NSLocalizedString("Log out successfully", comment: "")
+                )
             }, errorBlock: { (_) in
                 // Error handling
             })
 
+            // MARK: Disconnect From Quickblox (Prevent user is blocked by loging again really soon)
             QBChat.instance.disconnect { [weak self] (error) in
 
-                print("DISCONNECT RESULT RECEIVED") // breakpoint here
                 if let error = error {
                     print("DISCONNECT ERROR \(error)")
                 } else {
@@ -34,7 +43,6 @@ class ProfileCollectionViewCell: UICollectionViewCell {
                 }
             }
 
-            AppDelegate.shared.window?.rootViewController = loginViewController
         } catch let signOutError as NSError {
             print ("Error signing out: %@", signOutError)
         }
