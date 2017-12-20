@@ -10,6 +10,7 @@ import UIKit
 import IQKeyboardManager
 import SVProgressHUD
 import Firebase
+import KeychainSwift
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -62,24 +63,41 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         SVProgressHUD.setDefaultStyle(.light)
 
         SVProgressHUD.setDefaultMaskType(.clear)
-        
-        // TODO
-        QBRTCAudioSession.instance().initialize()
+
+        // Todo
+//        QBRTCAudioSession.instance().initialize()
 
         QBRequest.logOut(successBlock: nil, errorBlock: nil)
-
-//        if
-//            let user = Auth.auth().currentUser,
-//            let email = user.email {
-//
-        // Error
-//            QuickBlox.logInSync(withUserEmail: email, password: user.)
-//        }
 
         // IQKeyBoardManager
         IQKeyboardManager.shared().isEnabled = true
 
         IQKeyboardManager.shared().shouldResignOnTouchOutside = true
+
+        // MARK: Check if user signed in before
+        let keychain = KeychainSwift()
+
+        keychain.synchronizable = true
+
+        if Auth.auth().currentUser != nil {
+
+            guard let email = keychain.get("userEmail"),
+                  let password = keychain.get("userPassword")
+
+                else { return true }
+
+            QuickBlox.logInSync(
+
+                withUserEmail: email,
+
+                password: password
+            )
+        } else {
+
+            let registerViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "RegisterViewController")
+
+            self.window?.rootViewController = registerViewController
+        }
 
         return true
 
@@ -95,26 +113,22 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func applicationWillEnterForeground(_ application: UIApplication) {
 
-//        if QBChat.instance.isConnected == false {
-//
-//            SVProgressHUD.show(withStatus: NSLocalizedString("Connecting to communication service", comment: ""))
-//
-//            guard let user = Auth.auth().currentUser
-//
-//            else {
-//                    let registerViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "RegisterViewController")
-//
-//                    AppDelegate.shared.window?.rootViewController = registerViewController
-//
-//                    return
-//            }
-//
-        // Error for password
-//            QuickBlox.logInSync(withUserEmail: user.email!, password: user.uid)
-//
-////            UIApplication.shared.beginIgnoringInteractionEvents()
-//
-//        }
+        if QBChat.instance.isConnected == false {
+
+            SVProgressHUD.show(withStatus: NSLocalizedString("Connecting to communication service", comment: ""))
+
+            let keychain = KeychainSwift()
+
+            keychain.synchronizable = true
+
+            guard let email = keychain.get("userEmail"),
+                let password = keychain.get("userPassword")
+
+                else { return }
+
+            QuickBlox.logInSync(withUserEmail: email, password: password)
+
+        }
 
     }
 

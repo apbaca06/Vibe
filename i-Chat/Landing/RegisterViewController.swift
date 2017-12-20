@@ -11,6 +11,12 @@ import IQKeyboardManager
 import SwifterSwift
 
 class RegisterViewController: UIViewController {
+    @IBAction func toLoginButton(_ sender: Any) {
+
+        let loginViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "LogInViewController")
+
+        AppDelegate.shared.window?.rootViewController = loginViewController
+    }
 
     @IBOutlet weak var userName: UITextField!
 
@@ -42,7 +48,5 @@ class RegisterViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
     }
-
 }

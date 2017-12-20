@@ -185,7 +185,6 @@
 				37A5BBA31FE628A000C4F1E6 /* SwipingCollectionViewCell.xib */,
 				37A5BBA61FE628B900C4F1E6 /* ChatCollectionViewCell.swift */,
 				37A5BBA71FE628B900C4F1E6 /* ChatCollectionViewCell.xib */,
-				370832AC1FE283D800D4DC86 /* Landing */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -230,6 +229,7 @@
 				370832AE1FE2840E00D4DC86 /* Manager */,
 				37C0FF201FE7D26A002EACF3 /* Model */,
 				37C0FF1F1FE7D245002EACF3 /* Home */,
+				370832AC1FE283D800D4DC86 /* Landing */,
 				370832AD1FE283EB00D4DC86 /* ViewControllers */,
 				371459851FDFAABF00C1F14A /* Assets.xcassets */,
 				37C0FF491FE8BD34002EACF3 /* iphone.mp3 */,
@@ -409,6 +409,7 @@
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
 				"${BUILT_PRODUCTS_DIR}/IQKeyboardManager/IQKeyboardManager.framework",
+				"${BUILT_PRODUCTS_DIR}/KeychainSwift/KeychainSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/Koloda/Koloda.framework",
 				"${BUILT_PRODUCTS_DIR}/MZTimerLabel/MZTimerLabel.framework",
 				"${PODS_ROOT}/QuickBlox/Quickblox.framework",
@@ -423,6 +424,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IQKeyboardManager.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/KeychainSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Koloda.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MZTimerLabel.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Quickblox.framework",

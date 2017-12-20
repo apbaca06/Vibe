@@ -9,6 +9,7 @@
 import Foundation
 import Firebase
 import SVProgressHUD
+import KeychainSwift
 
 class FirebaseManager {
 
@@ -24,16 +25,21 @@ class FirebaseManager {
 
     static func logIn(withEmail email: String, withPassword password: String) {
 
-        Auth.auth().signIn(withEmail: email, password: password) { (firebaseUser, error) in
+        Auth.auth().signIn(withEmail: email, password: password) { (_, error) in
 
             if error == nil {
 
-                SVProgressHUD.show(withStatus: NSLocalizedString("Logging in...", comment: ""))
+                let keychain = KeychainSwift()
+
+                keychain.synchronizable = true
+
+                keychain.set(email, forKey: "userEmail")
+
+                keychain.set(password, forKey: "userPassword")
 
                 // MARK: Logged into Firebase successfully
-                guard
-                    let uuser = firebaseUser
-                else { return }
+
+                SVProgressHUD.show(withStatus: NSLocalizedString("Logging in...", comment: ""))
 
                 // MARK: Logged into Quickblox
                 QuickBlox.logInSync(
@@ -62,6 +68,12 @@ class FirebaseManager {
             // MARK: Signed up for Firebase successfully
             if error == nil {
 
+                let keychain = KeychainSwift()
+
+                keychain.set(email, forKey: "userEmail")
+
+                keychain.set(password, forKey: "userPassword")
+
                 guard
                     let user = firebaseUser
                 else { return }
@@ -72,7 +84,7 @@ class FirebaseManager {
             }
         }
     }
-    
+
 //    static func insertUserInfo(qbID:Int) {
 //        
 //        DatabasePath.userRef.childByAutoId().setPriority(<#T##priority: Any?##Any?#>)

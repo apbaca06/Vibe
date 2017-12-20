@@ -39,6 +39,7 @@ PODS:
   - GoogleToolboxForMac/NSString+URLArguments (2.1.3)
   - GTMSessionFetcher/Core (1.1.12)
   - IQKeyboardManager (5.0.7)
+  - KeychainSwift (10.0.0)
   - Koloda (4.3.1):
     - pop (~> 1.0)
   - leveldb-library (1.20)
@@ -72,6 +73,7 @@ DEPENDENCIES:
   - Firebase/Core
   - Firebase/Database
   - IQKeyboardManager
+  - KeychainSwift (~> 10.0)
   - Koloda
   - MZTimerLabel
   - QuickBlox
@@ -98,6 +100,7 @@ SPEC CHECKSUMS:
   GoogleToolboxForMac: 2501e2ad72a52eb3dfe7bd9aee7dad11b858bd20
   GTMSessionFetcher: ebaa1f79a5366922c1735f1566901f50beba23b7
   IQKeyboardManager: 0bfa4607d39924116b5c0c8b55b5d789288b5cba
+  KeychainSwift: f9f7910449a0c0fd2cabc889121530dd2c477c33
   Koloda: 0d39b2aa188ccd1fac48d752acaf9802e683c625
   leveldb-library: 08cba283675b7ed2d99629a4bc5fd052cd2bb6a5
   MZTimerLabel: cd9bfb9304540ef2a9e163384fca9c978f0dbf83
@@ -108,6 +111,6 @@ SPEC CHECKSUMS:
   SwifterSwift: 4d962b5d653760b85266832aff6ab6d08c1b7974
   SwiftLint: a014c92b4664e8b13f380f8640a51bb1733778ba
 
-PODFILE CHECKSUM: 5c909a7627b7c3363a39967c9f689aef01e98bcc
+PODFILE CHECKSUM: ba3b9cc3ee66b9de9e83a6cbef2adb531ee8d78e
 
 COCOAPODS: 1.3.1

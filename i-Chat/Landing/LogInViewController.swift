@@ -15,6 +15,12 @@ class LogInViewController: UIViewController {
 
     @IBOutlet weak var userPassword: UITextField!
 
+    @IBAction func toRegisterButton(_ sender: UIButton) {
+
+        let registerViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "RegisterViewController")
+
+        AppDelegate.shared.window?.rootViewController = registerViewController
+    }
     @IBAction func loginButton(_ sender: Any) {
 
         if !userEmail.isEmpty &&
@@ -35,7 +41,5 @@ class LogInViewController: UIViewController {
     }
     override func viewDidLoad() {
         super.viewDidLoad()
-
     }
-
 }

@@ -63,11 +63,6 @@ class QuickBlox {
             }
 
         }
-
-//        SVProgressHUD.show(withStatus: "Logging In")
-//
-//        SVProgressHUD.dismiss()
-
     }
 
     static func signUpSync(name: String, email: String, password: String) {
