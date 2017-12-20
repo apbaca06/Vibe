@@ -15,7 +15,7 @@ enum SettingComponent {
 
     // MARK: Case
 
-    case search, show, nottification, logout
+    case search, show, notification, logout
 
     // MARK: Property
 
@@ -31,7 +31,7 @@ enum SettingComponent {
 
             return NSLocalizedString("Show on app", comment: "")
 
-        case .nottification:
+        case .notification:
 
             return NSLocalizedString("Notification", comment: "")
 
@@ -54,7 +54,7 @@ class SettingTableViewController: UITableViewController {
     // MARK: Init
 
     init() {
-        self.components = [ .search, .show, .nottification, .logout]
+        self.components = [ .search, .show, .notification, .logout]
 
         super.init(style: .grouped)
     }
@@ -121,5 +121,79 @@ class SettingTableViewController: UITableViewController {
 
         tableView.rowHeight = UITableViewAutomaticDimension
     }
+    
+    // MARK: UITableViewDataSource
+    
+    override func numberOfSections(in tableView: UITableView) -> Int {
+        
+        return components.count
+        
+    }
+    
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        
+        let component = components[section]
+        
+        switch component {
+            
+        case .show, .logout, .notification, .search:
+            
+            return 1
+            
+        }
+        
+    }
+    
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        let component = components[indexPath.section]
+        
+        switch component {
+            
+        case .logout:
+            
+            // swiftlint:disable force_cast
+            let cell = tableView.dequeueReusableCell(
+                withIdentifier: "LogoutTableViewCell",
+                for: indexPath
+                ) as! LogoutTableViewCell
+            // swiftlint:enable force_cast
+            
+            return cell
+            
+        case .notification:
+            
+            // swiftlint:disable force_cast
+            let cell = tableView.dequeueReusableCell(
+                withIdentifier: "NotificationTableViewCell",
+                for: indexPath
+                ) as! NotificationTableViewCell
+            // swiftlint:enable force_cast
+            
+            return cell
+
+        case .show:
+            
+            // swiftlint:disable force_cast
+            let cell = tableView.dequeueReusableCell(
+                withIdentifier: "ShowTableViewCell",
+                for: indexPath
+                ) as! ShowTableViewCell
+            // swiftlint:enable force_cast
+
+            return cell
+        case .search:
+            
+            // swiftlint:disable force_cast
+            let cell = tableView.dequeueReusableCell(
+                withIdentifier: "SearchTableViewCell",
+                for: indexPath
+                ) as! SearchTableViewCell
+            // swiftlint:enable force_cast
+            
+            return cell
+        }
+    }
+
 
 }
