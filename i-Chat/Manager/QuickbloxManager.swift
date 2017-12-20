@@ -9,8 +9,9 @@
 import Foundation
 import UIKit
 import SVProgressHUD
+import Firebase
 
-class QuickBlox {
+class QuickbloxManager {
 
     static func logInSync(withUserEmail email: String, password: String) {
 
@@ -78,9 +79,14 @@ class QuickBlox {
 
         SVProgressHUD.show(withStatus: NSLocalizedString("Signing up...", comment: ""))
 
-        QBRequest.signUp(uuser, successBlock: { (response, error) in
+        QBRequest.signUp(uuser, successBlock: { (response, user) in
 
             SVProgressHUD.show(withStatus: NSLocalizedString("SignUp Successed", comment: ""))
+
+            DatabasePath.userRef.childByAutoId().setValue(["name": name,
+                                                           "email": email,
+                                                           "createdTime": user.lastRequestAt,
+                                                           "qbID": user.id])
 
             let layout = UICollectionViewFlowLayout()
 
@@ -91,6 +97,16 @@ class QuickBlox {
             SVProgressHUD.dismiss()
 
             error = response.error?.error
+
+            let user = Auth.auth().currentUser
+
+            user?.delete { error in
+                if let error = error {
+                    // An error happened.
+                } else {
+                    // Account deleted.
+                }
+            }
 
             DispatchQueue.main.async {
 

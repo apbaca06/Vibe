@@ -13,16 +13,6 @@ import KeychainSwift
 
 class FirebaseManager {
 
-    public struct DatabasePath {
-
-        public static let databaseRoot = Database.database().reference()
-
-        public static let userRef = databaseRoot.child("users")
-
-        public static let userFriendRef = databaseRoot.child("user_friend")
-
-    }
-
     static func logIn(withEmail email: String, withPassword password: String) {
 
         Auth.auth().signIn(withEmail: email, password: password) { (_, error) in
@@ -42,7 +32,7 @@ class FirebaseManager {
                 SVProgressHUD.show(withStatus: NSLocalizedString("Logging in...", comment: ""))
 
                 // MARK: Logged into Quickblox
-                QuickBlox.logInSync(
+                QuickbloxManager.logInSync(
 
                     withUserEmail: email,
 
@@ -79,7 +69,7 @@ class FirebaseManager {
                 else { return }
 
                 // MARK: Signed up for Quickblox
-                QuickBlox.signUpSync(name: name, email: email, password: password)
+                QuickbloxManager.signUpSync(name: name, email: email, password: password)
 
             }
         }

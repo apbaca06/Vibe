@@ -65,9 +65,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         SVProgressHUD.setDefaultMaskType(.clear)
 
         // Todo
-//        QBRTCAudioSession.instance().initialize()
-
-        QBRequest.logOut(successBlock: nil, errorBlock: nil)
+        QBRTCAudioSession.instance().initialize()
 
         // IQKeyBoardManager
         IQKeyboardManager.shared().isEnabled = true
@@ -79,6 +77,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
         keychain.synchronizable = true
 
+        print("***", Auth.auth().currentUser)
+        print("***", QBSession.current.currentUser)
+
         if Auth.auth().currentUser != nil {
 
             guard let email = keychain.get("userEmail"),
@@ -86,7 +87,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
                 else { return true }
 
-            QuickBlox.logInSync(
+            QuickbloxManager.logInSync(
 
                 withUserEmail: email,
 
@@ -94,9 +95,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             )
         } else {
 
-            let registerViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "RegisterViewController")
+            let loginViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "LogInViewController")
 
-            self.window?.rootViewController = registerViewController
+            AppDelegate.shared.window?.rootViewController = loginViewController
         }
 
         return true
@@ -126,7 +127,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
                 else { return }
 
-            QuickBlox.logInSync(withUserEmail: email, password: password)
+            QuickbloxManager.logInSync(withUserEmail: email, password: password)
 
         }
 

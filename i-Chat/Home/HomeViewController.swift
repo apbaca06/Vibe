@@ -28,7 +28,7 @@ class HomeViewController: UICollectionViewController, UICollectionViewDelegateFl
         setupMenuBar()
 
         setupNibCell()
-        
+
         scrollToMenuIndex(1)
 
     }

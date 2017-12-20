@@ -35,8 +35,9 @@
 		371459B51FDFB16900C1F14A /* APIKey.plist in Resources */ = {isa = PBXBuildFile; fileRef = 371459B41FDFB16900C1F14A /* APIKey.plist */; };
 		371459B91FDFD11100C1F14A /* Chat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 371459B81FDFD11100C1F14A /* Chat.swift */; };
 		3717DD221FE66E35003CD462 /* HomeComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3717DD211FE66E35003CD462 /* HomeComponent.swift */; };
+		373DB9F71FEA3F480041E34E /* DatabasePath.swift in Sources */ = {isa = PBXBuildFile; fileRef = 373DB9F61FEA3F480041E34E /* DatabasePath.swift */; };
 		3754E2881FE122E4002604CD /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3754E2871FE122E4002604CD /* RegisterViewController.swift */; };
-		3754E28A1FE12809002604CD /* QuickBlox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3754E2891FE12809002604CD /* QuickBlox.swift */; };
+		3754E28A1FE12809002604CD /* QuickbloxManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3754E2891FE12809002604CD /* QuickbloxManager.swift */; };
 		375F04B61FE3A73A009D2671 /* MenuBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 375F04B51FE3A739009D2671 /* MenuBar.swift */; };
 		375F04B81FE3A787009D2671 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 375F04B71FE3A787009D2671 /* HomeViewController.swift */; };
 		37A5BB9B1FE61CE200C4F1E6 /* MenuCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37A5BB9A1FE61CE200C4F1E6 /* MenuCell.swift */; };
@@ -55,6 +56,7 @@
 		37CA181E1FE2221500C1171B /* FirebaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37CA181D1FE2221500C1171B /* FirebaseManager.swift */; };
 		37CA18201FE2304100C1171B /* AudioViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37CA181F1FE2304100C1171B /* AudioViewController.swift */; };
 		37CA18221FE2397100C1171B /* ChatroomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37CA18211FE2397100C1171B /* ChatroomViewController.swift */; };
+		37DE5F861FEA43080017E09D /* DateFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37DE5F851FEA43080017E09D /* DateFormatter.swift */; };
 		E4208C9E7E17D4FB2656038F /* Pods_i_Chat.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 813BB42A75F2B98DC83AC0E3 /* Pods_i_Chat.framework */; };
 /* End PBXBuildFile section */
 
@@ -102,8 +104,9 @@
 		371459B41FDFB16900C1F14A /* APIKey.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = APIKey.plist; sourceTree = "<group>"; };
 		371459B81FDFD11100C1F14A /* Chat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Chat.swift; sourceTree = "<group>"; };
 		3717DD211FE66E35003CD462 /* HomeComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeComponent.swift; sourceTree = "<group>"; };
+		373DB9F61FEA3F480041E34E /* DatabasePath.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabasePath.swift; sourceTree = "<group>"; };
 		3754E2871FE122E4002604CD /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
-		3754E2891FE12809002604CD /* QuickBlox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuickBlox.swift; sourceTree = "<group>"; };
+		3754E2891FE12809002604CD /* QuickbloxManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuickbloxManager.swift; sourceTree = "<group>"; };
 		375F04B51FE3A739009D2671 /* MenuBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuBar.swift; sourceTree = "<group>"; };
 		375F04B71FE3A787009D2671 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		37A5BB9A1FE61CE200C4F1E6 /* MenuCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuCell.swift; sourceTree = "<group>"; };
@@ -123,6 +126,7 @@
 		37CA181D1FE2221500C1171B /* FirebaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseManager.swift; sourceTree = "<group>"; };
 		37CA181F1FE2304100C1171B /* AudioViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioViewController.swift; sourceTree = "<group>"; };
 		37CA18211FE2397100C1171B /* ChatroomViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatroomViewController.swift; sourceTree = "<group>"; };
+		37DE5F851FEA43080017E09D /* DateFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateFormatter.swift; sourceTree = "<group>"; };
 		498AF12EB1C3EB42182F2692 /* Pods-i-Chat.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-i-Chat.debug.xcconfig"; path = "Pods/Target Support Files/Pods-i-Chat/Pods-i-Chat.debug.xcconfig"; sourceTree = "<group>"; };
 		813BB42A75F2B98DC83AC0E3 /* Pods_i_Chat.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_i_Chat.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -192,10 +196,12 @@
 		370832AE1FE2840E00D4DC86 /* Manager */ = {
 			isa = PBXGroup;
 			children = (
-				3754E2891FE12809002604CD /* QuickBlox.swift */,
+				3754E2891FE12809002604CD /* QuickbloxManager.swift */,
+				37DE5F851FEA43080017E09D /* DateFormatter.swift */,
 				370832B51FE3800200D4DC86 /* CallManager.swift */,
 				37C0FF4B1FE8BE58002EACF3 /* RingtoneManager.swift */,
 				37CA181D1FE2221500C1171B /* FirebaseManager.swift */,
+				373DB9F61FEA3F480041E34E /* DatabasePath.swift */,
 			);
 			path = Manager;
 			sourceTree = "<group>";
@@ -479,6 +485,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				37DE5F861FEA43080017E09D /* DateFormatter.swift in Sources */,
 				371459811FDFAABF00C1F14A /* LogInViewController.swift in Sources */,
 				37C0FF1E1FE7A75E002EACF3 /* CallOutViewControllers.swift in Sources */,
 				3754E2881FE122E4002604CD /* RegisterViewController.swift in Sources */,
@@ -487,7 +494,7 @@
 				37C0FF4C1FE8BE58002EACF3 /* RingtoneManager.swift in Sources */,
 				370832B61FE3800200D4DC86 /* CallManager.swift in Sources */,
 				37A5BB9D1FE6223600C4F1E6 /* BaseCell.swift in Sources */,
-				3754E28A1FE12809002604CD /* QuickBlox.swift in Sources */,
+				3754E28A1FE12809002604CD /* QuickbloxManager.swift in Sources */,
 				37CA18221FE2397100C1171B /* ChatroomViewController.swift in Sources */,
 				370832B01FE2847F00D4DC86 /* IncomingCallViewController.swift in Sources */,
 				371459B91FDFD11100C1F14A /* Chat.swift in Sources */,
@@ -497,6 +504,7 @@
 				375F04B81FE3A787009D2671 /* HomeViewController.swift in Sources */,
 				3717DD221FE66E35003CD462 /* HomeComponent.swift in Sources */,
 				37A5BBA01FE6288500C4F1E6 /* ProfileCollectionViewCell.swift in Sources */,
+				373DB9F71FEA3F480041E34E /* DatabasePath.swift in Sources */,
 				370832B81FE3806700D4DC86 /* User.swift in Sources */,
 				37A5BB9B1FE61CE200C4F1E6 /* MenuCell.swift in Sources */,
 				37CA18201FE2304100C1171B /* AudioViewController.swift in Sources */,
