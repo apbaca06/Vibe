@@ -9,7 +9,15 @@
 import UIKit
 
 class ProfileCollectionViewCell: UICollectionViewCell {
-
+    @IBOutlet weak var toProfilePage: UIButton!
+    @IBAction func toSettingPage(_ sender: Any) {
+    }
+    @IBOutlet weak var ageLabel: UILabel!
+    @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet weak var profileImg: UIButton!
+    
+    @IBAction func changeImg(_ sender: Any) {
+    }
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
