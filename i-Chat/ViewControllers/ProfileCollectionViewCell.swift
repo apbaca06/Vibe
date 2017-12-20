@@ -26,9 +26,7 @@ class ProfileCollectionViewCell: UICollectionViewCell {
 
             // MARK: Quickblox Logout
             QBRequest.logOut(successBlock: { (_) in
-                SVProgressHUD.show(
-                    withStatus: NSLocalizedString("Log out successfully", comment: "")
-                )
+
             }, errorBlock: { (_) in
                 // Error handling
             })
