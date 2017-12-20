@@ -191,6 +191,8 @@ class HomeViewController: UICollectionViewController, UICollectionViewDelegateFl
 
             // swiftlint:enable force_cast
 
+            cell.toSettingButton.addTarget(self, action: #selector(toSettingPage), for: .touchUpInside)
+
             return cell
 
         } else if indexPath.item == 1 {
@@ -244,6 +246,13 @@ class HomeViewController: UICollectionViewController, UICollectionViewDelegateFl
         let callOutViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "CallOutViewController") as! CallOutViewController
         // swiftlint:enable force_cast
         self.present(callOutViewController, animated: true, completion: nil)
+    }
+
+    @objc func toSettingPage() {
+
+        let settingTableViewController = SettingTableViewController()
+
+        self.present(settingTableViewController, animated: true, completion: nil)
     }
 
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {

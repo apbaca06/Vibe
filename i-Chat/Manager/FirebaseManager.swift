@@ -12,7 +12,7 @@ import SVProgressHUD
 import KeychainSwift
 
 class FirebaseManager {
-    
+
     static var user = Auth.auth().currentUser
 
     static func logIn(withEmail email: String, withPassword password: String) {

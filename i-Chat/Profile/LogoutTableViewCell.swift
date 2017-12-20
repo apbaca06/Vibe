@@ -1,18 +1,17 @@
 //
-//  ProfileCollectionViewCell.swift
+//  LogoutTableViewCell.swift
 //  i-Chat
 //
-//  Created by cindy on 2017/12/17.
+//  Created by cindy on 2017/12/20.
 //  Copyright © 2017年 Jui-hsin.Chen. All rights reserved.
 //
 
 import UIKit
 import Firebase
-import SVProgressHUD
 
-class ProfileCollectionViewCell: UICollectionViewCell {
-    @IBOutlet weak var toProfilePage: UIButton!
-    @IBAction func toSettingPage(_ sender: Any) {
+class LogoutTableViewCell: UITableViewCell {
+
+    @IBAction func logoutAction(_ sender: Any) {
 
         let firebaseAuth = Auth.auth()
 
@@ -44,17 +43,16 @@ class ProfileCollectionViewCell: UICollectionViewCell {
         } catch let signOutError as NSError {
             print ("Error signing out: %@", signOutError)
         }
-
-    }
-    @IBOutlet weak var ageLabel: UILabel!
-    @IBOutlet weak var nameLabel: UILabel!
-    @IBOutlet weak var profileImg: UIButton!
-
-    @IBAction func changeImg(_ sender: Any) {
     }
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+    }
+
+    override func setSelected(_ selected: Bool, animated: Bool) {
+        super.setSelected(selected, animated: animated)
+
+        // Configure the view for the selected state
     }
 
 }

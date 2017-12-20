@@ -57,6 +57,15 @@
 		37CA18201FE2304100C1171B /* AudioViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37CA181F1FE2304100C1171B /* AudioViewController.swift */; };
 		37CA18221FE2397100C1171B /* ChatroomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37CA18211FE2397100C1171B /* ChatroomViewController.swift */; };
 		37DE5F861FEA43080017E09D /* DateFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37DE5F851FEA43080017E09D /* DateFormatter.swift */; };
+		37DE5F891FEA61D00017E09D /* SearchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37DE5F871FEA61D00017E09D /* SearchTableViewCell.swift */; };
+		37DE5F8A1FEA61D00017E09D /* SearchTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 37DE5F881FEA61D00017E09D /* SearchTableViewCell.xib */; };
+		37DE5F8D1FEA620A0017E09D /* SettingTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37DE5F8C1FEA620A0017E09D /* SettingTableViewController.swift */; };
+		37DE5F901FEA65860017E09D /* ShowTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37DE5F8E1FEA65860017E09D /* ShowTableViewCell.swift */; };
+		37DE5F911FEA65860017E09D /* ShowTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 37DE5F8F1FEA65860017E09D /* ShowTableViewCell.xib */; };
+		37DE5F941FEA65980017E09D /* NotificationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37DE5F921FEA65980017E09D /* NotificationTableViewCell.swift */; };
+		37DE5F951FEA65980017E09D /* NotificationTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 37DE5F931FEA65980017E09D /* NotificationTableViewCell.xib */; };
+		37DE5F981FEA65B30017E09D /* LogoutTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37DE5F961FEA65B30017E09D /* LogoutTableViewCell.swift */; };
+		37DE5F991FEA65B30017E09D /* LogoutTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 37DE5F971FEA65B30017E09D /* LogoutTableViewCell.xib */; };
 		E4208C9E7E17D4FB2656038F /* Pods_i_Chat.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 813BB42A75F2B98DC83AC0E3 /* Pods_i_Chat.framework */; };
 /* End PBXBuildFile section */
 
@@ -127,6 +136,15 @@
 		37CA181F1FE2304100C1171B /* AudioViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioViewController.swift; sourceTree = "<group>"; };
 		37CA18211FE2397100C1171B /* ChatroomViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatroomViewController.swift; sourceTree = "<group>"; };
 		37DE5F851FEA43080017E09D /* DateFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateFormatter.swift; sourceTree = "<group>"; };
+		37DE5F871FEA61D00017E09D /* SearchTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTableViewCell.swift; sourceTree = "<group>"; };
+		37DE5F881FEA61D00017E09D /* SearchTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchTableViewCell.xib; sourceTree = "<group>"; };
+		37DE5F8C1FEA620A0017E09D /* SettingTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingTableViewController.swift; sourceTree = "<group>"; };
+		37DE5F8E1FEA65860017E09D /* ShowTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowTableViewCell.swift; sourceTree = "<group>"; };
+		37DE5F8F1FEA65860017E09D /* ShowTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ShowTableViewCell.xib; sourceTree = "<group>"; };
+		37DE5F921FEA65980017E09D /* NotificationTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationTableViewCell.swift; sourceTree = "<group>"; };
+		37DE5F931FEA65980017E09D /* NotificationTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NotificationTableViewCell.xib; sourceTree = "<group>"; };
+		37DE5F961FEA65B30017E09D /* LogoutTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoutTableViewCell.swift; sourceTree = "<group>"; };
+		37DE5F971FEA65B30017E09D /* LogoutTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LogoutTableViewCell.xib; sourceTree = "<group>"; };
 		498AF12EB1C3EB42182F2692 /* Pods-i-Chat.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-i-Chat.debug.xcconfig"; path = "Pods/Target Support Files/Pods-i-Chat/Pods-i-Chat.debug.xcconfig"; sourceTree = "<group>"; };
 		813BB42A75F2B98DC83AC0E3 /* Pods_i_Chat.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_i_Chat.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -183,8 +201,6 @@
 				370832AF1FE2847F00D4DC86 /* IncomingCallViewController.swift */,
 				37C0FF1D1FE7A75E002EACF3 /* CallOutViewControllers.swift */,
 				37CA18211FE2397100C1171B /* ChatroomViewController.swift */,
-				37A5BB9E1FE6288500C4F1E6 /* ProfileCollectionViewCell.swift */,
-				37A5BB9F1FE6288500C4F1E6 /* ProfileCollectionViewCell.xib */,
 				37A5BBA21FE628A000C4F1E6 /* SwipingCollectionViewCell.swift */,
 				37A5BBA31FE628A000C4F1E6 /* SwipingCollectionViewCell.xib */,
 				37A5BBA61FE628B900C4F1E6 /* ChatCollectionViewCell.swift */,
@@ -236,6 +252,7 @@
 				37C0FF201FE7D26A002EACF3 /* Model */,
 				37C0FF1F1FE7D245002EACF3 /* Home */,
 				370832AC1FE283D800D4DC86 /* Landing */,
+				37DE5F8B1FEA61D50017E09D /* Profile */,
 				370832AD1FE283EB00D4DC86 /* ViewControllers */,
 				371459851FDFAABF00C1F14A /* Assets.xcassets */,
 				37C0FF491FE8BD34002EACF3 /* iphone.mp3 */,
@@ -282,6 +299,24 @@
 				370832B71FE3806700D4DC86 /* User.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		37DE5F8B1FEA61D50017E09D /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				37DE5F8C1FEA620A0017E09D /* SettingTableViewController.swift */,
+				37A5BB9E1FE6288500C4F1E6 /* ProfileCollectionViewCell.swift */,
+				37A5BB9F1FE6288500C4F1E6 /* ProfileCollectionViewCell.xib */,
+				37DE5F881FEA61D00017E09D /* SearchTableViewCell.xib */,
+				37DE5F871FEA61D00017E09D /* SearchTableViewCell.swift */,
+				37DE5F8E1FEA65860017E09D /* ShowTableViewCell.swift */,
+				37DE5F8F1FEA65860017E09D /* ShowTableViewCell.xib */,
+				37DE5F921FEA65980017E09D /* NotificationTableViewCell.swift */,
+				37DE5F931FEA65980017E09D /* NotificationTableViewCell.xib */,
+				37DE5F961FEA65B30017E09D /* LogoutTableViewCell.swift */,
+				37DE5F971FEA65B30017E09D /* LogoutTableViewCell.xib */,
+			);
+			path = Profile;
 			sourceTree = "<group>";
 		};
 		EF0351E21E5259D8657B3499 /* Frameworks */ = {
@@ -378,14 +413,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				371459891FDFAABF00C1F14A /* LaunchScreen.storyboard in Resources */,
+				37DE5F8A1FEA61D00017E09D /* SearchTableViewCell.xib in Resources */,
 				37A5BBA11FE6288500C4F1E6 /* ProfileCollectionViewCell.xib in Resources */,
 				37C0FF1C1FE7672C002EACF3 /* GoogleService-Info.plist in Resources */,
+				37DE5F991FEA65B30017E09D /* LogoutTableViewCell.xib in Resources */,
 				37A5BBA91FE628B900C4F1E6 /* ChatCollectionViewCell.xib in Resources */,
 				371459B51FDFB16900C1F14A /* APIKey.plist in Resources */,
 				371459861FDFAABF00C1F14A /* Assets.xcassets in Resources */,
 				37C0FF4A1FE8BD34002EACF3 /* iphone.mp3 in Resources */,
+				37DE5F951FEA65980017E09D /* NotificationTableViewCell.xib in Resources */,
 				37A5BBA51FE628A000C4F1E6 /* SwipingCollectionViewCell.xib in Resources */,
 				371459841FDFAABF00C1F14A /* Main.storyboard in Resources */,
+				37DE5F911FEA65860017E09D /* ShowTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -485,6 +524,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				37DE5F941FEA65980017E09D /* NotificationTableViewCell.swift in Sources */,
 				37DE5F861FEA43080017E09D /* DateFormatter.swift in Sources */,
 				371459811FDFAABF00C1F14A /* LogInViewController.swift in Sources */,
 				37C0FF1E1FE7A75E002EACF3 /* CallOutViewControllers.swift in Sources */,
@@ -496,15 +536,19 @@
 				37A5BB9D1FE6223600C4F1E6 /* BaseCell.swift in Sources */,
 				3754E28A1FE12809002604CD /* QuickbloxManager.swift in Sources */,
 				37CA18221FE2397100C1171B /* ChatroomViewController.swift in Sources */,
+				37DE5F981FEA65B30017E09D /* LogoutTableViewCell.swift in Sources */,
 				370832B01FE2847F00D4DC86 /* IncomingCallViewController.swift in Sources */,
 				371459B91FDFD11100C1F14A /* Chat.swift in Sources */,
 				37CA181E1FE2221500C1171B /* FirebaseManager.swift in Sources */,
+				37DE5F8D1FEA620A0017E09D /* SettingTableViewController.swift in Sources */,
+				37DE5F901FEA65860017E09D /* ShowTableViewCell.swift in Sources */,
 				37A5BBDF1FE6313000C4F1E6 /* HomeViewControllerExtension.swift in Sources */,
 				37A5BBA41FE628A000C4F1E6 /* SwipingCollectionViewCell.swift in Sources */,
 				375F04B81FE3A787009D2671 /* HomeViewController.swift in Sources */,
 				3717DD221FE66E35003CD462 /* HomeComponent.swift in Sources */,
 				37A5BBA01FE6288500C4F1E6 /* ProfileCollectionViewCell.swift in Sources */,
 				373DB9F71FEA3F480041E34E /* DatabasePath.swift in Sources */,
+				37DE5F891FEA61D00017E09D /* SearchTableViewCell.swift in Sources */,
 				370832B81FE3806700D4DC86 /* User.swift in Sources */,
 				37A5BB9B1FE61CE200C4F1E6 /* MenuCell.swift in Sources */,
 				37CA18201FE2304100C1171B /* AudioViewController.swift in Sources */,

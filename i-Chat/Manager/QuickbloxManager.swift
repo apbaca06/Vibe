@@ -32,10 +32,10 @@ class QuickbloxManager {
             QBChat.instance.connect(with: uuser!, completion: { (error) in
 
                 if error == nil {
-                    
+
                     if let firebaseUser = Auth.auth().currentUser {
-                    
-                        DatabasePath.userRef.child(firebaseUser.uid).updateChildValues(["lastLoginTime" : uuser?.lastRequestAt?.iso8601String])
+
+                        DatabasePath.userRef.child(firebaseUser.uid).updateChildValues(["lastLoginTime": uuser?.lastRequestAt?.iso8601String])
                     }
 
                     SVProgressHUD.show(withStatus: NSLocalizedString("Login Successfully", comment: ""))
@@ -88,12 +88,12 @@ class QuickbloxManager {
 
             SVProgressHUD.show(withStatus: NSLocalizedString("SignUp Successed", comment: ""))
             if let firebaseUser = Auth.auth().currentUser {
-                
+
                 DatabasePath.userRef.child(firebaseUser.uid).setValue(["name": name,
                                                            "email": email,
                                                            "qbID": user.id,
                                                            "createdTime": user.createdAt?.iso8601String,
-                                                           "lastLoginTime" : user.lastRequestAt?.iso8601String])
+                                                           "lastLoginTime": user.lastRequestAt?.iso8601String])
             }
             let layout = UICollectionViewFlowLayout()
 

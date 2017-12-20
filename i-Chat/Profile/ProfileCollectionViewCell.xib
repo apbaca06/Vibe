@@ -57,9 +57,6 @@
                             <constraint firstAttribute="width" constant="50" id="xPG-NS-CJH"/>
                         </constraints>
                         <state key="normal" image="settings"/>
-                        <connections>
-                            <action selector="toSettingPage:" destination="gTV-IL-0wX" eventType="touchUpInside" id="ngV-nH-Esz"/>
-                        </connections>
                     </button>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7Zz-T9-AMT">
                         <rect key="frame" x="166" y="292" width="50" height="50"/>
@@ -91,6 +88,7 @@
                 <outlet property="nameLabel" destination="Z7J-zN-83O" id="YHc-AG-py3"/>
                 <outlet property="profileImg" destination="fgN-G9-I90" id="x5I-tL-lzA"/>
                 <outlet property="toProfilePage" destination="7Zz-T9-AMT" id="kcU-p5-yij"/>
+                <outlet property="toSettingButton" destination="R8S-Qj-t1Q" id="QEa-gd-xiG"/>
             </connections>
             <point key="canvasLocation" x="10.5" y="139.5"/>
         </collectionViewCell>
