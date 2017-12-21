@@ -27,14 +27,6 @@ class FirebaseManager {
 
             if error == nil {
 
-                let keychain = KeychainSwift()
-
-                keychain.synchronizable = true
-
-                keychain.set(email, forKey: "userEmail")
-
-                keychain.set(password, forKey: "userPassword")
-
                 // MARK: Logged into Firebase successfully
 
                 SVProgressHUD.show(withStatus: NSLocalizedString("Logging in...", comment: ""))

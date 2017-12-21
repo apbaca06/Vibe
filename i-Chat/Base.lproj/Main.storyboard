@@ -309,17 +309,28 @@
                                     <outletCollection property="gestureRecognizers" destination="XEB-Bf-fNe" appends="YES" id="axr-Ym-BWS"/>
                                 </connections>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="62u-Ml-wbU">
+                                <rect key="frame" x="82.666666666666671" y="601" width="248.66666666666663" height="30"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="dismissController:" destination="uFu-hP-bQh" eventType="touchUpInside" id="A4y-21-DYF"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="p4i-vV-ftj" firstAttribute="height" secondItem="TB5-9h-G2m" secondAttribute="height" multiplier="0.5" id="1QP-tS-cpc"/>
+                            <constraint firstItem="62u-Ml-wbU" firstAttribute="width" secondItem="TB5-9h-G2m" secondAttribute="width" multiplier="0.6" id="64S-d6-Jxh"/>
                             <constraint firstItem="p4i-vV-ftj" firstAttribute="top" secondItem="UlC-JP-mXO" secondAttribute="top" id="J1s-ZS-k7j"/>
                             <constraint firstItem="p4i-vV-ftj" firstAttribute="leading" secondItem="UlC-JP-mXO" secondAttribute="leading" id="WBE-E6-vTV"/>
+                            <constraint firstItem="62u-Ml-wbU" firstAttribute="centerX" secondItem="UlC-JP-mXO" secondAttribute="centerX" id="bZ0-1b-xep"/>
                             <constraint firstItem="UlC-JP-mXO" firstAttribute="trailing" secondItem="p4i-vV-ftj" secondAttribute="trailing" id="lHL-17-H23"/>
+                            <constraint firstItem="UlC-JP-mXO" firstAttribute="bottom" secondItem="62u-Ml-wbU" secondAttribute="bottom" constant="105" id="wNA-Me-qWv"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="UlC-JP-mXO"/>
                     </view>
                     <connections>
+                        <outlet property="dismissButton" destination="62u-Ml-wbU" id="1lZ-Yd-3yB"/>
                         <outlet property="imgView" destination="p4i-vV-ftj" id="jG6-Z2-h3i"/>
                     </connections>
                 </viewController>
@@ -330,7 +341,7 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="1946" y="1584"/>
+            <point key="canvasLocation" x="1944.9275362318842" y="1583.967391304348"/>
         </scene>
         <!--Call Out View Controller-->
         <scene sceneID="J3f-TP-VT7">

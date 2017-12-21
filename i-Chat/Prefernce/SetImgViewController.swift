@@ -8,9 +8,11 @@
 
 import Foundation
 import Firebase
+import FirebaseStorage
 
 class SetImgViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
+    @IBOutlet weak var dismissButton: UIButton!
     @IBOutlet weak var imgView: UIImageView!
 
     override func viewDidLoad() {
@@ -55,25 +57,43 @@ class SetImgViewController: UIViewController, UIImagePickerControllerDelegate, U
 
         imgView.contentMode = .scaleAspectFit
 
+        self.dismiss(animated: true, completion: nil)
+
         // Points to the root reference
         let storageRef = Storage.storage().reference()
 
         // Points to "images"
-        let imagesRef = storageRef.child("images")
+        let imagesRef = storageRef.child("profileImg").child(FirebaseManager.uid)
 
-        // Points to "images/space.jpg"
-        // Note that you can use variables to create child values
-        let fileName = "space.jpg"
-        let spaceRef = imagesRef.child(fileName)
+        // Data in memory
+        let data: Data = UIImageJPEGRepresentation(selectedImage, 0.5)!
 
-        // File path is "images/space.jpg"
-        let path = spaceRef.fullPath
+        // Upload the file to the path "images/rivers.jpg"
+        let uploadTask = imagesRef.putData(data, metadata: nil) { (metadata, error) in
 
-        // File name is "space.jpg"
-        let name = spaceRef.name
+            guard let metadata = metadata
 
-        // Points to "images"
-        let images = spaceRef.parent()
+            else {
+                print(error)
+                return
+            }
+            // Metadata contains file metadata such as size, content-type, and download URL.
+            guard let downloadURL = metadata.downloadURL()
 
+                else { return }
+
+            print("***", downloadURL)
+            DatabasePath.userRef.child(FirebaseManager.uid).updateChildValues(["profileImgURL": "\(downloadURL)"])
+
+        }
+    }
+
+    @IBAction func dismissController(_ sender: Any) {
+
+        navigationController?.popToRootViewController(animated: true)
+
+        let layout = UICollectionViewFlowLayout()
+
+        AppDelegate.shared.window?.rootViewController = HomeViewController(collectionViewLayout: layout)
     }
 }
