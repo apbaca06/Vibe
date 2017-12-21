@@ -1,5 +1,5 @@
 //
-//  NotificationTableViewCell.swift
+//  SwitchTableViewCell.swift
 //  i-Chat
 //
 //  Created by cindy on 2017/12/20.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class NotificationTableViewCell: UITableViewCell {
+class SwitchTableViewCell: UITableViewCell {
 
     override func awakeFromNib() {
         super.awakeFromNib()

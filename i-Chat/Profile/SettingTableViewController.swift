@@ -15,7 +15,7 @@ enum SettingComponent {
 
     // MARK: Case
 
-    case search, show, notification, logout
+    case search, show, slider, logout
 
     // MARK: Property
 
@@ -31,7 +31,7 @@ enum SettingComponent {
 
             return NSLocalizedString("Show on app", comment: "")
 
-        case .notification:
+        case .slider:
 
             return NSLocalizedString("Notification", comment: "")
 
@@ -40,9 +40,42 @@ enum SettingComponent {
             return NSLocalizedString("Logout", comment: "")
 
         }
+    }
+}
+
+enum SearchComponent {
+
+    // MARK: Case
+
+    case location, maxDistance, gender, ageRange
+
+    // MARK: Property
+
+    static let count = 4
+
+    var localizedString: String {
+
+        switch self {
+
+        case .location:
+
+            return NSLocalizedString("Location", comment: "")
+
+        case .maxDistance:
+
+            return NSLocalizedString("Max Distance", comment: "")
+
+        case .gender:
+
+            return NSLocalizedString("Gender", comment: "")
+
+        case .ageRange:
+
+            return NSLocalizedString("Age Range", comment: "")
+
+        }
 
     }
-
 }
 
 class SettingTableViewController: UITableViewController {
@@ -54,7 +87,7 @@ class SettingTableViewController: UITableViewController {
     // MARK: Init
 
     init() {
-        self.components = [ .search, .show, .notification, .logout]
+        self.components = [ .search, .show, .slider, .logout]
 
         super.init(style: .grouped)
     }
@@ -96,13 +129,13 @@ class SettingTableViewController: UITableViewController {
 
         // Todo: better way to register cells
         let nib = UINib(
-            nibName: "SearchTableViewCell",
+            nibName: "SwitchTableViewCell",
             bundle: nil
         )
 
         tableView.register(
             nib,
-            forCellReuseIdentifier: "SearchTableViewCell"
+            forCellReuseIdentifier: "SwitchTableViewCell"
         )
 
         let nib2 = UINib(
@@ -116,13 +149,13 @@ class SettingTableViewController: UITableViewController {
         )
 
         let nib3 = UINib(
-            nibName: "NotificationTableViewCell",
+            nibName: "SliderTableViewCell",
             bundle: nil
         )
 
         tableView.register(
             nib3,
-            forCellReuseIdentifier: "NotificationTableViewCell"
+            forCellReuseIdentifier: "SliderTableViewCell"
         )
 
         let nib4 = UINib(
@@ -140,7 +173,6 @@ class SettingTableViewController: UITableViewController {
         tableView.rowHeight = UITableViewAutomaticDimension
     }
 
-
     // MARK: UITableViewDataSource
 
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -148,20 +180,20 @@ class SettingTableViewController: UITableViewController {
         return components.count
 
     }
-    
+
     override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        
+
         let component = components[section]
-        
+
         switch component {
-            
-        case .show, .logout, .notification, .search:
+
+        case .show, .logout, .slider, .search:
             return component.localizedString
-            
+
         }
-        
+
     }
-    
+
     override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         return 10
     }
@@ -172,7 +204,10 @@ class SettingTableViewController: UITableViewController {
 
         switch component {
 
-        case .show, .logout, .notification, .search:
+        case .search:
+            return SearchComponent.count
+
+        case .show, .logout, .slider :
 
             return 1
 
@@ -197,13 +232,13 @@ class SettingTableViewController: UITableViewController {
 
             return cell
 
-        case .notification:
+        case .slider:
 
             // swiftlint:disable force_cast
             let cell = tableView.dequeueReusableCell(
-                withIdentifier: "NotificationTableViewCell",
+                withIdentifier: "SliderTableViewCell",
                 for: indexPath
-                ) as! NotificationTableViewCell
+                ) as! SliderTableViewCell
             // swiftlint:enable force_cast
 
             return cell
