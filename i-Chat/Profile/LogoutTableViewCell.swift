@@ -44,9 +44,13 @@ class LogoutTableViewCell: UITableViewCell {
             print ("Error signing out: %@", signOutError)
         }
     }
+
+    @IBOutlet weak var logoutButton: UIButton!
+
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+
+        logoutButton.setTitleForAllStates(NSLocalizedString("Logout", comment: ""))
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

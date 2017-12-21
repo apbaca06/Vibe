@@ -193,6 +193,12 @@ class HomeViewController: UICollectionViewController, UICollectionViewDelegateFl
 
             cell.toSettingButton.addTarget(self, action: #selector(toSettingPage), for: .touchUpInside)
 
+            let longPressGestureRecognizer = UILongPressGestureRecognizer(target: self, action: #selector(changeImg))
+
+            cell.profileImg.isUserInteractionEnabled = true
+
+            cell.profileImg.addGestureRecognizer(longPressGestureRecognizer)
+
             return cell
 
         } else if indexPath.item == 1 {
@@ -246,15 +252,6 @@ class HomeViewController: UICollectionViewController, UICollectionViewDelegateFl
         // swiftlint:enable force_cast
 
         self.present(callOutViewController, animated: true, completion: nil)
-    }
-
-    @objc func toSettingPage() {
-
-        let settingTableViewController = SettingTableViewController()
-        let navSettingTableViewController = UINavigationController(rootViewController: settingTableViewController)
-
-        present(navSettingTableViewController, animated: true, completion: nil)
-
     }
 
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {

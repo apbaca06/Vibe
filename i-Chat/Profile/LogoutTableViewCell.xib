@@ -20,9 +20,9 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yJ2-RB-hm8">
-                        <rect key="frame" x="149.5" y="24" width="46" height="30"/>
+                        <rect key="frame" x="132.5" y="24" width="80" height="30"/>
                         <constraints>
-                            <constraint firstAttribute="width" constant="46" id="SXN-a4-pll"/>
+                            <constraint firstAttribute="width" constant="80" id="SXN-a4-pll"/>
                             <constraint firstAttribute="height" constant="30" id="lre-ur-7xt"/>
                         </constraints>
                         <state key="normal" title="Button"/>
@@ -37,6 +37,9 @@
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="logoutButton" destination="yJ2-RB-hm8" id="ayP-ru-Glj"/>
+            </connections>
             <point key="canvasLocation" x="46.5" y="84"/>
         </tableViewCell>
     </objects>

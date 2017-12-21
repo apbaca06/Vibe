@@ -70,11 +70,20 @@ class SettingTableViewController: UITableViewController {
 
         setUpTableView()
 
-        self.navigationItem.leftBarButtonItem = UIBarButtonItem.init(barButtonSystemItem: .stop, target: self, action: #selector(backToProfileCell))
-        print("***", self.navigationItem)
-        print("***", self.navigationController)
-//        (title: "Back", style: .done, target: self, action: #selector(backToProfileCell))
+        setupNavBar()
+    }
 
+    func setupNavBar() {
+
+        self.navigationItem.title = NSLocalizedString("Setting", comment: "")
+
+        self.navigationItem.leftBarButtonItem = UIBarButtonItem.init(
+            barButtonSystemItem: .stop,
+            target: self,
+            action: #selector(backToProfileCell)
+        )
+
+        tableView.contentInset = UIEdgeInsets(top: 20, left: 0, bottom: 0, right: 0)
     }
 
     @objc func backToProfileCell() {
@@ -129,6 +138,14 @@ class SettingTableViewController: UITableViewController {
         tableView.estimatedRowHeight = 44.0
 
         tableView.rowHeight = UITableViewAutomaticDimension
+    }
+
+    override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        return "yes"
+    }
+
+    override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 10
     }
 
     // MARK: UITableViewDataSource
