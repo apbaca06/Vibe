@@ -24,6 +24,10 @@ extension HomeViewController: CLLocationManagerDelegate {
 
         let settingTableViewController = SettingTableViewController()
 
+        settingTableViewController.location = locationManager.location
+
+        print(settingTableViewController.location, "***")
+
         let navSettingTableViewController = UINavigationController(rootViewController: settingTableViewController)
 
         present(navSettingTableViewController, animated: true, completion: nil)
@@ -44,11 +48,12 @@ extension HomeViewController: CLLocationManagerDelegate {
         locationManager.startUpdatingLocation()
 
         DatabasePath.userRef.child(FirebaseManager.uid).child("location").updateChildValues(["latitude": locationManager.location?.coordinate.latitude,
-                                                                                             "logitude": locationManager.location?.coordinate.longitude])
+                                                    "logitude": locationManager.location?.coordinate.longitude])
     }
 
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         let location = locations[0]
+        print("***", location)
 
         locationManager.stopUpdatingLocation()
     }

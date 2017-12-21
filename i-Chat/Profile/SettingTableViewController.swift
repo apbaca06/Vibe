@@ -8,6 +8,7 @@
 
 import Foundation
 import UIKit
+import CoreLocation
 
 // MARK: Component
 
@@ -84,6 +85,8 @@ class SettingTableViewController: UITableViewController {
 
     let components: [Component]
 
+    var location: CLLocation?
+
     // MARK: Init
 
     init() {
@@ -104,6 +107,8 @@ class SettingTableViewController: UITableViewController {
         setUpTableView()
 
         setupNavBar()
+
+        print("location***", location)
     }
 
     func setupNavBar() {

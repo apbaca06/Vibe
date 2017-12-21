@@ -12,11 +12,6 @@ import KeychainSwift
 import Firebase
 import CoreLocation
 
-protocol HomeViewControllerDelegate: class {
-
-    func currentLocation(_ manager: CLLocationManager, didGet location: CLLocation)
-}
-
 class HomeViewController: UICollectionViewController, UICollectionViewDelegateFlowLayout {
 
     let locationManager = CLLocationManager()
