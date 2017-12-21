@@ -39,37 +39,8 @@ class HomeViewController: UICollectionViewController, UICollectionViewDelegateFl
 
         scrollToMenuIndex(1)
 
-    }
-
-    func setupLocationManager() {
-
-        self.locationManager.delegate = self
-
-        self.locationManager.distanceFilter = kCLLocationAccuracyBest
-
-        self.locationManager.desiredAccuracy = kCLLocationAccuracyBest
-
-        locationManager.requestWhenInUseAuthorization()
-
-        locationManager.startUpdatingLocation()
-
-        print("***", locationManager)
-
-        print("***", locationManager.location?.coordinate)
-
-       print("***", FirebaseManager.uid)
-
-        DatabasePath.userRef.child(FirebaseManager.uid).child("location").updateChildValues(["latitude": locationManager.location?.coordinate.latitude,
-                                                                                             "logitude": locationManager.location?.coordinate.longitude])
-
-    }
-
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-
-        checkIfAllowTrackLocation()
-
         setupLocationManager()
+
     }
 
     func setupNibCell() {
@@ -113,7 +84,7 @@ class HomeViewController: UICollectionViewController, UICollectionViewDelegateFl
             flowLayout.minimumLineSpacing = 0
         }
 
-        collectionView?.backgroundColor = .gray
+        collectionView?.backgroundColor = .white
 
         collectionView?.register(
 

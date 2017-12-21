@@ -12,6 +12,7 @@ import Firebase
 
 extension HomeViewController: CLLocationManagerDelegate {
 
+    // MARK: Funtion for Profile Cell
     @objc func changeImg() {
 
         let imgPickerViewController = ImgPickerViewController()
@@ -29,28 +30,21 @@ extension HomeViewController: CLLocationManagerDelegate {
 
     }
 
-    func checkIfAllowTrackLocation() {
+    // MARK: Detect Location
+    func setupLocationManager() {
 
-//        // 1. 還沒有詢問過用戶以獲得權限
-//        if CLLocationManager.authorizationStatus() == .notDetermined {
-//
-//            if  CLLocationManager.locationServicesEnabled() {
-//
-//                locationManager.requestAlwaysAuthorization()
-//            }
-//        }
-//            // 2. 用戶不同意
-//        else if CLLocationManager.authorizationStatus() == .denied {
-//
-//            DispatchQueue.main.async {
-//                UIAlertController(title: NSLocalizedString("Please turn on permission for tracking", comment: ""), message: "Inorder to detect location", preferredStyle: .alert).show()
-//            }
-//        }
-//            // 3. 用戶已經同意
-//        else if CLLocationManager.authorizationStatus() == .authorizedAlways {
-//
-//            locationManager.startUpdatingLocation()
-//        }
+        self.locationManager.delegate = self
+
+        self.locationManager.distanceFilter = kCLLocationAccuracyBest
+
+        self.locationManager.desiredAccuracy = kCLLocationAccuracyBest
+
+        locationManager.requestWhenInUseAuthorization()
+
+        locationManager.startUpdatingLocation()
+
+        DatabasePath.userRef.child(FirebaseManager.uid).child("location").updateChildValues(["latitude": locationManager.location?.coordinate.latitude,
+                                                                                             "logitude": locationManager.location?.coordinate.longitude])
     }
 
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {

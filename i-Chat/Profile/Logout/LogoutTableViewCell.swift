@@ -8,12 +8,17 @@
 
 import UIKit
 import Firebase
+import KeychainSwift
 
 class LogoutTableViewCell: UITableViewCell {
+
+    let keychain = KeychainSwift()
 
     @IBAction func logoutAction(_ sender: Any) {
 
         let firebaseAuth = Auth.auth()
+
+        keychain.delete("uid")
 
         do {
             // MARK: Firebase Logout

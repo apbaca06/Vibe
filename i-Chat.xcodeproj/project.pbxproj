@@ -40,6 +40,9 @@
 		3754E28A1FE12809002604CD /* QuickbloxManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3754E2891FE12809002604CD /* QuickbloxManager.swift */; };
 		375F04B61FE3A73A009D2671 /* MenuBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 375F04B51FE3A739009D2671 /* MenuBar.swift */; };
 		375F04B81FE3A787009D2671 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 375F04B71FE3A787009D2671 /* HomeViewController.swift */; };
+		376C3FB81FEBA92900EAF188 /* GenderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 376C3FB71FEBA92900EAF188 /* GenderViewController.swift */; };
+		376C3FBA1FEBACF900EAF188 /* PreferenceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 376C3FB91FEBACF900EAF188 /* PreferenceViewController.swift */; };
+		376C3FBC1FEBAD9A00EAF188 /* SetImgViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 376C3FBB1FEBAD9A00EAF188 /* SetImgViewController.swift */; };
 		37A5BB9B1FE61CE200C4F1E6 /* MenuCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37A5BB9A1FE61CE200C4F1E6 /* MenuCell.swift */; };
 		37A5BB9D1FE6223600C4F1E6 /* BaseCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37A5BB9C1FE6223600C4F1E6 /* BaseCell.swift */; };
 		37A5BBA01FE6288500C4F1E6 /* ProfileCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37A5BB9E1FE6288500C4F1E6 /* ProfileCollectionViewCell.swift */; };
@@ -67,7 +70,7 @@
 		37DE5F981FEA65B30017E09D /* LogoutTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37DE5F961FEA65B30017E09D /* LogoutTableViewCell.swift */; };
 		37DE5F991FEA65B30017E09D /* LogoutTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 37DE5F971FEA65B30017E09D /* LogoutTableViewCell.xib */; };
 		37DE5F9B1FEB65D90017E09D /* ImgPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37DE5F9A1FEB65D90017E09D /* ImgPickerViewController.swift */; };
-		37DE5F9D1FEB67D60017E09D /* HomeForProfileCellExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37DE5F9C1FEB67D60017E09D /* HomeForProfileCellExtension.swift */; };
+		37DE5F9D1FEB67D60017E09D /* HomeForCellExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37DE5F9C1FEB67D60017E09D /* HomeForCellExtension.swift */; };
 		E4208C9E7E17D4FB2656038F /* Pods_i_Chat.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 813BB42A75F2B98DC83AC0E3 /* Pods_i_Chat.framework */; };
 /* End PBXBuildFile section */
 
@@ -120,6 +123,9 @@
 		3754E2891FE12809002604CD /* QuickbloxManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuickbloxManager.swift; sourceTree = "<group>"; };
 		375F04B51FE3A739009D2671 /* MenuBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuBar.swift; sourceTree = "<group>"; };
 		375F04B71FE3A787009D2671 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		376C3FB71FEBA92900EAF188 /* GenderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenderViewController.swift; sourceTree = "<group>"; };
+		376C3FB91FEBACF900EAF188 /* PreferenceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferenceViewController.swift; sourceTree = "<group>"; };
+		376C3FBB1FEBAD9A00EAF188 /* SetImgViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetImgViewController.swift; sourceTree = "<group>"; };
 		37A5BB9A1FE61CE200C4F1E6 /* MenuCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuCell.swift; sourceTree = "<group>"; };
 		37A5BB9C1FE6223600C4F1E6 /* BaseCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseCell.swift; sourceTree = "<group>"; };
 		37A5BB9E1FE6288500C4F1E6 /* ProfileCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -148,7 +154,7 @@
 		37DE5F961FEA65B30017E09D /* LogoutTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoutTableViewCell.swift; sourceTree = "<group>"; };
 		37DE5F971FEA65B30017E09D /* LogoutTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LogoutTableViewCell.xib; sourceTree = "<group>"; };
 		37DE5F9A1FEB65D90017E09D /* ImgPickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImgPickerViewController.swift; sourceTree = "<group>"; };
-		37DE5F9C1FEB67D60017E09D /* HomeForProfileCellExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeForProfileCellExtension.swift; sourceTree = "<group>"; };
+		37DE5F9C1FEB67D60017E09D /* HomeForCellExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeForCellExtension.swift; sourceTree = "<group>"; };
 		498AF12EB1C3EB42182F2692 /* Pods-i-Chat.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-i-Chat.debug.xcconfig"; path = "Pods/Target Support Files/Pods-i-Chat/Pods-i-Chat.debug.xcconfig"; sourceTree = "<group>"; };
 		813BB42A75F2B98DC83AC0E3 /* Pods_i_Chat.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_i_Chat.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -257,6 +263,7 @@
 				37C0FF1F1FE7D245002EACF3 /* Home */,
 				370832AC1FE283D800D4DC86 /* Landing */,
 				37DE5F8B1FEA61D50017E09D /* Profile */,
+				376C3FB61FEBA91600EAF188 /* Prefernce */,
 				370832AD1FE283EB00D4DC86 /* ViewControllers */,
 				371459851FDFAABF00C1F14A /* Assets.xcassets */,
 				37C0FF491FE8BD34002EACF3 /* iphone.mp3 */,
@@ -284,13 +291,23 @@
 			path = Extension;
 			sourceTree = "<group>";
 		};
+		376C3FB61FEBA91600EAF188 /* Prefernce */ = {
+			isa = PBXGroup;
+			children = (
+				376C3FB71FEBA92900EAF188 /* GenderViewController.swift */,
+				376C3FB91FEBACF900EAF188 /* PreferenceViewController.swift */,
+				376C3FBB1FEBAD9A00EAF188 /* SetImgViewController.swift */,
+			);
+			path = Prefernce;
+			sourceTree = "<group>";
+		};
 		37C0FF1F1FE7D245002EACF3 /* Home */ = {
 			isa = PBXGroup;
 			children = (
 				375F04B71FE3A787009D2671 /* HomeViewController.swift */,
 				3717DD211FE66E35003CD462 /* HomeComponent.swift */,
 				37A5BBDE1FE6313000C4F1E6 /* HomeForQuickBloxExtension.swift */,
-				37DE5F9C1FEB67D60017E09D /* HomeForProfileCellExtension.swift */,
+				37DE5F9C1FEB67D60017E09D /* HomeForCellExtension.swift */,
 				375F04B51FE3A739009D2671 /* MenuBar.swift */,
 				37A5BB9A1FE61CE200C4F1E6 /* MenuCell.swift */,
 				37A5BB9C1FE6223600C4F1E6 /* BaseCell.swift */,
@@ -567,10 +584,13 @@
 				371459811FDFAABF00C1F14A /* LogInViewController.swift in Sources */,
 				37C0FF1E1FE7A75E002EACF3 /* CallOutViewControllers.swift in Sources */,
 				3754E2881FE122E4002604CD /* RegisterViewController.swift in Sources */,
+				376C3FBC1FEBAD9A00EAF188 /* SetImgViewController.swift in Sources */,
 				37A5BBA81FE628B900C4F1E6 /* ChatCollectionViewCell.swift in Sources */,
 				375F04B61FE3A73A009D2671 /* MenuBar.swift in Sources */,
 				37C0FF4C1FE8BE58002EACF3 /* RingtoneManager.swift in Sources */,
 				370832B61FE3800200D4DC86 /* CallManager.swift in Sources */,
+				376C3FBA1FEBACF900EAF188 /* PreferenceViewController.swift in Sources */,
+				376C3FB81FEBA92900EAF188 /* GenderViewController.swift in Sources */,
 				37A5BB9D1FE6223600C4F1E6 /* BaseCell.swift in Sources */,
 				3754E28A1FE12809002604CD /* QuickbloxManager.swift in Sources */,
 				37CA18221FE2397100C1171B /* ChatroomViewController.swift in Sources */,
@@ -585,7 +605,7 @@
 				37DE5F9B1FEB65D90017E09D /* ImgPickerViewController.swift in Sources */,
 				375F04B81FE3A787009D2671 /* HomeViewController.swift in Sources */,
 				3717DD221FE66E35003CD462 /* HomeComponent.swift in Sources */,
-				37DE5F9D1FEB67D60017E09D /* HomeForProfileCellExtension.swift in Sources */,
+				37DE5F9D1FEB67D60017E09D /* HomeForCellExtension.swift in Sources */,
 				37A5BBA01FE6288500C4F1E6 /* ProfileCollectionViewCell.swift in Sources */,
 				373DB9F71FEA3F480041E34E /* DatabasePath.swift in Sources */,
 				37DE5F891FEA61D00017E09D /* SwitchTableViewCell.swift in Sources */,

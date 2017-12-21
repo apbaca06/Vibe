@@ -13,18 +13,12 @@ import KeychainSwift
 
 class FirebaseManager {
 
-//    static var user: User {
-//        if let newUser = Auth.auth().currentUser {
-//            return newUser
-//        }
-//    }
-
     static var uid: String = {
         if let user = Auth.auth().currentUser {
             let uid = user.uid
             return uid
         }
-        return ""
+        return "no uid"
     }()
 
     static func logIn(withEmail email: String, withPassword password: String) {
@@ -82,50 +76,13 @@ class FirebaseManager {
                     let user = firebaseUser
                 else { return }
 
+                keychain.set(user.uid, forKey: "uid")
+
                 // MARK: Signed up for Quickblox
                 QuickbloxManager.signUpSync(name: name, email: email, password: password)
 
             }
         }
     }
-
-//    static func insertUserInfo(qbID:Int) {
-//        
-//        DatabasePath.userRef.childByAutoId().setPriority(<#T##priority: Any?##Any?#>)
-//
-//    }
-//    
-//    static func requestUserInfo(user: User) {
-//        
-//        DatabasePath.userRef.observe(.value) { (snapshot) in
-//            <#code#>
-//        }
-//
-//        userMessageReference.observe(.childAdded, with: { (snapshot) in
-//            let messageId = snapshot.key
-//            let messagesRef = FirebaseRef.databaseMessages.child(messageId)
-//            messagesRef.observe(.value, with: { (snapshot) in
-//                guard
-//                    let messageObject = snapshot.value as? [String: AnyObject]
-//                    else { return }
-//        messageReference.updateChildValues(values) { (error, _) in
-//            if error != nil {
-//                print(error!)
-//                return
-//            }
-//            
-//            let messageId = messageReference.key
-//            let value = [messageId: 1]
-//            
-//            if self.isSeller {
-//                let storeID = self.store!.id
-//                let userMessageReference = FirebaseRef.databaseUserProductMessages.child(toID).child(productId)
-//                let storeProductMessageReference = FirebaseRef.databaseStoreProductMessages.child(storeID).child(productId).child(toID)
-//                
-//                userMessageReference.updateChildValues(value)
-//                storeProductMessageReference.updateChildValues(value)
-//            }
-//
-//    }
 
 }

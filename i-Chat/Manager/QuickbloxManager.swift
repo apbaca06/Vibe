@@ -84,9 +84,11 @@ class QuickbloxManager {
 
         SVProgressHUD.show(withStatus: NSLocalizedString("Signing up...", comment: ""))
 
-        QBRequest.signUp(uuser, successBlock: { (response, user) in
+        let navGenderViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "Nav")
 
-            SVProgressHUD.show(withStatus: NSLocalizedString("SignUp Successed", comment: ""))
+        AppDelegate.shared.window?.rootViewController = navGenderViewController
+
+        QBRequest.signUp(uuser, successBlock: { (response, user) in
             if let firebaseUser = Auth.auth().currentUser {
 
                 DatabasePath.userRef.child(firebaseUser.uid).setValue(["name": name,
@@ -95,9 +97,11 @@ class QuickbloxManager {
                                                            "createdTime": user.createdAt?.iso8601String,
                                                            "lastLoginTime": user.lastRequestAt?.iso8601String])
             }
-            let layout = UICollectionViewFlowLayout()
 
-            AppDelegate.shared.window?.rootViewController = HomeViewController(collectionViewLayout: layout)
+            // TODO
+//            let layout = UICollectionViewFlowLayout()
+//
+//            AppDelegate.shared.window?.rootViewController = HomeViewController(collectionViewLayout: layout)
 
         }) { (response) in
 
