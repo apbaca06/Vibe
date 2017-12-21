@@ -238,21 +238,23 @@ class HomeViewController: UICollectionViewController, UICollectionViewDelegateFl
     }
 
     @objc func callOther() {
-        //切換到打電話畫面
 
         QBRTCAudioSession.instance().currentAudioDevice = .receiver
 
         // swiftlint:disable force_cast
         let callOutViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "CallOutViewController") as! CallOutViewController
         // swiftlint:enable force_cast
+
         self.present(callOutViewController, animated: true, completion: nil)
     }
 
     @objc func toSettingPage() {
 
         let settingTableViewController = SettingTableViewController()
+        let navSettingTableViewController = UINavigationController(rootViewController: settingTableViewController)
 
-        self.present(settingTableViewController, animated: true, completion: nil)
+        present(navSettingTableViewController, animated: true, completion: nil)
+
     }
 
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
@@ -260,5 +262,4 @@ class HomeViewController: UICollectionViewController, UICollectionViewDelegateFl
         return CGSize(width: view.frame.width, height: view.frame.height - 50)
 
     }
-
 }

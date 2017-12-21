@@ -70,6 +70,15 @@ class SettingTableViewController: UITableViewController {
 
         setUpTableView()
 
+        self.navigationItem.leftBarButtonItem = UIBarButtonItem.init(barButtonSystemItem: .stop, target: self, action: #selector(backToProfileCell))
+        print("***", self.navigationItem)
+        print("***", self.navigationController)
+//        (title: "Back", style: .done, target: self, action: #selector(backToProfileCell))
+
+    }
+
+    @objc func backToProfileCell() {
+        self.dismiss(animated: true, completion: nil)
     }
 
     // MARK: Set Up
@@ -121,59 +130,59 @@ class SettingTableViewController: UITableViewController {
 
         tableView.rowHeight = UITableViewAutomaticDimension
     }
-    
+
     // MARK: UITableViewDataSource
-    
+
     override func numberOfSections(in tableView: UITableView) -> Int {
-        
+
         return components.count
-        
+
     }
-    
+
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        
+
         let component = components[section]
-        
+
         switch component {
-            
+
         case .show, .logout, .notification, .search:
-            
+
             return 1
-            
+
         }
-        
+
     }
-    
+
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
+
         let component = components[indexPath.section]
-        
+
         switch component {
-            
+
         case .logout:
-            
+
             // swiftlint:disable force_cast
             let cell = tableView.dequeueReusableCell(
                 withIdentifier: "LogoutTableViewCell",
                 for: indexPath
                 ) as! LogoutTableViewCell
             // swiftlint:enable force_cast
-            
+
             return cell
-            
+
         case .notification:
-            
+
             // swiftlint:disable force_cast
             let cell = tableView.dequeueReusableCell(
                 withIdentifier: "NotificationTableViewCell",
                 for: indexPath
                 ) as! NotificationTableViewCell
             // swiftlint:enable force_cast
-            
+
             return cell
 
         case .show:
-            
+
             // swiftlint:disable force_cast
             let cell = tableView.dequeueReusableCell(
                 withIdentifier: "ShowTableViewCell",
@@ -183,17 +192,16 @@ class SettingTableViewController: UITableViewController {
 
             return cell
         case .search:
-            
+
             // swiftlint:disable force_cast
             let cell = tableView.dequeueReusableCell(
                 withIdentifier: "SearchTableViewCell",
                 for: indexPath
                 ) as! SearchTableViewCell
             // swiftlint:enable force_cast
-            
+
             return cell
         }
     }
-
 
 }
