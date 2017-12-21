@@ -16,6 +16,7 @@ target 'i-Chat' do
   pod 'Firebase/Core'
   pod 'Firebase/Auth'
   pod 'Firebase/Database'
+  pod 'Firebase/Storage'
   pod 'MZTimerLabel'
   pod 'KeychainSwift', '~> 10.0'
   pod 'Nuke'

@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import Firebase
 
 class SetImgViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
@@ -54,9 +55,25 @@ class SetImgViewController: UIViewController, UIImagePickerControllerDelegate, U
 
         imgView.contentMode = .scaleAspectFit
 
-        dismiss(animated: true, completion: nil)
+        // Points to the root reference
+        let storageRef = Storage.storage().reference()
 
-        dismiss(animated: true, completion: nil)
+        // Points to "images"
+        let imagesRef = storageRef.child("images")
+
+        // Points to "images/space.jpg"
+        // Note that you can use variables to create child values
+        let fileName = "space.jpg"
+        let spaceRef = imagesRef.child(fileName)
+
+        // File path is "images/space.jpg"
+        let path = spaceRef.fullPath
+
+        // File name is "space.jpg"
+        let name = spaceRef.name
+
+        // Points to "images"
+        let images = spaceRef.parent()
 
     }
 }

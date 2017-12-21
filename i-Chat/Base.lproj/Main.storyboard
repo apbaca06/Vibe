@@ -301,12 +301,12 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="p4i-vV-ftj">
+                            <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="p4i-vV-ftj">
                                 <rect key="frame" x="0.0" y="116" width="414" height="368"/>
                                 <color key="backgroundColor" red="1" green="0.43529412150000002" blue="0.81176471709999998" alpha="1" colorSpace="calibratedRGB"/>
                                 <gestureRecognizers/>
                                 <connections>
-                                    <outletCollection property="gestureRecognizers" destination="JlW-mo-GTf" appends="YES" id="PRE-Oi-sXZ"/>
+                                    <outletCollection property="gestureRecognizers" destination="XEB-Bf-fNe" appends="YES" id="axr-Ym-BWS"/>
                                 </connections>
                             </imageView>
                         </subviews>
@@ -324,10 +324,9 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="H1e-q5-rIu" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <tapGestureRecognizer id="JlW-mo-GTf">
+                <tapGestureRecognizer id="XEB-Bf-fNe">
                     <connections>
-                        <action selector="tapGesture:" destination="uFu-hP-bQh" id="A5w-Xt-Zwy"/>
-                        <outlet property="delegate" destination="uFu-hP-bQh" id="Zmo-V8-cP4"/>
+                        <action selector="tapGesture:" destination="uFu-hP-bQh" id="xBD-vH-ISM"/>
                     </connections>
                 </tapGestureRecognizer>
             </objects>
