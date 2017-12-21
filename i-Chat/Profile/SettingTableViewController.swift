@@ -140,13 +140,6 @@ class SettingTableViewController: UITableViewController {
         tableView.rowHeight = UITableViewAutomaticDimension
     }
 
-    override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return "yes"
-    }
-
-    override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return 10
-    }
 
     // MARK: UITableViewDataSource
 
@@ -154,6 +147,23 @@ class SettingTableViewController: UITableViewController {
 
         return components.count
 
+    }
+    
+    override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        
+        let component = components[section]
+        
+        switch component {
+            
+        case .show, .logout, .notification, .search:
+            return component.localizedString
+            
+        }
+        
+    }
+    
+    override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 10
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
