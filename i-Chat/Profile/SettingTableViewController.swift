@@ -15,7 +15,7 @@ enum SettingComponent {
 
     // MARK: Case
 
-    case search, show, slider, logout
+    case switchButton, show, slider, logout
 
     // MARK: Property
 
@@ -23,7 +23,7 @@ enum SettingComponent {
 
         switch self {
 
-        case .search:
+        case .switchButton:
 
             return NSLocalizedString("Search", comment: "")
 
@@ -87,7 +87,7 @@ class SettingTableViewController: UITableViewController {
     // MARK: Init
 
     init() {
-        self.components = [ .search, .show, .slider, .logout]
+        self.components = [ .switchButton, .show, .slider, .logout]
 
         super.init(style: .grouped)
     }
@@ -187,7 +187,7 @@ class SettingTableViewController: UITableViewController {
 
         switch component {
 
-        case .show, .logout, .slider, .search:
+        case .show, .logout, .slider, .switchButton:
             return component.localizedString
 
         }
@@ -204,7 +204,7 @@ class SettingTableViewController: UITableViewController {
 
         switch component {
 
-        case .search:
+        case .switchButton:
             return SearchComponent.count
 
         case .show, .logout, .slider :
@@ -253,13 +253,13 @@ class SettingTableViewController: UITableViewController {
             // swiftlint:enable force_cast
 
             return cell
-        case .search:
+        case .switchButton:
 
             // swiftlint:disable force_cast
             let cell = tableView.dequeueReusableCell(
-                withIdentifier: "SearchTableViewCell",
+                withIdentifier: "SwitchTableViewCell",
                 for: indexPath
-                ) as! SearchTableViewCell
+                ) as! SwitchTableViewCell
             // swiftlint:enable force_cast
 
             return cell

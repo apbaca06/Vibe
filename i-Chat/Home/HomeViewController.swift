@@ -10,8 +10,16 @@ import UIKit
 import SVProgressHUD
 import KeychainSwift
 import Firebase
+import CoreLocation
+
+protocol HomeViewControllerDelegate: class {
+
+    func currentLocation(_ manager: CLLocationManager, didGet location: CLLocation)
+}
 
 class HomeViewController: UICollectionViewController, UICollectionViewDelegateFlowLayout {
+
+    let locationManager = CLLocationManager()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,6 +39,31 @@ class HomeViewController: UICollectionViewController, UICollectionViewDelegateFl
 
         scrollToMenuIndex(1)
 
+        setupLocationManager()
+    }
+
+    func setupLocationManager() {
+
+        self.locationManager.delegate = self
+
+        self.locationManager.distanceFilter = kCLLocationAccuracyBest
+
+        self.locationManager.desiredAccuracy = kCLLocationAccuracyBest
+
+        locationManager.startUpdatingLocation()
+
+        print("***", locationManager.location?.coordinate)
+
+       print("***", FirebaseManager.uid)
+        DatabasePath.userRef.child(FirebaseManager.uid).child("location").updateChildValues(["latitude": locationManager.location?.coordinate.latitude,
+                                                                                             "logitude": locationManager.location?.coordinate.longitude])
+
+    }
+
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+
+        checkIfAllowTrackLocation()
     }
 
     func setupNibCell() {
@@ -198,6 +231,11 @@ class HomeViewController: UICollectionViewController, UICollectionViewDelegateFl
             cell.profileImg.isUserInteractionEnabled = true
 
             cell.profileImg.addGestureRecognizer(longPressGestureRecognizer)
+
+            if let currentLocation = locationManager.location {
+
+                cell.nameLabel.text = "\(currentLocation)"
+            }
 
             return cell
 

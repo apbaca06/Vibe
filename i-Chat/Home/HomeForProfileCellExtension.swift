@@ -7,8 +7,10 @@
 //
 
 import Foundation
+import CoreLocation
+import Firebase
 
-extension HomeViewController {
+extension HomeViewController: CLLocationManagerDelegate {
 
     @objc func changeImg() {
 
@@ -27,8 +29,33 @@ extension HomeViewController {
 
     }
 
-    @objc func toEditProfile() {
+    func checkIfAllowTrackLocation() {
 
+//        // 1. 還沒有詢問過用戶以獲得權限
+//        if CLLocationManager.authorizationStatus() == .notDetermined {
+//
+//            if  CLLocationManager.locationServicesEnabled() {
+//
+//                locationManager.requestAlwaysAuthorization()
+//            }
+//        }
+//            // 2. 用戶不同意
+//        else if CLLocationManager.authorizationStatus() == .denied {
+//
+//            DispatchQueue.main.async {
+//                UIAlertController(title: NSLocalizedString("Please turn on permission for tracking", comment: ""), message: "Inorder to detect location", preferredStyle: .alert).show()
+//            }
+//        }
+//            // 3. 用戶已經同意
+//        else if CLLocationManager.authorizationStatus() == .authorizedAlways {
+//
+//            locationManager.startUpdatingLocation()
+//        }
+    }
+
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+
+        locationManager.stopUpdatingLocation()
     }
 
 }

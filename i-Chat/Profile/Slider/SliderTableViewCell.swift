@@ -19,7 +19,7 @@ class SliderTableViewCell: UITableViewCell {
     @IBAction func changeSliderValue(_ sender: UISlider) {
 
         sliderRange.text = "\(Int(sender.value))"
-        
+
         if Int(sender.value) == 55 {
             sliderRange.text = "55+"
         }
