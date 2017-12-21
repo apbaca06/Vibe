@@ -39,7 +39,6 @@ class HomeViewController: UICollectionViewController, UICollectionViewDelegateFl
 
         scrollToMenuIndex(1)
 
-        setupLocationManager()
     }
 
     func setupLocationManager() {
@@ -50,11 +49,16 @@ class HomeViewController: UICollectionViewController, UICollectionViewDelegateFl
 
         self.locationManager.desiredAccuracy = kCLLocationAccuracyBest
 
+        locationManager.requestWhenInUseAuthorization()
+
         locationManager.startUpdatingLocation()
+
+        print("***", locationManager)
 
         print("***", locationManager.location?.coordinate)
 
        print("***", FirebaseManager.uid)
+
         DatabasePath.userRef.child(FirebaseManager.uid).child("location").updateChildValues(["latitude": locationManager.location?.coordinate.latitude,
                                                                                              "logitude": locationManager.location?.coordinate.longitude])
 
@@ -64,6 +68,8 @@ class HomeViewController: UICollectionViewController, UICollectionViewDelegateFl
         super.viewDidAppear(animated)
 
         checkIfAllowTrackLocation()
+
+        setupLocationManager()
     }
 
     func setupNibCell() {
