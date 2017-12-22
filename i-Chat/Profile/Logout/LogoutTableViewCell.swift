@@ -20,6 +20,10 @@ class LogoutTableViewCell: UITableViewCell {
 
         keychain.delete("uid")
 
+        keychain.delete("userEmail")
+
+        keychain.delete("userPassword")
+
         do {
             // MARK: Firebase Logout
             try firebaseAuth.signOut()

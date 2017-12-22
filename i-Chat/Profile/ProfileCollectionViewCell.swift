@@ -9,6 +9,7 @@
 import UIKit
 import Firebase
 import SVProgressHUD
+import Nuke
 
 class ProfileCollectionViewCell: UICollectionViewCell {
 
@@ -20,10 +21,19 @@ class ProfileCollectionViewCell: UICollectionViewCell {
 
     @IBOutlet weak var nameLabel: UILabel!
 
-    @IBOutlet weak var profileImg: UIButton!
+    @IBOutlet weak var profileImg: UIImageView!
 
     override func awakeFromNib() {
         super.awakeFromNib()
+            DatabasePath.userRef.child(FirebaseManager.uid).child("profileImgURL").observeSingleEvent(of: .value) { (datashot) in
+                if let dic = datashot.value  as? String,
+//                    let profileImgURLString = dic["profileImgURL"] as? String,
+                    let profileImgURL = URL(string: dic) as? URL {
+                    Manager.shared.loadImage(with: profileImgURL, into: self.profileImg)
+                    self.profileImg.contentMode = .scaleAspectFit
+                    self.reloadInputViews()
+                }
+        }
 
     }
 

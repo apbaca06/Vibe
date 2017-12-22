@@ -21,12 +21,6 @@
                 <rect key="frame" x="0.0" y="0.0" width="321" height="491"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
-                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fgN-G9-I90">
-                        <rect key="frame" x="0.0" y="0.0" width="321" height="245.5"/>
-                        <color key="backgroundColor" red="0.40000000600000002" green="0.40000000600000002" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                        <gestureRecognizers/>
-                        <state key="normal" image="answer"/>
-                    </button>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="R8S-Qj-t1Q">
                         <rect key="frame" x="82" y="409" width="50" height="50"/>
                         <constraints>
@@ -61,23 +55,28 @@
                         </constraints>
                         <state key="normal" image="pencil"/>
                     </button>
+                    <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_photo" translatesAutoresizingMaskIntoConstraints="NO" id="HiG-jV-3PV">
+                        <rect key="frame" x="0.0" y="0.0" width="321" height="250"/>
+                        <color key="backgroundColor" red="0.64705882349999999" green="0.66666666669999997" blue="0.69803921570000005" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="250" id="MRW-nc-yYb"/>
+                        </constraints>
+                    </imageView>
                 </subviews>
             </view>
             <constraints>
                 <constraint firstItem="ZTg-uK-7eu" firstAttribute="trailing" secondItem="7Zz-T9-AMT" secondAttribute="trailing" constant="47" id="5OY-Sl-TxB"/>
                 <constraint firstItem="7Zz-T9-AMT" firstAttribute="height" secondItem="gTV-IL-0wX" secondAttribute="height" multiplier="0.1" id="7cG-ZC-T2w"/>
-                <constraint firstAttribute="trailing" secondItem="fgN-G9-I90" secondAttribute="trailing" id="7ys-mc-gtw"/>
-                <constraint firstItem="fgN-G9-I90" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="A6V-T5-EnD"/>
-                <constraint firstItem="fgN-G9-I90" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="Cce-qU-YXH"/>
                 <constraint firstItem="ZTg-uK-7eu" firstAttribute="bottom" secondItem="7Zz-T9-AMT" secondAttribute="bottom" constant="33" id="ECu-rG-8ZQ"/>
+                <constraint firstItem="HiG-jV-3PV" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="EYY-gN-S6U"/>
                 <constraint firstItem="R8S-Qj-t1Q" firstAttribute="height" secondItem="gTV-IL-0wX" secondAttribute="height" multiplier="0.1" id="TPR-4T-f2V"/>
+                <constraint firstAttribute="trailing" secondItem="HiG-jV-3PV" secondAttribute="trailing" id="a1P-L9-prT"/>
                 <constraint firstItem="BfM-Nl-a8R" firstAttribute="centerX" secondItem="ZTg-uK-7eu" secondAttribute="centerX" id="dz0-rc-4Cm"/>
+                <constraint firstItem="HiG-jV-3PV" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="fOy-lA-Qia"/>
                 <constraint firstItem="ZTg-uK-7eu" firstAttribute="bottom" secondItem="R8S-Qj-t1Q" secondAttribute="bottom" constant="32" id="hm7-xf-Gjn"/>
+                <constraint firstItem="Z7J-zN-83O" firstAttribute="top" secondItem="HiG-jV-3PV" secondAttribute="bottom" constant="28" id="jAK-3b-qTQ"/>
                 <constraint firstItem="BfM-Nl-a8R" firstAttribute="height" secondItem="gTV-IL-0wX" secondAttribute="height" multiplier="0.1" id="jkR-ez-mxH"/>
-                <constraint firstItem="BfM-Nl-a8R" firstAttribute="top" secondItem="fgN-G9-I90" secondAttribute="bottom" constant="32.5" id="lMM-NB-4du"/>
                 <constraint firstItem="BfM-Nl-a8R" firstAttribute="width" secondItem="gTV-IL-0wX" secondAttribute="width" multiplier="0.7" id="ogX-OY-sF1"/>
-                <constraint firstItem="fgN-G9-I90" firstAttribute="centerX" secondItem="ZTg-uK-7eu" secondAttribute="centerX" id="rE2-kI-WIg"/>
-                <constraint firstItem="fgN-G9-I90" firstAttribute="height" secondItem="gTV-IL-0wX" secondAttribute="height" multiplier="0.5" id="rQ1-rU-LkI"/>
                 <constraint firstItem="R8S-Qj-t1Q" firstAttribute="leading" secondItem="ZTg-uK-7eu" secondAttribute="leading" constant="82" id="ydp-xA-ZdV"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
@@ -85,7 +84,7 @@
             <connections>
                 <outlet property="ageLabel" destination="Pn8-wk-cUg" id="eSW-qd-Kq8"/>
                 <outlet property="nameLabel" destination="Z7J-zN-83O" id="YHc-AG-py3"/>
-                <outlet property="profileImg" destination="fgN-G9-I90" id="x5I-tL-lzA"/>
+                <outlet property="profileImg" destination="HiG-jV-3PV" id="cZ8-Zc-wkk"/>
                 <outlet property="toProfilePage" destination="7Zz-T9-AMT" id="kcU-p5-yij"/>
                 <outlet property="toSettingButton" destination="R8S-Qj-t1Q" id="QEa-gd-xiG"/>
             </connections>
@@ -93,7 +92,7 @@
         </collectionViewCell>
     </objects>
     <resources>
-        <image name="answer" width="32" height="32"/>
+        <image name="icon_photo" width="44" height="44"/>
         <image name="pencil" width="32" height="32"/>
         <image name="settings" width="32" height="32"/>
     </resources>

@@ -24,9 +24,9 @@ extension HomeViewController: CLLocationManagerDelegate {
 
         let settingTableViewController = SettingTableViewController()
 
-        settingTableViewController.location = locationManager.location
+        settingTableViewController.cityName = self.cityName
 
-        print(settingTableViewController.location, "***")
+        print(settingTableViewController.cityName, "***")
 
         let navSettingTableViewController = UINavigationController(rootViewController: settingTableViewController)
 
@@ -49,6 +49,30 @@ extension HomeViewController: CLLocationManagerDelegate {
 
         DatabasePath.userRef.child(FirebaseManager.uid).child("location").updateChildValues(["latitude": locationManager.location?.coordinate.latitude,
                                                     "logitude": locationManager.location?.coordinate.longitude])
+
+        let geoCoder = CLGeocoder()
+
+        guard let location = locationManager.location
+
+            else { return }
+
+        geoCoder.reverseGeocodeLocation(location) { (placemarks, error) in
+
+            if error != nil {
+
+                print(error)
+                return
+            }
+            guard let existPlacemarks = placemarks
+                else { return }
+            let placemark = existPlacemarks[0] as CLPlacemark
+            let cityName = placemark.locality
+
+            guard let city = cityName
+                else { return }
+            self.cityName = city
+        }
+
     }
 
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {

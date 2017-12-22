@@ -23,9 +23,17 @@ class FirebaseManager {
 
     static func logIn(withEmail email: String, withPassword password: String) {
 
-        Auth.auth().signIn(withEmail: email, password: password) { (_, error) in
+        Auth.auth().signIn(withEmail: email, password: password) { (user, error) in
 
             if error == nil {
+
+                let keychain = KeychainSwift()
+
+                keychain.set(email, forKey: "userEmail")
+
+                keychain.set(password, forKey: "userPassword")
+
+                keychain.set((user?.uid)!, forKey: "uid")
 
                 // MARK: Logged into Firebase successfully
 
@@ -76,5 +84,21 @@ class FirebaseManager {
             }
         }
     }
+
+//    static func fetchFirstNode(nodeName: String) -> URL? {
+//        var urlString: URL?
+//        DatabasePath.userRef.child(nodeName).child("profileImgURL").observeSingleEvent(of: .value) { (datashot) in
+//            if let dic = datashot.value  as? [ String : Any ],
+//                let profileImgURLString = dic["profileImgURL"] as? String,
+//                let profileImgURL = URL(string: profileImgURLString) as? URL {
+//                    urlString = profileImgURL
+//            }
+//        }
+//        return urlString
+//    }
+//
+//    static func fetchStoragePic(pathName: String) {
+//    
+//    }
 
 }

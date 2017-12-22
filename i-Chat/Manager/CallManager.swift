@@ -21,6 +21,8 @@ class CallManager {
 
     func audioCall(toUser opponetUser: User) {
 
+        QBRTCAudioSession.instance().currentAudioDevice = .receiver
+
         let opponentsIDs: [NSNumber] = [opponetUser.quickbloxID]
 
         let newSession = QBRTCClient.instance().createNewSession(

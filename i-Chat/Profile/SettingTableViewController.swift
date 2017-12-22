@@ -85,7 +85,7 @@ class SettingTableViewController: UITableViewController {
 
     let components: [Component]
 
-    var location: CLLocation?
+    var cityName: String?
 
     // MARK: Init
 
@@ -108,7 +108,6 @@ class SettingTableViewController: UITableViewController {
 
         setupNavBar()
 
-        print("location***", location)
     }
 
     func setupNavBar() {
@@ -256,6 +255,8 @@ class SettingTableViewController: UITableViewController {
                 for: indexPath
                 ) as! ShowTableViewCell
             // swiftlint:enable force_cast
+
+            cell.rightLabel.text = self.cityName
 
             return cell
         case .switchButton:

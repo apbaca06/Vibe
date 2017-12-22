@@ -16,6 +16,8 @@ class HomeViewController: UICollectionViewController, UICollectionViewDelegateFl
 
     let locationManager = CLLocationManager()
 
+    var cityName: String?
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -203,11 +205,6 @@ class HomeViewController: UICollectionViewController, UICollectionViewDelegateFl
             cell.profileImg.isUserInteractionEnabled = true
 
             cell.profileImg.addGestureRecognizer(longPressGestureRecognizer)
-
-            if let currentLocation = locationManager.location {
-
-                cell.nameLabel.text = "\(currentLocation)"
-            }
 
             return cell
 
