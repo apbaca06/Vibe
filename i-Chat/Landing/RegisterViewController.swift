@@ -24,6 +24,10 @@ class RegisterViewController: UIViewController {
 
     @IBOutlet weak var userPassword: UITextField!
 
+    @IBOutlet weak var registerButton: UIButton!
+
+    @IBOutlet weak var loginButton: UIButton!
+
     @IBAction func registerButton(_ sender: UIButton) {
 
         if !userName.isEmpty &&
@@ -36,17 +40,70 @@ class RegisterViewController: UIViewController {
 
             let name = userName.text!
 
-            FirebaseManager.signUp(
-                name: name,
+            if email.isValidEmail() == true {
 
-                withEmail: email,
+                if password.charactersArray.count >= 8 {
 
-                withPassword: password
-            )
+                    FirebaseManager.signUp(
+                        name: name,
+
+                        withEmail: email,
+
+                        withPassword: password
+                    )
+                } else {
+
+                        let alert = UIAlertController(title: NSLocalizedString("Invalid Password", comment: ""), message: NSLocalizedString("Please have password longer than 8 characters!", comment: ""), preferredStyle: .alert)
+
+                        alert.addAction(title: NSLocalizedString("OK", comment: ""))
+
+                        alert.show()
+
+                }
+            } else {
+
+                    let alert = UIAlertController(title: NSLocalizedString("Invalid Email", comment: ""), message: NSLocalizedString("Please insert correct email!", comment: ""), preferredStyle: .alert)
+
+                    alert.addAction(title: NSLocalizedString("OK", comment: ""))
+
+                    alert.show()
+
+            }
+        } else {
+
+                let alert = UIAlertController(title: NSLocalizedString("Please Insert Content", comment: ""), message: NSLocalizedString("No blank are allowed for registeration!", comment: ""), preferredStyle: .alert)
+                alert.addAction(title: NSLocalizedString("OK", comment: ""))
+                alert.show()
+
         }
     }
 
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        setUpButton()
     }
+
+    func setUpButton() {
+
+        registerButton.cornerRadius = 10
+
+        loginButton.cornerRadius = 10
+    }
+}
+
+extension String {
+
+    func isValidEmail() -> Bool {
+
+        let emailRegEx = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,}"
+
+        let emailTest = NSPredicate(format: "SELF MATCHES %@", emailRegEx)
+
+        let result = emailTest.evaluate(with: self)
+
+        return result
+
+    }
+
 }
