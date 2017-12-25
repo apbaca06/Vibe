@@ -9,6 +9,7 @@
 import Foundation
 import UIKit
 import SVProgressHUD
+import Firebase
 
 class PreferenceViewController: UIViewController {
 
@@ -27,8 +28,16 @@ class PreferenceViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        maleButton.titleLabel?.text = NSLocalizedString("Male", comment: "")
-        womanButton.titleLabel?.text = NSLocalizedString("Woman", comment: "")
+    }
+
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+
+        SVProgressHUD.dismiss()
+
+        maleButton.cornerRadius = maleButton.bounds.width/2
+
+        womanButton.cornerRadius = womanButton.bounds.width/2
 
     }
 }

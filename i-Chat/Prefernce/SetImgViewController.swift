@@ -12,11 +12,20 @@ import FirebaseStorage
 
 class SetImgViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
+    @IBOutlet weak var descriptionLabel: UILabel!
     @IBOutlet weak var dismissButton: UIButton!
     @IBOutlet weak var imgView: UIImageView!
 
+    var profilePic: ProfileImage?
+
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        descriptionLabel.text = NSLocalizedString("Long press to add photo!", comment: "")
+
+        dismissButton.setTitle(NSLocalizedString("Go to chat!", comment: ""), for: .normal)
+
+        dismissButton.cornerRadius = 10
 
     }
 
@@ -36,6 +45,8 @@ class SetImgViewController: UIViewController, UIImagePickerControllerDelegate, U
 
             controller.sourceType = .photoLibrary
 
+            controller.allowsEditing = true
+
             self.present(controller, animated: true, completion: nil)
 
         }
@@ -45,15 +56,23 @@ class SetImgViewController: UIViewController, UIImagePickerControllerDelegate, U
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
 
         dismiss(animated: true, completion: nil)
+        let alert = UIAlertController(title: NSLocalizedString("Please select one photo", comment: ""), message: NSLocalizedString("For people to know you better", comment: ""), preferredStyle: .alert)
+
+        alert.addAction(title: NSLocalizedString("OK", comment: ""))
+
+        alert.show()
 
     }
 
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String: Any]) {
+
         guard
-            let selectedImage = info[UIImagePickerControllerOriginalImage] as? UIImage
+            let selectedImage = info[UIImagePickerControllerEditedImage] as? UIImage
             else { return }
 
-        imgView.image = selectedImage
+        profilePic = ProfileImage(profileImage: selectedImage)
+
+        imgView.image = profilePic?.profileImage
 
         imgView.contentMode = .scaleAspectFit
 
@@ -90,10 +109,21 @@ class SetImgViewController: UIViewController, UIImagePickerControllerDelegate, U
 
     @IBAction func dismissController(_ sender: Any) {
 
-        navigationController?.popToRootViewController(animated: true)
+        if profilePic?.profileImage != nil {
 
-        let layout = UICollectionViewFlowLayout()
+            navigationController?.popToRootViewController(animated: true)
 
-        AppDelegate.shared.window?.rootViewController = HomeViewController(collectionViewLayout: layout)
+            let layout = UICollectionViewFlowLayout()
+
+            AppDelegate.shared.window?.rootViewController = HomeViewController(collectionViewLayout: layout)
+
+        } else {
+
+            let alert = UIAlertController(title: NSLocalizedString("Please select one photo", comment: ""), message: NSLocalizedString("For people to know you better", comment: ""), preferredStyle: .alert)
+
+            alert.addAction(title: NSLocalizedString("OK", comment: ""))
+
+            alert.show()
+        }
     }
 }

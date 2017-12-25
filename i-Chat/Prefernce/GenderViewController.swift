@@ -13,6 +13,8 @@ import Firebase
 
 class GenderViewController: UIViewController {
 
+    @IBOutlet weak var decriptionLabel: UILabel!
+
     @IBOutlet weak var maleButton: UIButton!
 
     @IBOutlet weak var womanButton: UIButton!
@@ -30,13 +32,19 @@ class GenderViewController: UIViewController {
         super.viewDidLoad()
 
         SVProgressHUD.dismiss()
-        maleButton.titleLabel?.text = NSLocalizedString("Male", comment: "")
-        womanButton.titleLabel?.text = NSLocalizedString("Woman", comment: "")
+
+        decriptionLabel.text = NSLocalizedString("Please insert your gender", comment: "")
+        maleButton.tintColor = UIColor(red: 7/255.0, green: 160/255.0, blue: 195/255.0, alpha: 1)
 
     }
 
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         SVProgressHUD.dismiss()
+
+        maleButton.cornerRadius = maleButton.bounds.width/2
+
+        womanButton.cornerRadius = womanButton.bounds.width/2
+
     }
 }

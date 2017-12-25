@@ -35,6 +35,7 @@
 		371459B51FDFB16900C1F14A /* APIKey.plist in Resources */ = {isa = PBXBuildFile; fileRef = 371459B41FDFB16900C1F14A /* APIKey.plist */; };
 		371459B91FDFD11100C1F14A /* Chat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 371459B81FDFD11100C1F14A /* Chat.swift */; };
 		3717DD221FE66E35003CD462 /* HomeComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3717DD211FE66E35003CD462 /* HomeComponent.swift */; };
+		371E76C91FF0ED9A00EF7CB2 /* ProfileImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 371E76C81FF0ED9A00EF7CB2 /* ProfileImage.swift */; };
 		373DB9F71FEA3F480041E34E /* DatabasePath.swift in Sources */ = {isa = PBXBuildFile; fileRef = 373DB9F61FEA3F480041E34E /* DatabasePath.swift */; };
 		3754E2881FE122E4002604CD /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3754E2871FE122E4002604CD /* RegisterViewController.swift */; };
 		3754E28A1FE12809002604CD /* QuickbloxManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3754E2891FE12809002604CD /* QuickbloxManager.swift */; };
@@ -118,6 +119,7 @@
 		371459B41FDFB16900C1F14A /* APIKey.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = APIKey.plist; sourceTree = "<group>"; };
 		371459B81FDFD11100C1F14A /* Chat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Chat.swift; sourceTree = "<group>"; };
 		3717DD211FE66E35003CD462 /* HomeComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeComponent.swift; sourceTree = "<group>"; };
+		371E76C81FF0ED9A00EF7CB2 /* ProfileImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileImage.swift; sourceTree = "<group>"; };
 		373DB9F61FEA3F480041E34E /* DatabasePath.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabasePath.swift; sourceTree = "<group>"; };
 		3754E2871FE122E4002604CD /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		3754E2891FE12809002604CD /* QuickbloxManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuickbloxManager.swift; sourceTree = "<group>"; };
@@ -270,7 +272,6 @@
 				371459821FDFAABF00C1F14A /* Main.storyboard */,
 				371459871FDFAABF00C1F14A /* LaunchScreen.storyboard */,
 				3714598A1FDFAABF00C1F14A /* Info.plist */,
-				371459BB1FDFD9A200C1F14A /* Extension */,
 			);
 			path = "i-Chat";
 			sourceTree = "<group>";
@@ -282,13 +283,6 @@
 				37C0FF1B1FE7672C002EACF3 /* GoogleService-Info.plist */,
 			);
 			path = Key;
-			sourceTree = "<group>";
-		};
-		371459BB1FDFD9A200C1F14A /* Extension */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Extension;
 			sourceTree = "<group>";
 		};
 		376C3FB61FEBA91600EAF188 /* Prefernce */ = {
@@ -319,6 +313,7 @@
 			isa = PBXGroup;
 			children = (
 				370832B71FE3806700D4DC86 /* User.swift */,
+				371E76C81FF0ED9A00EF7CB2 /* ProfileImage.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -604,6 +599,7 @@
 				37DE5F901FEA65860017E09D /* ShowTableViewCell.swift in Sources */,
 				37A5BBDF1FE6313000C4F1E6 /* HomeForQuickBloxExtension.swift in Sources */,
 				37A5BBA41FE628A000C4F1E6 /* SwipingCollectionViewCell.swift in Sources */,
+				371E76C91FF0ED9A00EF7CB2 /* ProfileImage.swift in Sources */,
 				37DE5F9B1FEB65D90017E09D /* ImgPickerViewController.swift in Sources */,
 				375F04B81FE3A787009D2671 /* HomeViewController.swift in Sources */,
 				3717DD221FE66E35003CD462 /* HomeComponent.swift in Sources */,
