@@ -38,13 +38,18 @@ class GenderViewController: UIViewController {
 
     }
 
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-        SVProgressHUD.dismiss()
+    override func viewWillLayoutSubviews() {
+        super.viewWillLayoutSubviews()
 
         maleButton.cornerRadius = maleButton.bounds.width/2
 
         womanButton.cornerRadius = womanButton.bounds.width/2
+    }
+
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+
+        SVProgressHUD.dismiss()
 
     }
 }

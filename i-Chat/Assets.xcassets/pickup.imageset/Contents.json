@@ -2,17 +2,17 @@
   "images" : [
     {
       "idiom" : "universal",
-      "filename" : "icon_photo.png",
+      "filename" : "phone-call-4.png",
       "scale" : "1x"
     },
     {
       "idiom" : "universal",
-      "filename" : "icon_photo@2x.png",
+      "filename" : "phone-call-5.png",
       "scale" : "2x"
     },
     {
       "idiom" : "universal",
-      "filename" : "icon_photo@3x.png",
+      "filename" : "phone-call-6.png",
       "scale" : "3x"
     }
   ],

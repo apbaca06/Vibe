@@ -26,7 +26,7 @@ class MenuCell: BaseCell {
 
         didSet {
 
-            imageView.tintColor = isHighlighted ? UIColor.gray : UIColor(red: 244/255, green: 121/255, blue: 107/255, alpha: 1)
+            imageView.tintColor = isHighlighted ? UIColor(red: 240/255, green: 200/255, blue: 8/255, alpha: 1) : UIColor(red: 240/255, green: 200/255, blue: 8/255, alpha: 0.3)
 
         }
     }
@@ -35,7 +35,7 @@ class MenuCell: BaseCell {
 
         didSet {
 
-            imageView.tintColor = isSelected ? UIColor.gray : UIColor(red: 244/255, green: 121/255, blue: 107/255, alpha: 1)
+            imageView.tintColor = isSelected ? UIColor(red: 240/255, green: 200/255, blue: 8/255, alpha: 1) : UIColor(red: 240/255, green: 200/255, blue: 8/255, alpha: 0.3)
 
         }
 

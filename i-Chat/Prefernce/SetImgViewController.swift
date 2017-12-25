@@ -13,7 +13,9 @@ import FirebaseStorage
 class SetImgViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
     @IBOutlet weak var descriptionLabel: UILabel!
+
     @IBOutlet weak var dismissButton: UIButton!
+
     @IBOutlet weak var imgView: UIImageView!
 
     var profilePic: ProfileImage?
@@ -21,11 +23,19 @@ class SetImgViewController: UIViewController, UIImagePickerControllerDelegate, U
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        descriptionLabel.text = NSLocalizedString("Long press to add photo!", comment: "")
+        descriptionLabel.text = NSLocalizedString("Tap to add photo!", comment: "")
 
         dismissButton.setTitle(NSLocalizedString("Go to chat!", comment: ""), for: .normal)
 
         dismissButton.cornerRadius = 10
+
+        imgView.cornerRadius = 40
+
+        if #available(iOS 11.0, *) {
+            imgView.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMaxYCorner]
+        } else {
+            // Fallback on earlier versions
+        }
 
     }
 

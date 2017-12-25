@@ -95,10 +95,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             )
         } else {
 
-//            let loginViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "LogInViewController")
+            let loginViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "LogInViewController")
 
-           let nav = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "Nav")
-            AppDelegate.shared.window?.rootViewController = nav
+//           let nav = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "Nav")
+            AppDelegate.shared.window?.rootViewController = loginViewController
         }
 
         return true

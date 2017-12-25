@@ -17,7 +17,7 @@ class MenuBar: UIView, UICollectionViewDataSource, UICollectionViewDelegate, UIC
 
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
 
-        collectionView.backgroundColor = .black
+        collectionView.backgroundColor = .clear
 
         collectionView.dataSource = self
 
@@ -28,7 +28,7 @@ class MenuBar: UIView, UICollectionViewDataSource, UICollectionViewDelegate, UIC
 
     let cellId = "cellId"
 
-    let imageNames = ["settings", "search", "chat" ]
+    let imageNames = ["user", "cupid", "chat" ]
 
     var homeController: HomeViewController?
 
@@ -39,9 +39,9 @@ class MenuBar: UIView, UICollectionViewDataSource, UICollectionViewDelegate, UIC
 
         addSubview(collectionView)
 
-        addConstraints(withFormat: "H:|[v0]|", views: collectionView)
+        self.addConstraints(withFormat: "H:|[v0]|", views: collectionView)
 
-        addConstraints(withFormat: "V:|[v0]|", views: collectionView)
+        self.addConstraints(withFormat: "V:|[v0(50)]|", views: collectionView)
 
         let selectedIndexPath = IndexPath(item: 0, section: 0)
 
@@ -58,7 +58,7 @@ class MenuBar: UIView, UICollectionViewDataSource, UICollectionViewDelegate, UIC
 
         let horizontalBarView = UIView()
 
-        horizontalBarView.backgroundColor = UIColor(white: 0.95, alpha: 1)
+        horizontalBarView.backgroundColor = UIColor(red: 215/255.0, green: 38/255.0, blue: 56/255.0, alpha: 1)
 
         horizontalBarView.translatesAutoresizingMaskIntoConstraints = false
 
@@ -95,7 +95,7 @@ class MenuBar: UIView, UICollectionViewDataSource, UICollectionViewDelegate, UIC
 
         cell.imageView.image = UIImage(named: imageNames[indexPath.item])?.withRenderingMode(.alwaysTemplate)
 
-        cell.tintColor = .black
+        cell.tintColor = .white
 
         return cell
     }

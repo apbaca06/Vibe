@@ -23,13 +23,34 @@ class ProfileCollectionViewCell: UICollectionViewCell {
 
     @IBOutlet weak var profileImg: UIImageView!
 
+    @IBOutlet weak var profileDescription: UILabel!
+
+    @IBOutlet weak var settingDescription: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()
+
+        ageLabel.cornerRadius = ageLabel.bounds.width/2
+
+        profileDescription.text = NSLocalizedString("Profile", comment: "")
+
+        settingDescription.text = NSLocalizedString("Setting", comment: "")
+
+        profileImg.cornerRadius = 40
+
+        if #available(iOS 11.0, *) {
+            profileImg.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMaxYCorner]
+        } else {
+            // Fallback on earlier versions
+        }
+
             DatabasePath.userRef.child(FirebaseManager.uid).child("profileImgURL").observeSingleEvent(of: .value) { (datashot) in
                 if let profileImgString = datashot.value  as? String,
-                    let profileImgURL = URL(string: profileImgString) as? URL {
+                    let profileImgURL = URL(string: profileImgString) {
+
                     Manager.shared.loadImage(with: profileImgURL, into: self.profileImg)
+
                     self.profileImg.contentMode = .scaleAspectFit
+
                     self.reloadInputViews()
                 }
 
