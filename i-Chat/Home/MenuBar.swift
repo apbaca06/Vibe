@@ -39,9 +39,9 @@ class MenuBar: UIView, UICollectionViewDataSource, UICollectionViewDelegate, UIC
 
         addSubview(collectionView)
 
-        self.addConstraints(withFormat: "H:|[v0]|", views: collectionView)
+       self.addConstraints(withFormat: "H:|[v0]|", views: collectionView)
 
-        self.addConstraints(withFormat: "V:|[v0(50)]|", views: collectionView)
+       self.addConstraints(withFormat: "V:|[v0(70)]|", views: collectionView)
 
         let selectedIndexPath = IndexPath(item: 0, section: 0)
 
@@ -102,7 +102,7 @@ class MenuBar: UIView, UICollectionViewDataSource, UICollectionViewDelegate, UIC
 
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
 
-        return CGSize(width: frame.width / 3, height: frame.height)
+        return CGSize(width: frame.width / 3, height: frame.height - 20)
 
     }
 

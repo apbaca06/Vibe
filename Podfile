@@ -20,5 +20,6 @@ target 'i-Chat' do
   pod 'MZTimerLabel'
   pod 'KeychainSwift', '~> 10.0'
   pod 'Nuke'
+  pod 'RangeSeekSlider'
 
 end

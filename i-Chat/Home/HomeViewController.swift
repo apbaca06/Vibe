@@ -146,7 +146,7 @@ class HomeViewController: UICollectionViewController, UICollectionViewDelegateFl
 
         view.addConstraints(withFormat: "H:|[v0]|", views: menuBar)
 
-        view.addConstraints(withFormat: "V:[v0(50)]", views: menuBar)
+        view.addConstraints(withFormat: "V:|[v0(70)]|", views: menuBar)
 
         menuBar.topAnchor.constraint(equalTo: topLayoutGuide.bottomAnchor).isActive = true
     }
@@ -263,7 +263,7 @@ class HomeViewController: UICollectionViewController, UICollectionViewDelegateFl
 
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
 
-        return CGSize(width: view.frame.width, height: view.frame.height - 50)
+        return CGSize(width: view.frame.width, height: view.frame.height - 90)
 
     }
 }
