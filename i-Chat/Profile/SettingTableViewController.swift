@@ -16,7 +16,7 @@ enum SettingComponent {
 
     // MARK: Case
 
-    case switchButton, show, slider, logout
+    case search, show, slider, logout
 
     // MARK: Property
 
@@ -24,7 +24,7 @@ enum SettingComponent {
 
         switch self {
 
-        case .switchButton:
+        case .search:
 
             return NSLocalizedString("Search", comment: "")
 
@@ -79,7 +79,14 @@ enum SearchComponent {
     }
 }
 
-class SettingTableViewController: UITableViewController {
+class SettingTableViewController: UITableViewController, GenderPickerControllerDelegate {
+
+    func controller(_ controller: GenderPickerController, didSelect gender: String) {
+
+        self.gender = gender
+
+        tableView.reloadData()
+    }
 
     typealias Component = SettingComponent
 
@@ -87,10 +94,12 @@ class SettingTableViewController: UITableViewController {
 
     var cityName: String?
 
+    var gender: String?
+
     // MARK: Init
 
     init() {
-        self.components = [ .switchButton, .show, .slider, .logout]
+        self.components = [ .search, .show, .slider, .logout]
 
         super.init(style: .grouped)
     }
@@ -103,6 +112,10 @@ class SettingTableViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        GenderPickerController.shared.genderDelegate = self
+
+        print(GenderPickerController.shared)
 
         setUpTableView()
 
@@ -191,7 +204,7 @@ class SettingTableViewController: UITableViewController {
 
         switch component {
 
-        case .show, .logout, .slider, .switchButton:
+        case .show, .logout, .slider, .search:
             return component.localizedString
 
         }
@@ -208,8 +221,8 @@ class SettingTableViewController: UITableViewController {
 
         switch component {
 
-        case .switchButton:
-            return SearchComponent.count
+        case .search:
+            return 4
 
         case .show, .logout, .slider :
 
@@ -259,16 +272,56 @@ class SettingTableViewController: UITableViewController {
             cell.rightLabel.text = self.cityName
 
             return cell
-        case .switchButton:
+        case .search:
 
-            // swiftlint:disable force_cast
-            let cell = tableView.dequeueReusableCell(
-                withIdentifier: "SwitchTableViewCell",
-                for: indexPath
-                ) as! SwitchTableViewCell
-            // swiftlint:enable force_cast
+            switch indexPath.row {
+                case 0:
+                // swiftlint:disable force_cast
+                let cell = tableView.dequeueReusableCell(
+                    withIdentifier: "ShowTableViewCell",
+                    for: indexPath
+                    ) as! ShowTableViewCell
+                return cell
 
-            return cell
+            case 1:
+
+                let cell = tableView.dequeueReusableCell(
+                    withIdentifier: "SliderTableViewCell",
+                    for: indexPath
+                    ) as! SliderTableViewCell
+
+                cell.cellName.text = NSLocalizedString("Max Distance", comment: "")
+
+                let genderPickerViewController = GenderPickerController.shared
+
+                print(genderPickerViewController)
+
+                self.addChildViewController(genderPickerViewController)
+
+                cell.pickerView2.delegate = genderPickerViewController
+
+                cell.pickerView2.dataSource = genderPickerViewController
+
+//                cell.textfield.text = "male"
+
+//                if let gender = self.gender {
+
+                    cell.textfield.text = gender
+
+//                }
+
+                return cell
+
+            default:
+                let cell = tableView.dequeueReusableCell(
+                    withIdentifier: "SwitchTableViewCell",
+                    for: indexPath
+                    ) as! SwitchTableViewCell
+                // swiftlint:enable force_cast
+                cell.cellLabel.text = NSLocalizedString("Gender", comment: "")
+                return cell
+
+            }
         }
     }
 

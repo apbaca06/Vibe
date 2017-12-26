@@ -81,7 +81,7 @@ class HomeViewController: UICollectionViewController, UICollectionViewDelegateFl
             flowLayout.minimumLineSpacing = 0
         }
 
-        collectionView?.backgroundColor = .clear
+        collectionView?.backgroundColor = .black
 
         collectionView?.register(
 

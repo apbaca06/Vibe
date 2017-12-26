@@ -10,15 +10,15 @@ import UIKit
 
 class SwitchTableViewCell: UITableViewCell {
 
+    @IBOutlet weak var `switch`: UISwitch!
+
+    @IBOutlet weak var cellLabel: UILabel!
+
+    @IBAction func touchSwitch(_ sender: UISwitch) {
+    }
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
-    }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
     }
 
 }

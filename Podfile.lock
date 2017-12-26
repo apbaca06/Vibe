@@ -59,7 +59,6 @@ PODS:
   - Nuke (5.2)
   - pop (1.0.10)
   - QuickBlox (2.14)
-  - RangeSeekSlider (1.7.0)
   - SVProgressHUD (2.2.2)
   - SwifterSwift (4.1.0):
     - SwifterSwift/AppKit (= 4.1.0)
@@ -75,6 +74,9 @@ PODS:
   - SwifterSwift/SwiftStdlib (4.1.0)
   - SwifterSwift/UIKit (4.1.0)
   - SwiftLint (0.24.0)
+  - XLActionController (4.0.0):
+    - XLActionController/Core (= 4.0.0)
+  - XLActionController/Core (4.0.0)
 
 DEPENDENCIES:
   - Firebase
@@ -88,10 +90,10 @@ DEPENDENCIES:
   - MZTimerLabel
   - Nuke
   - QuickBlox
-  - RangeSeekSlider
   - SVProgressHUD (from `https://github.com/SVProgressHUD/SVProgressHUD.git`)
   - SwifterSwift
   - SwiftLint
+  - XLActionController
 
 EXTERNAL SOURCES:
   SVProgressHUD:
@@ -121,11 +123,11 @@ SPEC CHECKSUMS:
   Nuke: 5f420c4637415f979c83afb35e73176dd03232d9
   pop: 82ca6b068ce9278fd350fd9dd09482a0ce9492e6
   QuickBlox: d40cd742985908ce7809058e5a63f1e3581165a0
-  RangeSeekSlider: 0386c5a9aa5ebcb2fa5238e8a627280cf46c7c0a
   SVProgressHUD: 59b2d3dabacbd051576d21d32293ca7228dc18b0
   SwifterSwift: 4d962b5d653760b85266832aff6ab6d08c1b7974
   SwiftLint: a014c92b4664e8b13f380f8640a51bb1733778ba
+  XLActionController: 7e88fece1799e61357cb00b1cc67104d66ec4d2c
 
-PODFILE CHECKSUM: af8370f653e31bc9efbe6fc7c8dea4b2852a1713
+PODFILE CHECKSUM: 630d1bde1099ecbcaebd361aae55b7a906da0092
 
 COCOAPODS: 1.3.1

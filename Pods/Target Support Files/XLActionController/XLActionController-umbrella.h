@@ -11,6 +11,6 @@
 #endif
 
 
-FOUNDATION_EXPORT double RangeSeekSliderVersionNumber;
-FOUNDATION_EXPORT const unsigned char RangeSeekSliderVersionString[];
+FOUNDATION_EXPORT double XLActionControllerVersionNumber;
+FOUNDATION_EXPORT const unsigned char XLActionControllerVersionString[];
 

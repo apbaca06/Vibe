@@ -10,32 +10,18 @@ import UIKit
 
 class SliderTableViewCell: UITableViewCell {
 
-    @IBOutlet weak var ageRangeLabel: UILabel!
+    @IBOutlet weak var cellName: UILabel!
 
-//    @IBAction func changeSliderValue(_ sender: UISlider) {
-//
-//        sliderRange.text = "\(Int(sender.value))"
-//
-//        if Int(sender.value) == 55 {
-//            sliderRange.text = "55+"
-//        }
-//    }
+    @IBOutlet weak var pickerView: UIPickerView!
+
+    @IBOutlet weak var textfield: UITextField!
+
+    let pickerView2 = UIPickerView()
 
     override func awakeFromNib() {
         super.awakeFromNib()
+        textfield.inputView = pickerView2
 
-        ageRangeLabel.text = NSLocalizedString("Age Range", comment: "")
-
-//        sliderRange.text = "25"
-//        slider.minimumValue = 18
-//        slider.maximumValue = 55
-//        slider.value = 25
-    }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-//        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
     }
 
 }
