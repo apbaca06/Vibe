@@ -11,6 +11,7 @@ import SVProgressHUD
 import KeychainSwift
 import Firebase
 import CoreLocation
+import Koloda
 
 class HomeViewController: UICollectionViewController, UICollectionViewDelegateFlowLayout {
 
@@ -19,6 +20,8 @@ class HomeViewController: UICollectionViewController, UICollectionViewDelegateFl
     let locationManager = CLLocationManager()
 
     var cityName: String?
+
+    var imageArray: [UIImage] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -81,7 +84,7 @@ class HomeViewController: UICollectionViewController, UICollectionViewDelegateFl
             flowLayout.scrollDirection = .horizontal
 
             flowLayout.minimumLineSpacing = 0
-//            flowLayout.itemSize = UIScreen.main.bounds
+
         }
 
         collectionView?.backgroundColor = .gray
@@ -226,6 +229,13 @@ class HomeViewController: UICollectionViewController, UICollectionViewDelegateFl
                 ) as! SwipingCollectionViewCell
 
                 // swiftlint:enable force_cast
+            let swipeViewController = SwipeViewController()
+
+            self.addChildViewController(swipeViewController)
+
+            cell.swipeView.delegate = swipeViewController
+
+            cell.swipeView.dataSource = swipeViewController
 
             return cell
 

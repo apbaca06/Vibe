@@ -55,6 +55,9 @@
 		3792B0BC1FF35AB700AB4838 /* SliderTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3792B0BA1FF35AB700AB4838 /* SliderTableViewCell.xib */; };
 		3792B0C01FF367C600AB4838 /* MultipleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3792B0BE1FF367C600AB4838 /* MultipleTableViewCell.swift */; };
 		3792B0C11FF367C600AB4838 /* MultipleTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3792B0BF1FF367C600AB4838 /* MultipleTableViewCell.xib */; };
+		3792B0C61FF3CA9600AB4838 /* SwipeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3792B0C51FF3CA9600AB4838 /* SwipeViewController.swift */; };
+		3792B0C81FF3CFF800AB4838 /* OverlayView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3792B0C71FF3CFF800AB4838 /* OverlayView.xib */; };
+		3792B0CA1FF3D05200AB4838 /* ExampleOverlayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3792B0C91FF3D05200AB4838 /* ExampleOverlayView.swift */; };
 		37A5BB9B1FE61CE200C4F1E6 /* MenuCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37A5BB9A1FE61CE200C4F1E6 /* MenuCell.swift */; };
 		37A5BB9D1FE6223600C4F1E6 /* BaseCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37A5BB9C1FE6223600C4F1E6 /* BaseCell.swift */; };
 		37A5BBA01FE6288500C4F1E6 /* ProfileCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37A5BB9E1FE6288500C4F1E6 /* ProfileCollectionViewCell.swift */; };
@@ -150,6 +153,9 @@
 		3792B0BA1FF35AB700AB4838 /* SliderTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SliderTableViewCell.xib; sourceTree = "<group>"; };
 		3792B0BE1FF367C600AB4838 /* MultipleTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultipleTableViewCell.swift; sourceTree = "<group>"; };
 		3792B0BF1FF367C600AB4838 /* MultipleTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MultipleTableViewCell.xib; sourceTree = "<group>"; };
+		3792B0C51FF3CA9600AB4838 /* SwipeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipeViewController.swift; sourceTree = "<group>"; };
+		3792B0C71FF3CFF800AB4838 /* OverlayView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OverlayView.xib; sourceTree = "<group>"; };
+		3792B0C91FF3D05200AB4838 /* ExampleOverlayView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExampleOverlayView.swift; sourceTree = "<group>"; };
 		37A5BB9A1FE61CE200C4F1E6 /* MenuCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuCell.swift; sourceTree = "<group>"; };
 		37A5BB9C1FE6223600C4F1E6 /* BaseCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseCell.swift; sourceTree = "<group>"; };
 		37A5BB9E1FE6288500C4F1E6 /* ProfileCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -235,8 +241,6 @@
 				370832AF1FE2847F00D4DC86 /* IncomingCallViewController.swift */,
 				37C0FF1D1FE7A75E002EACF3 /* CallOutViewControllers.swift */,
 				37CA18211FE2397100C1171B /* ChatroomViewController.swift */,
-				37A5BBA21FE628A000C4F1E6 /* SwipingCollectionViewCell.swift */,
-				37A5BBA31FE628A000C4F1E6 /* SwipingCollectionViewCell.xib */,
 				37A5BBA61FE628B900C4F1E6 /* ChatCollectionViewCell.swift */,
 				37A5BBA71FE628B900C4F1E6 /* ChatCollectionViewCell.xib */,
 			);
@@ -287,6 +291,7 @@
 				37C0FF1F1FE7D245002EACF3 /* Home */,
 				370832AC1FE283D800D4DC86 /* Landing */,
 				37DE5F8B1FEA61D50017E09D /* Profile */,
+				3792B0C41FF3A78700AB4838 /* Swipe */,
 				376C3FB61FEBA91600EAF188 /* Prefernce */,
 				370832AD1FE283EB00D4DC86 /* ViewControllers */,
 				371459851FDFAABF00C1F14A /* Assets.xcassets */,
@@ -356,6 +361,18 @@
 				3792B0B51FF2537000AB4838 /* AgeRangeTableViewCell.xib */,
 			);
 			path = Age;
+			sourceTree = "<group>";
+		};
+		3792B0C41FF3A78700AB4838 /* Swipe */ = {
+			isa = PBXGroup;
+			children = (
+				3792B0C51FF3CA9600AB4838 /* SwipeViewController.swift */,
+				37A5BBA21FE628A000C4F1E6 /* SwipingCollectionViewCell.swift */,
+				37A5BBA31FE628A000C4F1E6 /* SwipingCollectionViewCell.xib */,
+				3792B0C91FF3D05200AB4838 /* ExampleOverlayView.swift */,
+				3792B0C71FF3CFF800AB4838 /* OverlayView.xib */,
+			);
+			path = Swipe;
 			sourceTree = "<group>";
 		};
 		37C0FF1F1FE7D245002EACF3 /* Home */ = {
@@ -529,6 +546,7 @@
 			files = (
 				371459891FDFAABF00C1F14A /* LaunchScreen.storyboard in Resources */,
 				37DE5F8A1FEA61D00017E09D /* SwitchTableViewCell.xib in Resources */,
+				3792B0C81FF3CFF800AB4838 /* OverlayView.xib in Resources */,
 				37A5BBA11FE6288500C4F1E6 /* ProfileCollectionViewCell.xib in Resources */,
 				37C0FF1C1FE7672C002EACF3 /* GoogleService-Info.plist in Resources */,
 				37DE5F991FEA65B30017E09D /* LogoutTableViewCell.xib in Resources */,
@@ -665,6 +683,7 @@
 				3754E28A1FE12809002604CD /* QuickbloxManager.swift in Sources */,
 				37CA18221FE2397100C1171B /* ChatroomViewController.swift in Sources */,
 				37DE5F981FEA65B30017E09D /* LogoutTableViewCell.swift in Sources */,
+				3792B0C61FF3CA9600AB4838 /* SwipeViewController.swift in Sources */,
 				370832B01FE2847F00D4DC86 /* IncomingCallViewController.swift in Sources */,
 				371459B91FDFD11100C1F14A /* Chat.swift in Sources */,
 				37CA181E1FE2221500C1171B /* FirebaseManager.swift in Sources */,
@@ -686,6 +705,7 @@
 				372E8E121FF1076C002CAC96 /* Animation.swift in Sources */,
 				37DE5F891FEA61D00017E09D /* SwitchTableViewCell.swift in Sources */,
 				370832B81FE3806700D4DC86 /* User.swift in Sources */,
+				3792B0CA1FF3D05200AB4838 /* ExampleOverlayView.swift in Sources */,
 				37A5BB9B1FE61CE200C4F1E6 /* MenuCell.swift in Sources */,
 				37CA18201FE2304100C1171B /* AudioViewController.swift in Sources */,
 				3714597F1FDFAABF00C1F14A /* AppDelegate.swift in Sources */,

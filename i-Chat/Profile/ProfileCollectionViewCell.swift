@@ -27,6 +27,7 @@ class ProfileCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var profileDescription: UILabel!
 
     @IBOutlet weak var settingDescription: UILabel!
+
     override func awakeFromNib() {
         super.awakeFromNib()
 

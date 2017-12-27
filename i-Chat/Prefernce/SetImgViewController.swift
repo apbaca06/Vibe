@@ -114,9 +114,14 @@ class SetImgViewController: UIViewController, UIImagePickerControllerDelegate, U
             guard let downloadURL = metadata.downloadURL()
 
                 else { return }
-
-            print("***", downloadURL)
-            DatabasePath.userRef.child(uid).updateChildValues(["profileImgURL": "\(downloadURL)"])
+            DatabasePath.userRef.child(uid).updateChildValues([
+                "profileImgURL": "\(downloadURL)",
+                "maxDistance": "50"
+            ])
+            DatabasePath.userRef.child(uid).child("agePreference").updateChildValues([
+                "min": 18,
+                "max": 55
+                ])
 
         }
     }

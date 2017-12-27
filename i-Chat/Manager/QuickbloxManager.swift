@@ -84,12 +84,12 @@ class QuickbloxManager {
 
         SVProgressHUD.show(withStatus: NSLocalizedString("Signing up...", comment: ""))
 
-        let navGenderViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "PreferenceNav")
-
-        AppDelegate.shared.window?.rootViewController = navGenderViewController
-
         QBRequest.signUp(uuser, successBlock: { (response, user) in
             if let firebaseUser = Auth.auth().currentUser {
+
+                let navGenderViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "PreferenceNav")
+
+                AppDelegate.shared.window?.rootViewController = navGenderViewController
 
                 DatabasePath.userRef.child(firebaseUser.uid).setValue(["name": name,
                                                            "email": email,

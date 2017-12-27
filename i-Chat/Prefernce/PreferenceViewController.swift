@@ -26,7 +26,7 @@ class PreferenceViewController: UIViewController {
 
         guard let uid = keychain.get("uid")
             else { return }
-        DatabasePath.userRef.child(uid).updateChildValues(["preference": "male"])
+        DatabasePath.userRef.child(uid).updateChildValues(["preference": "Male"])
     }
 
     @IBAction func womanAction(_ sender: Any) {
@@ -34,7 +34,7 @@ class PreferenceViewController: UIViewController {
         guard let uid = keychain.get("uid")
             else { return }
 
-        DatabasePath.userRef.child(uid).updateChildValues(["preference": "female"])
+        DatabasePath.userRef.child(uid).updateChildValues(["preference": "Female"])
     }
 
     override func viewDidLoad() {
