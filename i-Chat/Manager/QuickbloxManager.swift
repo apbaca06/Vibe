@@ -84,7 +84,7 @@ class QuickbloxManager {
 
         SVProgressHUD.show(withStatus: NSLocalizedString("Signing up...", comment: ""))
 
-        let navGenderViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "Nav")
+        let navGenderViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "PreferenceNav")
 
         AppDelegate.shared.window?.rootViewController = navGenderViewController
 
@@ -97,11 +97,6 @@ class QuickbloxManager {
                                                            "createdTime": user.createdAt?.iso8601String,
                                                            "lastLoginTime": user.lastRequestAt?.iso8601String])
             }
-
-            // TODO
-//            let layout = UICollectionViewFlowLayout()
-//
-//            AppDelegate.shared.window?.rootViewController = HomeViewController(collectionViewLayout: layout)
 
         }) { (response) in
 

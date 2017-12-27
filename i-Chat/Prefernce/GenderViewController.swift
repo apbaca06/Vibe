@@ -26,7 +26,7 @@ class GenderViewController: UIViewController {
 
         guard let uid = keychain.get("uid")
             else { return }
-        DatabasePath.userRef.child(uid).updateChildValues(["gender": "male"])
+        DatabasePath.userRef.child(uid).updateChildValues(["gender": "Male"])
 
     }
 
@@ -34,7 +34,7 @@ class GenderViewController: UIViewController {
 
         guard let uid = keychain.get("uid")
             else { return }
-        DatabasePath.userRef.child(uid).updateChildValues(["gender": "female"])
+        DatabasePath.userRef.child(uid).updateChildValues(["gender": "Female"])
     }
 
     override func viewDidLoad() {

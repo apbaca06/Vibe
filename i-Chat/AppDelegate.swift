@@ -97,9 +97,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
             let loginViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "LogInViewController")
 
-            let preferenceNav = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "PreferenceNav")
+//            let preferenceNav = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "PreferenceNav")
 
-            AppDelegate.shared.window?.rootViewController = preferenceNav
+            AppDelegate.shared.window?.rootViewController = loginViewController
         }
 
         return true
