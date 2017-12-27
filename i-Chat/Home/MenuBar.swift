@@ -17,7 +17,7 @@ class MenuBar: UIView, UICollectionViewDataSource, UICollectionViewDelegate, UIC
 
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
 
-        collectionView.backgroundColor = .clear
+        collectionView.backgroundColor = .white
 
         collectionView.dataSource = self
 

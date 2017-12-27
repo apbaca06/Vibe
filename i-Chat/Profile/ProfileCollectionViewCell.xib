@@ -48,13 +48,13 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JBK-EU-z85">
-                        <rect key="frame" x="0.0" y="327.5" width="304" height="41"/>
+                        <rect key="frame" x="0.0" y="287.5" width="304" height="41"/>
                         <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Age" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aQN-WC-Cio">
-                        <rect key="frame" x="131.5" y="383.5" width="41" height="41.5"/>
+                        <rect key="frame" x="131.5" y="343.5" width="41" height="41.5"/>
                         <color key="backgroundColor" red="0.94117647059999998" green="0.7843137255" blue="0.031372549020000001" alpha="0.78349743150684936" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstAttribute="width" secondItem="aQN-WC-Cio" secondAttribute="height" multiplier="1:1" id="MEi-5Z-vAG"/>
@@ -64,7 +64,7 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="image" translatesAutoresizingMaskIntoConstraints="NO" id="HiG-jV-3PV">
-                        <rect key="frame" x="10" y="50" width="284" height="257.5"/>
+                        <rect key="frame" x="10" y="10" width="284" height="257.5"/>
                         <userDefinedRuntimeAttributes>
                             <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
                                 <color key="value" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
@@ -81,7 +81,7 @@
                 <constraint firstItem="ZTg-uK-7eu" firstAttribute="bottom" secondItem="ruI-72-OZP" secondAttribute="bottom" constant="30" id="1aj-VM-CJt"/>
                 <constraint firstItem="7Zz-T9-AMT" firstAttribute="height" secondItem="gTV-IL-0wX" secondAttribute="height" multiplier="0.1" id="7cG-ZC-T2w"/>
                 <constraint firstItem="HiG-jV-3PV" firstAttribute="height" secondItem="gTV-IL-0wX" secondAttribute="height" multiplier="0.5" id="DiI-ex-byJ"/>
-                <constraint firstItem="HiG-jV-3PV" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="50" id="EYY-gN-S6U"/>
+                <constraint firstItem="HiG-jV-3PV" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="10" id="EYY-gN-S6U"/>
                 <constraint firstItem="aQN-WC-Cio" firstAttribute="height" secondItem="JBK-EU-z85" secondAttribute="height" id="EcA-PN-yfi"/>
                 <constraint firstItem="ZTg-uK-7eu" firstAttribute="trailing" secondItem="HiG-jV-3PV" secondAttribute="trailing" constant="10" id="JwC-cj-p1y"/>
                 <constraint firstItem="R8S-Qj-t1Q" firstAttribute="leading" secondItem="ZTg-uK-7eu" secondAttribute="leading" constant="82" id="KPN-qE-ho0"/>

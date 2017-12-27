@@ -6,8 +6,6 @@
 //  Copyright © 2017年 Jui-hsin.Chen. All rights reserved.
 //
 
-import XLActionController
-
 protocol GenderPickerControllerDelegate: class {
 
     func controller(_ controller: GenderPickerController, didSelect gender: String)
@@ -30,10 +28,11 @@ UIPickerViewDelegate, UIPickerViewDataSource {
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
         return gender.count
     }
+
     func pickerView(_ pickerView: UIPickerView,
                     titleForRow row: Int,
                     forComponent component: Int) -> String? {
-        // 設置為陣列 meals 的第 row 項資料
+
         return gender[row]
     }
 

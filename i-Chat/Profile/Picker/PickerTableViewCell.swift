@@ -8,19 +8,18 @@
 
 import UIKit
 
-class SliderTableViewCell: UITableViewCell {
+class PickerTableViewCell: UITableViewCell {
 
     @IBOutlet weak var cellName: UILabel!
 
-    @IBOutlet weak var pickerView: UIPickerView!
-
     @IBOutlet weak var textfield: UITextField!
 
-    let pickerView2 = UIPickerView()
+    let pickerView = UIPickerView()
 
     override func awakeFromNib() {
         super.awakeFromNib()
-        textfield.inputView = pickerView2
+
+        textfield.inputView = pickerView
 
     }
 

@@ -79,7 +79,12 @@ enum SearchComponent {
     }
 }
 
-class SettingTableViewController: UITableViewController, GenderPickerControllerDelegate {
+class SettingTableViewController: UITableViewController, GenderPickerControllerDelegate, AgeRangePickerControllerDelegate {
+    func controller(_ controller: AgeRangePickerController, minAge: Int) {
+        self.minAge = String(describing: minAge)
+        tableView.reloadData()
+
+    }
 
     func controller(_ controller: GenderPickerController, didSelect gender: String) {
 
@@ -95,6 +100,10 @@ class SettingTableViewController: UITableViewController, GenderPickerControllerD
     var cityName: String?
 
     var gender: String?
+
+    var minAge: String?
+
+    var maxAge: String?
 
     // MARK: Init
 
@@ -114,6 +123,7 @@ class SettingTableViewController: UITableViewController, GenderPickerControllerD
         super.viewDidLoad()
 
         GenderPickerController.shared.genderDelegate = self
+        AgeRangePickerController.shared.ageDelegate = self
 
         print(GenderPickerController.shared)
 
@@ -166,13 +176,13 @@ class SettingTableViewController: UITableViewController, GenderPickerControllerD
         )
 
         let nib3 = UINib(
-            nibName: "SliderTableViewCell",
+            nibName: "PickerTableViewCell",
             bundle: nil
         )
 
         tableView.register(
             nib3,
-            forCellReuseIdentifier: "SliderTableViewCell"
+            forCellReuseIdentifier: "PickerTableViewCell"
         )
 
         let nib4 = UINib(
@@ -183,6 +193,16 @@ class SettingTableViewController: UITableViewController, GenderPickerControllerD
         tableView.register(
             nib4,
             forCellReuseIdentifier: "LogoutTableViewCell"
+        )
+
+        let nib5 = UINib(
+            nibName: "AgeRangeTableViewCell",
+            bundle: nil
+        )
+
+        tableView.register(
+            nib5,
+            forCellReuseIdentifier: "AgeRangeTableViewCell"
         )
 
         tableView.estimatedRowHeight = 44.0
@@ -253,9 +273,9 @@ class SettingTableViewController: UITableViewController, GenderPickerControllerD
 
             // swiftlint:disable force_cast
             let cell = tableView.dequeueReusableCell(
-                withIdentifier: "SliderTableViewCell",
+                withIdentifier: "PickerTableViewCell",
                 for: indexPath
-                ) as! SliderTableViewCell
+                ) as! PickerTableViewCell
             // swiftlint:enable force_cast
 
             return cell
@@ -286,29 +306,43 @@ class SettingTableViewController: UITableViewController, GenderPickerControllerD
             case 1:
 
                 let cell = tableView.dequeueReusableCell(
-                    withIdentifier: "SliderTableViewCell",
+                    withIdentifier: "PickerTableViewCell",
                     for: indexPath
-                    ) as! SliderTableViewCell
+                    ) as! PickerTableViewCell
 
                 cell.cellName.text = NSLocalizedString("Max Distance", comment: "")
 
                 let genderPickerViewController = GenderPickerController.shared
 
-                print(genderPickerViewController)
-
                 self.addChildViewController(genderPickerViewController)
 
-                cell.pickerView2.delegate = genderPickerViewController
+                cell.pickerView.delegate = genderPickerViewController
 
-                cell.pickerView2.dataSource = genderPickerViewController
+                cell.pickerView.dataSource = genderPickerViewController
 
-//                cell.textfield.text = "male"
-
-//                if let gender = self.gender {
+//                cell.textfield.text = DatabasePath.userRef.child(FirebaseManager.uid).child("preference").observeSingleEvent(of: <#T##DataEventType#>, with: <#T##(DataSnapshot) -> Void#>)
 
                     cell.textfield.text = gender
 
-//                }
+                return cell
+
+            case 3:
+                let cell = tableView.dequeueReusableCell(
+                    withIdentifier: "AgeRangeTableViewCell",
+                    for: indexPath
+                    ) as! AgeRangeTableViewCell
+
+                let ageRangePickerViewController = AgeRangePickerController.shared
+
+                self.addChildViewController(ageRangePickerViewController)
+
+                cell.pickerView.delegate = ageRangePickerViewController
+
+                cell.pickerView.dataSource = ageRangePickerViewController
+
+                cell.minAgeTextField.text = self.minAge
+
+                cell.maxAgeTextField.text = self.minAge
 
                 return cell
 

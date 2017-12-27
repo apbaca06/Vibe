@@ -79,9 +79,10 @@ class HomeViewController: UICollectionViewController, UICollectionViewDelegateFl
             flowLayout.scrollDirection = .horizontal
 
             flowLayout.minimumLineSpacing = 0
+//            flowLayout.itemSize = UIScreen.main.bounds
         }
 
-        collectionView?.backgroundColor = .black
+        collectionView?.backgroundColor = .gray
 
         collectionView?.register(
 
@@ -104,9 +105,9 @@ class HomeViewController: UICollectionViewController, UICollectionViewDelegateFl
             forCellWithReuseIdentifier: "ChatCollectionViewCell"
         )
 
-        collectionView?.contentInset = UIEdgeInsets(top: 50, left: 0, bottom: 0, right: 0)
+        collectionView?.contentInset = UIEdgeInsets(top: 70, left: 0, bottom: 0, right: 0)
 
-        collectionView?.scrollIndicatorInsets = UIEdgeInsets(top: 50, left: 0, bottom: 0, right: 0)
+        collectionView?.scrollIndicatorInsets = UIEdgeInsets(top: 70, left: 0, bottom: 0, right: 0)
 
         collectionView?.isPagingEnabled = true
     }
@@ -263,7 +264,7 @@ class HomeViewController: UICollectionViewController, UICollectionViewDelegateFl
 
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
 
-        return CGSize(width: view.frame.width, height: view.frame.height - 90)
+        return CGSize(width: view.frame.width, height: view.frame.height - 70)
 
     }
 }
