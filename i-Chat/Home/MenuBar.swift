@@ -43,12 +43,12 @@ class MenuBar: UIView, UICollectionViewDataSource, UICollectionViewDelegate, UIC
 
        self.addConstraints(withFormat: "V:|[v0(70)]|", views: collectionView)
 
-        let selectedIndexPath = IndexPath(item: 0, section: 0)
+        let selectedIndexPath = IndexPath(item: 1, section: 0)
 
         // View 先出現第一個cell
         collectionView.selectItem(at: selectedIndexPath, animated: false, scrollPosition: UICollectionViewScrollPosition())
 
-        // 白色底線
+        // 底線
         setupHorizontalBar()
     }
 

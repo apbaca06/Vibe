@@ -17,7 +17,7 @@ class MenuCell: BaseCell {
 
         iv.image = UIImage(named: "profile")?.withRenderingMode(.alwaysTemplate)
 
-        iv.tintColor = UIColor(red: 244/255, green: 121/255, blue: 107/255, alpha: 1)
+        iv.tintColor = UIColor(red: 240/255, green: 200/255, blue: 8/255, alpha: 0.3)
 
         return iv
     }()
