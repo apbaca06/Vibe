@@ -95,14 +95,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             )
         } else {
 
-//            let loginViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "LogInViewController")
+            let loginViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "LogInViewController")
 
 //            let settingNav = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "settingNav")
 //            AppDelegate.shared.window?.rootViewController = nav
 
             let layout = UICollectionViewFlowLayout()
 
-            AppDelegate.shared.window?.rootViewController = HomeViewController(collectionViewLayout: layout)
+            AppDelegate.shared.window?.rootViewController = loginViewController
         }
 
         return true

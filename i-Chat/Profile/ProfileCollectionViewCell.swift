@@ -10,6 +10,7 @@ import UIKit
 import Firebase
 import SVProgressHUD
 import Nuke
+import KeychainSwift
 
 class ProfileCollectionViewCell: UICollectionViewCell {
 
@@ -43,7 +44,12 @@ class ProfileCollectionViewCell: UICollectionViewCell {
             // Fallback on earlier versions
         }
 
-            DatabasePath.userRef.child(FirebaseManager.uid).child("profileImgURL").observeSingleEvent(of: .value) { (datashot) in
+        let keychain = KeychainSwift()
+
+        guard let uid = keychain.get("uid")
+            else { return }
+
+            DatabasePath.userRef.child(uid).child("profileImgURL").observeSingleEvent(of: .value) { (datashot) in
                 if let profileImgString = datashot.value  as? String,
                     let profileImgURL = URL(string: profileImgString) {
 

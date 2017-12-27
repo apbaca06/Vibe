@@ -1,5 +1,5 @@
 //
-//  ShowTableViewCell.swift
+//  LabelTableViewCell.swift
 //  i-Chat
 //
 //  Created by cindy on 2017/12/20.
@@ -9,19 +9,15 @@
 import UIKit
 import CoreLocation
 
-class ShowTableViewCell: UITableViewCell {
+class LabelTableViewCell: UITableViewCell {
 
     @IBOutlet weak var rightLabel: UILabel!
+
+    @IBOutlet weak var leftLabel: UILabel!
 
     override func awakeFromNib() {
         super.awakeFromNib()
 
-    }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
     }
 
 }

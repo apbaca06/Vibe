@@ -51,6 +51,10 @@
 		3792B0B31FF24FDE00AB4838 /* AgeRangePickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3792B0B21FF24FDE00AB4838 /* AgeRangePickerViewController.swift */; };
 		3792B0B61FF2537000AB4838 /* AgeRangeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3792B0B41FF2537000AB4838 /* AgeRangeTableViewCell.swift */; };
 		3792B0B71FF2537000AB4838 /* AgeRangeTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3792B0B51FF2537000AB4838 /* AgeRangeTableViewCell.xib */; };
+		3792B0BB1FF35AB700AB4838 /* SliderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3792B0B91FF35AB700AB4838 /* SliderTableViewCell.swift */; };
+		3792B0BC1FF35AB700AB4838 /* SliderTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3792B0BA1FF35AB700AB4838 /* SliderTableViewCell.xib */; };
+		3792B0C01FF367C600AB4838 /* MultipleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3792B0BE1FF367C600AB4838 /* MultipleTableViewCell.swift */; };
+		3792B0C11FF367C600AB4838 /* MultipleTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3792B0BF1FF367C600AB4838 /* MultipleTableViewCell.xib */; };
 		37A5BB9B1FE61CE200C4F1E6 /* MenuCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37A5BB9A1FE61CE200C4F1E6 /* MenuCell.swift */; };
 		37A5BB9D1FE6223600C4F1E6 /* BaseCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37A5BB9C1FE6223600C4F1E6 /* BaseCell.swift */; };
 		37A5BBA01FE6288500C4F1E6 /* ProfileCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37A5BB9E1FE6288500C4F1E6 /* ProfileCollectionViewCell.swift */; };
@@ -71,10 +75,10 @@
 		37DE5F891FEA61D00017E09D /* SwitchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37DE5F871FEA61D00017E09D /* SwitchTableViewCell.swift */; };
 		37DE5F8A1FEA61D00017E09D /* SwitchTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 37DE5F881FEA61D00017E09D /* SwitchTableViewCell.xib */; };
 		37DE5F8D1FEA620A0017E09D /* SettingTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37DE5F8C1FEA620A0017E09D /* SettingTableViewController.swift */; };
-		37DE5F901FEA65860017E09D /* ShowTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37DE5F8E1FEA65860017E09D /* ShowTableViewCell.swift */; };
-		37DE5F911FEA65860017E09D /* ShowTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 37DE5F8F1FEA65860017E09D /* ShowTableViewCell.xib */; };
-		37DE5F941FEA65980017E09D /* PickerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37DE5F921FEA65980017E09D /* PickerTableViewCell.swift */; };
-		37DE5F951FEA65980017E09D /* PickerTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 37DE5F931FEA65980017E09D /* PickerTableViewCell.xib */; };
+		37DE5F901FEA65860017E09D /* LabelTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37DE5F8E1FEA65860017E09D /* LabelTableViewCell.swift */; };
+		37DE5F911FEA65860017E09D /* LabelTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 37DE5F8F1FEA65860017E09D /* LabelTableViewCell.xib */; };
+		37DE5F941FEA65980017E09D /* GenderPickerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37DE5F921FEA65980017E09D /* GenderPickerTableViewCell.swift */; };
+		37DE5F951FEA65980017E09D /* GenderPickerTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 37DE5F931FEA65980017E09D /* GenderPickerTableViewCell.xib */; };
 		37DE5F981FEA65B30017E09D /* LogoutTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37DE5F961FEA65B30017E09D /* LogoutTableViewCell.swift */; };
 		37DE5F991FEA65B30017E09D /* LogoutTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 37DE5F971FEA65B30017E09D /* LogoutTableViewCell.xib */; };
 		37DE5F9B1FEB65D90017E09D /* ImgPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37DE5F9A1FEB65D90017E09D /* ImgPickerViewController.swift */; };
@@ -142,6 +146,10 @@
 		3792B0B21FF24FDE00AB4838 /* AgeRangePickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AgeRangePickerViewController.swift; sourceTree = "<group>"; };
 		3792B0B41FF2537000AB4838 /* AgeRangeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AgeRangeTableViewCell.swift; sourceTree = "<group>"; };
 		3792B0B51FF2537000AB4838 /* AgeRangeTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AgeRangeTableViewCell.xib; sourceTree = "<group>"; };
+		3792B0B91FF35AB700AB4838 /* SliderTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SliderTableViewCell.swift; sourceTree = "<group>"; };
+		3792B0BA1FF35AB700AB4838 /* SliderTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SliderTableViewCell.xib; sourceTree = "<group>"; };
+		3792B0BE1FF367C600AB4838 /* MultipleTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultipleTableViewCell.swift; sourceTree = "<group>"; };
+		3792B0BF1FF367C600AB4838 /* MultipleTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MultipleTableViewCell.xib; sourceTree = "<group>"; };
 		37A5BB9A1FE61CE200C4F1E6 /* MenuCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuCell.swift; sourceTree = "<group>"; };
 		37A5BB9C1FE6223600C4F1E6 /* BaseCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseCell.swift; sourceTree = "<group>"; };
 		37A5BB9E1FE6288500C4F1E6 /* ProfileCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -163,10 +171,10 @@
 		37DE5F871FEA61D00017E09D /* SwitchTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwitchTableViewCell.swift; sourceTree = "<group>"; };
 		37DE5F881FEA61D00017E09D /* SwitchTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SwitchTableViewCell.xib; sourceTree = "<group>"; };
 		37DE5F8C1FEA620A0017E09D /* SettingTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingTableViewController.swift; sourceTree = "<group>"; };
-		37DE5F8E1FEA65860017E09D /* ShowTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowTableViewCell.swift; sourceTree = "<group>"; };
-		37DE5F8F1FEA65860017E09D /* ShowTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ShowTableViewCell.xib; sourceTree = "<group>"; };
-		37DE5F921FEA65980017E09D /* PickerTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerTableViewCell.swift; sourceTree = "<group>"; };
-		37DE5F931FEA65980017E09D /* PickerTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PickerTableViewCell.xib; sourceTree = "<group>"; };
+		37DE5F8E1FEA65860017E09D /* LabelTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabelTableViewCell.swift; sourceTree = "<group>"; };
+		37DE5F8F1FEA65860017E09D /* LabelTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LabelTableViewCell.xib; sourceTree = "<group>"; };
+		37DE5F921FEA65980017E09D /* GenderPickerTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenderPickerTableViewCell.swift; sourceTree = "<group>"; };
+		37DE5F931FEA65980017E09D /* GenderPickerTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GenderPickerTableViewCell.xib; sourceTree = "<group>"; };
 		37DE5F961FEA65B30017E09D /* LogoutTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoutTableViewCell.swift; sourceTree = "<group>"; };
 		37DE5F971FEA65B30017E09D /* LogoutTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LogoutTableViewCell.xib; sourceTree = "<group>"; };
 		37DE5F9A1FEB65D90017E09D /* ImgPickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImgPickerViewController.swift; sourceTree = "<group>"; };
@@ -312,6 +320,44 @@
 			path = Prefernce;
 			sourceTree = "<group>";
 		};
+		3792B0B81FF35A9F00AB4838 /* Slider */ = {
+			isa = PBXGroup;
+			children = (
+				3792B0B91FF35AB700AB4838 /* SliderTableViewCell.swift */,
+				3792B0BA1FF35AB700AB4838 /* SliderTableViewCell.xib */,
+			);
+			path = Slider;
+			sourceTree = "<group>";
+		};
+		3792B0BD1FF367A300AB4838 /* Multiple */ = {
+			isa = PBXGroup;
+			children = (
+				3792B0BE1FF367C600AB4838 /* MultipleTableViewCell.swift */,
+				3792B0BF1FF367C600AB4838 /* MultipleTableViewCell.xib */,
+			);
+			path = Multiple;
+			sourceTree = "<group>";
+		};
+		3792B0C21FF3716B00AB4838 /* Gender */ = {
+			isa = PBXGroup;
+			children = (
+				3792B0B01FF2386700AB4838 /* GenderPickerController.swift */,
+				37DE5F921FEA65980017E09D /* GenderPickerTableViewCell.swift */,
+				37DE5F931FEA65980017E09D /* GenderPickerTableViewCell.xib */,
+			);
+			path = Gender;
+			sourceTree = "<group>";
+		};
+		3792B0C31FF3717800AB4838 /* Age */ = {
+			isa = PBXGroup;
+			children = (
+				3792B0B21FF24FDE00AB4838 /* AgeRangePickerViewController.swift */,
+				3792B0B41FF2537000AB4838 /* AgeRangeTableViewCell.swift */,
+				3792B0B51FF2537000AB4838 /* AgeRangeTableViewCell.xib */,
+			);
+			path = Age;
+			sourceTree = "<group>";
+		};
 		37C0FF1F1FE7D245002EACF3 /* Home */ = {
 			isa = PBXGroup;
 			children = (
@@ -342,10 +388,12 @@
 				37A5BB9F1FE6288500C4F1E6 /* ProfileCollectionViewCell.xib */,
 				37DE5F8C1FEA620A0017E09D /* SettingTableViewController.swift */,
 				37DE5F9A1FEB65D90017E09D /* ImgPickerViewController.swift */,
+				3792B0BD1FF367A300AB4838 /* Multiple */,
+				3792B0B81FF35A9F00AB4838 /* Slider */,
 				37DE5F9F1FEB6AE50017E09D /* Picker */,
 				37DE5F9E1FEB6AD60017E09D /* Logout */,
 				37DE5FA11FEB6AFA0017E09D /* Search */,
-				37DE5FA01FEB6AF10017E09D /* Show */,
+				37DE5FA01FEB6AF10017E09D /* Label */,
 			);
 			path = Profile;
 			sourceTree = "<group>";
@@ -362,23 +410,19 @@
 		37DE5F9F1FEB6AE50017E09D /* Picker */ = {
 			isa = PBXGroup;
 			children = (
-				37DE5F921FEA65980017E09D /* PickerTableViewCell.swift */,
-				3792B0B41FF2537000AB4838 /* AgeRangeTableViewCell.swift */,
-				3792B0B51FF2537000AB4838 /* AgeRangeTableViewCell.xib */,
-				3792B0B21FF24FDE00AB4838 /* AgeRangePickerViewController.swift */,
-				3792B0B01FF2386700AB4838 /* GenderPickerController.swift */,
-				37DE5F931FEA65980017E09D /* PickerTableViewCell.xib */,
+				3792B0C31FF3717800AB4838 /* Age */,
+				3792B0C21FF3716B00AB4838 /* Gender */,
 			);
 			path = Picker;
 			sourceTree = "<group>";
 		};
-		37DE5FA01FEB6AF10017E09D /* Show */ = {
+		37DE5FA01FEB6AF10017E09D /* Label */ = {
 			isa = PBXGroup;
 			children = (
-				37DE5F8E1FEA65860017E09D /* ShowTableViewCell.swift */,
-				37DE5F8F1FEA65860017E09D /* ShowTableViewCell.xib */,
+				37DE5F8E1FEA65860017E09D /* LabelTableViewCell.swift */,
+				37DE5F8F1FEA65860017E09D /* LabelTableViewCell.xib */,
 			);
-			path = Show;
+			path = Label;
 			sourceTree = "<group>";
 		};
 		37DE5FA11FEB6AFA0017E09D /* Search */ = {
@@ -492,11 +536,13 @@
 				37A5BBA91FE628B900C4F1E6 /* ChatCollectionViewCell.xib in Resources */,
 				371459B51FDFB16900C1F14A /* APIKey.plist in Resources */,
 				371459861FDFAABF00C1F14A /* Assets.xcassets in Resources */,
+				3792B0C11FF367C600AB4838 /* MultipleTableViewCell.xib in Resources */,
 				37C0FF4A1FE8BD34002EACF3 /* iphone.mp3 in Resources */,
-				37DE5F951FEA65980017E09D /* PickerTableViewCell.xib in Resources */,
+				37DE5F951FEA65980017E09D /* GenderPickerTableViewCell.xib in Resources */,
+				3792B0BC1FF35AB700AB4838 /* SliderTableViewCell.xib in Resources */,
 				37A5BBA51FE628A000C4F1E6 /* SwipingCollectionViewCell.xib in Resources */,
 				371459841FDFAABF00C1F14A /* Main.storyboard in Resources */,
-				37DE5F911FEA65860017E09D /* ShowTableViewCell.xib in Resources */,
+				37DE5F911FEA65860017E09D /* LabelTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -600,10 +646,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				37DE5F941FEA65980017E09D /* PickerTableViewCell.swift in Sources */,
+				37DE5F941FEA65980017E09D /* GenderPickerTableViewCell.swift in Sources */,
 				37DE5F861FEA43080017E09D /* DateFormatter.swift in Sources */,
 				371459811FDFAABF00C1F14A /* LogInViewController.swift in Sources */,
+				3792B0C01FF367C600AB4838 /* MultipleTableViewCell.swift in Sources */,
 				37C0FF1E1FE7A75E002EACF3 /* CallOutViewControllers.swift in Sources */,
+				3792B0BB1FF35AB700AB4838 /* SliderTableViewCell.swift in Sources */,
 				3754E2881FE122E4002604CD /* RegisterViewController.swift in Sources */,
 				376C3FBC1FEBAD9A00EAF188 /* SetImgViewController.swift in Sources */,
 				37A5BBA81FE628B900C4F1E6 /* ChatCollectionViewCell.swift in Sources */,
@@ -623,7 +671,7 @@
 				3792B0B61FF2537000AB4838 /* AgeRangeTableViewCell.swift in Sources */,
 				3792B0B31FF24FDE00AB4838 /* AgeRangePickerViewController.swift in Sources */,
 				37DE5F8D1FEA620A0017E09D /* SettingTableViewController.swift in Sources */,
-				37DE5F901FEA65860017E09D /* ShowTableViewCell.swift in Sources */,
+				37DE5F901FEA65860017E09D /* LabelTableViewCell.swift in Sources */,
 				37A5BBDF1FE6313000C4F1E6 /* HomeForQuickBloxExtension.swift in Sources */,
 				37A5BBA41FE628A000C4F1E6 /* SwipingCollectionViewCell.swift in Sources */,
 				371E76C91FF0ED9A00EF7CB2 /* ProfileImage.swift in Sources */,

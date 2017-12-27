@@ -18,15 +18,12 @@ class LogoutTableViewCell: UITableViewCell {
 
         let firebaseAuth = Auth.auth()
 
-        keychain.delete("uid")
-
-        keychain.delete("userEmail")
-
-        keychain.delete("userPassword")
+        keychain.clear()
 
         do {
             // MARK: Firebase Logout
             try firebaseAuth.signOut()
+            print("***", Auth.auth().currentUser)
 
             let loginViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "LogInViewController")
 

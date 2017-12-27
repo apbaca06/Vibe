@@ -5,6 +5,7 @@
 //  Created by cindy on 2017/12/26.
 //  Copyright © 2017年 Jui-hsin.Chen. All rights reserved.
 //
+import KeychainSwift
 
 protocol GenderPickerControllerDelegate: class {
 
@@ -39,7 +40,13 @@ UIPickerViewDelegate, UIPickerViewDataSource {
     func pickerView(_ pickerView: UIPickerView,
                     didSelectRow row: Int, inComponent component: Int) {
 
+        let keychain = KeychainSwift()
+
+        guard let uid = keychain.get("uid")
+            else { return }
+
         self.genderDelegate?.controller(GenderPickerController.shared, didSelect: gender[row])
+        DatabasePath.userRef.child(uid).updateChildValues(["preference": gender[row]])
     }
 
 }

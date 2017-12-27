@@ -13,14 +13,6 @@ import KeychainSwift
 
 class FirebaseManager {
 
-    static var uid: String = {
-        if let user = Auth.auth().currentUser {
-            let uid = user.uid
-            return uid
-        }
-        return "no uid"
-    }()
-
     static func logIn(withEmail email: String, withPassword password: String) {
 
         Auth.auth().signIn(withEmail: email, password: password) { (user, error) in

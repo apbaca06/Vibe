@@ -9,6 +9,7 @@
 import Foundation
 import Firebase
 import FirebaseStorage
+import KeychainSwift
 
 class SetImgViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
@@ -19,6 +20,8 @@ class SetImgViewController: UIViewController, UIImagePickerControllerDelegate, U
     @IBOutlet weak var imgView: UIImageView!
 
     var profilePic: ProfileImage?
+
+    let keychain = KeychainSwift()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -77,7 +80,8 @@ class SetImgViewController: UIViewController, UIImagePickerControllerDelegate, U
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String: Any]) {
 
         guard
-            let selectedImage = info[UIImagePickerControllerEditedImage] as? UIImage
+            let selectedImage = info[UIImagePickerControllerEditedImage] as? UIImage,
+            let uid = keychain.get("uid")
             else { return }
 
         profilePic = ProfileImage(profileImage: selectedImage)
@@ -92,7 +96,7 @@ class SetImgViewController: UIViewController, UIImagePickerControllerDelegate, U
         let storageRef = Storage.storage().reference()
 
         // Points to "images"
-        let imagesRef = storageRef.child("profileImg").child(FirebaseManager.uid)
+        let imagesRef = storageRef.child("profileImg").child(uid)
 
         // Data in memory
         let data: Data = UIImageJPEGRepresentation(selectedImage, 0.5)!
@@ -112,7 +116,7 @@ class SetImgViewController: UIViewController, UIImagePickerControllerDelegate, U
                 else { return }
 
             print("***", downloadURL)
-            DatabasePath.userRef.child(FirebaseManager.uid).updateChildValues(["profileImgURL": "\(downloadURL)"])
+            DatabasePath.userRef.child(uid).updateChildValues(["profileImgURL": "\(downloadURL)"])
 
         }
     }

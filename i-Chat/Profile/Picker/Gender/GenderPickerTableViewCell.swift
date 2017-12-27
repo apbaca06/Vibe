@@ -8,9 +8,9 @@
 
 import UIKit
 
-class PickerTableViewCell: UITableViewCell {
+class GenderPickerTableViewCell: UITableViewCell {
 
-    @IBOutlet weak var cellName: UILabel!
+    @IBOutlet weak var leftLabel: UILabel!
 
     @IBOutlet weak var textfield: UITextField!
 
@@ -18,6 +18,9 @@ class PickerTableViewCell: UITableViewCell {
 
     override func awakeFromNib() {
         super.awakeFromNib()
+
+        textfield.text = "Male"
+//        textfield.text = DatabasePath.userRef.child(FirebaseManager.uid).child(<#T##pathString: String##String#>)
 
         textfield.inputView = pickerView
 

@@ -10,6 +10,7 @@ import Foundation
 import UIKit
 import SVProgressHUD
 import Firebase
+import KeychainSwift
 
 class GenderViewController: UIViewController {
 
@@ -19,13 +20,21 @@ class GenderViewController: UIViewController {
 
     @IBOutlet weak var womanButton: UIButton!
 
+    let keychain = KeychainSwift()
+
     @IBAction func maleAction(_ sender: UIButton) {
-        DatabasePath.userRef.child(FirebaseManager.uid).updateChildValues(["gender": "male"])
+
+        guard let uid = keychain.get("uid")
+            else { return }
+        DatabasePath.userRef.child(uid).updateChildValues(["gender": "male"])
 
     }
 
     @IBAction func womanAction(_ sender: Any) {
-        DatabasePath.userRef.child(FirebaseManager.uid).updateChildValues(["gender": "female"])
+
+        guard let uid = keychain.get("uid")
+            else { return }
+        DatabasePath.userRef.child(uid).updateChildValues(["gender": "female"])
     }
 
     override func viewDidLoad() {

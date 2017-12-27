@@ -9,6 +9,7 @@
 import Foundation
 import CoreLocation
 import Firebase
+import KeychainSwift
 
 extension HomeViewController: CLLocationManagerDelegate {
 
@@ -25,8 +26,6 @@ extension HomeViewController: CLLocationManagerDelegate {
         let settingTableViewController = SettingTableViewController()
 
         settingTableViewController.cityName = self.cityName
-
-        print(settingTableViewController.cityName, "***")
 
         let navSettingTableViewController = UINavigationController(rootViewController: settingTableViewController)
 
@@ -47,7 +46,10 @@ extension HomeViewController: CLLocationManagerDelegate {
 
         locationManager.startUpdatingLocation()
 
-        DatabasePath.userRef.child(FirebaseManager.uid).child("location").updateChildValues(["latitude": locationManager.location?.coordinate.latitude,
+        guard let uid = self.keychain.get("uid")
+            else { return }
+
+        DatabasePath.userRef.child(uid).child("location").updateChildValues(["latitude": locationManager.location?.coordinate.latitude,
                                                     "logitude": locationManager.location?.coordinate.longitude])
 
         let geoCoder = CLGeocoder()

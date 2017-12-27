@@ -1,26 +1,21 @@
 //
-//  AgeRangeTableViewCell.swift
+//  MultipleTableViewCell.swift
 //  i-Chat
 //
-//  Created by cindy on 2017/12/26.
+//  Created by cindy on 2017/12/27.
 //  Copyright © 2017年 Jui-hsin.Chen. All rights reserved.
 //
 
 import UIKit
 
-class AgeRangeTableViewCell: UITableViewCell {
+class MultipleTableViewCell: UITableViewCell {
 
-    @IBOutlet weak var maxAgeTextField: UITextField!
-    @IBOutlet weak var minAgeTextField: UITextField!
+    @IBOutlet weak var rightLabel: UILabel!
 
-    let pickerView = UIPickerView()
-
+    @IBOutlet weak var leftLabel: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()
-
-        minAgeTextField.inputView = pickerView
-
-        maxAgeTextField.inputView = pickerView
+        // Initialization code
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

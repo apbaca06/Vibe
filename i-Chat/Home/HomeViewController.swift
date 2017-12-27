@@ -14,6 +14,8 @@ import CoreLocation
 
 class HomeViewController: UICollectionViewController, UICollectionViewDelegateFlowLayout {
 
+    let keychain = KeychainSwift()
+
     let locationManager = CLLocationManager()
 
     var cityName: String?

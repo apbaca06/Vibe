@@ -10,6 +10,7 @@ import Foundation
 import UIKit
 import SVProgressHUD
 import Firebase
+import KeychainSwift
 
 class PreferenceViewController: UIViewController {
 
@@ -17,12 +18,21 @@ class PreferenceViewController: UIViewController {
 
     @IBOutlet weak var womanButton: UIButton!
 
+    let keychain = KeychainSwift()
+
     @IBAction func maleAction(_ sender: UIButton) {
-        DatabasePath.userRef.child(FirebaseManager.uid).updateChildValues(["preference": "male"])
+
+        guard let uid = keychain.get("uid")
+            else { return }
+        DatabasePath.userRef.child(uid).updateChildValues(["preference": "male"])
     }
 
     @IBAction func womanAction(_ sender: Any) {
-        DatabasePath.userRef.child(FirebaseManager.uid).updateChildValues(["preference": "female"])
+
+        guard let uid = keychain.get("uid")
+            else { return }
+
+        DatabasePath.userRef.child(uid).updateChildValues(["preference": "female"])
     }
 
     override func viewDidLoad() {

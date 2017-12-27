@@ -80,8 +80,15 @@ enum SearchComponent {
 }
 
 class SettingTableViewController: UITableViewController, GenderPickerControllerDelegate, AgeRangePickerControllerDelegate {
+
     func controller(_ controller: AgeRangePickerController, minAge: Int) {
         self.minAge = String(describing: minAge)
+        tableView.reloadData()
+
+    }
+
+    func controller(_ controller: AgeRangePickerController, maxAge: Int) {
+        self.maxAge = String(describing: maxAge)
         tableView.reloadData()
 
     }
@@ -166,23 +173,23 @@ class SettingTableViewController: UITableViewController, GenderPickerControllerD
         )
 
         let nib2 = UINib(
-            nibName: "ShowTableViewCell",
+            nibName: "LabelTableViewCell",
             bundle: nil
         )
 
         tableView.register(
             nib2,
-            forCellReuseIdentifier: "ShowTableViewCell"
+            forCellReuseIdentifier: "LabelTableViewCell"
         )
 
         let nib3 = UINib(
-            nibName: "PickerTableViewCell",
+            nibName: "GenderPickerTableViewCell",
             bundle: nil
         )
 
         tableView.register(
             nib3,
-            forCellReuseIdentifier: "PickerTableViewCell"
+            forCellReuseIdentifier: "GenderPickerTableViewCell"
         )
 
         let nib4 = UINib(
@@ -203,6 +210,16 @@ class SettingTableViewController: UITableViewController, GenderPickerControllerD
         tableView.register(
             nib5,
             forCellReuseIdentifier: "AgeRangeTableViewCell"
+        )
+
+        let nib6 = UINib(
+            nibName: "SliderTableViewCell",
+            bundle: nil
+        )
+
+        tableView.register(
+            nib6,
+            forCellReuseIdentifier: "SliderTableViewCell"
         )
 
         tableView.estimatedRowHeight = 44.0
@@ -254,9 +271,102 @@ class SettingTableViewController: UITableViewController, GenderPickerControllerD
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 
+        // swiftlint:disable force_cast
+
         let component = components[indexPath.section]
 
         switch component {
+
+        case .search:
+
+            switch indexPath.row {
+
+            case 0:
+
+                let cell = tableView.dequeueReusableCell(
+                    withIdentifier: "LabelTableViewCell",
+                    for: indexPath
+                    ) as! LabelTableViewCell
+
+                cell.leftLabel.text = NSLocalizedString("Location", comment: "")
+
+                cell.rightLabel.text = self.cityName
+
+                return cell
+
+            case 1:
+
+                let cell = tableView.dequeueReusableCell(
+                    withIdentifier: "SliderTableViewCell",
+                    for: indexPath
+                    ) as! SliderTableViewCell
+
+                cell.leftLabel.text = NSLocalizedString("Max Distance", comment: "")
+
+                return cell
+
+            case 2:
+
+                let cell = tableView.dequeueReusableCell(
+                    withIdentifier: "GenderPickerTableViewCell",
+                    for: indexPath
+                    ) as! GenderPickerTableViewCell
+
+                cell.leftLabel.text = NSLocalizedString("Gender Preference", comment: "")
+
+                let genderPickerViewController = GenderPickerController.shared
+
+                self.addChildViewController(genderPickerViewController)
+
+                cell.pickerView.delegate = genderPickerViewController
+
+                cell.pickerView.dataSource = genderPickerViewController
+
+                if self.gender != nil {
+                    cell.textfield.text = gender
+                }
+
+                return cell
+
+            case 3:
+                let cell = tableView.dequeueReusableCell(
+                    withIdentifier: "AgeRangeTableViewCell",
+                    for: indexPath
+                    ) as! AgeRangeTableViewCell
+
+                cell.leftLabel.text = NSLocalizedString("Age Range", comment: "")
+
+                let ageRangePickerViewController = AgeRangePickerController.shared
+
+                self.addChildViewController(ageRangePickerViewController)
+
+                cell.minAgePickerView.delegate = ageRangePickerViewController
+
+                cell.minAgePickerView.dataSource = ageRangePickerViewController
+
+                cell.maxAgePickerView.delegate = ageRangePickerViewController
+
+                cell.maxAgePickerView.dataSource = ageRangePickerViewController
+
+                if self.minAge != nil {
+                    cell.minAgeTextField.text = self.minAge
+                }
+                if self.maxAge != nil {
+                    cell.maxAgeTextField.text = self.maxAge
+                }
+
+                return cell
+
+            default:
+                let cell = tableView.dequeueReusableCell(
+                    withIdentifier: "SwitchTableViewCell",
+                    for: indexPath
+                    ) as! SwitchTableViewCell
+                // swiftlint:enable force_cast
+                cell.cellLabel.text = NSLocalizedString("Gender", comment: "")
+                return cell
+
+            }
 
         case .logout:
 
@@ -273,9 +383,9 @@ class SettingTableViewController: UITableViewController, GenderPickerControllerD
 
             // swiftlint:disable force_cast
             let cell = tableView.dequeueReusableCell(
-                withIdentifier: "PickerTableViewCell",
+                withIdentifier: "GenderPickerTableViewCell",
                 for: indexPath
-                ) as! PickerTableViewCell
+                ) as! GenderPickerTableViewCell
             // swiftlint:enable force_cast
 
             return cell
@@ -284,78 +394,15 @@ class SettingTableViewController: UITableViewController, GenderPickerControllerD
 
             // swiftlint:disable force_cast
             let cell = tableView.dequeueReusableCell(
-                withIdentifier: "ShowTableViewCell",
+                withIdentifier: "LabelTableViewCell",
                 for: indexPath
-                ) as! ShowTableViewCell
+                ) as! LabelTableViewCell
             // swiftlint:enable force_cast
 
             cell.rightLabel.text = self.cityName
 
             return cell
-        case .search:
 
-            switch indexPath.row {
-                case 0:
-                // swiftlint:disable force_cast
-                let cell = tableView.dequeueReusableCell(
-                    withIdentifier: "ShowTableViewCell",
-                    for: indexPath
-                    ) as! ShowTableViewCell
-                return cell
-
-            case 1:
-
-                let cell = tableView.dequeueReusableCell(
-                    withIdentifier: "PickerTableViewCell",
-                    for: indexPath
-                    ) as! PickerTableViewCell
-
-                cell.cellName.text = NSLocalizedString("Max Distance", comment: "")
-
-                let genderPickerViewController = GenderPickerController.shared
-
-                self.addChildViewController(genderPickerViewController)
-
-                cell.pickerView.delegate = genderPickerViewController
-
-                cell.pickerView.dataSource = genderPickerViewController
-
-//                cell.textfield.text = DatabasePath.userRef.child(FirebaseManager.uid).child("preference").observeSingleEvent(of: <#T##DataEventType#>, with: <#T##(DataSnapshot) -> Void#>)
-
-                    cell.textfield.text = gender
-
-                return cell
-
-            case 3:
-                let cell = tableView.dequeueReusableCell(
-                    withIdentifier: "AgeRangeTableViewCell",
-                    for: indexPath
-                    ) as! AgeRangeTableViewCell
-
-                let ageRangePickerViewController = AgeRangePickerController.shared
-
-                self.addChildViewController(ageRangePickerViewController)
-
-                cell.pickerView.delegate = ageRangePickerViewController
-
-                cell.pickerView.dataSource = ageRangePickerViewController
-
-                cell.minAgeTextField.text = self.minAge
-
-                cell.maxAgeTextField.text = self.minAge
-
-                return cell
-
-            default:
-                let cell = tableView.dequeueReusableCell(
-                    withIdentifier: "SwitchTableViewCell",
-                    for: indexPath
-                    ) as! SwitchTableViewCell
-                // swiftlint:enable force_cast
-                cell.cellLabel.text = NSLocalizedString("Gender", comment: "")
-                return cell
-
-            }
         }
     }
 
