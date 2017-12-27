@@ -14,6 +14,8 @@ import KeychainSwift
 
 class PreferenceViewController: UIViewController {
 
+    @IBOutlet weak var decriptionLabel: UILabel!
+
     @IBOutlet weak var maleButton: UIButton!
 
     @IBOutlet weak var womanButton: UIButton!

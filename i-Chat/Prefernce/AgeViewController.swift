@@ -7,8 +7,23 @@
 //
 
 import Foundation
+import Firebase
+import KeychainSwift
+
+extension Date {
+
+    var compareToNow: Int {
+        return Calendar.current.dateComponents([.year], from: self, to: Date()).year!
+    }
+}
 
 class AgeViewController: UIViewController {
+
+    @IBOutlet weak var birthdayImage: UIImageView!
+
+    @IBOutlet weak var chickenImage: UIImageView!
+
+    @IBOutlet weak var decriptionLabel: UILabel!
 
     @IBOutlet weak var datePicker: UIDatePicker!
 
@@ -18,43 +33,59 @@ class AgeViewController: UIViewController {
 
     @IBOutlet weak var button: UIButton!
 
+    var formatter = DateFormatter()
+
+    let keychain = KeychainSwift()
+
     @IBAction func pickDate(_ sender: UIDatePicker) {
 
-        let formatter = DateFormatter()
-        formatter.dateFormat = "yyyy-MM-dd"
+        let userBirthday = "\(formatter.string(from: sender.date))"
 
-        dateLabel.text = "\(formatter.string(from: sender.date))"
+        dateLabel.text = userBirthday
+
+        let birthdayComponents = userBirthday.components(separatedBy: "-")
+
+        let dateTransform = Calendar.current.date(from: DateComponents(year:
+            Int(birthdayComponents[0]), month: Int(birthdayComponents[1]), day:
+            Int(birthdayComponents[2])))!
+
+        let age = dateTransform.compareToNow
+
+        ageLabel.text = String(describing: age)
+
+        guard let uid = keychain.get("uid")
+            else { return }
+
+        DatabasePath.userRef.child(uid).updateChildValues(["age": age])
     }
 
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        decriptionLabel.text = NSLocalizedString("Set your birthday", comment: "")
+
+        button.cornerRadius = 10
+
+        button.setTitle(NSLocalizedString("Conform", comment: ""), for: .normal)
+
+        dateLabel.text = NSLocalizedString("Your birthday", comment: "")
+
+        ageLabel.text = NSLocalizedString("Your age", comment: "")
+
+        self.formatter.dateFormat = "yyyy-MM-dd"
+
         datePicker.datePickerMode = .date
 
-        let formatter = DateFormatter()
-        // 可以選擇的最早日期時間
+        let defaultDate = formatter.date(from: "1994-04-09")!
+        datePicker.date = defaultDate
+
         let fromDateTime = formatter.date(from: "1940-01-01")
 
-        let tillDateTime = formatter.date(from: "2000-01-01")
+        let tillDateTime = Calendar.current.date(byAdding: .year, value: -18, to: Date())
 
-        // 設置可以選擇的最早日期時間
         datePicker.minimumDate = fromDateTime
-        datePicker.maximumDate = Date()
 
-//        let now = Date()
-//        let nowCalendar = Calendar.current
-//        let nowComponents = nowCalendar.dateComponents([.day, .month, .year], from: now)
-//
-//        //Compare if date is lesser than now and then create a new date
-//        if nowCalendar.compare(datePicker.date, to: now, toGranularity: [.day, .month, .year])
-//        compareDate(datePicker.date, toDate: now, toUnitGranularity: [.Day, .Month, .Year]) == ComparisonResult.OrderedAscending {
-//
-//            let dateCalendar = Calendar.current
-//            let dateComponents = dateCalendar.components([.Day, .Month, .Year], fromDate: datePicker.date)
-//
-//            dateComponents.year = nowComponents.year + 1
-//            let newDate = dateCalendar.dateFromComponents(dateComponents)
-//            datePicker.date = newDate!
-//        }
+        datePicker.maximumDate = tillDateTime
 
     }
 

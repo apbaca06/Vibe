@@ -97,12 +97,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
             let loginViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "LogInViewController")
 
-//            let settingNav = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "settingNav")
-//            AppDelegate.shared.window?.rootViewController = nav
+            let preferenceNav = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "PreferenceNav")
 
-            let layout = UICollectionViewFlowLayout()
-
-            AppDelegate.shared.window?.rootViewController = loginViewController
+            AppDelegate.shared.window?.rootViewController = preferenceNav
         }
 
         return true
