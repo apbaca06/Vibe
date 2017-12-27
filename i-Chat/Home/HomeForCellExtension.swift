@@ -79,7 +79,6 @@ extension HomeViewController: CLLocationManagerDelegate {
 
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         let location = locations[0]
-        print("***", location)
 
         locationManager.stopUpdatingLocation()
     }

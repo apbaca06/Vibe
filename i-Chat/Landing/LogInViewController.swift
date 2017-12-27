@@ -59,6 +59,10 @@ class LogInViewController: UIViewController {
 
         setUpButton()
 
+        DatabasePath.userRef.queryLimited(toFirst: 5).queryOrdered(byChild: "maxDistance").observe(.value) { (datasnapshot) in
+            print("*****", datasnapshot)
+        }
+
     }
 
     func setUpButton() {

@@ -19,10 +19,6 @@ class SwipeViewController: UIViewController {
 
         self.modalTransitionStyle = UIModalTransitionStyle.flipHorizontal
 
-        DatabasePath.userRef.queryOrdered(byChild: "profileImgURL").observe(.value) { (datasnapshot) in
-            print("***", datasnapshot)
-        }
-
     }
 }
 
