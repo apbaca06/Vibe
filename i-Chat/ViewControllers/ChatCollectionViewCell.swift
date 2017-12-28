@@ -7,19 +7,27 @@
 //
 
 import UIKit
+import Firebase
 
 class ChatCollectionViewCell: UICollectionViewCell {
 
     @IBOutlet weak var button: UIButton!
 
     @IBAction func callAction(_ sender: UIButton) {
-        CallManager.shared.audioCall(toUser: User(id: 1234, name: "cindy", gender: .female, imgURL: "ee", email: "cindy@gmail.com", quickbloxID: 39258896))
+        DatabasePath.userRef.child("c3ywbmhKGXPBK9ih3FkLHF29pPX2").observe(.value) { (datasnapshot) in
+            do {
+                let user = try User(datasnapshot)
 
+                 CallManager.shared.audioCall(toUser: user)
+            } catch {
+
+            }
+        }
+//        User(id: 1234, name: "cindy", gender: .female, imgURL: "ee", email: "cindy@gmail.com", qbID: 39258896)
         print("****,\(CallManager.shared.session)")
 
-        //開始嘟嘟聲
-
     }
+
     override func awakeFromNib() {
         super.awakeFromNib()
 

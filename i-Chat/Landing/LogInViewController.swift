@@ -9,6 +9,7 @@
 import UIKit
 import IQKeyboardManager
 import SVProgressHUD
+import MapKit
 
 class LogInViewController: UIViewController {
 
@@ -59,9 +60,19 @@ class LogInViewController: UIViewController {
 
         setUpButton()
 
-        DatabasePath.userRef.queryLimited(toFirst: 5).queryOrdered(byChild: "maxDistance").observe(.value) { (datasnapshot) in
-            print("*****", datasnapshot)
-        }
+//        DatabasePath.userRef
+//            .queryOrdered(byChild: "maxDistance")
+//            .queryStarting(atValue: 0)
+//            .queryEnding(atValue: 80)
+//            .observe(.value) { (datasnapshot) in
+//                print("*****", datasnapshot)
+//        }
+
+        let location1 = CLLocation(latitude: 24.953232, longitude: 121.225353)
+        let location2 = CLLocation(latitude: 24.9511, longitude: 121.2358)
+
+        let distance: CLLocationDistance = location1.distance(from: location2)
+        print("***", "distance = \(distance) m")
 
     }
 

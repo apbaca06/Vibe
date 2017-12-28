@@ -12,10 +12,15 @@ import KeychainSwift
 import Firebase
 import CoreLocation
 import Koloda
+import Nuke
 
 class HomeViewController: UICollectionViewController, UICollectionViewDelegateFlowLayout {
 
     let keychain = KeychainSwift()
+
+    var userArray: [User] = []
+
+    var userImageArray: [UIImage] = []
 
     let locationManager = CLLocationManager()
 
@@ -43,6 +48,45 @@ class HomeViewController: UICollectionViewController, UICollectionViewDelegateFl
 
         setupLocationManager()
 
+        DatabasePath.userRef.observe(.value) { (dataSnapshot) in
+            do {
+
+                guard let datas = dataSnapshot.value as? [String: Any]
+
+                    else { return }
+
+                for data in datas {
+
+                    let userDic = [data.key: data.value]
+
+                    let user = try User(userDic)
+
+                    self.userArray.append(user)
+
+                    if let profileImgURL = URL(string: user.profileImgURL) {
+
+                        Manager.shared.loadImage(with: profileImgURL, completion: { result in
+                            if let image = result.value {
+                                self.userImageArray.append(image)
+                            }
+                        })
+
+                    }
+
+                }
+//                    self.collectionView?.reloadData()
+
+            } catch {
+                print(error, "**")
+            }
+        }
+
+    }
+
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+
+        reloadInputViews()
     }
 
     func setupNibCell() {
@@ -229,13 +273,10 @@ class HomeViewController: UICollectionViewController, UICollectionViewDelegateFl
                 ) as! SwipingCollectionViewCell
 
                 // swiftlint:enable force_cast
-            let swipeViewController = SwipeViewController()
 
-            self.addChildViewController(swipeViewController)
+            cell.swipeView.delegate = self
 
-            cell.swipeView.delegate = swipeViewController
-
-            cell.swipeView.dataSource = swipeViewController
+            cell.swipeView.dataSource = self
 
             return cell
 

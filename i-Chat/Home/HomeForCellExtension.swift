@@ -10,6 +10,7 @@ import Foundation
 import CoreLocation
 import Firebase
 import KeychainSwift
+import Koloda
 
 extension HomeViewController: CLLocationManagerDelegate {
 
@@ -50,7 +51,7 @@ extension HomeViewController: CLLocationManagerDelegate {
             else { return }
 
         DatabasePath.userRef.child(uid).child("location").updateChildValues(["latitude": locationManager.location?.coordinate.latitude,
-                                                    "logitude": locationManager.location?.coordinate.longitude])
+                                                    "longitude": locationManager.location?.coordinate.longitude])
 
         let geoCoder = CLGeocoder()
 
@@ -83,4 +84,56 @@ extension HomeViewController: CLLocationManagerDelegate {
         locationManager.stopUpdatingLocation()
     }
 
+}
+
+class SwipeViewController: UIViewController {
+
+    var dataSource = [#imageLiteral(resourceName: "chicken"), #imageLiteral(resourceName: "heart"), #imageLiteral(resourceName: "cancel"), #imageLiteral(resourceName: "cupid")]
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+
+        self.modalTransitionStyle = UIModalTransitionStyle.flipHorizontal
+
+    }
+}
+
+// MARK: KolodaViewDelegate
+
+extension HomeViewController: KolodaViewDelegate {
+
+    func kolodaDidRunOutOfCards(_ koloda: KolodaView) {
+
+        let position = koloda.currentCardIndex
+        //        for i in 1...4 {
+        //            dataSource.append(UIImage(named: "Card_like_\(i)")!)
+        //        }
+        //        koloda.insertCardAtIndexRange(position..<position + 4, animated: true)
+    }
+
+    func koloda(_ koloda: KolodaView, didSelectCardAt index: Int) {
+        UIApplication.shared.openURL(URL(string: "https://yalantis.com/")!)
+    }
+
+}
+
+// MARK: KolodaViewDataSource
+
+extension HomeViewController: KolodaViewDataSource {
+
+    func kolodaNumberOfCards(_ koloda: KolodaView) -> Int {
+        return userImageArray.count
+    }
+
+    func kolodaSpeedThatCardShouldDrag(_ koloda: KolodaView) -> DragSpeed {
+        return .default
+    }
+
+    func koloda(_ koloda: KolodaView, viewForCardAt index: Int) -> UIView {
+        return UIImageView(image: userImageArray[Int(index)])
+    }
+
+    func koloda(_ koloda: KolodaView, viewForCardOverlayAt index: Int) -> OverlayView? {
+        return Bundle.main.loadNibNamed("OverlayView", owner: self, options: nil)?[0] as? OverlayView
+    }
 }

@@ -55,7 +55,6 @@
 		3792B0BC1FF35AB700AB4838 /* SliderTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3792B0BA1FF35AB700AB4838 /* SliderTableViewCell.xib */; };
 		3792B0C01FF367C600AB4838 /* MultipleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3792B0BE1FF367C600AB4838 /* MultipleTableViewCell.swift */; };
 		3792B0C11FF367C600AB4838 /* MultipleTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3792B0BF1FF367C600AB4838 /* MultipleTableViewCell.xib */; };
-		3792B0C61FF3CA9600AB4838 /* SwipeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3792B0C51FF3CA9600AB4838 /* SwipeViewController.swift */; };
 		3792B0C81FF3CFF800AB4838 /* OverlayView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3792B0C71FF3CFF800AB4838 /* OverlayView.xib */; };
 		3792B0CA1FF3D05200AB4838 /* ExampleOverlayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3792B0C91FF3D05200AB4838 /* ExampleOverlayView.swift */; };
 		37A5BB9B1FE61CE200C4F1E6 /* MenuCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37A5BB9A1FE61CE200C4F1E6 /* MenuCell.swift */; };
@@ -153,7 +152,6 @@
 		3792B0BA1FF35AB700AB4838 /* SliderTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SliderTableViewCell.xib; sourceTree = "<group>"; };
 		3792B0BE1FF367C600AB4838 /* MultipleTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultipleTableViewCell.swift; sourceTree = "<group>"; };
 		3792B0BF1FF367C600AB4838 /* MultipleTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MultipleTableViewCell.xib; sourceTree = "<group>"; };
-		3792B0C51FF3CA9600AB4838 /* SwipeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipeViewController.swift; sourceTree = "<group>"; };
 		3792B0C71FF3CFF800AB4838 /* OverlayView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OverlayView.xib; sourceTree = "<group>"; };
 		3792B0C91FF3D05200AB4838 /* ExampleOverlayView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExampleOverlayView.swift; sourceTree = "<group>"; };
 		37A5BB9A1FE61CE200C4F1E6 /* MenuCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuCell.swift; sourceTree = "<group>"; };
@@ -366,7 +364,6 @@
 		3792B0C41FF3A78700AB4838 /* Swipe */ = {
 			isa = PBXGroup;
 			children = (
-				3792B0C51FF3CA9600AB4838 /* SwipeViewController.swift */,
 				37A5BBA21FE628A000C4F1E6 /* SwipingCollectionViewCell.swift */,
 				37A5BBA31FE628A000C4F1E6 /* SwipingCollectionViewCell.xib */,
 				3792B0C91FF3D05200AB4838 /* ExampleOverlayView.swift */,
@@ -683,7 +680,6 @@
 				3754E28A1FE12809002604CD /* QuickbloxManager.swift in Sources */,
 				37CA18221FE2397100C1171B /* ChatroomViewController.swift in Sources */,
 				37DE5F981FEA65B30017E09D /* LogoutTableViewCell.swift in Sources */,
-				3792B0C61FF3CA9600AB4838 /* SwipeViewController.swift in Sources */,
 				370832B01FE2847F00D4DC86 /* IncomingCallViewController.swift in Sources */,
 				371459B91FDFD11100C1F14A /* Chat.swift in Sources */,
 				37CA181E1FE2221500C1171B /* FirebaseManager.swift in Sources */,
