@@ -11,6 +11,7 @@ import CoreLocation
 import Firebase
 import KeychainSwift
 import Koloda
+import Nuke
 
 extension HomeViewController: CLLocationManagerDelegate {
 
@@ -86,18 +87,6 @@ extension HomeViewController: CLLocationManagerDelegate {
 
 }
 
-class SwipeViewController: UIViewController {
-
-    var dataSource = [#imageLiteral(resourceName: "chicken"), #imageLiteral(resourceName: "heart"), #imageLiteral(resourceName: "cancel"), #imageLiteral(resourceName: "cupid")]
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        self.modalTransitionStyle = UIModalTransitionStyle.flipHorizontal
-
-    }
-}
-
 // MARK: KolodaViewDelegate
 
 extension HomeViewController: KolodaViewDelegate {
@@ -122,7 +111,8 @@ extension HomeViewController: KolodaViewDelegate {
 extension HomeViewController: KolodaViewDataSource {
 
     func kolodaNumberOfCards(_ koloda: KolodaView) -> Int {
-        return userImageArray.count
+//        return 5
+        return userArray.count
     }
 
     func kolodaSpeedThatCardShouldDrag(_ koloda: KolodaView) -> DragSpeed {
@@ -130,7 +120,27 @@ extension HomeViewController: KolodaViewDataSource {
     }
 
     func koloda(_ koloda: KolodaView, viewForCardAt index: Int) -> UIView {
-        return UIImageView(image: userImageArray[Int(index)])
+
+        guard let cardView = Bundle.main.loadNibNamed("CardView", owner: self, options: nil)?.first as? CardView
+        else {
+            return UIView()
+        }
+
+        if userArray.count <= index {
+
+            let myView = UIView()
+            myView.backgroundColor = .black
+
+            return myView
+        } else {
+
+            cardView.ageLabel.text = String(describing: userArray[index].age)
+            cardView.nameLabel.text = String(describing: userArray[index].name)
+            let imageURL = URL(string: userArray[index].profileImgURL)!
+            Manager.shared.loadImage(with: imageURL, into: cardView.imageView)
+    //        cardView.cityName.text = String(describing: userArray[index].name)
+            return cardView
+        }
     }
 
     func koloda(_ koloda: KolodaView, viewForCardOverlayAt index: Int) -> OverlayView? {

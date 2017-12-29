@@ -14,13 +14,21 @@ import CoreLocation
 import Koloda
 import Nuke
 
-class HomeViewController: UICollectionViewController, UICollectionViewDelegateFlowLayout {
+class HomeViewController: UICollectionViewController, UICollectionViewDelegateFlowLayout, UserProviderDelegate {
+
+    func userProvider(_ provider: UserProvider, didFetch users: [User]) {
+        self.userArray = users
+
+        DispatchQueue.main.async {
+            self.collectionView?.reloadData()
+        }
+    }
+
+    let userProvider = UserProvider()
 
     let keychain = KeychainSwift()
 
     var userArray: [User] = []
-
-    var userImageArray: [UIImage] = []
 
     let locationManager = CLLocationManager()
 
@@ -30,6 +38,10 @@ class HomeViewController: UICollectionViewController, UICollectionViewDelegateFl
 
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        userProvider.delegate = self
+
+        userProvider.loadSwipeImage()
 
         // self class must conform to QBRTCClientDelegate protocol
         QBRTCClient.instance().add(self)
@@ -47,39 +59,6 @@ class HomeViewController: UICollectionViewController, UICollectionViewDelegateFl
         scrollToMenuIndex(1)
 
         setupLocationManager()
-
-        DatabasePath.userRef.observe(.value) { (dataSnapshot) in
-            do {
-
-                guard let datas = dataSnapshot.value as? [String: Any]
-
-                    else { return }
-
-                for data in datas {
-
-                    let userDic = [data.key: data.value]
-
-                    let user = try User(userDic)
-
-                    self.userArray.append(user)
-
-                    if let profileImgURL = URL(string: user.profileImgURL) {
-
-                        Manager.shared.loadImage(with: profileImgURL, completion: { result in
-                            if let image = result.value {
-                                self.userImageArray.append(image)
-                            }
-                        })
-
-                    }
-
-                }
-//                    self.collectionView?.reloadData()
-
-            } catch {
-                print(error, "**")
-            }
-        }
 
     }
 

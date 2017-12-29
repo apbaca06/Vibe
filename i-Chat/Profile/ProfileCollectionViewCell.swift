@@ -39,12 +39,6 @@ class ProfileCollectionViewCell: UICollectionViewCell {
 
         profileImg.cornerRadius = 40
 
-        if #available(iOS 11.0, *) {
-            profileImg.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMaxYCorner]
-        } else {
-            // Fallback on earlier versions
-        }
-
         let keychain = KeychainSwift()
 
         guard let uid = keychain.get("uid")
