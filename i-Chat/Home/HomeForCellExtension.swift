@@ -102,7 +102,7 @@ extension HomeViewController: KolodaViewDelegate {
     }
 
     func koloda(_ koloda: KolodaView, didSelectCardAt index: Int) {
-        UIApplication.shared.openURL(URL(string: "https://yalantis.com/")!)
+//        UIApplication.shared.openURL(URL(string: "https://yalantis.com/")!)
     }
 
 }
@@ -137,9 +137,9 @@ extension HomeViewController: KolodaViewDataSource {
             cardView.ageLabel.text = String(describing: userArray[index].age)
             cardView.nameLabel.text = String(describing: userArray[index].name)
             cardView.distanceLabel.text = "\(String(describing: distanceBtwnArray[index])) km"
+            cardView.cityName.text = userArray[index].cityName
             let imageURL = URL(string: userArray[index].profileImgURL)!
             Manager.shared.loadImage(with: imageURL, into: cardView.imageView)
-    //        cardView.cityName.text = String(describing: userArray[index].name)
             return cardView
         }
     }

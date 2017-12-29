@@ -39,6 +39,8 @@ struct User {
 
         public static let gender = "gender"
 
+        public static let cityName = "cityName"
+
         public static let location = "location"
 
         public static let latitude = "latitude"
@@ -77,6 +79,8 @@ struct User {
     let email: String
 
     let gender: Gender
+
+    let cityName: String
 
     let latitude: Double
 
@@ -206,7 +210,8 @@ struct User {
         guard
             let location = object[Schema.location] as? [String: Any],
             let latitude = location[Schema.latitude] as? Double,
-            let longitude = location[Schema.longitude] as? Double
+            let longitude = location[Schema.longitude] as? Double,
+            let cityName = location[Schema.cityName] as? String
             else {
 
                 let error: JSONError = .missingValueForKey(Schema.location)
@@ -217,6 +222,7 @@ struct User {
 
         self.latitude = latitude
         self.longitude = longitude
+        self.cityName = cityName
 
         guard
             let maxDistance = object[Schema.maxDistance] as? Int
@@ -251,8 +257,6 @@ struct User {
                 throw error
 
         }
-
-//        let preferenceLowercase = gender.lowercased()
 
         guard let preferenceLower = Gender(rawValue: preference)
             else {
