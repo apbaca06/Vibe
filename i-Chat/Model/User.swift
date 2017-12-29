@@ -59,9 +59,9 @@ struct User {
 
     enum Gender: String {
 
-        case female
+        case female = "Female"
 
-        case male
+        case male = "Male"
     }
 
     // MARK: Property
@@ -194,9 +194,7 @@ struct User {
 
         }
 
-        let genderLowercase = gender.lowercased()
-
-        guard let genderLower = Gender(rawValue: genderLowercase)
+        guard let genderLower = Gender(rawValue: gender)
             else {
                 let error: JSONError = .missingValueForKey(Schema.gender)
 
@@ -254,9 +252,9 @@ struct User {
 
         }
 
-        let preferenceLowercase = gender.lowercased()
+//        let preferenceLowercase = gender.lowercased()
 
-        guard let preferenceLower = Gender(rawValue: preferenceLowercase)
+        guard let preferenceLower = Gender(rawValue: preference)
             else {
                 let error: JSONError = .missingValueForKey(Schema.preference)
 

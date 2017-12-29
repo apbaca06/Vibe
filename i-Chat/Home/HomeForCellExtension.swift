@@ -111,7 +111,6 @@ extension HomeViewController: KolodaViewDelegate {
 extension HomeViewController: KolodaViewDataSource {
 
     func kolodaNumberOfCards(_ koloda: KolodaView) -> Int {
-//        return 5
         return userArray.count
     }
 

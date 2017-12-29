@@ -77,20 +77,4 @@ class FirebaseManager {
         }
     }
 
-//    static func fetchFirstNode(nodeName: String) -> URL? {
-//        var urlString: URL?
-//        DatabasePath.userRef.child(nodeName).child("profileImgURL").observeSingleEvent(of: .value) { (datashot) in
-//            if let dic = datashot.value  as? [ String : Any ],
-//                let profileImgURLString = dic["profileImgURL"] as? String,
-//                let profileImgURL = URL(string: profileImgURLString) as? URL {
-//                    urlString = profileImgURL
-//            }
-//        }
-//        return urlString
-//    }
-//
-//    static func fetchStoragePic(pathName: String) {
-//    
-//    }
-
 }

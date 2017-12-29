@@ -15,6 +15,9 @@ import Koloda
 import Nuke
 
 class HomeViewController: UICollectionViewController, UICollectionViewDelegateFlowLayout, UserProviderDelegate {
+    func userProvider(_ provider: UserProvider, didFetch currentUser: User?) {
+        self.currentUser = currentUser
+    }
 
     func userProvider(_ provider: UserProvider, didFetch users: [User]) {
         self.userArray = users
@@ -28,6 +31,8 @@ class HomeViewController: UICollectionViewController, UICollectionViewDelegateFl
 
     let keychain = KeychainSwift()
 
+    var currentUser: User?
+
     var userArray: [User] = []
 
     let locationManager = CLLocationManager()
@@ -40,6 +45,8 @@ class HomeViewController: UICollectionViewController, UICollectionViewDelegateFl
         super.viewDidLoad()
 
         userProvider.delegate = self
+
+        userProvider.fetchCurrentUser()
 
         userProvider.loadSwipeImage()
 

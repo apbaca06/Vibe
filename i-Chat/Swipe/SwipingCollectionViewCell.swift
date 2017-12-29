@@ -10,16 +10,9 @@ import UIKit
 import Koloda
 
 class SwipingCollectionViewCell: UICollectionViewCell {
-    @IBOutlet weak var separatorView: UILabel!
 
-    @IBOutlet weak var ageLabel: UILabel!
-    @IBOutlet weak var nameLabel: UILabel!
-    @IBOutlet weak var cursorImageView: UIImageView!
-    @IBOutlet weak var flagImageView: UIImageView!
-    @IBOutlet weak var distanceLabel: UILabel!
-
-    @IBOutlet weak var cityNameLabel: UILabel!
     @IBOutlet weak var buttonView: UIView!
+
     @IBOutlet weak var dislikeButton: UIButton!
 
     @IBOutlet weak var likeButton: UIButton!

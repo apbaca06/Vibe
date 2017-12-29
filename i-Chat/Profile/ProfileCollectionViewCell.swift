@@ -44,26 +44,26 @@ class ProfileCollectionViewCell: UICollectionViewCell {
         guard let uid = keychain.get("uid")
             else { return }
 
-            DatabasePath.userRef.child(uid).observeSingleEvent(of: .value) { [unowned self] (datashot) in
+        DatabasePath.userRef.child(uid).observeSingleEvent(of: .value) { [unowned self] (datashot) in
 
-                guard let jsonObject = datashot.value as? [String: Any],
-                      let name = jsonObject["name"] as? String,
-                      let age = jsonObject["age"] as? Int,
-                      let profileImgString = jsonObject["profileImgURL"]  as? String
+            guard let jsonObject = datashot.value as? [String: Any],
+                let name = jsonObject["name"] as? String,
+                let age = jsonObject["age"] as? Int,
+                let profileImgString = jsonObject["profileImgURL"]  as? String
                 else { return }
 
-                self.nameLabel.text = name
+            self.nameLabel.text = name
 
-                self.ageLabel.text = String(describing: age)
+            self.ageLabel.text = String(describing: age)
 
-                if let profileImgURL = URL(string: profileImgString) {
+            if let profileImgURL = URL(string: profileImgString) {
 
-                    Manager.shared.loadImage(with: profileImgURL, into: self.profileImg)
+                Manager.shared.loadImage(with: profileImgURL, into: self.profileImg)
 
-                    self.reloadInputViews()
+                self.reloadInputViews()
 
-                    self.profileImg.contentMode = .center
-                }
+                self.profileImg.contentMode = .center
+            }
 
         }
 
