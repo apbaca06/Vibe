@@ -75,6 +75,7 @@ extension HomeViewController: CLLocationManagerDelegate {
             guard let city = cityName
                 else { return }
             self.cityName = city
+            DatabasePath.userRef.child(uid).child("location").updateChildValues(["cityName": city])
         }
 
     }
@@ -135,6 +136,7 @@ extension HomeViewController: KolodaViewDataSource {
 
             cardView.ageLabel.text = String(describing: userArray[index].age)
             cardView.nameLabel.text = String(describing: userArray[index].name)
+            cardView.distanceLabel.text = "\(String(describing: distanceBtwnArray[index])) km"
             let imageURL = URL(string: userArray[index].profileImgURL)!
             Manager.shared.loadImage(with: imageURL, into: cardView.imageView)
     //        cardView.cityName.text = String(describing: userArray[index].name)

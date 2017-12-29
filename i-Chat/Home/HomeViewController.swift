@@ -19,8 +19,9 @@ class HomeViewController: UICollectionViewController, UICollectionViewDelegateFl
         self.currentUser = currentUser
     }
 
-    func userProvider(_ provider: UserProvider, didFetch users: [User]) {
+    func userProvider(_ provider: UserProvider, didFetch users: [User], didGet distanceBtwn: [Int]) {
         self.userArray = users
+        self.distanceBtwnArray = distanceBtwn
 
         DispatchQueue.main.async {
             self.collectionView?.reloadData()
@@ -34,6 +35,8 @@ class HomeViewController: UICollectionViewController, UICollectionViewDelegateFl
     var currentUser: User?
 
     var userArray: [User] = []
+
+    var distanceBtwnArray: [Int] = []
 
     let locationManager = CLLocationManager()
 

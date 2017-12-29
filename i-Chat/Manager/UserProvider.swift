@@ -14,7 +14,7 @@ import MapKit
 
 protocol UserProviderDelegate: class {
 
-    func userProvider(_ provider: UserProvider, didFetch users: [User])
+    func userProvider(_ provider: UserProvider, didFetch users: [User], didGet distanceBtwn: [Int])
     func userProvider(_ provider: UserProvider, didFetch user: User?)
 
 }
@@ -22,6 +22,8 @@ protocol UserProviderDelegate: class {
 class UserProvider {
 
     var users: [User] = []
+
+    var distanceBtwn: [Int] = []
 
     var minAgePreference: Int?
 
@@ -109,7 +111,8 @@ class UserProvider {
 
                             if user.email != Auth.auth().currentUser?.email && user.age >= minAge && user.age <= maxAge && distanceBtwn <= maxDistance {
                                 self.users.append(user)
-                                self.delegate?.userProvider(self, didFetch: self.users)
+                                self.distanceBtwn.append(distanceBtwn)
+                                self.delegate?.userProvider(self, didFetch: self.users, didGet: self.distanceBtwn)
                             }
                         }
 
