@@ -83,12 +83,6 @@ class HomeViewController: UICollectionViewController, UICollectionViewDelegateFl
 
     }
 
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-
-        reloadInputViews()
-    }
-
     func setupNibCell() {
 
         let nib1 = UINib(

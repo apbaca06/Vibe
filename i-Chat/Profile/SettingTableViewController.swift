@@ -130,9 +130,8 @@ class SettingTableViewController: UITableViewController, GenderPickerControllerD
         super.viewDidLoad()
 
         GenderPickerController.shared.genderDelegate = self
-        AgeRangePickerController.shared.ageDelegate = self
 
-        print(GenderPickerController.shared)
+        AgeRangePickerController.shared.ageDelegate = self
 
         setUpTableView()
 
