@@ -14,8 +14,7 @@ import MapKit
 
 protocol UserProviderDelegate: class {
 
-    func userProvider(_ provider: UserProvider, didFetch users: [User], didGet distanceBtwn: [Int])
-    func userProvider(_ provider: UserProvider, didFetch user: User?)
+    func userProvider(_ provider: UserProvider, didFetch users: [User], didGet distanceBtwn: [Int], didFetch currentUser: User)
 
 }
 
@@ -33,26 +32,6 @@ class UserProvider {
 
     let keychain = KeychainSwift()
 
-    func fetchCurrentUser() {
-//
-//        guard let uid = keychain.get("uid")
-//            else { return }
-//
-//        DatabasePath.userRef.child(uid).observeSingleEvent(of: .value) { [unowned self] (datashot) in
-//            do {
-//                let user = try User(datashot)
-//
-//                self.keychain.set("\(user.minAge)", forKey: "minAge")
-//                self.keychain.set("\(user.maxAge)", forKey: "maxAge")
-//                self.keychain.set("\(user.preference)", forKey: "preference")
-//
-//                self.delegate?.userProvider(self, didFetch: user)
-//                } catch {
-//
-//            }
-//        }
-    }
-
     func loadSwipeImage() {
 
         guard let uid = keychain.get("uid")
@@ -63,16 +42,16 @@ class UserProvider {
 
                     let userDic = [ datashot.key: datashot.value]
 
-                    let user = try User(userDic)
+                    let currentUser = try User(userDic)
 
-                    self.keychain.set("\(user.minAge)", forKey: "minAge")
-                    self.keychain.set("\(user.maxAge)", forKey: "maxAge")
-                    self.keychain.set("\(user.preference.rawValue)", forKey: "preference")
-                    self.keychain.set("\(user.maxDistance)", forKey: "maxDistance")
-                    self.keychain.set("\(user.latitude)", forKey: "latitude")
-                    self.keychain.set("\(user.longitude)", forKey: "longitude")
+                    self.keychain.set("\(currentUser.gender)", forKey: "gender")
 
-                    self.delegate?.userProvider(self, didFetch: user)
+                    self.keychain.set("\(currentUser.minAge)", forKey: "minAge")
+                    self.keychain.set("\(currentUser.maxAge)", forKey: "maxAge")
+                    self.keychain.set("\(currentUser.preference.rawValue)", forKey: "preference")
+                    self.keychain.set("\(currentUser.maxDistance)", forKey: "maxDistance")
+                    self.keychain.set("\(currentUser.latitude)", forKey: "latitude")
+                    self.keychain.set("\(currentUser.longitude)", forKey: "longitude")
 
                 guard let minAge = Int(self.keychain.get("minAge")!),
                     let maxAge = Int(self.keychain.get("maxAge")!),
@@ -95,24 +74,15 @@ class UserProvider {
 
                             let user = try User(userDic)
 
-                            //        DatabasePath.userRef
-                            //            .queryOrdered(byChild: "maxDistance")
-                            //            .queryStarting(atValue: 0)
-                            //            .queryEnding(atValue: 80)
-                            //            .observe(.value) { (datasnapshot) in
-                            //                print("*****", datasnapshot)
-                            //        }
-
                             let location1 = CLLocation(latitude: latitude, longitude: longitude)
                             let location2 = CLLocation(latitude: user.latitude, longitude: user.longitude)
 
                             let distanceBtwn = Int((location1.distance(from: location2))/1000)
-                            print("***", "distance = \(distanceBtwn) km")
 
                             if user.email != Auth.auth().currentUser?.email && user.age >= minAge && user.age <= maxAge && distanceBtwn <= maxDistance {
                                 self.users.append(user)
                                 self.distanceBtwn.append(distanceBtwn)
-                                self.delegate?.userProvider(self, didFetch: self.users, didGet: self.distanceBtwn)
+                                self.delegate?.userProvider(self, didFetch: self.users, didGet: self.distanceBtwn, didFetch: currentUser)
                             }
                         }
 

@@ -259,6 +259,7 @@
 				370832B51FE3800200D4DC86 /* CallManager.swift */,
 				37C0FF4B1FE8BE58002EACF3 /* RingtoneManager.swift */,
 				37CA181D1FE2221500C1171B /* FirebaseManager.swift */,
+				37C0FF201FE7D26A002EACF3 /* Model */,
 				3792B0CB1FF5ECEE00AB4838 /* UserProvider.swift */,
 				373DB9F61FEA3F480041E34E /* DatabasePath.swift */,
 			);
@@ -292,7 +293,6 @@
 				3714597E1FDFAABF00C1F14A /* AppDelegate.swift */,
 				371459B81FDFD11100C1F14A /* Chat.swift */,
 				370832AE1FE2840E00D4DC86 /* Manager */,
-				37C0FF201FE7D26A002EACF3 /* Model */,
 				37C0FF1F1FE7D245002EACF3 /* Home */,
 				370832AC1FE283D800D4DC86 /* Landing */,
 				37DE5F8B1FEA61D50017E09D /* Profile */,

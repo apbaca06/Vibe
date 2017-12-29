@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import KeychainSwift
 
 class AgeRangeTableViewCell: UITableViewCell {
 
@@ -24,12 +25,14 @@ class AgeRangeTableViewCell: UITableViewCell {
 
     let maxAgePickerView = UIPickerView()
 
+    let keychain = KeychainSwift()
+
     override func awakeFromNib() {
         super.awakeFromNib()
 
-        minAgeTextField.text = "18"
+        minAgeTextField.text = self.keychain.get("minAge")
 
-        maxAgeTextField.text = "55"
+        maxAgeTextField.text = self.keychain.get("maxAge")
 
         minAgeTextField.inputView = minAgePickerView
 

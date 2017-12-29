@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import KeychainSwift
 
 class GenderPickerTableViewCell: UITableViewCell {
 
@@ -16,11 +17,12 @@ class GenderPickerTableViewCell: UITableViewCell {
 
     let pickerView = UIPickerView()
 
+    let keychain = KeychainSwift()
+
     override func awakeFromNib() {
         super.awakeFromNib()
 
-        textfield.text = "Male"
-//        textfield.text = DatabasePath.userRef.child(FirebaseManager.uid).child(<#T##pathString: String##String#>)
+        textfield.text = self.keychain.get("preference")
 
         textfield.inputView = pickerView
 

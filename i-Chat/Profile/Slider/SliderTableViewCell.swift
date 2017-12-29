@@ -22,14 +22,7 @@ class SliderTableViewCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
 
-        guard let uid = keychain.get("uid")
-            else { return }
-        DatabasePath.userRef.child(uid).observeSingleEvent(of: .value) { [unowned self](datashot) in
-
-            print("***", datashot)
-
-            self.rightLabel.text = "50Km"
-        }
+        self.rightLabel.text = self.keychain.get("maxDistance")
     }
 
     @IBAction func sliderValueChange(_ sender: UISlider) {

@@ -15,13 +15,11 @@ import Koloda
 import Nuke
 
 class HomeViewController: UICollectionViewController, UICollectionViewDelegateFlowLayout, UserProviderDelegate {
-    func userProvider(_ provider: UserProvider, didFetch currentUser: User?) {
-        self.currentUser = currentUser
-    }
 
-    func userProvider(_ provider: UserProvider, didFetch users: [User], didGet distanceBtwn: [Int]) {
+    func userProvider(_ provider: UserProvider, didFetch users: [User], didGet distanceBtwn: [Int], didFetch currentUser: User) {
         self.userArray = users
         self.distanceBtwnArray = distanceBtwn
+        self.currentUser = currentUser
 
         DispatchQueue.main.async {
             self.collectionView?.reloadData()
@@ -49,8 +47,6 @@ class HomeViewController: UICollectionViewController, UICollectionViewDelegateFl
 
         userProvider.delegate = self
 
-        userProvider.fetchCurrentUser()
-
         userProvider.loadSwipeImage()
 
         // self class must conform to QBRTCClientDelegate protocol
@@ -70,6 +66,11 @@ class HomeViewController: UICollectionViewController, UICollectionViewDelegateFl
 
         setupLocationManager()
 
+    }
+
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+//        userProvider.loadSwipeImage()
     }
 
     func setupNibCell() {
@@ -162,6 +163,9 @@ class HomeViewController: UICollectionViewController, UICollectionViewDelegateFl
             animated: true
         )
 
+        if menuIndex != 1 {
+            self.userArray = []
+        }
     }
 
     lazy var menuBar: MenuBar = {

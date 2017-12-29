@@ -28,10 +28,20 @@ class ProfileCollectionViewCell: UICollectionViewCell {
 
     @IBOutlet weak var settingDescription: UILabel!
 
+    @IBOutlet weak var circleProfileImg: UIImageView!
+
     override func awakeFromNib() {
         super.awakeFromNib()
 
-        ageLabel.cornerRadius = ageLabel.bounds.width/2
+        circleProfileImg.cornerRadius = circleProfileImg.frame.width/2
+
+        let blurEffect = UIBlurEffect(style: UIBlurEffectStyle.regular)
+
+        let blurEffectView = UIVisualEffectView(effect: blurEffect)
+
+        blurEffectView.frame = profileImg.bounds
+        blurEffectView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+        profileImg.addSubview(blurEffectView)
 
         profileDescription.text = NSLocalizedString("Profile", comment: "")
 
@@ -59,6 +69,7 @@ class ProfileCollectionViewCell: UICollectionViewCell {
             if let profileImgURL = URL(string: profileImgString) {
 
                 Manager.shared.loadImage(with: profileImgURL, into: self.profileImg)
+                Manager.shared.loadImage(with: profileImgURL, into: self.circleProfileImg)
 
                 self.reloadInputViews()
 
