@@ -17,4 +17,9 @@ public struct DatabasePath {
 
     public static let userFriendRef = databaseRoot.child("user_friend")
 
+    public static let userLikeRef = databaseRoot.child("user_like")
+
+    public static let userUnlikeRef = databaseRoot.child("user_unlike")
+
+    public static let userSwipeLikeRef = databaseRoot.child("user_swipeLike")
 }

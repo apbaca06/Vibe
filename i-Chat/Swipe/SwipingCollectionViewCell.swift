@@ -8,6 +8,8 @@
 
 import UIKit
 import Koloda
+import Firebase
+import KeychainSwift
 
 class SwipingCollectionViewCell: UICollectionViewCell {
 
@@ -19,11 +21,14 @@ class SwipingCollectionViewCell: UICollectionViewCell {
 
     @IBOutlet weak var swipeView: KolodaView!
 
+    let keychain = KeychainSwift()
+
     @IBAction func dislikeIt(_ sender: UIButton) {
         swipeView.swipe(.left)
     }
     @IBAction func likeIt(_ sender: UIButton) {
         swipeView.swipe(.right)
+
     }
 
     override func awakeFromNib() {

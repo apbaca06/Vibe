@@ -147,4 +147,21 @@ extension HomeViewController: KolodaViewDataSource {
     func koloda(_ koloda: KolodaView, viewForCardOverlayAt index: Int) -> OverlayView? {
         return Bundle.main.loadNibNamed("OverlayView", owner: self, options: nil)?[0] as? OverlayView
     }
+
+    func koloda(_ koloda: KolodaView, didSwipeCardAt index: Int, in direction: SwipeResultDirection) {
+
+        guard let uid = self.keychain.get("uid")
+            else { return }
+
+        if direction == .left {
+
+            DatabasePath.userUnlikeRef.child(uid).setValue([userArray[index].id: 0])
+
+        }
+        if direction == .right {
+
+            DatabasePath.userLikeRef.child(uid).setValue([userArray[index].id: 0])
+                DatabasePath.userSwipeLikeRef.child(userArray[index].id).setValue([uid: 0])
+        }
+    }
 }
