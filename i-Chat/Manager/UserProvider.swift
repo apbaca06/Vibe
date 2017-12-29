@@ -68,8 +68,8 @@ class UserProvider {
 
                     self.delegate?.userProvider(self, didFetch: user)
 
-                guard let minAge = self.keychain.get("minAge"),
-                    let maxAge = self.keychain.get("maxAge"),
+                guard let minAge = Int(self.keychain.get("minAge")!),
+                    let maxAge = Int(self.keychain.get("maxAge")!),
                     let preference = self.keychain.get("preference")
                     else { return }
 
@@ -86,7 +86,7 @@ class UserProvider {
 
                             let user = try User(userDic)
 
-                            if user.email != Auth.auth().currentUser?.email {
+                            if user.email != Auth.auth().currentUser?.email && user.age >= minAge && user.age <= maxAge {
                                 self.users.append(user)
                                 self.delegate?.userProvider(self, didFetch: self.users)
                             }
