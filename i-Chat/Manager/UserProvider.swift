@@ -10,6 +10,7 @@ import Foundation
 import Nuke
 import KeychainSwift
 import Firebase
+import MapKit
 
 protocol UserProviderDelegate: class {
 
@@ -65,12 +66,18 @@ class UserProvider {
                     self.keychain.set("\(user.minAge)", forKey: "minAge")
                     self.keychain.set("\(user.maxAge)", forKey: "maxAge")
                     self.keychain.set("\(user.preference.rawValue)", forKey: "preference")
+                    self.keychain.set("\(user.maxDistance)", forKey: "maxDistance")
+                    self.keychain.set("\(user.latitude)", forKey: "latitude")
+                    self.keychain.set("\(user.longitude)", forKey: "longitude")
 
                     self.delegate?.userProvider(self, didFetch: user)
 
                 guard let minAge = Int(self.keychain.get("minAge")!),
                     let maxAge = Int(self.keychain.get("maxAge")!),
-                    let preference = self.keychain.get("preference")
+                    let preference = self.keychain.get("preference"),
+                    let maxDistance = Int(self.keychain.get("maxDistance")!),
+                    let latitude = Double(self.keychain.get("latitude")!),
+                    let longitude = Double(self.keychain.get("longitude")!)
                     else { return }
 
                 DatabasePath.userRef.queryOrdered(byChild: "gender").queryEqual(toValue: preference).observe(.value) { (dataSnapshot) in
@@ -86,7 +93,21 @@ class UserProvider {
 
                             let user = try User(userDic)
 
-                            if user.email != Auth.auth().currentUser?.email && user.age >= minAge && user.age <= maxAge {
+                            //        DatabasePath.userRef
+                            //            .queryOrdered(byChild: "maxDistance")
+                            //            .queryStarting(atValue: 0)
+                            //            .queryEnding(atValue: 80)
+                            //            .observe(.value) { (datasnapshot) in
+                            //                print("*****", datasnapshot)
+                            //        }
+
+                            let location1 = CLLocation(latitude: latitude, longitude: longitude)
+                            let location2 = CLLocation(latitude: user.latitude, longitude: user.longitude)
+
+                            let distanceBtwn = Int((location1.distance(from: location2))/1000)
+                            print("***", "distance = \(distanceBtwn) km")
+
+                            if user.email != Auth.auth().currentUser?.email && user.age >= minAge && user.age <= maxAge && distanceBtwn <= maxDistance {
                                 self.users.append(user)
                                 self.delegate?.userProvider(self, didFetch: self.users)
                             }
