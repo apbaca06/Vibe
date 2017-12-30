@@ -67,6 +67,7 @@
 		37A5BBA81FE628B900C4F1E6 /* ChatCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37A5BBA61FE628B900C4F1E6 /* ChatCollectionViewCell.swift */; };
 		37A5BBA91FE628B900C4F1E6 /* ChatCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 37A5BBA71FE628B900C4F1E6 /* ChatCollectionViewCell.xib */; };
 		37A5BBDF1FE6313000C4F1E6 /* HomeForQuickBloxExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37A5BBDE1FE6313000C4F1E6 /* HomeForQuickBloxExtension.swift */; };
+		37B4EDD31FF7976800185785 /* MatchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37B4EDD21FF7976800185785 /* MatchViewController.swift */; };
 		37C0FF1C1FE7672C002EACF3 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 37C0FF1B1FE7672C002EACF3 /* GoogleService-Info.plist */; };
 		37C0FF1E1FE7A75E002EACF3 /* CallOutViewControllers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37C0FF1D1FE7A75E002EACF3 /* CallOutViewControllers.swift */; };
 		37C0FF4A1FE8BD34002EACF3 /* iphone.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 37C0FF491FE8BD34002EACF3 /* iphone.mp3 */; };
@@ -167,6 +168,7 @@
 		37A5BBA61FE628B900C4F1E6 /* ChatCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatCollectionViewCell.swift; sourceTree = "<group>"; };
 		37A5BBA71FE628B900C4F1E6 /* ChatCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChatCollectionViewCell.xib; sourceTree = "<group>"; };
 		37A5BBDE1FE6313000C4F1E6 /* HomeForQuickBloxExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeForQuickBloxExtension.swift; sourceTree = "<group>"; };
+		37B4EDD21FF7976800185785 /* MatchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchViewController.swift; sourceTree = "<group>"; };
 		37C0FF1B1FE7672C002EACF3 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		37C0FF1D1FE7A75E002EACF3 /* CallOutViewControllers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CallOutViewControllers.swift; sourceTree = "<group>"; };
 		37C0FF491FE8BD34002EACF3 /* iphone.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = iphone.mp3; sourceTree = "<group>"; };
@@ -238,17 +240,14 @@
 			path = Landing;
 			sourceTree = "<group>";
 		};
-		370832AD1FE283EB00D4DC86 /* ViewControllers */ = {
+		370832AD1FE283EB00D4DC86 /* AudioCall */ = {
 			isa = PBXGroup;
 			children = (
 				37CA181F1FE2304100C1171B /* AudioViewController.swift */,
 				370832AF1FE2847F00D4DC86 /* IncomingCallViewController.swift */,
 				37C0FF1D1FE7A75E002EACF3 /* CallOutViewControllers.swift */,
-				37CA18211FE2397100C1171B /* ChatroomViewController.swift */,
-				37A5BBA61FE628B900C4F1E6 /* ChatCollectionViewCell.swift */,
-				37A5BBA71FE628B900C4F1E6 /* ChatCollectionViewCell.xib */,
 			);
-			path = ViewControllers;
+			path = AudioCall;
 			sourceTree = "<group>";
 		};
 		370832AE1FE2840E00D4DC86 /* Manager */ = {
@@ -259,7 +258,6 @@
 				370832B51FE3800200D4DC86 /* CallManager.swift */,
 				37C0FF4B1FE8BE58002EACF3 /* RingtoneManager.swift */,
 				37CA181D1FE2221500C1171B /* FirebaseManager.swift */,
-				37C0FF201FE7D26A002EACF3 /* Model */,
 				3792B0CB1FF5ECEE00AB4838 /* UserProvider.swift */,
 				373DB9F61FEA3F480041E34E /* DatabasePath.swift */,
 			);
@@ -292,13 +290,15 @@
 				371459BA1FDFD90500C1F14A /* Key */,
 				3714597E1FDFAABF00C1F14A /* AppDelegate.swift */,
 				371459B81FDFD11100C1F14A /* Chat.swift */,
+				37C0FF201FE7D26A002EACF3 /* Model */,
 				370832AE1FE2840E00D4DC86 /* Manager */,
-				37C0FF1F1FE7D245002EACF3 /* Home */,
 				370832AC1FE283D800D4DC86 /* Landing */,
+				376C3FB61FEBA91600EAF188 /* Prefernce */,
+				37C0FF1F1FE7D245002EACF3 /* Home */,
 				37DE5F8B1FEA61D50017E09D /* Profile */,
 				3792B0C41FF3A78700AB4838 /* Swipe */,
-				376C3FB61FEBA91600EAF188 /* Prefernce */,
-				370832AD1FE283EB00D4DC86 /* ViewControllers */,
+				37F05EE51FF64FD2006D20A6 /* Chat */,
+				370832AD1FE283EB00D4DC86 /* AudioCall */,
 				371459851FDFAABF00C1F14A /* Assets.xcassets */,
 				37C0FF491FE8BD34002EACF3 /* iphone.mp3 */,
 				371459821FDFAABF00C1F14A /* Main.storyboard */,
@@ -376,6 +376,7 @@
 				37F05EE11FF5F30C006D20A6 /* CardView.swift */,
 				37F05EE31FF5F322006D20A6 /* CardView.xib */,
 				3792B0C91FF3D05200AB4838 /* ExampleOverlayView.swift */,
+				37B4EDD21FF7976800185785 /* MatchViewController.swift */,
 				3792B0C71FF3CFF800AB4838 /* OverlayView.xib */,
 			);
 			path = Swipe;
@@ -455,6 +456,16 @@
 				37DE5F871FEA61D00017E09D /* SwitchTableViewCell.swift */,
 			);
 			path = Search;
+			sourceTree = "<group>";
+		};
+		37F05EE51FF64FD2006D20A6 /* Chat */ = {
+			isa = PBXGroup;
+			children = (
+				37CA18211FE2397100C1171B /* ChatroomViewController.swift */,
+				37A5BBA61FE628B900C4F1E6 /* ChatCollectionViewCell.swift */,
+				37A5BBA71FE628B900C4F1E6 /* ChatCollectionViewCell.xib */,
+			);
+			path = Chat;
 			sourceTree = "<group>";
 		};
 		EF0351E21E5259D8657B3499 /* Frameworks */ = {
@@ -694,6 +705,7 @@
 				3792B0CC1FF5ECEE00AB4838 /* UserProvider.swift in Sources */,
 				370832B01FE2847F00D4DC86 /* IncomingCallViewController.swift in Sources */,
 				371459B91FDFD11100C1F14A /* Chat.swift in Sources */,
+				37B4EDD31FF7976800185785 /* MatchViewController.swift in Sources */,
 				37CA181E1FE2221500C1171B /* FirebaseManager.swift in Sources */,
 				3792B0B61FF2537000AB4838 /* AgeRangeTableViewCell.swift in Sources */,
 				3792B0B31FF24FDE00AB4838 /* AgeRangePickerViewController.swift in Sources */,

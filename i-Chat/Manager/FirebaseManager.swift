@@ -77,4 +77,37 @@ class FirebaseManager {
         }
     }
 
+    static func userUnlike(uid: String, recieverUid: String) {
+        DatabasePath.userUnlikeRef.child(uid).setValue([recieverUid: 0])
+    }
+
+    static func userLike(uid: String, recieverUid: String) {
+        DatabasePath.userLikeRef.child(uid).setValue([recieverUid: 0])
+    }
+
+    static func userSwipedLike(uid: String, recieverUid: String) {
+        DatabasePath.userSwipedLikeRef.child(recieverUid).setValue([uid: 0])
+    }
+
+    static func findIfWasSwiped(uid: String, recieverUid: String, completionHandler: @escaping (Bool) -> Void) {
+        DatabasePath.userLikeRef.child(recieverUid).queryOrderedByKey().queryEqual(toValue: uid).observeSingleEvent(of: .value) { (datasnapshot) in
+            print("if is matched", datasnapshot)
+
+            let exist = datasnapshot.exists()
+
+            switch exist {
+            case true :
+
+                DatabasePath.userFriendRef.child(uid).setValue([recieverUid: "\(uid)_\(recieverUid)"])
+
+                DatabasePath.userFriendRef.child(recieverUid).setValue([uid: "\(uid)_\(recieverUid)"])
+                completionHandler(true)
+
+            case false:
+
+                completionHandler(false)
+            }
+        }
+    }
+
 }

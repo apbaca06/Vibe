@@ -45,7 +45,6 @@ class UserProvider {
                     let currentUser = try User(userDic)
 
                     self.keychain.set("\(currentUser.gender)", forKey: "gender")
-
                     self.keychain.set("\(currentUser.minAge)", forKey: "minAge")
                     self.keychain.set("\(currentUser.maxAge)", forKey: "maxAge")
                     self.keychain.set("\(currentUser.preference.rawValue)", forKey: "preference")

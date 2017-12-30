@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" restorationIdentifier="chatCell" reuseIdentifier="ChatCollectionViewCell" id="gTV-IL-0wX" userLabel="ChatCollectionViewCell" customClass="ChatCollectionViewCell" customModule="i_Chat" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="388" height="514"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="388" height="514"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="pGt-Kx-4LU">
+                        <rect key="frame" x="0.0" y="0.0" width="388" height="103"/>
+                        <color key="backgroundColor" red="0.94117647059999998" green="0.7843137255" blue="0.031372549020000001" alpha="1" colorSpace="calibratedRGB"/>
+                        <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="0Om-RC-R7V">
+                            <size key="itemSize" width="50" height="50"/>
+                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                        </collectionViewFlowLayout>
+                    </collectionView>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iBh-5s-BG0">
+                        <rect key="frame" x="152.5" y="252" width="84" height="30"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="84" id="Wfb-VI-Sow"/>
+                            <constraint firstAttribute="height" constant="30" id="mrg-56-YId"/>
+                        </constraints>
+                        <state key="normal" image="pickup">
+                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </state>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="color" keyPath="titleColorForDisabled">
+                                <color key="value" red="0.090196078430000007" green="0.74509803919999995" blue="0.73333333329999995" alpha="1" colorSpace="calibratedRGB"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                        <connections>
+                            <action selector="callAction:" destination="gTV-IL-0wX" eventType="touchUpInside" id="fAj-hY-0Jj"/>
+                        </connections>
+                    </button>
+                </subviews>
+            </view>
+            <constraints>
+                <constraint firstItem="iBh-5s-BG0" firstAttribute="centerY" secondItem="ZTg-uK-7eu" secondAttribute="centerY" id="8kX-Oj-bwD"/>
+                <constraint firstItem="pGt-Kx-4LU" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="UxP-rI-dBV"/>
+                <constraint firstItem="pGt-Kx-4LU" firstAttribute="width" secondItem="gTV-IL-0wX" secondAttribute="width" id="XgG-0y-VXW"/>
+                <constraint firstItem="iBh-5s-BG0" firstAttribute="centerX" secondItem="ZTg-uK-7eu" secondAttribute="centerX" id="YrQ-NJ-dID"/>
+                <constraint firstItem="pGt-Kx-4LU" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="bnj-Gu-Ol9"/>
+                <constraint firstAttribute="trailing" secondItem="pGt-Kx-4LU" secondAttribute="trailing" id="d1U-ty-WbQ"/>
+                <constraint firstItem="pGt-Kx-4LU" firstAttribute="height" secondItem="gTV-IL-0wX" secondAttribute="height" multiplier="0.2" id="uF1-Kn-83k"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <size key="customSize" width="388" height="514"/>
+            <connections>
+                <outlet property="button" destination="iBh-5s-BG0" id="JDf-Zx-ulR"/>
+                <outlet property="collectionView" destination="pGt-Kx-4LU" id="oqQ-Fa-sHJ"/>
+            </connections>
+            <point key="canvasLocation" x="-265" y="-241"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <image name="pickup" width="32" height="32"/>
+    </resources>
+</document>

@@ -155,13 +155,33 @@ extension HomeViewController: KolodaViewDataSource {
 
         if direction == .left {
 
-            DatabasePath.userUnlikeRef.child(uid).setValue([userArray[index].id: 0])
-
+            FirebaseManager.userUnlike(uid: uid, recieverUid: userArray[index].id)
         }
+
         if direction == .right {
 
-            DatabasePath.userLikeRef.child(uid).setValue([userArray[index].id: 0])
-                DatabasePath.userSwipeLikeRef.child(userArray[index].id).setValue([uid: 0])
+            FirebaseManager.userLike(uid: uid, recieverUid: userArray[index].id)
+            FirebaseManager.userSwipedLike(uid: uid, recieverUid: userArray[index].id)
+            FirebaseManager.findIfWasSwiped(uid: uid, recieverUid: userArray[index].id, completionHandler: showIsMatchedView)
+//            if isMatch == true {
+//
+//            let matchViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "matchViewController")
+//                present(matchViewController, animated: true, completion: nil)
+//
+//            }
+
         }
+    }
+    func showIsMatchedView(isMatch: Bool) {
+
+        if isMatch == true {
+
+            let matchViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "matchViewController")
+            matchViewController.modalPresentationStyle = .overFullScreen
+            matchViewController.modalTransitionStyle = .crossDissolve
+            present(matchViewController, animated: true, completion: nil)
+
+        }
+
     }
 }

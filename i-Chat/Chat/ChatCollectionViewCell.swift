@@ -11,6 +11,8 @@ import Firebase
 
 class ChatCollectionViewCell: UICollectionViewCell {
 
+    @IBOutlet weak var collectionView: UICollectionView!
+
     @IBOutlet weak var button: UIButton!
 
     @IBAction func callAction(_ sender: UIButton) {
