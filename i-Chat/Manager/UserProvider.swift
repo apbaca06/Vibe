@@ -22,6 +22,8 @@ class UserProvider {
 
     var users: [User] = []
 
+    var friends: [User] = []
+
     var distanceBtwn: [Int] = []
 
     var minAgePreference: Int?

@@ -163,12 +163,6 @@ extension HomeViewController: KolodaViewDataSource {
             FirebaseManager.userLike(uid: uid, recieverUid: userArray[index].id)
             FirebaseManager.userSwipedLike(uid: uid, recieverUid: userArray[index].id)
             FirebaseManager.findIfWasSwiped(uid: uid, recieverUid: userArray[index].id, completionHandler: showIsMatchedView)
-//            if isMatch == true {
-//
-//            let matchViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "matchViewController")
-//                present(matchViewController, animated: true, completion: nil)
-//
-//            }
 
         }
     }
@@ -185,3 +179,26 @@ extension HomeViewController: KolodaViewDataSource {
 
     }
 }
+
+//extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
+//    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+//        return 2
+//    }
+//
+//    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+//        
+
+//        let cell = tableView.dequeueReusableCell(
+//            withIdentifier: "FriendTableViewCell",
+//            for: indexPath
+//            ) as! FriendTableViewCell
+//
+//        // swiftlint:enable force_cast
+//
+//        return cell
+//    }
+//    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+//        return 80
+//    }
+//
+//}

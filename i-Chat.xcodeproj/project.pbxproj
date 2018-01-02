@@ -87,6 +87,12 @@
 		37DE5F991FEA65B30017E09D /* LogoutTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 37DE5F971FEA65B30017E09D /* LogoutTableViewCell.xib */; };
 		37DE5F9B1FEB65D90017E09D /* ImgPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37DE5F9A1FEB65D90017E09D /* ImgPickerViewController.swift */; };
 		37DE5F9D1FEB67D60017E09D /* HomeForCellExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37DE5F9C1FEB67D60017E09D /* HomeForCellExtension.swift */; };
+		37E1D16E1FFB384C00EC9BA6 /* FriendCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37E1D16D1FFB384C00EC9BA6 /* FriendCollectionViewController.swift */; };
+		37E1D1711FFB38C600EC9BA6 /* FriendCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37E1D16F1FFB38C600EC9BA6 /* FriendCollectionViewCell.swift */; };
+		37E1D1721FFB38C600EC9BA6 /* FriendCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 37E1D1701FFB38C600EC9BA6 /* FriendCollectionViewCell.xib */; };
+		37EA8ED01FF7B5D4003FA28C /* FriendTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37EA8ECE1FF7B5D4003FA28C /* FriendTableViewCell.swift */; };
+		37EA8ED11FF7B5D4003FA28C /* FriendTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 37EA8ECF1FF7B5D4003FA28C /* FriendTableViewCell.xib */; };
+		37EA8ED31FF7DB1A003FA28C /* FriendViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37EA8ED21FF7DB1A003FA28C /* FriendViewController.swift */; };
 		37F05EE21FF5F30C006D20A6 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37F05EE11FF5F30C006D20A6 /* CardView.swift */; };
 		37F05EE41FF5F322006D20A6 /* CardView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 37F05EE31FF5F322006D20A6 /* CardView.xib */; };
 		E4208C9E7E17D4FB2656038F /* Pods_i_Chat.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 813BB42A75F2B98DC83AC0E3 /* Pods_i_Chat.framework */; };
@@ -189,6 +195,13 @@
 		37DE5F971FEA65B30017E09D /* LogoutTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LogoutTableViewCell.xib; sourceTree = "<group>"; };
 		37DE5F9A1FEB65D90017E09D /* ImgPickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImgPickerViewController.swift; sourceTree = "<group>"; };
 		37DE5F9C1FEB67D60017E09D /* HomeForCellExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeForCellExtension.swift; sourceTree = "<group>"; };
+		37E1D16D1FFB384C00EC9BA6 /* FriendCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendCollectionViewController.swift; sourceTree = "<group>"; };
+		37E1D16F1FFB38C600EC9BA6 /* FriendCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendCollectionViewCell.swift; sourceTree = "<group>"; };
+		37E1D1701FFB38C600EC9BA6 /* FriendCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FriendCollectionViewCell.xib; sourceTree = "<group>"; };
+		37EA8ECD1FF7B5B8003FA28C /* FriendTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = FriendTableViewCell.swift; path = "/Users/cindy/Documents/OwnProject/i-Chat/i-Chat/Profile/FriendTableViewCell.swift"; sourceTree = "<absolute>"; };
+		37EA8ECE1FF7B5D4003FA28C /* FriendTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendTableViewCell.swift; sourceTree = "<group>"; };
+		37EA8ECF1FF7B5D4003FA28C /* FriendTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FriendTableViewCell.xib; sourceTree = "<group>"; };
+		37EA8ED21FF7DB1A003FA28C /* FriendViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendViewController.swift; sourceTree = "<group>"; };
 		37F05EE11FF5F30C006D20A6 /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
 		37F05EE31FF5F322006D20A6 /* CardView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CardView.xib; sourceTree = "<group>"; };
 		498AF12EB1C3EB42182F2692 /* Pods-i-Chat.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-i-Chat.debug.xcconfig"; path = "Pods/Target Support Files/Pods-i-Chat/Pods-i-Chat.debug.xcconfig"; sourceTree = "<group>"; };
@@ -389,6 +402,7 @@
 				3717DD211FE66E35003CD462 /* HomeComponent.swift */,
 				37A5BBDE1FE6313000C4F1E6 /* HomeForQuickBloxExtension.swift */,
 				37DE5F9C1FEB67D60017E09D /* HomeForCellExtension.swift */,
+				37DE5FA11FEB6AFA0017E09D /* Search */,
 				375F04B51FE3A739009D2671 /* MenuBar.swift */,
 				37A5BB9A1FE61CE200C4F1E6 /* MenuCell.swift */,
 				37A5BB9C1FE6223600C4F1E6 /* BaseCell.swift */,
@@ -416,7 +430,6 @@
 				3792B0B81FF35A9F00AB4838 /* Slider */,
 				37DE5F9F1FEB6AE50017E09D /* Picker */,
 				37DE5F9E1FEB6AD60017E09D /* Logout */,
-				37DE5FA11FEB6AFA0017E09D /* Search */,
 				37DE5FA01FEB6AF10017E09D /* Label */,
 			);
 			path = Profile;
@@ -452,6 +465,7 @@
 		37DE5FA11FEB6AFA0017E09D /* Search */ = {
 			isa = PBXGroup;
 			children = (
+				37EA8ECD1FF7B5B8003FA28C /* FriendTableViewCell.swift */,
 				37DE5F881FEA61D00017E09D /* SwitchTableViewCell.xib */,
 				37DE5F871FEA61D00017E09D /* SwitchTableViewCell.swift */,
 			);
@@ -464,6 +478,12 @@
 				37CA18211FE2397100C1171B /* ChatroomViewController.swift */,
 				37A5BBA61FE628B900C4F1E6 /* ChatCollectionViewCell.swift */,
 				37A5BBA71FE628B900C4F1E6 /* ChatCollectionViewCell.xib */,
+				37EA8ED21FF7DB1A003FA28C /* FriendViewController.swift */,
+				37E1D16D1FFB384C00EC9BA6 /* FriendCollectionViewController.swift */,
+				37E1D16F1FFB38C600EC9BA6 /* FriendCollectionViewCell.swift */,
+				37E1D1701FFB38C600EC9BA6 /* FriendCollectionViewCell.xib */,
+				37EA8ECE1FF7B5D4003FA28C /* FriendTableViewCell.swift */,
+				37EA8ECF1FF7B5D4003FA28C /* FriendTableViewCell.xib */,
 			);
 			path = Chat;
 			sourceTree = "<group>";
@@ -561,10 +581,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				37E1D1721FFB38C600EC9BA6 /* FriendCollectionViewCell.xib in Resources */,
 				371459891FDFAABF00C1F14A /* LaunchScreen.storyboard in Resources */,
 				37DE5F8A1FEA61D00017E09D /* SwitchTableViewCell.xib in Resources */,
 				3792B0C81FF3CFF800AB4838 /* OverlayView.xib in Resources */,
 				37A5BBA11FE6288500C4F1E6 /* ProfileCollectionViewCell.xib in Resources */,
+				37EA8ED11FF7B5D4003FA28C /* FriendTableViewCell.xib in Resources */,
 				37C0FF1C1FE7672C002EACF3 /* GoogleService-Info.plist in Resources */,
 				37DE5F991FEA65B30017E09D /* LogoutTableViewCell.xib in Resources */,
 				3792B0B71FF2537000AB4838 /* AgeRangeTableViewCell.xib in Resources */,
@@ -684,10 +706,12 @@
 			files = (
 				37DE5F941FEA65980017E09D /* GenderPickerTableViewCell.swift in Sources */,
 				37DE5F861FEA43080017E09D /* DateFormatter.swift in Sources */,
+				37E1D16E1FFB384C00EC9BA6 /* FriendCollectionViewController.swift in Sources */,
 				371459811FDFAABF00C1F14A /* LogInViewController.swift in Sources */,
 				3792B0C01FF367C600AB4838 /* MultipleTableViewCell.swift in Sources */,
 				37C0FF1E1FE7A75E002EACF3 /* CallOutViewControllers.swift in Sources */,
 				3792B0BB1FF35AB700AB4838 /* SliderTableViewCell.swift in Sources */,
+				37EA8ED01FF7B5D4003FA28C /* FriendTableViewCell.swift in Sources */,
 				37F05EE21FF5F30C006D20A6 /* CardView.swift in Sources */,
 				3754E2881FE122E4002604CD /* RegisterViewController.swift in Sources */,
 				376C3FBC1FEBAD9A00EAF188 /* SetImgViewController.swift in Sources */,
@@ -722,10 +746,12 @@
 				37DE5F9D1FEB67D60017E09D /* HomeForCellExtension.swift in Sources */,
 				37A5BBA01FE6288500C4F1E6 /* ProfileCollectionViewCell.swift in Sources */,
 				373DB9F71FEA3F480041E34E /* DatabasePath.swift in Sources */,
+				37E1D1711FFB38C600EC9BA6 /* FriendCollectionViewCell.swift in Sources */,
 				372E8E121FF1076C002CAC96 /* Animation.swift in Sources */,
 				37DE5F891FEA61D00017E09D /* SwitchTableViewCell.swift in Sources */,
 				370832B81FE3806700D4DC86 /* User.swift in Sources */,
 				3792B0CA1FF3D05200AB4838 /* ExampleOverlayView.swift in Sources */,
+				37EA8ED31FF7DB1A003FA28C /* FriendViewController.swift in Sources */,
 				37A5BB9B1FE61CE200C4F1E6 /* MenuCell.swift in Sources */,
 				37CA18201FE2304100C1171B /* AudioViewController.swift in Sources */,
 				3714597F1FDFAABF00C1F14A /* AppDelegate.swift in Sources */,

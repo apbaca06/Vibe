@@ -116,7 +116,7 @@ class SetImgViewController: UIViewController, UIImagePickerControllerDelegate, U
                 else { return }
             DatabasePath.userRef.child(uid).updateChildValues([
                 "profileImgURL": "\(downloadURL)",
-                "maxDistance": "50"
+                "maxDistance": 160
             ])
             DatabasePath.userRef.child(uid).child("agePreference").updateChildValues([
                 "min": 18,

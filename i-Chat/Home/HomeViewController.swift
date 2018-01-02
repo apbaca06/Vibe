@@ -28,7 +28,11 @@ class HomeViewController: UICollectionViewController, UICollectionViewDelegateFl
 
     let userProvider = UserProvider()
 
+    let friendCollectionViewController = FriendCollectionViewController()
+
     let keychain = KeychainSwift()
+
+    let friendViewController = FriendViewController()
 
     var currentUser: User?
 
@@ -45,9 +49,9 @@ class HomeViewController: UICollectionViewController, UICollectionViewDelegateFl
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        userProvider.delegate = self
-
         userProvider.loadSwipeImage()
+
+        userProvider.delegate = self
 
         // self class must conform to QBRTCClientDelegate protocol
         QBRTCClient.instance().add(self)
@@ -70,7 +74,6 @@ class HomeViewController: UICollectionViewController, UICollectionViewDelegateFl
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-//        userProvider.loadSwipeImage()
     }
 
     func setupNibCell() {
@@ -163,9 +166,6 @@ class HomeViewController: UICollectionViewController, UICollectionViewDelegateFl
             animated: true
         )
 
-        if menuIndex != 1 {
-            self.userArray = []
-        }
     }
 
     lazy var menuBar: MenuBar = {
@@ -283,7 +283,53 @@ class HomeViewController: UICollectionViewController, UICollectionViewDelegateFl
 
             // swiftlint:enable force_cast
 
-            cell.button.addTarget(self, action: #selector(callOther), for: .touchUpInside)
+            cell.contentView.addSubviews([friendViewController.view, friendCollectionViewController.view])
+
+            friendCollectionViewController.view.topAnchor.constraint(equalTo: cell.contentView.topAnchor).isActive = true
+
+            friendCollectionViewController.view.leadingAnchor.constraint(equalTo: cell.contentView.leadingAnchor).isActive = true
+
+            friendCollectionViewController.view.widthAnchor.constraint(equalTo: cell.contentView.widthAnchor).isActive = true
+
+            friendCollectionViewController.view.heightAnchor.constraint(equalToConstant: 60).isActive = true
+
+            friendViewController.view.topAnchor.constraint(equalTo: friendCollectionViewController.view.bottomAnchor).isActive = true
+
+            friendViewController.view.leadingAnchor.constraint(equalTo: cell.contentView.leadingAnchor).isActive = true
+
+            friendViewController.view.widthAnchor.constraint(equalTo: cell.contentView.widthAnchor).isActive = true
+
+            friendViewController.view.heightAnchor.constraint(equalTo: cell.contentView.heightAnchor, multiplier: 1, constant: -60).isActive = true
+
+//            let collectionViewLeading = NSLayoutConstraint(item: friendCollectionViewController.view, attribute: .leading, relatedBy: .equal, toItem: cell.contentView, attribute: .leading, multiplier: 1, constant: 0)
+//
+//            let collectionViewHeight = NSLayoutConstraint(item: friendCollectionViewController.view, attribute: .height, relatedBy: .equal, toItem: cell.contentView, attribute: .height, multiplier: 1, constant: 60)
+//
+//            let collectionViewWidth = NSLayoutConstraint(item: friendCollectionViewController.view, attribute: .width, relatedBy: .equal, toItem: cell.contentView, attribute: .width, multiplier: 1, constant: 0)
+
+            friendCollectionViewController.view.translatesAutoresizingMaskIntoConstraints = false
+
+//            cell.contentView.addConstraints([collectionViewTop, collectionViewLeading, collectionViewHeight, collectionViewWidth])
+
+            let tableViewTop = NSLayoutConstraint(item: friendViewController.view, attribute: .top, relatedBy: .equal, toItem: cell.contentView, attribute: .top, multiplier: 1, constant: 0)
+
+            let tableViewLeading = NSLayoutConstraint(item: friendViewController.view, attribute: .leading, relatedBy: .equal, toItem: cell.contentView, attribute: .leading, multiplier: 1, constant: 0)
+
+            let tableViewHeight = NSLayoutConstraint(item: friendViewController.view, attribute: .height, relatedBy: .equal, toItem: cell.contentView, attribute: .height, multiplier: 1, constant: -60)
+
+            let tableViewWidth = NSLayoutConstraint(item: friendViewController.view, attribute: .width, relatedBy: .equal, toItem: cell.contentView, attribute: .width, multiplier: 1, constant: 0)
+
+            friendViewController.view.translatesAutoresizingMaskIntoConstraints = false
+
+//            cell.contentView.addConstraints([tableViewTop, tableViewLeading, tableViewHeight, tableViewWidth])
+
+//            friendCollectionViewController.view.frame = CGRect(x: 0, y: 0, width: cell.contentView.width, height: 60)
+//
+//            friendViewController.view.frame = CGRect(x: 0, y: 60, width: cell.contentView.width, height: cell.contentView.height - 60)
+
+//            friendCollectionViewController.view.layoutIfNeeded()
+//            friendCollectionViewController.view.clipsToBounds = true
+//            print(cell.contentView.frame,friendCollectionViewController.view.frame, friendViewController.view.frame)
 
             return cell
 

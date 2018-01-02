@@ -11,6 +11,12 @@ import Firebase
 import SVProgressHUD
 import KeychainSwift
 
+//protocol UserProviderDelegate: class {
+//    
+//    func userProvider(_ provider: UserProvider, didFetch users: [User], didGet distanceBtwn: [Int], didFetch currentUser: User)
+//    
+//}
+
 class FirebaseManager {
 
     static func logIn(withEmail email: String, withPassword password: String) {
@@ -78,15 +84,15 @@ class FirebaseManager {
     }
 
     static func userUnlike(uid: String, recieverUid: String) {
-        DatabasePath.userUnlikeRef.child(uid).setValue([recieverUid: 0])
+        DatabasePath.userUnlikeRef.child(uid).updateChildValues([recieverUid: 0])
     }
 
     static func userLike(uid: String, recieverUid: String) {
-        DatabasePath.userLikeRef.child(uid).setValue([recieverUid: 0])
+        DatabasePath.userLikeRef.child(uid).updateChildValues([recieverUid: 0])
     }
 
     static func userSwipedLike(uid: String, recieverUid: String) {
-        DatabasePath.userSwipedLikeRef.child(recieverUid).setValue([uid: 0])
+        DatabasePath.userSwipedLikeRef.child(recieverUid).updateChildValues([uid: 0])
     }
 
     static func findIfWasSwiped(uid: String, recieverUid: String, completionHandler: @escaping (Bool) -> Void) {
@@ -98,9 +104,9 @@ class FirebaseManager {
             switch exist {
             case true :
 
-                DatabasePath.userFriendRef.child(uid).setValue([recieverUid: "\(uid)_\(recieverUid)"])
+                DatabasePath.userFriendRef.child(uid).updateChildValues([recieverUid: "\(uid)_\(recieverUid)"])
 
-                DatabasePath.userFriendRef.child(recieverUid).setValue([uid: "\(uid)_\(recieverUid)"])
+                DatabasePath.userFriendRef.child(recieverUid).updateChildValues([uid: "\(uid)_\(recieverUid)"])
                 completionHandler(true)
 
             case false:
@@ -108,6 +114,45 @@ class FirebaseManager {
                 completionHandler(false)
             }
         }
+    }
+
+    static func getFriendList(completionHandler: @escaping ([User]) -> Void) {
+
+//        Manager.shared.loadImage(with: imageURL, into: cardView.imageView)
+
+        let keychain = KeychainSwift()
+
+        guard let uid = keychain.get("uid")
+        else { return }
+
+        DatabasePath.userFriendRef.child(uid).observeSingleEvent(of: .value) { (datasnapshot) in
+
+            guard let friendList = datasnapshot.value as? [String: Any]
+            else { return }
+
+            var friends: [User] = []
+
+            for friend in friendList {
+                print("**friend", friend)
+                DatabasePath.userRef.child(friend.key).observeSingleEvent(of: .value, with: { (datasnapshot) in
+
+                    do {
+
+                    let userDic = [ datasnapshot.key: datasnapshot.value]
+
+                    let userFriend = try User(userDic)
+
+                    friends.append(userFriend)
+
+                    } catch {
+                        print(error, "**")
+                    }
+
+                })
+            }
+            completionHandler(friends)
+        }
+
     }
 
 }
