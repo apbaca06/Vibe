@@ -32,11 +32,12 @@ class CallManager {
         )
         let keychain = KeychainSwift()
 
-        guard let name = Auth.auth().currentUser?.email
+        guard let name = keychain.get("name"),
+              let profileImgURLString = keychain.get("profileImgURL")
             else { return }
 
         let userInfo: [String: String] = ["Name": name,
-                                          "profileImgURL": "https://firebasestorage.googleapis.com/v0/b/i-chat-v2.appspot.com/o/profileImg%2Fc3ywbmhKGXPBK9ih3FkLHF29pPX2?alt=media&token=dd95a3c3-6389-4bc5-9c01-ee7a5abeafc2"]
+                                          "profileImgURL": profileImgURLString]
 
         newSession.startCall(userInfo)
 

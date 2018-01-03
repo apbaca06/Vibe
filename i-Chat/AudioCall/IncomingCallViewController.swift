@@ -9,8 +9,15 @@
 import Foundation
 import UIKit
 import AVFoundation
+import Nuke
 
 class IncomingCallViewController: UIViewController {
+
+    var userInfo: [String: String]?
+
+    @IBOutlet weak var profileImageView: UIImageView!
+
+    @IBOutlet weak var backgroundView: UIImageView!
 
     @IBOutlet weak var callDescription: UILabel!
 
@@ -32,7 +39,7 @@ class IncomingCallViewController: UIViewController {
 
         CallManager.shared.session = nil
 
-        self.callDescription.text = NSLocalizedString("拒絕通話", comment: "")
+        self.callDescription.text = NSLocalizedString("Reject Call", comment: "")
 
         self.dismiss(animated: true, completion: nil)
     }
@@ -43,8 +50,6 @@ class IncomingCallViewController: UIViewController {
 
         RingtoneManager.shared.ringPlayer.stop()
 
-        // userInfo - the custom user information dictionary for the accept call. May be nil.
-        //        let userInfo: [String: String] = ["key": "value"]
         CallManager.shared.session?.acceptCall(nil)
 
     }
@@ -54,16 +59,42 @@ class IncomingCallViewController: UIViewController {
 
         RingtoneManager.shared.playRingtone()
 
+        let blurEffect = UIBlurEffect(style: UIBlurEffectStyle.regular)
+
+        let blurEffectView = UIVisualEffectView(effect: blurEffect)
+
+        blurEffectView.frame = backgroundView.bounds
+        blurEffectView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+        backgroundView.addSubview(blurEffectView)
+
+        guard let dict = userInfo,
+            let name = dict["Name"],
+            let urlString = dict["profileImgURL"],
+            let url = URL(string: urlString)
+            else { return }
+
+        self.name.text = name
+
+        Manager.shared.loadImage(with: url, into: profileImageView)
+        Manager.shared.loadImage(with: url, into: backgroundView)
+
+    }
+
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+
     }
 
     override func viewWillLayoutSubviews() {
-        setUpButtonShape()
+        setUpShape()
     }
 
-    func setUpButtonShape() {
+    func setUpShape() {
         rejectButton.layer.cornerRadius = rejectButton.frame.width/2
 
         acceptButton.layer.cornerRadius = acceptButton.frame.width/2
+
+        profileImageView.layer.cornerRadius = profileImageView.frame.width/2
     }
 
 }

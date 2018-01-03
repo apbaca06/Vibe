@@ -127,7 +127,7 @@ class HomeViewController: UICollectionViewController, UICollectionViewDelegateFl
 
         }
 
-        collectionView?.backgroundColor = .gray
+        collectionView?.backgroundColor = .white
 
         collectionView?.register(
 

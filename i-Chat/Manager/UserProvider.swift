@@ -42,10 +42,11 @@ class UserProvider {
         DatabasePath.userRef.child(uid).observeSingleEvent(of: .value) { [unowned self] (datashot) in
             do {
 
-                    let userDic = [ datashot.key: datashot.value]
+                let userDic = [ datashot.key: datashot.value]
 
                     let currentUser = try User(userDic)
-
+                    self.keychain.set("\(currentUser.name)", forKey: "name")
+                    self.keychain.set("\(currentUser.profileImgURL)", forKey: "profileImgURL")
                     self.keychain.set("\(currentUser.gender)", forKey: "gender")
                     self.keychain.set("\(currentUser.minAge)", forKey: "minAge")
                     self.keychain.set("\(currentUser.maxAge)", forKey: "maxAge")

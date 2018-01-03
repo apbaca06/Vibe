@@ -30,7 +30,7 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="RightLabel" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tb8-rP-53G">
-                        <rect key="frame" x="209" y="15" width="96" height="20"/>
+                        <rect key="frame" x="145" y="15" width="160" height="20"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="20" id="5Rn-tn-gFs"/>
                         </constraints>
@@ -47,7 +47,7 @@
                     <constraint firstItem="RK5-eT-zR9" firstAttribute="width" secondItem="H2p-sc-9uM" secondAttribute="width" multiplier="0.3" id="pHK-mO-AhC"/>
                     <constraint firstAttribute="trailing" secondItem="tb8-rP-53G" secondAttribute="trailing" constant="15" id="qA7-e3-ZTR"/>
                     <constraint firstItem="tb8-rP-53G" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="15" id="uHj-sg-da8"/>
-                    <constraint firstItem="tb8-rP-53G" firstAttribute="width" secondItem="H2p-sc-9uM" secondAttribute="width" multiplier="0.3" id="yih-HN-lwt"/>
+                    <constraint firstItem="tb8-rP-53G" firstAttribute="width" secondItem="H2p-sc-9uM" secondAttribute="width" multiplier="0.5" id="yih-HN-lwt"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>

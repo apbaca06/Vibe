@@ -26,10 +26,9 @@ extension HomeViewController: QBRTCClientDelegate {
             let incomingCallViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "IncomingCallViewController") as! IncomingCallViewController
             // swiftlint:enable force_cast
 
-            guard let dict = userInfo,
-                  let name = dict["Name"]
+            guard let dict = userInfo
                 else { return }
-//            incomingCallViewController.name.text = name
+            incomingCallViewController.userInfo = dict
 
             self.present(incomingCallViewController, animated: true, completion: nil)
         }

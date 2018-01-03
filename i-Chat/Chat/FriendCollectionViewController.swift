@@ -66,16 +66,6 @@ class FriendCollectionViewController: UIViewController, UICollectionViewDelegate
         view.addConstraints([collectionViewTop, collectionViewLeading, collectionViewHeight, collectionViewWidth])
 
     }
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        print("********viewWillAppear")
-
-//        FirebaseManager.getFriendList(eventType: .value) { (friends) in
-//            print(friends)
-//            self.users = friends
-//            self.collectionView.reloadData()
-//        }
-    }
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
 
@@ -105,13 +95,6 @@ class FriendCollectionViewController: UIViewController, UICollectionViewDelegate
 
         self.delegate?.controller(self, didCall: users[indexPath.row])
 
-//        let callOutViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "CallOutViewController")
-//        present(callOutViewController, animated: true, completion: nil)
-
-//        self.view.window?.rootViewController?.present(callOutViewController, animated: true, completion: nil)
-//        AppDelegate.shared.window?.rootViewController = callOutViewController
-//        present(callOutViewController, animated: true, completion: nil)
-
             print("****,Callsession\(CallManager.shared.session)")
 
     }
@@ -126,6 +109,29 @@ class FriendCollectionViewController: UIViewController, UICollectionViewDelegate
 
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
         return UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
+    }
+
+    func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
+
+        switch kind {
+
+        case UICollectionElementKindSectionHeader:
+
+            let headerView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "Header", for: indexPath)
+
+            headerView.backgroundColor = UIColor.blue
+            return headerView
+
+        case UICollectionElementKindSectionFooter:
+            let footerView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "Footer", for: indexPath)
+
+            footerView.backgroundColor = .green
+            return footerView
+
+        default:
+
+            assert(false, "Unexpected element kind")
+        }
     }
 
 }
