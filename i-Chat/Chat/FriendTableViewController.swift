@@ -1,5 +1,5 @@
 //
-//  FriendViewController.swift
+//  FriendTableViewController.swift
 //  i-Chat
 //
 //  Created by cindy on 2017/12/30.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class FriendViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class FriendTableViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
     let tableView: UITableView = UITableView()
 
@@ -97,6 +97,19 @@ class FriendViewController: UIViewController, UITableViewDelegate, UITableViewDa
     }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 80
+    }
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 20
+    }
+
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let view = UIView(frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: 20))
+        view.backgroundColor = .red
+        return view
+    }
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+//        NSLocalizedString("Chatroom", comment: "")
+        return "yes"
     }
 
 }

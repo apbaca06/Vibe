@@ -10,12 +10,14 @@ import UIKit
 
 class FriendCollectionViewCell: UICollectionViewCell {
 
+    @IBOutlet weak var friendName: UILabel!
     @IBOutlet weak var profileImageView: UIImageView!
 
     override func awakeFromNib() {
         super.awakeFromNib()
 
-        profileImageView.cornerRadius = profileImageView.bounds.width/2
+        profileImageView.layer.cornerRadius = profileImageView.bounds.width/2
+        profileImageView.clipsToBounds = true
 
     }
 

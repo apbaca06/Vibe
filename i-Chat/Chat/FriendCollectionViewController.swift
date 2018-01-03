@@ -7,21 +7,16 @@
 //
 
 import Foundation
+import Nuke
 
 class FriendCollectionViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
 
     let layout = UICollectionViewFlowLayout()
 
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-    }
+    var users: [User] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        view.frame = CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: 60)
-
-        layout.itemSize = CGSize(width: 60, height: 60)
 
         layout.scrollDirection = .horizontal
 
@@ -33,9 +28,14 @@ class FriendCollectionViewController: UIViewController, UICollectionViewDataSour
 
         collectionView.dataSource = self
 
-        collectionView.backgroundColor = .darkGray
+        collectionView.backgroundColor = .white
 
-        collectionView.setCollectionViewLayout(layout, animated: true)
+        FirebaseManager.getFriendList { (friends) in
+            print(friends)
+            self.users = friends
+            collectionView.reloadData()
+
+        }
 
         let nib = UINib(
             nibName: "FriendCollectionViewCell",
@@ -68,15 +68,20 @@ class FriendCollectionViewController: UIViewController, UICollectionViewDataSour
 
         // swiftlint:enable force_cast
 
+        guard let url = URL(string: users[indexPath.row].profileImgURL)
+            else { return cell }
+
+        Manager.shared.loadImage(with: url, into: cell.profileImageView)
+
         return cell
     }
 
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 10
+        return users.count
     }
 
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: 60, height: 60)
+        return CGSize(width: 100, height: 135)
     }
 
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {

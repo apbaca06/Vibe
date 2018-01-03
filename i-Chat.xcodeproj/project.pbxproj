@@ -92,7 +92,7 @@
 		37E1D1721FFB38C600EC9BA6 /* FriendCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 37E1D1701FFB38C600EC9BA6 /* FriendCollectionViewCell.xib */; };
 		37EA8ED01FF7B5D4003FA28C /* FriendTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37EA8ECE1FF7B5D4003FA28C /* FriendTableViewCell.swift */; };
 		37EA8ED11FF7B5D4003FA28C /* FriendTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 37EA8ECF1FF7B5D4003FA28C /* FriendTableViewCell.xib */; };
-		37EA8ED31FF7DB1A003FA28C /* FriendViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37EA8ED21FF7DB1A003FA28C /* FriendViewController.swift */; };
+		37EA8ED31FF7DB1A003FA28C /* FriendTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37EA8ED21FF7DB1A003FA28C /* FriendTableViewController.swift */; };
 		37F05EE21FF5F30C006D20A6 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37F05EE11FF5F30C006D20A6 /* CardView.swift */; };
 		37F05EE41FF5F322006D20A6 /* CardView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 37F05EE31FF5F322006D20A6 /* CardView.xib */; };
 		E4208C9E7E17D4FB2656038F /* Pods_i_Chat.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 813BB42A75F2B98DC83AC0E3 /* Pods_i_Chat.framework */; };
@@ -201,7 +201,7 @@
 		37EA8ECD1FF7B5B8003FA28C /* FriendTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = FriendTableViewCell.swift; path = "/Users/cindy/Documents/OwnProject/i-Chat/i-Chat/Profile/FriendTableViewCell.swift"; sourceTree = "<absolute>"; };
 		37EA8ECE1FF7B5D4003FA28C /* FriendTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendTableViewCell.swift; sourceTree = "<group>"; };
 		37EA8ECF1FF7B5D4003FA28C /* FriendTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FriendTableViewCell.xib; sourceTree = "<group>"; };
-		37EA8ED21FF7DB1A003FA28C /* FriendViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendViewController.swift; sourceTree = "<group>"; };
+		37EA8ED21FF7DB1A003FA28C /* FriendTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendTableViewController.swift; sourceTree = "<group>"; };
 		37F05EE11FF5F30C006D20A6 /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
 		37F05EE31FF5F322006D20A6 /* CardView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CardView.xib; sourceTree = "<group>"; };
 		498AF12EB1C3EB42182F2692 /* Pods-i-Chat.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-i-Chat.debug.xcconfig"; path = "Pods/Target Support Files/Pods-i-Chat/Pods-i-Chat.debug.xcconfig"; sourceTree = "<group>"; };
@@ -478,10 +478,10 @@
 				37CA18211FE2397100C1171B /* ChatroomViewController.swift */,
 				37A5BBA61FE628B900C4F1E6 /* ChatCollectionViewCell.swift */,
 				37A5BBA71FE628B900C4F1E6 /* ChatCollectionViewCell.xib */,
-				37EA8ED21FF7DB1A003FA28C /* FriendViewController.swift */,
 				37E1D16D1FFB384C00EC9BA6 /* FriendCollectionViewController.swift */,
 				37E1D16F1FFB38C600EC9BA6 /* FriendCollectionViewCell.swift */,
 				37E1D1701FFB38C600EC9BA6 /* FriendCollectionViewCell.xib */,
+				37EA8ED21FF7DB1A003FA28C /* FriendTableViewController.swift */,
 				37EA8ECE1FF7B5D4003FA28C /* FriendTableViewCell.swift */,
 				37EA8ECF1FF7B5D4003FA28C /* FriendTableViewCell.xib */,
 			);
@@ -751,7 +751,7 @@
 				37DE5F891FEA61D00017E09D /* SwitchTableViewCell.swift in Sources */,
 				370832B81FE3806700D4DC86 /* User.swift in Sources */,
 				3792B0CA1FF3D05200AB4838 /* ExampleOverlayView.swift in Sources */,
-				37EA8ED31FF7DB1A003FA28C /* FriendViewController.swift in Sources */,
+				37EA8ED31FF7DB1A003FA28C /* FriendTableViewController.swift in Sources */,
 				37A5BB9B1FE61CE200C4F1E6 /* MenuCell.swift in Sources */,
 				37CA18201FE2304100C1171B /* AudioViewController.swift in Sources */,
 				3714597F1FDFAABF00C1F14A /* AppDelegate.swift in Sources */,

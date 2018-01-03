@@ -33,7 +33,8 @@ class ProfileCollectionViewCell: UICollectionViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
 
-        circleProfileImg.cornerRadius = circleProfileImg.frame.width/2
+        circleProfileImg.layer.cornerRadius = circleProfileImg.frame.width/2
+        circleProfileImg.clipsToBounds = true
 
         let blurEffect = UIBlurEffect(style: UIBlurEffectStyle.regular)
 
@@ -46,8 +47,6 @@ class ProfileCollectionViewCell: UICollectionViewCell {
         profileDescription.text = NSLocalizedString("Profile", comment: "")
 
         settingDescription.text = NSLocalizedString("Setting", comment: "")
-
-        profileImg.cornerRadius = 40
 
         let keychain = KeychainSwift()
 
@@ -73,7 +72,7 @@ class ProfileCollectionViewCell: UICollectionViewCell {
 
                 self.reloadInputViews()
 
-                self.profileImg.contentMode = .center
+                self.profileImg.contentMode = .scaleAspectFill
             }
 
         }

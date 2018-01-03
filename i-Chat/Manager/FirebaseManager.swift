@@ -143,14 +143,16 @@ class FirebaseManager {
                     let userFriend = try User(userDic)
 
                     friends.append(userFriend)
+                    completionHandler(friends)
 
                     } catch {
                         print(error, "**")
                     }
 
                 })
+
             }
-            completionHandler(friends)
+
         }
 
     }
