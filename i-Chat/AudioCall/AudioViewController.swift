@@ -90,7 +90,7 @@ class AudioViewController: UIViewController {
 
         CallManager.shared.session?.hangUp(nil)
 
-        print("****\(CallManager.shared.session)")
+        print("****HungUpSession\(CallManager.shared.session)")
 
         CallManager.shared.session = nil
 

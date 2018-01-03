@@ -9,6 +9,7 @@
 import Foundation
 import UIKit
 import CoreLocation
+import KeychainSwift
 
 // MARK: Component
 
@@ -301,6 +302,11 @@ class SettingTableViewController: UITableViewController, GenderPickerControllerD
                     ) as! SliderTableViewCell
 
                 cell.leftLabel.text = NSLocalizedString("Max Distance", comment: "")
+                let keychain = KeychainSwift()
+                guard let maxDistance = keychain.get("maxDistance"),
+                      let distance = Float(maxDistance)
+                    else {return cell}
+                cell.slider.value = distance
 
                 return cell
 

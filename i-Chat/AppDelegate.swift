@@ -46,7 +46,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
         QBRTCClient.initializeRTC()
 
-        QBRTCConfig.setAnswerTimeInterval(30)
+        QBRTCConfig.setAnswerTimeInterval(45)
 
         QBSettings.accountKey = accountKey
 
@@ -76,9 +76,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let keychain = KeychainSwift()
 
         keychain.synchronizable = true
-
-        print("***", Auth.auth().currentUser)
-        print("***", QBSession.current.currentUser)
 
         if Auth.auth().currentUser != nil {
 

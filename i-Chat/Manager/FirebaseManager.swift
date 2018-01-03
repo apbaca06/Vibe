@@ -97,7 +97,7 @@ class FirebaseManager {
 
     static func findIfWasSwiped(uid: String, recieverUid: String, completionHandler: @escaping (Bool) -> Void) {
         DatabasePath.userLikeRef.child(recieverUid).queryOrderedByKey().queryEqual(toValue: uid).observeSingleEvent(of: .value) { (datasnapshot) in
-            print("if is matched", datasnapshot)
+            print("***if is matched", datasnapshot)
 
             let exist = datasnapshot.exists()
 
@@ -116,16 +116,14 @@ class FirebaseManager {
         }
     }
 
-    static func getFriendList(completionHandler: @escaping ([User]) -> Void) {
-
-//        Manager.shared.loadImage(with: imageURL, into: cardView.imageView)
+    static func getFriendList(eventType type: DataEventType, completionHandler: @escaping ([User]) -> Void) {
 
         let keychain = KeychainSwift()
 
         guard let uid = keychain.get("uid")
         else { return }
 
-        DatabasePath.userFriendRef.child(uid).observeSingleEvent(of: .value) { (datasnapshot) in
+        DatabasePath.userFriendRef.child(uid).observeSingleEvent(of: type) { (datasnapshot) in
 
             guard let friendList = datasnapshot.value as? [String: Any]
             else { return }
@@ -133,7 +131,6 @@ class FirebaseManager {
             var friends: [User] = []
 
             for friend in friendList {
-                print("**friend", friend)
                 DatabasePath.userRef.child(friend.key).observeSingleEvent(of: .value, with: { (datasnapshot) in
 
                     do {

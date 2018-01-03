@@ -15,31 +15,6 @@ class FriendTableViewController: UIViewController, UITableViewDelegate, UITableV
     override func viewDidLoad() {
         super.viewDidLoad()
 
-//        func friendList(friends: [User]) {
-//            print("friends**", friends)
-//            for friend in friends {
-//                guard let url = URL(string: friend.profileImgURL)
-//                    else { return }
-//                //            Manager.shared.loadImage(with: url, into: friendImage)
-//            }
-//            
-//        }
-//        
-//        @IBAction func callAction(_ sender: UIButton) {
-//            DatabasePath.userRef.child("c3ywbmhKGXPBK9ih3FkLHF29pPX2").observe(.value) { (datasnapshot) in
-//                do {
-//                    let user = try User(datasnapshot)
-//                    
-//                    CallManager.shared.audioCall(toUser: user)
-//                } catch {
-//                    
-//                }
-//            }
-//            //        User(id: 1234, name: "cindy", gender: .female, imgURL: "ee", email: "cindy@gmail.com", qbID: 39258896)
-//            print("****,\(CallManager.shared.session)")
-//            
-//        }
-
         setupTableView()
     }
 
@@ -51,6 +26,8 @@ class FriendTableViewController: UIViewController, UITableViewDelegate, UITableV
         tableView.estimatedRowHeight = 100.0
 
         tableView.rowHeight = UITableViewAutomaticDimension
+
+        tableView.separatorInset = UIEdgeInsets(top: 0, left: 90, bottom: 0, right: 15)
 
         let nib = UINib(
             nibName: "FriendTableViewCell",
@@ -104,7 +81,7 @@ class FriendTableViewController: UIViewController, UITableViewDelegate, UITableV
 
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let view = UIView(frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: 20))
-        view.backgroundColor = .red
+        view.backgroundColor = UIColor(red: 7/255.0, green: 160/255.0, blue: 195/255.0, alpha: 1)
         return view
     }
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {

@@ -14,9 +14,6 @@ extension HomeViewController: QBRTCClientDelegate {
     func didReceiveNewSession(_ session: QBRTCSession, userInfo: [String: String]? = nil) {
 
         if CallManager.shared.session != nil {
-            // we already have a video/audio call session, so we reject another one
-            // userInfo - the custom user information dictionary for the call from caller. May be nil.
-            //            let userInfo: [String: String] = ["key": "value"]
             session.rejectCall(userInfo)
 
             print("****已有電話,拒接")
@@ -28,6 +25,11 @@ extension HomeViewController: QBRTCClientDelegate {
             // swiftlint:disable force_cast
             let incomingCallViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "IncomingCallViewController") as! IncomingCallViewController
             // swiftlint:enable force_cast
+
+            guard let dict = userInfo,
+                  let name = dict["Name"]
+                else { return }
+//            incomingCallViewController.name.text = name
 
             self.present(incomingCallViewController, animated: true, completion: nil)
         }
@@ -44,7 +46,6 @@ extension HomeViewController: QBRTCClientDelegate {
         let audioViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "AudioViewController")
 
         self.present(audioViewController, animated: true, completion: nil)
-        //開始算時間
 
     }
 
@@ -142,7 +143,7 @@ extension HomeViewController: QBRTCClientDelegate {
         print("****Connection has closed with user")
 
         RingtoneManager.shared.ringPlayer.stop()
-        // release session instance
+
         CallManager.shared.session = nil
         self.dismiss(animated: true, completion: nil)
     }

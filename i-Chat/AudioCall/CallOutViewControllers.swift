@@ -8,9 +8,13 @@
 
 import Foundation
 import UIKit
+import Nuke
 
 class CallOutViewController: UIViewController {
 
+    var reciever: User?
+
+    @IBOutlet weak var rippleView: UIView!
     @IBOutlet weak var backgroundImageView: UIImageView!
 
     @IBOutlet weak var recieverName: UILabel!
@@ -23,34 +27,39 @@ class CallOutViewController: UIViewController {
 
     @IBAction func cancelButton(_ sender: UIButton) {
 
-        print("Did reject")
-
         RingtoneManager.shared.ringPlayer.stop()
 
         CallManager.shared.session?.hangUp(nil)
 
-        print("****\(CallManager.shared.session)")
+        print("****CallOutsession\(CallManager.shared.session)")
 
         CallManager.shared.session = nil
 
-        self.callDescription.text = NSLocalizedString("拒絕通話", comment: "")
+        self.callDescription.text = NSLocalizedString("Call rejected", comment: "")
 
         self.dismiss(animated: true, completion: nil)
     }
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        setUpButtonShape()
-
         RingtoneManager.shared.playRingtone()
 
-//        ripple(CGPoint(x: recieverImg.bounds.width/2, y: recieverImg.bounds.height/2), view: recieverImg)
+        guard let urlString = reciever?.profileImgURL,
+            let url = URL(string: urlString),
+            let name = reciever?.name
+            else { return }
+        Manager.shared.loadImage(with: url, into: recieverImg)
+        Manager.shared.loadImage(with: url, into: backgroundImageView)
+        recieverName.text = name
+
     }
 
     override func viewWillLayoutSubviews() {
         super.viewWillLayoutSubviews()
         setupViewsForRippleEffect()
+        setUpButtonShape()
+
+        ripple(CGPoint(x: rippleView.frame.origin.x + rippleView.frame.width/2, y: rippleView.frame.origin.y + rippleView.frame.height/2), view: rippleView)
     }
 
     func setUpButtonShape() {
@@ -58,13 +67,14 @@ class CallOutViewController: UIViewController {
     }
 
     func setupViewsForRippleEffect() {
-        recieverImg.layer.zPosition = 1111
 
+//        recieverImg.layer.zPosition = 1111
+//
         self.recieverImg.layer.cornerRadius = self.recieverImg.frame.size.width / 2
 
         self.recieverImg.clipsToBounds = true
-
-        animateRippleEffect()
+//
+//        animateRippleEffect()
     }
 
     func animateRippleEffect() {

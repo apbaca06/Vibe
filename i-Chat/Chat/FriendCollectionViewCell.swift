@@ -10,6 +10,7 @@ import UIKit
 
 class FriendCollectionViewCell: UICollectionViewCell {
 
+    @IBOutlet weak var callButton: UIButton!
     @IBOutlet weak var friendName: UILabel!
     @IBOutlet weak var profileImageView: UIImageView!
 

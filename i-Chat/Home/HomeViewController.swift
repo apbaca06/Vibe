@@ -30,13 +30,15 @@ class HomeViewController: UICollectionViewController, UICollectionViewDelegateFl
 
     let friendCollectionViewController = FriendCollectionViewController()
 
-    let keychain = KeychainSwift()
-
     let friendViewController = FriendTableViewController()
+
+    let keychain = KeychainSwift()
 
     var currentUser: User?
 
     var userArray: [User] = []
+
+    var friends: [User] = []
 
     var distanceBtwnArray: [Int] = []
 
@@ -48,6 +50,13 @@ class HomeViewController: UICollectionViewController, UICollectionViewDelegateFl
 
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        friendCollectionViewController.delegate = self
+
+        FirebaseManager.getFriendList(eventType: .value) { (friends) in
+            self.friends = friends
+            self.collectionView?.reloadData()
+        }
 
         userProvider.loadSwipeImage()
 
@@ -282,6 +291,10 @@ class HomeViewController: UICollectionViewController, UICollectionViewDelegateFl
             ) as! ChatCollectionViewCell
 
             // swiftlint:enable force_cast
+
+            friendCollectionViewController.users = self.friends
+
+//            self.addChildViewController(friendCollectionViewController)
 
             cell.contentView.addSubviews([friendViewController.view, friendCollectionViewController.view])
 

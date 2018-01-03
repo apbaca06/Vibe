@@ -2,7 +2,7 @@ import UIKit
 
 public func ripple(_ center: CGPoint, view: UIView, times: Float = Float.infinity,
                    duration: TimeInterval = 2,
-                   size: CGFloat = 50,
+                   size: CGFloat = 70,
                    multiplier: CGFloat = 4,
                    divider: CGFloat = 2,
                    color: UIColor = UIColor.white,

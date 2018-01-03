@@ -13,7 +13,17 @@ import KeychainSwift
 import Koloda
 import Nuke
 
-extension HomeViewController: CLLocationManagerDelegate {
+extension HomeViewController: CLLocationManagerDelegate, FriendCollectionViewControllerDelegate {
+
+    func controller(_ controller: FriendCollectionViewController, didCall user: User) {
+
+        CallManager.shared.audioCall(toUser: user)
+
+        guard let callOutViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "CallOutViewController") as? CallOutViewController
+        else { return }
+        callOutViewController.reciever = user
+        present(callOutViewController, animated: true, completion: nil)
+    }
 
     // MARK: Funtion for Profile Cell
     @objc func changeImg() {

@@ -19,7 +19,8 @@ class FriendTableViewCell: UITableViewCell {
 
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        friendImageView.layer.cornerRadius = friendImageView.bounds.width/2
+        callButton.layer.cornerRadius = callButton.bounds.width/2
     }
 
 }

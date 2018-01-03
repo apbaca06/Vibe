@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -41,9 +42,13 @@
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <button opaque="NO" contentMode="center" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eIF-Xi-YdH">
-                        <rect key="frame" x="78" y="73" width="22" height="22"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <button opaque="NO" contentMode="center" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eIF-Xi-YdH">
+                        <rect key="frame" x="73" y="73" width="22" height="22"/>
+                        <color key="backgroundColor" red="0.98431372549019602" green="0.21176470588235294" blue="0.25098039215686274" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="22" id="Ooi-07-3bc"/>
+                            <constraint firstAttribute="width" secondItem="eIF-Xi-YdH" secondAttribute="height" multiplier="1:1" id="tdY-so-zlM"/>
+                        </constraints>
                         <state key="normal" image="pickup"/>
                     </button>
                 </subviews>
@@ -53,6 +58,8 @@
                 <constraint firstItem="8cE-wi-8E8" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="5" id="NOS-xN-dxI"/>
                 <constraint firstItem="iyW-u4-Z1Q" firstAttribute="top" secondItem="8cE-wi-8E8" secondAttribute="bottom" constant="10" id="UCH-Wd-kPr"/>
                 <constraint firstItem="iyW-u4-Z1Q" firstAttribute="width" secondItem="gTV-IL-0wX" secondAttribute="width" id="VYd-H3-7KA"/>
+                <constraint firstItem="eIF-Xi-YdH" firstAttribute="bottom" secondItem="8cE-wi-8E8" secondAttribute="bottom" id="bF3-Hl-1RM"/>
+                <constraint firstItem="eIF-Xi-YdH" firstAttribute="trailing" secondItem="8cE-wi-8E8" secondAttribute="trailing" id="cCe-KA-czW"/>
                 <constraint firstItem="iyW-u4-Z1Q" firstAttribute="leading" secondItem="ZTg-uK-7eu" secondAttribute="leading" id="lcW-uB-wKz"/>
                 <constraint firstItem="ZTg-uK-7eu" firstAttribute="trailing" secondItem="8cE-wi-8E8" secondAttribute="trailing" constant="5" id="rZC-gD-mTS"/>
                 <constraint firstItem="ZTg-uK-7eu" firstAttribute="bottom" secondItem="iyW-u4-Z1Q" secondAttribute="bottom" constant="10" id="zhK-8y-yYO"/>
@@ -60,6 +67,7 @@
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <size key="customSize" width="145" height="175"/>
             <connections>
+                <outlet property="callButton" destination="eIF-Xi-YdH" id="pj2-NL-ZfG"/>
                 <outlet property="friendName" destination="iyW-u4-Z1Q" id="hHq-m4-oBv"/>
                 <outlet property="profileImageView" destination="8cE-wi-8E8" id="FPW-1k-dXB"/>
             </connections>

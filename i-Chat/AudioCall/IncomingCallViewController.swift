@@ -52,10 +52,12 @@ class IncomingCallViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        setUpButtonShape()
-
         RingtoneManager.shared.playRingtone()
 
+    }
+
+    override func viewWillLayoutSubviews() {
+        setUpButtonShape()
     }
 
     func setUpButtonShape() {
