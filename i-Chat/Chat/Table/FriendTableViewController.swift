@@ -82,6 +82,7 @@ class FriendTableViewController: UIViewController, UITableViewDelegate, UITableV
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
 
         let headerView = UIView(frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: 40))
+        headerView.backgroundColor = .white
 
         let labelView: UILabel = UILabel(frame: CGRect(x: 15, y: 0, width: UIScreen.main.bounds.width - 15, height: 40))
         labelView.text = NSLocalizedString("Chatroom", comment: "")

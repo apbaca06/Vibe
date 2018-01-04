@@ -12,6 +12,7 @@ import Firebase
 import KeychainSwift
 
 class SwipingCollectionViewCell: UICollectionViewCell {
+    @IBOutlet weak var turningIndicator: UIActivityIndicatorView!
 
     @IBOutlet weak var buttonView: UIView!
 
@@ -33,7 +34,12 @@ class SwipingCollectionViewCell: UICollectionViewCell {
 
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+
+    }
+
+    override func prepareForReuse() {
+        super.prepareForReuse()
+
     }
 
 }

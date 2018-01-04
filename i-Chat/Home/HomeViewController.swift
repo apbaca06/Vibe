@@ -15,16 +15,13 @@ import Koloda
 import Nuke
 
 class HomeViewController: UICollectionViewController, UICollectionViewDelegateFlowLayout, UserProviderDelegate {
+    func userProvider(_ provider: UserProvider, didFetch distanceUser: [(User, Int)], didFetch currentUser: User) {
+        self.distanceUsers = distanceUser
 
-    func userProvider(_ provider: UserProvider, didFetch users: [User], didGet distanceBtwn: [Int], didFetch currentUser: User) {
-        self.userArray = users
-        self.distanceBtwnArray = distanceBtwn
-        self.currentUser = currentUser
-
-        DispatchQueue.main.async {
-            self.collectionView?.reloadData()
-        }
+        self.collectionView?.reloadData()
     }
+
+    var distanceUsers: [(User, Int)] = []
 
     var userInfo: [String: String]?
 
@@ -38,11 +35,16 @@ class HomeViewController: UICollectionViewController, UICollectionViewDelegateFl
 
     var currentUser: User?
 
-    var userArray: [User] = []
-
     var friends: [User] = []
 
-    var distanceBtwnArray: [Int] = []
+    var distanceBtwnArray: [Int] = [] {
+        didSet {
+            // swiftlint:disable force_cast
+            let cell = self.collectionView?.cellForItem(at: IndexPath(item: 1, section: 0)) as! SwipingCollectionViewCell
+            // swiftlint:enable force_cast
+            cell.swipeView.reloadData()
+        }
+    }
 
     let locationManager = CLLocationManager()
 
@@ -53,14 +55,14 @@ class HomeViewController: UICollectionViewController, UICollectionViewDelegateFl
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        userProvider.loadSwipeImage()
+
         friendCollectionViewController.delegate = self
 
         FirebaseManager.getFriendList(eventType: .value) { (friends) in
             self.friends = friends
             self.collectionView?.reloadData()
         }
-
-        userProvider.loadSwipeImage()
 
         userProvider.delegate = self
 
@@ -85,6 +87,12 @@ class HomeViewController: UICollectionViewController, UICollectionViewDelegateFl
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+
+    }
+
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+
     }
 
     func setupNibCell() {
@@ -275,6 +283,10 @@ class HomeViewController: UICollectionViewController, UICollectionViewDelegateFl
             cell.swipeView.delegate = self
 
             cell.swipeView.dataSource = self
+
+            cell.swipeView.resetCurrentCardIndex()
+
+            cell.turningIndicator.startAnimating()
 
             return cell
 

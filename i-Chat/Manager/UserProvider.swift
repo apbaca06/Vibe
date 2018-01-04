@@ -26,7 +26,9 @@ public enum UserProviderError: Error {
 
 protocol UserProviderDelegate: class {
 
-    func userProvider(_ provider: UserProvider, didFetch users: [User], didGet distanceBtwn: [Int], didFetch currentUser: User)
+//    func userProvider(_ provider: UserProvider, didFetch users: [User], didGet distanceBtwn: [Int], didFetch currentUser: User)
+
+    func userProvider(_ provider: UserProvider, didFetch distanceUser: [(User, Int)], didFetch currentUser: User)
 
 }
 
@@ -34,9 +36,9 @@ class UserProvider {
 
     var users: [User] = []
 
-    var friends: [User] = []
+    typealias DistanceUser = (User, Int)
 
-    var distanceBtwn: [Int] = []
+    var distanceUsers: [DistanceUser] = []
 
     var minAgePreference: Int?
 
@@ -51,7 +53,7 @@ class UserProvider {
         guard let uid = keychain.get("uid")
             else { return }
 
-        DatabasePath.userRef.child(uid).observeSingleEvent(of: .value) { [unowned self] (datashot) in
+        DatabasePath.userRef.child(uid).observe(.value) { [unowned self] (datashot) in
             do {
 
                 let userDic = [ datashot.key: datashot.value]
@@ -91,6 +93,10 @@ class UserProvider {
                             throw error
                         }
 
+                        self.distanceUsers = []
+
+                        var allUsers: [(User, Int)] = []
+
                         for data in datas {
 
                             let userDic = [data.key: data.value]
@@ -100,11 +106,20 @@ class UserProvider {
                             let location2 = CLLocation(latitude: user.latitude, longitude: user.longitude)
                             let distanceBtwn = Int((location1.distance(from: location2))/1000)
 
+                            allUsers.append((user, distanceBtwn))
+
                             if user.email != Auth.auth().currentUser?.email && user.age >= minAge && user.age <= maxAge && distanceBtwn <= maxDistance && currentUser.likeUserID.has(key: user.id) == false {
-                                self.users.append(user)
-                                self.distanceBtwn.append(distanceBtwn)
-                                self.delegate?.userProvider(self, didFetch: self.users, didGet: self.distanceBtwn, didFetch: currentUser)
+
+                                self.distanceUsers.append((user, distanceBtwn))
+
                             }
+                        }
+                        if self.distanceUsers.count == 0 {
+
+                            self.delegate?.userProvider(self, didFetch: allUsers, didFetch: currentUser)
+
+                        } else {
+                        self.delegate?.userProvider(self, didFetch: self.distanceUsers, didFetch: currentUser)
                         }
 
                     } catch {

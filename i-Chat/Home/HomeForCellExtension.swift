@@ -104,6 +104,12 @@ extension HomeViewController: KolodaViewDelegate {
 
     func kolodaDidRunOutOfCards(_ koloda: KolodaView) {
 
+        let alert = UIAlertController(title: NSLocalizedString("No more cards", comment: ""), message: NSLocalizedString("Please change your pregerence to meet more people!", comment: ""), preferredStyle: .alert)
+
+        alert.addAction(title: NSLocalizedString("OK", comment: ""))
+
+        alert.show()
+
         let position = koloda.currentCardIndex
         //        for i in 1...4 {
         //            dataSource.append(UIImage(named: "Card_like_\(i)")!)
@@ -122,7 +128,9 @@ extension HomeViewController: KolodaViewDelegate {
 extension HomeViewController: KolodaViewDataSource {
 
     func kolodaNumberOfCards(_ koloda: KolodaView) -> Int {
-        return userArray.count
+        print(distanceUsers.count)
+
+        return distanceUsers.count
     }
 
     func kolodaSpeedThatCardShouldDrag(_ koloda: KolodaView) -> DragSpeed {
@@ -136,7 +144,7 @@ extension HomeViewController: KolodaViewDataSource {
             return UIView()
         }
 
-        if userArray.count <= index {
+        if distanceUsers.count <= index {
 
             let myView = UIView()
             myView.backgroundColor = .black
@@ -144,11 +152,11 @@ extension HomeViewController: KolodaViewDataSource {
             return myView
         } else {
 
-            cardView.ageLabel.text = String(describing: userArray[index].age)
-            cardView.nameLabel.text = String(describing: userArray[index].name)
-            cardView.distanceLabel.text = "\(String(describing: distanceBtwnArray[index])) km"
-            cardView.cityName.text = userArray[index].cityName
-            let imageURL = URL(string: userArray[index].profileImgURL)!
+            cardView.ageLabel.text = String(describing: distanceUsers[index].0.age)
+            cardView.nameLabel.text = String(describing: distanceUsers[index].0.name)
+            cardView.distanceLabel.text = "\(String(describing: distanceUsers[index].1)) km"
+            cardView.cityName.text = distanceUsers[index].0.cityName
+            let imageURL = URL(string: distanceUsers[index].0.profileImgURL)!
             Manager.shared.loadImage(with: imageURL, into: cardView.imageView)
             return cardView
         }
@@ -165,14 +173,14 @@ extension HomeViewController: KolodaViewDataSource {
 
         if direction == .left {
 
-            FirebaseManager.userUnlike(uid: uid, recieverUid: userArray[index].id)
+            FirebaseManager.userUnlike(uid: uid, recieverUid: distanceUsers[index].0.id)
         }
 
         if direction == .right {
 
-            FirebaseManager.userLike(uid: uid, recieverUid: userArray[index].id)
-            FirebaseManager.userSwipedLike(uid: uid, recieverUid: userArray[index].id)
-            FirebaseManager.findIfWasSwiped(uid: uid, recieverUid: userArray[index].id, completionHandler: showIsMatchedView)
+            FirebaseManager.userLike(uid: uid, recieverUid: distanceUsers[index].0.id)
+            FirebaseManager.userSwipedLike(uid: uid, recieverUid: distanceUsers[index].0.id)
+            FirebaseManager.findIfWasSwiped(uid: uid, recieverUid: distanceUsers[index].0.id, completionHandler: showIsMatchedView)
 
         }
     }
@@ -189,26 +197,3 @@ extension HomeViewController: KolodaViewDataSource {
 
     }
 }
-
-//extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
-//    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-//        return 2
-//    }
-//
-//    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-//        
-
-//        let cell = tableView.dequeueReusableCell(
-//            withIdentifier: "FriendTableViewCell",
-//            for: indexPath
-//            ) as! FriendTableViewCell
-//
-//        // swiftlint:enable force_cast
-//
-//        return cell
-//    }
-//    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-//        return 80
-//    }
-//
-//}
