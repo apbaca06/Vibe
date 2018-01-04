@@ -131,7 +131,7 @@ class AudioViewController: UIViewController {
         self.nameLabel.text = name
 
         Manager.shared.loadImage(with: url, into: profileImgView)
-        Manager.shared.loadImage(with: url, into: backgroundView)
+//        Manager.shared.loadImage(with: url, into: backgroundView)
 
     }
 

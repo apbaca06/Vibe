@@ -39,6 +39,8 @@
 		372E8E101FF10355002CAC96 /* Ripple.swift in Sources */ = {isa = PBXBuildFile; fileRef = 372E8E0F1FF10355002CAC96 /* Ripple.swift */; };
 		372E8E121FF1076C002CAC96 /* Animation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 372E8E111FF1076C002CAC96 /* Animation.swift */; };
 		372E8E141FF1DD2D002CAC96 /* AgeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 372E8E131FF1DD2D002CAC96 /* AgeViewController.swift */; };
+		372F85031FFE4C4D00D6BCB1 /* State.swift in Sources */ = {isa = PBXBuildFile; fileRef = 372F85021FFE4C4D00D6BCB1 /* State.swift */; };
+		372F85051FFE552A00D6BCB1 /* EulaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 372F85041FFE552A00D6BCB1 /* EulaViewController.swift */; };
 		373DB9F71FEA3F480041E34E /* DatabasePath.swift in Sources */ = {isa = PBXBuildFile; fileRef = 373DB9F61FEA3F480041E34E /* DatabasePath.swift */; };
 		3754E2881FE122E4002604CD /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3754E2871FE122E4002604CD /* RegisterViewController.swift */; };
 		3754E28A1FE12809002604CD /* QuickbloxManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3754E2891FE12809002604CD /* QuickbloxManager.swift */; };
@@ -147,6 +149,8 @@
 		372E8E0F1FF10355002CAC96 /* Ripple.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ripple.swift; sourceTree = "<group>"; };
 		372E8E111FF1076C002CAC96 /* Animation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Animation.swift; sourceTree = "<group>"; };
 		372E8E131FF1DD2D002CAC96 /* AgeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AgeViewController.swift; sourceTree = "<group>"; };
+		372F85021FFE4C4D00D6BCB1 /* State.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = State.swift; sourceTree = "<group>"; };
+		372F85041FFE552A00D6BCB1 /* EulaViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EulaViewController.swift; sourceTree = "<group>"; };
 		373DB9F61FEA3F480041E34E /* DatabasePath.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabasePath.swift; sourceTree = "<group>"; };
 		3754E2871FE122E4002604CD /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		3754E2891FE12809002604CD /* QuickbloxManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuickbloxManager.swift; sourceTree = "<group>"; };
@@ -249,6 +253,7 @@
 		370832AC1FE283D800D4DC86 /* Landing */ = {
 			isa = PBXGroup;
 			children = (
+				372F85041FFE552A00D6BCB1 /* EulaViewController.swift */,
 				371459801FDFAABF00C1F14A /* LogInViewController.swift */,
 				3754E2871FE122E4002604CD /* RegisterViewController.swift */,
 			);
@@ -392,6 +397,7 @@
 				37F05EE31FF5F322006D20A6 /* CardView.xib */,
 				3792B0C91FF3D05200AB4838 /* ExampleOverlayView.swift */,
 				37B4EDD21FF7976800185785 /* MatchViewController.swift */,
+				372F85021FFE4C4D00D6BCB1 /* State.swift */,
 				3792B0C71FF3CFF800AB4838 /* OverlayView.xib */,
 			);
 			path = Swipe;
@@ -734,6 +740,7 @@
 				37EA8ED01FF7B5D4003FA28C /* FriendTableViewCell.swift in Sources */,
 				37F05EE21FF5F30C006D20A6 /* CardView.swift in Sources */,
 				3754E2881FE122E4002604CD /* RegisterViewController.swift in Sources */,
+				372F85051FFE552A00D6BCB1 /* EulaViewController.swift in Sources */,
 				376C3FBC1FEBAD9A00EAF188 /* SetImgViewController.swift in Sources */,
 				37A5BBA81FE628B900C4F1E6 /* ChatCollectionViewCell.swift in Sources */,
 				375F04B61FE3A73A009D2671 /* MenuBar.swift in Sources */,
@@ -742,6 +749,7 @@
 				3792B0B11FF2386700AB4838 /* GenderPickerController.swift in Sources */,
 				376C3FBA1FEBACF900EAF188 /* PreferenceViewController.swift in Sources */,
 				376C3FB81FEBA92900EAF188 /* GenderViewController.swift in Sources */,
+				372F85031FFE4C4D00D6BCB1 /* State.swift in Sources */,
 				37A5BB9D1FE6223600C4F1E6 /* BaseCell.swift in Sources */,
 				3754E28A1FE12809002604CD /* QuickbloxManager.swift in Sources */,
 				37DE5F981FEA65B30017E09D /* LogoutTableViewCell.swift in Sources */,

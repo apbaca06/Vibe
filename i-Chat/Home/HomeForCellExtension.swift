@@ -111,16 +111,10 @@ extension HomeViewController: KolodaViewDelegate {
 //        alert.show()
 
         self.collectionView?.reloadData()
-
-        let position = koloda.currentCardIndex
-        //        for i in 1...4 {
-        //            dataSource.append(UIImage(named: "Card_like_\(i)")!)
-        //        }
-        //        koloda.insertCardAtIndexRange(position..<position + 4, animated: true)
     }
 
     func koloda(_ koloda: KolodaView, didSelectCardAt index: Int) {
-//        UIApplication.shared.openURL(URL(string: "https://yalantis.com/")!)
+        // TODO: Add profile page
     }
 
 }
@@ -189,11 +183,14 @@ extension HomeViewController: KolodaViewDataSource {
 
         if isMatch == true {
 
-            let matchViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "matchViewController")
+            // swiftlint:disable force_cast
+            let matchViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "matchViewController") as! MatchViewController
+            // swiftlint:enable force_cast
+
             matchViewController.modalPresentationStyle = .overFullScreen
             matchViewController.modalTransitionStyle = .crossDissolve
+            self.state = matchViewController.state
             present(matchViewController, animated: true, completion: nil)
-
         }
 
     }

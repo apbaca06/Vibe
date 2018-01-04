@@ -11,6 +11,10 @@ import IQKeyboardManager
 import SwifterSwift
 
 class RegisterViewController: UIViewController {
+
+    @IBOutlet weak var agreeLabel: UILabel!
+
+    @IBOutlet weak var eulaButton: UIButton!
     @IBAction func toLoginButton(_ sender: Any) {
 
         let loginViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "LogInViewController")
@@ -80,6 +84,7 @@ class RegisterViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        agreeLabel.text = NSLocalizedString("Agreed on EULA when you registered", comment: "")
 
         setUpButton()
     }

@@ -21,6 +21,8 @@ class HomeViewController: UICollectionViewController, UICollectionViewDelegateFl
         self.collectionView?.reloadData()
     }
 
+    var state: State?
+
     var distanceUsers: [(User, Int)] = []
 
     var userInfo: [String: String]?
@@ -55,6 +57,8 @@ class HomeViewController: UICollectionViewController, UICollectionViewDelegateFl
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        state = State()
+
         userProvider.loadSwipeImage()
 
         friendCollectionViewController.delegate = self
@@ -87,6 +91,9 @@ class HomeViewController: UICollectionViewController, UICollectionViewDelegateFl
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        if state == nil {
+            scrollToMenuIndex(2)
+        }
 
     }
 

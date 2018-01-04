@@ -49,32 +49,24 @@ class CallOutViewController: UIViewController {
             let name = reciever?.name
             else { return }
         Manager.shared.loadImage(with: url, into: recieverImg)
-        Manager.shared.loadImage(with: url, into: backgroundImageView)
+//        Manager.shared.loadImage(with: url, into: backgroundImageView)
         recieverName.text = name
 
     }
 
     override func viewWillLayoutSubviews() {
         super.viewWillLayoutSubviews()
-        setupViewsForRippleEffect()
-        setUpButtonShape()
+//        setupViewsForRippleEffect()
+        setUpShape()
 
-        ripple(CGPoint(x: rippleView.frame.origin.x + rippleView.frame.width/2, y: rippleView.frame.origin.y + rippleView.frame.height/2), view: rippleView)
+//        ripple(CGPoint(x: rippleView.frame.origin.x + rippleView.frame.width/2, y: rippleView.frame.origin.y + rippleView.frame.height/2), view: rippleView)
     }
 
-    func setUpButtonShape() {
+    func setUpShape() {
         cancelButton.layer.cornerRadius = cancelButton.frame.width/2
-    }
-
-    func setupViewsForRippleEffect() {
-
-//        recieverImg.layer.zPosition = 1111
-//
         self.recieverImg.layer.cornerRadius = self.recieverImg.frame.size.width / 2
 
         self.recieverImg.clipsToBounds = true
-//
-//        animateRippleEffect()
     }
 
     func animateRippleEffect() {
