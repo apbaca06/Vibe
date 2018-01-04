@@ -92,7 +92,7 @@ class FirebaseManager {
     }
 
     static func userLike(uid: String, recieverUid: String) {
-        DatabasePath.userLikeRef.child(uid).updateChildValues([recieverUid: 0])
+        DatabasePath.userRef.child(uid).child("likeList").updateChildValues([recieverUid: 0])
     }
 
     static func userSwipedLike(uid: String, recieverUid: String) {
@@ -100,7 +100,7 @@ class FirebaseManager {
     }
 
     static func findIfWasSwiped(uid: String, recieverUid: String, completionHandler: @escaping (Bool) -> Void) {
-        DatabasePath.userLikeRef.child(recieverUid).queryOrderedByKey().queryEqual(toValue: uid).observeSingleEvent(of: .value) { (datasnapshot) in
+        DatabasePath.userRef.child(recieverUid).child("likeList").queryOrderedByKey().queryEqual(toValue: uid).observeSingleEvent(of: .value) { (datasnapshot) in
             print("***if is matched", datasnapshot)
 
             let exist = datasnapshot.exists()
@@ -127,7 +127,7 @@ class FirebaseManager {
         guard let uid = keychain.get("uid")
         else { return }
 
-        DatabasePath.userFriendRef.child(uid).observeSingleEvent(of: type) { (datasnapshot) in
+        DatabasePath.userFriendRef.child(uid).observe(type) { (datasnapshot) in
 
             guard let friendList = datasnapshot.value as? [String: Any]
             else { return }

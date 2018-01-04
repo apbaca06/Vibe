@@ -21,13 +21,13 @@ class MatchViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        let blurEffect = UIBlurEffect(style: UIBlurEffectStyle.regular)
-
-        let blurEffectView = UIVisualEffectView(effect: blurEffect)
-
-        blurEffectView.frame = view.bounds
-        blurEffectView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
-        view.addSubview(blurEffectView)
+//        let blurEffect = UIBlurEffect(style: UIBlurEffectStyle.regular)
+//
+//        let blurEffectView = UIVisualEffectView(effect: blurEffect)
+//
+//        blurEffectView.frame = view.bounds
+//        blurEffectView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+//        view.addSubview(blurEffectView)
     }
 
 }

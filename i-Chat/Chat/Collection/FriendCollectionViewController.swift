@@ -39,11 +39,6 @@ class FriendCollectionViewController: UIViewController, UICollectionViewDelegate
 
         collectionView.backgroundColor = .white
 
-        FirebaseManager.getFriendList(eventType: .value) { (friends) in
-            self.users = friends
-            self.collectionView.reloadData()
-        }
-
         let nib2 = UINib(
             nibName: "FriendCollectionReusableView",
             bundle: nil
@@ -72,6 +67,18 @@ class FriendCollectionViewController: UIViewController, UICollectionViewDelegate
 
         view.addConstraints([collectionViewTop, collectionViewLeading, collectionViewHeight, collectionViewWidth])
 
+    }
+
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        FirebaseManager.getFriendList(eventType: .value) { (friends) in
+            self.users = friends
+            self.collectionView.reloadData()
+        }
+    }
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        self.users = []
     }
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
