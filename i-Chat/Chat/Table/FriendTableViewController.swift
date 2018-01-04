@@ -76,16 +76,23 @@ class FriendTableViewController: UIViewController, UITableViewDelegate, UITableV
         return 80
     }
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return 20
+        return 40
     }
 
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        let view = UIView(frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: 20))
-        view.backgroundColor = UIColor(red: 7/255.0, green: 160/255.0, blue: 195/255.0, alpha: 1)
-        return view
+
+        let headerView = UIView(frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: 40))
+
+        let labelView: UILabel = UILabel(frame: CGRect(x: 15, y: 0, width: UIScreen.main.bounds.width - 15, height: 40))
+        labelView.text = NSLocalizedString("Chatroom", comment: "")
+        labelView.font = UIFont.boldSystemFont(ofSize: 17)
+        labelView.textColor = UIColor(red: 7/255.0, green: 160/255.0, blue: 195/255.0, alpha: 1)
+        headerView.addSubview(labelView)
+
+        return headerView
     }
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-//        NSLocalizedString("Chatroom", comment: "")
+
         return "yes"
     }
 

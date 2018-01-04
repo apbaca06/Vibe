@@ -9,6 +9,7 @@
 import UIKit
 
 class FriendCollectionReusableView: UICollectionReusableView {
+    @IBOutlet weak var blurredImageView: UIImageView!
 
     @IBOutlet weak var numberOfLikeLabel: UILabel!
     @IBOutlet weak var numberOfLikeView: UIImageView!
@@ -18,10 +19,13 @@ class FriendCollectionReusableView: UICollectionReusableView {
     override func awakeFromNib() {
         super.awakeFromNib()
 
+        blurredImageView.layer.cornerRadius = blurredImageView.frame.width/2
+        blurredImageView.clipsToBounds = true
+        blurredImageView.image = #imageLiteral(resourceName: "user").withRenderingMode(.alwaysTemplate)
+        blurredImageView.tintColor = .gray
+
         likePhoto.layer.cornerRadius = likePhoto.frame.width/2
         likePhoto.clipsToBounds = true
-        likePhoto.image = #imageLiteral(resourceName: "user").withRenderingMode(.alwaysTemplate)
-        likePhoto.tintColor = .gray
 
         numberOfLikeView.layer.cornerRadius = numberOfLikeView.frame.width/2
         numberOfLikeView.clipsToBounds = true
@@ -30,9 +34,9 @@ class FriendCollectionReusableView: UICollectionReusableView {
 
         let blurEffectView = UIVisualEffectView(effect: blurEffect)
 
-        blurEffectView.frame = likePhoto.bounds
+        blurEffectView.frame = blurredImageView.bounds
         blurEffectView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
-        likePhoto.addSubview(blurEffectView)
+        blurredImageView.addSubview(blurEffectView)
 
     }
 

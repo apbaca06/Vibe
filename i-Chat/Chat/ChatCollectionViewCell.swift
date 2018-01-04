@@ -19,7 +19,7 @@ class ChatCollectionViewCell: UICollectionViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         label.text = NSLocalizedString("Friends", comment: "")
-        label.text.color = UIColor(red: 7/255.0, green: 160/255.0, blue: 195/255.0, alpha: 1)
+        label.textColor = UIColor(red: 7/255.0, green: 160/255.0, blue: 195/255.0, alpha: 1)
 
     }
 

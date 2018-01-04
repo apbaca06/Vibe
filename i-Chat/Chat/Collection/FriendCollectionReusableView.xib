@@ -29,9 +29,13 @@
                             <real key="value" value="2"/>
                         </userDefinedRuntimeAttribute>
                         <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
-                            <color key="value" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            <color key="value" red="0.98431372549999996" green="0.21176470589999999" blue="0.25098039220000001" alpha="1" colorSpace="calibratedRGB"/>
                         </userDefinedRuntimeAttribute>
                     </userDefinedRuntimeAttributes>
+                </imageView>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="gvZ-aX-1O2">
+                    <rect key="frame" x="9.5" y="9.5" width="81" height="81"/>
+                    <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                 </imageView>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NAZ-CN-T13">
                     <rect key="frame" x="0.0" y="105" width="100" height="20"/>
@@ -65,6 +69,7 @@
             </subviews>
             <constraints>
                 <constraint firstItem="CSv-aE-VBI" firstAttribute="centerX" secondItem="VXr-Tz-HHm" secondAttribute="centerX" id="1gy-g0-yVU"/>
+                <constraint firstItem="gvZ-aX-1O2" firstAttribute="centerX" secondItem="nAL-Eg-btf" secondAttribute="centerX" id="3Wu-77-Wnh"/>
                 <constraint firstItem="ZPz-j2-AP5" firstAttribute="centerX" secondItem="uBf-II-2R6" secondAttribute="centerX" id="7N7-yZ-7MY"/>
                 <constraint firstItem="uBf-II-2R6" firstAttribute="width" secondItem="nAL-Eg-btf" secondAttribute="width" multiplier="0.5" id="8f0-UK-I6k"/>
                 <constraint firstItem="ZPz-j2-AP5" firstAttribute="width" secondItem="uBf-II-2R6" secondAttribute="width" id="EXr-K7-nN0"/>
@@ -72,6 +77,7 @@
                 <constraint firstItem="uBf-II-2R6" firstAttribute="centerX" secondItem="VXr-Tz-HHm" secondAttribute="centerX" id="P35-af-aeD"/>
                 <constraint firstItem="CSv-aE-VBI" firstAttribute="width" secondItem="U6b-Vx-4bR" secondAttribute="width" id="PGp-bF-lLT"/>
                 <constraint firstItem="nAL-Eg-btf" firstAttribute="leading" secondItem="VXr-Tz-HHm" secondAttribute="leading" constant="5" id="R6D-MY-8gw"/>
+                <constraint firstItem="gvZ-aX-1O2" firstAttribute="width" secondItem="nAL-Eg-btf" secondAttribute="width" multiplier="0.9" id="Rxx-Gi-aJI"/>
                 <constraint firstItem="NAZ-CN-T13" firstAttribute="top" secondItem="nAL-Eg-btf" secondAttribute="bottom" constant="10" id="Tre-oH-7gq"/>
                 <constraint firstItem="CSv-aE-VBI" firstAttribute="bottom" secondItem="nAL-Eg-btf" secondAttribute="bottom" constant="8" id="W1T-uR-9Or"/>
                 <constraint firstItem="ZPz-j2-AP5" firstAttribute="height" secondItem="uBf-II-2R6" secondAttribute="height" id="WOP-Dl-OKV"/>
@@ -79,9 +85,12 @@
                 <constraint firstItem="ZPz-j2-AP5" firstAttribute="centerY" secondItem="uBf-II-2R6" secondAttribute="centerY" id="m3y-dD-IPy"/>
                 <constraint firstItem="uBf-II-2R6" firstAttribute="centerY" secondItem="nAL-Eg-btf" secondAttribute="centerY" id="q0d-Uo-snz"/>
                 <constraint firstItem="VXr-Tz-HHm" firstAttribute="trailing" secondItem="nAL-Eg-btf" secondAttribute="trailing" constant="5" id="rs6-ow-HWM"/>
+                <constraint firstItem="gvZ-aX-1O2" firstAttribute="centerY" secondItem="nAL-Eg-btf" secondAttribute="centerY" id="y9g-uW-cPX"/>
+                <constraint firstItem="gvZ-aX-1O2" firstAttribute="height" secondItem="nAL-Eg-btf" secondAttribute="height" multiplier="0.9" id="yRT-gI-T2g"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="VXr-Tz-HHm"/>
             <connections>
+                <outlet property="blurredImageView" destination="gvZ-aX-1O2" id="aHy-h3-ZUV"/>
                 <outlet property="label" destination="NAZ-CN-T13" id="Tx3-3c-HRT"/>
                 <outlet property="likePhoto" destination="nAL-Eg-btf" id="pVB-Mg-ogg"/>
                 <outlet property="numberOfLikeLabel" destination="ZPz-j2-AP5" id="nhT-BI-24X"/>

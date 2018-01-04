@@ -107,8 +107,6 @@ class FriendCollectionViewController: UIViewController, UICollectionViewDelegate
     }
 
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        print(users)
-
         return users.count
     }
 
