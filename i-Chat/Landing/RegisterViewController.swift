@@ -84,7 +84,7 @@ class RegisterViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        agreeLabel.text = NSLocalizedString("Agreed on EULA when you registered", comment: "")
+        agreeLabel.text = NSLocalizedString("Agreed on EULA when registered", comment: "")
 
         setUpButton()
     }

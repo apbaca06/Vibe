@@ -89,7 +89,7 @@
                                             <constraint firstAttribute="height" constant="50" id="1h7-fd-tXQ"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="27"/>
-                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <color key="textColor" red="0.027450980390000001" green="0.62745098040000002" blue="0.76470588240000004" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
@@ -100,13 +100,25 @@
                                     <constraint firstItem="SCJ-wb-W1Z" firstAttribute="leading" secondItem="8qL-PB-fdv" secondAttribute="leading" id="wIw-bF-nCH"/>
                                 </constraints>
                             </view>
-                            <blurEffect style="light"/>
+                            <blurEffect style="extraLight"/>
                         </visualEffectView>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Age" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="13S-9h-FGE">
-                            <rect key="frame" x="226" y="582" width="113" height="50"/>
+                            <rect key="frame" x="226" y="582" width="149" height="50"/>
+                            <color key="backgroundColor" white="0.0" alpha="0.73485659246575341" colorSpace="calibratedWhite"/>
                             <fontDescription key="fontDescription" type="boldSystem" pointSize="27"/>
-                            <color key="textColor" red="0.027450980390000001" green="0.62745098040000002" blue="0.76470588240000004" alpha="1" colorSpace="calibratedRGB"/>
+                            <color key="textColor" red="0.94117647059999998" green="0.7843137255" blue="0.031372549020000001" alpha="1" colorSpace="calibratedRGB"/>
                             <nil key="highlightedColor"/>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="color" keyPath="shadowColor">
+                                    <color key="value" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                </userDefinedRuntimeAttribute>
+                                <userDefinedRuntimeAttribute type="size" keyPath="shadowOffset">
+                                    <size key="value" width="1" height="1"/>
+                                </userDefinedRuntimeAttribute>
+                                <userDefinedRuntimeAttribute type="number" keyPath="shadowRadius">
+                                    <real key="value" value="5"/>
+                                </userDefinedRuntimeAttribute>
+                            </userDefinedRuntimeAttributes>
                         </label>
                     </subviews>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -117,7 +129,7 @@
                         <constraint firstItem="La4-wi-dpe" firstAttribute="width" secondItem="Rcq-QG-eYN" secondAttribute="width" id="Dwl-8P-Uqd"/>
                         <constraint firstItem="La4-wi-dpe" firstAttribute="top" secondItem="U3W-kD-WKx" secondAttribute="bottom" id="Gn5-Eb-JN5"/>
                         <constraint firstItem="La4-wi-dpe" firstAttribute="top" secondItem="NGt-zP-P0i" secondAttribute="bottom" id="HMg-KF-INg"/>
-                        <constraint firstItem="13S-9h-FGE" firstAttribute="width" secondItem="Rcq-QG-eYN" secondAttribute="width" multiplier="0.3" id="Kcm-ra-6rn"/>
+                        <constraint firstItem="13S-9h-FGE" firstAttribute="trailing" secondItem="U3W-kD-WKx" secondAttribute="trailing" id="PB1-fb-Vss"/>
                         <constraint firstItem="U3W-kD-WKx" firstAttribute="top" secondItem="Rcq-QG-eYN" secondAttribute="top" id="Q2I-HJ-Bcz"/>
                         <constraint firstItem="AIj-NC-sy8" firstAttribute="leading" secondItem="13S-9h-FGE" secondAttribute="leading" constant="10" id="Xft-dL-2lF"/>
                         <constraint firstAttribute="trailing" secondItem="U3W-kD-WKx" secondAttribute="trailing" id="Zup-8X-V4c"/>

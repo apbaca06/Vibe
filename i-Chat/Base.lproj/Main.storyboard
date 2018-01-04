@@ -154,7 +154,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2bm-3b-FyB">
-                                <rect key="frame" x="41.666666666666657" y="685" width="332" height="31"/>
+                                <rect key="frame" x="41.666666666666657" y="690" width="332" height="31"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Already have an account?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="12" translatesAutoresizingMaskIntoConstraints="NO" id="ac1-yE-moF">
                                         <rect key="frame" x="0.0" y="0.0" width="207.66666666666666" height="31"/>
@@ -249,7 +249,7 @@
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Q2S-rw-eig">
                                 <rect key="frame" x="41.333333333333343" y="581.66666666666663" width="271.66666666666663" height="30"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -275,7 +275,7 @@
                             <constraint firstItem="69N-Ex-N3F" firstAttribute="centerX" secondItem="fsZ-Gb-xuQ" secondAttribute="centerX" id="TEZ-UB-eGU"/>
                             <constraint firstItem="CGv-YY-Xei" firstAttribute="width" secondItem="AiS-ew-Ic5" secondAttribute="width" multiplier="0.8" id="WTW-cC-0Gf"/>
                             <constraint firstItem="tmU-Xw-5HK" firstAttribute="centerX" secondItem="fsZ-Gb-xuQ" secondAttribute="centerX" id="WgP-K0-h60"/>
-                            <constraint firstItem="fsZ-Gb-xuQ" firstAttribute="bottom" secondItem="ac1-yE-moF" secondAttribute="bottom" constant="20" id="Xk0-pB-BBG"/>
+                            <constraint firstItem="fsZ-Gb-xuQ" firstAttribute="bottom" secondItem="ac1-yE-moF" secondAttribute="bottom" constant="15" id="Xk0-pB-BBG"/>
                             <constraint firstItem="4la-Du-bug" firstAttribute="top" secondItem="69N-Ex-N3F" secondAttribute="bottom" constant="70" id="YWt-bx-J2Y"/>
                             <constraint firstItem="7Sl-f1-TJt" firstAttribute="bottom" secondItem="5C9-n0-igL" secondAttribute="bottom" id="ZnA-nP-hEg"/>
                             <constraint firstItem="7Sl-f1-TJt" firstAttribute="width" secondItem="5C9-n0-igL" secondAttribute="width" id="boK-sM-nHg"/>

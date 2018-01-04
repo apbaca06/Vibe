@@ -120,9 +120,11 @@ class FirebaseManager {
         }
     }
 
-    static func getFriendList(eventType type: DataEventType, completionHandler: @escaping ([User]) -> Void) {
+    static func getFriendList(eventType type: DataEventType, completionHandler: @escaping ([(User, String)]) -> Void) {
 
         let keychain = KeychainSwift()
+
+        typealias UserChatTuple = (User, String)
 
         guard let uid = keychain.get("uid")
         else { return }
@@ -132,7 +134,7 @@ class FirebaseManager {
             guard let friendList = datasnapshot.value as? [String: Any]
             else { return }
 
-            var friends: [User] = []
+            var friendsWithChatroomID: [UserChatTuple] = []
 
             for friend in friendList {
                 DatabasePath.userRef.child(friend.key).observeSingleEvent(of: .value, with: { (datasnapshot) in
@@ -143,8 +145,11 @@ class FirebaseManager {
 
                     let userFriend = try User(userDic)
 
-                    friends.append(userFriend)
-                    completionHandler(friends)
+                    guard let chatroomID = friend.value as? String
+                        else { return }
+
+                    friendsWithChatroomID.append((userFriend, chatroomID))
+                    completionHandler(friendsWithChatroomID)
 
                     } catch {
                         print(error, "**")

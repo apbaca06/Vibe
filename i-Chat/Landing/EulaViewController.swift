@@ -22,6 +22,7 @@ class EulaViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         titleLabel.text = NSLocalizedString("EULA", comment: "")
-        agreeButton.setTitle(NSLocalizedString("Agree", comment: ""), for: .normal)
+        agreeButton.setTitle(NSLocalizedString("Back", comment: ""), for: .normal)
+        eulaTextfield.textContainerInset = UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10)
     }
 }

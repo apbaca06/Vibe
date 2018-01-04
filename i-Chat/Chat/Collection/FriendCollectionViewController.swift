@@ -8,9 +8,10 @@
 
 import Foundation
 import Nuke
+import KeychainSwift
 
 protocol FriendCollectionViewControllerDelegate: class {
-    func controller(_ controller: FriendCollectionViewController, didCall user: User)
+    func controller(_ controller: FriendCollectionViewController, didCall user: (User, String))
 
 }
 
@@ -20,9 +21,13 @@ class FriendCollectionViewController: UIViewController, UICollectionViewDelegate
 
     let layout = UICollectionViewFlowLayout()
 
-    var users: [User] = []
+    typealias UserWithChat = (User, String)
+
+    var users: [UserWithChat] = []
 
     var collectionView: UICollectionView!
+
+    let keychain = KeychainSwift()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -89,12 +94,12 @@ class FriendCollectionViewController: UIViewController, UICollectionViewDelegate
 
         // swiftlint:enable force_cast
 
-        guard let url = URL(string: users[indexPath.row].profileImgURL)
+        guard let url = URL(string: users[indexPath.row].0.profileImgURL)
             else { return cell }
 
         Manager.shared.loadImage(with: url, into: cell.profileImageView)
 
-        cell.friendName.text = users[indexPath.row].name
+        cell.friendName.text = users[indexPath.row].0.name
         cell.callButton.addTarget(self, action: #selector(call(_:)), for: .touchUpInside)
 
         return cell

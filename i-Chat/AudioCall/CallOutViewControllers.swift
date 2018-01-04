@@ -9,10 +9,13 @@
 import Foundation
 import UIKit
 import Nuke
+import KeychainSwift
 
 class CallOutViewController: UIViewController {
 
+    let keychain = KeychainSwift()
     var reciever: User?
+    var chatroomID: String?
 
     @IBOutlet weak var rippleView: UIView!
     @IBOutlet weak var backgroundImageView: UIImageView!
@@ -46,8 +49,13 @@ class CallOutViewController: UIViewController {
 
         guard let urlString = reciever?.profileImgURL,
             let url = URL(string: urlString),
-            let name = reciever?.name
+            let name = reciever?.name,
+            let id = reciever?.id,
+            let uid = self.keychain.get("uid"),
+            let chatroom = chatroomID
             else { return }
+        DatabasePath.chatroomRef.child(chatroom).updateChildValues([Date().iso8601StringNew: "0"])
+        DatabasePath.messageRef.child(Date().iso8601StringNew).updateChildValues(["timestamp": Date().iso8601String, "text": "audio call", "from": id, "state": "0" ])
         Manager.shared.loadImage(with: url, into: recieverImg)
 //        Manager.shared.loadImage(with: url, into: backgroundImageView)
         recieverName.text = name

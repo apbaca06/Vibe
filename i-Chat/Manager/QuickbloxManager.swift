@@ -15,10 +15,14 @@ class QuickbloxManager {
 
     static func logInSync(withUserEmail email: String, password: String) {
 
+        let layout = UICollectionViewFlowLayout()
+
+        AppDelegate.shared.window?.rootViewController = HomeViewController(collectionViewLayout: layout)
+
         var error: Error?
         var uuser: QBUUser?
 
-        SVProgressHUD.show(withStatus: NSLocalizedString("Logging in...", comment: ""))
+        SVProgressHUD.show(withStatus: NSLocalizedString("Connecting to server", comment: ""))
 
         QBRequest.logIn(withUserEmail: email, password: password, successBlock: { (response, user) in
 
@@ -33,16 +37,17 @@ class QuickbloxManager {
 
                 if error == nil {
 
-                    if let firebaseUser = Auth.auth().currentUser {
+//                    if let firebaseUser = Auth.auth().currentUser {
+//
+//                        DatabasePath.userRef.child(firebaseUser.uid).updateChildValues(["lastLoginTime": uuser?.lastRequestAt?.iso8601String])
+//                    }
+                    SVProgressHUD.dismiss()
 
-                        DatabasePath.userRef.child(firebaseUser.uid).updateChildValues(["lastLoginTime": uuser?.lastRequestAt?.iso8601String])
-                    }
+//                    SVProgressHUD.show(withStatus: NSLocalizedString("Login Successfully", comment: ""))
 
-                    SVProgressHUD.show(withStatus: NSLocalizedString("Login Successfully", comment: ""))
-
-                    let layout = UICollectionViewFlowLayout()
-
-                    AppDelegate.shared.window?.rootViewController = HomeViewController(collectionViewLayout: layout)
+//                    let layout = UICollectionViewFlowLayout()
+//
+//                    AppDelegate.shared.window?.rootViewController = HomeViewController(collectionViewLayout: layout)
 
                 } else {
 

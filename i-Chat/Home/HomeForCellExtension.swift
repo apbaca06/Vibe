@@ -14,16 +14,25 @@ import Koloda
 import Nuke
 
 extension HomeViewController: CLLocationManagerDelegate, FriendCollectionViewControllerDelegate {
-
-    func controller(_ controller: FriendCollectionViewController, didCall user: User) {
-
-        CallManager.shared.audioCall(toUser: user)
+    func controller(_ controller: FriendCollectionViewController, didCall user: (User, String)) {
+        CallManager.shared.audioCall(toUser: user.0)
 
         guard let callOutViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "CallOutViewController") as? CallOutViewController
         else { return }
-        callOutViewController.reciever = user
+        callOutViewController.reciever = user.0
+        callOutViewController.chatroomID = user.1
         present(callOutViewController, animated: true, completion: nil)
     }
+
+//    func controller(_ controller: FriendCollectionViewController, didCall user: (User,String) {
+//
+//        CallManager.shared.audioCall(toUser: user.)
+//
+//        guard let callOutViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "CallOutViewController") as? CallOutViewController
+//        else { return }
+//        callOutViewController.reciever = user
+//        present(callOutViewController, animated: true, completion: nil)
+//    }
 
     // MARK: Funtion for Profile Cell
     @objc func changeImg() {
@@ -104,11 +113,11 @@ extension HomeViewController: KolodaViewDelegate {
 
     func kolodaDidRunOutOfCards(_ koloda: KolodaView) {
 
-//        let alert = UIAlertController(title: NSLocalizedString("No more cards", comment: ""), message: NSLocalizedString("Please change your preference to meet more people!", comment: ""), preferredStyle: .alert)
-//
-//        alert.addAction(title: NSLocalizedString("OK", comment: ""))
+        let alert = UIAlertController(title: NSLocalizedString("No more cards", comment: ""), message: NSLocalizedString("Please change your preference to meet more people!", comment: ""), preferredStyle: .alert)
 
-//        alert.show()
+        alert.addAction(title: NSLocalizedString("OK", comment: ""))
+
+        alert.show()
 
         self.collectionView?.reloadData()
     }

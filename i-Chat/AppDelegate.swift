@@ -84,12 +84,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
                 else { return true }
 
+//            let layout = UICollectionViewFlowLayout()
+//            AppDelegate.shared.window?.rootViewController = HomeViewController(collectionViewLayout: layout)
+
             QuickbloxManager.logInSync(
 
                 withUserEmail: email,
 
                 password: password
             )
+
         } else {
 
             let loginViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "LogInViewController")

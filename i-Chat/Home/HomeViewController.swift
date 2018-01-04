@@ -37,7 +37,9 @@ class HomeViewController: UICollectionViewController, UICollectionViewDelegateFl
 
     var currentUser: User?
 
-    var friends: [User] = []
+    typealias UserWithChat = (User, String)
+
+    var friends: [UserWithChat] = []
 
     var distanceBtwnArray: [Int] = [] {
         didSet {
@@ -75,7 +77,7 @@ class HomeViewController: UICollectionViewController, UICollectionViewDelegateFl
 
         QBRTCAudioSession.instance().initialize()
 
-        SVProgressHUD.dismiss()
+//        SVProgressHUD.dismiss()
 
         setupCollectionView()
 
@@ -293,7 +295,7 @@ class HomeViewController: UICollectionViewController, UICollectionViewDelegateFl
 
             cell.swipeView.resetCurrentCardIndex()
 
-            cell.turningIndicator.startAnimating()
+//            cell.turningIndicator.startAnimating()
 
             return cell
 
