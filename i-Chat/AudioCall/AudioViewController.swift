@@ -9,9 +9,16 @@
 import Foundation
 import UIKit
 import MZTimerLabel
+import Nuke
 
 class AudioViewController: UIViewController {
 
+    var userInfo: [String: String]?
+
+    @IBOutlet weak var nameLabel: UILabel!
+
+    @IBOutlet weak var profileImgView: UIImageView!
+    @IBOutlet weak var backgroundView: UIImageView!
     var speakerOn: Bool = false
 
     var mutedOn: Bool = false
@@ -107,7 +114,24 @@ class AudioViewController: UIViewController {
 
     override func viewDidLoad() {
 
-        setUpButtonShape()
+        let blurEffect = UIBlurEffect(style: UIBlurEffectStyle.regular)
+
+        let blurEffectView = UIVisualEffectView(effect: blurEffect)
+
+        blurEffectView.frame = backgroundView.bounds
+        blurEffectView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+        backgroundView.addSubview(blurEffectView)
+
+        guard let dict = self.userInfo,
+            let name = dict["Name"],
+            let urlString = dict["profileImgURL"],
+            let url = URL(string: urlString)
+            else { return }
+
+        self.nameLabel.text = name
+
+        Manager.shared.loadImage(with: url, into: profileImgView)
+        Manager.shared.loadImage(with: url, into: backgroundView)
 
     }
 
@@ -116,13 +140,22 @@ class AudioViewController: UIViewController {
         timerLabel.start()
     }
 
-    func setUpButtonShape() {
+    override func viewWillLayoutSubviews() {
+        super.viewWillLayoutSubviews()
+
+        setUpShape()
+    }
+
+    func setUpShape() {
 
         speakerButton.layer.cornerRadius = speakerButton.frame.width/2
 
         hangUpButton.layer.cornerRadius = hangUpButton.frame.width/2
 
         mutedButton.layer.cornerRadius = mutedButton.frame.width/2
+
+        profileImgView.layer.cornerRadius = profileImgView.bounds.width/2
+        self.profileImgView.clipsToBounds = true
     }
 
 }

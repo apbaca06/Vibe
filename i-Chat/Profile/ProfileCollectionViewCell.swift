@@ -33,7 +33,7 @@ class ProfileCollectionViewCell: UICollectionViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
 
-        circleProfileImg.layer.cornerRadius = circleProfileImg.bounds.width/2
+        circleProfileImg.layer.cornerRadius = circleProfileImg.frame.width/2
         circleProfileImg.clipsToBounds = true
 
         let blurEffect = UIBlurEffect(style: UIBlurEffectStyle.regular)

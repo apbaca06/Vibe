@@ -44,6 +44,13 @@ class FriendCollectionViewController: UIViewController, UICollectionViewDelegate
             self.collectionView.reloadData()
         }
 
+        let nib2 = UINib(
+            nibName: "FriendCollectionReusableView",
+            bundle: nil
+        )
+
+        collectionView.register(nib2, forSupplementaryViewOfKind: UICollectionElementKindSectionHeader, withReuseIdentifier: "HeaderView")
+
         let nib = UINib(
             nibName: "FriendCollectionViewCell",
             bundle: nil
@@ -100,6 +107,8 @@ class FriendCollectionViewController: UIViewController, UICollectionViewDelegate
     }
 
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        print(users)
+
         return users.count
     }
 
@@ -111,22 +120,26 @@ class FriendCollectionViewController: UIViewController, UICollectionViewDelegate
         return UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
     }
 
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
+
+        return CGSize(width: 100, height: 135)
+    }
+
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
 
         switch kind {
 
         case UICollectionElementKindSectionHeader:
 
-            let headerView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "Header", for: indexPath)
+            // swiftlint:disable force_cast
+            let headerView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "HeaderView", for: indexPath)
+                as! FriendCollectionReusableView
+            // swiftlint:enable force_cast
 
-            headerView.backgroundColor = UIColor.blue
+            headerView.label.text = NSLocalizedString("Likes", comment: "")
+            headerView.numberOfLikeLabel.text = "10+"
+
             return headerView
-
-        case UICollectionElementKindSectionFooter:
-            let footerView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "Footer", for: indexPath)
-
-            footerView.backgroundColor = .green
-            return footerView
 
         default:
 

@@ -7,6 +7,7 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -20,7 +21,7 @@
                 <rect key="frame" x="0.0" y="0.0" width="100" height="135"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cupid" translatesAutoresizingMaskIntoConstraints="NO" id="8cE-wi-8E8">
+                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="user" translatesAutoresizingMaskIntoConstraints="NO" id="8cE-wi-8E8">
                         <rect key="frame" x="5" y="5" width="90" height="90"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="90" id="CZk-Xp-ODF"/>
@@ -38,15 +39,13 @@
                             <constraint firstAttribute="height" constant="20" id="Ft8-n3-eXJ"/>
                             <constraint firstAttribute="width" constant="100" id="wwQ-em-EsE"/>
                         </constraints>
-                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <button opaque="NO" contentMode="center" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eIF-Xi-YdH">
-                        <rect key="frame" x="73" y="73" width="22" height="22"/>
-                        <color key="backgroundColor" red="0.98431372549019602" green="0.21176470588235294" blue="0.25098039215686274" alpha="1" colorSpace="calibratedRGB"/>
+                    <button opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eIF-Xi-YdH">
+                        <rect key="frame" x="68" y="81" width="27" height="27"/>
                         <constraints>
-                            <constraint firstAttribute="height" constant="22" id="Ooi-07-3bc"/>
                             <constraint firstAttribute="width" secondItem="eIF-Xi-YdH" secondAttribute="height" multiplier="1:1" id="tdY-so-zlM"/>
                         </constraints>
                         <state key="normal" image="pickup"/>
@@ -54,11 +53,12 @@
                 </subviews>
             </view>
             <constraints>
+                <constraint firstItem="eIF-Xi-YdH" firstAttribute="height" secondItem="8cE-wi-8E8" secondAttribute="height" multiplier="0.3" id="5eX-NN-tbO"/>
                 <constraint firstItem="8cE-wi-8E8" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="5" id="Mf9-r2-w0g"/>
                 <constraint firstItem="8cE-wi-8E8" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="5" id="NOS-xN-dxI"/>
                 <constraint firstItem="iyW-u4-Z1Q" firstAttribute="top" secondItem="8cE-wi-8E8" secondAttribute="bottom" constant="10" id="UCH-Wd-kPr"/>
                 <constraint firstItem="iyW-u4-Z1Q" firstAttribute="width" secondItem="gTV-IL-0wX" secondAttribute="width" id="VYd-H3-7KA"/>
-                <constraint firstItem="eIF-Xi-YdH" firstAttribute="bottom" secondItem="8cE-wi-8E8" secondAttribute="bottom" id="bF3-Hl-1RM"/>
+                <constraint firstItem="eIF-Xi-YdH" firstAttribute="bottom" secondItem="8cE-wi-8E8" secondAttribute="bottom" constant="13" id="bF3-Hl-1RM"/>
                 <constraint firstItem="eIF-Xi-YdH" firstAttribute="trailing" secondItem="8cE-wi-8E8" secondAttribute="trailing" id="cCe-KA-czW"/>
                 <constraint firstItem="iyW-u4-Z1Q" firstAttribute="leading" secondItem="ZTg-uK-7eu" secondAttribute="leading" id="lcW-uB-wKz"/>
                 <constraint firstItem="ZTg-uK-7eu" firstAttribute="trailing" secondItem="8cE-wi-8E8" secondAttribute="trailing" constant="5" id="rZC-gD-mTS"/>
@@ -75,7 +75,7 @@
         </collectionViewCell>
     </objects>
     <resources>
-        <image name="cupid" width="128" height="128"/>
         <image name="pickup" width="32" height="32"/>
+        <image name="user" width="32" height="32"/>
     </resources>
 </document>

@@ -74,7 +74,6 @@
 		37C0FF4C1FE8BE58002EACF3 /* RingtoneManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37C0FF4B1FE8BE58002EACF3 /* RingtoneManager.swift */; };
 		37CA181E1FE2221500C1171B /* FirebaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37CA181D1FE2221500C1171B /* FirebaseManager.swift */; };
 		37CA18201FE2304100C1171B /* AudioViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37CA181F1FE2304100C1171B /* AudioViewController.swift */; };
-		37CA18221FE2397100C1171B /* ChatroomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37CA18211FE2397100C1171B /* ChatroomViewController.swift */; };
 		37DE5F861FEA43080017E09D /* DateFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37DE5F851FEA43080017E09D /* DateFormatter.swift */; };
 		37DE5F891FEA61D00017E09D /* SwitchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37DE5F871FEA61D00017E09D /* SwitchTableViewCell.swift */; };
 		37DE5F8A1FEA61D00017E09D /* SwitchTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 37DE5F881FEA61D00017E09D /* SwitchTableViewCell.xib */; };
@@ -95,6 +94,8 @@
 		37EA8ED31FF7DB1A003FA28C /* FriendTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37EA8ED21FF7DB1A003FA28C /* FriendTableViewController.swift */; };
 		37F05EE21FF5F30C006D20A6 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37F05EE11FF5F30C006D20A6 /* CardView.swift */; };
 		37F05EE41FF5F322006D20A6 /* CardView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 37F05EE31FF5F322006D20A6 /* CardView.xib */; };
+		37F61A2A1FFDB73C002DBAFA /* FriendCollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37F61A281FFDB73C002DBAFA /* FriendCollectionReusableView.swift */; };
+		37F61A2B1FFDB73C002DBAFA /* FriendCollectionReusableView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 37F61A291FFDB73C002DBAFA /* FriendCollectionReusableView.xib */; };
 		E4208C9E7E17D4FB2656038F /* Pods_i_Chat.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 813BB42A75F2B98DC83AC0E3 /* Pods_i_Chat.framework */; };
 /* End PBXBuildFile section */
 
@@ -182,7 +183,6 @@
 		37C0FF4D1FE8F104002EACF3 /* i-Chat.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "i-Chat.entitlements"; sourceTree = "<group>"; };
 		37CA181D1FE2221500C1171B /* FirebaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseManager.swift; sourceTree = "<group>"; };
 		37CA181F1FE2304100C1171B /* AudioViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioViewController.swift; sourceTree = "<group>"; };
-		37CA18211FE2397100C1171B /* ChatroomViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatroomViewController.swift; sourceTree = "<group>"; };
 		37DE5F851FEA43080017E09D /* DateFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateFormatter.swift; sourceTree = "<group>"; };
 		37DE5F871FEA61D00017E09D /* SwitchTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwitchTableViewCell.swift; sourceTree = "<group>"; };
 		37DE5F881FEA61D00017E09D /* SwitchTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SwitchTableViewCell.xib; sourceTree = "<group>"; };
@@ -204,6 +204,8 @@
 		37EA8ED21FF7DB1A003FA28C /* FriendTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendTableViewController.swift; sourceTree = "<group>"; };
 		37F05EE11FF5F30C006D20A6 /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
 		37F05EE31FF5F322006D20A6 /* CardView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CardView.xib; sourceTree = "<group>"; };
+		37F61A281FFDB73C002DBAFA /* FriendCollectionReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = FriendCollectionReusableView.swift; path = "i-Chat/Chat/Collection/FriendCollectionReusableView.swift"; sourceTree = SOURCE_ROOT; };
+		37F61A291FFDB73C002DBAFA /* FriendCollectionReusableView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = FriendCollectionReusableView.xib; path = "i-Chat/Chat/collection/FriendCollectionReusableView.xib"; sourceTree = SOURCE_ROOT; };
 		498AF12EB1C3EB42182F2692 /* Pods-i-Chat.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-i-Chat.debug.xcconfig"; path = "Pods/Target Support Files/Pods-i-Chat/Pods-i-Chat.debug.xcconfig"; sourceTree = "<group>"; };
 		813BB42A75F2B98DC83AC0E3 /* Pods_i_Chat.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_i_Chat.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -475,17 +477,34 @@
 		37F05EE51FF64FD2006D20A6 /* Chat */ = {
 			isa = PBXGroup;
 			children = (
-				37CA18211FE2397100C1171B /* ChatroomViewController.swift */,
 				37A5BBA61FE628B900C4F1E6 /* ChatCollectionViewCell.swift */,
 				37A5BBA71FE628B900C4F1E6 /* ChatCollectionViewCell.xib */,
+				37F61A2C1FFDD33E002DBAFA /* Collection */,
+				37F61A2D1FFDD34C002DBAFA /* Table */,
+			);
+			path = Chat;
+			sourceTree = "<group>";
+		};
+		37F61A2C1FFDD33E002DBAFA /* Collection */ = {
+			isa = PBXGroup;
+			children = (
 				37E1D16D1FFB384C00EC9BA6 /* FriendCollectionViewController.swift */,
 				37E1D16F1FFB38C600EC9BA6 /* FriendCollectionViewCell.swift */,
 				37E1D1701FFB38C600EC9BA6 /* FriendCollectionViewCell.xib */,
+				37F61A281FFDB73C002DBAFA /* FriendCollectionReusableView.swift */,
+				37F61A291FFDB73C002DBAFA /* FriendCollectionReusableView.xib */,
+			);
+			path = Collection;
+			sourceTree = "<group>";
+		};
+		37F61A2D1FFDD34C002DBAFA /* Table */ = {
+			isa = PBXGroup;
+			children = (
 				37EA8ED21FF7DB1A003FA28C /* FriendTableViewController.swift */,
 				37EA8ECE1FF7B5D4003FA28C /* FriendTableViewCell.swift */,
 				37EA8ECF1FF7B5D4003FA28C /* FriendTableViewCell.xib */,
 			);
-			path = Chat;
+			path = Table;
 			sourceTree = "<group>";
 		};
 		EF0351E21E5259D8657B3499 /* Frameworks */ = {
@@ -587,6 +606,7 @@
 				3792B0C81FF3CFF800AB4838 /* OverlayView.xib in Resources */,
 				37A5BBA11FE6288500C4F1E6 /* ProfileCollectionViewCell.xib in Resources */,
 				37EA8ED11FF7B5D4003FA28C /* FriendTableViewCell.xib in Resources */,
+				37F61A2B1FFDB73C002DBAFA /* FriendCollectionReusableView.xib in Resources */,
 				37C0FF1C1FE7672C002EACF3 /* GoogleService-Info.plist in Resources */,
 				37DE5F991FEA65B30017E09D /* LogoutTableViewCell.xib in Resources */,
 				3792B0B71FF2537000AB4838 /* AgeRangeTableViewCell.xib in Resources */,
@@ -724,7 +744,6 @@
 				376C3FB81FEBA92900EAF188 /* GenderViewController.swift in Sources */,
 				37A5BB9D1FE6223600C4F1E6 /* BaseCell.swift in Sources */,
 				3754E28A1FE12809002604CD /* QuickbloxManager.swift in Sources */,
-				37CA18221FE2397100C1171B /* ChatroomViewController.swift in Sources */,
 				37DE5F981FEA65B30017E09D /* LogoutTableViewCell.swift in Sources */,
 				3792B0CC1FF5ECEE00AB4838 /* UserProvider.swift in Sources */,
 				370832B01FE2847F00D4DC86 /* IncomingCallViewController.swift in Sources */,
@@ -751,6 +770,7 @@
 				37DE5F891FEA61D00017E09D /* SwitchTableViewCell.swift in Sources */,
 				370832B81FE3806700D4DC86 /* User.swift in Sources */,
 				3792B0CA1FF3D05200AB4838 /* ExampleOverlayView.swift in Sources */,
+				37F61A2A1FFDB73C002DBAFA /* FriendCollectionReusableView.swift in Sources */,
 				37EA8ED31FF7DB1A003FA28C /* FriendTableViewController.swift in Sources */,
 				37A5BB9B1FE61CE200C4F1E6 /* MenuCell.swift in Sources */,
 				37CA18201FE2304100C1171B /* AudioViewController.swift in Sources */,

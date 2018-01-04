@@ -13,6 +13,8 @@ extension HomeViewController: QBRTCClientDelegate {
     // MARK: 當別人打電話給你
     func didReceiveNewSession(_ session: QBRTCSession, userInfo: [String: String]? = nil) {
 
+        self.userInfo = userInfo
+
         if CallManager.shared.session != nil {
             session.rejectCall(userInfo)
 
@@ -42,7 +44,11 @@ extension HomeViewController: QBRTCClientDelegate {
 
         print("****Recieved remote audio track \(userID)")
 
-        let audioViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "AudioViewController")
+        // swiftlint:disable force_cast
+        let audioViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "AudioViewController") as! AudioViewController
+        // swiftlint:enable force_cast
+
+        audioViewController.userInfo = self.userInfo
 
         self.present(audioViewController, animated: true, completion: nil)
 
@@ -77,21 +83,7 @@ extension HomeViewController: QBRTCClientDelegate {
 
     // MARK: 當別人掛掉你的電話
     func session(_ session: QBRTCSession, hungUpByUser userID: NSNumber, userInfo: [String: String]? = nil) {
-        //For example:Update GUI
-        // Or
-        /**
-//         HangUp when initiator ended a call
-//         */
-//        if session.initiatorID.isEqual(to: userID) {
-//
-//            session.hangUp(userInfo)
-//
-//            print("****Hung up by user \(userID)")
-//
-//            CallManager.shared.session = nil
-//
-//            self.dismiss(animated: true, completion: nil)
-//        }
+
         CallManager.shared.session = session
         print("****Hung up by user \(userID)")
 

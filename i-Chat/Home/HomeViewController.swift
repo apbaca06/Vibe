@@ -26,6 +26,8 @@ class HomeViewController: UICollectionViewController, UICollectionViewDelegateFl
         }
     }
 
+    var userInfo: [String: String]?
+
     let userProvider = UserProvider()
 
     let friendCollectionViewController = FriendCollectionViewController()
@@ -294,11 +296,9 @@ class HomeViewController: UICollectionViewController, UICollectionViewDelegateFl
 
             friendCollectionViewController.users = self.friends
 
-//            self.addChildViewController(friendCollectionViewController)
-
             cell.contentView.addSubviews([friendViewController.view, friendCollectionViewController.view])
 
-            friendCollectionViewController.view.topAnchor.constraint(equalTo: cell.contentView.topAnchor).isActive = true
+            friendCollectionViewController.view.topAnchor.constraint(equalTo: cell.contentView.topAnchor, constant: 40).isActive = true
 
             friendCollectionViewController.view.leadingAnchor.constraint(equalTo: cell.contentView.leadingAnchor).isActive = true
 

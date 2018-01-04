@@ -12,13 +12,14 @@ import Nuke
 
 class ChatCollectionViewCell: UICollectionViewCell {
 
+    @IBOutlet weak var label: UILabel!
+
     var friendList: [User] = []
 
     override func awakeFromNib() {
         super.awakeFromNib()
-//        FirebaseManager.getFriendList(completionHandler: friendList)
-
-//        setUpCallButton()
+        label.text = NSLocalizedString("Friends", comment: "")
+        label.text.color = UIColor(red: 7/255.0, green: 160/255.0, blue: 195/255.0, alpha: 1)
 
     }
 

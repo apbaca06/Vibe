@@ -80,11 +80,6 @@ class IncomingCallViewController: UIViewController {
 
     }
 
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-
-    }
-
     override func viewWillLayoutSubviews() {
         setUpShape()
     }
@@ -94,7 +89,8 @@ class IncomingCallViewController: UIViewController {
 
         acceptButton.layer.cornerRadius = acceptButton.frame.width/2
 
-        profileImageView.layer.cornerRadius = profileImageView.frame.width/2
+        profileImageView.layer.cornerRadius = profileImageView.bounds.width/2
+        self.profileImageView.clipsToBounds = true
     }
 
 }
