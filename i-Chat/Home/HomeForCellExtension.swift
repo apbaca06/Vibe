@@ -104,11 +104,13 @@ extension HomeViewController: KolodaViewDelegate {
 
     func kolodaDidRunOutOfCards(_ koloda: KolodaView) {
 
-        let alert = UIAlertController(title: NSLocalizedString("No more cards", comment: ""), message: NSLocalizedString("Please change your pregerence to meet more people!", comment: ""), preferredStyle: .alert)
+//        let alert = UIAlertController(title: NSLocalizedString("No more cards", comment: ""), message: NSLocalizedString("Please change your preference to meet more people!", comment: ""), preferredStyle: .alert)
+//
+//        alert.addAction(title: NSLocalizedString("OK", comment: ""))
 
-        alert.addAction(title: NSLocalizedString("OK", comment: ""))
+//        alert.show()
 
-        alert.show()
+        self.collectionView?.reloadData()
 
         let position = koloda.currentCardIndex
         //        for i in 1...4 {
@@ -128,7 +130,6 @@ extension HomeViewController: KolodaViewDelegate {
 extension HomeViewController: KolodaViewDataSource {
 
     func kolodaNumberOfCards(_ koloda: KolodaView) -> Int {
-        print(distanceUsers.count)
 
         return distanceUsers.count
     }
