@@ -30,7 +30,7 @@
                         </userDefinedRuntimeAttributes>
                     </imageView>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="hTS-l1-God">
-                        <rect key="frame" x="76" y="98" width="152" height="152"/>
+                        <rect key="frame" x="76" y="100" width="152" height="152"/>
                         <constraints>
                             <constraint firstAttribute="width" secondItem="hTS-l1-God" secondAttribute="height" multiplier="1:1" id="gb7-qy-y8b"/>
                         </constraints>
@@ -44,13 +44,13 @@
                         </userDefinedRuntimeAttributes>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JBK-EU-z85">
-                        <rect key="frame" x="0.0" y="265" width="304" height="41"/>
+                        <rect key="frame" x="0.0" y="267" width="304" height="41"/>
                         <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Age" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aQN-WC-Cio">
-                        <rect key="frame" x="131" y="306" width="41" height="41.5"/>
+                        <rect key="frame" x="131" y="308" width="41" height="41.5"/>
                         <constraints>
                             <constraint firstAttribute="width" secondItem="aQN-WC-Cio" secondAttribute="height" multiplier="1:1" id="MEi-5Z-vAG"/>
                         </constraints>
@@ -123,7 +123,6 @@
                 <constraint firstAttribute="bottom" secondItem="DF9-d3-FMt" secondAttribute="bottom" id="EOc-rq-mvk"/>
                 <constraint firstItem="aQN-WC-Cio" firstAttribute="height" secondItem="JBK-EU-z85" secondAttribute="height" id="EcA-PN-yfi"/>
                 <constraint firstItem="hTS-l1-God" firstAttribute="centerX" secondItem="HiG-jV-3PV" secondAttribute="centerX" id="IKv-Zh-IPF"/>
-                <constraint firstItem="HiG-jV-3PV" firstAttribute="top" secondItem="hTS-l1-God" secondAttribute="bottom" constant="-250" id="KF3-aI-GPE"/>
                 <constraint firstAttribute="trailing" secondItem="DF9-d3-FMt" secondAttribute="trailing" id="MWp-Fc-xjr"/>
                 <constraint firstItem="aQN-WC-Cio" firstAttribute="top" secondItem="JBK-EU-z85" secondAttribute="bottom" id="Nyt-CZ-Vm7"/>
                 <constraint firstItem="uXf-ex-6cq" firstAttribute="centerX" secondItem="HiG-jV-3PV" secondAttribute="centerX" id="R1E-SD-OfP"/>
@@ -133,6 +132,7 @@
                 <constraint firstItem="JBK-EU-z85" firstAttribute="top" secondItem="hTS-l1-God" secondAttribute="bottom" constant="15" id="fwj-37-4sh"/>
                 <constraint firstAttribute="trailing" secondItem="HiG-jV-3PV" secondAttribute="trailing" id="oYj-BE-Vkh"/>
                 <constraint firstItem="aQN-WC-Cio" firstAttribute="centerX" secondItem="ZTg-uK-7eu" secondAttribute="centerX" id="oi8-eY-hkJ"/>
+                <constraint firstItem="hTS-l1-God" firstAttribute="top" secondItem="HiG-jV-3PV" secondAttribute="top" constant="100" id="or3-ZD-gV6"/>
                 <constraint firstItem="HiG-jV-3PV" firstAttribute="height" secondItem="gTV-IL-0wX" secondAttribute="height" multiplier="0.85" id="tg5-UO-FsF"/>
                 <constraint firstItem="JBK-EU-z85" firstAttribute="centerX" secondItem="ZTg-uK-7eu" secondAttribute="centerX" id="xC3-bp-dh5"/>
                 <constraint firstItem="DF9-d3-FMt" firstAttribute="top" secondItem="HiG-jV-3PV" secondAttribute="bottom" id="xrG-RY-lKF"/>

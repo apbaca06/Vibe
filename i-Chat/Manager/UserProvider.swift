@@ -12,6 +12,18 @@ import KeychainSwift
 import Firebase
 import MapKit
 
+public enum UserProviderError: Error {
+
+    case missingValueForCurrentUser
+
+    case qeuryForGenderPreferenceError
+
+    case loadSwipeViewError
+
+    case notObject
+
+}
+
 protocol UserProviderDelegate: class {
 
     func userProvider(_ provider: UserProvider, didFetch users: [User], didGet distanceBtwn: [Int], didFetch currentUser: User)
@@ -43,17 +55,17 @@ class UserProvider {
             do {
 
                 let userDic = [ datashot.key: datashot.value]
+                let currentUser = try User(userDic)
 
-                    let currentUser = try User(userDic)
-                    self.keychain.set("\(currentUser.name)", forKey: "name")
-                    self.keychain.set("\(currentUser.profileImgURL)", forKey: "profileImgURL")
-                    self.keychain.set("\(currentUser.gender)", forKey: "gender")
-                    self.keychain.set("\(currentUser.minAge)", forKey: "minAge")
-                    self.keychain.set("\(currentUser.maxAge)", forKey: "maxAge")
-                    self.keychain.set("\(currentUser.preference.rawValue)", forKey: "preference")
-                    self.keychain.set("\(currentUser.maxDistance)", forKey: "maxDistance")
-                    self.keychain.set("\(currentUser.latitude)", forKey: "latitude")
-                    self.keychain.set("\(currentUser.longitude)", forKey: "longitude")
+                self.keychain.set("\(currentUser.name)", forKey: "name")
+                self.keychain.set("\(currentUser.profileImgURL)", forKey: "profileImgURL")
+                self.keychain.set("\(currentUser.gender)", forKey: "gender")
+                self.keychain.set("\(currentUser.minAge)", forKey: "minAge")
+                self.keychain.set("\(currentUser.maxAge)", forKey: "maxAge")
+                self.keychain.set("\(currentUser.preference.rawValue)", forKey: "preference")
+                self.keychain.set("\(currentUser.maxDistance)", forKey: "maxDistance")
+                self.keychain.set("\(currentUser.latitude)", forKey: "latitude")
+                self.keychain.set("\(currentUser.longitude)", forKey: "longitude")
 
                 guard let minAge = Int(self.keychain.get("minAge")!),
                     let maxAge = Int(self.keychain.get("maxAge")!),
@@ -61,27 +73,34 @@ class UserProvider {
                     let maxDistance = Int(self.keychain.get("maxDistance")!),
                     let latitude = Double(self.keychain.get("latitude")!),
                     let longitude = Double(self.keychain.get("longitude")!)
-                    else { return }
+
+                else {
+//                        let error: UserProviderError = .missingValueForCurrentUser
+//                        throw error
+                    return
+
+                    }
 
                 DatabasePath.userRef.queryOrdered(byChild: "gender").queryEqual(toValue: preference).observe(.value) { (dataSnapshot) in
+
                     do {
 
                         guard let datas = dataSnapshot.value as? [String: Any]
-
-                            else { return }
+                        else {
+                            let error: UserProviderError = .notObject
+                            throw error
+                        }
 
                         for data in datas {
 
                             let userDic = [data.key: data.value]
-
                             let user = try User(userDic)
 
                             let location1 = CLLocation(latitude: latitude, longitude: longitude)
                             let location2 = CLLocation(latitude: user.latitude, longitude: user.longitude)
-
                             let distanceBtwn = Int((location1.distance(from: location2))/1000)
 
-                            if user.email != Auth.auth().currentUser?.email && user.age >= minAge && user.age <= maxAge && distanceBtwn <= maxDistance {
+                            if user.email != Auth.auth().currentUser?.email && user.age >= minAge && user.age <= maxAge && distanceBtwn <= maxDistance && currentUser.likeUserID.has(key: user.id) == false {
                                 self.users.append(user)
                                 self.distanceBtwn.append(distanceBtwn)
                                 self.delegate?.userProvider(self, didFetch: self.users, didGet: self.distanceBtwn, didFetch: currentUser)
@@ -89,11 +108,15 @@ class UserProvider {
                         }
 
                     } catch {
-                        print(error, "**")
+//                        let error: UserProviderError = .qeuryForGenderPreferenceError
+//                        throw error
+                        return
                     }
                 }
             } catch {
-                print(error, "**")
+//                let error: UserProviderError = .loadSwipeViewError
+//                throw error
+                return
             }
         }
     }

@@ -19,6 +19,10 @@ class FriendCollectionReusableView: UICollectionReusableView {
     override func awakeFromNib() {
         super.awakeFromNib()
 
+        let filter = CIFilter(name: "CICrystallize")!
+        filter.setValue(blurredImageView, forKey: kCIInputImageKey)
+        filter.setValue(55, forKey: kCIInputRadiusKey)
+
         blurredImageView.layer.cornerRadius = blurredImageView.frame.width/2
         blurredImageView.clipsToBounds = true
         blurredImageView.image = #imageLiteral(resourceName: "user").withRenderingMode(.alwaysTemplate)

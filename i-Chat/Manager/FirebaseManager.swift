@@ -11,11 +11,15 @@ import Firebase
 import SVProgressHUD
 import KeychainSwift
 
-//protocol UserProviderDelegate: class {
-//    
-//    func userProvider(_ provider: UserProvider, didFetch users: [User], didGet distanceBtwn: [Int], didFetch currentUser: User)
-//    
-//}
+public enum FirebaseError: Error {
+
+    case notObject
+
+    case missingValueForKey(String)
+
+    case invalidValueForKey(String)
+
+}
 
 class FirebaseManager {
 

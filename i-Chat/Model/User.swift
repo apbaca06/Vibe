@@ -96,6 +96,8 @@ struct User {
 
     let qbID: NSNumber
 
+    var likeUserID: [String: Any]
+
     var infoDictionary: [String: Any] {
 
         let id = String(describing: self.id)
@@ -291,6 +293,19 @@ struct User {
         }
 
         self.qbID = qbID
+
+        guard
+        let likeDict = object["likeList"] as? [String: Any]
+
+            else {
+
+                let error: JSONError = .missingValueForKey("likeList")
+
+                throw error
+
+        }
+        self.likeUserID = likeDict
+
     }
 
 }
