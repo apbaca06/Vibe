@@ -99,8 +99,21 @@ class FriendCollectionViewController: UIViewController, UICollectionViewDelegate
 
         Manager.shared.loadImage(with: url, into: cell.profileImageView)
 
-        cell.friendName.text = users[indexPath.row].0.name
         cell.callButton.addTarget(self, action: #selector(call(_:)), for: .touchUpInside)
+
+        cell.friendName.text = users[indexPath.row].0.name
+        if users[indexPath.row].2 == true {
+            cell.callButton.tintColor = .gray
+            cell.friendName.textColor = .gray
+
+            let blurEffect = UIBlurEffect(style: UIBlurEffectStyle.prominent)
+            let blurEffectView = UIVisualEffectView(effect: blurEffect)
+
+            blurEffectView.frame = cell.profileImageView.bounds
+            blurEffectView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+            cell.profileImageView.addSubview(blurEffectView)
+            cell.profileImageView.tintColor = .gray
+        }
 
         return cell
     }
@@ -119,6 +132,8 @@ class FriendCollectionViewController: UIViewController, UICollectionViewDelegate
     }
 
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        guard let uid = self.keychain.get("uid")
+            else { return }
 
         let actionSheetController = UIAlertController(title: NSLocalizedString("Please select", comment: "" ), message: "", preferredStyle: .actionSheet)
 
@@ -145,10 +160,10 @@ class FriendCollectionViewController: UIViewController, UICollectionViewDelegate
             let cancel = UIAlertAction(title: NSLocalizedString("Cancel", comment: ""), style: .cancel, handler: nil)
             alertController.addAction(cancel)
             let block = UIAlertAction(title: NSLocalizedString("Block", comment: ""), style: .default, handler: { (_) in
-                guard let uid = self.keychain.get("uid")
-                    else { return }
 
                 DatabasePath.userFriendRef.child(uid).child(self.users[indexPath.row].0.id).updateChildValues(["block": true])
+                DatabasePath.userFriendRef.child(self.users[indexPath.row].0.id).child(uid).updateChildValues(["block": true])
+
                 let alertController = UIAlertController(title: NSLocalizedString("\(self.users[indexPath.row].0.name) is blocked!", comment: ""), message: "\(self.users[indexPath.row].0.name) can never contact you again.", preferredStyle: .alert)
                 let okAction = UIAlertAction(title: NSLocalizedString("OK", comment: ""), style: .default, handler: nil)
                 alertController.addAction(okAction)

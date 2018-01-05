@@ -15,11 +15,21 @@ import Nuke
 
 extension HomeViewController: CLLocationManagerDelegate, FriendCollectionViewControllerDelegate {
     func controller(_ controller: FriendCollectionViewController, didCall user: (User, String, Bool)) {
-        guard let callOutViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "CallOutViewController") as? CallOutViewController
-            else { return }
-        callOutViewController.reciever = user.0
-        callOutViewController.chatroomID = user.1
-        present(callOutViewController, animated: true, completion: nil)
+        switch user.2 {
+
+            case true:
+                let alertController = UIAlertController(title: NSLocalizedString("Unable to contact \(user.0.name)!", comment: ""), message: "", preferredStyle: .alert)
+                let okAction = UIAlertAction(title: NSLocalizedString("OK", comment: ""), style: .default, handler: nil)
+                alertController.addAction(okAction)
+                alertController.show()
+
+            case false:
+            guard let callOutViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "CallOutViewController") as? CallOutViewController
+                else { return }
+            callOutViewController.reciever = user.0
+            callOutViewController.chatroomID = user.1
+            present(callOutViewController, animated: true, completion: nil)
+        }
     }
 
 //    func controller(_ controller: FriendCollectionViewController, didCall user: (User,String) {

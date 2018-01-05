@@ -1327,7 +1327,7 @@ If you have any questions about this Agreement, please contact us.</string>
         <!--No Friend View Controller-->
         <scene sceneID="m5R-kK-iD6">
             <objects>
-                <viewController storyboardIdentifier="NoFriendViewController" modalPresentationStyle="currentContext" id="h65-CN-n20" customClass="NoFriendViewController" customModule="i_Chat" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="NoFriendViewController" modalTransitionStyle="crossDissolve" modalPresentationStyle="currentContext" id="h65-CN-n20" customClass="NoFriendViewController" customModule="i_Chat" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="JOs-gw-eWZ">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
