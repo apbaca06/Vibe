@@ -108,9 +108,9 @@ class FirebaseManager {
             switch exist {
             case true :
 
-                DatabasePath.userFriendRef.child(uid).updateChildValues([recieverUid: "\(uid)_\(recieverUid)"])
+                DatabasePath.userFriendRef.child(uid).child(recieverUid).updateChildValues(["block": false, "chatroomID": "\(uid)_\(recieverUid)"])
 
-                DatabasePath.userFriendRef.child(recieverUid).updateChildValues([uid: "\(uid)_\(recieverUid)"])
+                DatabasePath.userFriendRef.child(recieverUid).child(uid).updateChildValues(["block": false, "chatroomID": "\(uid)_\(recieverUid)"])
                 completionHandler(true)
 
             case false:

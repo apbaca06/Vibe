@@ -34,9 +34,15 @@ class FriendCollectionViewController: UIViewController, UICollectionViewDelegate
 
         layout.scrollDirection = .vertical
 
+        layout.minimumInteritemSpacing = 10
+
+        layout.minimumLineSpacing = 10
+
         layout.minimumLineSpacing = 0
 
         collectionView = UICollectionView(frame: CGRect(x: 0, y: 0, width: self.view.width, height: self.view.height), collectionViewLayout: layout)
+
+        collectionView.contentInset = UIEdgeInsets(top: 15, left: 30, bottom: 0, right: 30)
 
         collectionView.delegate = self
 

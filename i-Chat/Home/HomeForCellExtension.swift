@@ -28,19 +28,11 @@ extension HomeViewController: CLLocationManagerDelegate, FriendCollectionViewCon
                 else { return }
             callOutViewController.reciever = user.0
             callOutViewController.chatroomID = user.1
+            self.userInfo = ["Name": user.0.name, "profileImgURL": user.0.profileImgURL]
+            CallManager.shared.audioCall(toUser: user.0)
             present(callOutViewController, animated: true, completion: nil)
         }
     }
-
-//    func controller(_ controller: FriendCollectionViewController, didCall user: (User,String) {
-//
-//        CallManager.shared.audioCall(toUser: user.)
-//
-//        guard let callOutViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "CallOutViewController") as? CallOutViewController
-//        else { return }
-//        callOutViewController.reciever = user
-//        present(callOutViewController, animated: true, completion: nil)
-//    }
 
     // MARK: Funtion for Profile Cell
     @objc func changeImg() {

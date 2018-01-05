@@ -970,7 +970,7 @@
         <!--Incoming Call View Controller-->
         <scene sceneID="Vjh-Hb-aWP">
             <objects>
-                <viewController storyboardIdentifier="IncomingCallViewController" id="gqM-jB-jPz" customClass="IncomingCallViewController" customModule="i_Chat" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="IncomingCallViewController" modalTransitionStyle="crossDissolve" id="gqM-jB-jPz" customClass="IncomingCallViewController" customModule="i_Chat" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Fdj-Km-09S">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1005,7 +1005,7 @@
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3Dw-3V-49k">
                                 <rect key="frame" x="269" y="566" width="104" height="104"/>
-                                <color key="backgroundColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="0.063079752027988434" green="0.87182444334030151" blue="0.061241753399372101" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="3Dw-3V-49k" secondAttribute="height" multiplier="1:1" id="8n9-e4-vV3"/>
                                 </constraints>
@@ -1073,7 +1073,7 @@
         <!--Audio View Controller-->
         <scene sceneID="r9G-7t-bei">
             <objects>
-                <viewController storyboardIdentifier="AudioViewController" id="hwu-5b-qNi" customClass="AudioViewController" customModule="i_Chat" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="AudioViewController" modalTransitionStyle="flipHorizontal" id="hwu-5b-qNi" customClass="AudioViewController" customModule="i_Chat" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="4AS-Hy-25r">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1082,7 +1082,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Time" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Sin-Ai-Ezt" customClass="MZTimerLabel">
-                                <rect key="frame" x="0.0" y="321.66666666666669" width="414" height="73.666666666666686"/>
+                                <rect key="frame" x="0.0" y="323" width="414" height="73.666666666666686"/>
                                 <fontDescription key="fontDescription" type="system" weight="light" pointSize="27"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -1099,7 +1099,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xgs-CT-a6g">
-                                <rect key="frame" x="251.33333333333334" y="421.66666666666669" width="82.666666666666657" height="83"/>
+                                <rect key="frame" x="251.33333333333334" y="449" width="82.666666666666657" height="83"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="Xgs-CT-a6g" secondAttribute="height" multiplier="1:1" id="Nke-vm-led"/>
                                 </constraints>
@@ -1109,7 +1109,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YXz-4A-8v9">
-                                <rect key="frame" x="78" y="421.66666666666669" width="82.666666666666686" height="82.666666666666686"/>
+                                <rect key="frame" x="78" y="449" width="82.666666666666686" height="82.666666666666629"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="YXz-4A-8v9" secondAttribute="height" multiplier="1:1" id="sRs-NT-8me"/>
                                 </constraints>
@@ -1146,6 +1146,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="Sin-Ai-Ezt" firstAttribute="top" secondItem="PFk-e3-iuV" secondAttribute="bottom" constant="10" id="1RN-v8-vkE"/>
                             <constraint firstItem="Xgs-CT-a6g" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="YXz-4A-8v9" secondAttribute="trailing" constant="50" id="1j7-kR-zeH"/>
                             <constraint firstItem="vbS-BL-NJ4" firstAttribute="bottom" secondItem="DAO-86-7Uf" secondAttribute="bottom" constant="66" id="2zg-FC-Pet"/>
                             <constraint firstItem="PfW-7U-KbT" firstAttribute="top" secondItem="vbS-BL-NJ4" secondAttribute="top" constant="63" id="4BE-Zq-AzH"/>
@@ -1160,8 +1161,7 @@
                             <constraint firstItem="PfW-7U-KbT" firstAttribute="centerX" secondItem="vbS-BL-NJ4" secondAttribute="centerX" id="RS0-1G-t7d"/>
                             <constraint firstItem="PFk-e3-iuV" firstAttribute="width" secondItem="4BV-Dy-lgj" secondAttribute="width" id="Udl-Qh-mjW"/>
                             <constraint firstItem="4BV-Dy-lgj" firstAttribute="leading" secondItem="vbS-BL-NJ4" secondAttribute="leading" id="WDt-Ps-tMS"/>
-                            <constraint firstItem="DAO-86-7Uf" firstAttribute="top" secondItem="Xgs-CT-a6g" secondAttribute="bottom" constant="62.666666666666629" id="bJh-mL-kmD"/>
-                            <constraint firstItem="Xgs-CT-a6g" firstAttribute="top" secondItem="Sin-Ai-Ezt" secondAttribute="bottom" constant="26.333333333333314" id="cP9-Jr-R0X"/>
+                            <constraint firstItem="DAO-86-7Uf" firstAttribute="top" secondItem="Xgs-CT-a6g" secondAttribute="bottom" constant="35" id="bJh-mL-kmD"/>
                             <constraint firstItem="PFk-e3-iuV" firstAttribute="centerX" secondItem="4BV-Dy-lgj" secondAttribute="centerX" id="gWb-VA-Z3D"/>
                             <constraint firstItem="YXz-4A-8v9" firstAttribute="top" secondItem="Xgs-CT-a6g" secondAttribute="top" id="iVp-BG-Wod"/>
                             <constraint firstItem="vbS-BL-NJ4" firstAttribute="trailing" secondItem="Xgs-CT-a6g" secondAttribute="trailing" constant="80" id="kjS-dH-Ccm"/>

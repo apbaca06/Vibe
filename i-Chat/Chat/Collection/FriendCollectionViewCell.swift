@@ -19,7 +19,7 @@ class FriendCollectionViewCell: UICollectionViewCell {
 
         let userImage = #imageLiteral(resourceName: "user").withRenderingMode(.alwaysTemplate)
         profileImageView.image = userImage
-        profileImageView.tintColor = .yellow
+        profileImageView.tintColor = UIColor(red: 215/255.0, green: 38/255.0, blue: 56/255.0, alpha: 1)
 
         profileImageView.layer.cornerRadius = profileImageView.bounds.width/2
         profileImageView.clipsToBounds = true
