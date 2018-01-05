@@ -1199,7 +1199,7 @@
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" keyboardDismissMode="interactive" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="jCo-ER-gWl">
                                 <rect key="frame" x="10.333333333333343" y="135.33333333333331" width="393.33333333333326" height="515.33333333333348"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <mutableString key="text">Last updated: (2018/01/04)
+                                <string key="text">Last updated: (2018/01/04)
 
 Please read this End-User License Agreement ("Agreement") carefully before clicking the "I Agree" button, downloading or using My Application (I-Chat) ("Application").
 
@@ -1235,7 +1235,7 @@ My Application (I-Chat) reserves the right, at its sole discretion, to modify or
 
 Contact Information
 
-If you have any questions about this Agreement, please contact us.</mutableString>
+If you have any questions about this Agreement, please contact us.</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                 <userDefinedRuntimeAttributes>
@@ -1324,10 +1324,101 @@ If you have any questions about this Agreement, please contact us.</mutableStrin
             </objects>
             <point key="canvasLocation" x="-340" y="2004"/>
         </scene>
+        <!--No Friend View Controller-->
+        <scene sceneID="m5R-kK-iD6">
+            <objects>
+                <viewController storyboardIdentifier="NoFriendViewController" modalPresentationStyle="currentContext" id="h65-CN-n20" customClass="NoFriendViewController" customModule="i_Chat" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="JOs-gw-eWZ">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="f3r-7v-3mP">
+                                <rect key="frame" x="41.333333333333343" y="258.33333333333331" width="331.33333333333326" height="240"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No friends yet!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VgC-TV-vXG">
+                                        <rect key="frame" x="0.0" y="124.33333333333337" width="331.33333333333331" height="50"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="Viv-FX-CT4"/>
+                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="50" id="oIL-8W-1bp"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="27"/>
+                                        <color key="textColor" red="0.027450980390000001" green="0.62745098040000002" blue="0.76470588240000004" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cupid" translatesAutoresizingMaskIntoConstraints="NO" id="HyM-kb-xn6">
+                                        <rect key="frame" x="116" y="24.999999999999993" width="99.333333333333314" height="99.333333333333314"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="HyM-kb-xn6" secondAttribute="height" multiplier="1:1" id="iEk-Ra-ZVg"/>
+                                        </constraints>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" red="0.98039215690000003" green="0.98039215690000003" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="240" id="4NN-ha-2Ya"/>
+                                    <constraint firstItem="HyM-kb-xn6" firstAttribute="centerX" secondItem="f3r-7v-3mP" secondAttribute="centerX" id="LFH-Ix-ceM"/>
+                                    <constraint firstItem="HyM-kb-xn6" firstAttribute="width" secondItem="f3r-7v-3mP" secondAttribute="width" multiplier="0.3" id="MW7-ih-Oep"/>
+                                    <constraint firstItem="VgC-TV-vXG" firstAttribute="centerX" secondItem="f3r-7v-3mP" secondAttribute="centerX" id="NQ0-n4-cvu"/>
+                                    <constraint firstItem="HyM-kb-xn6" firstAttribute="top" secondItem="f3r-7v-3mP" secondAttribute="top" constant="25" id="nbW-2G-XiE"/>
+                                    <constraint firstItem="VgC-TV-vXG" firstAttribute="top" secondItem="HyM-kb-xn6" secondAttribute="bottom" id="uGJ-XD-hNK"/>
+                                    <constraint firstItem="VgC-TV-vXG" firstAttribute="width" secondItem="f3r-7v-3mP" secondAttribute="width" id="zAM-mE-SBZ"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                        <color key="value" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="shadowColor">
+                                        <color key="value" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="size" keyPath="shadowOffset">
+                                        <size key="value" width="1" height="-1"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="shadowRadius">
+                                        <real key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ibm-x4-7iV">
+                                <rect key="frame" x="107.66666666666669" y="452.66666666666669" width="199" height="33"/>
+                                <color key="backgroundColor" red="0.94117647059999998" green="0.7843137255" blue="0.031372549020000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="17"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="goSwipe:" destination="h65-CN-n20" eventType="touchUpInside" id="vw2-HD-C2e"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="0.41957405819999999" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="f3r-7v-3mP" firstAttribute="width" secondItem="JOs-gw-eWZ" secondAttribute="width" multiplier="0.8" id="11Q-2z-J5d"/>
+                            <constraint firstItem="f3r-7v-3mP" firstAttribute="centerX" secondItem="7NJ-Tu-x6j" secondAttribute="centerX" id="IU6-w5-apn"/>
+                            <constraint firstItem="ibm-x4-7iV" firstAttribute="centerX" secondItem="f3r-7v-3mP" secondAttribute="centerX" id="MHI-WG-0ev"/>
+                            <constraint firstItem="f3r-7v-3mP" firstAttribute="centerY" secondItem="7NJ-Tu-x6j" secondAttribute="centerY" id="SmH-kj-O4x"/>
+                            <constraint firstItem="ibm-x4-7iV" firstAttribute="width" secondItem="f3r-7v-3mP" secondAttribute="width" multiplier="0.6" id="iIl-oK-bNe"/>
+                            <constraint firstItem="ibm-x4-7iV" firstAttribute="top" secondItem="VgC-TV-vXG" secondAttribute="bottom" constant="20" id="tee-KX-Ssu"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="7NJ-Tu-x6j"/>
+                    </view>
+                    <connections>
+                        <outlet property="cupidImageView" destination="HyM-kb-xn6" id="7aA-QJ-GRL"/>
+                        <outlet property="goSwipeButton" destination="ibm-x4-7iV" id="F0S-ea-dvY"/>
+                        <outlet property="matchLabel" destination="VgC-TV-vXG" id="Lvx-1V-h8L"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6Br-1q-1LA" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3972" y="120"/>
+        </scene>
     </scenes>
     <resources>
         <image name="birthday-cake" width="42" height="42"/>
         <image name="chicken" width="42" height="42"/>
+        <image name="cupid" width="170" height="170"/>
         <image name="femenine" width="42" height="42"/>
         <image name="image" width="42" height="42"/>
         <image name="masculine" width="42" height="42"/>

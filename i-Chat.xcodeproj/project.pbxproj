@@ -43,6 +43,7 @@
 		372F85051FFE552A00D6BCB1 /* EulaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 372F85041FFE552A00D6BCB1 /* EulaViewController.swift */; };
 		372F85071FFE89CE00D6BCB1 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 372F85061FFE89CE00D6BCB1 /* Message.swift */; };
 		372F850A1FFF139400D6BCB1 /* ReportViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 372F85091FFF139400D6BCB1 /* ReportViewController.swift */; };
+		372F850C1FFF307C00D6BCB1 /* NoFriendViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 372F850B1FFF307C00D6BCB1 /* NoFriendViewController.swift */; };
 		373DB9F71FEA3F480041E34E /* DatabasePath.swift in Sources */ = {isa = PBXBuildFile; fileRef = 373DB9F61FEA3F480041E34E /* DatabasePath.swift */; };
 		3754E2881FE122E4002604CD /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3754E2871FE122E4002604CD /* RegisterViewController.swift */; };
 		3754E28A1FE12809002604CD /* QuickbloxManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3754E2891FE12809002604CD /* QuickbloxManager.swift */; };
@@ -155,6 +156,7 @@
 		372F85041FFE552A00D6BCB1 /* EulaViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EulaViewController.swift; sourceTree = "<group>"; };
 		372F85061FFE89CE00D6BCB1 /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
 		372F85091FFF139400D6BCB1 /* ReportViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportViewController.swift; sourceTree = "<group>"; };
+		372F850B1FFF307C00D6BCB1 /* NoFriendViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoFriendViewController.swift; sourceTree = "<group>"; };
 		373DB9F61FEA3F480041E34E /* DatabasePath.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabasePath.swift; sourceTree = "<group>"; };
 		3754E2871FE122E4002604CD /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		3754E2891FE12809002604CD /* QuickbloxManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuickbloxManager.swift; sourceTree = "<group>"; };
@@ -505,6 +507,7 @@
 				37F61A281FFDB73C002DBAFA /* FriendCollectionReusableView.swift */,
 				37F61A291FFDB73C002DBAFA /* FriendCollectionReusableView.xib */,
 				372F85091FFF139400D6BCB1 /* ReportViewController.swift */,
+				372F850B1FFF307C00D6BCB1 /* NoFriendViewController.swift */,
 			);
 			path = Collection;
 			sourceTree = "<group>";
@@ -761,6 +764,7 @@
 				37F05EE21FF5F30C006D20A6 /* CardView.swift in Sources */,
 				3754E2881FE122E4002604CD /* RegisterViewController.swift in Sources */,
 				372F85051FFE552A00D6BCB1 /* EulaViewController.swift in Sources */,
+				372F850C1FFF307C00D6BCB1 /* NoFriendViewController.swift in Sources */,
 				376C3FBC1FEBAD9A00EAF188 /* SetImgViewController.swift in Sources */,
 				37A5BBA81FE628B900C4F1E6 /* ChatCollectionViewCell.swift in Sources */,
 				375F04B61FE3A73A009D2671 /* MenuBar.swift in Sources */,

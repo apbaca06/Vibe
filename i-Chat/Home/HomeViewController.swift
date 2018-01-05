@@ -317,7 +317,9 @@ class HomeViewController: UICollectionViewController, UICollectionViewDelegateFl
 
             friendCollectionViewController.users = self.friends
 
-            cell.contentView.addSubviews([friendViewController.view, friendCollectionViewController.view])
+            cell.contentView.addSubviews([ friendCollectionViewController.view])
+
+//            cell.contentView.addSubviews([friendViewController.view, friendCollectionViewController.view])
 
             friendCollectionViewController.view.topAnchor.constraint(equalTo: cell.contentView.topAnchor, constant: 40).isActive = true
 
@@ -325,19 +327,21 @@ class HomeViewController: UICollectionViewController, UICollectionViewDelegateFl
 
             friendCollectionViewController.view.widthAnchor.constraint(equalTo: cell.contentView.widthAnchor).isActive = true
 
-            friendCollectionViewController.view.heightAnchor.constraint(equalToConstant: 135).isActive = true
+            friendCollectionViewController.view.heightAnchor.constraint(equalTo: cell.contentView.heightAnchor).isActive = true
 
-            friendViewController.view.topAnchor.constraint(equalTo: friendCollectionViewController.view.bottomAnchor).isActive = true
+//            friendCollectionViewController.view.heightAnchor.constraint(equalToConstant: 135).isActive = true
 
-            friendViewController.view.leadingAnchor.constraint(equalTo: cell.contentView.leadingAnchor).isActive = true
-
-            friendViewController.view.widthAnchor.constraint(equalTo: cell.contentView.widthAnchor).isActive = true
-
-            friendViewController.view.heightAnchor.constraint(equalTo: cell.contentView.heightAnchor, multiplier: 1, constant: -135).isActive = true
+//            friendViewController.view.topAnchor.constraint(equalTo: friendCollectionViewController.view.bottomAnchor).isActive = true
+//
+//            friendViewController.view.leadingAnchor.constraint(equalTo: cell.contentView.leadingAnchor).isActive = true
+//
+//            friendViewController.view.widthAnchor.constraint(equalTo: cell.contentView.widthAnchor).isActive = true
+//
+//            friendViewController.view.heightAnchor.constraint(equalTo: cell.contentView.heightAnchor, multiplier: 1, constant: -135).isActive = true
 
             friendCollectionViewController.view.translatesAutoresizingMaskIntoConstraints = false
 
-            friendViewController.view.translatesAutoresizingMaskIntoConstraints = false
+//            friendViewController.view.translatesAutoresizingMaskIntoConstraints = false
 
             return cell
 
