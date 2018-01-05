@@ -106,9 +106,10 @@ class UserProvider {
                             let location2 = CLLocation(latitude: user.latitude, longitude: user.longitude)
                             let distanceBtwn = Int((location1.distance(from: location2))/1000)
 
-                            allUsers.append((user, distanceBtwn))
-
-                            if user.email != Auth.auth().currentUser?.email && user.age >= minAge && user.age <= maxAge && distanceBtwn <= maxDistance && currentUser.likeUserID.has(key: user.id) == false {
+                            if user.email != Auth.auth().currentUser?.email {
+                                allUsers.append((user, distanceBtwn))
+                            }
+                            if user.age >= minAge && user.age <= maxAge && distanceBtwn <= maxDistance && currentUser.likeUserID.has(key: user.id) == false {
 
                                 self.distanceUsers.append((user, distanceBtwn))
 

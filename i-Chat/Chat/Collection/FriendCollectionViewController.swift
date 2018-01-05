@@ -44,12 +44,12 @@ class FriendCollectionViewController: UIViewController, UICollectionViewDelegate
 
         collectionView.backgroundColor = .white
 
-        let nib2 = UINib(
-            nibName: "FriendCollectionReusableView",
-            bundle: nil
-        )
-
-        collectionView.register(nib2, forSupplementaryViewOfKind: UICollectionElementKindSectionHeader, withReuseIdentifier: "HeaderView")
+//        let nib2 = UINib(
+//            nibName: "FriendCollectionReusableView",
+//            bundle: nil
+//        )
+//
+//        collectionView.register(nib2, forSupplementaryViewOfKind: UICollectionElementKindSectionHeader, withReuseIdentifier: "HeaderView")
 
         let nib = UINib(
             nibName: "FriendCollectionViewCell",
@@ -105,13 +105,6 @@ class FriendCollectionViewController: UIViewController, UICollectionViewDelegate
         if users[indexPath.row].2 == true {
             cell.callButton.tintColor = .gray
             cell.friendName.textColor = .gray
-
-            let blurEffect = UIBlurEffect(style: UIBlurEffectStyle.prominent)
-            let blurEffectView = UIVisualEffectView(effect: blurEffect)
-
-            blurEffectView.frame = cell.profileImageView.bounds
-            blurEffectView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
-            cell.profileImageView.addSubview(blurEffectView)
             cell.profileImageView.tintColor = .gray
         }
 
@@ -193,38 +186,38 @@ class FriendCollectionViewController: UIViewController, UICollectionViewDelegate
     }
 
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: 100, height: 135)
+        return CGSize(width: 120, height: 140)
     }
 
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
         return UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
     }
 
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
+//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
+//
+//        return CGSize(width: 100, height: 135)
+//    }
 
-        return CGSize(width: 100, height: 135)
-    }
-
-    func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
-
-        switch kind {
-
-        case UICollectionElementKindSectionHeader:
-
-            // swiftlint:disable force_cast
-            let headerView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "HeaderView", for: indexPath)
-                as! FriendCollectionReusableView
-            // swiftlint:enable force_cast
-
-            headerView.label.text = NSLocalizedString("Likes", comment: "")
-            headerView.numberOfLikeLabel.text = "10+"
-
-            return headerView
-
-        default:
-
-            assert(false, "Unexpected element kind")
-        }
-    }
+//    func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
+//
+//        switch kind {
+//
+//        case UICollectionElementKindSectionHeader:
+//
+//
+//            let headerView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "HeaderView", for: indexPath)
+//                as! FriendCollectionReusableView
+//            
+//
+//            headerView.label.text = NSLocalizedString("Likes", comment: "")
+//            headerView.numberOfLikeLabel.text = "10+"
+//
+//            return headerView
+//
+//        default:
+//
+//            assert(false, "Unexpected element kind")
+//        }
+//    }
 
 }

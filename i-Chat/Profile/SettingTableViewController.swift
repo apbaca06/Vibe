@@ -17,7 +17,9 @@ enum SettingComponent {
 
     // MARK: Case
 
-    case search, show, slider, logout
+    case search, logout
+
+    //show, slider,
 
     // MARK: Property
 
@@ -29,13 +31,13 @@ enum SettingComponent {
 
             return NSLocalizedString("Search", comment: "")
 
-        case .show:
-
-            return NSLocalizedString("Show on app", comment: "")
-
-        case .slider:
-
-            return NSLocalizedString("Notification", comment: "")
+//        case .show:
+//
+//            return NSLocalizedString("Show on app", comment: "")
+//
+//        case .slider:
+//
+//            return NSLocalizedString("Notification", comment: "")
 
         case .logout:
 
@@ -83,9 +85,9 @@ enum SearchComponent {
 class SettingTableViewController: UITableViewController, GenderPickerControllerDelegate, AgeRangePickerControllerDelegate {
 
     func controller(_ controller: AgeRangePickerController, minAge: Int) {
+
         self.minAge = String(describing: minAge)
         tableView.reloadData()
-
     }
 
     func controller(_ controller: AgeRangePickerController, maxAge: Int) {
@@ -116,7 +118,7 @@ class SettingTableViewController: UITableViewController, GenderPickerControllerD
     // MARK: Init
 
     init() {
-        self.components = [ .search, .show, .slider, .logout]
+        self.components = [ .search, .logout]
 
         super.init(style: .grouped)
     }
@@ -241,7 +243,7 @@ class SettingTableViewController: UITableViewController, GenderPickerControllerD
 
         switch component {
 
-        case .show, .logout, .slider, .search:
+        case .search, .logout:
             return component.localizedString
 
         }
@@ -249,7 +251,7 @@ class SettingTableViewController: UITableViewController, GenderPickerControllerD
     }
 
     override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return 10
+        return 15
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -261,8 +263,10 @@ class SettingTableViewController: UITableViewController, GenderPickerControllerD
         case .search:
             return 4
 
-        case .show, .logout, .slider :
-
+//        case .show, .slider :
+//
+//            return 0
+        case .logout :
             return 1
 
         }
@@ -383,32 +387,33 @@ class SettingTableViewController: UITableViewController, GenderPickerControllerD
             // swiftlint:enable force_cast
 
             return cell
+    }
 
-        case .slider:
-
-            // swiftlint:disable force_cast
-            let cell = tableView.dequeueReusableCell(
-                withIdentifier: "GenderPickerTableViewCell",
-                for: indexPath
-                ) as! GenderPickerTableViewCell
-            // swiftlint:enable force_cast
-
-            return cell
-
-        case .show:
-
-            // swiftlint:disable force_cast
-            let cell = tableView.dequeueReusableCell(
-                withIdentifier: "LabelTableViewCell",
-                for: indexPath
-                ) as! LabelTableViewCell
-            // swiftlint:enable force_cast
-
-            cell.rightLabel.text = self.cityName
-
-            return cell
-
-        }
+//        case .slider:
+//
+//
+//            let cell = tableView.dequeueReusableCell(
+//                withIdentifier: "GenderPickerTableViewCell",
+//                for: indexPath
+//                ) as! GenderPickerTableViewCell
+//
+//
+//            return cell
+//
+//        case .show:
+//
+//
+//            let cell = tableView.dequeueReusableCell(
+//                withIdentifier: "LabelTableViewCell",
+//                for: indexPath
+//                ) as! LabelTableViewCell
+//            
+//
+//            cell.rightLabel.text = self.cityName
+//
+//            return cell
+//
+//        }
     }
 
 }

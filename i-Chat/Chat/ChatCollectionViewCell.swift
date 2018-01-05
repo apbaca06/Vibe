@@ -14,12 +14,15 @@ class ChatCollectionViewCell: UICollectionViewCell {
 
     @IBOutlet weak var label: UILabel!
 
+    @IBOutlet weak var numberLabel: UILabel!
+
     var friendList: [User] = []
 
     override func awakeFromNib() {
         super.awakeFromNib()
+        numberLabel.cornerRadius = numberLabel.bounds.width/2
+
         label.text = NSLocalizedString("Friends", comment: "")
-        label.textColor = UIColor(red: 7/255.0, green: 160/255.0, blue: 195/255.0, alpha: 1)
 
     }
 

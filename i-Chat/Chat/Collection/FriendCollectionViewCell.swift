@@ -17,6 +17,10 @@ class FriendCollectionViewCell: UICollectionViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
 
+        let userImage = #imageLiteral(resourceName: "user").withRenderingMode(.alwaysTemplate)
+        profileImageView.image = userImage
+        profileImageView.tintColor = .yellow
+
         profileImageView.layer.cornerRadius = profileImageView.bounds.width/2
         profileImageView.clipsToBounds = true
 

@@ -14,8 +14,6 @@ import KeychainSwift
 
 class ProfileCollectionViewCell: UICollectionViewCell {
 
-    @IBOutlet weak var toProfilePage: UIButton!
-
     @IBOutlet weak var toSettingButton: UIButton!
 
     @IBOutlet weak var ageLabel: UILabel!
@@ -24,16 +22,12 @@ class ProfileCollectionViewCell: UICollectionViewCell {
 
     @IBOutlet weak var profileImg: UIImageView!
 
-    @IBOutlet weak var profileDescription: UILabel!
-
-    @IBOutlet weak var settingDescription: UILabel!
-
     @IBOutlet weak var circleProfileImg: UIImageView!
 
     override func awakeFromNib() {
         super.awakeFromNib()
 
-        circleProfileImg.layer.cornerRadius = circleProfileImg.bounds.width/2
+        circleProfileImg.layer.cornerRadius = (UIScreen.main.bounds.width * 0.85)/2
         circleProfileImg.clipsToBounds = true
 
         let blurEffect = UIBlurEffect(style: UIBlurEffectStyle.regular)
@@ -43,10 +37,6 @@ class ProfileCollectionViewCell: UICollectionViewCell {
         blurEffectView.frame = profileImg.bounds
         blurEffectView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         profileImg.addSubview(blurEffectView)
-
-        profileDescription.text = NSLocalizedString("Profile", comment: "")
-
-        settingDescription.text = NSLocalizedString("Setting", comment: "")
 
         let keychain = KeychainSwift()
 
@@ -63,7 +53,7 @@ class ProfileCollectionViewCell: UICollectionViewCell {
 
             self.nameLabel.text = name
 
-            self.ageLabel.text = String(describing: age)
+            self.ageLabel.text = "\(String(describing: age)) yr"
 
             if let profileImgURL = URL(string: profileImgString) {
 

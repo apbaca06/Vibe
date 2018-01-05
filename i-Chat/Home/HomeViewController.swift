@@ -93,9 +93,9 @@ class HomeViewController: UICollectionViewController, UICollectionViewDelegateFl
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        if state == nil {
-            scrollToMenuIndex(2)
-        }
+//        if state == nil {
+//            scrollToMenuIndex(2)
+//        }
 
     }
 
@@ -317,11 +317,16 @@ class HomeViewController: UICollectionViewController, UICollectionViewDelegateFl
 
             friendCollectionViewController.users = self.friends
 
-            cell.contentView.addSubviews([ friendCollectionViewController.view])
+            if friends.count > 0 {
+                cell.numberLabel.text = "\(friends.count)"
+            } else {
+                cell.numberLabel.text = "0"
+            }
+        cell.contentView.addSubviews([ friendCollectionViewController.view])
 
 //            cell.contentView.addSubviews([friendViewController.view, friendCollectionViewController.view])
 
-            friendCollectionViewController.view.topAnchor.constraint(equalTo: cell.contentView.topAnchor, constant: 40).isActive = true
+            friendCollectionViewController.view.topAnchor.constraint(equalTo: cell.contentView.topAnchor, constant: 80).isActive = true
 
             friendCollectionViewController.view.leadingAnchor.constraint(equalTo: cell.contentView.leadingAnchor).isActive = true
 

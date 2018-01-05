@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -21,22 +22,42 @@
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aLl-RT-YF4">
-                        <rect key="frame" x="0.0" y="0.0" width="282" height="40"/>
+                        <rect key="frame" x="0.0" y="0.0" width="282" height="80"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8iw-D7-QF7">
-                                <rect key="frame" x="15" y="0.0" width="141" height="40"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
-                                <nil key="textColor"/>
+                                <rect key="frame" x="15" y="0.0" width="86.5" height="80"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="34"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4yu-w4-qvg">
+                                <rect key="frame" x="111.5" y="12" width="56" height="56"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="4yu-w4-qvg" secondAttribute="height" multiplier="1:1" id="FVZ-Fq-cvF"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="20"/>
+                                <color key="textColor" red="0.94117647059999998" green="0.7843137255" blue="0.031372549020000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                        <color key="value" red="0.94117647059999998" green="0.7843137255" blue="0.031372549020000001" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </label>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.027450980390000001" green="0.62745098040000002" blue="0.76470588240000004" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="8iw-D7-QF7" firstAttribute="leading" secondItem="aLl-RT-YF4" secondAttribute="leading" constant="15" id="8lx-N6-gYG"/>
                             <constraint firstItem="8iw-D7-QF7" firstAttribute="top" secondItem="aLl-RT-YF4" secondAttribute="top" id="GoY-2W-bf5"/>
-                            <constraint firstItem="8iw-D7-QF7" firstAttribute="width" secondItem="aLl-RT-YF4" secondAttribute="width" multiplier="0.5" id="HEB-qy-FF5"/>
+                            <constraint firstItem="4yu-w4-qvg" firstAttribute="height" secondItem="8iw-D7-QF7" secondAttribute="height" multiplier="0.7" id="KOm-kp-IYD"/>
+                            <constraint firstItem="4yu-w4-qvg" firstAttribute="leading" secondItem="8iw-D7-QF7" secondAttribute="trailing" constant="10" id="Nct-vZ-LzT"/>
+                            <constraint firstItem="4yu-w4-qvg" firstAttribute="centerY" secondItem="8iw-D7-QF7" secondAttribute="centerY" id="SKs-2M-oN0"/>
                             <constraint firstItem="8iw-D7-QF7" firstAttribute="height" secondItem="aLl-RT-YF4" secondAttribute="height" id="VIL-VP-7J1"/>
-                            <constraint firstAttribute="height" constant="40" id="wKd-Z4-5hG"/>
+                            <constraint firstAttribute="height" constant="80" id="wKd-Z4-5hG"/>
+                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="4yu-w4-qvg" secondAttribute="trailing" id="ydY-iB-DB5"/>
                         </constraints>
                     </view>
                 </subviews>
@@ -50,6 +71,7 @@
             <size key="customSize" width="566" height="755"/>
             <connections>
                 <outlet property="label" destination="8iw-D7-QF7" id="tp1-kq-Gg2"/>
+                <outlet property="numberLabel" destination="4yu-w4-qvg" id="ATe-ZG-dfB"/>
             </connections>
             <point key="canvasLocation" x="-372" y="14"/>
         </collectionViewCell>
