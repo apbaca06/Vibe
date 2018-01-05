@@ -118,6 +118,35 @@ class FriendCollectionViewController: UIViewController, UICollectionViewDelegate
 
     }
 
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+
+        let actionSheetController = UIAlertController(title: NSLocalizedString("Please select", comment: "" ), message: "", preferredStyle: .actionSheet)
+
+        let cancelActionButton = UIAlertAction(title: "Cancel", style: .cancel) { _ -> Void in
+            print("Cancel")
+        }
+        actionSheetController.addAction(cancelActionButton)
+
+        // swiftlint:disable force_cast
+        let reportActionSheet = UIAlertAction(title: NSLocalizedString("Report", comment: "" ), style: .default) { _ -> Void in
+
+        let reportViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "ReportViewController") as! ReportViewController
+        // swiftlint:enable force_cast
+            reportViewController.reportedID = self.users[indexPath.row].0.id
+
+            self.present(reportViewController, animated: true, completion: nil)
+
+            print("Report")
+        }
+        actionSheetController.addAction(reportActionSheet)
+
+        let blockActionButton = UIAlertAction(title: NSLocalizedString("Block", comment: "" ), style: .default) { _ -> Void in
+            print("Block")
+        }
+        actionSheetController.addAction(blockActionButton)
+        self.present(actionSheetController, animated: true, completion: nil)
+    }
+
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return users.count
     }

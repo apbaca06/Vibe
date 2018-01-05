@@ -11,9 +11,28 @@ import UIKit
 class FriendTableViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
     let tableView: UITableView = UITableView()
+    var users: [(User, String)] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        FirebaseManager.getFriendList(eventType: .value) { (friends) in
+            self.users = friends
+
+            for friend in friends {
+                DatabasePath.chatroomRef.child(friend.1).observe(.value, with: { (datasnapshot) in
+                    guard let datas = datasnapshot.value as? [String: Any]
+                        else { return }
+                    for data in datas {
+                        let messageID = data.key
+                        DatabasePath.messageRef.child(messageID).observeSingleEvent(of: .value, with: { (datasnap) in
+                            print("***", datasnap)
+                        })
+                    }
+                })
+
+            }
+
+        }
 
         setupTableView()
     }

@@ -41,6 +41,8 @@
 		372E8E141FF1DD2D002CAC96 /* AgeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 372E8E131FF1DD2D002CAC96 /* AgeViewController.swift */; };
 		372F85031FFE4C4D00D6BCB1 /* State.swift in Sources */ = {isa = PBXBuildFile; fileRef = 372F85021FFE4C4D00D6BCB1 /* State.swift */; };
 		372F85051FFE552A00D6BCB1 /* EulaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 372F85041FFE552A00D6BCB1 /* EulaViewController.swift */; };
+		372F85071FFE89CE00D6BCB1 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 372F85061FFE89CE00D6BCB1 /* Message.swift */; };
+		372F850A1FFF139400D6BCB1 /* ReportViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 372F85091FFF139400D6BCB1 /* ReportViewController.swift */; };
 		373DB9F71FEA3F480041E34E /* DatabasePath.swift in Sources */ = {isa = PBXBuildFile; fileRef = 373DB9F61FEA3F480041E34E /* DatabasePath.swift */; };
 		3754E2881FE122E4002604CD /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3754E2871FE122E4002604CD /* RegisterViewController.swift */; };
 		3754E28A1FE12809002604CD /* QuickbloxManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3754E2891FE12809002604CD /* QuickbloxManager.swift */; };
@@ -151,6 +153,8 @@
 		372E8E131FF1DD2D002CAC96 /* AgeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AgeViewController.swift; sourceTree = "<group>"; };
 		372F85021FFE4C4D00D6BCB1 /* State.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = State.swift; sourceTree = "<group>"; };
 		372F85041FFE552A00D6BCB1 /* EulaViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EulaViewController.swift; sourceTree = "<group>"; };
+		372F85061FFE89CE00D6BCB1 /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
+		372F85091FFF139400D6BCB1 /* ReportViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportViewController.swift; sourceTree = "<group>"; };
 		373DB9F61FEA3F480041E34E /* DatabasePath.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabasePath.swift; sourceTree = "<group>"; };
 		3754E2871FE122E4002604CD /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		3754E2891FE12809002604CD /* QuickbloxManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuickbloxManager.swift; sourceTree = "<group>"; };
@@ -422,6 +426,7 @@
 			children = (
 				370832B71FE3806700D4DC86 /* User.swift */,
 				371E76C81FF0ED9A00EF7CB2 /* ProfileImage.swift */,
+				372F85061FFE89CE00D6BCB1 /* Message.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -499,6 +504,7 @@
 				37E1D1701FFB38C600EC9BA6 /* FriendCollectionViewCell.xib */,
 				37F61A281FFDB73C002DBAFA /* FriendCollectionReusableView.swift */,
 				37F61A291FFDB73C002DBAFA /* FriendCollectionReusableView.xib */,
+				372F85091FFF139400D6BCB1 /* ReportViewController.swift */,
 			);
 			path = Collection;
 			sourceTree = "<group>";
@@ -549,6 +555,7 @@
 				F3FF97B5228D53F6CB3D1522 /* [CP] Copy Pods Resources */,
 				371459B11FDFACBC00C1F14A /* Embed Frameworks */,
 				371459B21FDFACD700C1F14A /* ShellScript */,
+				372F85081FFF097000D6BCB1 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -645,6 +652,19 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "bash \"${BUILT_PRODUCTS_DIR}/${FRAMEWORKS_FOLDER_PATH}/QuickbloxWebRTC.framework/strip-framework.sh\"\n\"${PODS_ROOT}/SwiftLint/swiftlint\"";
+		};
+		372F85081FFF097000D6BCB1 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Fabric/run\"";
 		};
 		C90241063E6D7B0256018559 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -751,6 +771,7 @@
 				376C3FB81FEBA92900EAF188 /* GenderViewController.swift in Sources */,
 				372F85031FFE4C4D00D6BCB1 /* State.swift in Sources */,
 				37A5BB9D1FE6223600C4F1E6 /* BaseCell.swift in Sources */,
+				372F85071FFE89CE00D6BCB1 /* Message.swift in Sources */,
 				3754E28A1FE12809002604CD /* QuickbloxManager.swift in Sources */,
 				37DE5F981FEA65B30017E09D /* LogoutTableViewCell.swift in Sources */,
 				3792B0CC1FF5ECEE00AB4838 /* UserProvider.swift in Sources */,
@@ -777,6 +798,7 @@
 				372E8E121FF1076C002CAC96 /* Animation.swift in Sources */,
 				37DE5F891FEA61D00017E09D /* SwitchTableViewCell.swift in Sources */,
 				370832B81FE3806700D4DC86 /* User.swift in Sources */,
+				372F850A1FFF139400D6BCB1 /* ReportViewController.swift in Sources */,
 				3792B0CA1FF3D05200AB4838 /* ExampleOverlayView.swift in Sources */,
 				37F61A2A1FFDB73C002DBAFA /* FriendCollectionReusableView.swift in Sources */,
 				37EA8ED31FF7DB1A003FA28C /* FriendTableViewController.swift in Sources */,

@@ -21,5 +21,7 @@ target 'i-Chat' do
   pod 'KeychainSwift', '~> 10.0'
   pod 'Nuke'
   pod 'XLActionController'
+  pod 'Fabric', '~> 1.7.2'
+  pod 'Crashlytics', '~> 3.9.3'
 
 end
