@@ -21,6 +21,8 @@ public struct DatabasePath {
 
     public static let messageRef = databaseRoot.child("message")
 
+    public static let reportRef = databaseRoot.child("report")
+
     public static let userUnlikeRef = databaseRoot.child("user_unlike")
 
     public static let userSwipedLikeRef = databaseRoot.child("user_swipedLike")
