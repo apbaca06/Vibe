@@ -14,11 +14,9 @@ import Koloda
 import Nuke
 
 extension HomeViewController: CLLocationManagerDelegate, FriendCollectionViewControllerDelegate {
-    func controller(_ controller: FriendCollectionViewController, didCall user: (User, String)) {
-        CallManager.shared.audioCall(toUser: user.0)
-
+    func controller(_ controller: FriendCollectionViewController, didCall user: (User, String, Bool)) {
         guard let callOutViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "CallOutViewController") as? CallOutViewController
-        else { return }
+            else { return }
         callOutViewController.reciever = user.0
         callOutViewController.chatroomID = user.1
         present(callOutViewController, animated: true, completion: nil)

@@ -11,7 +11,7 @@ import Nuke
 import KeychainSwift
 
 protocol FriendCollectionViewControllerDelegate: class {
-    func controller(_ controller: FriendCollectionViewController, didCall user: (User, String))
+    func controller(_ controller: FriendCollectionViewController, didCall user: (User, String, Bool))
 
 }
 
@@ -21,9 +21,9 @@ class FriendCollectionViewController: UIViewController, UICollectionViewDelegate
 
     let layout = UICollectionViewFlowLayout()
 
-    typealias UserWithChat = (User, String)
+    typealias UserWithChatBlock = (User, String, Bool)
 
-    var users: [UserWithChat] = []
+    var users: [UserWithChatBlock] = []
 
     var collectionView: UICollectionView!
 
@@ -141,6 +141,22 @@ class FriendCollectionViewController: UIViewController, UICollectionViewDelegate
         actionSheetController.addAction(reportActionSheet)
 
         let blockActionButton = UIAlertAction(title: NSLocalizedString("Block", comment: "" ), style: .default) { _ -> Void in
+            let alertController = UIAlertController(title: NSLocalizedString("You may never unoblock!", comment: ""), message: "Please be sure to block \(self.users[indexPath.row].0.name)", preferredStyle: .alert)
+            let cancel = UIAlertAction(title: NSLocalizedString("Cancel", comment: ""), style: .cancel, handler: nil)
+            alertController.addAction(cancel)
+            let block = UIAlertAction(title: NSLocalizedString("Block", comment: ""), style: .default, handler: { (_) in
+                guard let uid = self.keychain.get("uid")
+                    else { return }
+
+                DatabasePath.userFriendRef.child(uid).child(self.users[indexPath.row].0.id).updateChildValues(["block": true])
+                let alertController = UIAlertController(title: NSLocalizedString("\(self.users[indexPath.row].0.name) is blocked!", comment: ""), message: "\(self.users[indexPath.row].0.name) can never contact you again.", preferredStyle: .alert)
+                let okAction = UIAlertAction(title: NSLocalizedString("OK", comment: ""), style: .default, handler: nil)
+                alertController.addAction(okAction)
+                alertController.show()
+            })
+
+            alertController.addAction(block)
+            alertController.show()
             print("Block")
         }
         actionSheetController.addAction(blockActionButton)

@@ -37,9 +37,9 @@ class HomeViewController: UICollectionViewController, UICollectionViewDelegateFl
 
     var currentUser: User?
 
-    typealias UserWithChat = (User, String)
+    typealias UserWithChatBlock = (User, String, Bool)
 
-    var friends: [UserWithChat] = []
+    var friends: [UserWithChatBlock] = []
 
     var distanceBtwnArray: [Int] = [] {
         didSet {

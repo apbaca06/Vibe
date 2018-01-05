@@ -11,7 +11,7 @@ import UIKit
 class FriendTableViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
     let tableView: UITableView = UITableView()
-    var users: [(User, String)] = []
+    var users: [(User, String, Bool)] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()

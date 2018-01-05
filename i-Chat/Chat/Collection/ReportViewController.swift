@@ -34,8 +34,8 @@ class ReportViewController: UIViewController, UITextViewDelegate {
 
         } else {
             let alertController = UIAlertController(title: NSLocalizedString("Please insert content!", comment: ""), message: "We need more information to investigate. Thank you!", preferredStyle: .alert)
-            let action = UIAlertAction(title: NSLocalizedString("OK", comment: ""), style: .default, handler: nil)
-            alertController.addAction(action)
+            let oKaction = UIAlertAction(title: NSLocalizedString("OK", comment: ""), style: .default, handler: nil)
+            alertController.addAction(oKaction)
             present(alertController, animated: true, completion: nil)
         }
     }

@@ -120,11 +120,11 @@ class FirebaseManager {
         }
     }
 
-    static func getFriendList(eventType type: DataEventType, completionHandler: @escaping ([(User, String)]) -> Void) {
+    static func getFriendList(eventType type: DataEventType, completionHandler: @escaping ([(User, String, Bool)]) -> Void) {
 
         let keychain = KeychainSwift()
 
-        typealias UserChatTuple = (User, String)
+        typealias UserChatIDBlock = (User, String, Bool)
 
         guard let uid = keychain.get("uid")
         else { return }
@@ -134,10 +134,17 @@ class FirebaseManager {
             guard let friendList = datasnapshot.value as? [String: Any]
             else { return }
 
-            var friendsWithChatroomID: [UserChatTuple] = []
+            var friendsWithChatBlock: [UserChatIDBlock] = []
 
             for friend in friendList {
-                DatabasePath.userRef.child(friend.key).observeSingleEvent(of: .value, with: { (datasnapshot) in
+                let friendID = friend.key
+
+                guard let dict = friend.value as? [String: Any],
+                     let ifBlock = dict["block"] as? Bool,
+                     let chatroomID = dict["chatroomID"] as? String
+                else { return }
+
+                DatabasePath.userRef.child(friendID).observeSingleEvent(of: .value, with: { (datasnapshot) in
 
                     do {
 
@@ -145,11 +152,8 @@ class FirebaseManager {
 
                     let userFriend = try User(userDic)
 
-                    guard let chatroomID = friend.value as? String
-                        else { return }
-
-                    friendsWithChatroomID.append((userFriend, chatroomID))
-                    completionHandler(friendsWithChatroomID)
+                    friendsWithChatBlock.append((userFriend, chatroomID, ifBlock))
+                    completionHandler(friendsWithChatBlock)
 
                     } catch {
                         print(error, "**")
