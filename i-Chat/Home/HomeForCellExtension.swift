@@ -198,7 +198,7 @@ extension HomeViewController: KolodaViewDataSource {
 
             matchViewController.modalPresentationStyle = .overFullScreen
             matchViewController.modalTransitionStyle = .crossDissolve
-            self.state = matchViewController.state
+//            self.state = matchViewController.state
             present(matchViewController, animated: true, completion: nil)
         }
 

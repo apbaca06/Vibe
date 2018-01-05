@@ -295,7 +295,7 @@ class HomeViewController: UICollectionViewController, UICollectionViewDelegateFl
 
             cell.swipeView.resetCurrentCardIndex()
 
-//            cell.turningIndicator.startAnimating()
+            cell.turningIndicator.startAnimating()
 
             return cell
 

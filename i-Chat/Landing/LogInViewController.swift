@@ -60,6 +60,13 @@ class LogInViewController: UIViewController {
 
         setUpButton()
 
+        loginButton.setTitle(NSLocalizedString("Login", comment: ""), for: .normal)
+
+        createButton.setTitle(NSLocalizedString("Create", comment: ""), for: .normal)
+
+        forgotPasswordLabel.text = NSLocalizedString("Forgot password?", comment: "")
+        dontHaveAccountLabel.text = NSLocalizedString("Don't have an account?", comment: "")
+
     }
 
     func setUpButton() {

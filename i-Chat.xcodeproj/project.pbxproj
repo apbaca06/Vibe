@@ -79,6 +79,9 @@
 		37C0FF4C1FE8BE58002EACF3 /* RingtoneManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37C0FF4B1FE8BE58002EACF3 /* RingtoneManager.swift */; };
 		37CA181E1FE2221500C1171B /* FirebaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37CA181D1FE2221500C1171B /* FirebaseManager.swift */; };
 		37CA18201FE2304100C1171B /* AudioViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37CA181F1FE2304100C1171B /* AudioViewController.swift */; };
+		37CC153D1FFF6684006C9A81 /* ArrayExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37CC153C1FFF6684006C9A81 /* ArrayExtension.swift */; };
+		37CC15421FFF91FC006C9A81 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 37CC15441FFF91FC006C9A81 /* InfoPlist.strings */; };
+		37CC15471FFF91FD006C9A81 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 37CC15491FFF91FD006C9A81 /* Localizable.strings */; };
 		37DE5F861FEA43080017E09D /* DateFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37DE5F851FEA43080017E09D /* DateFormatter.swift */; };
 		37DE5F891FEA61D00017E09D /* SwitchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37DE5F871FEA61D00017E09D /* SwitchTableViewCell.swift */; };
 		37DE5F8A1FEA61D00017E09D /* SwitchTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 37DE5F881FEA61D00017E09D /* SwitchTableViewCell.xib */; };
@@ -193,6 +196,11 @@
 		37C0FF4D1FE8F104002EACF3 /* i-Chat.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "i-Chat.entitlements"; sourceTree = "<group>"; };
 		37CA181D1FE2221500C1171B /* FirebaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseManager.swift; sourceTree = "<group>"; };
 		37CA181F1FE2304100C1171B /* AudioViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioViewController.swift; sourceTree = "<group>"; };
+		37CC153C1FFF6684006C9A81 /* ArrayExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArrayExtension.swift; sourceTree = "<group>"; };
+		37CC153E1FFF8F67006C9A81 /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/Main.strings"; sourceTree = "<group>"; };
+		37CC153F1FFF8F67006C9A81 /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
+		37CC15431FFF91FC006C9A81 /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
+		37CC15481FFF91FD006C9A81 /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		37DE5F851FEA43080017E09D /* DateFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateFormatter.swift; sourceTree = "<group>"; };
 		37DE5F871FEA61D00017E09D /* SwitchTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwitchTableViewCell.swift; sourceTree = "<group>"; };
 		37DE5F881FEA61D00017E09D /* SwitchTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SwitchTableViewCell.xib; sourceTree = "<group>"; };
@@ -312,6 +320,8 @@
 		3714597D1FDFAABF00C1F14A /* i-Chat */ = {
 			isa = PBXGroup;
 			children = (
+				37CC15491FFF91FD006C9A81 /* Localizable.strings */,
+				37CC15441FFF91FC006C9A81 /* InfoPlist.strings */,
 				37C0FF4D1FE8F104002EACF3 /* i-Chat.entitlements */,
 				371459BA1FDFD90500C1F14A /* Key */,
 				3714597E1FDFAABF00C1F14A /* AppDelegate.swift */,
@@ -427,6 +437,7 @@
 			isa = PBXGroup;
 			children = (
 				370832B71FE3806700D4DC86 /* User.swift */,
+				37CC153C1FFF6684006C9A81 /* ArrayExtension.swift */,
 				371E76C81FF0ED9A00EF7CB2 /* ProfileImage.swift */,
 				372F85061FFE89CE00D6BCB1 /* Message.swift */,
 			);
@@ -618,6 +629,7 @@
 			files = (
 				37E1D1721FFB38C600EC9BA6 /* FriendCollectionViewCell.xib in Resources */,
 				371459891FDFAABF00C1F14A /* LaunchScreen.storyboard in Resources */,
+				37CC15471FFF91FD006C9A81 /* Localizable.strings in Resources */,
 				37DE5F8A1FEA61D00017E09D /* SwitchTableViewCell.xib in Resources */,
 				3792B0C81FF3CFF800AB4838 /* OverlayView.xib in Resources */,
 				37A5BBA11FE6288500C4F1E6 /* ProfileCollectionViewCell.xib in Resources */,
@@ -625,6 +637,7 @@
 				37F61A2B1FFDB73C002DBAFA /* FriendCollectionReusableView.xib in Resources */,
 				37C0FF1C1FE7672C002EACF3 /* GoogleService-Info.plist in Resources */,
 				37DE5F991FEA65B30017E09D /* LogoutTableViewCell.xib in Resources */,
+				37CC15421FFF91FC006C9A81 /* InfoPlist.strings in Resources */,
 				3792B0B71FF2537000AB4838 /* AgeRangeTableViewCell.xib in Resources */,
 				37A5BBA91FE628B900C4F1E6 /* ChatCollectionViewCell.xib in Resources */,
 				37F05EE41FF5F322006D20A6 /* CardView.xib in Resources */,
@@ -771,6 +784,7 @@
 				37C0FF4C1FE8BE58002EACF3 /* RingtoneManager.swift in Sources */,
 				370832B61FE3800200D4DC86 /* CallManager.swift in Sources */,
 				3792B0B11FF2386700AB4838 /* GenderPickerController.swift in Sources */,
+				37CC153D1FFF6684006C9A81 /* ArrayExtension.swift in Sources */,
 				376C3FBA1FEBACF900EAF188 /* PreferenceViewController.swift in Sources */,
 				376C3FB81FEBA92900EAF188 /* GenderViewController.swift in Sources */,
 				372F85031FFE4C4D00D6BCB1 /* State.swift in Sources */,
@@ -819,6 +833,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				371459831FDFAABF00C1F14A /* Base */,
+				37CC153E1FFF8F67006C9A81 /* zh-Hant */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -827,8 +842,25 @@
 			isa = PBXVariantGroup;
 			children = (
 				371459881FDFAABF00C1F14A /* Base */,
+				37CC153F1FFF8F67006C9A81 /* zh-Hant */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		37CC15441FFF91FC006C9A81 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				37CC15431FFF91FC006C9A81 /* zh-Hant */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		37CC15491FFF91FD006C9A81 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				37CC15481FFF91FD006C9A81 /* zh-Hant */,
+			);
+			name = Localizable.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -838,6 +870,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -895,6 +928,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";

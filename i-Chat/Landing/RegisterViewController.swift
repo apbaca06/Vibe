@@ -91,6 +91,10 @@ class RegisterViewController: UIViewController {
 
     func setUpButton() {
 
+        registerButton.setTitle(NSLocalizedString("Register", comment: ""), for: .normal)
+
+        loginButton.setTitle(NSLocalizedString("Login", comment: ""), for: .normal)
+
         registerButton.cornerRadius = 10
 
         loginButton.cornerRadius = 10

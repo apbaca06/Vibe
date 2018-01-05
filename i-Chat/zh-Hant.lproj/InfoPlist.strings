@@ -1,0 +1,9 @@
+/* (No Comment) */
+"NSLocationAlwaysUsageDescription" = "開通GPS";
+
+/* (No Comment) */
+"NSLocationWhenInUseUsageDescription" = "開通GPS";
+
+/* (No Comment) */
+"NSMicrophoneUsageDescription" = "打開麥克風";
+

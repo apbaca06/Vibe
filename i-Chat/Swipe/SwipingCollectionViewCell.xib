@@ -106,6 +106,7 @@
                 <outlet property="dislikeButton" destination="D7V-AC-Bgt" id="pJV-Xo-YPs"/>
                 <outlet property="likeButton" destination="HOR-Rw-eWW" id="wsY-Xm-wUf"/>
                 <outlet property="swipeView" destination="5EJ-f3-iyI" id="X0p-x6-NFO"/>
+                <outlet property="turningIndicator" destination="CQu-nI-cWe" id="gNo-Y1-vRD"/>
             </connections>
             <point key="canvasLocation" x="84" y="53.5"/>
         </collectionViewCell>

@@ -66,7 +66,7 @@ class AgeViewController: UIViewController {
 
         button.cornerRadius = 10
 
-        button.setTitle(NSLocalizedString("Conform", comment: ""), for: .normal)
+        button.setTitle(NSLocalizedString("Confirm", comment: ""), for: .normal)
 
         dateLabel.text = NSLocalizedString("Your birthday", comment: "")
 

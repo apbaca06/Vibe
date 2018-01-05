@@ -1,0 +1,183 @@
+/* No comment provided by engineer. */
+"(self.users[indexPath.row].0.name) is blocked!" = "用戶已被封鎖";
+
+/* No comment provided by engineer. */
+"Age Range" = "年齡範圍";
+
+/* No comment provided by engineer. */
+"Agreed on EULA when registered" = "註冊即代表同意隱私權條款";
+
+/* No comment provided by engineer. */
+"Back" = "上一頁";
+
+/* No comment provided by engineer. */
+"Block" = "封鎖";
+
+/* No comment provided by engineer. */
+"Call rejected" = "拒絕";
+
+/* No comment provided by engineer. */
+"Cancel" = "取消";
+
+/* No comment provided by engineer. */
+"Confirm" = "同意";
+
+/* No comment provided by engineer. */
+"Connecting to communication service" = "連接通訊服務";
+
+/* No comment provided by engineer. */
+"Connecting to server" = "連接伺服器";
+
+/* No comment provided by engineer. */
+"Create" = "註冊";
+
+/* No comment provided by engineer. */
+"Don't have an account?" = "還沒有帳號？";
+
+/* No comment provided by engineer. */
+"EULA" = "隱私權條款";
+
+/* No comment provided by engineer. */
+"For people to know you better" = "讓大家更認識你";
+
+/* No comment provided by engineer. */
+"Forgot password?" = "忘記密碼？";
+
+/* No comment provided by engineer. */
+"Friends" = "朋友";
+
+/* No comment provided by engineer. */
+"Gender" = "性別";
+
+/* No comment provided by engineer. */
+"Gender Preference" = "性別取向";
+
+/* No comment provided by engineer. */
+"Go chat!" = "聊天去！";
+
+/* No comment provided by engineer. */
+"Go swipe!" = "繼續滑！";
+
+/* No comment provided by engineer. */
+"Go to chat!" = "聊天去！";
+
+/* No comment provided by engineer. */
+"History" = "歷史紀錄";
+
+/* No comment provided by engineer. */
+"Insert Report Content" = "輸入檢舉內容";
+
+/* No comment provided by engineer. */
+"Invalid Email" = "不正確的信箱";
+
+/* No comment provided by engineer. */
+"Invalid Password" = "不正確的密碼";
+
+/* No comment provided by engineer. */
+"It's a Match" = "成為朋友！";
+
+/* No comment provided by engineer. */
+"It's been reported!" = "已經檢舉！";
+
+/* No comment provided by engineer. */
+"Keep swiping!" = "繼續滑！";
+
+/* No comment provided by engineer. */
+"Likes" = "讚";
+
+/* No comment provided by engineer. */
+"Location" = "位置";
+
+/* No comment provided by engineer. */
+"Logging in..." = "登入中";
+
+/* No comment provided by engineer. */
+"Login" = "登入";
+
+/* No comment provided by engineer. */
+"Login Successfully" = "登入成功";
+
+/* No comment provided by engineer. */
+"Logout" = "登出";
+
+/* No comment provided by engineer. */
+"Max Distance" = "最大距離";
+
+/* No comment provided by engineer. */
+"No blank are allowed for registeration!" = "不允許空白！";
+
+/* No comment provided by engineer. */
+"No friends yet!" = "尚未有朋友";
+
+/* No comment provided by engineer. */
+"No more cards" = "滑到底部了！";
+
+/* No comment provided by engineer. */
+"Notification" = "通知";
+
+/* No comment provided by engineer. */
+"OK" = "OK";
+
+/* No comment provided by engineer. */
+"Please Insert Content" = "請輸入內容";
+
+/* No comment provided by engineer. */
+"Please change your preference to meet more people!" = "改變設定來認識更多人";
+
+/* No comment provided by engineer. */
+"Please have password longer than 8 characters!" = "密碼長度要大於8個字";
+
+/* No comment provided by engineer. */
+"Please insert content!" = "請輸入內容";
+
+/* No comment provided by engineer. */
+"Please insert correct email!" = "請輸入正確信箱";
+
+/* No comment provided by engineer. */
+"Please insert your gender" = "請選擇你的性別";
+
+/* No comment provided by engineer. */
+"Please select" = "請選擇";
+
+/* No comment provided by engineer. */
+"Please select one photo" = "請選擇一張照片";
+
+/* No comment provided by engineer. */
+"Register" = "註冊";
+
+/* No comment provided by engineer. */
+"Reject Call" = "拒絕通話";
+
+/* No comment provided by engineer. */
+"Report" = "檢舉";
+
+/* No comment provided by engineer. */
+"Search" = "搜尋";
+
+/* No comment provided by engineer. */
+"Set your birthday" = "設定生日";
+
+/* No comment provided by engineer. */
+"Setting" = "設定";
+
+/* No comment provided by engineer. */
+"Show on app" = "顯示在app上";
+
+/* No comment provided by engineer. */
+"Signing up..." = "註冊中...";
+
+/* No comment provided by engineer. */
+"Tap to add photo!" = "點擊來新增照片";
+
+/* No comment provided by engineer. */
+"Unable to contact (user.0.name)!" = "沒辦法聯絡";
+
+/* No comment provided by engineer. */
+"You may never unoblock!" = "之後都不能解除封鎖";
+
+/* No comment provided by engineer. */
+"Your age" = "你的年齡";
+
+/* No comment provided by engineer. */
+"Your birthday" = "你的生日";
+

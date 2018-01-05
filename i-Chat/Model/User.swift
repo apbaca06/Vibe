@@ -309,3 +309,19 @@ struct User {
     }
 
 }
+
+// MARK: - Equatable
+extension User: Equatable {
+
+    static func == (lhs: User, rhs: User) -> Bool {
+
+        return lhs.id == rhs.id
+            && lhs.age == rhs.age
+            && lhs.email == rhs.email
+            && lhs.gender == rhs.gender
+            && lhs.name == rhs.name
+            && lhs.qbID == rhs.qbID
+
+    }
+
+}

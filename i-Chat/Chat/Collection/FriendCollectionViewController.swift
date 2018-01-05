@@ -86,6 +86,17 @@ class FriendCollectionViewController: UIViewController, UICollectionViewDelegate
             self.users = friends
             self.collectionView.reloadData()
         }
+
+        if users.count == 0 {
+            // swiftlint:disable force_cast
+            let noFriendViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "NoFriendViewController") as! NoFriendViewController
+            // swiftlint:enable force_cast
+
+            noFriendViewController.modalPresentationStyle = .overFullScreen
+            noFriendViewController.modalTransitionStyle = .crossDissolve
+
+            present(noFriendViewController, animated: true, completion: nil)
+        }
     }
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
@@ -178,16 +189,6 @@ class FriendCollectionViewController: UIViewController, UICollectionViewDelegate
     }
 
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        if users.count == 0 {
-            // swiftlint:disable force_cast
-            let noFriendViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "NoFriendViewController") as! NoFriendViewController
-            // swiftlint:enable force_cast
-
-            noFriendViewController.modalPresentationStyle = .overFullScreen
-            noFriendViewController.modalTransitionStyle = .crossDissolve
-
-            present(noFriendViewController, animated: true, completion: nil)
-        }
         return users.count
     }
 

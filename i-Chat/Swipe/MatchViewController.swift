@@ -10,11 +10,11 @@ import UIKit
 
 class MatchViewController: UIViewController {
 
-    var state: State?
-
-    func updateState() {
-        state = nil
-    }
+//    var state: State?
+//
+//    func updateState() {
+//        state = nil
+//    }
 
     @IBOutlet weak var staySwipeButton: UIButton!
     @IBOutlet weak var heatImageView: UIImageView!
@@ -26,7 +26,7 @@ class MatchViewController: UIViewController {
     }
 
     @IBAction func goChat(_ sender: Any) {
-        updateState()
+//        updateState()
         self.dismiss(animated: true)
     }
 
