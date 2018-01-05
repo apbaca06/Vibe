@@ -14,6 +14,18 @@ import Koloda
 import Nuke
 
 extension HomeViewController: CLLocationManagerDelegate, FriendCollectionViewControllerDelegate {
+
+    @objc func callOther() {
+
+        QBRTCAudioSession.instance().currentAudioDevice = .receiver
+
+        // swiftlint:disable force_cast
+        let callOutViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "CallOutViewController") as! CallOutViewController
+        // swiftlint:enable force_cast
+
+        self.present(callOutViewController, animated: true, completion: nil)
+    }
+
     func controller(_ controller: FriendCollectionViewController, didCall user: (User, String, Bool)) {
         switch user.2 {
 
@@ -100,8 +112,6 @@ extension HomeViewController: CLLocationManagerDelegate, FriendCollectionViewCon
     }
 
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        let location = locations[0]
-
         locationManager.stopUpdatingLocation()
     }
 
@@ -198,7 +208,6 @@ extension HomeViewController: KolodaViewDataSource {
 
             matchViewController.modalPresentationStyle = .overFullScreen
             matchViewController.modalTransitionStyle = .crossDissolve
-//            self.state = matchViewController.state
             present(matchViewController, animated: true, completion: nil)
         }
 

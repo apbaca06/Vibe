@@ -113,16 +113,21 @@ class FriendCollectionViewController: UIViewController, UICollectionViewDelegate
 
         guard let url = URL(string: users[indexPath.row].0.profileImgURL)
             else { return cell }
-
         Manager.shared.loadImage(with: url, into: cell.profileImageView)
 
         cell.callButton.addTarget(self, action: #selector(call(_:)), for: .touchUpInside)
 
         cell.friendName.text = users[indexPath.row].0.name
+
         if users[indexPath.row].2 == true {
             cell.callButton.tintColor = .gray
             cell.friendName.textColor = .gray
             cell.profileImageView.tintColor = .gray
+        } else {
+            cell.friendName.textColor = .black
+
+            cell.callButton.tintColor = UIColor(red: 215/255.0, green: 38/255.0, blue: 56/255.0, alpha: 1)
+            cell.profileImageView.tintColor = UIColor(red: 215/255.0, green: 38/255.0, blue: 56/255.0, alpha: 1)
         }
 
         return cell

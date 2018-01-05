@@ -26,8 +26,6 @@ public enum UserProviderError: Error {
 
 protocol UserProviderDelegate: class {
 
-//    func userProvider(_ provider: UserProvider, didFetch users: [User], didGet distanceBtwn: [Int], didFetch currentUser: User)
-
     func userProvider(_ provider: UserProvider, didFetch distanceUser: [(User, Int)], didFetch currentUser: User)
 
 }
@@ -77,8 +75,6 @@ class UserProvider {
                     let longitude = Double(self.keychain.get("longitude")!)
 
                 else {
-//                        let error: UserProviderError = .missingValueForCurrentUser
-//                        throw error
                     return
 
                     }
@@ -124,14 +120,12 @@ class UserProvider {
                         }
 
                     } catch {
-//                        let error: UserProviderError = .qeuryForGenderPreferenceError
-//                        throw error
+
                         return
                     }
                 }
             } catch {
-//                let error: UserProviderError = .loadSwipeViewError
-//                throw error
+
                 return
             }
         }

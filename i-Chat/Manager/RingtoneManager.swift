@@ -24,27 +24,14 @@ class RingtoneManager {
 
             try ringPlayer = AVAudioPlayer(contentsOf: url)
 
-//            let audioSession = AVAudioSession.sharedInstance()
-//            
-////            try audioSession.setCategory(AVAudioSessionCategoryPlayAndRecord, with: .mixWithOthers)
-//            
-//            try audioSession.setMode(AVAudioSessionPortBuiltInReceiver)
-//            
-//            try audioSession.setActive(true)
-//            audioSession.setCategory
-//            session.setCategory(AVAudioSessionCategoryPlayAndRecord, withOptions: AVAudioSessionCategoryOptions.DefaultToSpeaker, error: nil)
-
-//            AVAudioSession.setCategory(<#T##AVAudioSession#>)
-//            AVAudioSession.setCategory(AVAudioSessionCategoryPlayAndRecord, withOptions: AVAudioSessionCategoryOptions.DefaultToSpeaker, error: nil)
-//
-//            AVAudioSession.sharedInstance().setActive(true, error: nil)
-
             ringPlayer.numberOfLoops = 5
 
             ringPlayer.play()
 
         } catch {
+
             let error = error
+            UIAlertController(error: error).show()
         }
     }
 }

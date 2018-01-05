@@ -33,7 +33,6 @@
 		371459AF1FDFACBC00C1F14A /* QuickbloxWebRTC.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 371459A31FDFAC9500C1F14A /* QuickbloxWebRTC.framework */; };
 		371459B01FDFACBC00C1F14A /* QuickbloxWebRTC.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 371459A31FDFAC9500C1F14A /* QuickbloxWebRTC.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		371459B51FDFB16900C1F14A /* APIKey.plist in Resources */ = {isa = PBXBuildFile; fileRef = 371459B41FDFB16900C1F14A /* APIKey.plist */; };
-		371459B91FDFD11100C1F14A /* Chat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 371459B81FDFD11100C1F14A /* Chat.swift */; };
 		3717DD221FE66E35003CD462 /* HomeComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3717DD211FE66E35003CD462 /* HomeComponent.swift */; };
 		371E76C91FF0ED9A00EF7CB2 /* ProfileImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 371E76C81FF0ED9A00EF7CB2 /* ProfileImage.swift */; };
 		372E8E101FF10355002CAC96 /* Ripple.swift in Sources */ = {isa = PBXBuildFile; fileRef = 372E8E0F1FF10355002CAC96 /* Ripple.swift */; };
@@ -149,7 +148,6 @@
 		371459A41FDFAC9500C1F14A /* Quickblox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Quickblox.framework; sourceTree = "<group>"; };
 		371459B31FDFAF0300C1F14A /* Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Bridging-Header.h"; sourceTree = "<group>"; };
 		371459B41FDFB16900C1F14A /* APIKey.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = APIKey.plist; sourceTree = "<group>"; };
-		371459B81FDFD11100C1F14A /* Chat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Chat.swift; sourceTree = "<group>"; };
 		3717DD211FE66E35003CD462 /* HomeComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeComponent.swift; sourceTree = "<group>"; };
 		371E76C81FF0ED9A00EF7CB2 /* ProfileImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileImage.swift; sourceTree = "<group>"; };
 		372E8E0F1FF10355002CAC96 /* Ripple.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ripple.swift; sourceTree = "<group>"; };
@@ -325,7 +323,6 @@
 				37C0FF4D1FE8F104002EACF3 /* i-Chat.entitlements */,
 				371459BA1FDFD90500C1F14A /* Key */,
 				3714597E1FDFAABF00C1F14A /* AppDelegate.swift */,
-				371459B81FDFD11100C1F14A /* Chat.swift */,
 				37C0FF201FE7D26A002EACF3 /* Model */,
 				370832AE1FE2840E00D4DC86 /* Manager */,
 				370832AC1FE283D800D4DC86 /* Landing */,
@@ -794,7 +791,6 @@
 				37DE5F981FEA65B30017E09D /* LogoutTableViewCell.swift in Sources */,
 				3792B0CC1FF5ECEE00AB4838 /* UserProvider.swift in Sources */,
 				370832B01FE2847F00D4DC86 /* IncomingCallViewController.swift in Sources */,
-				371459B91FDFD11100C1F14A /* Chat.swift in Sources */,
 				37B4EDD31FF7976800185785 /* MatchViewController.swift in Sources */,
 				37CA181E1FE2221500C1171B /* FirebaseManager.swift in Sources */,
 				3792B0B61FF2537000AB4838 /* AgeRangeTableViewCell.swift in Sources */,

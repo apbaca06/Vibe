@@ -15,6 +15,7 @@ import Koloda
 import Nuke
 
 class HomeViewController: UICollectionViewController, UICollectionViewDelegateFlowLayout, UserProviderDelegate {
+
     func userProvider(_ provider: UserProvider, didFetch distanceUser: [(User, Int)], didFetch currentUser: User) {
         self.distanceUsers = distanceUser
 
@@ -72,12 +73,9 @@ class HomeViewController: UICollectionViewController, UICollectionViewDelegateFl
 
         userProvider.delegate = self
 
-        // self class must conform to QBRTCClientDelegate protocol
         QBRTCClient.instance().add(self)
 
         QBRTCAudioSession.instance().initialize()
-
-//        SVProgressHUD.dismiss()
 
         setupCollectionView()
 
@@ -88,19 +86,6 @@ class HomeViewController: UICollectionViewController, UICollectionViewDelegateFl
         scrollToMenuIndex(1)
 
         setupLocationManager()
-
-    }
-
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-//        if state == nil {
-//            scrollToMenuIndex(2)
-//        }
-
-    }
-
-    override func viewWillDisappear(_ animated: Bool) {
-        super.viewWillDisappear(animated)
 
     }
 
@@ -334,35 +319,24 @@ class HomeViewController: UICollectionViewController, UICollectionViewDelegateFl
 
             friendCollectionViewController.view.heightAnchor.constraint(equalTo: cell.contentView.heightAnchor).isActive = true
 
-//            friendCollectionViewController.view.heightAnchor.constraint(equalToConstant: 135).isActive = true
-
-//            friendViewController.view.topAnchor.constraint(equalTo: friendCollectionViewController.view.bottomAnchor).isActive = true
-//
-//            friendViewController.view.leadingAnchor.constraint(equalTo: cell.contentView.leadingAnchor).isActive = true
-//
-//            friendViewController.view.widthAnchor.constraint(equalTo: cell.contentView.widthAnchor).isActive = true
-//
-//            friendViewController.view.heightAnchor.constraint(equalTo: cell.contentView.heightAnchor, multiplier: 1, constant: -135).isActive = true
-
             friendCollectionViewController.view.translatesAutoresizingMaskIntoConstraints = false
 
-//            friendViewController.view.translatesAutoresizingMaskIntoConstraints = false
+            //            friendCollectionViewController.view.heightAnchor.constraint(equalToConstant: 135).isActive = true
+
+            //            friendViewController.view.topAnchor.constraint(equalTo: friendCollectionViewController.view.bottomAnchor).isActive = true
+            //
+            //            friendViewController.view.leadingAnchor.constraint(equalTo: cell.contentView.leadingAnchor).isActive = true
+            //
+            //            friendViewController.view.widthAnchor.constraint(equalTo: cell.contentView.widthAnchor).isActive = true
+            //
+            //            friendViewController.view.heightAnchor.constraint(equalTo: cell.contentView.heightAnchor, multiplier: 1, constant: -135).isActive = true
+
+            //            friendViewController.view.translatesAutoresizingMaskIntoConstraints = false
 
             return cell
 
         }
 
-    }
-
-    @objc func callOther() {
-
-        QBRTCAudioSession.instance().currentAudioDevice = .receiver
-
-        // swiftlint:disable force_cast
-        let callOutViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "CallOutViewController") as! CallOutViewController
-        // swiftlint:enable force_cast
-
-        self.present(callOutViewController, animated: true, completion: nil)
     }
 
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {

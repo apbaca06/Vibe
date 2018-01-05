@@ -30,6 +30,7 @@ class CallManager {
 
             with: QBRTCConferenceType.audio
         )
+
         let keychain = KeychainSwift()
 
         guard let name = keychain.get("name"),

@@ -36,18 +36,7 @@ class QuickbloxManager {
             QBChat.instance.connect(with: uuser!, completion: { (error) in
 
                 if error == nil {
-
-//                    if let firebaseUser = Auth.auth().currentUser {
-//
-//                        DatabasePath.userRef.child(firebaseUser.uid).updateChildValues(["lastLoginTime": uuser?.lastRequestAt?.iso8601String])
-//                    }
                     SVProgressHUD.dismiss()
-
-//                    SVProgressHUD.show(withStatus: NSLocalizedString("Login Successfully", comment: ""))
-
-//                    let layout = UICollectionViewFlowLayout()
-//
-//                    AppDelegate.shared.window?.rootViewController = HomeViewController(collectionViewLayout: layout)
 
                 } else {
 
@@ -99,8 +88,7 @@ class QuickbloxManager {
                 DatabasePath.userRef.child(firebaseUser.uid).setValue(["name": name,
                                                            "email": email,
                                                            "qbID": user.id,
-                                                           "createdTime": user.createdAt?.iso8601String,
-                                                           "lastLoginTime": user.lastRequestAt?.iso8601String])
+                                                           "createdTime": user.createdAt?.iso8601String])
             }
 
         }) { (response) in

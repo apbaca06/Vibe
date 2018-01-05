@@ -64,10 +64,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
         SVProgressHUD.setDefaultMaskType(.clear)
 
-        // Todo
         QBRTCAudioSession.instance().initialize()
 
-        // IQKeyBoardManager
         IQKeyboardManager.shared().isEnabled = true
 
         IQKeyboardManager.shared().shouldResignOnTouchOutside = true
@@ -83,9 +81,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                   let password = keychain.get("userPassword")
 
                 else { return true }
-
-//            let layout = UICollectionViewFlowLayout()
-//            AppDelegate.shared.window?.rootViewController = HomeViewController(collectionViewLayout: layout)
 
             QuickbloxManager.logInSync(
 
