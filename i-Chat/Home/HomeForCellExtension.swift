@@ -128,6 +128,7 @@ extension HomeViewController: KolodaViewDelegate {
         alert.addAction(title: NSLocalizedString("OK", comment: ""))
 
         alert.show()
+        self.distanceUsers = []
 
         self.collectionView?.reloadData()
     }
@@ -143,8 +144,12 @@ extension HomeViewController: KolodaViewDelegate {
 extension HomeViewController: KolodaViewDataSource {
 
     func kolodaNumberOfCards(_ koloda: KolodaView) -> Int {
-
-        return distanceUsers.count
+        
+        if distanceUsers.count == 0 {
+            return allUsers.count
+        } else {
+            return distanceUsers.count
+        }
     }
 
     func kolodaSpeedThatCardShouldDrag(_ koloda: KolodaView) -> DragSpeed {
@@ -157,15 +162,7 @@ extension HomeViewController: KolodaViewDataSource {
         else {
             return UIView()
         }
-
-        if distanceUsers.count <= index {
-
-            let myView = UIView()
-            myView.backgroundColor = .black
-
-            return myView
-        } else {
-
+        if self.distanceUsers.count != 0 {
             cardView.ageLabel.text = String(describing: distanceUsers[index].0.age)
             cardView.nameLabel.text = String(describing: distanceUsers[index].0.name)
             cardView.distanceLabel.text = "\(String(describing: distanceUsers[index].1)) km"
@@ -173,7 +170,17 @@ extension HomeViewController: KolodaViewDataSource {
             let imageURL = URL(string: distanceUsers[index].0.profileImgURL)!
             Manager.shared.loadImage(with: imageURL, into: cardView.imageView)
             return cardView
+        } else {
+            cardView.ageLabel.text = String(describing: allUsers[index].0.age)
+            cardView.nameLabel.text = String(describing: allUsers[index].0.name)
+            cardView.distanceLabel.text = "\(String(describing: allUsers[index].1)) km"
+            cardView.cityName.text = allUsers[index].0.cityName
+            let imageURL = URL(string: allUsers[index].0.profileImgURL)!
+            Manager.shared.loadImage(with: imageURL, into: cardView.imageView)
+            return cardView
+            
         }
+        
     }
 
     func koloda(_ koloda: KolodaView, viewForCardOverlayAt index: Int) -> OverlayView? {
@@ -184,24 +191,33 @@ extension HomeViewController: KolodaViewDataSource {
 
         guard let uid = self.keychain.get("uid")
             else { return }
-
+        
         if direction == .left {
 
+            if distanceUsers.count != 0 {
+
             FirebaseManager.userUnlike(uid: uid, recieverUid: distanceUsers[index].0.id)
+            } else {
+                FirebaseManager.userUnlike(uid: uid, recieverUid: allUsers[index].0.id)
+            }
         }
-
+        
         if direction == .right {
-
-            FirebaseManager.userLike(uid: uid, recieverUid: distanceUsers[index].0.id)
-            FirebaseManager.userSwipedLike(uid: uid, recieverUid: distanceUsers[index].0.id)
-            FirebaseManager.findIfWasSwiped(uid: uid, recieverUid: distanceUsers[index].0.id, completionHandler: showIsMatchedView)
-
+            if distanceUsers.count != 0 {
+                FirebaseManager.userLike(uid: uid, recieverUid: distanceUsers[index].0.id)
+                FirebaseManager.userSwipedLike(uid: uid, recieverUid: distanceUsers[index].0.id)
+                FirebaseManager.findIfWasSwiped(uid: uid, recieverUid: distanceUsers[index].0.id, completionHandler: showIsMatchedView)
+            } else {
+                FirebaseManager.userLike(uid: uid, recieverUid: allUsers[index].0.id)
+                FirebaseManager.userSwipedLike(uid: uid, recieverUid: allUsers[index].0.id)
+                FirebaseManager.findIfWasSwiped(uid: uid, recieverUid: allUsers[index].0.id, completionHandler: showIsMatchedView)
+            }
         }
     }
+    
     func showIsMatchedView(isMatch: Bool) {
 
         if isMatch == true {
-
             // swiftlint:disable force_cast
             let matchViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "matchViewController") as! MatchViewController
             // swiftlint:enable force_cast
@@ -210,6 +226,5 @@ extension HomeViewController: KolodaViewDataSource {
             matchViewController.modalTransitionStyle = .crossDissolve
             present(matchViewController, animated: true, completion: nil)
         }
-
     }
 }

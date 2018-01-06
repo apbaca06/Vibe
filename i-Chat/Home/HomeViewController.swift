@@ -15,16 +15,20 @@ import Koloda
 import Nuke
 
 class HomeViewController: UICollectionViewController, UICollectionViewDelegateFlowLayout, UserProviderDelegate {
-
-    func userProvider(_ provider: UserProvider, didFetch distanceUser: [(User, Int)], didFetch currentUser: User) {
+    func userProvider(_ provider: UserProvider, didFetch distanceUser: [(User, Int)], didFetch allUsers: [(User, Int)], didFetch currentUser: User) {
+        self.allUsers = allUsers
         self.distanceUsers = distanceUser
-
+        self.currentUser = currentUser        
         self.collectionView?.reloadData()
     }
+    
+
 
     var state: State?
 
     var distanceUsers: [(User, Int)] = []
+    
+    var allUsers: [(User, Int)] = []
 
     var userInfo: [String: String]?
 

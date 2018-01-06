@@ -26,7 +26,7 @@ public enum UserProviderError: Error {
 
 protocol UserProviderDelegate: class {
 
-    func userProvider(_ provider: UserProvider, didFetch distanceUser: [(User, Int)], didFetch currentUser: User)
+    func userProvider(_ provider: UserProvider, didFetch distanceUser: [(User, Int)], didFetch allUsers: [(User, Int)], didFetch currentUser: User)
 
 }
 
@@ -51,11 +51,16 @@ class UserProvider {
         guard let uid = keychain.get("uid")
             else { return }
 
-        DatabasePath.userRef.child(uid).observe(.value) { [unowned self] (datashot) in
-            do {
+        DatabasePath
+            .userRef
+            .child(uid)
+            .observe(.value, with: { (datasnapshot) in
 
-                let userDic = [ datashot.key: datashot.value]
-                let currentUser = try User(userDic)
+            let userDic = [ datasnapshot.key: datasnapshot.value]
+            var currentAuthUser: User?
+            do {
+                let currentUser =  try User(userDic)
+                currentAuthUser = currentUser
 
                 self.keychain.set("\(currentUser.name)", forKey: "name")
                 self.keychain.set("\(currentUser.profileImgURL)", forKey: "profileImgURL")
@@ -73,61 +78,71 @@ class UserProvider {
                     let maxDistance = Int(self.keychain.get("maxDistance")!),
                     let latitude = Double(self.keychain.get("latitude")!),
                     let longitude = Double(self.keychain.get("longitude")!)
+                    else { return }
 
-                else {
-                    return
-
-                    }
-
-                DatabasePath.userRef.queryOrdered(byChild: "gender").queryEqual(toValue: preference).observe(.value) { (dataSnapshot) in
-
-                    do {
+                DatabasePath
+                    .userRef
+                    .queryOrdered(byChild: "gender")
+                    .queryEqual(toValue: preference)
+                    .observe(.value) { (dataSnapshot) in
 
                         guard let datas = dataSnapshot.value as? [String: Any]
-                        else {
-                            let error: UserProviderError = .notObject
-                            throw error
-                        }
-
+                            else { return }
                         self.distanceUsers = []
-
                         var allUsers: [(User, Int)] = []
 
                         for data in datas {
 
-                            let userDic = [data.key: data.value]
-                            let user = try User(userDic)
+                            do {
+                                let userDic = [data.key: data.value]
+                                let user = try User(userDic)
 
-                            let location1 = CLLocation(latitude: latitude, longitude: longitude)
-                            let location2 = CLLocation(latitude: user.latitude, longitude: user.longitude)
-                            let distanceBtwn = Int((location1.distance(from: location2))/1000)
+                                let location1 = CLLocation(latitude: latitude, longitude: longitude)
+                                let location2 = CLLocation(latitude: user.latitude, longitude: user.longitude)
+                                let distanceBtwn = Int((location1.distance(from: location2))/1000)
 
-                            if user.email != Auth.auth().currentUser?.email {
-                                allUsers.append((user, distanceBtwn))
-                            }
-                            if user.age >= minAge && user.age <= maxAge && distanceBtwn <= maxDistance && currentUser.likeUserID.has(key: user.id) == false {
+                                if user.email != Auth.auth().currentUser?.email {
+                                    allUsers.append((user, distanceBtwn))
+                                }
 
-                                self.distanceUsers.append((user, distanceBtwn))
-
+                                if user.email != Auth.auth().currentUser?.email && user.age >= minAge && user.age <= maxAge && distanceBtwn <= maxDistance && user.likeUserID.has(key: user.id) == false {
+                                    self.distanceUsers.append((user, distanceBtwn))
+                                }
+                            } catch {
+                                print("Some user with not enough data!")
                             }
                         }
+                        guard let user = currentAuthUser
+                            else { return }
                         if self.distanceUsers.count == 0 {
-
-                            self.delegate?.userProvider(self, didFetch: allUsers, didFetch: currentUser)
-
+                            self.delegate?.userProvider(self, didFetch: self.distanceUsers, didFetch: allUsers, didFetch: user)
                         } else {
-                        self.delegate?.userProvider(self, didFetch: self.distanceUsers, didFetch: currentUser)
+                            self.delegate?.userProvider(self, didFetch: self.distanceUsers, didFetch: allUsers, didFetch: user)
                         }
 
-                    } catch {
-
-                        return
-                    }
                 }
+
             } catch {
 
+                let alertController = UIAlertController(title: NSLocalizedString("\(error)", comment: ""), message: "We'll try to fix it soon!", preferredStyle: .alert)
+                let okAction = UIAlertAction(title: NSLocalizedString("OK", comment: ""), style: .default, handler: nil)
+                alertController.addAction(okAction)
+                alertController.show()
+
+                print("can't retrieve current user")
                 return
             }
+        }) { (error)  in
+
+            let alertController = UIAlertController(title: NSLocalizedString("\(error)", comment: ""), message: "We'll try to fix it soon!", preferredStyle: .alert)
+            let okAction = UIAlertAction(title: NSLocalizedString("OK", comment: ""), style: .default, handler: nil)
+            alertController.addAction(okAction)
+            alertController.show()
+
+            print("can't retrieve current user")
+
         }
+
     }
+
 }
