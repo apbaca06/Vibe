@@ -18,16 +18,14 @@ class HomeViewController: UICollectionViewController, UICollectionViewDelegateFl
     func userProvider(_ provider: UserProvider, didFetch distanceUser: [(User, Int)], didFetch allUsers: [(User, Int)], didFetch currentUser: User) {
         self.allUsers = allUsers
         self.distanceUsers = distanceUser
-        self.currentUser = currentUser        
+        self.currentUser = currentUser
         self.collectionView?.reloadData()
     }
-    
-
 
     var state: State?
 
     var distanceUsers: [(User, Int)] = []
-    
+
     var allUsers: [(User, Int)] = []
 
     var userInfo: [String: String]?
@@ -55,18 +53,12 @@ class HomeViewController: UICollectionViewController, UICollectionViewDelegateFl
         }
     }
 
-    let locationManager = CLLocationManager()
-
-    var cityName: String?
-
     var imageArray: [UIImage] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         state = State()
-
-        userProvider.loadSwipeImage()
 
         friendCollectionViewController.delegate = self
 
@@ -89,8 +81,11 @@ class HomeViewController: UICollectionViewController, UICollectionViewDelegateFl
 
         scrollToMenuIndex(1)
 
-        setupLocationManager()
+    }
 
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        userProvider.loadSwipeImage()
     }
 
     func setupNibCell() {
@@ -348,4 +343,5 @@ class HomeViewController: UICollectionViewController, UICollectionViewDelegateFl
         return CGSize(width: view.frame.width, height: view.frame.height - 70)
 
     }
+
 }

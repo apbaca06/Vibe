@@ -54,7 +54,7 @@ class UserProvider {
         DatabasePath
             .userRef
             .child(uid)
-            .observe(.value, with: { (datasnapshot) in
+            .observeSingleEvent(of: .value, with: { (datasnapshot) in
 
             let userDic = [ datasnapshot.key: datasnapshot.value]
             var currentAuthUser: User?
@@ -64,6 +64,7 @@ class UserProvider {
 
                 self.keychain.set("\(currentUser.name)", forKey: "name")
                 self.keychain.set("\(currentUser.profileImgURL)", forKey: "profileImgURL")
+                self.keychain.set("\(currentUser.cityName)", forKey: "cityName")
                 self.keychain.set("\(currentUser.gender)", forKey: "gender")
                 self.keychain.set("\(currentUser.minAge)", forKey: "minAge")
                 self.keychain.set("\(currentUser.maxAge)", forKey: "maxAge")
@@ -105,7 +106,10 @@ class UserProvider {
                                     allUsers.append((user, distanceBtwn))
                                 }
 
-                                if user.email != Auth.auth().currentUser?.email && user.age >= minAge && user.age <= maxAge && distanceBtwn <= maxDistance && user.likeUserID.has(key: user.id) == false {
+                                guard let currentUser = currentAuthUser
+                                else { return }
+
+                                if user.email != Auth.auth().currentUser?.email && user.age >= minAge && user.age <= maxAge && distanceBtwn <= maxDistance && currentUser.likeUserID.has(key: user.id) == false {
                                     self.distanceUsers.append((user, distanceBtwn))
                                 }
                             } catch {
@@ -124,22 +128,22 @@ class UserProvider {
 
             } catch {
 
-                let alertController = UIAlertController(title: NSLocalizedString("\(error)", comment: ""), message: "We'll try to fix it soon!", preferredStyle: .alert)
-                let okAction = UIAlertAction(title: NSLocalizedString("OK", comment: ""), style: .default, handler: nil)
-                alertController.addAction(okAction)
-                alertController.show()
+//                let alertController = UIAlertController(title: NSLocalizedString("\(error)", comment: ""), message: "We'll try to fix it soon!", preferredStyle: .alert)
+//                let okAction = UIAlertAction(title: NSLocalizedString("OK", comment: ""), style: .default, handler: nil)
+//                alertController.addAction(okAction)
+//                alertController.show()
 
-                print("can't retrieve current user")
+                print("Error", error)
                 return
             }
         }) { (error)  in
 
-            let alertController = UIAlertController(title: NSLocalizedString("\(error)", comment: ""), message: "We'll try to fix it soon!", preferredStyle: .alert)
-            let okAction = UIAlertAction(title: NSLocalizedString("OK", comment: ""), style: .default, handler: nil)
-            alertController.addAction(okAction)
-            alertController.show()
+//            let alertController = UIAlertController(title: NSLocalizedString("\(error)", comment: ""), message: "We'll try to fix it soon!", preferredStyle: .alert)
+//            let okAction = UIAlertAction(title: NSLocalizedString("OK", comment: ""), style: .default, handler: nil)
+//            alertController.addAction(okAction)
+//            alertController.show()
 
-            print("can't retrieve current user")
+            print("Error", error)
 
         }
 

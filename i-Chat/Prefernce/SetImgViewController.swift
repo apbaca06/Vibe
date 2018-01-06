@@ -10,6 +10,7 @@ import Foundation
 import Firebase
 import FirebaseStorage
 import KeychainSwift
+import SVProgressHUD
 
 class SetImgViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
@@ -104,9 +105,14 @@ class SetImgViewController: UIViewController, UIImagePickerControllerDelegate, U
         // Upload the file to the path "images/rivers.jpg"
         let uploadTask = imagesRef.putData(data, metadata: nil) { (metadata, error) in
 
+            SVProgressHUD.show(withStatus: NSLocalizedString("Saving Photo", comment: ""))
             guard let metadata = metadata
 
             else {
+                let alertController = UIAlertController(title: NSLocalizedString("Having trouble saving photo!", comment: ""), message: "We will try to fix it soon!", preferredStyle: .alert)
+                let okAction = UIAlertAction(title: NSLocalizedString("OK", comment: ""), style: .default, handler: nil)
+                alertController.addAction(okAction)
+                alertController.show()
                 print(error)
                 return
             }
@@ -115,13 +121,15 @@ class SetImgViewController: UIViewController, UIImagePickerControllerDelegate, U
 
                 else { return }
             DatabasePath.userRef.child(uid).updateChildValues([
-                "profileImgURL": "\(downloadURL)",
-                "maxDistance": 160
-            ])
-            DatabasePath.userRef.child(uid).child("agePreference").updateChildValues([
-                "min": 18,
-                "max": 55
-                ])
+                "profileImgURL": "\(downloadURL)" ], withCompletionBlock: { (_, databaseReference) in
+
+                    SVProgressHUD.dismiss()
+                    print(databaseReference, "*****")
+            })
+//            DatabasePath.userRef.child(uid).updateChildValues([
+//                "profileImgURL": "\(downloadURL)",
+//                "maxDistance": 160
+//            ])
 
         }
     }

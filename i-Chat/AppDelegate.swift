@@ -70,6 +70,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
         IQKeyboardManager.shared().shouldResignOnTouchOutside = true
 
+        Database.database().isPersistenceEnabled = true
+
         // MARK: Check if user signed in before
         let keychain = KeychainSwift()
 

@@ -11,8 +11,13 @@ import UIKit
 import SVProgressHUD
 import Firebase
 import KeychainSwift
+import CoreLocation
 
-class GenderViewController: UIViewController {
+class GenderViewController: UIViewController, CLLocationManagerDelegate {
+
+    let locationManager = CLLocationManager()
+
+    var cityName: String?
 
     @IBOutlet weak var decriptionLabel: UILabel!
 
@@ -40,6 +45,8 @@ class GenderViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        setupLocationManager()
+
         SVProgressHUD.dismiss()
 
         decriptionLabel.text = NSLocalizedString("Please insert your gender", comment: "")
@@ -60,5 +67,54 @@ class GenderViewController: UIViewController {
 
         SVProgressHUD.dismiss()
 
+    }
+
+    // MARK: Detect Location
+    func setupLocationManager() {
+
+        self.locationManager.delegate = self
+
+        self.locationManager.distanceFilter = kCLLocationAccuracyBest
+
+        self.locationManager.desiredAccuracy = kCLLocationAccuracyBest
+
+        locationManager.requestWhenInUseAuthorization()
+
+        locationManager.startUpdatingLocation()
+
+        guard let uid = self.keychain.get("uid")
+            else { return }
+
+        DatabasePath.userRef.child(uid).child("location").updateChildValues(["latitude": locationManager.location?.coordinate.latitude,
+                                                                             "longitude": locationManager.location?.coordinate.longitude])
+
+        let geoCoder = CLGeocoder()
+
+        guard let location = locationManager.location
+
+            else { return }
+
+        geoCoder.reverseGeocodeLocation(location) { (placemarks, error) in
+
+            if error != nil {
+
+                print(error)
+                return
+            }
+            guard let existPlacemarks = placemarks
+                else { return }
+            let placemark = existPlacemarks[0] as CLPlacemark
+            let cityName = placemark.locality
+
+            guard let city = cityName
+                else { return }
+            self.cityName = city
+            DatabasePath.userRef.child(uid).child("location").updateChildValues(["cityName": city])
+        }
+
+    }
+
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        locationManager.stopUpdatingLocation()
     }
 }

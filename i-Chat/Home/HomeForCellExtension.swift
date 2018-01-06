@@ -7,13 +7,12 @@
 //
 
 import Foundation
-import CoreLocation
 import Firebase
 import KeychainSwift
 import Koloda
 import Nuke
 
-extension HomeViewController: CLLocationManagerDelegate, FriendCollectionViewControllerDelegate {
+extension HomeViewController: FriendCollectionViewControllerDelegate {
 
     @objc func callOther() {
 
@@ -57,62 +56,17 @@ extension HomeViewController: CLLocationManagerDelegate, FriendCollectionViewCon
     @objc func toSettingPage() {
 
         let settingTableViewController = SettingTableViewController()
-
-        settingTableViewController.cityName = self.cityName
+//
+//        guard let cityName = keychain.get("cityName")
+//
+//        else { return }
+//
+//        settingTableViewController.cityName = cityName
 
         let navSettingTableViewController = UINavigationController(rootViewController: settingTableViewController)
 
         present(navSettingTableViewController, animated: true, completion: nil)
 
-    }
-
-    // MARK: Detect Location
-    func setupLocationManager() {
-
-        self.locationManager.delegate = self
-
-        self.locationManager.distanceFilter = kCLLocationAccuracyBest
-
-        self.locationManager.desiredAccuracy = kCLLocationAccuracyBest
-
-        locationManager.requestWhenInUseAuthorization()
-
-        locationManager.startUpdatingLocation()
-
-        guard let uid = self.keychain.get("uid")
-            else { return }
-
-        DatabasePath.userRef.child(uid).child("location").updateChildValues(["latitude": locationManager.location?.coordinate.latitude,
-                                                    "longitude": locationManager.location?.coordinate.longitude])
-
-        let geoCoder = CLGeocoder()
-
-        guard let location = locationManager.location
-
-            else { return }
-
-        geoCoder.reverseGeocodeLocation(location) { (placemarks, error) in
-
-            if error != nil {
-
-                print(error)
-                return
-            }
-            guard let existPlacemarks = placemarks
-                else { return }
-            let placemark = existPlacemarks[0] as CLPlacemark
-            let cityName = placemark.locality
-
-            guard let city = cityName
-                else { return }
-            self.cityName = city
-            DatabasePath.userRef.child(uid).child("location").updateChildValues(["cityName": city])
-        }
-
-    }
-
-    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        locationManager.stopUpdatingLocation()
     }
 
 }
@@ -122,6 +76,12 @@ extension HomeViewController: CLLocationManagerDelegate, FriendCollectionViewCon
 extension HomeViewController: KolodaViewDelegate {
 
     func kolodaDidRunOutOfCards(_ koloda: KolodaView) {
+
+        guard let uid = keychain.get("uid")
+
+            else { return }
+
+        DatabasePath.userRef.child(uid).removeAllObservers()
 
         let alert = UIAlertController(title: NSLocalizedString("No more cards", comment: ""), message: NSLocalizedString("Please change your preference to meet more people!", comment: ""), preferredStyle: .alert)
 
@@ -144,7 +104,7 @@ extension HomeViewController: KolodaViewDelegate {
 extension HomeViewController: KolodaViewDataSource {
 
     func kolodaNumberOfCards(_ koloda: KolodaView) -> Int {
-        
+
         if distanceUsers.count == 0 {
             return allUsers.count
         } else {
@@ -178,9 +138,9 @@ extension HomeViewController: KolodaViewDataSource {
             let imageURL = URL(string: allUsers[index].0.profileImgURL)!
             Manager.shared.loadImage(with: imageURL, into: cardView.imageView)
             return cardView
-            
+
         }
-        
+
     }
 
     func koloda(_ koloda: KolodaView, viewForCardOverlayAt index: Int) -> OverlayView? {
@@ -191,7 +151,7 @@ extension HomeViewController: KolodaViewDataSource {
 
         guard let uid = self.keychain.get("uid")
             else { return }
-        
+
         if direction == .left {
 
             if distanceUsers.count != 0 {
@@ -201,7 +161,7 @@ extension HomeViewController: KolodaViewDataSource {
                 FirebaseManager.userUnlike(uid: uid, recieverUid: allUsers[index].0.id)
             }
         }
-        
+
         if direction == .right {
             if distanceUsers.count != 0 {
                 FirebaseManager.userLike(uid: uid, recieverUid: distanceUsers[index].0.id)
@@ -214,7 +174,7 @@ extension HomeViewController: KolodaViewDataSource {
             }
         }
     }
-    
+
     func showIsMatchedView(isMatch: Bool) {
 
         if isMatch == true {

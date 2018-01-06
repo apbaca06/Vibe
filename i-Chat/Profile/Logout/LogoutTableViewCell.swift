@@ -25,6 +25,13 @@ class LogoutTableViewCell: UITableViewCell {
             try firebaseAuth.signOut()
             print("***", Auth.auth().currentUser)
 
+            DatabasePath.chatroomRef.removeAllObservers()
+            DatabasePath.messageRef.removeAllObservers()
+            DatabasePath.reportRef.removeAllObservers()
+            DatabasePath.userFriendRef.removeAllObservers()
+            DatabasePath.userRef.removeAllObservers()
+            DatabasePath.userUnlikeRef.removeAllObservers()
+
             let loginViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "LogInViewController")
 
             AppDelegate.shared.window?.rootViewController = loginViewController

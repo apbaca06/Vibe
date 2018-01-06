@@ -57,6 +57,14 @@ class AgeViewController: UIViewController {
             else { return }
 
         DatabasePath.userRef.child(uid).updateChildValues(["age": age])
+        DatabasePath.userRef.child(uid).child("agePreference").updateChildValues([
+            "min": 18,
+            "max": 55
+            ])
+        DatabasePath.userRef.child(uid).updateChildValues([
+            "maxDistance": 160])
+        DatabasePath.userRef.child(uid).child("likeList").updateChildValues([
+            "test": 0])
     }
 
     override func viewDidLoad() {
