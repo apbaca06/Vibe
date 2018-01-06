@@ -56,12 +56,11 @@ extension HomeViewController: FriendCollectionViewControllerDelegate {
     @objc func toSettingPage() {
 
         let settingTableViewController = SettingTableViewController()
-//
-//        guard let cityName = keychain.get("cityName")
-//
-//        else { return }
-//
-//        settingTableViewController.cityName = cityName
+
+        if let cityName = keychain.get("cityName") {
+
+            settingTableViewController.cityName = cityName
+        }
 
         let navSettingTableViewController = UINavigationController(rootViewController: settingTableViewController)
 

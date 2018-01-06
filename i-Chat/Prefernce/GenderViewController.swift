@@ -31,7 +31,9 @@ class GenderViewController: UIViewController, CLLocationManagerDelegate {
 
         guard let uid = keychain.get("uid")
             else { return }
-        DatabasePath.userRef.child(uid).updateChildValues(["gender": "Male"])
+        DatabasePath.userRef.child(uid).updateChildValues(["gender": "Male"]) { (_, _) in
+
+        }
 
     }
 
@@ -39,13 +41,21 @@ class GenderViewController: UIViewController, CLLocationManagerDelegate {
 
         guard let uid = keychain.get("uid")
             else { return }
-        DatabasePath.userRef.child(uid).updateChildValues(["gender": "Female"])
+        DatabasePath.userRef.child(uid).updateChildValues(["gender": "Female"]) { (error, _) in
+
+            if error != nil {
+                let preferenceViewController = PreferenceViewController()
+                self.navigationController?.pushViewController(preferenceViewController, completion: nil)
+            } else {
+
+            }
+        }
+
+//        DatabasePath.userRef.child(uid).updateChildValues(["gender": "Female"])
     }
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        setupLocationManager()
 
         SVProgressHUD.dismiss()
 
@@ -62,10 +72,15 @@ class GenderViewController: UIViewController, CLLocationManagerDelegate {
         womanButton.cornerRadius = womanButton.bounds.width/2
     }
 
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+    }
+
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
 
         SVProgressHUD.dismiss()
+        setupLocationManager()
 
     }
 
@@ -85,31 +100,41 @@ class GenderViewController: UIViewController, CLLocationManagerDelegate {
         guard let uid = self.keychain.get("uid")
             else { return }
 
-        DatabasePath.userRef.child(uid).child("location").updateChildValues(["latitude": locationManager.location?.coordinate.latitude,
-                                                                             "longitude": locationManager.location?.coordinate.longitude])
+        SVProgressHUD.show(withStatus: NSLocalizedString("Updating location", comment: ""))
 
-        let geoCoder = CLGeocoder()
+        DatabasePath.userRef
+            .child(uid)
+            .child("location")
+            .updateChildValues(["latitude": locationManager.location?.coordinate.latitude, "longitude": locationManager.location?.coordinate.longitude]) { (error, _) in
+                if error == nil {
 
-        guard let location = locationManager.location
+                    let geoCoder = CLGeocoder()
 
-            else { return }
+                    guard let location = self.locationManager.location
+                        else { return }
+                    geoCoder.reverseGeocodeLocation(location) { (placemarks, error) in
 
-        geoCoder.reverseGeocodeLocation(location) { (placemarks, error) in
+                        if error != nil {
+                            print(error)
+                            return
+                        }
+                        guard let existPlacemarks = placemarks
+                            else { return }
+                        let placemark = existPlacemarks[0] as CLPlacemark
+                        let cityName = placemark.locality
 
-            if error != nil {
+                        guard let city = cityName
+                            else { return }
+                        self.cityName = city
+                        DatabasePath.userRef.child(uid).child("location")
+                            .updateChildValues(["cityName": city], withCompletionBlock: { (error, _) in
+                                if error == nil {
+                                    SVProgressHUD.dismiss()
+                                }
+                            })
+                    }
 
-                print(error)
-                return
-            }
-            guard let existPlacemarks = placemarks
-                else { return }
-            let placemark = existPlacemarks[0] as CLPlacemark
-            let cityName = placemark.locality
-
-            guard let city = cityName
-                else { return }
-            self.cityName = city
-            DatabasePath.userRef.child(uid).child("location").updateChildValues(["cityName": city])
+                }
         }
 
     }

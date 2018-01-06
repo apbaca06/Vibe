@@ -81,14 +81,25 @@ class QuickbloxManager {
         QBRequest.signUp(uuser, successBlock: { (response, user) in
             if let firebaseUser = Auth.auth().currentUser {
 
-                let navGenderViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "PreferenceNav")
+                DatabasePath.userRef
+                    .child(firebaseUser.uid)
+                    .setValue(["name": name,
+                               "email": email,
+                               "qbID": user.id,
+                               "createdTime": user.createdAt?.iso8601String], withCompletionBlock: { (error, _) in
+                            if error == nil {
+                                let navGenderViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "PreferenceNav")
 
-                AppDelegate.shared.window?.rootViewController = navGenderViewController
+                                AppDelegate.shared.window?.rootViewController = navGenderViewController
+                            } else {
+                                SVProgressHUD.dismiss()
+                                let alertController = UIAlertController(title: NSLocalizedString("\(error)", comment: ""), message: "Sign up error, we will fixed it soon!", preferredStyle: .alert)
+                                let okAction = UIAlertAction(title: NSLocalizedString("OK", comment: ""), style: .default, handler: nil)
+                                alertController.addAction(okAction)
+                                alertController.show()
+                            }
+                })
 
-                DatabasePath.userRef.child(firebaseUser.uid).setValue(["name": name,
-                                                           "email": email,
-                                                           "qbID": user.id,
-                                                           "createdTime": user.createdAt?.iso8601String])
             }
 
         }) { (response) in

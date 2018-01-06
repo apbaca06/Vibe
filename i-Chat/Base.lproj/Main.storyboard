@@ -538,7 +538,7 @@
                                 <state key="normal" image="femenine"/>
                                 <connections>
                                     <action selector="womanAction:" destination="vq6-Er-z5E" eventType="touchUpInside" id="j8e-Qi-UIm"/>
-                                    <segue destination="pQd-wc-ngo" kind="show" id="qaF-Vu-QVN"/>
+                                    <segue destination="pQd-wc-ngo" kind="push" id="64t-3T-6ws"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="O9H-vy-vCO">
@@ -556,7 +556,7 @@
                                 <state key="normal" image="masculine"/>
                                 <connections>
                                     <action selector="maleAction:" destination="vq6-Er-z5E" eventType="touchUpInside" id="hnK-nH-jbl"/>
-                                    <segue destination="pQd-wc-ngo" kind="push" id="nnF-mQ-2wm"/>
+                                    <segue destination="pQd-wc-ngo" kind="push" id="ek2-C3-cmA"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -584,7 +584,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ePp-oH-Pwc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="325" y="2004"/>
+            <point key="canvasLocation" x="196" y="2004"/>
         </scene>
         <!--Gender Preference-->
         <scene sceneID="vhO-Gi-M29">
@@ -1322,7 +1322,7 @@ If you have any questions about this Agreement, please contact us.</string>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Mae-Em-bgw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-340" y="2004"/>
+            <point key="canvasLocation" x="-488" y="2004"/>
         </scene>
         <!--No Friend View Controller-->
         <scene sceneID="m5R-kK-iD6">
@@ -1431,7 +1431,7 @@ If you have any questions about this Agreement, please contact us.</string>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="OPp-4h-xpV"/>
-        <segue reference="nnF-mQ-2wm"/>
+        <segue reference="64t-3T-6ws"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" red="0.98039215690000003" green="0.98039215690000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
 </document>
