@@ -111,6 +111,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
     func applicationWillEnterForeground(_ application: UIApplication) {
+        
+        guard let user = Auth.auth().currentUser else {
+
+            SVProgressHUD.dismiss()
+            UIApplication.shared.endIgnoringInteractionEvents()
+            
+            let loginViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "LogInViewController")
+            
+            AppDelegate.shared.window?.rootViewController = loginViewController
+            return
+        }
 
         if QBChat.instance.isConnected == false {
 
