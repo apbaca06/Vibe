@@ -9,6 +9,7 @@
 import Foundation
 import Firebase
 import KeychainSwift
+import Crashlytics
 
 extension Date {
 

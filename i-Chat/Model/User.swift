@@ -8,6 +8,7 @@
 
 import Foundation
 import MapKit
+import Crashlytics
 
 public enum JSONError: Error {
 

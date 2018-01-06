@@ -45,7 +45,7 @@
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="HOR-Rw-eWW" secondAttribute="height" multiplier="1:1" id="zQR-TA-wtD"/>
                                 </constraints>
-                                <state key="normal" image="heart"/>
+                                <state key="normal" image="shoot"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="color" keyPath="shadowColor">
                                         <color key="value" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
@@ -113,6 +113,6 @@
     </objects>
     <resources>
         <image name="cancel" width="32" height="32"/>
-        <image name="heart" width="32" height="32"/>
+        <image name="shoot" width="128" height="128"/>
     </resources>
 </document>

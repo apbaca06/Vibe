@@ -10,6 +10,7 @@ import Foundation
 import UIKit
 import Nuke
 import KeychainSwift
+import Crashlytics
 
 class CallOutViewController: UIViewController {
 

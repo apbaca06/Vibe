@@ -10,6 +10,7 @@ import Foundation
 import UIKit
 import AVFoundation
 import Nuke
+import Crashlytics
 
 class IncomingCallViewController: UIViewController {
 

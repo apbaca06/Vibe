@@ -10,6 +10,7 @@ import Foundation
 import UIKit
 import MZTimerLabel
 import Nuke
+import Crashlytics
 
 class AudioViewController: UIViewController {
 

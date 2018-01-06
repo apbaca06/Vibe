@@ -11,6 +11,7 @@ import UIKit
 import SVProgressHUD
 import Firebase
 import KeychainSwift
+import Crashlytics
 
 class PreferenceViewController: UIViewController {
 

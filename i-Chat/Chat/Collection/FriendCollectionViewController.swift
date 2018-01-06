@@ -9,6 +9,7 @@
 import Foundation
 import Nuke
 import KeychainSwift
+import Crashlytics
 
 protocol FriendCollectionViewControllerDelegate: class {
     func controller(_ controller: FriendCollectionViewController, didCall user: (User, String, Bool))

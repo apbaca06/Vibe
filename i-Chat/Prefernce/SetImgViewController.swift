@@ -11,6 +11,7 @@ import Firebase
 import FirebaseStorage
 import KeychainSwift
 import SVProgressHUD
+import Crashlytics
 
 class SetImgViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 

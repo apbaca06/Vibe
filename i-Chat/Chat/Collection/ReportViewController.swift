@@ -8,6 +8,7 @@
 
 import Foundation
 import KeychainSwift
+import Crashlytics
 
 class ReportViewController: UIViewController, UITextViewDelegate {
 

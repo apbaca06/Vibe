@@ -12,6 +12,7 @@ import SVProgressHUD
 import Firebase
 import KeychainSwift
 import CoreLocation
+import Crashlytics
 
 class GenderViewController: UIViewController, CLLocationManagerDelegate {
 

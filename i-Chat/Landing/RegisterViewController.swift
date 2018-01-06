@@ -9,6 +9,7 @@
 import UIKit
 import IQKeyboardManager
 import SwifterSwift
+import Crashlytics
 
 class RegisterViewController: UIViewController {
 

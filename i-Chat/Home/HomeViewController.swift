@@ -13,6 +13,7 @@ import Firebase
 import CoreLocation
 import Koloda
 import Nuke
+import Crashlytics
 
 class HomeViewController: UICollectionViewController, UICollectionViewDelegateFlowLayout, UserProviderDelegate {
     func userProvider(_ provider: UserProvider, didFetch distanceUser: [(User, Int)], didFetch allUsers: [(User, Int)], didFetch currentUser: User) {

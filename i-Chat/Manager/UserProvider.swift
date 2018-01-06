@@ -11,6 +11,7 @@ import Nuke
 import KeychainSwift
 import Firebase
 import MapKit
+import Crashlytics
 
 public enum UserProviderError: Error {
 

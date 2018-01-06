@@ -10,6 +10,7 @@ import Foundation
 import Firebase
 import SVProgressHUD
 import KeychainSwift
+import Crashlytics
 
 public enum FirebaseError: Error {
 
