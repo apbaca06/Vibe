@@ -101,6 +101,16 @@
 		37EA8ED31FF7DB1A003FA28C /* FriendTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37EA8ED21FF7DB1A003FA28C /* FriendTableViewController.swift */; };
 		37F05EE21FF5F30C006D20A6 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37F05EE11FF5F30C006D20A6 /* CardView.swift */; };
 		37F05EE41FF5F322006D20A6 /* CardView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 37F05EE31FF5F322006D20A6 /* CardView.xib */; };
+		37F4959D2001DD110035DC0C /* KeychainSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 37F4959E2001DD110035DC0C /* KeychainSwift.framework */; };
+		37F4959F2001DD340035DC0C /* Nuke.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 37F495A02001DD340035DC0C /* Nuke.framework */; };
+		37F495A12001DD4D0035DC0C /* IQKeyboardManager.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 37F495A22001DD4D0035DC0C /* IQKeyboardManager.framework */; };
+		37F495A32001DD640035DC0C /* SVProgressHUD.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 37F495A42001DD640035DC0C /* SVProgressHUD.framework */; };
+		37F495A52001DD880035DC0C /* SwifterSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 37F495A62001DD880035DC0C /* SwifterSwift.framework */; };
+		37F495A72001DDAE0035DC0C /* Koloda.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 37F495A82001DDAE0035DC0C /* Koloda.framework */; };
+		37F495A92001DDED0035DC0C /* MZTimerLabel.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 37F495AA2001DDED0035DC0C /* MZTimerLabel.framework */; };
+		37F495AB2001DED70035DC0C /* GTMSessionFetcher.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 37F495AC2001DED70035DC0C /* GTMSessionFetcher.framework */; };
+		37F495AD2001DEDF0035DC0C /* GoogleToolboxForMac.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 37F495AE2001DEDF0035DC0C /* GoogleToolboxForMac.framework */; };
+		37F495AF2001DF340035DC0C /* XLActionController.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 37F495B02001DF340035DC0C /* XLActionController.framework */; };
 		37F61A2A1FFDB73C002DBAFA /* FriendCollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37F61A281FFDB73C002DBAFA /* FriendCollectionReusableView.swift */; };
 		37F61A2B1FFDB73C002DBAFA /* FriendCollectionReusableView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 37F61A291FFDB73C002DBAFA /* FriendCollectionReusableView.xib */; };
 		E4208C9E7E17D4FB2656038F /* Pods_i_Chat.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 813BB42A75F2B98DC83AC0E3 /* Pods_i_Chat.framework */; };
@@ -220,6 +230,16 @@
 		37EA8ED21FF7DB1A003FA28C /* FriendTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendTableViewController.swift; sourceTree = "<group>"; };
 		37F05EE11FF5F30C006D20A6 /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
 		37F05EE31FF5F322006D20A6 /* CardView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CardView.xib; sourceTree = "<group>"; };
+		37F4959E2001DD110035DC0C /* KeychainSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = KeychainSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		37F495A02001DD340035DC0C /* Nuke.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Nuke.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		37F495A22001DD4D0035DC0C /* IQKeyboardManager.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = IQKeyboardManager.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		37F495A42001DD640035DC0C /* SVProgressHUD.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SVProgressHUD.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		37F495A62001DD880035DC0C /* SwifterSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SwifterSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		37F495A82001DDAE0035DC0C /* Koloda.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Koloda.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		37F495AA2001DDED0035DC0C /* MZTimerLabel.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = MZTimerLabel.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		37F495AC2001DED70035DC0C /* GTMSessionFetcher.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = GTMSessionFetcher.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		37F495AE2001DEDF0035DC0C /* GoogleToolboxForMac.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = GoogleToolboxForMac.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		37F495B02001DF340035DC0C /* XLActionController.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = XLActionController.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		37F61A281FFDB73C002DBAFA /* FriendCollectionReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = FriendCollectionReusableView.swift; path = "i-Chat/Chat/Collection/FriendCollectionReusableView.swift"; sourceTree = SOURCE_ROOT; };
 		37F61A291FFDB73C002DBAFA /* FriendCollectionReusableView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = FriendCollectionReusableView.xib; path = "i-Chat/Chat/collection/FriendCollectionReusableView.xib"; sourceTree = SOURCE_ROOT; };
 		498AF12EB1C3EB42182F2692 /* Pods-i-Chat.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-i-Chat.debug.xcconfig"; path = "Pods/Target Support Files/Pods-i-Chat/Pods-i-Chat.debug.xcconfig"; sourceTree = "<group>"; };
@@ -231,6 +251,16 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				37F495AF2001DF340035DC0C /* XLActionController.framework in Frameworks */,
+				37F495AD2001DEDF0035DC0C /* GoogleToolboxForMac.framework in Frameworks */,
+				37F495AB2001DED70035DC0C /* GTMSessionFetcher.framework in Frameworks */,
+				37F495A92001DDED0035DC0C /* MZTimerLabel.framework in Frameworks */,
+				37F495A72001DDAE0035DC0C /* Koloda.framework in Frameworks */,
+				37F495A52001DD880035DC0C /* SwifterSwift.framework in Frameworks */,
+				37F495A32001DD640035DC0C /* SVProgressHUD.framework in Frameworks */,
+				37F495A12001DD4D0035DC0C /* IQKeyboardManager.framework in Frameworks */,
+				37F4959F2001DD340035DC0C /* Nuke.framework in Frameworks */,
+				37F4959D2001DD110035DC0C /* KeychainSwift.framework in Frameworks */,
 				371459A71FDFACA800C1F14A /* Accelerate.framework in Frameworks */,
 				371459A81FDFACA800C1F14A /* VideoToolbox.framework in Frameworks */,
 				371459A91FDFACA800C1F14A /* SystemConfiguration.framework in Frameworks */,
@@ -533,6 +563,16 @@
 		EF0351E21E5259D8657B3499 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				37F495B02001DF340035DC0C /* XLActionController.framework */,
+				37F495AE2001DEDF0035DC0C /* GoogleToolboxForMac.framework */,
+				37F495AC2001DED70035DC0C /* GTMSessionFetcher.framework */,
+				37F495AA2001DDED0035DC0C /* MZTimerLabel.framework */,
+				37F495A82001DDAE0035DC0C /* Koloda.framework */,
+				37F495A62001DD880035DC0C /* SwifterSwift.framework */,
+				37F495A42001DD640035DC0C /* SVProgressHUD.framework */,
+				37F495A22001DD4D0035DC0C /* IQKeyboardManager.framework */,
+				37F495A02001DD340035DC0C /* Nuke.framework */,
+				37F4959E2001DD110035DC0C /* KeychainSwift.framework */,
 				371459A21FDFAC7300C1F14A /* Accelerate.framework */,
 				371459A11FDFAC6E00C1F14A /* VideoToolbox.framework */,
 				371459A01FDFAC6600C1F14A /* SystemConfiguration.framework */,
@@ -918,6 +958,7 @@
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SYSTEM_FRAMEWORK_SEARCH_PATHS = "";
 			};
 			name = Debug;
 		};

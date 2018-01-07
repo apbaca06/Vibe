@@ -27,14 +27,13 @@ extension HomeViewController: FriendCollectionViewControllerDelegate {
 
     func controller(_ controller: FriendCollectionViewController, didCall user: (User, String, Bool)) {
         switch user.2 {
-
-            case true:
+        case true:
                 let alertController = UIAlertController(title: NSLocalizedString("Unable to contact \(user.0.name)!", comment: ""), message: "", preferredStyle: .alert)
                 let okAction = UIAlertAction(title: NSLocalizedString("OK", comment: ""), style: .default, handler: nil)
                 alertController.addAction(okAction)
                 alertController.show()
 
-            case false:
+        case false:
             guard let callOutViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "CallOutViewController") as? CallOutViewController
                 else { return }
             callOutViewController.reciever = user.0
@@ -76,20 +75,16 @@ extension HomeViewController: KolodaViewDelegate {
 
     func kolodaDidRunOutOfCards(_ koloda: KolodaView) {
 
-        guard let uid = keychain.get("uid")
+        self.distanceUsers = []
 
-            else { return }
-
-        DatabasePath.userRef.child(uid).removeAllObservers()
+        self.collectionView?.reloadData()
 
         let alert = UIAlertController(title: NSLocalizedString("No more cards", comment: ""), message: NSLocalizedString("Please change your preference to meet more people!", comment: ""), preferredStyle: .alert)
 
         alert.addAction(title: NSLocalizedString("OK", comment: ""))
 
         alert.show()
-        self.distanceUsers = []
 
-        self.collectionView?.reloadData()
     }
 
     func koloda(_ koloda: KolodaView, didSelectCardAt index: Int) {
