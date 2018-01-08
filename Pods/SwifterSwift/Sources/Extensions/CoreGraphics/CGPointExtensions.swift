@@ -14,7 +14,7 @@
 
 // MARK: - Methods
 public extension CGPoint {
-
+    
     /// SwifterSwift: Distance from another CGPoint.
     ///
     ///     let point1 = CGPoint(x: 10, y: 10)
@@ -27,7 +27,7 @@ public extension CGPoint {
 	public func distance(from point: CGPoint) -> CGFloat {
 		return CGPoint.distance(from: self, to: point)
 	}
-
+	
     /// SwifterSwift: Distance between two CGPoints.
     ///
     ///     let point1 = CGPoint(x: 10, y: 10)
@@ -43,12 +43,12 @@ public extension CGPoint {
 		// http://stackoverflow.com/questions/6416101/calculate-the-distance-between-two-cgpoints
 		return sqrt(pow(point2.x - point1.x, 2) + pow(point2.y - point1.y, 2))
 	}
-
+	
 }
 
 // MARK: - Operators
 public extension CGPoint {
-
+	
     /// SwifterSwift: Add two CGPoints.
     ///
     ///     let point1 = CGPoint(x: 10, y: 10)
@@ -63,7 +63,7 @@ public extension CGPoint {
 	public static func + (lhs: CGPoint, rhs: CGPoint) -> CGPoint {
 		return CGPoint(x: lhs.x + rhs.x, y: lhs.y + rhs.y)
 	}
-
+	
     /// SwifterSwift: Add a CGPoints to self.
     ///
     ///     let point1 = CGPoint(x: 10, y: 10)
@@ -77,7 +77,7 @@ public extension CGPoint {
 	public static func += (lhs: inout CGPoint, rhs: CGPoint) {
 		lhs = lhs + rhs
 	}
-
+	
     /// SwifterSwift: Subtract two CGPoints.
     ///
     ///     let point1 = CGPoint(x: 10, y: 10)
@@ -92,7 +92,7 @@ public extension CGPoint {
 	public static func - (lhs: CGPoint, rhs: CGPoint) -> CGPoint {
 		return CGPoint(x: lhs.x - rhs.x, y: lhs.y - rhs.y)
 	}
-
+	
     /// SwifterSwift: Subtract a CGPoints from self.
     ///
     ///     let point1 = CGPoint(x: 10, y: 10)
@@ -106,7 +106,7 @@ public extension CGPoint {
 	public static func -= (lhs: inout CGPoint, rhs: CGPoint) {
 		lhs = lhs - rhs
 	}
-
+	
     /// SwifterSwift: Multiply a CGPoint with a scalar
     ///
     ///     let point1 = CGPoint(x: 10, y: 10)
@@ -120,7 +120,7 @@ public extension CGPoint {
 	public static func * (point: CGPoint, scalar: CGFloat) -> CGPoint {
 		return CGPoint(x: point.x * scalar, y: point.y * scalar)
 	}
-
+	
     /// SwifterSwift: Multiply self with a scalar
     ///
     ///     let point1 = CGPoint(x: 10, y: 10)
@@ -134,7 +134,7 @@ public extension CGPoint {
 	public static func *= (point: inout CGPoint, scalar: CGFloat) {
 		point = point * scalar
 	}
-
+	
     /// SwifterSwift: Multiply a CGPoint with a scalar
     ///
     ///     let point1 = CGPoint(x: 10, y: 10)
@@ -148,5 +148,5 @@ public extension CGPoint {
 	public static func * (scalar: CGFloat, point: CGPoint) -> CGPoint {
 		return CGPoint(x: point.x * scalar, y: point.y * scalar)
 	}
-
+	
 }

@@ -11,22 +11,22 @@ import UIKit
 
 // MARK: - Properties
 public extension UICollectionView {
-
+	
 	/// SwifterSwift: Index path of last item in collectionView.
 	public var indexPathForLastItem: IndexPath? {
 		return indexPathForLastItem(inSection: lastSection)
 	}
-
+	
 	/// SwifterSwift: Index of last section in collectionView.
 	public var lastSection: Int {
 		return numberOfSections > 0 ? numberOfSections - 1 : 0
 	}
-
+	
 }
 
 // MARK: - Methods
 public extension UICollectionView {
-
+	
 	/// SwifterSwift: Number of all items in all sections of collectionView.
 	///
 	/// - Returns: The count of all rows in the collectionView.
@@ -39,7 +39,7 @@ public extension UICollectionView {
 		}
 		return itemsCount
 	}
-
+    
 	/// SwifterSwift: IndexPath for last item in section.
 	///
 	/// - Parameter section: section to get last item in.
@@ -56,7 +56,7 @@ public extension UICollectionView {
 		}
 		return IndexPath(item: numberOfItems(inSection: section) - 1, section: section)
 	}
-
+	
 	/// SwifterSwift: Reload data with a completion handler.
 	///
 	/// - Parameter completion: completion handler to run after reloadData finishes.
@@ -67,7 +67,7 @@ public extension UICollectionView {
 			completion()
 		})
 	}
-
+	
 	/// SwifterSwift: Dequeue reusable UICollectionViewCell using class name.
 	///
 	/// - Parameters:
@@ -97,7 +97,7 @@ public extension UICollectionView {
 	public func register<T: UICollectionReusableView>(supplementaryViewOfKind kind: String, withClass name: T.Type) {
         register(T.self, forSupplementaryViewOfKind: kind, withReuseIdentifier: String(describing: name))
     }
-
+	
 	/// SwifterSwift: Register UICollectionViewCell using class name.
     ///
     /// - Parameters:
@@ -106,7 +106,7 @@ public extension UICollectionView {
     public func register<T: UICollectionViewCell>(nib: UINib?, forCellWithClass name: T.Type) {
         register(nib, forCellWithReuseIdentifier: String(describing: name))
     }
-
+    
     /// SwifterSwift: Register UICollectionViewCell using class name.
     ///
     /// - Parameter name: UICollectionViewCell type.

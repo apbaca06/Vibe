@@ -8,12 +8,12 @@
 
 // MARK: - Properties
 public extension SignedNumeric {
-
+	
 	/// SwifterSwift: String.
 	public var string: String {
 		return String(describing: self)
 	}
-
+	
 	/// SwifterSwift: String with number and current locale currency.
 	public var asLocaleCurrency: String {
 		let formatter = NumberFormatter()

@@ -14,26 +14,26 @@
 
 // MARK: - Properties
 public extension NSAttributedString {
-
+	
 	#if os(iOS)
 	/// SwifterSwift: Bolded string.
 	public var bolded: NSAttributedString {
 		return applying(attributes: [.font: UIFont.boldSystemFont(ofSize: UIFont.systemFontSize)])
 	}
 	#endif
-
+	
 	/// SwifterSwift: Underlined string.
 	public var underlined: NSAttributedString {
 		return applying(attributes: [.underlineStyle: NSUnderlineStyle.styleSingle.rawValue])
 	}
-
+	
 	#if os(iOS)
 	/// SwifterSwift: Italicized string.
 	public var italicized: NSAttributedString {
 		return applying(attributes: [.font: UIFont.italicSystemFont(ofSize: UIFont.systemFontSize)])
 	}
 	#endif
-
+	
 	/// SwifterSwift: Struckthrough string.
 	public var struckthrough: NSAttributedString {
 		return applying(attributes: [.strikethroughStyle: NSNumber(value: NSUnderlineStyle.styleSingle.rawValue as Int)])
@@ -42,7 +42,7 @@ public extension NSAttributedString {
 
 // MARK: - Methods
 public extension NSAttributedString {
-
+	
 	/// SwifterSwift: Applies given attributes to the new instance
 	/// of NSAttributedString initialized with self object
 	///
@@ -52,10 +52,10 @@ public extension NSAttributedString {
 		let copy = NSMutableAttributedString(attributedString: self)
 		let range = (string as NSString).range(of: string)
 		copy.addAttributes(attributes, range: range)
-
+		
 		return copy
 	}
-
+	
 	#if os(macOS)
 	/// SwifterSwift: Add color to NSAttributedString.
 	///
@@ -77,7 +77,7 @@ public extension NSAttributedString {
 
 // MARK: - Operators
 public extension NSAttributedString {
-
+	
 	/// SwifterSwift: Add a NSAttributedString to another NSAttributedString.
 	///
 	/// - Parameters:
@@ -88,7 +88,7 @@ public extension NSAttributedString {
 		ns.append(rhs)
 		lhs = ns
 	}
-
+    
     /// SwifterSwift: Add a NSAttributedString to another NSAttributedString and return a new NSAttributedString instance.
     ///
     /// - Parameters:
@@ -100,7 +100,7 @@ public extension NSAttributedString {
         ns.append(rhs)
         return NSAttributedString(attributedString: ns)
     }
-
+    
     /// SwifterSwift: Add a NSAttributedString to another NSAttributedString.
     ///
     /// - Parameters:
@@ -109,7 +109,7 @@ public extension NSAttributedString {
     public static func += (lhs: inout NSAttributedString, rhs: String) {
         lhs += NSAttributedString(string: rhs)
     }
-
+    
     /// SwifterSwift: Add a NSAttributedString to another NSAttributedString and return a new NSAttributedString instance.
     ///
     /// - Parameters:

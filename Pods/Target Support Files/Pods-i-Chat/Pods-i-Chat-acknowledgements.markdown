@@ -582,6 +582,15 @@ Copyright (c) 2017 QuickBlox
 
 
 
+## Quickblox-WebRTC
+
+
+QuickBlox iOS SDK is licensed under the QuickBlox SDK License.
+
+Copyright (c) 2017 QuickBlox
+
+
+
 ## SVProgressHUD
 
 Copyright (c) 2011-2017 Sam Vermette, Tobias Tiemerding and contributors.

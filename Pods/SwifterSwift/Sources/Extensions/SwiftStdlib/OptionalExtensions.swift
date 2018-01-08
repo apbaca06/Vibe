@@ -10,7 +10,7 @@
 infix operator ??= : AssignmentPrecedence
 
 public extension Optional {
-
+	
 	/// SwifterSwift: Get self of default value (if self is nil).
 	///
 	///		let foo: String? = nil
@@ -25,7 +25,7 @@ public extension Optional {
 		// http://www.russbishop.net/improving-optionals
 		return self ?? defaultValue
 	}
-
+	
 	/// SwifterSwift: Runs a block to Wrapped if not nil
 	///
 	///		let foo: String? = nil
@@ -45,7 +45,7 @@ public extension Optional {
 		// http://www.russbishop.net/improving-optionals
 		_ = self.map(block)
 	}
-
+	
     /// SwifterSwift: Assign an optional value to a variable only if the value is not nil.
     ///
     ///     let someParameter: String? = nil

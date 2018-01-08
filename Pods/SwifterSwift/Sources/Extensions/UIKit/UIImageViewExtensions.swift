@@ -11,7 +11,7 @@ import UIKit
 
 // MARK: - Methods
 public extension UIImageView {
-
+	
 	/// SwifterSwift: Set image from a URL.
 	///
 	/// - Parameters:
@@ -23,7 +23,7 @@ public extension UIImageView {
 	                     contentMode: UIViewContentMode = .scaleAspectFit,
 	                     placeholder: UIImage? = nil,
 	                     completionHandler: ((UIImage?) -> Void)? = nil) {
-
+		
 		image = placeholder
 		self.contentMode = contentMode
 		URLSession.shared.dataTask(with: url) { (data, response, _) in
@@ -42,7 +42,7 @@ public extension UIImageView {
 			}
         }.resume()
 	}
-
+	
 	/// SwifterSwift: Make image view blurry
 	///
 	/// - Parameter style: UIBlurEffectStyle (default is .light).
@@ -54,7 +54,7 @@ public extension UIImageView {
 		addSubview(blurEffectView)
 		clipsToBounds = true
 	}
-
+	
 	/// SwifterSwift: Blurred version of an image view
 	///
 	/// - Parameter style: UIBlurEffectStyle (default is .light).
@@ -64,6 +64,6 @@ public extension UIImageView {
 		imgView.blur(withStyle: style)
 		return imgView
 	}
-
+	
 }
 #endif

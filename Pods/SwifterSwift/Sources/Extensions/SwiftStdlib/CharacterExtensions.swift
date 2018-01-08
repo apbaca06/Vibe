@@ -8,7 +8,7 @@
 
 // MARK: - Properties
 public extension Character {
-
+	
 	/// SwifterSwift: Check if character is emoji.
 	///
 	///		Character("😀").isEmoji -> true
@@ -27,7 +27,7 @@ public extension Character {
 			return false
 		}
 	}
-
+	
 	/// SwifterSwift: Check if character is number.
 	///
 	///		Character("1").isNumber -> true
@@ -36,7 +36,7 @@ public extension Character {
 	public var isNumber: Bool {
 		return Int(String(self)) != nil
 	}
-
+	
     /// SwifterSwift: Check if character is a letter.
 	///
 	///		Character("4").isLetter -> false
@@ -45,7 +45,7 @@ public extension Character {
     public var isLetter: Bool {
         return String(self).rangeOfCharacter(from: .letters, options: .numeric, range: nil) != nil
     }
-
+    
 	/// SwifterSwift: Check if character is uppercased.
 	///
 	///		Character("a").isUppercased -> false
@@ -54,7 +54,7 @@ public extension Character {
 	public var isUppercased: Bool {
 		return String(self) == String(self).uppercased()
 	}
-
+	
 	/// SwifterSwift: Check if character is lowercased.
 	///
 	///		Character("a").isLowercased -> true
@@ -63,7 +63,7 @@ public extension Character {
 	public var isLowercased: Bool {
 		return String(self) == String(self).lowercased()
 	}
-
+	
     /// SwifterSwift: Check if character is white space.
 	///
 	///		Character(" ").isWhiteSpace -> true
@@ -72,7 +72,7 @@ public extension Character {
     public var isWhiteSpace: Bool {
         return String(self) == " "
     }
-
+    
 	/// SwifterSwift: Integer from character (if applicable).
 	///
 	///		Character("1").int -> 1
@@ -81,7 +81,7 @@ public extension Character {
 	public var int: Int? {
 		return Int(String(self))
 	}
-
+	
 	/// SwifterSwift: String from character.
 	///
 	///		Character("a").string -> "a"
@@ -89,7 +89,7 @@ public extension Character {
 	public var string: String {
 		return String(self)
 	}
-
+	
     /// SwifterSwift: Return the character lowercased.
 	///
 	///		Character("A").lowercased -> Character("a")
@@ -97,7 +97,7 @@ public extension Character {
     public var lowercased: Character {
         return String(self).lowercased().first!
     }
-
+    
     /// SwifterSwift: Return the character uppercased.
 	///
 	///		Character("a").uppercased -> Character("A")
@@ -105,12 +105,12 @@ public extension Character {
     public var uppercased: Character {
         return String(self).uppercased().first!
     }
-
+    
 }
 
 // MARK: - Operators
 public extension Character {
-
+	
 	/// SwifterSwift: Repeat character multiple times.
 	///
 	///		Character("-") * 10 -> "----------"
@@ -125,7 +125,7 @@ public extension Character {
 		}
 		return String(repeating: String(lhs), count: rhs)
 	}
-
+	
 	/// SwifterSwift: Repeat character multiple times.
 	///
 	///		10 * Character("-") -> "----------"
@@ -140,5 +140,5 @@ public extension Character {
 		}
 		return String(repeating: String(rhs), count: lhs)
 	}
-
+	
 }

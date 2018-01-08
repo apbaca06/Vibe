@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0CE1963C5450409716150493 /* Pods_i_Chat.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 79B47EC97E1EEF266B777B33 /* Pods_i_Chat.framework */; };
 		370832B01FE2847F00D4DC86 /* IncomingCallViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 370832AF1FE2847F00D4DC86 /* IncomingCallViewController.swift */; };
 		370832B61FE3800200D4DC86 /* CallManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 370832B51FE3800200D4DC86 /* CallManager.swift */; };
 		370832B81FE3806700D4DC86 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 370832B71FE3806700D4DC86 /* User.swift */; };
@@ -20,21 +21,17 @@
 		371459981FDFAC3300C1F14A /* libresolv.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 371459971FDFAC3300C1F14A /* libresolv.tbd */; };
 		3714599A1FDFAC3D00C1F14A /* libxml2.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 371459991FDFAC3D00C1F14A /* libxml2.tbd */; };
 		3714599C1FDFAC4300C1F14A /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 3714599B1FDFAC4300C1F14A /* libz.tbd */; };
-		371459A51FDFAC9500C1F14A /* QuickbloxWebRTC.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 371459A31FDFAC9500C1F14A /* QuickbloxWebRTC.framework */; };
-		371459A61FDFAC9500C1F14A /* Quickblox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 371459A41FDFAC9500C1F14A /* Quickblox.framework */; };
 		371459A71FDFACA800C1F14A /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 371459A21FDFAC7300C1F14A /* Accelerate.framework */; };
 		371459A81FDFACA800C1F14A /* VideoToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 371459A11FDFAC6E00C1F14A /* VideoToolbox.framework */; };
 		371459A91FDFACA800C1F14A /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 371459A01FDFAC6600C1F14A /* SystemConfiguration.framework */; };
 		371459AA1FDFACA800C1F14A /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3714599F1FDFAC6000C1F14A /* MobileCoreServices.framework */; };
 		371459AB1FDFACA800C1F14A /* GLKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3714599E1FDFAC5300C1F14A /* GLKit.framework */; };
 		371459AC1FDFACA800C1F14A /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3714599D1FDFAC4A00C1F14A /* CFNetwork.framework */; };
-		371459AD1FDFACBC00C1F14A /* Quickblox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 371459A41FDFAC9500C1F14A /* Quickblox.framework */; };
-		371459AE1FDFACBC00C1F14A /* Quickblox.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 371459A41FDFAC9500C1F14A /* Quickblox.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		371459AF1FDFACBC00C1F14A /* QuickbloxWebRTC.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 371459A31FDFAC9500C1F14A /* QuickbloxWebRTC.framework */; };
-		371459B01FDFACBC00C1F14A /* QuickbloxWebRTC.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 371459A31FDFAC9500C1F14A /* QuickbloxWebRTC.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		371459B51FDFB16900C1F14A /* APIKey.plist in Resources */ = {isa = PBXBuildFile; fileRef = 371459B41FDFB16900C1F14A /* APIKey.plist */; };
 		3717DD221FE66E35003CD462 /* HomeComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3717DD211FE66E35003CD462 /* HomeComponent.swift */; };
 		371E76C91FF0ED9A00EF7CB2 /* ProfileImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 371E76C81FF0ED9A00EF7CB2 /* ProfileImage.swift */; };
+		3724A4D5200235CE001E5EE7 /* Quickblox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3724A4D3200235C4001E5EE7 /* Quickblox.framework */; };
+		3724A4D6200235CE001E5EE7 /* QuickbloxWebRTC.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3724A4D4200235CC001E5EE7 /* QuickbloxWebRTC.framework */; };
 		372E8E101FF10355002CAC96 /* Ripple.swift in Sources */ = {isa = PBXBuildFile; fileRef = 372E8E0F1FF10355002CAC96 /* Ripple.swift */; };
 		372E8E121FF1076C002CAC96 /* Animation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 372E8E111FF1076C002CAC96 /* Animation.swift */; };
 		372E8E141FF1DD2D002CAC96 /* AgeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 372E8E131FF1DD2D002CAC96 /* AgeViewController.swift */; };
@@ -44,6 +41,8 @@
 		372F850A1FFF139400D6BCB1 /* ReportViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 372F85091FFF139400D6BCB1 /* ReportViewController.swift */; };
 		372F850C1FFF307C00D6BCB1 /* NoFriendViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 372F850B1FFF307C00D6BCB1 /* NoFriendViewController.swift */; };
 		373DB9F71FEA3F480041E34E /* DatabasePath.swift in Sources */ = {isa = PBXBuildFile; fileRef = 373DB9F61FEA3F480041E34E /* DatabasePath.swift */; };
+		374C782620023C8F00125EB6 /* Quickblox.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 3724A4D3200235C4001E5EE7 /* Quickblox.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		374C782720023C9700125EB6 /* QuickbloxWebRTC.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 3724A4D4200235CC001E5EE7 /* QuickbloxWebRTC.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		3754E2881FE122E4002604CD /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3754E2871FE122E4002604CD /* RegisterViewController.swift */; };
 		3754E28A1FE12809002604CD /* QuickbloxManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3754E2891FE12809002604CD /* QuickbloxManager.swift */; };
 		375F04B61FE3A73A009D2671 /* MenuBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 375F04B51FE3A739009D2671 /* MenuBar.swift */; };
@@ -101,30 +100,19 @@
 		37EA8ED31FF7DB1A003FA28C /* FriendTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37EA8ED21FF7DB1A003FA28C /* FriendTableViewController.swift */; };
 		37F05EE21FF5F30C006D20A6 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37F05EE11FF5F30C006D20A6 /* CardView.swift */; };
 		37F05EE41FF5F322006D20A6 /* CardView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 37F05EE31FF5F322006D20A6 /* CardView.xib */; };
-		37F4959D2001DD110035DC0C /* KeychainSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 37F4959E2001DD110035DC0C /* KeychainSwift.framework */; };
-		37F4959F2001DD340035DC0C /* Nuke.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 37F495A02001DD340035DC0C /* Nuke.framework */; };
-		37F495A12001DD4D0035DC0C /* IQKeyboardManager.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 37F495A22001DD4D0035DC0C /* IQKeyboardManager.framework */; };
-		37F495A32001DD640035DC0C /* SVProgressHUD.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 37F495A42001DD640035DC0C /* SVProgressHUD.framework */; };
-		37F495A52001DD880035DC0C /* SwifterSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 37F495A62001DD880035DC0C /* SwifterSwift.framework */; };
-		37F495A72001DDAE0035DC0C /* Koloda.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 37F495A82001DDAE0035DC0C /* Koloda.framework */; };
-		37F495A92001DDED0035DC0C /* MZTimerLabel.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 37F495AA2001DDED0035DC0C /* MZTimerLabel.framework */; };
-		37F495AB2001DED70035DC0C /* GTMSessionFetcher.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 37F495AC2001DED70035DC0C /* GTMSessionFetcher.framework */; };
-		37F495AD2001DEDF0035DC0C /* GoogleToolboxForMac.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 37F495AE2001DEDF0035DC0C /* GoogleToolboxForMac.framework */; };
-		37F495AF2001DF340035DC0C /* XLActionController.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 37F495B02001DF340035DC0C /* XLActionController.framework */; };
 		37F61A2A1FFDB73C002DBAFA /* FriendCollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37F61A281FFDB73C002DBAFA /* FriendCollectionReusableView.swift */; };
 		37F61A2B1FFDB73C002DBAFA /* FriendCollectionReusableView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 37F61A291FFDB73C002DBAFA /* FriendCollectionReusableView.xib */; };
-		E4208C9E7E17D4FB2656038F /* Pods_i_Chat.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 813BB42A75F2B98DC83AC0E3 /* Pods_i_Chat.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		371459B11FDFACBC00C1F14A /* Embed Frameworks */ = {
+		3724A4C620022C53001E5EE7 /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				371459B01FDFACBC00C1F14A /* QuickbloxWebRTC.framework in Embed Frameworks */,
-				371459AE1FDFACBC00C1F14A /* Quickblox.framework in Embed Frameworks */,
+				374C782720023C9700125EB6 /* QuickbloxWebRTC.framework in Embed Frameworks */,
+				374C782620023C8F00125EB6 /* Quickblox.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -132,7 +120,6 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		3618AF86542D903ECA050532 /* Pods-i-Chat.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-i-Chat.release.xcconfig"; path = "Pods/Target Support Files/Pods-i-Chat/Pods-i-Chat.release.xcconfig"; sourceTree = "<group>"; };
 		370832AF1FE2847F00D4DC86 /* IncomingCallViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IncomingCallViewController.swift; sourceTree = "<group>"; };
 		370832B51FE3800200D4DC86 /* CallManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CallManager.swift; sourceTree = "<group>"; };
 		370832B71FE3806700D4DC86 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
@@ -154,12 +141,12 @@
 		371459A01FDFAC6600C1F14A /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		371459A11FDFAC6E00C1F14A /* VideoToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = VideoToolbox.framework; path = System/Library/Frameworks/VideoToolbox.framework; sourceTree = SDKROOT; };
 		371459A21FDFAC7300C1F14A /* Accelerate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accelerate.framework; path = System/Library/Frameworks/Accelerate.framework; sourceTree = SDKROOT; };
-		371459A31FDFAC9500C1F14A /* QuickbloxWebRTC.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = QuickbloxWebRTC.framework; sourceTree = "<group>"; };
-		371459A41FDFAC9500C1F14A /* Quickblox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Quickblox.framework; sourceTree = "<group>"; };
 		371459B31FDFAF0300C1F14A /* Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Bridging-Header.h"; sourceTree = "<group>"; };
 		371459B41FDFB16900C1F14A /* APIKey.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = APIKey.plist; sourceTree = "<group>"; };
 		3717DD211FE66E35003CD462 /* HomeComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeComponent.swift; sourceTree = "<group>"; };
 		371E76C81FF0ED9A00EF7CB2 /* ProfileImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileImage.swift; sourceTree = "<group>"; };
+		3724A4D3200235C4001E5EE7 /* Quickblox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Quickblox.framework; sourceTree = "<group>"; };
+		3724A4D4200235CC001E5EE7 /* QuickbloxWebRTC.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = QuickbloxWebRTC.framework; sourceTree = "<group>"; };
 		372E8E0F1FF10355002CAC96 /* Ripple.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ripple.swift; sourceTree = "<group>"; };
 		372E8E111FF1076C002CAC96 /* Animation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Animation.swift; sourceTree = "<group>"; };
 		372E8E131FF1DD2D002CAC96 /* AgeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AgeViewController.swift; sourceTree = "<group>"; };
@@ -230,20 +217,11 @@
 		37EA8ED21FF7DB1A003FA28C /* FriendTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendTableViewController.swift; sourceTree = "<group>"; };
 		37F05EE11FF5F30C006D20A6 /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
 		37F05EE31FF5F322006D20A6 /* CardView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CardView.xib; sourceTree = "<group>"; };
-		37F4959E2001DD110035DC0C /* KeychainSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = KeychainSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		37F495A02001DD340035DC0C /* Nuke.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Nuke.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		37F495A22001DD4D0035DC0C /* IQKeyboardManager.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = IQKeyboardManager.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		37F495A42001DD640035DC0C /* SVProgressHUD.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SVProgressHUD.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		37F495A62001DD880035DC0C /* SwifterSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SwifterSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		37F495A82001DDAE0035DC0C /* Koloda.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Koloda.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		37F495AA2001DDED0035DC0C /* MZTimerLabel.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = MZTimerLabel.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		37F495AC2001DED70035DC0C /* GTMSessionFetcher.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = GTMSessionFetcher.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		37F495AE2001DEDF0035DC0C /* GoogleToolboxForMac.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = GoogleToolboxForMac.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		37F495B02001DF340035DC0C /* XLActionController.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = XLActionController.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		37F61A281FFDB73C002DBAFA /* FriendCollectionReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = FriendCollectionReusableView.swift; path = "i-Chat/Chat/Collection/FriendCollectionReusableView.swift"; sourceTree = SOURCE_ROOT; };
 		37F61A291FFDB73C002DBAFA /* FriendCollectionReusableView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = FriendCollectionReusableView.xib; path = "i-Chat/Chat/collection/FriendCollectionReusableView.xib"; sourceTree = SOURCE_ROOT; };
-		498AF12EB1C3EB42182F2692 /* Pods-i-Chat.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-i-Chat.debug.xcconfig"; path = "Pods/Target Support Files/Pods-i-Chat/Pods-i-Chat.debug.xcconfig"; sourceTree = "<group>"; };
-		813BB42A75F2B98DC83AC0E3 /* Pods_i_Chat.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_i_Chat.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6A5B370966860E3EDEA1EA01 /* Pods-i-Chat.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-i-Chat.debug.xcconfig"; path = "Pods/Target Support Files/Pods-i-Chat/Pods-i-Chat.debug.xcconfig"; sourceTree = "<group>"; };
+		79B47EC97E1EEF266B777B33 /* Pods_i_Chat.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_i_Chat.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E6BABDAA2343482167F3017B /* Pods-i-Chat.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-i-Chat.release.xcconfig"; path = "Pods/Target Support Files/Pods-i-Chat/Pods-i-Chat.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -251,43 +229,31 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				37F495AF2001DF340035DC0C /* XLActionController.framework in Frameworks */,
-				37F495AD2001DEDF0035DC0C /* GoogleToolboxForMac.framework in Frameworks */,
-				37F495AB2001DED70035DC0C /* GTMSessionFetcher.framework in Frameworks */,
-				37F495A92001DDED0035DC0C /* MZTimerLabel.framework in Frameworks */,
-				37F495A72001DDAE0035DC0C /* Koloda.framework in Frameworks */,
-				37F495A52001DD880035DC0C /* SwifterSwift.framework in Frameworks */,
-				37F495A32001DD640035DC0C /* SVProgressHUD.framework in Frameworks */,
-				37F495A12001DD4D0035DC0C /* IQKeyboardManager.framework in Frameworks */,
-				37F4959F2001DD340035DC0C /* Nuke.framework in Frameworks */,
-				37F4959D2001DD110035DC0C /* KeychainSwift.framework in Frameworks */,
 				371459A71FDFACA800C1F14A /* Accelerate.framework in Frameworks */,
+				3724A4D6200235CE001E5EE7 /* QuickbloxWebRTC.framework in Frameworks */,
 				371459A81FDFACA800C1F14A /* VideoToolbox.framework in Frameworks */,
 				371459A91FDFACA800C1F14A /* SystemConfiguration.framework in Frameworks */,
 				371459AA1FDFACA800C1F14A /* MobileCoreServices.framework in Frameworks */,
 				371459AB1FDFACA800C1F14A /* GLKit.framework in Frameworks */,
+				3724A4D5200235CE001E5EE7 /* Quickblox.framework in Frameworks */,
 				371459AC1FDFACA800C1F14A /* CFNetwork.framework in Frameworks */,
 				3714599A1FDFAC3D00C1F14A /* libxml2.tbd in Frameworks */,
-				371459A61FDFAC9500C1F14A /* Quickblox.framework in Frameworks */,
 				3714599C1FDFAC4300C1F14A /* libz.tbd in Frameworks */,
 				371459961FDFAC2A00C1F14A /* libc++.tbd in Frameworks */,
-				E4208C9E7E17D4FB2656038F /* Pods_i_Chat.framework in Frameworks */,
-				371459AD1FDFACBC00C1F14A /* Quickblox.framework in Frameworks */,
 				371459941FDFAC1B00C1F14A /* libicucore.tbd in Frameworks */,
 				371459981FDFAC3300C1F14A /* libresolv.tbd in Frameworks */,
-				371459AF1FDFACBC00C1F14A /* QuickbloxWebRTC.framework in Frameworks */,
-				371459A51FDFAC9500C1F14A /* QuickbloxWebRTC.framework in Frameworks */,
+				0CE1963C5450409716150493 /* Pods_i_Chat.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		2DAE148527B745ADC0987699 /* Pods */ = {
+		249F7C53161B44A12C173E87 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				498AF12EB1C3EB42182F2692 /* Pods-i-Chat.debug.xcconfig */,
-				3618AF86542D903ECA050532 /* Pods-i-Chat.release.xcconfig */,
+				6A5B370966860E3EDEA1EA01 /* Pods-i-Chat.debug.xcconfig */,
+				E6BABDAA2343482167F3017B /* Pods-i-Chat.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -332,8 +298,8 @@
 				371459B31FDFAF0300C1F14A /* Bridging-Header.h */,
 				3714597D1FDFAABF00C1F14A /* i-Chat */,
 				3714597C1FDFAABF00C1F14A /* Products */,
-				2DAE148527B745ADC0987699 /* Pods */,
 				EF0351E21E5259D8657B3499 /* Frameworks */,
+				249F7C53161B44A12C173E87 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -563,16 +529,8 @@
 		EF0351E21E5259D8657B3499 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				37F495B02001DF340035DC0C /* XLActionController.framework */,
-				37F495AE2001DEDF0035DC0C /* GoogleToolboxForMac.framework */,
-				37F495AC2001DED70035DC0C /* GTMSessionFetcher.framework */,
-				37F495AA2001DDED0035DC0C /* MZTimerLabel.framework */,
-				37F495A82001DDAE0035DC0C /* Koloda.framework */,
-				37F495A62001DD880035DC0C /* SwifterSwift.framework */,
-				37F495A42001DD640035DC0C /* SVProgressHUD.framework */,
-				37F495A22001DD4D0035DC0C /* IQKeyboardManager.framework */,
-				37F495A02001DD340035DC0C /* Nuke.framework */,
-				37F4959E2001DD110035DC0C /* KeychainSwift.framework */,
+				3724A4D3200235C4001E5EE7 /* Quickblox.framework */,
+				3724A4D4200235CC001E5EE7 /* QuickbloxWebRTC.framework */,
 				371459A21FDFAC7300C1F14A /* Accelerate.framework */,
 				371459A11FDFAC6E00C1F14A /* VideoToolbox.framework */,
 				371459A01FDFAC6600C1F14A /* SystemConfiguration.framework */,
@@ -584,9 +542,7 @@
 				371459971FDFAC3300C1F14A /* libresolv.tbd */,
 				371459951FDFAC2A00C1F14A /* libc++.tbd */,
 				371459931FDFAC1B00C1F14A /* libicucore.tbd */,
-				371459A41FDFAC9500C1F14A /* Quickblox.framework */,
-				371459A31FDFAC9500C1F14A /* QuickbloxWebRTC.framework */,
-				813BB42A75F2B98DC83AC0E3 /* Pods_i_Chat.framework */,
+				79B47EC97E1EEF266B777B33 /* Pods_i_Chat.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -598,15 +554,15 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 3714598D1FDFAABF00C1F14A /* Build configuration list for PBXNativeTarget "i-Chat" */;
 			buildPhases = (
-				CE7A81B27C8464D75693AF3F /* [CP] Check Pods Manifest.lock */,
+				67C1D4CC899D23FE263D02D5 /* [CP] Check Pods Manifest.lock */,
 				371459771FDFAABF00C1F14A /* Sources */,
 				371459781FDFAABF00C1F14A /* Frameworks */,
 				371459791FDFAABF00C1F14A /* Resources */,
-				C90241063E6D7B0256018559 /* [CP] Embed Pods Frameworks */,
-				F3FF97B5228D53F6CB3D1522 /* [CP] Copy Pods Resources */,
-				371459B11FDFACBC00C1F14A /* Embed Frameworks */,
 				371459B21FDFACD700C1F14A /* ShellScript */,
 				372F85081FFF097000D6BCB1 /* Crashlytics */,
+				3724A4C620022C53001E5EE7 /* Embed Frameworks */,
+				AC8C9292F0640CEBEAE5F587 /* [CP] Embed Pods Frameworks */,
+				C8B1C2DA8E06517841BCD8E4 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -624,7 +580,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0910;
-				LastUpgradeCheck = 0910;
+				LastUpgradeCheck = 0920;
 				ORGANIZATIONNAME = "Jui-hsin.Chen";
 				TargetAttributes = {
 					3714597A1FDFAABF00C1F14A = {
@@ -632,7 +588,7 @@
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.BackgroundModes = {
-								enabled = 1;
+								enabled = 0;
 							};
 							com.apple.InterAppAudio = {
 								enabled = 0;
@@ -704,7 +660,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "bash \"${BUILT_PRODUCTS_DIR}/${FRAMEWORKS_FOLDER_PATH}/QuickbloxWebRTC.framework/strip-framework.sh\"\n";
+			shellScript = "bash \"${BUILT_PRODUCTS_DIR}/${FRAMEWORKS_FOLDER_PATH}/QuickbloxWebRTC.framework/strip-framework.sh\"\nAPP_PATH=“${TARGET_BUILD_DIR}/${WRAPPER_NAME}”\n\n# This script loops through the frameworks embedded in the application and\n# removes unused architectures.\nfind “$APP_PATH” -name ‘*.framework’ -type d | while read -r FRAMEWORK\ndo\nFRAMEWORK_EXECUTABLE_NAME=$(defaults read “$FRAMEWORK/Info.plist” CFBundleExecutable)\nFRAMEWORK_EXECUTABLE_PATH=“$FRAMEWORK/$FRAMEWORK_EXECUTABLE_NAME”\necho “Executable is $FRAMEWORK_EXECUTABLE_PATH”\n\nEXTRACTED_ARCHS=()\n\nfor ARCH in $ARCHS\ndo\necho “Extracting $ARCH from $FRAMEWORK_EXECUTABLE_NAME”\nlipo -extract “$ARCH” “$FRAMEWORK_EXECUTABLE_PATH” -o “$FRAMEWORK_EXECUTABLE_PATH-$ARCH”\nEXTRACTED_ARCHS+=(“$FRAMEWORK_EXECUTABLE_PATH-$ARCH”)\ndone\n\necho “Merging extracted architectures: ${ARCHS}”\nlipo -o “$FRAMEWORK_EXECUTABLE_PATH-merged” -create “${EXTRACTED_ARCHS[@]}”\nrm “${EXTRACTED_ARCHS[@]}”\n\necho “Replacing original executable with thinned version”\nrm “$FRAMEWORK_EXECUTABLE_PATH”\nmv “$FRAMEWORK_EXECUTABLE_PATH-merged” “$FRAMEWORK_EXECUTABLE_PATH”\n\ndone\n";
 		};
 		372F85081FFF097000D6BCB1 /* Crashlytics */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -720,51 +676,7 @@
 			shellPath = /bin/sh;
 			shellScript = "bash \"${BUILT_PRODUCTS_DIR}/${FRAMEWORKS_FOLDER_PATH}/QuickbloxWebRTC.framework/strip-framework.sh\"\n\"${PODS_ROOT}/SwiftLint/swiftlint\"\n\"${PODS_ROOT}/Fabric/run\"";
 		};
-		C90241063E6D7B0256018559 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-i-Chat/Pods-i-Chat-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
-				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
-				"${BUILT_PRODUCTS_DIR}/IQKeyboardManager/IQKeyboardManager.framework",
-				"${BUILT_PRODUCTS_DIR}/KeychainSwift/KeychainSwift.framework",
-				"${BUILT_PRODUCTS_DIR}/Koloda/Koloda.framework",
-				"${BUILT_PRODUCTS_DIR}/MZTimerLabel/MZTimerLabel.framework",
-				"${BUILT_PRODUCTS_DIR}/Nuke/Nuke.framework",
-				"${PODS_ROOT}/QuickBlox/Quickblox.framework",
-				"${BUILT_PRODUCTS_DIR}/SVProgressHUD/SVProgressHUD.framework",
-				"${BUILT_PRODUCTS_DIR}/SwifterSwift/SwifterSwift.framework",
-				"${BUILT_PRODUCTS_DIR}/XLActionController/XLActionController.framework",
-				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
-				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
-				"${BUILT_PRODUCTS_DIR}/pop/pop.framework",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IQKeyboardManager.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/KeychainSwift.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Koloda.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MZTimerLabel.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Nuke.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Quickblox.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SVProgressHUD.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwifterSwift.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/XLActionController.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/pop.framework",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-i-Chat/Pods-i-Chat-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		CE7A81B27C8464D75693AF3F /* [CP] Check Pods Manifest.lock */ = {
+		67C1D4CC899D23FE263D02D5 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -782,7 +694,53 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		F3FF97B5228D53F6CB3D1522 /* [CP] Copy Pods Resources */ = {
+		AC8C9292F0640CEBEAE5F587 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-i-Chat/Pods-i-Chat-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
+				"${BUILT_PRODUCTS_DIR}/IQKeyboardManager/IQKeyboardManager.framework",
+				"${BUILT_PRODUCTS_DIR}/KeychainSwift/KeychainSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/Koloda/Koloda.framework",
+				"${BUILT_PRODUCTS_DIR}/MZTimerLabel/MZTimerLabel.framework",
+				"${BUILT_PRODUCTS_DIR}/Nuke/Nuke.framework",
+				"${PODS_ROOT}/QuickBlox/Quickblox.framework",
+				"${PODS_ROOT}/Quickblox-WebRTC/QuickbloxWebRTC.framework",
+				"${BUILT_PRODUCTS_DIR}/SVProgressHUD/SVProgressHUD.framework",
+				"${BUILT_PRODUCTS_DIR}/SwifterSwift/SwifterSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/XLActionController/XLActionController.framework",
+				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
+				"${BUILT_PRODUCTS_DIR}/pop/pop.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IQKeyboardManager.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/KeychainSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Koloda.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MZTimerLabel.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Nuke.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Quickblox.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/QuickbloxWebRTC.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SVProgressHUD.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwifterSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/XLActionController.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/pop.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-i-Chat/Pods-i-Chat-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C8B1C2DA8E06517841BCD8E4 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -933,7 +891,7 @@
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -952,7 +910,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -992,7 +950,7 @@
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
@@ -1005,7 +963,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
@@ -1015,9 +973,11 @@
 		};
 		3714598E1FDFAABF00C1F14A /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 498AF12EB1C3EB42182F2692 /* Pods-i-Chat.debug.xcconfig */;
+			baseConfigurationReference = 6A5B370966860E3EDEA1EA01 /* Pods-i-Chat.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = L8HW62WTEC;
@@ -1030,6 +990,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.hsin.chen-i-Chat";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "Bridging-Header.h";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -1038,9 +999,11 @@
 		};
 		3714598F1FDFAABF00C1F14A /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 3618AF86542D903ECA050532 /* Pods-i-Chat.release.xcconfig */;
+			baseConfigurationReference = E6BABDAA2343482167F3017B /* Pods-i-Chat.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = L8HW62WTEC;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -1052,6 +1015,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.hsin.chen-i-Chat";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "Bridging-Header.h";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

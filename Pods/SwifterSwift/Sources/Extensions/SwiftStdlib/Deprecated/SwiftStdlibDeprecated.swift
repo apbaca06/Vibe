@@ -14,7 +14,7 @@ extension String {
     public var length: Int {
         return count
     }
-
+    
     /// SwifterSwift: Sliced string from a start index.
     ///
     ///        "Hello World".slicing(at: 6) -> "World"
@@ -28,7 +28,7 @@ extension String {
         }
         return self[safe: i..<count]
     }
-
+    
     /// SwifterSwift: Sliced string from a start index to an end index.
     ///
     ///        "Hello World".slicing(from: 6, to: 11) -> "World"
@@ -44,7 +44,7 @@ extension String {
         }
         return self[safe: start..<end]
     }
-
+    
     /// SwifterSwift: First index of substring in string.
     ///
     ///        "Hello World!".firstIndex(of: "l") -> 2
@@ -69,7 +69,7 @@ extension String {
     public func splitted(by separator: Character) -> [String] {
         return split { $0 == separator }.map(String.init)
     }
-
+    
     /// SwifterSwift: Reversed string.
     ///
     ///        "foo".reversed() -> "oof"

@@ -11,7 +11,7 @@ import UIKit
 
 // MARK: - Properties
 public extension UIFont {
-
+	
 	/// SwifterSwift: Font as monospaced font
     ///
     ///     UIFont.preferredFont(forTextStyle: .body).monospaced

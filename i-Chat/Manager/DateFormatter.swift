@@ -17,11 +17,24 @@ extension Formatter {
         formatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss SSSXXXX"
         return formatter
     }()
+
+    static let iso8601New: DateFormatter = {
+        let formatter = DateFormatter()
+        formatter.calendar = Calendar(identifier: .iso8601)
+        formatter.locale = Locale(identifier: "en_US_POSIX")
+        formatter.timeZone = TimeZone(secondsFromGMT: 0)
+        formatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss"
+        return formatter
+    }()
 }
 
 extension Date {
     var iso8601: String {
         return Formatter.iso8601.string(from: self)
+    }
+
+    var iso8601New: String {
+        return Formatter.iso8601New.string(from: self)
     }
 }
 

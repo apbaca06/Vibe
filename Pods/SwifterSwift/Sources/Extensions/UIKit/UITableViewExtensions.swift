@@ -11,22 +11,22 @@ import UIKit
 
 // MARK: - Properties
 public extension UITableView {
-
+	
 	/// SwifterSwift: Index path of last row in tableView.
 	public var indexPathForLastRow: IndexPath? {
 		return indexPathForLastRow(inSection: lastSection)
 	}
-
+	
 	/// SwifterSwift: Index of last section in tableView.
 	public var lastSection: Int {
 		return numberOfSections > 0 ? numberOfSections - 1 : 0
 	}
-
+	
 }
 
 // MARK: - Methods
 public extension UITableView {
-
+	
 	/// SwifterSwift: Number of all rows in all sections of tableView.
 	///
 	/// - Returns: The count of all rows in the tableView.
@@ -53,7 +53,7 @@ public extension UITableView {
 		}
 		return IndexPath(row: numberOfRows(inSection: section) - 1, section: section)
 	}
-
+	
 	/// Reload data with a completion handler.
 	///
 	/// - Parameter completion: completion handler to run after reloadData finishes.
@@ -64,17 +64,17 @@ public extension UITableView {
 			completion()
 		})
 	}
-
+	
 	/// SwifterSwift: Remove TableFooterView.
 	public func removeTableFooterView() {
 		tableFooterView = nil
 	}
-
+	
 	/// SwifterSwift: Remove TableHeaderView.
 	public func removeTableHeaderView() {
 		tableHeaderView = nil
 	}
-
+	
 	/// SwifterSwift: Scroll to bottom of TableView.
 	///
 	/// - Parameter animated: set true to animate scroll (default is true).
@@ -82,14 +82,14 @@ public extension UITableView {
 		let bottomOffset = CGPoint(x: 0, y: contentSize.height - bounds.size.height)
 		setContentOffset(bottomOffset, animated: animated)
 	}
-
+	
 	/// SwifterSwift: Scroll to top of TableView.
 	///
 	/// - Parameter animated: set true to animate scroll (default is true).
 	public func scrollToTop(animated: Bool = true) {
 		setContentOffset(CGPoint.zero, animated: animated)
 	}
-
+    
     /// SwifterSwift: Dequeue reusable UITableViewCell using class name
     ///
     /// - Parameter name: UITableViewCell type
@@ -107,7 +107,7 @@ public extension UITableView {
 	public func dequeueReusableCell<T: UITableViewCell>(withClass name: T.Type, for indexPath: IndexPath) -> T? {
 		return dequeueReusableCell(withIdentifier: String(describing: name), for: indexPath) as? T
     }
-
+    
     /// SwiferSwift: Dequeue reusable UITableViewHeaderFooterView using class name
     ///
     /// - Parameter name: UITableViewHeaderFooterView type
@@ -124,14 +124,14 @@ public extension UITableView {
 	public func register<T: UITableViewHeaderFooterView>(nib: UINib?, withHeaderFooterViewClass name: T.Type) {
         register(nib, forHeaderFooterViewReuseIdentifier: String(describing: name))
     }
-
+    
     /// SwifterSwift: Register UITableViewHeaderFooterView using class name
     ///
     /// - Parameter name: UITableViewHeaderFooterView type
     public func register<T: UITableViewHeaderFooterView>(headerFooterViewClassWith name: T.Type) {
         register(T.self, forHeaderFooterViewReuseIdentifier: String(describing: name))
     }
-
+    
     /// SwifterSwift: Register UITableViewCell using class name
     ///
     /// - Parameter name: UITableViewCell type
@@ -147,6 +147,6 @@ public extension UITableView {
 	public func register<T: UITableViewCell>(nib: UINib?, withCellClass name: T.Type) {
         register(nib, forCellReuseIdentifier: String(describing: name))
     }
-
+	
 }
 #endif

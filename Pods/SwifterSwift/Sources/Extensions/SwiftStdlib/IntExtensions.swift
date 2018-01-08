@@ -10,42 +10,42 @@ import CoreGraphics
 
 // MARK: - Properties
 public extension Int {
-
+	
 	/// SwifterSwift: CountableRange 0..<Int.
 	public var countableRange: CountableRange<Int> {
 		return 0..<self
 	}
-
+	
 	/// SwifterSwift: Radian value of degree input.
 	public var degreesToRadians: Double {
 		return Double.pi * Double(self) / 180.0
 	}
-
+	
 	/// SwifterSwift: Degree value of radian input
 	public var radiansToDegrees: Double {
 		return Double(self) * 180 / Double.pi
 	}
-
+	
 	/// SwifterSwift: UInt.
 	public var uInt: UInt {
 		return UInt(self)
 	}
-
+	
 	/// SwifterSwift: Double.
 	public var double: Double {
 		return Double(self)
 	}
-
+	
 	/// SwifterSwift: Float.
 	public var float: Float {
 		return Float(self)
 	}
-
+	
 	/// SwifterSwift: CGFloat.
 	public var cgFloat: CGFloat {
 		return CGFloat(self)
 	}
-
+	
 	/// SwifterSwift: String formatted for values over ±1000 (example: 1k, -2k, 100k, 1kk, -5kk..)
 	public var kFormatted: String {
 		var sign: String {
@@ -61,12 +61,12 @@ public extension Int {
 		}
 		return String(format: "\(sign)%ikk", abs / 100000)
 	}
-
+	
 }
 
 // MARK: - Methods
 public extension Int {
-
+	
 	/// SwifterSwift: Random integer between two integer values.
 	///
 	/// - Parameters:
@@ -76,7 +76,7 @@ public extension Int {
 	public static func random(between min: Int, and max: Int) -> Int {
 		return random(inRange: min...max)
 	}
-
+	
 	/// SwifterSwift: Random integer in a closed interval range.
 	///
 	/// - Parameter range: closed interval range.
@@ -107,7 +107,7 @@ public extension Int {
 		}
 		return true
 	}
-
+	
 	/// SwifterSwift: Roman numeral string from integer (if applicable).
 	///
 	///		10.romanNumeral() -> "X"
@@ -120,10 +120,10 @@ public extension Int {
 		}
 		let romanValues = ["M", "CM", "D", "CD", "C", "XC", "L", "XL", "X", "IX", "V", "IV", "I"]
 		let arabicValues = [1000, 900, 500, 400, 100, 90, 50, 40, 10, 9, 5, 4, 1]
-
+		
 		var romanValue = ""
 		var startingValue = self
-
+		
 		for (index, romanChar) in romanValues.enumerated() {
 			let arabicValue = arabicValues[index]
 			let div = startingValue / arabicValue
@@ -141,7 +141,7 @@ public extension Int {
 
 // MARK: - Initializers
 public extension Int {
-
+	
 	/// SwifterSwift: Created a random integer between two integer values.
 	///
 	/// - Parameters:
@@ -150,14 +150,14 @@ public extension Int {
 	public init(randomBetween min: Int, and max: Int) {
 		self = Int.random(between: min, and: max)
 	}
-
+	
 	/// SwifterSwift: Create a random integer in a closed interval range.
 	///
 	/// - Parameter range: closed interval range.
 	public init(randomInRange range: ClosedRange<Int>) {
 		self = Int.random(inRange: range)
 	}
-
+	
 }
 
 // MARK: - Operators

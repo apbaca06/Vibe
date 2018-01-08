@@ -17,19 +17,19 @@
 	<key>CFBundleShortVersionString</key>
 	<string>1.0</string>
 	<key>CFBundleVersion</key>
-	<string>1</string>
+	<string>4</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
+	<key>NSCameraUsageDescription</key>
+	<string>Please turn on camera</string>
 	<key>NSLocationAlwaysUsageDescription</key>
 	<string>Please turn on GPS</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
 	<string>Please turn on GPS</string>
 	<key>NSMicrophoneUsageDescription</key>
 	<string>Please turn on microphone</string>
-	<key>UIBackgroundModes</key>
-	<array>
-		<string>audio</string>
-	</array>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>Please allow access to library</string>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
 	<key>UIMainStoryboardFile</key>

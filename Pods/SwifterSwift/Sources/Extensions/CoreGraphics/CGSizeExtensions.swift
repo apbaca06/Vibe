@@ -14,7 +14,7 @@
 
 // MARK: - Methods
 public extension CGSize {
-
+	
     /// SwifterSwift: Aspect fit CGSize.
     ///
     ///     let rect = CGSize(width: 120, height: 80)
@@ -28,7 +28,7 @@ public extension CGSize {
 		let minRatio = min(boundingSize.width / width, boundingSize.height / height)
 		return CGSize(width: width * minRatio, height: height * minRatio)
 	}
-
+	
     /// SwifterSwift: Aspect fill CGSize.
     ///
     ///     let rect = CGSize(width: 20, height: 120)
@@ -44,5 +44,5 @@ public extension CGSize {
 		let h = min(height * minRatio, boundingSize.height)
 		return CGSize(width: w, height: h)
 	}
-
+	
 }

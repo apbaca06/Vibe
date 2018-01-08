@@ -26,7 +26,7 @@ class ReportViewController: UIViewController, UITextViewDelegate {
               let reportID = reportedID
         else { return }
         if reportTextView.hasText {
-            DatabasePath.reportRef.child(uid).child(reportID).updateChildValues([Date().iso8601StringNew: reportTextView.text])
+            DatabasePath.reportRef.child(uid).child(reportID).updateChildValues([Date().iso8601New: reportTextView.text])
             let alertController = UIAlertController(title: NSLocalizedString("It's been reported!", comment: ""), message: "We will further investigate. Thank you!", preferredStyle: .alert)
             let action = UIAlertAction(title: NSLocalizedString("OK", comment: ""), style: .default, handler: nil)
             alertController.addAction(action)
