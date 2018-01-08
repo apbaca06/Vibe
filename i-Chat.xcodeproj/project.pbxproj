@@ -50,7 +50,6 @@
 		376C3FB81FEBA92900EAF188 /* GenderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 376C3FB71FEBA92900EAF188 /* GenderViewController.swift */; };
 		376C3FBA1FEBACF900EAF188 /* PreferenceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 376C3FB91FEBACF900EAF188 /* PreferenceViewController.swift */; };
 		376C3FBC1FEBAD9A00EAF188 /* SetImgViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 376C3FBB1FEBAD9A00EAF188 /* SetImgViewController.swift */; };
-		3792B0B11FF2386700AB4838 /* GenderPickerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3792B0B01FF2386700AB4838 /* GenderPickerController.swift */; };
 		3792B0B61FF2537000AB4838 /* AgeRangeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3792B0B41FF2537000AB4838 /* AgeRangeTableViewCell.swift */; };
 		3792B0B71FF2537000AB4838 /* AgeRangeTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3792B0B51FF2537000AB4838 /* AgeRangeTableViewCell.xib */; };
 		3792B0BB1FF35AB700AB4838 /* SliderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3792B0B91FF35AB700AB4838 /* SliderTableViewCell.swift */; };
@@ -163,7 +162,6 @@
 		376C3FB71FEBA92900EAF188 /* GenderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenderViewController.swift; sourceTree = "<group>"; };
 		376C3FB91FEBACF900EAF188 /* PreferenceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferenceViewController.swift; sourceTree = "<group>"; };
 		376C3FBB1FEBAD9A00EAF188 /* SetImgViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetImgViewController.swift; sourceTree = "<group>"; };
-		3792B0B01FF2386700AB4838 /* GenderPickerController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenderPickerController.swift; sourceTree = "<group>"; };
 		3792B0B41FF2537000AB4838 /* AgeRangeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AgeRangeTableViewCell.swift; sourceTree = "<group>"; };
 		3792B0B51FF2537000AB4838 /* AgeRangeTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AgeRangeTableViewCell.xib; sourceTree = "<group>"; };
 		3792B0B91FF35AB700AB4838 /* SliderTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SliderTableViewCell.swift; sourceTree = "<group>"; };
@@ -381,7 +379,6 @@
 		3792B0C21FF3716B00AB4838 /* Gender */ = {
 			isa = PBXGroup;
 			children = (
-				3792B0B01FF2386700AB4838 /* GenderPickerController.swift */,
 				37DE5F921FEA65980017E09D /* GenderPickerTableViewCell.swift */,
 				37DE5F931FEA65980017E09D /* GenderPickerTableViewCell.xib */,
 			);
@@ -779,7 +776,6 @@
 				375F04B61FE3A73A009D2671 /* MenuBar.swift in Sources */,
 				37C0FF4C1FE8BE58002EACF3 /* RingtoneManager.swift in Sources */,
 				370832B61FE3800200D4DC86 /* CallManager.swift in Sources */,
-				3792B0B11FF2386700AB4838 /* GenderPickerController.swift in Sources */,
 				37CC153D1FFF6684006C9A81 /* ArrayExtension.swift in Sources */,
 				376C3FBA1FEBACF900EAF188 /* PreferenceViewController.swift in Sources */,
 				37BB8A9220035BF200CFA6CD /* AlertExtension.swift in Sources */,

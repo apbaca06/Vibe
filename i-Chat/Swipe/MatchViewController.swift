@@ -10,12 +10,6 @@ import UIKit
 
 class MatchViewController: UIViewController {
 
-//    var state: State?
-//
-//    func updateState() {
-//        state = nil
-//    }
-
     @IBOutlet weak var staySwipeButton: UIButton!
     @IBOutlet weak var heatImageView: UIImageView!
     @IBOutlet weak var goChatButton: UIButton!
@@ -26,7 +20,24 @@ class MatchViewController: UIViewController {
     }
 
     @IBAction func goChat(_ sender: Any) {
-//        updateState()
+        // swiftlint:disable force_cast
+
+        let parentVC = parent as! HomeViewController
+        // swiftlint:enable force_cast
+
+        self.view.removeFromSuperview()
+
+        parentVC.scrollToMenuIndex(2)
+        parentVC.menuBar.collectionView.selectItem(
+            at: [0, 2],
+
+            animated: true,
+
+            scrollPosition: UICollectionViewScrollPosition()
+        )
+
+        self.removeFromParentViewController()
+
         self.dismiss(animated: true)
     }
 

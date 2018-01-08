@@ -82,12 +82,7 @@ enum SearchComponent {
     }
 }
 
-protocol SettingTableViewControllerDelegate: class {
-    func controller(_ controller: SettingTableViewController, didChanged minAge: Int)
-//    func controller(_ controller: SettingTableViewController, didChanged maxAge: Int)
-}
-
-class SettingTableViewController: UITableViewController, GenderPickerControllerDelegate {
+class SettingTableViewController: UITableViewController {
 
 //        guard let uid = keychain.get("uid"),
 //            let minAgeString = keychain.get("minAge"),
@@ -104,28 +99,28 @@ class SettingTableViewController: UITableViewController, GenderPickerControllerD
 
 //        }
 
-    func controller(_ controller: GenderPickerController, didSelect gender: String) {
-
-        self.gender = gender
-
-        tableView.reloadData()
-    }
+//    func controller(_ controller: GenderPickerController, didSelect gender: String) {
+//
+//        self.gender = gender
+//
+//        tableView.reloadData()
+//    }
 
     typealias Component = SettingComponent
 
     let components: [Component]
 
-    weak var delegate: SettingTableViewControllerDelegate?
-
     var cityName: String?
 
-    var gender: String?
-
     let ageArray = Array(18...55)
+
+    let gender = ["Male", "Female"]
 
     let minAgePickerView = UIPickerView()
 
     let maxAgePickerView = UIPickerView()
+
+    let genderPickerView = UIPickerView()
 
     let keychain = KeychainSwift()
 
@@ -146,11 +141,13 @@ class SettingTableViewController: UITableViewController, GenderPickerControllerD
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        GenderPickerController.shared.genderDelegate = self
-
         setUpTableView()
 
         setupNavBar()
+
+//        minAgePickerView.selectRow(20, inComponent: 1, animated: true)
+//
+//        maxAgePickerView.selectRow(10, inComponent: 0, animated: true)
 
     }
 
@@ -335,17 +332,13 @@ class SettingTableViewController: UITableViewController, GenderPickerControllerD
 
                 cell.leftLabel.text = NSLocalizedString("Gender Preference", comment: "")
 
-                let genderPickerViewController = GenderPickerController.shared
+                cell.textfield.text = self.keychain.get("preference")
 
-                self.addChildViewController(genderPickerViewController)
+                cell.textfield.inputView = genderPickerView
 
-                cell.pickerView.delegate = genderPickerViewController
+                genderPickerView.delegate = self
 
-                cell.pickerView.dataSource = genderPickerViewController
-
-                if self.gender != nil {
-                    cell.textfield.text = gender
-                }
+                genderPickerView.dataSource = self
 
                 return cell
 
@@ -435,29 +428,27 @@ extension SettingTableViewController: UIPickerViewDelegate, UIPickerViewDataSour
 
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
 
-        if pickerView == minAgePickerView {
+        if pickerView == genderPickerView {
+
+            return gender.count
+
+        } else {
 
             return ageArray.count
         }
-        if pickerView == maxAgePickerView {
-            return ageArray.count
-        }
-        return 0
     }
 
     func pickerView(_ pickerView: UIPickerView,
                     titleForRow row: Int,
                     forComponent component: Int) -> String? {
 
-        if pickerView == minAgePickerView {
+        if pickerView == genderPickerView {
+
+            return gender[row]
+        } else {
 
             return String(describing: ageArray[row])
         }
-        if pickerView == maxAgePickerView {
-            return String(describing: ageArray[row])
-        }
-
-        return nil
     }
 
     func pickerView(_ pickerView: UIPickerView,
@@ -487,7 +478,7 @@ extension SettingTableViewController: UIPickerViewDelegate, UIPickerViewDataSour
                 alertController.show()
             }
 
-        } else {
+        } else if pickerView == maxAgePickerView {
 
             if ageArray[row] > minimumAge {
                 let min = String(describing: ageArray[row])
@@ -502,6 +493,12 @@ extension SettingTableViewController: UIPickerViewDelegate, UIPickerViewDataSour
                 alertController.show()
             }
 
+        } else {
+
+            keychain.set(gender[row], forKey: "preference")
+            tableView.reloadData()
+
+            DatabasePath.userRef.child(uid).updateChildValues(["preference": gender[row]])
         }
 
     }

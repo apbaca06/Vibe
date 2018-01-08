@@ -61,11 +61,7 @@ class HomeViewController: UICollectionViewController, UICollectionViewDelegateFl
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        state = State()
-
         friendCollectionViewController.delegate = self
-
-        settingTableViewController.delegate = self
 
         FirebaseManager.getFriendList(eventType: .value) { (friends) in
             self.friends = friends

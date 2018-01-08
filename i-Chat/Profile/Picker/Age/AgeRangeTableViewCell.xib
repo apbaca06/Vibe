@@ -26,7 +26,7 @@
                             <constraint firstAttribute="width" constant="35" id="Aww-GJ-8eu"/>
                             <constraint firstAttribute="height" constant="20" id="PDI-g8-ZD3"/>
                         </constraints>
-                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="textColor" red="0.027450980390000001" green="0.62745098040000002" blue="0.76470588240000004" alpha="1" colorSpace="calibratedRGB"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <textInputTraits key="textInputTraits"/>
                     </textField>
@@ -36,7 +36,7 @@
                             <constraint firstAttribute="width" constant="35" id="6jQ-uT-zny"/>
                             <constraint firstAttribute="height" constant="20" id="I8g-Xb-ugg"/>
                         </constraints>
-                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="textColor" red="0.027450980390000001" green="0.62745098040000002" blue="0.76470588240000004" alpha="1" colorSpace="calibratedRGB"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <textInputTraits key="textInputTraits"/>
                     </textField>

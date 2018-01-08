@@ -15,16 +15,8 @@ class GenderPickerTableViewCell: UITableViewCell {
 
     @IBOutlet weak var textfield: UITextField!
 
-    let pickerView = UIPickerView()
-
-    let keychain = KeychainSwift()
-
     override func awakeFromNib() {
         super.awakeFromNib()
-
-        textfield.text = self.keychain.get("preference")
-
-        textfield.inputView = pickerView
 
     }
 

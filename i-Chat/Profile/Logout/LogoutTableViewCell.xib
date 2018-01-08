@@ -25,7 +25,9 @@
                             <constraint firstAttribute="width" constant="80" id="SXN-a4-pll"/>
                             <constraint firstAttribute="height" constant="30" id="lre-ur-7xt"/>
                         </constraints>
-                        <state key="normal" title="Button"/>
+                        <state key="normal" title="Button">
+                            <color key="titleColor" red="0.027450980390000001" green="0.62745098040000002" blue="0.76470588240000004" alpha="1" colorSpace="calibratedRGB"/>
+                        </state>
                         <connections>
                             <action selector="logoutAction:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="fG2-Tb-7Oe"/>
                         </connections>
