@@ -51,7 +51,6 @@
 		376C3FBA1FEBACF900EAF188 /* PreferenceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 376C3FB91FEBACF900EAF188 /* PreferenceViewController.swift */; };
 		376C3FBC1FEBAD9A00EAF188 /* SetImgViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 376C3FBB1FEBAD9A00EAF188 /* SetImgViewController.swift */; };
 		3792B0B11FF2386700AB4838 /* GenderPickerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3792B0B01FF2386700AB4838 /* GenderPickerController.swift */; };
-		3792B0B31FF24FDE00AB4838 /* AgeRangePickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3792B0B21FF24FDE00AB4838 /* AgeRangePickerViewController.swift */; };
 		3792B0B61FF2537000AB4838 /* AgeRangeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3792B0B41FF2537000AB4838 /* AgeRangeTableViewCell.swift */; };
 		3792B0B71FF2537000AB4838 /* AgeRangeTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3792B0B51FF2537000AB4838 /* AgeRangeTableViewCell.xib */; };
 		3792B0BB1FF35AB700AB4838 /* SliderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3792B0B91FF35AB700AB4838 /* SliderTableViewCell.swift */; };
@@ -71,6 +70,7 @@
 		37A5BBA91FE628B900C4F1E6 /* ChatCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 37A5BBA71FE628B900C4F1E6 /* ChatCollectionViewCell.xib */; };
 		37A5BBDF1FE6313000C4F1E6 /* HomeForQuickBloxExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37A5BBDE1FE6313000C4F1E6 /* HomeForQuickBloxExtension.swift */; };
 		37B4EDD31FF7976800185785 /* MatchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37B4EDD21FF7976800185785 /* MatchViewController.swift */; };
+		37BB8A9220035BF200CFA6CD /* AlertExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37BB8A9120035BF200CFA6CD /* AlertExtension.swift */; };
 		37C0FF1C1FE7672C002EACF3 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 37C0FF1B1FE7672C002EACF3 /* GoogleService-Info.plist */; };
 		37C0FF1E1FE7A75E002EACF3 /* CallOutViewControllers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37C0FF1D1FE7A75E002EACF3 /* CallOutViewControllers.swift */; };
 		37C0FF4A1FE8BD34002EACF3 /* iphone.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 37C0FF491FE8BD34002EACF3 /* iphone.mp3 */; };
@@ -164,7 +164,6 @@
 		376C3FB91FEBACF900EAF188 /* PreferenceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferenceViewController.swift; sourceTree = "<group>"; };
 		376C3FBB1FEBAD9A00EAF188 /* SetImgViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetImgViewController.swift; sourceTree = "<group>"; };
 		3792B0B01FF2386700AB4838 /* GenderPickerController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenderPickerController.swift; sourceTree = "<group>"; };
-		3792B0B21FF24FDE00AB4838 /* AgeRangePickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AgeRangePickerViewController.swift; sourceTree = "<group>"; };
 		3792B0B41FF2537000AB4838 /* AgeRangeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AgeRangeTableViewCell.swift; sourceTree = "<group>"; };
 		3792B0B51FF2537000AB4838 /* AgeRangeTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AgeRangeTableViewCell.xib; sourceTree = "<group>"; };
 		3792B0B91FF35AB700AB4838 /* SliderTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SliderTableViewCell.swift; sourceTree = "<group>"; };
@@ -184,6 +183,7 @@
 		37A5BBA71FE628B900C4F1E6 /* ChatCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChatCollectionViewCell.xib; sourceTree = "<group>"; };
 		37A5BBDE1FE6313000C4F1E6 /* HomeForQuickBloxExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeForQuickBloxExtension.swift; sourceTree = "<group>"; };
 		37B4EDD21FF7976800185785 /* MatchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchViewController.swift; sourceTree = "<group>"; };
+		37BB8A9120035BF200CFA6CD /* AlertExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertExtension.swift; sourceTree = "<group>"; };
 		37C0FF1B1FE7672C002EACF3 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		37C0FF1D1FE7A75E002EACF3 /* CallOutViewControllers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CallOutViewControllers.swift; sourceTree = "<group>"; };
 		37C0FF491FE8BD34002EACF3 /* iphone.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = iphone.mp3; sourceTree = "<group>"; };
@@ -317,6 +317,7 @@
 				37CC15491FFF91FD006C9A81 /* Localizable.strings */,
 				37CC15441FFF91FC006C9A81 /* InfoPlist.strings */,
 				37C0FF4D1FE8F104002EACF3 /* i-Chat.entitlements */,
+				37BB8A9120035BF200CFA6CD /* AlertExtension.swift */,
 				371459BA1FDFD90500C1F14A /* Key */,
 				3714597E1FDFAABF00C1F14A /* AppDelegate.swift */,
 				37C0FF201FE7D26A002EACF3 /* Model */,
@@ -390,7 +391,6 @@
 		3792B0C31FF3717800AB4838 /* Age */ = {
 			isa = PBXGroup;
 			children = (
-				3792B0B21FF24FDE00AB4838 /* AgeRangePickerViewController.swift */,
 				3792B0B41FF2537000AB4838 /* AgeRangeTableViewCell.swift */,
 				3792B0B51FF2537000AB4838 /* AgeRangeTableViewCell.xib */,
 			);
@@ -782,6 +782,7 @@
 				3792B0B11FF2386700AB4838 /* GenderPickerController.swift in Sources */,
 				37CC153D1FFF6684006C9A81 /* ArrayExtension.swift in Sources */,
 				376C3FBA1FEBACF900EAF188 /* PreferenceViewController.swift in Sources */,
+				37BB8A9220035BF200CFA6CD /* AlertExtension.swift in Sources */,
 				376C3FB81FEBA92900EAF188 /* GenderViewController.swift in Sources */,
 				372F85031FFE4C4D00D6BCB1 /* State.swift in Sources */,
 				37A5BB9D1FE6223600C4F1E6 /* BaseCell.swift in Sources */,
@@ -793,7 +794,6 @@
 				37B4EDD31FF7976800185785 /* MatchViewController.swift in Sources */,
 				37CA181E1FE2221500C1171B /* FirebaseManager.swift in Sources */,
 				3792B0B61FF2537000AB4838 /* AgeRangeTableViewCell.swift in Sources */,
-				3792B0B31FF24FDE00AB4838 /* AgeRangePickerViewController.swift in Sources */,
 				37DE5F8D1FEA620A0017E09D /* SettingTableViewController.swift in Sources */,
 				37DE5F901FEA65860017E09D /* LabelTableViewCell.swift in Sources */,
 				37A5BBDF1FE6313000C4F1E6 /* HomeForQuickBloxExtension.swift in Sources */,

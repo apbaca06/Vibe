@@ -37,6 +37,8 @@ class HomeViewController: UICollectionViewController, UICollectionViewDelegateFl
 
     let friendViewController = FriendTableViewController()
 
+    let settingTableViewController = SettingTableViewController()
+
     let keychain = KeychainSwift()
 
     var currentUser: User?
@@ -62,6 +64,8 @@ class HomeViewController: UICollectionViewController, UICollectionViewDelegateFl
         state = State()
 
         friendCollectionViewController.delegate = self
+
+        settingTableViewController.delegate = self
 
         FirebaseManager.getFriendList(eventType: .value) { (friends) in
             self.friends = friends

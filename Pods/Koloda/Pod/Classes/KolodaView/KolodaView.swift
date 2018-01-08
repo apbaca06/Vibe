@@ -199,6 +199,7 @@ open class KolodaView: UIView, DraggableCardDelegate {
     }
     
     internal func backgroundCardParametersForFrame(_ initialFrame: CGRect) -> (frame: CGRect, scale: CGSize) {
+
         var finalFrame = frameForTopCard()
         finalFrame.origin = initialFrame.origin
         

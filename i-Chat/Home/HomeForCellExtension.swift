@@ -12,6 +12,28 @@ import KeychainSwift
 import Koloda
 import Nuke
 
+extension HomeViewController: SettingTableViewControllerDelegate {
+    func controller(_ controller: SettingTableViewController, didChanged minAge: Int) {
+
+    guard let uid = keychain.get("uid"),
+        let minAgeString = keychain.get("minAge"),
+        let minimumAge = Int(minAgeString),
+        let maxAgeString = keychain.get("maxAge"),
+        let maximumAge = Int(maxAgeString)
+        else { return }
+
+        if minAge > maximumAge {
+            let alertController = UIAlertController(title: NSLocalizedString("The minimum age should be smaller than maxiumum age", comment: ""), message: "Invalid setting.", preferredStyle: .alert)
+            let okAction = UIAlertAction(title: NSLocalizedString("OK", comment: ""), style: .default, handler: nil)
+            alertController.addAction(okAction)
+            alertController.show()
+        } else {
+            DatabasePath.userRef.child(uid).child("agePreference").updateChildValues(["min": minAge])
+        }
+    }
+
+}
+
 extension HomeViewController: FriendCollectionViewControllerDelegate {
 
     @objc func callOther() {
@@ -54,8 +76,6 @@ extension HomeViewController: FriendCollectionViewControllerDelegate {
 
     @objc func toSettingPage() {
 
-        let settingTableViewController = SettingTableViewController()
-
         if let cityName = keychain.get("cityName") {
 
             settingTableViewController.cityName = cityName
@@ -64,7 +84,6 @@ extension HomeViewController: FriendCollectionViewControllerDelegate {
         let navSettingTableViewController = UINavigationController(rootViewController: settingTableViewController)
 
         present(navSettingTableViewController, animated: true, completion: nil)
-
     }
 
 }

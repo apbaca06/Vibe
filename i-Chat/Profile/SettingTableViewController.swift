@@ -82,19 +82,27 @@ enum SearchComponent {
     }
 }
 
-class SettingTableViewController: UITableViewController, GenderPickerControllerDelegate, AgeRangePickerControllerDelegate {
+protocol SettingTableViewControllerDelegate: class {
+    func controller(_ controller: SettingTableViewController, didChanged minAge: Int)
+//    func controller(_ controller: SettingTableViewController, didChanged maxAge: Int)
+}
 
-    func controller(_ controller: AgeRangePickerController, minAge: Int) {
+class SettingTableViewController: UITableViewController, GenderPickerControllerDelegate {
 
-        self.minAge = String(describing: minAge)
-        tableView.reloadData()
-    }
+//        guard let uid = keychain.get("uid"),
+//            let minAgeString = keychain.get("minAge"),
+//            let minimumAge = Int(minAgeString),
+//            let maxAgeString = keychain.get("maxAge"),
+//            let maximumAge = Int(maxAgeString)
+//            else { return }
+//        if minAge > maximumAge {
+//            let alertController = UIAlertController(title: NSLocalizedString("The minimum age should be smaller than maxiumum age", comment: ""), message: "Invalid setting.", preferredStyle: .alert)
+//            let okAction = UIAlertAction(title: NSLocalizedString("OK", comment: ""), style: .default, handler: nil)
+//            alertController.addAction(okAction)
+//            alertController.show()
+//        } else {
 
-    func controller(_ controller: AgeRangePickerController, maxAge: Int) {
-        self.maxAge = String(describing: maxAge)
-        tableView.reloadData()
-
-    }
+//        }
 
     func controller(_ controller: GenderPickerController, didSelect gender: String) {
 
@@ -107,13 +115,19 @@ class SettingTableViewController: UITableViewController, GenderPickerControllerD
 
     let components: [Component]
 
+    weak var delegate: SettingTableViewControllerDelegate?
+
     var cityName: String?
 
     var gender: String?
 
-    var minAge: String?
+    let ageArray = Array(18...55)
 
-    var maxAge: String?
+    let minAgePickerView = UIPickerView()
+
+    let maxAgePickerView = UIPickerView()
+
+    let keychain = KeychainSwift()
 
     // MARK: Init
 
@@ -133,8 +147,6 @@ class SettingTableViewController: UITableViewController, GenderPickerControllerD
         super.viewDidLoad()
 
         GenderPickerController.shared.genderDelegate = self
-
-        AgeRangePickerController.shared.ageDelegate = self
 
         setUpTableView()
 
@@ -345,24 +357,21 @@ class SettingTableViewController: UITableViewController, GenderPickerControllerD
 
                 cell.leftLabel.text = NSLocalizedString("Age Range", comment: "")
 
-                let ageRangePickerViewController = AgeRangePickerController.shared
+                cell.minAgeTextField.inputView = minAgePickerView
 
-                self.addChildViewController(ageRangePickerViewController)
+                cell.maxAgeTextField.inputView = maxAgePickerView
 
-                cell.minAgePickerView.delegate = ageRangePickerViewController
+                self.minAgePickerView.delegate = self
 
-                cell.minAgePickerView.dataSource = ageRangePickerViewController
+                self.minAgePickerView.dataSource = self
 
-                cell.maxAgePickerView.delegate = ageRangePickerViewController
+                self.maxAgePickerView.delegate = self
 
-                cell.maxAgePickerView.dataSource = ageRangePickerViewController
+                self.maxAgePickerView.dataSource = self
 
-                if self.minAge != nil {
-                    cell.minAgeTextField.text = self.minAge
-                }
-                if self.maxAge != nil {
-                    cell.maxAgeTextField.text = self.maxAge
-                }
+                cell.minAgeTextField.text = self.keychain.get("minAge")
+
+                cell.maxAgeTextField.text = self.keychain.get("maxAge")
 
                 return cell
 
@@ -416,4 +425,84 @@ class SettingTableViewController: UITableViewController, GenderPickerControllerD
 //        }
     }
 
+}
+
+extension SettingTableViewController: UIPickerViewDelegate, UIPickerViewDataSource {
+
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
+    }
+
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+
+        if pickerView == minAgePickerView {
+
+            return ageArray.count
+        }
+        if pickerView == maxAgePickerView {
+            return ageArray.count
+        }
+        return 0
+    }
+
+    func pickerView(_ pickerView: UIPickerView,
+                    titleForRow row: Int,
+                    forComponent component: Int) -> String? {
+
+        if pickerView == minAgePickerView {
+
+            return String(describing: ageArray[row])
+        }
+        if pickerView == maxAgePickerView {
+            return String(describing: ageArray[row])
+        }
+
+        return nil
+    }
+
+    func pickerView(_ pickerView: UIPickerView,
+                    didSelectRow row: Int, inComponent component: Int) {
+
+        let keychain = KeychainSwift()
+
+        guard let uid = keychain.get("uid"),
+            let minAgeString = keychain.get("minAge"),
+            let minimumAge = Int(minAgeString),
+            let maxAgeString = keychain.get("maxAge"),
+            let maximumAge = Int(maxAgeString)
+            else { return }
+
+        if pickerView == minAgePickerView {
+
+            if ageArray[row] < maximumAge {
+                let min = String(describing: ageArray[row])
+                keychain.set(min, forKey: "minAge")
+                tableView.reloadData()
+            DatabasePath.userRef.child(uid).child("agePreference").updateChildValues(["min": ageArray[row]])
+            } else {
+
+                let alertController = UIAlertController(title: NSLocalizedString("The minimum age should be smaller than maxiumum age", comment: ""), message: "Invalid setting.", preferredStyle: .alert)
+                let okAction = UIAlertAction(title: NSLocalizedString("OK", comment: ""), style: .default, handler: nil)
+                alertController.addAction(okAction)
+                alertController.show()
+            }
+
+        } else {
+
+            if ageArray[row] > minimumAge {
+                let min = String(describing: ageArray[row])
+                keychain.set(min, forKey: "maxAge")
+                tableView.reloadData()
+                DatabasePath.userRef.child(uid).child("agePreference").updateChildValues(["max": ageArray[row]])
+            } else {
+
+                let alertController = UIAlertController(title: NSLocalizedString("The maximum age should be larger than miniumum age", comment: ""), message: "Invalid setting.", preferredStyle: .alert)
+                let okAction = UIAlertAction(title: NSLocalizedString("OK", comment: ""), style: .default, handler: nil)
+                alertController.addAction(okAction)
+                alertController.show()
+            }
+
+        }
+
+    }
 }
