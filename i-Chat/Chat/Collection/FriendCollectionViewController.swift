@@ -88,17 +88,25 @@ class FriendCollectionViewController: UIViewController, UICollectionViewDelegate
             self.collectionView.reloadData()
         }
 
+    }
+
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
         if users.count == 0 {
             // swiftlint:disable force_cast
             let noFriendViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "NoFriendViewController") as! NoFriendViewController
             // swiftlint:enable force_cast
-
             noFriendViewController.modalPresentationStyle = .overFullScreen
             noFriendViewController.modalTransitionStyle = .crossDissolve
 
-            present(noFriendViewController, animated: true, completion: nil)
+            self.addChildViewController(noFriendViewController)
+
+            self.view.addSubview(noFriendViewController.view)
+            noFriendViewController.didMove(toParentViewController: self)
+
         }
     }
+
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         self.users = []

@@ -17,6 +17,25 @@ class NoFriendViewController: UIViewController {
 
     @IBAction func goSwipe(_ sender: Any) {
 
+        // swiftlint:disable force_cast
+
+        let parentCollectionVC = parent as! FriendCollectionViewController
+        let grandParentVC = parentCollectionVC.parent as! HomeViewController
+        // swiftlint:enable force_cast
+
+        grandParentVC.scrollToMenuIndex(1)
+        grandParentVC.menuBar.collectionView.selectItem(
+            at: [0, 1],
+
+            animated: true,
+
+            scrollPosition: UICollectionViewScrollPosition()
+        )
+
+        self.removeFromParentViewController()
+
+        self.view.removeFromSuperview()
+
         self.dismiss(animated: true)
     }
 

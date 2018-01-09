@@ -243,7 +243,6 @@ extension HomeViewController: KolodaViewDataSource {
 
             self.view.addSubview(matchViewController.view)
             matchViewController.didMove(toParentViewController: self)
-//            present(matchViewController, animated: true, completion: nil)
         }
     }
 }

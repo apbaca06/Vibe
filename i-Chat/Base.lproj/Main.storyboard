@@ -1337,10 +1337,10 @@ If you have any questions about this Agreement, please contact us.</string>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="f3r-7v-3mP">
-                                <rect key="frame" x="41.333333333333343" y="258.33333333333331" width="331.33333333333326" height="240"/>
+                                <rect key="frame" x="41.333333333333343" y="120" width="331.33333333333326" height="240"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No friends yet!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VgC-TV-vXG">
-                                        <rect key="frame" x="0.0" y="124.33333333333337" width="331.33333333333331" height="50"/>
+                                        <rect key="frame" x="0.0" y="124.33333333333334" width="331.33333333333331" height="50"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="Viv-FX-CT4"/>
                                             <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="50" id="oIL-8W-1bp"/>
@@ -1388,7 +1388,7 @@ If you have any questions about this Agreement, please contact us.</string>
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ibm-x4-7iV">
-                                <rect key="frame" x="107.66666666666669" y="452.66666666666669" width="199" height="33"/>
+                                <rect key="frame" x="107.66666666666669" y="314.33333333333331" width="199" height="33"/>
                                 <color key="backgroundColor" red="0.94117647059999998" green="0.7843137255" blue="0.031372549020000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="17"/>
                                 <state key="normal" title="Button"/>
@@ -1402,8 +1402,8 @@ If you have any questions about this Agreement, please contact us.</string>
                             <constraint firstItem="f3r-7v-3mP" firstAttribute="width" secondItem="JOs-gw-eWZ" secondAttribute="width" multiplier="0.8" id="11Q-2z-J5d"/>
                             <constraint firstItem="f3r-7v-3mP" firstAttribute="centerX" secondItem="7NJ-Tu-x6j" secondAttribute="centerX" id="IU6-w5-apn"/>
                             <constraint firstItem="ibm-x4-7iV" firstAttribute="centerX" secondItem="f3r-7v-3mP" secondAttribute="centerX" id="MHI-WG-0ev"/>
-                            <constraint firstItem="f3r-7v-3mP" firstAttribute="centerY" secondItem="7NJ-Tu-x6j" secondAttribute="centerY" id="SmH-kj-O4x"/>
                             <constraint firstItem="ibm-x4-7iV" firstAttribute="width" secondItem="f3r-7v-3mP" secondAttribute="width" multiplier="0.6" id="iIl-oK-bNe"/>
+                            <constraint firstItem="f3r-7v-3mP" firstAttribute="top" secondItem="7NJ-Tu-x6j" secondAttribute="top" constant="100" id="oUu-Qp-6Kr"/>
                             <constraint firstItem="ibm-x4-7iV" firstAttribute="top" secondItem="VgC-TV-vXG" secondAttribute="bottom" constant="20" id="tee-KX-Ssu"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="7NJ-Tu-x6j"/>

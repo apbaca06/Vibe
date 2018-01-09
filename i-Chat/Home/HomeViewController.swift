@@ -310,6 +310,7 @@ class HomeViewController: UICollectionViewController, UICollectionViewDelegateFl
                 cell.numberLabel.text = "0"
             }
         cell.contentView.addSubviews([ friendCollectionViewController.view])
+        self.addChildViewController(friendCollectionViewController)
 
 //            cell.contentView.addSubviews([friendViewController.view, friendCollectionViewController.view])
 
