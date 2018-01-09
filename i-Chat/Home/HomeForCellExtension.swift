@@ -11,6 +11,8 @@ import Firebase
 import KeychainSwift
 import Koloda
 import Nuke
+import CoreLocation
+import SVProgressHUD
 
 extension HomeViewController: FriendCollectionViewControllerDelegate {
 
@@ -64,6 +66,67 @@ extension HomeViewController: FriendCollectionViewControllerDelegate {
         present(navSettingTableViewController, animated: true, completion: nil)
     }
 
+}
+
+extension HomeViewController: CLLocationManagerDelegate {
+
+    // MARK: Detect Location
+    func setupLocationManager() {
+
+        self.locationManager.delegate = self
+
+        self.locationManager.distanceFilter = kCLLocationAccuracyBest
+
+        self.locationManager.desiredAccuracy = kCLLocationAccuracyBest
+
+        locationManager.requestWhenInUseAuthorization()
+
+        locationManager.startUpdatingLocation()
+
+        guard let uid = self.keychain.get("uid")
+            else { return }
+
+        SVProgressHUD.show(withStatus: NSLocalizedString("Updating location", comment: ""))
+
+        DatabasePath.userRef
+            .child(uid)
+            .child("location")
+            .updateChildValues(["latitude": locationManager.location?.coordinate.latitude, "longitude": locationManager.location?.coordinate.longitude]) { (error, _) in
+                if error == nil {
+
+                    let geoCoder = CLGeocoder()
+
+                    guard let location = self.locationManager.location
+                        else { return }
+                    geoCoder.reverseGeocodeLocation(location) { (placemarks, error) in
+
+                        if error != nil {
+                            print(error)
+                            return
+                        }
+                        guard let existPlacemarks = placemarks
+                            else { return }
+                        let placemark = existPlacemarks[0] as CLPlacemark
+                        let cityName = placemark.locality
+
+                        guard let city = cityName
+                            else { return }
+                        DatabasePath.userRef.child(uid).child("location")
+                            .updateChildValues(["cityName": city], withCompletionBlock: { (error, _) in
+                                if error == nil {
+                                    SVProgressHUD.dismiss()
+                                }
+                            })
+                    }
+
+                }
+        }
+
+    }
+
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        locationManager.stopUpdatingLocation()
+    }
 }
 
 // MARK: KolodaViewDelegate

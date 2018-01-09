@@ -23,7 +23,7 @@ class HomeViewController: UICollectionViewController, UICollectionViewDelegateFl
         self.collectionView?.reloadData()
     }
 
-    var state: State?
+    let locationManager = CLLocationManager()
 
     var distanceUsers: [(User, Int)] = []
 
@@ -60,6 +60,8 @@ class HomeViewController: UICollectionViewController, UICollectionViewDelegateFl
 
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        setupLocationManager()
 
         friendCollectionViewController.delegate = self
 

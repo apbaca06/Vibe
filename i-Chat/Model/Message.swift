@@ -53,7 +53,7 @@ struct Message {
         }
 
         guard
-            let id = objects.keys.first as? String
+            let id = objects.keys.first
             else {
 
                 let error: JSONError = .missingValueForKey(Schema.id)
