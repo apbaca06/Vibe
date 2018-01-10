@@ -84,28 +84,6 @@ enum SearchComponent {
 
 class SettingTableViewController: UITableViewController {
 
-//        guard let uid = keychain.get("uid"),
-//            let minAgeString = keychain.get("minAge"),
-//            let minimumAge = Int(minAgeString),
-//            let maxAgeString = keychain.get("maxAge"),
-//            let maximumAge = Int(maxAgeString)
-//            else { return }
-//        if minAge > maximumAge {
-//            let alertController = UIAlertController(title: NSLocalizedString("The minimum age should be smaller than maxiumum age", comment: ""), message: "Invalid setting.", preferredStyle: .alert)
-//            let okAction = UIAlertAction(title: NSLocalizedString("OK", comment: ""), style: .default, handler: nil)
-//            alertController.addAction(okAction)
-//            alertController.show()
-//        } else {
-
-//        }
-
-//    func controller(_ controller: GenderPickerController, didSelect gender: String) {
-//
-//        self.gender = gender
-//
-//        tableView.reloadData()
-//    }
-
     typealias Component = SettingComponent
 
     let components: [Component]
@@ -145,9 +123,11 @@ class SettingTableViewController: UITableViewController {
 
         setupNavBar()
 
-//        minAgePickerView.selectRow(20, inComponent: 1, animated: true)
-//
-//        maxAgePickerView.selectRow(10, inComponent: 0, animated: true)
+    }
+
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        tableView.reloadData()
 
     }
 

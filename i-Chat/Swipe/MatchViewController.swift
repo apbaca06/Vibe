@@ -16,6 +16,10 @@ class MatchViewController: UIViewController {
     @IBOutlet weak var matchLabel: UILabel!
 
     @IBAction func staySwipe(_ sender: Any) {
+
+        self.view.removeFromSuperview()
+
+        self.removeFromParentViewController()
         self.dismiss(animated: true)
     }
 

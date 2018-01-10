@@ -37,6 +37,10 @@ class UserProvider {
 
     typealias DistanceUser = (User, Int)
 
+    var runOutHandel: UInt?
+
+    var currentAuthUser: User?
+
     var distanceUsers: [DistanceUser] = []
 
     var minAgePreference: Int?
@@ -47,7 +51,7 @@ class UserProvider {
 
     let keychain = KeychainSwift()
 
-    func loadSwipeImage() {
+    func loadSwipeImage(prefUserObserveType: DataEventType) {
 
         guard let uid = keychain.get("uid")
             else { return }
@@ -58,10 +62,9 @@ class UserProvider {
             .observeSingleEvent(of: .value, with: { (datasnapshot) in
 
             let userDic = [ datasnapshot.key: datasnapshot.value]
-            var currentAuthUser: User?
             do {
                 let currentUser =  try User(userDic)
-                currentAuthUser = currentUser
+                self.currentAuthUser = currentUser
 
                 self.keychain.set("\(currentUser.name)", forKey: "name")
                 self.keychain.set("\(currentUser.profileImgURL)", forKey: "profileImgURL")
@@ -86,7 +89,7 @@ class UserProvider {
                     .userRef
                     .queryOrdered(byChild: "gender")
                     .queryEqual(toValue: preference)
-                    .observe(.value) { (dataSnapshot) in
+                    .observeSingleEvent(of: prefUserObserveType) { (dataSnapshot) in
 
                         guard let datas = dataSnapshot.value as? [String: Any]
                             else { return }
@@ -107,7 +110,7 @@ class UserProvider {
                                     allUsers.append((user, distanceBtwn))
                                 }
 
-                                guard let currentUser = currentAuthUser
+                                guard let currentUser = self.currentAuthUser
                                 else { return }
 
                                 if user.email != Auth.auth().currentUser?.email && user.age >= minAge && user.age <= maxAge && distanceBtwn <= maxDistance && currentUser.likeUserID.has(key: user.id) == false {
@@ -117,7 +120,7 @@ class UserProvider {
                                 print("Some user with not enough data!")
                             }
                         }
-                        guard let user = currentAuthUser
+                        guard let user = self.currentAuthUser
                             else { return }
                         if self.distanceUsers.count == 0 {
                             self.delegate?.userProvider(self, didFetch: self.distanceUsers, didFetch: allUsers, didFetch: user)
@@ -129,25 +132,54 @@ class UserProvider {
 
             } catch {
 
-//                let alertController = UIAlertController(title: NSLocalizedString("\(error)", comment: ""), message: "We'll try to fix it soon!", preferredStyle: .alert)
-//                let okAction = UIAlertAction(title: NSLocalizedString("OK", comment: ""), style: .default, handler: nil)
-//                alertController.addAction(okAction)
-//                alertController.show()
-
-                print("Error", error)
                 return
             }
         }) { (error)  in
-
-//            let alertController = UIAlertController(title: NSLocalizedString("\(error)", comment: ""), message: "We'll try to fix it soon!", preferredStyle: .alert)
-//            let okAction = UIAlertAction(title: NSLocalizedString("OK", comment: ""), style: .default, handler: nil)
-//            alertController.addAction(okAction)
-//            alertController.show()
 
             print("Error", error)
 
         }
 
+    }
+
+    func runOutOfSwipeCard(completionHandler: @escaping (UInt?) -> Void) {
+
+        guard let preference = self.keychain.get("preference"),
+            let latitude = Double(self.keychain.get("latitude")!),
+            let longitude = Double(self.keychain.get("longitude")!)
+            else { return }
+
+        self.runOutHandel = DatabasePath
+            .userRef
+            .queryOrdered(byChild: "gender")
+            .queryEqual(toValue: preference)
+            .observe( .value) { (dataSnapshot) in
+
+                guard let datas = dataSnapshot.value as? [String: Any]
+                    else { return }
+                var allUsers: [(User, Int)] = []
+
+                for data in datas {
+
+                    do {
+                        let userDic = [data.key: data.value]
+                        let user = try User(userDic)
+                        let location1 = CLLocation(latitude: latitude, longitude: longitude)
+                        let location2 = CLLocation(latitude: user.latitude, longitude: user.longitude)
+                        let distanceBtwn = Int((location1.distance(from: location2))/1000)
+                        if user.email != Auth.auth().currentUser?.email {
+                            allUsers.append((user, distanceBtwn))
+                        }
+                    } catch {
+                        print("Some user with not enough data!")
+                    }
+                }
+
+                guard let user = self.currentAuthUser
+                    else { return }
+                self.delegate?.userProvider(self, didFetch: [], didFetch: allUsers, didFetch: user)
+                completionHandler(self.runOutHandel)
+        }
     }
 
 }

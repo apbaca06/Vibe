@@ -96,7 +96,7 @@ class FriendCollectionViewController: UIViewController, UICollectionViewDelegate
             // swiftlint:disable force_cast
             let noFriendViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "NoFriendViewController") as! NoFriendViewController
             // swiftlint:enable force_cast
-            noFriendViewController.modalPresentationStyle = .overFullScreen
+            noFriendViewController.modalPresentationStyle = .formSheet
             noFriendViewController.modalTransitionStyle = .crossDissolve
 
             self.addChildViewController(noFriendViewController)
@@ -216,7 +216,7 @@ class FriendCollectionViewController: UIViewController, UICollectionViewDelegate
 
 //    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
 //
-//        return CGSize(width: 100, height: 135)
+//        return CGSize(width: self.view.bounds.width, height: 80)
 //    }
 
 //    func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
@@ -226,12 +226,12 @@ class FriendCollectionViewController: UIViewController, UICollectionViewDelegate
 //        case UICollectionElementKindSectionHeader:
 //
 //
+
 //            let headerView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "HeaderView", for: indexPath)
 //                as! FriendCollectionReusableView
-//            
-//
-//            headerView.label.text = NSLocalizedString("Likes", comment: "")
-//            headerView.numberOfLikeLabel.text = "10+"
+
+//            headerView.numberOfFriends.layer.cornerRadius = headerView.numberOfFriends.bounds.width/2
+//            headerView.numberOfFriends.text = "\(self.users.count)"
 //
 //            return headerView
 //

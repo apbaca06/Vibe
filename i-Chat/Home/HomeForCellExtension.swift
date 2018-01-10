@@ -133,17 +133,39 @@ extension HomeViewController: CLLocationManagerDelegate {
 
 extension HomeViewController: KolodaViewDelegate {
 
+//    func removeFirebaseObserver(handle: UInt) {
+//
+//        guard let preference = self.keychain.get("preference")
+//            else { return }
+//        DatabasePath
+//            .userRef
+//            .queryOrdered(byChild: "gender")
+//            .queryEqual(toValue: preference)
+//            .removeObserver(withHandle: handle)
+//    }
+
     func kolodaDidRunOutOfCards(_ koloda: KolodaView) {
 
-        self.distanceUsers = []
+        distanceUsers = []
+        allUsers = []
 
-        self.collectionView?.reloadData()
+        userProvider.runOutOfSwipeCard { (handle) in
+            guard let preference = self.keychain.get("preference"),
+                  let handle = handle
+                else { return }
+            DatabasePath
+                .userRef
+                .queryOrdered(byChild: "gender")
+                .queryEqual(toValue: preference)
+                .removeObserver(withHandle: handle)
+        }
 
         let alert = UIAlertController(title: NSLocalizedString("No more cards", comment: ""), message: NSLocalizedString("Please change your preference to meet more people!", comment: ""), preferredStyle: .alert)
 
         alert.addAction(title: NSLocalizedString("OK", comment: ""))
 
         alert.show()
+        self.collectionView?.reloadData()
 
     }
 

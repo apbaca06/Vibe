@@ -9,38 +9,15 @@
 import UIKit
 
 class FriendCollectionReusableView: UICollectionReusableView {
-    @IBOutlet weak var blurredImageView: UIImageView!
 
-    @IBOutlet weak var numberOfLikeLabel: UILabel!
-    @IBOutlet weak var numberOfLikeView: UIImageView!
-    @IBOutlet weak var likePhoto: UIImageView!
-    @IBOutlet weak var label: UILabel!
+    @IBOutlet weak var leftLabel: UILabel!
+
+    @IBOutlet weak var numberOfFriends: UILabel!
 
     override func awakeFromNib() {
         super.awakeFromNib()
 
-        let filter = CIFilter(name: "CICrystallize")!
-        filter.setValue(blurredImageView, forKey: kCIInputImageKey)
-        filter.setValue(55, forKey: kCIInputRadiusKey)
-
-        blurredImageView.layer.cornerRadius = blurredImageView.frame.width/2
-        blurredImageView.clipsToBounds = true
-        blurredImageView.image = #imageLiteral(resourceName: "user").withRenderingMode(.alwaysTemplate)
-        blurredImageView.tintColor = .gray
-
-        likePhoto.layer.cornerRadius = likePhoto.frame.width/2
-        likePhoto.clipsToBounds = true
-
-        numberOfLikeView.layer.cornerRadius = numberOfLikeView.frame.width/2
-        numberOfLikeView.clipsToBounds = true
-
-        let blurEffect = UIBlurEffect(style: UIBlurEffectStyle.regular)
-
-        let blurEffectView = UIVisualEffectView(effect: blurEffect)
-
-        blurEffectView.frame = blurredImageView.bounds
-        blurEffectView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
-        blurredImageView.addSubview(blurEffectView)
+        leftLabel.text = NSLocalizedString("Friends", comment: "")
 
     }
 

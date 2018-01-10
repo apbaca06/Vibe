@@ -16,8 +16,6 @@ class ChatCollectionViewCell: UICollectionViewCell {
 
     @IBOutlet weak var numberLabel: UILabel!
 
-    var friendList: [User] = []
-
     override func awakeFromNib() {
         super.awakeFromNib()
         numberLabel.cornerRadius = numberLabel.bounds.width/2
