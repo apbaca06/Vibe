@@ -16,6 +16,7 @@
 
 # Screen Shot #
 ![image](https://github.com/apbaca06/Vibe/blob/master/Screenshots/Simulator%20Screen%20Shot%20-%20iPhone%208%20-%202018-01-10%20at%2009.45.42_iphone7silver_portrait.png) ![image](https://github.com/apbaca06/Vibe/blob/master/Screenshots/Simulator%20Screen%20Shot%20-%20iPhone%208%20-%202018-01-10%20at%2009.46.09_iphone7silver_portrait.png)
+![image](https://github.com/apbaca06/Vibe/blob/master/Screenshots/Simulator%20Screen%20Shot%20-%20iPhone%208%20-%202018-01-16%20at%2017.38.12_iphone7silver_portrait.png) ![image](https://github.com/apbaca06/Vibe/blob/master/Screenshots/Simulator%20Screen%20Shot%20-%20iPhone%208%20-%202018-01-16%20at%2017.51.16_iphone7silver_portrait.png)
 
 
 
