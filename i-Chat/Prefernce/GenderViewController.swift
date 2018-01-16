@@ -101,7 +101,7 @@ class GenderViewController: UIViewController, CLLocationManagerDelegate {
         guard let uid = self.keychain.get("uid")
             else { return }
 
-        SVProgressHUD.show(withStatus: NSLocalizedString("Updating location", comment: ""))
+        SVProgressHUD.show(withStatus: NSLocalizedString("Updating profile", comment: ""))
 
         DatabasePath.userRef
             .child(uid)

@@ -22,6 +22,7 @@ class ProfileCollectionViewCell: UICollectionViewCell {
 
     @IBOutlet weak var profileImg: UIImageView!
 
+    @IBOutlet weak var profileButton: UIButton!
     @IBOutlet weak var circleProfileImg: UIImageView!
 
     override func awakeFromNib() {
@@ -37,36 +38,6 @@ class ProfileCollectionViewCell: UICollectionViewCell {
         blurEffectView.frame = profileImg.bounds
         blurEffectView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         profileImg.addSubview(blurEffectView)
-
-        let keychain = KeychainSwift()
-
-        guard let uid = keychain.get("uid")
-            else { return }
-
-        DatabasePath.userRef.child(uid).observeSingleEvent(of: .value) { [unowned self] (datashot) in
-
-            guard let jsonObject = datashot.value as? [String: Any],
-                let name = jsonObject["name"] as? String,
-                let age = jsonObject["age"] as? Int,
-                let profileImgString = jsonObject["profileImgURL"]  as? String
-                else { return }
-
-            self.nameLabel.text = name
-
-            self.ageLabel.text = "\(String(describing: age)) yr"
-
-            if let profileImgURL = URL(string: profileImgString) {
-
-                Manager.shared.loadImage(with: profileImgURL, into: self.profileImg)
-                Manager.shared.loadImage(with: profileImgURL, into: self.circleProfileImg)
-
-                self.reloadInputViews()
-
-                self.profileImg.contentMode = .scaleAspectFill
-            }
-
-        }
-
     }
 
 }

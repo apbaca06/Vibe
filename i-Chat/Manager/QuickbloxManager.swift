@@ -15,14 +15,14 @@ class QuickbloxManager {
 
     static func logInSync(withUserEmail email: String, password: String) {
 
-        let layout = UICollectionViewFlowLayout()
-
-        AppDelegate.shared.window?.rootViewController = HomeViewController(collectionViewLayout: layout)
+//        let layout = UICollectionViewFlowLayout()
+//
+//        AppDelegate.shared.window?.rootViewController = HomeViewController(collectionViewLayout: layout)
 
         var error: Error?
         var uuser: QBUUser?
 
-        SVProgressHUD.show(withStatus: NSLocalizedString("Connecting to server", comment: ""))
+//        SVProgressHUD.show(withStatus: NSLocalizedString("Connecting to server", comment: ""))
 
         QBRequest.logIn(withUserEmail: email, password: password, successBlock: { (response, user) in
 
@@ -36,11 +36,15 @@ class QuickbloxManager {
             QBChat.instance.connect(with: uuser!, completion: { (error) in
 
                 if error == nil {
-                    SVProgressHUD.dismiss()
+//                    SVProgressHUD.dismiss()
+
+                    let layout = UICollectionViewFlowLayout()
+
+                    AppDelegate.shared.window?.rootViewController = HomeViewController(collectionViewLayout: layout)
 
                 } else {
 
-                    SVProgressHUD.dismiss()
+//                    SVProgressHUD.dismiss()
 
                     DispatchQueue.main.async {
                         UIAlertController(error: error!).show()

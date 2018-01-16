@@ -77,26 +77,30 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
         keychain.synchronizable = true
 
-        if Auth.auth().currentUser != nil {
+        let animationViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "AnimationViewController")
 
-            guard let email = keychain.get("userEmail"),
-                  let password = keychain.get("userPassword")
+        AppDelegate.shared.window?.rootViewController = animationViewController
 
-                else { return true }
-
-            QuickbloxManager.logInSync(
-
-                withUserEmail: email,
-
-                password: password
-            )
-
-        } else {
-
-            let loginViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "LogInViewController")
-
-            AppDelegate.shared.window?.rootViewController = loginViewController
-        }
+//        if Auth.auth().currentUser != nil {
+//            
+//            guard let email = keychain.get("userEmail"),
+//                let password = keychain.get("userPassword")
+//                
+//                else { return true }
+//            
+//            QuickbloxManager.logInSync(
+//                
+//                withUserEmail: email,
+//                
+//                password: password
+//            )
+//            
+//        } else {
+//            
+//            let loginViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "LogInViewController")
+//            
+//            AppDelegate.shared.window?.rootViewController = loginViewController
+//        }
 
         return true
 

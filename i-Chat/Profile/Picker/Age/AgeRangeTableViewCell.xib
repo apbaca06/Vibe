@@ -21,20 +21,18 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="HiU-TA-n6I">
-                        <rect key="frame" x="222" y="15" width="35" height="20"/>
+                        <rect key="frame" x="222" y="0.0" width="35" height="49.5"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="35" id="Aww-GJ-8eu"/>
-                            <constraint firstAttribute="height" constant="20" id="PDI-g8-ZD3"/>
                         </constraints>
                         <color key="textColor" red="0.027450980390000001" green="0.62745098040000002" blue="0.76470588240000004" alpha="1" colorSpace="calibratedRGB"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <textInputTraits key="textInputTraits"/>
                     </textField>
                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="LjO-Lo-bYK">
-                        <rect key="frame" x="302" y="15" width="35" height="20"/>
+                        <rect key="frame" x="302" y="0.0" width="35" height="49.5"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="35" id="6jQ-uT-zny"/>
-                            <constraint firstAttribute="height" constant="20" id="I8g-Xb-ugg"/>
                         </constraints>
                         <color key="textColor" red="0.027450980390000001" green="0.62745098040000002" blue="0.76470588240000004" alpha="1" colorSpace="calibratedRGB"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -69,8 +67,8 @@
                     <constraint firstItem="s1s-92-1kD" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="15" id="8hp-g2-eei"/>
                     <constraint firstItem="smW-Sx-chz" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="15" id="A2C-k1-DJS"/>
                     <constraint firstItem="smW-Sx-chz" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="15" id="AOg-Sy-02O"/>
-                    <constraint firstItem="LjO-Lo-bYK" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="15" id="CYu-UW-CVM"/>
-                    <constraint firstItem="HiU-TA-n6I" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="15" id="JN5-Bg-3nc"/>
+                    <constraint firstItem="LjO-Lo-bYK" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="CYu-UW-CVM"/>
+                    <constraint firstItem="HiU-TA-n6I" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="JN5-Bg-3nc"/>
                     <constraint firstItem="s1s-92-1kD" firstAttribute="leading" secondItem="HiU-TA-n6I" secondAttribute="trailing" constant="8" id="KCM-Lb-7g7"/>
                     <constraint firstItem="smW-Sx-chz" firstAttribute="width" secondItem="H2p-sc-9uM" secondAttribute="width" multiplier="0.3" id="RLc-jW-qAH"/>
                     <constraint firstItem="HiU-TA-n6I" firstAttribute="leading" secondItem="skb-0s-ndo" secondAttribute="trailing" constant="5" id="SLW-ZD-btV"/>
@@ -78,7 +76,8 @@
                     <constraint firstItem="skb-0s-ndo" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="15" id="cNy-2P-qKU"/>
                     <constraint firstItem="LjO-Lo-bYK" firstAttribute="leading" secondItem="s1s-92-1kD" secondAttribute="trailing" constant="5" id="ihK-59-BwI"/>
                     <constraint firstAttribute="trailing" secondItem="LjO-Lo-bYK" secondAttribute="trailing" constant="15" id="oZz-iV-Gag"/>
-                    <constraint firstAttribute="bottom" secondItem="LjO-Lo-bYK" secondAttribute="bottom" constant="14.5" id="yzf-Hk-Pb8"/>
+                    <constraint firstAttribute="bottom" secondItem="HiU-TA-n6I" secondAttribute="bottom" id="sNl-vC-O3s"/>
+                    <constraint firstAttribute="bottom" secondItem="LjO-Lo-bYK" secondAttribute="bottom" id="yzf-Hk-Pb8"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>

@@ -40,6 +40,7 @@ class PreferenceViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        decriptionLabel.text = NSLocalizedString("Select preference!", comment: "")
 
     }
     override func viewWillLayoutSubviews() {

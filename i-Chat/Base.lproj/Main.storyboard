@@ -302,6 +302,8 @@
                     </view>
                     <connections>
                         <outlet property="agreeLabel" destination="Q2S-rw-eig" id="xcd-0G-is0"/>
+                        <outlet property="alreadyHaveLabel" destination="ac1-yE-moF" id="6ns-Zu-7wH"/>
+                        <outlet property="centerImage" destination="69N-Ex-N3F" id="y8W-IH-Yk6"/>
                         <outlet property="eulaButton" destination="fZu-eE-ZNg" id="KJb-WB-2IO"/>
                         <outlet property="loginButton" destination="Eqw-4g-Dw6" id="vZY-fe-dFa"/>
                         <outlet property="registerButton" destination="tmU-Xw-5HK" id="Mzh-IZ-ube"/>
@@ -660,13 +662,13 @@
         <!--Profile Image-->
         <scene sceneID="zUi-P9-y2d">
             <objects>
-                <viewController title="Profile Image" id="uFu-hP-bQh" customClass="SetImgViewController" customModule="i_Chat" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SetImgViewController" title="Profile Image" id="uFu-hP-bQh" customClass="SetImgViewController" customModule="i_Chat" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="TB5-9h-G2m">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="image" translatesAutoresizingMaskIntoConstraints="NO" id="p4i-vV-ftj">
-                                <rect key="frame" x="20.666666666666657" y="210" width="372.66666666666674" height="368"/>
+                                <rect key="frame" x="20.666666666666657" y="114" width="372.66666666666674" height="368"/>
                                 <gestureRecognizers/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
@@ -684,13 +686,13 @@
                                 </connections>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nb6-5p-si1">
-                                <rect key="frame" x="31" y="131" width="352" height="59"/>
+                                <rect key="frame" x="31" y="35" width="352" height="59"/>
                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="24"/>
                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="62u-Ml-wbU">
-                                <rect key="frame" x="82.666666666666671" y="608" width="248.66666666666663" height="44"/>
+                                <rect key="frame" x="82.666666666666671" y="512" width="248.66666666666663" height="44"/>
                                 <color key="backgroundColor" red="0.94117647059999998" green="0.7843137255" blue="0.031372549020000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
                                 <state key="normal" title="Button"/>
@@ -760,7 +762,7 @@
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
                                 <state key="normal" title="Button"/>
                                 <connections>
-                                    <segue destination="uFu-hP-bQh" kind="show" id="Rwt-dr-x2e"/>
+                                    <action selector="confirm:" destination="aqI-DG-Xol" eventType="touchUpInside" id="4xX-Be-Ktp"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Birthday" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8wS-VW-2r1">
@@ -1192,6 +1194,40 @@
             </objects>
             <point key="canvasLocation" x="1658" y="1048"/>
         </scene>
+        <!--Edit Profile Table View Controller-->
+        <scene sceneID="qQ9-zf-8tY">
+            <objects>
+                <viewController storyboardIdentifier="EditProfileTableViewController" id="4Ws-rp-LtV" customClass="EditProfileTableViewController" customModule="i_Chat" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="VXr-el-X62">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="yNC-k7-xeZ">
+                                <rect key="frame" x="0.0" y="20" width="414" height="716"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="4Ws-rp-LtV" id="HAW-tY-Aeg"/>
+                                    <outlet property="delegate" destination="4Ws-rp-LtV" id="iL7-Ic-Q7w"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="dOS-8u-aem" firstAttribute="bottom" secondItem="yNC-k7-xeZ" secondAttribute="bottom" id="3JR-nG-4pz"/>
+                            <constraint firstItem="yNC-k7-xeZ" firstAttribute="top" secondItem="dOS-8u-aem" secondAttribute="top" id="5uE-St-rcM"/>
+                            <constraint firstItem="yNC-k7-xeZ" firstAttribute="leading" secondItem="dOS-8u-aem" secondAttribute="leading" id="dV9-Lh-1K1"/>
+                            <constraint firstItem="dOS-8u-aem" firstAttribute="trailing" secondItem="yNC-k7-xeZ" secondAttribute="trailing" id="nXQ-HV-cxW"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="dOS-8u-aem"/>
+                    </view>
+                    <connections>
+                        <outlet property="tableView" destination="yNC-k7-xeZ" id="ckB-x3-DNZ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="nS2-bu-YBG" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2499" y="1043"/>
+        </scene>
         <!--Eula View Controller-->
         <scene sceneID="fTK-mD-1Ee">
             <objects>
@@ -1418,6 +1454,36 @@ If you have any questions about this Agreement, please contact us.</string>
             </objects>
             <point key="canvasLocation" x="3972" y="120"/>
         </scene>
+        <!--Animation View Controller-->
+        <scene sceneID="IX4-nn-8pR">
+            <objects>
+                <viewController storyboardIdentifier="AnimationViewController" modalTransitionStyle="flipHorizontal" id="YZW-YE-Ohr" customClass="AnimationViewController" customModule="i_Chat" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="JMB-fw-X0X" customClass="RadialGradientView" customModule="i_Chat" customModuleProvider="target">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="JYQ-pq-gSB">
+                                <rect key="frame" x="0.0" y="273" width="414" height="210"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="JYQ-pq-gSB" secondAttribute="height" multiplier="982:498" id="nb3-yV-vPe"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="JYQ-pq-gSB" firstAttribute="centerX" secondItem="wbL-jk-R0x" secondAttribute="centerX" id="XRB-yt-5dz"/>
+                            <constraint firstItem="JYQ-pq-gSB" firstAttribute="width" secondItem="JMB-fw-X0X" secondAttribute="width" id="ZDW-Bl-jU3"/>
+                            <constraint firstItem="JYQ-pq-gSB" firstAttribute="centerY" secondItem="wbL-jk-R0x" secondAttribute="centerY" id="oPy-vZ-Qku"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="wbL-jk-R0x"/>
+                    </view>
+                    <connections>
+                        <outlet property="animationView" destination="JYQ-pq-gSB" id="As9-TL-mgc"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="K18-Ny-nWg" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4713" y="138"/>
+        </scene>
     </scenes>
     <resources>
         <image name="birthday-cake" width="42" height="42"/>
@@ -1428,7 +1494,7 @@ If you have any questions about this Agreement, please contact us.</string>
         <image name="masculine" width="42" height="42"/>
         <image name="megaphone" width="42" height="42"/>
         <image name="muted" width="42" height="42"/>
-        <image name="pickup" width="42" height="42"/>
+        <image name="pickup" width="60" height="60"/>
         <image name="reject" width="42" height="42"/>
         <image name="shoot" width="170" height="170"/>
         <image name="target" width="512" height="512"/>

@@ -10,11 +10,14 @@ import UIKit
 import IQKeyboardManager
 import SwifterSwift
 import Crashlytics
+import SwiftyGif
 
 class RegisterViewController: UIViewController {
 
+    @IBOutlet weak var centerImage: UIImageView!
     @IBOutlet weak var agreeLabel: UILabel!
 
+    @IBOutlet weak var alreadyHaveLabel: UILabel!
     @IBOutlet weak var eulaButton: UIButton!
     @IBAction func toLoginButton(_ sender: Any) {
 
@@ -85,7 +88,12 @@ class RegisterViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+
         agreeLabel.text = NSLocalizedString("Agreed on EULA when registered", comment: "")
+
+        alreadyHaveLabel.text = NSLocalizedString("Already have an account?", comment: "")
+
+        eulaButton.setTitle(NSLocalizedString("EULA", comment: ""), for: .normal)
 
         setUpButton()
     }

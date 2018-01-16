@@ -4,6 +4,8 @@
 <dict>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>$(DEVELOPMENT_LANGUAGE)</string>
+	<key>CFBundleDisplayName</key>
+	<string>Vibe</string>
 	<key>CFBundleExecutable</key>
 	<string>$(EXECUTABLE_NAME)</string>
 	<key>CFBundleIdentifier</key>
@@ -17,15 +19,15 @@
 	<key>CFBundleShortVersionString</key>
 	<string>1.0</string>
 	<key>CFBundleVersion</key>
-	<string>6</string>
+	<string>8</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>NSCameraUsageDescription</key>
 	<string>Please turn on camera</string>
-	<key>NSLocationAlwaysUsageDescription</key>
-	<string>Please turn on GPS</string>
+	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
+	<string>Please turn on GPS,for us to find if available match according to your location preference is around you!</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
-	<string>Please turn on GPS</string>
+	<string>Please turn on GPS,for us to find if available match according to your location preference is around you!</string>
 	<key>NSMicrophoneUsageDescription</key>
 	<string>Please turn on microphone</string>
 	<key>NSPhotoLibraryUsageDescription</key>

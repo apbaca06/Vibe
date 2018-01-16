@@ -23,8 +23,6 @@ class HomeViewController: UICollectionViewController, UICollectionViewDelegateFl
         self.collectionView?.reloadData()
     }
 
-    let locationManager = CLLocationManager()
-
     var distanceUsers: [(User, Int)] = []
 
     var allUsers: [(User, Int)] = []
@@ -60,8 +58,6 @@ class HomeViewController: UICollectionViewController, UICollectionViewDelegateFl
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        setupLocationManager()
 
         friendCollectionViewController.delegate = self
 
@@ -252,11 +248,30 @@ class HomeViewController: UICollectionViewController, UICollectionViewDelegateFl
 
             cell.toSettingButton.addTarget(self, action: #selector(toSettingPage), for: .touchUpInside)
 
-            let longPressGestureRecognizer = UILongPressGestureRecognizer(target: self, action: #selector(changeImg))
+            guard let profileImgString = keychain.get("profileImgURL"),
+                  let age = keychain.get("age"),
+                  let name = keychain.get("name")
+
+            else { return cell }
+
+            cell.ageLabel.text = "\(age) yr"
+
+            cell.nameLabel.text = name
+
+            if let profileImgURL = URL(string: profileImgString) {
+
+                Manager.shared.loadImage(with: profileImgURL, into: cell.profileImg)
+                Manager.shared.loadImage(with: profileImgURL, into: cell.circleProfileImg)
+
+                cell.profileImg.contentMode = .scaleAspectFill
+            }
+
+            let tapGestureRecognizer =
+                UITapGestureRecognizer(target: self, action: #selector(showSelfProfile))
 
             cell.profileImg.isUserInteractionEnabled = true
 
-            cell.profileImg.addGestureRecognizer(longPressGestureRecognizer)
+            cell.profileImg.addGestureRecognizer(tapGestureRecognizer)
 
             return cell
 

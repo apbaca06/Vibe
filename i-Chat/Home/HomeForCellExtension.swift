@@ -47,11 +47,15 @@ extension HomeViewController: FriendCollectionViewControllerDelegate {
     }
 
     // MARK: Funtion for Profile Cell
-    @objc func changeImg() {
+    @objc func showSelfProfile() {
+        
+        let editProfileTableViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "EditProfileTableViewController")
+        
+        let navEditProfileTableViewController = UINavigationController(rootViewController: editProfileTableViewController)
+        
+        present(navEditProfileTableViewController, animated: true, completion: nil)
+        
 
-        let imgPickerViewController = ImgPickerViewController()
-
-        present(imgPickerViewController, animated: true, completion: nil)
     }
 
     @objc func toSettingPage() {
@@ -68,81 +72,9 @@ extension HomeViewController: FriendCollectionViewControllerDelegate {
 
 }
 
-extension HomeViewController: CLLocationManagerDelegate {
-
-    // MARK: Detect Location
-    func setupLocationManager() {
-
-        self.locationManager.delegate = self
-
-        self.locationManager.distanceFilter = kCLLocationAccuracyBest
-
-        self.locationManager.desiredAccuracy = kCLLocationAccuracyBest
-
-        locationManager.requestWhenInUseAuthorization()
-
-        locationManager.startUpdatingLocation()
-
-        guard let uid = self.keychain.get("uid")
-            else { return }
-
-        SVProgressHUD.show(withStatus: NSLocalizedString("Updating location", comment: ""))
-
-        DatabasePath.userRef
-            .child(uid)
-            .child("location")
-            .updateChildValues(["latitude": locationManager.location?.coordinate.latitude, "longitude": locationManager.location?.coordinate.longitude]) { (error, _) in
-                if error == nil {
-
-                    let geoCoder = CLGeocoder()
-
-                    guard let location = self.locationManager.location
-                        else { return }
-                    geoCoder.reverseGeocodeLocation(location) { (placemarks, error) in
-
-                        if error != nil {
-                            print(error)
-                            return
-                        }
-                        guard let existPlacemarks = placemarks
-                            else { return }
-                        let placemark = existPlacemarks[0] as CLPlacemark
-                        let cityName = placemark.locality
-
-                        guard let city = cityName
-                            else { return }
-                        DatabasePath.userRef.child(uid).child("location")
-                            .updateChildValues(["cityName": city], withCompletionBlock: { (error, _) in
-                                if error == nil {
-                                    SVProgressHUD.dismiss()
-                                }
-                            })
-                    }
-
-                }
-        }
-
-    }
-
-    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        locationManager.stopUpdatingLocation()
-    }
-}
-
 // MARK: KolodaViewDelegate
 
 extension HomeViewController: KolodaViewDelegate {
-
-//    func removeFirebaseObserver(handle: UInt) {
-//
-//        guard let preference = self.keychain.get("preference")
-//            else { return }
-//        DatabasePath
-//            .userRef
-//            .queryOrdered(byChild: "gender")
-//            .queryEqual(toValue: preference)
-//            .removeObserver(withHandle: handle)
-//    }
 
     func kolodaDidRunOutOfCards(_ koloda: KolodaView) {
 
@@ -191,6 +123,7 @@ extension HomeViewController: KolodaViewDataSource {
     func kolodaSpeedThatCardShouldDrag(_ koloda: KolodaView) -> DragSpeed {
         return .default
     }
+    
 
     func koloda(_ koloda: KolodaView, viewForCardAt index: Int) -> UIView {
 

@@ -11,6 +11,7 @@
 		370832B01FE2847F00D4DC86 /* IncomingCallViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 370832AF1FE2847F00D4DC86 /* IncomingCallViewController.swift */; };
 		370832B61FE3800200D4DC86 /* CallManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 370832B51FE3800200D4DC86 /* CallManager.swift */; };
 		370832B81FE3806700D4DC86 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 370832B71FE3806700D4DC86 /* User.swift */; };
+		37106001200745E900D9F425 /* animation.gif in Resources */ = {isa = PBXBuildFile; fileRef = 37106000200745E700D9F425 /* animation.gif */; };
 		3714597F1FDFAABF00C1F14A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3714597E1FDFAABF00C1F14A /* AppDelegate.swift */; };
 		371459811FDFAABF00C1F14A /* LogInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 371459801FDFAABF00C1F14A /* LogInViewController.swift */; };
 		371459841FDFAABF00C1F14A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 371459821FDFAABF00C1F14A /* Main.storyboard */; };
@@ -50,6 +51,7 @@
 		376C3FB81FEBA92900EAF188 /* GenderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 376C3FB71FEBA92900EAF188 /* GenderViewController.swift */; };
 		376C3FBA1FEBACF900EAF188 /* PreferenceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 376C3FB91FEBACF900EAF188 /* PreferenceViewController.swift */; };
 		376C3FBC1FEBAD9A00EAF188 /* SetImgViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 376C3FBB1FEBAD9A00EAF188 /* SetImgViewController.swift */; };
+		37916B4520071EAC0098693D /* AnimationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37916B4420071EAC0098693D /* AnimationViewController.swift */; };
 		3792B0B61FF2537000AB4838 /* AgeRangeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3792B0B41FF2537000AB4838 /* AgeRangeTableViewCell.swift */; };
 		3792B0B71FF2537000AB4838 /* AgeRangeTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3792B0B51FF2537000AB4838 /* AgeRangeTableViewCell.xib */; };
 		3792B0BB1FF35AB700AB4838 /* SliderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3792B0B91FF35AB700AB4838 /* SliderTableViewCell.swift */; };
@@ -59,6 +61,7 @@
 		3792B0C81FF3CFF800AB4838 /* OverlayView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3792B0C71FF3CFF800AB4838 /* OverlayView.xib */; };
 		3792B0CA1FF3D05200AB4838 /* ExampleOverlayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3792B0C91FF3D05200AB4838 /* ExampleOverlayView.swift */; };
 		3792B0CC1FF5ECEE00AB4838 /* UserProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3792B0CB1FF5ECEE00AB4838 /* UserProvider.swift */; };
+		37990C69200780D80061E398 /* GradientColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37990C68200780D80061E398 /* GradientColor.swift */; };
 		37A5BB9B1FE61CE200C4F1E6 /* MenuCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37A5BB9A1FE61CE200C4F1E6 /* MenuCell.swift */; };
 		37A5BB9D1FE6223600C4F1E6 /* BaseCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37A5BB9C1FE6223600C4F1E6 /* BaseCell.swift */; };
 		37A5BBA01FE6288500C4F1E6 /* ProfileCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37A5BB9E1FE6288500C4F1E6 /* ProfileCollectionViewCell.swift */; };
@@ -122,6 +125,7 @@
 		370832AF1FE2847F00D4DC86 /* IncomingCallViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IncomingCallViewController.swift; sourceTree = "<group>"; };
 		370832B51FE3800200D4DC86 /* CallManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CallManager.swift; sourceTree = "<group>"; };
 		370832B71FE3806700D4DC86 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		37106000200745E700D9F425 /* animation.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = animation.gif; sourceTree = "<group>"; };
 		3714597B1FDFAABF00C1F14A /* i-Chat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "i-Chat.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3714597E1FDFAABF00C1F14A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		371459801FDFAABF00C1F14A /* LogInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInViewController.swift; sourceTree = "<group>"; };
@@ -162,6 +166,7 @@
 		376C3FB71FEBA92900EAF188 /* GenderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenderViewController.swift; sourceTree = "<group>"; };
 		376C3FB91FEBACF900EAF188 /* PreferenceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferenceViewController.swift; sourceTree = "<group>"; };
 		376C3FBB1FEBAD9A00EAF188 /* SetImgViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetImgViewController.swift; sourceTree = "<group>"; };
+		37916B4420071EAC0098693D /* AnimationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimationViewController.swift; sourceTree = "<group>"; };
 		3792B0B41FF2537000AB4838 /* AgeRangeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AgeRangeTableViewCell.swift; sourceTree = "<group>"; };
 		3792B0B51FF2537000AB4838 /* AgeRangeTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AgeRangeTableViewCell.xib; sourceTree = "<group>"; };
 		3792B0B91FF35AB700AB4838 /* SliderTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SliderTableViewCell.swift; sourceTree = "<group>"; };
@@ -171,6 +176,7 @@
 		3792B0C71FF3CFF800AB4838 /* OverlayView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OverlayView.xib; sourceTree = "<group>"; };
 		3792B0C91FF3D05200AB4838 /* ExampleOverlayView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExampleOverlayView.swift; sourceTree = "<group>"; };
 		3792B0CB1FF5ECEE00AB4838 /* UserProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProvider.swift; sourceTree = "<group>"; };
+		37990C68200780D80061E398 /* GradientColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientColor.swift; sourceTree = "<group>"; };
 		37A5BB9A1FE61CE200C4F1E6 /* MenuCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuCell.swift; sourceTree = "<group>"; };
 		37A5BB9C1FE6223600C4F1E6 /* BaseCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseCell.swift; sourceTree = "<group>"; };
 		37A5BB9E1FE6288500C4F1E6 /* ProfileCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -262,6 +268,7 @@
 				372F85041FFE552A00D6BCB1 /* EulaViewController.swift */,
 				371459801FDFAABF00C1F14A /* LogInViewController.swift */,
 				3754E2871FE122E4002604CD /* RegisterViewController.swift */,
+				37916B4420071EAC0098693D /* AnimationViewController.swift */,
 			);
 			path = Landing;
 			sourceTree = "<group>";
@@ -316,6 +323,7 @@
 				37CC15441FFF91FC006C9A81 /* InfoPlist.strings */,
 				37C0FF4D1FE8F104002EACF3 /* i-Chat.entitlements */,
 				37BB8A9120035BF200CFA6CD /* AlertExtension.swift */,
+				37990C68200780D80061E398 /* GradientColor.swift */,
 				371459BA1FDFD90500C1F14A /* Key */,
 				3714597E1FDFAABF00C1F14A /* AppDelegate.swift */,
 				37C0FF201FE7D26A002EACF3 /* Model */,
@@ -328,6 +336,7 @@
 				37F05EE51FF64FD2006D20A6 /* Chat */,
 				370832AD1FE283EB00D4DC86 /* AudioCall */,
 				371459851FDFAABF00C1F14A /* Assets.xcassets */,
+				37106000200745E700D9F425 /* animation.gif */,
 				37C0FF491FE8BD34002EACF3 /* iphone.mp3 */,
 				371459821FDFAABF00C1F14A /* Main.storyboard */,
 				372E8E0F1FF10355002CAC96 /* Ripple.swift */,
@@ -633,6 +642,7 @@
 				37F05EE41FF5F322006D20A6 /* CardView.xib in Resources */,
 				371459B51FDFB16900C1F14A /* APIKey.plist in Resources */,
 				371459861FDFAABF00C1F14A /* Assets.xcassets in Resources */,
+				37106001200745E900D9F425 /* animation.gif in Resources */,
 				3792B0C11FF367C600AB4838 /* MultipleTableViewCell.xib in Resources */,
 				37C0FF4A1FE8BD34002EACF3 /* iphone.mp3 in Resources */,
 				37DE5F951FEA65980017E09D /* GenderPickerTableViewCell.xib in Resources */,
@@ -709,6 +719,7 @@
 				"${PODS_ROOT}/Quickblox-WebRTC/QuickbloxWebRTC.framework",
 				"${BUILT_PRODUCTS_DIR}/SVProgressHUD/SVProgressHUD.framework",
 				"${BUILT_PRODUCTS_DIR}/SwifterSwift/SwifterSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftyGif/SwiftyGif.framework",
 				"${BUILT_PRODUCTS_DIR}/XLActionController/XLActionController.framework",
 				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
@@ -727,6 +738,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/QuickbloxWebRTC.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SVProgressHUD.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwifterSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyGif.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/XLActionController.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
@@ -782,6 +794,7 @@
 				376C3FB81FEBA92900EAF188 /* GenderViewController.swift in Sources */,
 				372F85031FFE4C4D00D6BCB1 /* State.swift in Sources */,
 				37A5BB9D1FE6223600C4F1E6 /* BaseCell.swift in Sources */,
+				37916B4520071EAC0098693D /* AnimationViewController.swift in Sources */,
 				372F85071FFE89CE00D6BCB1 /* Message.swift in Sources */,
 				3754E28A1FE12809002604CD /* QuickbloxManager.swift in Sources */,
 				37DE5F981FEA65B30017E09D /* LogoutTableViewCell.swift in Sources */,
@@ -807,6 +820,7 @@
 				372E8E121FF1076C002CAC96 /* Animation.swift in Sources */,
 				37DE5F891FEA61D00017E09D /* SwitchTableViewCell.swift in Sources */,
 				370832B81FE3806700D4DC86 /* User.swift in Sources */,
+				37990C69200780D80061E398 /* GradientColor.swift in Sources */,
 				372F850A1FFF139400D6BCB1 /* ReportViewController.swift in Sources */,
 				3792B0CA1FF3D05200AB4838 /* ExampleOverlayView.swift in Sources */,
 				37F61A2A1FFDB73C002DBAFA /* FriendCollectionReusableView.swift in Sources */,

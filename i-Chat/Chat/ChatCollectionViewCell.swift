@@ -21,7 +21,7 @@ class ChatCollectionViewCell: UICollectionViewCell {
         numberLabel.cornerRadius = numberLabel.bounds.width/2
 
         label.text = NSLocalizedString("Friends", comment: "")
-
+        self.backgroundColor = UIColor(red: 234/255, green: 235/255, blue: 237/255, alpha: 1)
     }
 
 }

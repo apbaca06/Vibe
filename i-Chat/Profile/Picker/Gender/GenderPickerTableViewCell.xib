@@ -17,7 +17,7 @@
             <rect key="frame" x="0.0" y="0.0" width="415" height="50"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="415" height="49.666666666666664"/>
+                <rect key="frame" x="0.0" y="0.0" width="415" height="49.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="LeftLabel" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dnL-A1-uY1">
@@ -30,10 +30,7 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="9z2-mF-s6s">
-                        <rect key="frame" x="275.66666666666669" y="15" width="124.33333333333331" height="21"/>
-                        <constraints>
-                            <constraint firstAttribute="height" constant="21" id="XR1-fb-mDh"/>
-                        </constraints>
+                        <rect key="frame" x="275.66666666666669" y="0.0" width="124.33333333333331" height="49.666666666666664"/>
                         <color key="textColor" red="0.027450980390000001" green="0.62745098040000002" blue="0.76470588240000004" alpha="1" colorSpace="calibratedRGB"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <textInputTraits key="textInputTraits"/>
@@ -41,9 +38,9 @@
                 </subviews>
                 <constraints>
                     <constraint firstItem="9z2-mF-s6s" firstAttribute="width" secondItem="H2p-sc-9uM" secondAttribute="width" multiplier="0.3" id="0LY-aW-xsR"/>
-                    <constraint firstAttribute="bottom" secondItem="9z2-mF-s6s" secondAttribute="bottom" constant="13.666666666666664" id="2Gg-4H-uFc"/>
+                    <constraint firstAttribute="bottom" secondItem="9z2-mF-s6s" secondAttribute="bottom" id="2Gg-4H-uFc"/>
                     <constraint firstItem="dnL-A1-uY1" firstAttribute="width" secondItem="H2p-sc-9uM" secondAttribute="width" multiplier="0.6" id="9Xy-Ez-UEL"/>
-                    <constraint firstItem="9z2-mF-s6s" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="15" id="dtG-Gc-MI6"/>
+                    <constraint firstItem="9z2-mF-s6s" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="dtG-Gc-MI6"/>
                     <constraint firstItem="dnL-A1-uY1" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="15" id="jU1-hE-bi5"/>
                     <constraint firstAttribute="trailing" secondItem="9z2-mF-s6s" secondAttribute="trailing" constant="15" id="kCt-kK-8yg"/>
                     <constraint firstItem="dnL-A1-uY1" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="15" id="n9X-9N-ECG"/>

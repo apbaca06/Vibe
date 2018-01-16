@@ -97,5 +97,18 @@ class AgeViewController: UIViewController {
         datePicker.maximumDate = tillDateTime
 
     }
-
+    @IBAction func confirm(_ sender: Any) {
+        
+        if ageLabel.text != NSLocalizedString("Your age", comment: "") {
+        
+           let setImgViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "SetImgViewController")
+        self.navigationController?.pushViewController(setImgViewController)
+        } else {
+            let alertController = UIAlertController(title: NSLocalizedString("Please select your age!", comment: ""), message: "", preferredStyle: .alert)
+            let okAction = UIAlertAction(title: NSLocalizedString("OK", comment: ""), style: .default, handler: nil)
+            alertController.addAction(okAction)
+            alertController.show()
+        }
+    }
+    
 }

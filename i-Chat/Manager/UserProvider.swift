@@ -68,6 +68,7 @@ class UserProvider {
 
                 self.keychain.set("\(currentUser.name)", forKey: "name")
                 self.keychain.set("\(currentUser.profileImgURL)", forKey: "profileImgURL")
+                self.keychain.set("\(currentUser.age)", forKey: "age")
                 self.keychain.set("\(currentUser.cityName)", forKey: "cityName")
                 self.keychain.set("\(currentUser.gender)", forKey: "gender")
                 self.keychain.set("\(currentUser.minAge)", forKey: "minAge")
@@ -127,7 +128,6 @@ class UserProvider {
                         } else {
                             self.delegate?.userProvider(self, didFetch: self.distanceUsers, didFetch: allUsers, didFetch: user)
                         }
-
                 }
 
             } catch {

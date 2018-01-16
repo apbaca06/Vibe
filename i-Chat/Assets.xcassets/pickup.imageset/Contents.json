@@ -2,17 +2,17 @@
   "images" : [
     {
       "idiom" : "universal",
-      "filename" : "phone-call-4.png",
+      "filename" : "pickup4.png",
       "scale" : "1x"
     },
     {
       "idiom" : "universal",
-      "filename" : "phone-call-5.png",
+      "filename" : "pickup5.png",
       "scale" : "2x"
     },
     {
       "idiom" : "universal",
-      "filename" : "phone-call-6.png",
+      "filename" : "pickup6.png",
       "scale" : "3x"
     }
   ],

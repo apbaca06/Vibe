@@ -20,13 +20,15 @@ class FriendCollectionViewCell: UICollectionViewCell {
         let userImage = #imageLiteral(resourceName: "user").withRenderingMode(.alwaysTemplate)
         profileImageView.image = userImage
 
-        profileImageView.layer.cornerRadius = profileImageView.bounds.width/2
+//        profileImageView.layer.cornerRadius = profileImageView.bounds.width/2
         profileImageView.clipsToBounds = true
 
-        let image = #imageLiteral(resourceName: "pickup").withRenderingMode(.alwaysTemplate)
-        callButton.setImage(image, for: .normal)
+//        let image = #imageLiteral(resourceName: "pickup").withRenderingMode(.alwaysTemplate)
+//        callButton.setImage(image, for: .normal)
+        
+        callButton.layer.cornerRadius = callButton.bounds.width/2
 
-        callButton.tintColor = UIColor(red: 215/255.0, green: 38/255.0, blue: 56/255.0, alpha: 1)
+//        callButton.tintColor = UIColor(red: 215/255.0, green: 38/255.0, blue: 56/255.0, alpha: 1)
 
     }
 

@@ -59,26 +59,27 @@ PODS:
     - nanopb/encode (= 0.3.8)
   - nanopb/decode (0.3.8)
   - nanopb/encode (0.3.8)
-  - Nuke (5.2)
+  - Nuke (6.0)
   - pop (1.0.10)
   - QuickBlox (2.14)
   - Quickblox-WebRTC (2.6.3):
     - QuickBlox (>= 2.7)
   - SVProgressHUD (2.2.2)
-  - SwifterSwift (4.1.0):
-    - SwifterSwift/AppKit (= 4.1.0)
-    - SwifterSwift/CoreGraphics (= 4.1.0)
-    - SwifterSwift/CoreLocation (= 4.1.0)
-    - SwifterSwift/Foundation (= 4.1.0)
-    - SwifterSwift/SwiftStdlib (= 4.1.0)
-    - SwifterSwift/UIKit (= 4.1.0)
-  - SwifterSwift/AppKit (4.1.0)
-  - SwifterSwift/CoreGraphics (4.1.0)
-  - SwifterSwift/CoreLocation (4.1.0)
-  - SwifterSwift/Foundation (4.1.0)
-  - SwifterSwift/SwiftStdlib (4.1.0)
-  - SwifterSwift/UIKit (4.1.0)
-  - SwiftLint (0.24.0)
+  - SwifterSwift (4.1.1):
+    - SwifterSwift/AppKit (= 4.1.1)
+    - SwifterSwift/CoreGraphics (= 4.1.1)
+    - SwifterSwift/CoreLocation (= 4.1.1)
+    - SwifterSwift/Foundation (= 4.1.1)
+    - SwifterSwift/SwiftStdlib (= 4.1.1)
+    - SwifterSwift/UIKit (= 4.1.1)
+  - SwifterSwift/AppKit (4.1.1)
+  - SwifterSwift/CoreGraphics (4.1.1)
+  - SwifterSwift/CoreLocation (4.1.1)
+  - SwifterSwift/Foundation (4.1.1)
+  - SwifterSwift/SwiftStdlib (4.1.1)
+  - SwifterSwift/UIKit (4.1.1)
+  - SwiftLint (0.24.2)
+  - SwiftyGif (4.0.0)
   - XLActionController (4.0.0):
     - XLActionController/Core (= 4.0.0)
   - XLActionController/Core (4.0.0)
@@ -101,6 +102,7 @@ DEPENDENCIES:
   - SVProgressHUD (from `https://github.com/SVProgressHUD/SVProgressHUD.git`)
   - SwifterSwift
   - SwiftLint
+  - SwiftyGif
   - XLActionController
 
 EXTERNAL SOURCES:
@@ -130,15 +132,16 @@ SPEC CHECKSUMS:
   leveldb-library: 08cba283675b7ed2d99629a4bc5fd052cd2bb6a5
   MZTimerLabel: cd9bfb9304540ef2a9e163384fca9c978f0dbf83
   nanopb: 5601e6bca2dbf1ed831b519092ec110f66982ca3
-  Nuke: 5f420c4637415f979c83afb35e73176dd03232d9
+  Nuke: d83812262734dad51e3c498cb1c4f7923f2b78c6
   pop: 82ca6b068ce9278fd350fd9dd09482a0ce9492e6
   QuickBlox: d40cd742985908ce7809058e5a63f1e3581165a0
   Quickblox-WebRTC: 1838368795c479dd61796a3423ce9e74a90fe939
   SVProgressHUD: 59b2d3dabacbd051576d21d32293ca7228dc18b0
-  SwifterSwift: 4d962b5d653760b85266832aff6ab6d08c1b7974
-  SwiftLint: a014c92b4664e8b13f380f8640a51bb1733778ba
+  SwifterSwift: bfcae9d659dfd306d164f13f72cad09198f30723
+  SwiftLint: 2aa21b96c8d13396a051bc1cb659d2ce1e0075b0
+  SwiftyGif: 14c0e2dddb1b51da4919b68f7ad97a1c45785460
   XLActionController: 7e88fece1799e61357cb00b1cc67104d66ec4d2c
 
-PODFILE CHECKSUM: a5018256b11ad0b4a8e917d38cc01b20d265aab2
+PODFILE CHECKSUM: ebac34d44458a7cb44bd0cd8900e2161c6ab61a0
 
 COCOAPODS: 1.3.1
