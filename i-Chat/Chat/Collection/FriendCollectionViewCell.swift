@@ -25,7 +25,7 @@ class FriendCollectionViewCell: UICollectionViewCell {
 
 //        let image = #imageLiteral(resourceName: "pickup").withRenderingMode(.alwaysTemplate)
 //        callButton.setImage(image, for: .normal)
-        
+
         callButton.layer.cornerRadius = callButton.bounds.width/2
 
 //        callButton.tintColor = UIColor(red: 215/255.0, green: 38/255.0, blue: 56/255.0, alpha: 1)

@@ -48,13 +48,12 @@ extension HomeViewController: FriendCollectionViewControllerDelegate {
 
     // MARK: Funtion for Profile Cell
     @objc func showSelfProfile() {
-        
+
         let editProfileTableViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "EditProfileTableViewController")
-        
+
         let navEditProfileTableViewController = UINavigationController(rootViewController: editProfileTableViewController)
-        
+
         present(navEditProfileTableViewController, animated: true, completion: nil)
-        
 
     }
 
@@ -123,7 +122,6 @@ extension HomeViewController: KolodaViewDataSource {
     func kolodaSpeedThatCardShouldDrag(_ koloda: KolodaView) -> DragSpeed {
         return .default
     }
-    
 
     func koloda(_ koloda: KolodaView, viewForCardAt index: Int) -> UIView {
 
@@ -199,5 +197,56 @@ extension HomeViewController: KolodaViewDataSource {
             self.view.addSubview(matchViewController.view)
             matchViewController.didMove(toParentViewController: self)
         }
+    }
+}
+
+extension HomeViewController: CLLocationManagerDelegate {
+
+    // MARK: Detect Location
+    func setupLocationManager() {
+
+        guard let uid = self.keychain.get("uid")
+            else { return }
+
+        DatabasePath.userRef
+            .child(uid)
+            .child("location")
+            .updateChildValues(["latitude": locationManager.location?.coordinate.latitude, "longitude": locationManager.location?.coordinate.longitude]) { (error, _) in
+                if error == nil {
+
+                    let geoCoder = CLGeocoder()
+
+                    guard let location = self.locationManager.location
+                        else { return }
+                    geoCoder.reverseGeocodeLocation(location) { (placemarks, error) in
+
+                        if error != nil {
+                            print(error)
+                            return
+                        }
+                        guard let existPlacemarks = placemarks
+                            else { return }
+                        let placemark = existPlacemarks[0] as CLPlacemark
+                        let cityName = placemark.locality
+
+                        guard let city = cityName
+                            else { return }
+                        DatabasePath.userRef.child(uid).child("location")
+                            .updateChildValues(["cityName": city], withCompletionBlock: { (error, _) in
+                                if error == nil {
+
+                                }
+                            })
+                    }
+
+                }
+        }
+
+    }
+
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+
+        setupLocationManager()
+        locationManager.stopUpdatingLocation()
     }
 }

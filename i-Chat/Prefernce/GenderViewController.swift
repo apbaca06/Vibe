@@ -73,15 +73,10 @@ class GenderViewController: UIViewController, CLLocationManagerDelegate {
         womanButton.cornerRadius = womanButton.bounds.width/2
     }
 
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-    }
-
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
 
         SVProgressHUD.dismiss()
-        setupLocationManager()
 
     }
 
@@ -141,6 +136,7 @@ class GenderViewController: UIViewController, CLLocationManagerDelegate {
     }
 
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        setupLocationManager()
         locationManager.stopUpdatingLocation()
     }
 }

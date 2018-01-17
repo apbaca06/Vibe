@@ -98,9 +98,9 @@ class AgeViewController: UIViewController {
 
     }
     @IBAction func confirm(_ sender: Any) {
-        
+
         if ageLabel.text != NSLocalizedString("Your age", comment: "") {
-        
+
            let setImgViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "SetImgViewController")
         self.navigationController?.pushViewController(setImgViewController)
         } else {
@@ -110,5 +110,5 @@ class AgeViewController: UIViewController {
             alertController.show()
         }
     }
-    
+
 }

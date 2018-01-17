@@ -131,7 +131,7 @@ class UserProvider {
                 }
 
             } catch {
-
+                print("Error", error)
                 return
             }
         }) { (error)  in

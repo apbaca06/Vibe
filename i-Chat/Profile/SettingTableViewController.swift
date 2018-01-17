@@ -122,7 +122,7 @@ class SettingTableViewController: UITableViewController {
         setUpTableView()
 
         setupNavBar()
-        
+
         tableView.allowsSelection = true
 
     }
@@ -286,7 +286,7 @@ class SettingTableViewController: UITableViewController {
                 cell.leftLabel.text = NSLocalizedString("Location", comment: "")
 
                 cell.rightLabel.text = self.cityName
-                
+
                 cell.selectionStyle = .none
 
                 return cell
@@ -304,7 +304,7 @@ class SettingTableViewController: UITableViewController {
                       let distance = Float(maxDistance)
                     else {return cell}
                 cell.slider.value = distance
-                
+
                 cell.selectionStyle = .none
 
                 return cell
@@ -321,14 +321,13 @@ class SettingTableViewController: UITableViewController {
                 cell.textfield.text = self.keychain.get("preference")
 
                 ///
-                
-                
+
                 cell.textfield.inputView = genderPickerView
 
                 genderPickerView.delegate = self
 
                 genderPickerView.dataSource = self
-                
+
                 cell.selectionStyle = .none
 
                 return cell
@@ -356,7 +355,7 @@ class SettingTableViewController: UITableViewController {
                 cell.minAgeTextField.text = self.keychain.get("minAge")
 
                 cell.maxAgeTextField.text = self.keychain.get("maxAge")
-                
+
                 cell.selectionStyle = .none
 
                 return cell
@@ -368,7 +367,7 @@ class SettingTableViewController: UITableViewController {
                     ) as! SwitchTableViewCell
                 // swiftlint:enable force_cast
                 cell.cellLabel.text = NSLocalizedString("Gender", comment: "")
-                
+
                 cell.selectionStyle = .none
                 return cell
 
@@ -382,7 +381,7 @@ class SettingTableViewController: UITableViewController {
                 for: indexPath
                 ) as! LogoutTableViewCell
             // swiftlint:enable force_cast
-            
+
             cell.selectionStyle = .none
 
             return cell
@@ -414,8 +413,6 @@ class SettingTableViewController: UITableViewController {
 //
 //        }
     }
-    
-    
 
 }
 

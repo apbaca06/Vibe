@@ -31,6 +31,8 @@ class HomeViewController: UICollectionViewController, UICollectionViewDelegateFl
 
     let userProvider = UserProvider()
 
+    let locationManager = CLLocationManager()
+
     let friendCollectionViewController = FriendCollectionViewController()
 
     let friendViewController = FriendTableViewController()
@@ -58,6 +60,16 @@ class HomeViewController: UICollectionViewController, UICollectionViewDelegateFl
 
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        self.locationManager.delegate = self
+
+        self.locationManager.distanceFilter = kCLLocationAccuracyBest
+
+        self.locationManager.desiredAccuracy = kCLLocationAccuracyBest
+
+        locationManager.requestWhenInUseAuthorization()
+
+        locationManager.startUpdatingLocation()
 
         friendCollectionViewController.delegate = self
 
