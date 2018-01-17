@@ -1,9 +1,15 @@
 /* (No Comment) */
-"NSLocationAlwaysUsageDescription" = "開通GPS";
+"NSCameraUsageDescription" = "請開啟鏡頭";
+
+/* (No Comment) */
+"NSLocationAlwaysAndWhenInUseUsageDescription" = "請打開GPS設定，偵測到位置後，讓Vibe幫你尋找附近的對象！";
 
 /* (No Comment) */
 "NSLocationWhenInUseUsageDescription" = "開通GPS";
 
 /* (No Comment) */
 "NSMicrophoneUsageDescription" = "打開麥克風";
+
+/* (No Comment) */
+"NSPhotoLibraryUsageDescription" = "請同意Vibe進入相簿";
 

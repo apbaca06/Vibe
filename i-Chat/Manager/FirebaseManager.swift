@@ -62,6 +62,9 @@ class FirebaseManager {
 
                 DispatchQueue.main.async {
                     UIAlertController(error: error!).show()
+                    let loginViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "LogInViewController")
+
+                    AppDelegate.shared.window?.rootViewController = loginViewController
                 }
 
             }

@@ -51,6 +51,7 @@
 		376C3FB81FEBA92900EAF188 /* GenderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 376C3FB71FEBA92900EAF188 /* GenderViewController.swift */; };
 		376C3FBA1FEBACF900EAF188 /* PreferenceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 376C3FB91FEBACF900EAF188 /* PreferenceViewController.swift */; };
 		376C3FBC1FEBAD9A00EAF188 /* SetImgViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 376C3FBB1FEBAD9A00EAF188 /* SetImgViewController.swift */; };
+		37814DA9200F1F460090851B /* ExplainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37814DA8200F1F460090851B /* ExplainViewController.swift */; };
 		37916B4520071EAC0098693D /* AnimationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37916B4420071EAC0098693D /* AnimationViewController.swift */; };
 		3792B0B61FF2537000AB4838 /* AgeRangeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3792B0B41FF2537000AB4838 /* AgeRangeTableViewCell.swift */; };
 		3792B0B71FF2537000AB4838 /* AgeRangeTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3792B0B51FF2537000AB4838 /* AgeRangeTableViewCell.xib */; };
@@ -166,6 +167,7 @@
 		376C3FB71FEBA92900EAF188 /* GenderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenderViewController.swift; sourceTree = "<group>"; };
 		376C3FB91FEBACF900EAF188 /* PreferenceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferenceViewController.swift; sourceTree = "<group>"; };
 		376C3FBB1FEBAD9A00EAF188 /* SetImgViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetImgViewController.swift; sourceTree = "<group>"; };
+		37814DA8200F1F460090851B /* ExplainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExplainViewController.swift; sourceTree = "<group>"; };
 		37916B4420071EAC0098693D /* AnimationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimationViewController.swift; sourceTree = "<group>"; };
 		3792B0B41FF2537000AB4838 /* AgeRangeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AgeRangeTableViewCell.swift; sourceTree = "<group>"; };
 		3792B0B51FF2537000AB4838 /* AgeRangeTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AgeRangeTableViewCell.xib; sourceTree = "<group>"; };
@@ -359,6 +361,7 @@
 		376C3FB61FEBA91600EAF188 /* Prefernce */ = {
 			isa = PBXGroup;
 			children = (
+				37814DA8200F1F460090851B /* ExplainViewController.swift */,
 				376C3FB71FEBA92900EAF188 /* GenderViewController.swift */,
 				376C3FB91FEBACF900EAF188 /* PreferenceViewController.swift */,
 				372E8E131FF1DD2D002CAC96 /* AgeViewController.swift */,
@@ -821,6 +824,7 @@
 				37DE5F891FEA61D00017E09D /* SwitchTableViewCell.swift in Sources */,
 				370832B81FE3806700D4DC86 /* User.swift in Sources */,
 				37990C69200780D80061E398 /* GradientColor.swift in Sources */,
+				37814DA9200F1F460090851B /* ExplainViewController.swift in Sources */,
 				372F850A1FFF139400D6BCB1 /* ReportViewController.swift in Sources */,
 				3792B0CA1FF3D05200AB4838 /* ExampleOverlayView.swift in Sources */,
 				37F61A2A1FFDB73C002DBAFA /* FriendCollectionReusableView.swift in Sources */,

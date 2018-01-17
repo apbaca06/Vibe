@@ -4,9 +4,6 @@
 /* Class = "UILabel"; text = "Description"; ObjectID = "3Sk-83-esV"; */
 "3Sk-83-esV.text" = "Description";
 
-/* Class = "UILabel"; text = "Forgot password?"; ObjectID = "4hL-5X-smC"; */
-"4hL-5X-smC.text" = "Forgot password?";
-
 /* Class = "UITextField"; placeholder = "Name"; ObjectID = "4la-Du-bug"; */
 "4la-Du-bug.placeholder" = "Name";
 
@@ -31,6 +28,9 @@
 /* Class = "UITextField"; placeholder = "Password"; ObjectID = "CGv-YY-Xei"; */
 "CGv-YY-Xei.placeholder" = "Password";
 
+/* Class = "UIButton"; normalTitle = "Forgot password?"; ObjectID = "DGh-If-nEp"; */
+"DGh-If-nEp.normalTitle" = "忘記密碼？";
+
 /* Class = "UIButton"; normalTitle = "Login"; ObjectID = "Eqw-4g-Dw6"; */
 "Eqw-4g-Dw6.normalTitle" = "Login";
 
@@ -42,6 +42,9 @@
 
 /* Class = "UILabel"; text = "Age"; ObjectID = "Ill-fU-meo"; */
 "Ill-fU-meo.text" = "Age";
+
+/* Class = "UILabel"; text = "Set your personal in first, and vibe will handle the rest!"; ObjectID = "K6H-r9-wFW"; */
+"K6H-r9-wFW.text" = "只需做個人化設定，其他由Vibe幫你處理！";
 
 /* Class = "UILabel"; text = "Description"; ObjectID = "O9H-vy-vCO"; */
 "O9H-vy-vCO.text" = "Description";
@@ -79,6 +82,9 @@
 /* Class = "UIButton"; normalTitle = "Button"; ObjectID = "b1c-Pg-ci9"; */
 "b1c-Pg-ci9.normalTitle" = "Button";
 
+/* Class = "UIButton"; normalTitle = "Set Personal Info"; ObjectID = "d2C-Ly-t44"; */
+"d2C-Ly-t44.normalTitle" = "個人化設定";
+
 /* Class = "UILabel"; text = "CALLING"; ObjectID = "fUY-q0-yzA"; */
 "fUY-q0-yzA.text" = "CALLING";
 
@@ -88,11 +94,17 @@
 /* Class = "UINavigationItem"; title = "Gender"; ObjectID = "fbk-Fe-fpx"; */
 "fbk-Fe-fpx.title" = "Gender";
 
+/* Class = "UINavigationItem"; title = "Before Dive In"; ObjectID = "gbk-NA-JF6"; */
+"gbk-NA-JF6.title" = "";
+
 /* Class = "UIButton"; normalTitle = "Button"; ObjectID = "ibm-x4-7iV"; */
 "ibm-x4-7iV.normalTitle" = "Button";
 
 /* Class = "UITextView"; text = "Last updated: (2018/01/04)\n\nPlease read this End-User License Agreement (\"Agreement\") carefully before clicking the \"I Agree\" button, downloading or using My Application (I-Chat) (\"Application\").\n\nBy clicking the \"I Agree\" button, downloading or using the Application, you are agreeing to be bound by the terms and conditions of this Agreement.\n\nIf you do not agree to the terms of this Agreement, do not click on the \"I Agree\" button and do not download or use the Application.\n\nLicense\n\nMy Application (I-Chat)  grants you a revocable, non-exclusive, non-transferable, limited license to download, install and use the Application solely for your personal, non-commercial purposes strictly in accordance with the terms of this Agreement.\n\nRestrictions\n\nYou agree not to, and you will not permit others to:\n\na) license, sell, rent, lease, assign, distribute, transmit, host, outsource, disclose or otherwise commercially exploit the Application or make the Application available to any third party.Term and Termination\n\nThis Agreement shall remain in effect until terminated by you or My Application (I-Chat) . \n\nMy Application (I-Chat)  may, in its sole discretion, at any time and for any or no reason, suspend or terminate this Agreement with or without prior notice.\n\nThis Agreement will terminate immediately, without prior notice from My Application (I-Chat) , in the event that you fail to comply with any provision of this Agreement. You may also terminate this Agreement by deleting the Application and all copies thereof from your mobile device or from your desktop.\n\nUpon termination of this Agreement, you shall cease all use of the Application and delete all copies of the Application from your mobile device or from your desktop.\n\nSeverability\n\nIf any provision of this Agreement is held to be unenforceable or invalid, such provision will be changed and interpreted to accomplish the objectives of such provision to the greatest extent possible under applicable law and the remaining provisions will continue in full force and effect.\n\nAmendments to this Agreement\n\nMy Application (I-Chat) reserves the right, at its sole discretion, to modify or replace this Agreement at any time. If a revision is material we will provide at least 30  days' notice prior to any new terms taking effect. What constitutes a material change will be determined at our sole discretion.\n\nContact Information\n\nIf you have any questions about this Agreement, please contact us."; ObjectID = "jCo-ER-gWl"; */
 "jCo-ER-gWl.text" = "Last updated: (2018/01/04)\n\nPlease read this End-User License Agreement (\"Agreement\") carefully before clicking the \"I Agree\" button, downloading or using My Application (I-Chat) (\"Application\").\n\nBy clicking the \"I Agree\" button, downloading or using the Application, you are agreeing to be bound by the terms and conditions of this Agreement.\n\nIf you do not agree to the terms of this Agreement, do not click on the \"I Agree\" button and do not download or use the Application.\n\nLicense\n\nMy Application (I-Chat)  grants you a revocable, non-exclusive, non-transferable, limited license to download, install and use the Application solely for your personal, non-commercial purposes strictly in accordance with the terms of this Agreement.\n\nRestrictions\n\nYou agree not to, and you will not permit others to:\n\na) license, sell, rent, lease, assign, distribute, transmit, host, outsource, disclose or otherwise commercially exploit the Application or make the Application available to any third party.Term and Termination\n\nThis Agreement shall remain in effect until terminated by you or My Application (I-Chat) . \n\nMy Application (I-Chat)  may, in its sole discretion, at any time and for any or no reason, suspend or terminate this Agreement with or without prior notice.\n\nThis Agreement will terminate immediately, without prior notice from My Application (I-Chat) , in the event that you fail to comply with any provision of this Agreement. You may also terminate this Agreement by deleting the Application and all copies thereof from your mobile device or from your desktop.\n\nUpon termination of this Agreement, you shall cease all use of the Application and delete all copies of the Application from your mobile device or from your desktop.\n\nSeverability\n\nIf any provision of this Agreement is held to be unenforceable or invalid, such provision will be changed and interpreted to accomplish the objectives of such provision to the greatest extent possible under applicable law and the remaining provisions will continue in full force and effect.\n\nAmendments to this Agreement\n\nMy Application (I-Chat) reserves the right, at its sole discretion, to modify or replace this Agreement at any time. If a revision is material we will provide at least 30  days' notice prior to any new terms taking effect. What constitutes a material change will be determined at our sole discretion.\n\nContact Information\n\nIf you have any questions about this Agreement, please contact us.";
+
+/* Class = "UILabel"; text = "Vibe"; ObjectID = "jEv-yd-6zu"; */
+"jEv-yd-6zu.text" = "Vibe";
 
 /* Class = "UIButton"; normalTitle = "Button"; ObjectID = "kjp-wc-myD"; */
 "kjp-wc-myD.normalTitle" = "Button";

@@ -23,6 +23,8 @@ class SetImgViewController: UIViewController, UIImagePickerControllerDelegate, U
 
     var profilePic: ProfileImage?
 
+    var imageIsUploaded: Bool = false
+
     let keychain = KeychainSwift()
 
     override func viewDidLoad() {
@@ -94,6 +96,8 @@ class SetImgViewController: UIViewController, UIImagePickerControllerDelegate, U
 
         self.dismiss(animated: true, completion: nil)
 
+        SVProgressHUD.show(withStatus: NSLocalizedString("Saving Photo", comment: ""))
+
         // Points to the root reference
         let storageRef = Storage.storage().reference()
 
@@ -106,7 +110,8 @@ class SetImgViewController: UIViewController, UIImagePickerControllerDelegate, U
         // Upload the file to the path "images/rivers.jpg"
         let uploadTask = imagesRef.putData(data, metadata: nil) { (metadata, error) in
 
-            SVProgressHUD.show(withStatus: NSLocalizedString("Saving Photo", comment: ""))
+            SVProgressHUD.show(withStatus: NSLocalizedString("Uploading Photo", comment: ""))
+
             guard let metadata = metadata
 
             else {
@@ -118,26 +123,35 @@ class SetImgViewController: UIViewController, UIImagePickerControllerDelegate, U
                 return
             }
             // Metadata contains file metadata such as size, content-type, and download URL.
-            guard let downloadURL = metadata.downloadURL()
-
+            guard let downloadURL = metadata.downloadURL(),
+                  let gender = UserDefaults.standard.string(forKey: "Gender"),
+                  let preference = UserDefaults.standard.string(forKey: "Preference")
                 else { return }
-            DatabasePath.userRef.child(uid).updateChildValues([
-                "profileImgURL": "\(downloadURL)" ], withCompletionBlock: { (_, databaseReference) in
+                let age = UserDefaults.standard.integer(forKey: "Age")
+
+            DatabasePath.userRef
+                .child(uid)
+                .updateChildValues(
+                    ["gender": "\(gender)",
+                     "preference": "\(preference)",
+                     "age": age,
+                     "agePreference": ["min": 18, "max": 55],
+                     "maxDistance": 160,
+                     "likeList": ["test": 0],
+                     "profileImgURL": "\(downloadURL)" ], withCompletionBlock: { (_, databaseReference) in
+
+                    self.imageIsUploaded = true
 
                     SVProgressHUD.dismiss()
                     print(databaseReference, "*****")
             })
-//            DatabasePath.userRef.child(uid).updateChildValues([
-//                "profileImgURL": "\(downloadURL)",
-//                "maxDistance": 160
-//            ])
 
         }
     }
 
     @IBAction func dismissController(_ sender: Any) {
 
-        if profilePic?.profileImage != nil {
+        if profilePic?.profileImage != nil  && imageIsUploaded == true {
 
             navigationController?.popToRootViewController(animated: true)
 

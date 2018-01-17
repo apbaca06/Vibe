@@ -9,6 +9,7 @@
 import Foundation
 import Firebase
 import KeychainSwift
+import SVProgressHUD
 
 class CallManager {
 
@@ -25,9 +26,7 @@ class CallManager {
         let opponentsIDs: [NSNumber] = [opponetUser.qbID]
 
         let newSession = QBRTCClient.instance().createNewSession(
-
             withOpponents: opponentsIDs,
-
             with: QBRTCConferenceType.audio
         )
 

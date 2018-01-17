@@ -41,8 +41,18 @@ extension HomeViewController: FriendCollectionViewControllerDelegate {
             callOutViewController.reciever = user.0
             callOutViewController.chatroomID = user.1
             self.userInfo = ["Name": user.0.name, "profileImgURL": user.0.profileImgURL]
-            CallManager.shared.audioCall(toUser: user.0)
-            present(callOutViewController, animated: true, completion: nil)
+//            CallManager.shared.audioCall(toUser: user.0)
+            QuickbloxManager.connectQB(toUser: user.0, completionHandler: { (response) in
+                if response == true {
+                    self.present(callOutViewController, animated: true, completion: nil)
+                } else {
+                    let alertController = UIAlertController(title: NSLocalizedString("Unable to contact \(user.0.name)!", comment: ""), message: "", preferredStyle: .alert)
+                    let okAction = UIAlertAction(title: NSLocalizedString("OK", comment: ""), style: .default, handler: nil)
+                    alertController.addAction(okAction)
+                    alertController.show()
+                }
+            })
+//            present(callOutViewController, animated: true, completion: nil)
         }
     }
 

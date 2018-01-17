@@ -8,6 +8,9 @@
 "Agreed on EULA when registered" = "註冊即代表同意隱私權條款";
 
 /* No comment provided by engineer. */
+"Already have an account?" = "已經有帳號了嗎？";
+
+/* No comment provided by engineer. */
 "Back" = "上一頁";
 
 /* No comment provided by engineer. */
@@ -41,6 +44,9 @@
 "For people to know you better" = "讓大家更認識你";
 
 /* No comment provided by engineer. */
+"Forget password?" = "忘記密碼？";
+
+/* No comment provided by engineer. */
 "Forgot password?" = "忘記密碼？";
 
 /* No comment provided by engineer. */
@@ -60,6 +66,9 @@
 
 /* No comment provided by engineer. */
 "Go to chat!" = "聊天去！";
+
+/* No comment provided by engineer. */
+"Having trouble saving photo!" = "儲存照片出現了一點困難";
 
 /* No comment provided by engineer. */
 "History" = "歷史紀錄";
@@ -83,9 +92,6 @@
 "Keep swiping!" = "繼續滑！";
 
 /* No comment provided by engineer. */
-"Likes" = "讚";
-
-/* No comment provided by engineer. */
 "Location" = "位置";
 
 /* No comment provided by engineer. */
@@ -93,9 +99,6 @@
 
 /* No comment provided by engineer. */
 "Login" = "登入";
-
-/* No comment provided by engineer. */
-"Login Successfully" = "登入成功";
 
 /* No comment provided by engineer. */
 "Logout" = "登出";
@@ -134,6 +137,9 @@
 "Please insert correct email!" = "請輸入正確信箱";
 
 /* No comment provided by engineer. */
+"Please insert email!" = "請輸入電子郵件";
+
+/* No comment provided by engineer. */
 "Please insert your gender" = "請選擇你的性別";
 
 /* No comment provided by engineer. */
@@ -141,6 +147,9 @@
 
 /* No comment provided by engineer. */
 "Please select one photo" = "請選擇一張照片";
+
+/* No comment provided by engineer. */
+"Please select your age!" = "請選擇年齡";
 
 /* No comment provided by engineer. */
 "Register" = "註冊";
@@ -152,10 +161,22 @@
 "Report" = "檢舉";
 
 /* No comment provided by engineer. */
+"Saving Photo" = "儲存照片";
+
+/* No comment provided by engineer. */
 "Search" = "搜尋";
 
 /* No comment provided by engineer. */
+"Select preference!" = "請選擇偏好";
+
+/* No comment provided by engineer. */
+"Set Personal Info" = "個人化設定選擇";
+
+/* No comment provided by engineer. */
 "Set your birthday" = "設定生日";
+
+/* No comment provided by engineer. */
+"Set your personal info first, and vibe will handle the rest!" = "只需做個人化設定，其他由Vibe幫你處理！";
 
 /* No comment provided by engineer. */
 "Setting" = "設定";
@@ -170,7 +191,22 @@
 "Tap to add photo!" = "點擊來新增照片";
 
 /* No comment provided by engineer. */
+"The maximum age should be larger than miniumum age" = "此年齡範圍須大於最小年齡";
+
+/* No comment provided by engineer. */
+"The minimum age should be smaller than maxiumum age" = "此年齡範圍須曉於最大年齡";
+
+/* No comment provided by engineer. */
 "Unable to contact (user.0.name)!" = "沒辦法聯絡";
+
+/* No comment provided by engineer. */
+"Updating location" = "更新位置中";
+
+/* No comment provided by engineer. */
+"Updating profile" = "更新檔案中";
+
+/* No comment provided by engineer. */
+"Uploading Photo" = "上傳照片中";
 
 /* No comment provided by engineer. */
 "You may never unoblock!" = "之後都不能解除封鎖";
@@ -180,4 +216,7 @@
 
 /* No comment provided by engineer. */
 "Your birthday" = "你的生日";
+
+/* No comment provided by engineer. */
+"e-mail" = "電子郵件";
 

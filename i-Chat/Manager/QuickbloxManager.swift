@@ -10,6 +10,7 @@ import Foundation
 import UIKit
 import SVProgressHUD
 import Firebase
+import KeychainSwift
 
 class QuickbloxManager {
 
@@ -48,6 +49,9 @@ class QuickbloxManager {
 
                     DispatchQueue.main.async {
                         UIAlertController(error: error!).show()
+                        let loginViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "LogInViewController")
+
+                        AppDelegate.shared.window?.rootViewController = loginViewController
                     }
 
                 }
@@ -64,6 +68,9 @@ class QuickbloxManager {
             DispatchQueue.main.async {
 
                 UIAlertController(error: error!).show()
+                let loginViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "LogInViewController")
+
+                AppDelegate.shared.window?.rootViewController = loginViewController
             }
 
         }
@@ -125,9 +132,71 @@ class QuickbloxManager {
             DispatchQueue.main.async {
 
                 UIAlertController(error: error!).show()
+                let loginViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "LogInViewController")
+
+                AppDelegate.shared.window?.rootViewController = loginViewController
 
             }
         }
 
+    }
+
+    static func connectQB(toUser opponetUser: User, completionHandler: @escaping (Bool) -> Void) {
+
+        var uuser: QBUUser?
+
+        if QBChat.instance.isConnected == false {
+
+            SVProgressHUD.show(withStatus: NSLocalizedString("Connecting to communication service", comment: ""))
+
+            let keychain = KeychainSwift()
+
+            keychain.synchronizable = true
+
+            guard let email = keychain.get("userEmail"),
+            let password = keychain.get("userPassword")
+
+            else {
+                DispatchQueue.main.async {
+
+                    let alertController = UIAlertController(title: NSLocalizedString("Unauthorized!", comment: ""), message: "Please login again.", preferredStyle: .alert)
+                    let okAction = UIAlertAction(title: NSLocalizedString("OK", comment: ""), style: .default, handler: nil)
+                    alertController.addAction(okAction)
+                    alertController.show()
+                    let loginViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "LogInViewController")
+
+                    AppDelegate.shared.window?.rootViewController = loginViewController
+
+                }
+                return }
+
+            QBRequest.logIn(withUserEmail: email, password: password, successBlock: { (_, user) in
+
+                // MARK: User logged in with Quickblox
+                uuser = user
+
+                uuser?.email = email
+
+                uuser?.password = password
+
+                QBChat.instance.connect(with: uuser!, completion: { (error) in
+                    if error == nil {
+                        SVProgressHUD.dismiss()
+                        completionHandler(true)
+                        CallManager.shared.audioCall(toUser: opponetUser)
+                    } else {
+                        SVProgressHUD.dismiss()
+                        completionHandler(false)
+                        DispatchQueue.main.async {
+                            UIAlertController(error: error!).show()
+                        }
+                    }
+
+                })
+            })
+        } else {
+            completionHandler(true)
+            CallManager.shared.audioCall(toUser: opponetUser)
+        }
     }
 }

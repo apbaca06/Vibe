@@ -30,6 +30,8 @@ class GenderViewController: UIViewController, CLLocationManagerDelegate {
 
     @IBAction func maleAction(_ sender: UIButton) {
 
+        UserDefaults.standard.set("Male", forKey: "Gender")
+
         guard let uid = keychain.get("uid")
             else { return }
         DatabasePath.userRef.child(uid).updateChildValues(["gender": "Male"]) { (_, _) in
@@ -39,6 +41,8 @@ class GenderViewController: UIViewController, CLLocationManagerDelegate {
     }
 
     @IBAction func womanAction(_ sender: Any) {
+
+        UserDefaults.standard.set("Female", forKey: "Gender")
 
         guard let uid = keychain.get("uid")
             else { return }
@@ -58,10 +62,22 @@ class GenderViewController: UIViewController, CLLocationManagerDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        self.locationManager.delegate = self
+
+        self.locationManager.distanceFilter = kCLLocationAccuracyBest
+
+        self.locationManager.desiredAccuracy = kCLLocationAccuracyBest
+
+        locationManager.requestWhenInUseAuthorization()
+
+        locationManager.startUpdatingLocation()
+
         SVProgressHUD.dismiss()
 
         decriptionLabel.text = NSLocalizedString("Please insert your gender", comment: "")
         maleButton.tintColor = UIColor(red: 7/255.0, green: 160/255.0, blue: 195/255.0, alpha: 1)
+
+        SVProgressHUD.show(withStatus: NSLocalizedString("Updating profile", comment: ""))
 
     }
 
@@ -83,20 +99,10 @@ class GenderViewController: UIViewController, CLLocationManagerDelegate {
     // MARK: Detect Location
     func setupLocationManager() {
 
-        self.locationManager.delegate = self
-
-        self.locationManager.distanceFilter = kCLLocationAccuracyBest
-
-        self.locationManager.desiredAccuracy = kCLLocationAccuracyBest
-
-        locationManager.requestWhenInUseAuthorization()
-
-        locationManager.startUpdatingLocation()
+        SVProgressHUD.show(withStatus: NSLocalizedString("Updating location", comment: ""))
 
         guard let uid = self.keychain.get("uid")
             else { return }
-
-        SVProgressHUD.show(withStatus: NSLocalizedString("Updating profile", comment: ""))
 
         DatabasePath.userRef
             .child(uid)

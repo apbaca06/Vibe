@@ -52,6 +52,8 @@ class AgeViewController: UIViewController {
 
         let age = dateTransform.compareToNow
 
+        UserDefaults.standard.set(age, forKey: "Age")
+
         ageLabel.text = String(describing: age)
 
         guard let uid = keychain.get("uid")
