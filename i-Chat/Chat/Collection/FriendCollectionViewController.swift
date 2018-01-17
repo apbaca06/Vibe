@@ -129,7 +129,7 @@ class FriendCollectionViewController: UIViewController, UICollectionViewDelegate
         cell.friendName.text = users[indexPath.row].0.name
 
         if users[indexPath.row].2 == true {
-            cell.callButton.tintColor = .gray
+//            cell.callButton.backgroundColor = .gray
             cell.friendName.textColor = .gray
             cell.profileImageView.tintColor = .gray
         } else {
