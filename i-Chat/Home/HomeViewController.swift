@@ -309,7 +309,11 @@ class HomeViewController: UICollectionViewController, UICollectionViewDelegateFl
 
             cell.swipeView.resetCurrentCardIndex()
 
-            cell.turningIndicator.startAnimating()
+            if distanceUsers.count != 0 {
+                cell.warningLabel.isHidden = true
+            } else {
+                cell.warningLabel.isHidden = false
+            }
 
             return cell
 

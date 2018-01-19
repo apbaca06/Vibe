@@ -12,7 +12,8 @@ import Firebase
 import KeychainSwift
 
 class SwipingCollectionViewCell: UICollectionViewCell {
-    @IBOutlet weak var turningIndicator: UIActivityIndicatorView!
+
+    @IBOutlet weak var warningLabel: UILabel!
 
     @IBOutlet weak var buttonView: UIView!
 
