@@ -15,10 +15,13 @@ import SwiftyGif
 class RegisterViewController: UIViewController {
 
     @IBOutlet weak var centerImage: UIImageView!
-    @IBOutlet weak var agreeLabel: UILabel!
+
+    @IBOutlet weak var agreeButton: UIButton!
 
     @IBOutlet weak var alreadyHaveLabel: UILabel!
     @IBOutlet weak var eulaButton: UIButton!
+
+    var agreedByUser: Bool = false
     @IBAction func toLoginButton(_ sender: Any) {
 
         let loginViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "LogInViewController")
@@ -38,6 +41,8 @@ class RegisterViewController: UIViewController {
 
     @IBAction func registerButton(_ sender: UIButton) {
 
+        if agreedByUser == true {
+
         if !userName.isEmpty &&
            !userEmail.isEmpty &&
            !userPassword.isEmpty {
@@ -51,29 +56,20 @@ class RegisterViewController: UIViewController {
             if email.isValidEmail() == true {
 
                 if password.charactersArray.count >= 8 {
-
                     FirebaseManager.signUp(
                         name: name,
-
                         withEmail: email,
-
                         withPassword: password
                     )
                 } else {
-
                         let alert = UIAlertController(title: NSLocalizedString("Invalid Password", comment: ""), message: NSLocalizedString("Please have password longer than 8 characters!", comment: ""), preferredStyle: .alert)
-
                         alert.addAction(title: NSLocalizedString("OK", comment: ""))
-
                         alert.show()
-
                 }
             } else {
 
                     let alert = UIAlertController(title: NSLocalizedString("Invalid Email", comment: ""), message: NSLocalizedString("Please insert correct email!", comment: ""), preferredStyle: .alert)
-
                     alert.addAction(title: NSLocalizedString("OK", comment: ""))
-
                     alert.show()
 
             }
@@ -84,12 +80,31 @@ class RegisterViewController: UIViewController {
                 alert.show()
 
         }
+    } else {
+        let alert = UIAlertController(title: NSLocalizedString("Please agree with EULA", comment: ""), message: NSLocalizedString("Touch check button to agree with EULA", comment: ""), preferredStyle: .alert)
+        alert.addAction(title: NSLocalizedString("OK", comment: ""))
+
+        alert.show()
+        }
     }
 
+    @IBAction func agreeOnEULA(_ sender: Any) {
+        if agreedByUser == false {
+
+            agreeButton.tintColor = UIColor(red: 7/255.0, green: 160/255.0, blue: 195/255.0, alpha: 1)
+            agreedByUser = true
+        } else {
+            agreeButton.tintColor = .gray
+            agreedByUser = false
+        }
+
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        agreeLabel.text = NSLocalizedString("Agreed on EULA when registered", comment: "")
+        let agreeImage = #imageLiteral(resourceName: "checked").withRenderingMode(.alwaysTemplate)
+        agreeButton.setImage(agreeImage, for: .normal)
+        agreeButton.tintColor = .gray
 
         alreadyHaveLabel.text = NSLocalizedString("Already have an account?", comment: "")
 
