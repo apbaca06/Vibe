@@ -120,22 +120,27 @@
                                 </userDefinedRuntimeAttribute>
                             </userDefinedRuntimeAttributes>
                         </label>
-                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AvT-DB-pTE">
-                            <rect key="frame" x="321" y="545" width="46" height="39"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            <state key="normal" title="Button"/>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AvT-DB-pTE">
+                            <rect key="frame" x="330" y="537" width="45" height="45"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="45" id="71b-z3-eYy"/>
+                                <constraint firstAttribute="width" constant="45" id="9Ff-IX-3bR"/>
+                            </constraints>
+                            <state key="normal" image="flag"/>
                         </button>
                     </subviews>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     <constraints>
                         <constraint firstItem="U3W-kD-WKx" firstAttribute="leading" secondItem="Rcq-QG-eYN" secondAttribute="leading" id="0hg-H2-7x1"/>
                         <constraint firstItem="13S-9h-FGE" firstAttribute="height" secondItem="SCJ-wb-W1Z" secondAttribute="height" id="5XT-h1-Kpd"/>
+                        <constraint firstItem="13S-9h-FGE" firstAttribute="top" secondItem="AvT-DB-pTE" secondAttribute="bottom" id="68e-G2-fka"/>
                         <constraint firstItem="La4-wi-dpe" firstAttribute="centerX" secondItem="Rcq-QG-eYN" secondAttribute="centerX" id="9gm-Jk-O2r"/>
                         <constraint firstItem="La4-wi-dpe" firstAttribute="width" secondItem="Rcq-QG-eYN" secondAttribute="width" id="Dwl-8P-Uqd"/>
                         <constraint firstItem="La4-wi-dpe" firstAttribute="top" secondItem="U3W-kD-WKx" secondAttribute="bottom" id="Gn5-Eb-JN5"/>
                         <constraint firstItem="La4-wi-dpe" firstAttribute="top" secondItem="NGt-zP-P0i" secondAttribute="bottom" id="HMg-KF-INg"/>
                         <constraint firstItem="13S-9h-FGE" firstAttribute="trailing" secondItem="U3W-kD-WKx" secondAttribute="trailing" id="PB1-fb-Vss"/>
                         <constraint firstItem="U3W-kD-WKx" firstAttribute="top" secondItem="Rcq-QG-eYN" secondAttribute="top" id="Q2I-HJ-Bcz"/>
+                        <constraint firstAttribute="trailing" secondItem="AvT-DB-pTE" secondAttribute="trailing" id="VgH-MQ-m0Y"/>
                         <constraint firstItem="AIj-NC-sy8" firstAttribute="leading" secondItem="13S-9h-FGE" secondAttribute="leading" constant="10" id="Xft-dL-2lF"/>
                         <constraint firstAttribute="trailing" secondItem="U3W-kD-WKx" secondAttribute="trailing" id="Zup-8X-V4c"/>
                         <constraint firstItem="La4-wi-dpe" firstAttribute="top" secondItem="msG-FQ-Ycd" secondAttribute="bottom" id="ah4-q9-MxT"/>
@@ -175,6 +180,7 @@
                 <outlet property="imageView" destination="U3W-kD-WKx" id="Fjf-gk-aq9"/>
                 <outlet property="locationImg" destination="WLQ-4w-O6b" id="Fag-1M-PHs"/>
                 <outlet property="nameLabel" destination="SCJ-wb-W1Z" id="rcj-6Y-3Cx"/>
+                <outlet property="reportButton" destination="AvT-DB-pTE" id="clV-6w-yMk"/>
                 <outlet property="separatorView" destination="NGt-zP-P0i" id="dwO-vU-7oa"/>
             </connections>
             <point key="canvasLocation" x="33.5" y="68.5"/>
@@ -182,6 +188,7 @@
     </objects>
     <resources>
         <image name="cursor" width="12" height="12"/>
+        <image name="flag" width="16" height="16"/>
         <image name="maps-and-flags" width="12" height="12"/>
     </resources>
 </document>

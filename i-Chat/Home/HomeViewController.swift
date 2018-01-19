@@ -27,6 +27,10 @@ class HomeViewController: UICollectionViewController, UICollectionViewDelegateFl
 
     var allUsers: [(User, Int)] = []
 
+    var wantToReport: Bool = false
+
+     let reportViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "ReportViewController") as! ReportViewController
+
     var userInfo: [String: String]?
 
     let userProvider = UserProvider()

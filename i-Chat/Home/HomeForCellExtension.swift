@@ -111,30 +111,12 @@ extension HomeViewController: KolodaViewDelegate {
     }
 
     func koloda(_ koloda: KolodaView, didSelectCardAt index: Int) {
-        guard let uid = self.keychain.get("uid")
-            else { return }
 
-        let actionSheetController = UIAlertController(title: NSLocalizedString("Please select", comment: "" ), message: "", preferredStyle: .actionSheet)
+        if wantToReport == true {
+            guard let uid = self.keychain.get("uid")
+                else { return }
 
-        let cancelActionButton = UIAlertAction(title: "Cancel", style: .cancel) { _ -> Void in
-            print("Cancel")
         }
-        actionSheetController.addAction(cancelActionButton)
-
-        // swiftlint:disable force_cast
-        let reportActionSheet = UIAlertAction(title: NSLocalizedString("Report", comment: "" ), style: .default) { _ -> Void in
-
-            let reportViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "ReportViewController") as! ReportViewController
-            // swiftlint:enable force_cast
-            reportViewController.reportedID = self.distanceUsers[index].0.id
-
-            self.present(reportViewController, animated: true, completion: nil)
-
-            print("Report")
-        }
-        actionSheetController.addAction(reportActionSheet)
-
-        self.present(actionSheetController, animated: true, completion: nil)
     }
 
 }
@@ -169,12 +151,43 @@ extension HomeViewController: KolodaViewDataSource {
         return .default
     }
 
+    @objc func reportUser(_ sender: UIButton) {
+
+        let index = sender.tag
+        reportViewController.reportedID = self.distanceUsers[index].0.id
+
+//        guard let uid = self.keychain.get("uid")
+//            else { return }
+
+        let actionSheetController = UIAlertController(title: NSLocalizedString("Please select", comment: "" ), message: "", preferredStyle: .actionSheet)
+
+        let cancelActionButton = UIAlertAction(title: "Cancel", style: .cancel) { _ -> Void in
+            print("Cancel")
+        }
+        actionSheetController.addAction(cancelActionButton)
+
+        let reportActionSheet = UIAlertAction(title: NSLocalizedString("Report", comment: "" ), style: .default) { _ -> Void in
+
+            self.present(self.reportViewController, animated: true, completion: nil)
+
+            print("Report")
+        }
+        actionSheetController.addAction(reportActionSheet)
+
+        self.present(actionSheetController, animated: true, completion: nil)
+
+    }
+
     func koloda(_ koloda: KolodaView, viewForCardAt index: Int) -> UIView {
 
         guard let cardView = Bundle.main.loadNibNamed("CardView", owner: self, options: nil)?.first as? CardView
         else {
             return UIView()
         }
+        cardView.reportButton.tag = koloda.currentCardIndex
+
+        cardView.reportButton.addTarget(self, action: #selector(reportUser(_ :)), for: .touchUpInside)
+
         if self.distanceUsers.count != 0 {
             cardView.ageLabel.text = String(describing: distanceUsers[index].0.age)
             cardView.nameLabel.text = String(describing: distanceUsers[index].0.name)
@@ -190,6 +203,7 @@ extension HomeViewController: KolodaViewDataSource {
             cardView.cityName.text = allUsers[index].0.cityName
             let imageURL = URL(string: allUsers[index].0.profileImgURL)!
             Manager.shared.loadImage(with: imageURL, into: cardView.imageView)
+
             return cardView
 
         }

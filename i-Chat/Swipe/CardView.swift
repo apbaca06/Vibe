@@ -28,10 +28,15 @@ class CardView: UIView {
 
     @IBOutlet weak var cityName: UILabel!
 
+    @IBOutlet weak var reportButton: UIButton!
+
     @IBOutlet weak var distanceLabel: UILabel!
 
     override func awakeFromNib() {
         super.awakeFromNib()
+
+        reportButton.backgroundColor = .gray
+        reportButton.layer.cornerRadius = reportButton.frame.width/2
 
     }
 

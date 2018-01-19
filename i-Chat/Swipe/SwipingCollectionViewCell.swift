@@ -27,6 +27,7 @@ class SwipingCollectionViewCell: UICollectionViewCell {
 
     @IBAction func dislikeIt(_ sender: UIButton) {
         swipeView.swipe(.left)
+
     }
     @IBAction func likeIt(_ sender: UIButton) {
         swipeView.swipe(.right)

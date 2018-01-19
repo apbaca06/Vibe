@@ -157,16 +157,16 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2bm-3b-FyB">
-                                <rect key="frame" x="0.0" y="624" width="375" height="28"/>
+                                <rect key="frame" x="19" y="627" width="337.5" height="25"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Already have an account?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="12" translatesAutoresizingMaskIntoConstraints="NO" id="ac1-yE-moF">
-                                        <rect key="frame" x="0.0" y="0.0" width="262.5" height="28"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="236" height="25"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Eqw-4g-Dw6">
-                                        <rect key="frame" x="262.5" y="0.0" width="112.5" height="28"/>
+                                        <rect key="frame" x="236" y="0.0" width="101.5" height="25"/>
                                         <color key="backgroundColor" red="0.94117647059999998" green="0.7843137255" blue="0.031372549020000001" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="Eqw-4g-Dw6" secondAttribute="height" multiplier="4:1" id="PNO-dz-USn"/>
@@ -297,7 +297,7 @@
                             <constraint firstItem="2bm-3b-FyB" firstAttribute="centerX" secondItem="fsZ-Gb-xuQ" secondAttribute="centerX" id="qXh-xh-ceZ"/>
                             <constraint firstItem="gKK-kP-G5J" firstAttribute="leading" secondItem="CGv-YY-Xei" secondAttribute="leading" id="unv-ZO-Iia"/>
                             <constraint firstItem="gKK-kP-G5J" firstAttribute="bottom" secondItem="CGv-YY-Xei" secondAttribute="bottom" id="wbM-8z-ybF"/>
-                            <constraint firstItem="2bm-3b-FyB" firstAttribute="width" secondItem="AiS-ew-Ic5" secondAttribute="width" id="wlZ-IO-uUw"/>
+                            <constraint firstItem="2bm-3b-FyB" firstAttribute="width" secondItem="AiS-ew-Ic5" secondAttribute="width" multiplier="0.9" id="wlZ-IO-uUw"/>
                             <constraint firstItem="fZu-eE-ZNg" firstAttribute="top" secondItem="tmU-Xw-5HK" secondAttribute="bottom" constant="10" id="x72-LW-ApV"/>
                             <constraint firstItem="fsZ-Gb-xuQ" firstAttribute="bottom" secondItem="2bm-3b-FyB" secondAttribute="bottom" constant="15" id="y18-wQ-Ohp"/>
                             <constraint firstItem="IRV-Mj-c6X" firstAttribute="leading" secondItem="fZu-eE-ZNg" secondAttribute="trailing" constant="10" id="y4d-Zq-jYE"/>

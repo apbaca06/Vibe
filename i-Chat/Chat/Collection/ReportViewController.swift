@@ -57,4 +57,9 @@ class ReportViewController: UIViewController, UITextViewDelegate {
 
     }
 
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        reportTextView.text = nil
+    }
+
 }

@@ -108,7 +108,7 @@ class RegisterViewController: UIViewController {
 
         alreadyHaveLabel.text = NSLocalizedString("Already have an account?", comment: "")
 
-        eulaButton.setTitle(NSLocalizedString("EULA", comment: ""), for: .normal)
+        eulaButton.setTitle(NSLocalizedString("Tap to read EULA", comment: ""), for: .normal)
 
         setUpButton()
     }
