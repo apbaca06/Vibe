@@ -111,7 +111,50 @@ extension HomeViewController: KolodaViewDelegate {
     }
 
     func koloda(_ koloda: KolodaView, didSelectCardAt index: Int) {
-        // TODO: Add profile page
+        guard let uid = self.keychain.get("uid")
+            else { return }
+        
+        let actionSheetController = UIAlertController(title: NSLocalizedString("Please select", comment: "" ), message: "", preferredStyle: .actionSheet)
+        
+        let cancelActionButton = UIAlertAction(title: "Cancel", style: .cancel) { _ -> Void in
+            print("Cancel")
+        }
+        actionSheetController.addAction(cancelActionButton)
+        
+        // swiftlint:disable force_cast
+        let reportActionSheet = UIAlertAction(title: NSLocalizedString("Report", comment: "" ), style: .default) { _ -> Void in
+            
+            let reportViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "ReportViewController") as! ReportViewController
+            // swiftlint:enable force_cast
+            reportViewController.reportedID = self.users[index].0.id
+            
+            self.present(reportViewController, animated: true, completion: nil)
+            
+            print("Report")
+        }
+        actionSheetController.addAction(reportActionSheet)
+        
+        let blockActionButton = UIAlertAction(title: NSLocalizedString("Block", comment: "" ), style: .default) { _ -> Void in
+            let alertController = UIAlertController(title: NSLocalizedString("You may never unoblock!", comment: ""), message: "Please be sure to block \(self.users[index].0.name)", preferredStyle: .alert)
+            let cancel = UIAlertAction(title: NSLocalizedString("Cancel", comment: ""), style: .cancel, handler: nil)
+            alertController.addAction(cancel)
+            let block = UIAlertAction(title: NSLocalizedString("Block", comment: ""), style: .default, handler: { (_) in
+                
+                DatabasePath.userFriendRef.child(uid).child(self.users[index].0.id).updateChildValues(["block": true])
+                DatabasePath.userFriendRef.child(self.users[index.0.id).child(uid).updateChildValues(["block": true])
+                
+                let alertController = UIAlertController(title: NSLocalizedString("\(self.users[index].0.name) is blocked!", comment: ""), message: "\(self.users[indexPath.row].0.name) can never contact you again.", preferredStyle: .alert)
+                let okAction = UIAlertAction(title: NSLocalizedString("OK", comment: ""), style: .default, handler: nil)
+                alertController.addAction(okAction)
+                alertController.show()
+            })
+            
+            alertController.addAction(block)
+            alertController.show()
+            print("Block")
+        }
+        actionSheetController.addAction(blockActionButton)
+        self.present(actionSheetController, animated: true, completion: nil)
     }
 
 }

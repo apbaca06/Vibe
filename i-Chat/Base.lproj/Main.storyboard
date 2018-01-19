@@ -157,16 +157,16 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2bm-3b-FyB">
-                                <rect key="frame" x="205" y="311.5" width="1638" height="153.5"/>
+                                <rect key="frame" x="-510027404" y="434" width="1020054789" height="31"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Already have an account?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="12" translatesAutoresizingMaskIntoConstraints="NO" id="ac1-yE-moF">
-                                        <rect key="frame" x="0.0" y="0.0" width="1024" height="153.5"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="1020054817.5" height="31"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Eqw-4g-Dw6">
-                                        <rect key="frame" x="1024" y="0.0" width="614" height="153.5"/>
+                                        <rect key="frame" x="1020055045.5" y="0.0" width="124.5" height="31"/>
                                         <color key="backgroundColor" red="0.94117647059999998" green="0.7843137255" blue="0.031372549020000001" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="Eqw-4g-Dw6" secondAttribute="height" multiplier="4:1" id="PNO-dz-USn"/>
@@ -182,7 +182,7 @@
                                 </subviews>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tmU-Xw-5HK">
-                                <rect key="frame" x="205" y="872" width="1638" height="34"/>
+                                <rect key="frame" x="32" y="440" width="256" height="34"/>
                                 <color key="backgroundColor" red="0.027450980390000001" green="0.62745098040000002" blue="0.76470588240000004" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
                                 <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -193,52 +193,52 @@
                                 </connections>
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gKK-kP-G5J">
-                                <rect key="frame" x="41.5" y="826" width="1965" height="1"/>
+                                <rect key="frame" x="41.5" y="394" width="332" height="1"/>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="1" id="pJH-WE-23n"/>
                                 </constraints>
                             </view>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="CGv-YY-Xei" userLabel="E-mail">
-                                <rect key="frame" x="41.5" y="789" width="1965" height="38"/>
+                                <rect key="frame" x="41.5" y="357" width="408" height="38"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                 <textInputTraits key="textInputTraits" autocorrectionType="no" keyboardType="emailAddress" secureTextEntry="YES"/>
                             </textField>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="target" translatesAutoresizingMaskIntoConstraints="NO" id="69N-Ex-N3F">
-                                <rect key="frame" x="768" y="70" width="512" height="512.5"/>
+                                <rect key="frame" x="191.5" y="70" width="80" height="80.5"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="69N-Ex-N3F" secondAttribute="height" multiplier="1:1" id="omS-av-WRT"/>
                                 </constraints>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="f3A-Mj-LUG">
-                                <rect key="frame" x="205" y="690" width="1638" height="1"/>
+                                <rect key="frame" x="41.5" y="258" width="408" height="1"/>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="1" id="y0u-Ba-tFe"/>
                                 </constraints>
                             </view>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Name" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4la-Du-bug" userLabel="E-mail">
-                                <rect key="frame" x="205" y="652.5" width="1638" height="38.5"/>
+                                <rect key="frame" x="41.5" y="220.5" width="408" height="38.5"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="words" autocorrectionType="no" keyboardType="emailAddress"/>
                             </textField>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7Sl-f1-TJt">
-                                <rect key="frame" x="205" y="758" width="1638" height="1"/>
+                                <rect key="frame" x="41.5" y="326" width="408" height="1"/>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="1" id="qTa-XR-Fqe"/>
                                 </constraints>
                             </view>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Email" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="5C9-n0-igL" userLabel="E-mail">
-                                <rect key="frame" x="205" y="721" width="1638" height="38"/>
+                                <rect key="frame" x="41.5" y="289" width="408" height="38"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                 <textInputTraits key="textInputTraits" autocorrectionType="no" keyboardType="emailAddress"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fZu-eE-ZNg">
-                                <rect key="frame" x="1805.5" y="911" width="38" height="30"/>
+                                <rect key="frame" x="250.5" y="479" width="38" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="l1C-be-vU3"/>
                                 </constraints>
@@ -250,7 +250,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Q2S-rw-eig">
-                                <rect key="frame" x="205" y="911" width="31" height="30"/>
+                                <rect key="frame" x="41.5" y="479" width="31" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
@@ -1310,9 +1310,9 @@
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" keyboardDismissMode="interactive" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="jCo-ER-gWl">
                                 <rect key="frame" x="8" y="97" width="304" height="336"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <string key="text">Last updated: (2018/01/04)
+                                <mutableString key="text">Last updated: (2018/01/04)
 
-Please read this End-User License Agreement ("Agreement") carefully before clicking the "I Agree" button, downloading or using My Application (I-Chat) ("Application").
+Please read this End-User License Agreement ("Agreement") carefully before clicking the "I Agree" button, downloading or using My Application (Vibe) ("Application").
 
 By clicking the "I Agree" button, downloading or using the Application, you are agreeing to be bound by the terms and conditions of this Agreement.
 
@@ -1320,7 +1320,7 @@ If you do not agree to the terms of this Agreement, do not click on the "I Agree
 
 License
 
-My Application (I-Chat)  grants you a revocable, non-exclusive, non-transferable, limited license to download, install and use the Application solely for your personal, non-commercial purposes strictly in accordance with the terms of this Agreement.
+My Application (Vibe)  grants you a revocable, non-exclusive, non-transferable, limited license to download, install and use the Application solely for your personal, non-commercial purposes strictly in accordance with the terms of this Agreement.
 
 Restrictions
 
@@ -1328,11 +1328,11 @@ You agree not to, and you will not permit others to:
 
 a) license, sell, rent, lease, assign, distribute, transmit, host, outsource, disclose or otherwise commercially exploit the Application or make the Application available to any third party.Term and Termination
 
-This Agreement shall remain in effect until terminated by you or My Application (I-Chat) . 
+This Agreement shall remain in effect until terminated by you or My Application (Vibe) . 
 
-My Application (I-Chat)  may, in its sole discretion, at any time and for any or no reason, suspend or terminate this Agreement with or without prior notice.
+My Application (Vibe)  may, in its sole discretion, at any time and for any or no reason, suspend or terminate this Agreement with or without prior notice.
 
-This Agreement will terminate immediately, without prior notice from My Application (I-Chat) , in the event that you fail to comply with any provision of this Agreement. You may also terminate this Agreement by deleting the Application and all copies thereof from your mobile device or from your desktop.
+This Agreement will terminate immediately, without prior notice from My Application (Vibe) , in the event that you fail to comply with any provision of this Agreement. You may also terminate this Agreement by deleting the Application and all copies thereof from your mobile device or from your desktop.
 
 Upon termination of this Agreement, you shall cease all use of the Application and delete all copies of the Application from your mobile device or from your desktop.
 
@@ -1342,11 +1342,11 @@ If any provision of this Agreement is held to be unenforceable or invalid, such 
 
 Amendments to this Agreement
 
-My Application (I-Chat) reserves the right, at its sole discretion, to modify or replace this Agreement at any time. If a revision is material we will provide at least 30  days' notice prior to any new terms taking effect. What constitutes a material change will be determined at our sole discretion.
+My Application (Vibe) reserves the right, at its sole discretion, to modify or replace this Agreement at any time. If a revision is material we will provide at least 30  days' notice prior to any new terms taking effect. What constitutes a material change will be determined at our sole discretion.
 
 Contact Information
 
-If you have any questions about this Agreement, please contact us.</string>
+If you have any questions about this Agreement, please contact us.</mutableString>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                 <userDefinedRuntimeAttributes>
