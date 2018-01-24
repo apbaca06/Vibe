@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_0" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="ProfileCollectionViewCell" id="gTV-IL-0wX" userLabel="ProfileCollectionViewCell" customClass="ProfileCollectionViewCell" customModule="i_Chat" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="304" height="515"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="304" height="515"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="HiG-jV-3PV">
+                        <rect key="frame" x="0.0" y="0.0" width="304" height="515"/>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                <real key="value" value="-1"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JBK-EU-z85">
+                        <rect key="frame" x="0.0" y="360" width="304" height="77.5"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.5" colorSpace="calibratedWhite"/>
+                        <fontDescription key="fontDescription" type="boldSystem" pointSize="46"/>
+                        <color key="textColor" red="0.027450980390000001" green="0.62745098040000002" blue="0.76470588240000004" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="hTS-l1-God">
+                        <rect key="frame" x="23" y="52" width="258" height="258"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="width" secondItem="hTS-l1-God" secondAttribute="height" multiplier="1:1" id="x4I-eX-4jw"/>
+                        </constraints>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="size" keyPath="shadowOffset">
+                                <size key="value" width="0.0" height="0.0"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="number" keyPath="shadowRadius">
+                                <real key="value" value="0.0"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                <real key="value" value="0.0"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                <real key="value" value="0.0"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Age" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aQN-WC-Cio">
+                        <rect key="frame" x="0.0" y="437.5" width="213" height="77.5"/>
+                        <color key="backgroundColor" white="1" alpha="0.58318172089041098" colorSpace="calibratedWhite"/>
+                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="38"/>
+                        <color key="textColor" red="0.98431372549999996" green="0.21176470589999999" blue="0.25098039220000001" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="R8S-Qj-t1Q">
+                        <rect key="frame" x="213" y="437.5" width="91" height="77.5"/>
+                        <color key="backgroundColor" white="1" alpha="0.42636986301369861" colorSpace="calibratedWhite"/>
+                        <state key="normal" image="settings"/>
+                    </button>
+                </subviews>
+            </view>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+            <constraints>
+                <constraint firstItem="HiG-jV-3PV" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="DTu-dY-01D"/>
+                <constraint firstItem="aQN-WC-Cio" firstAttribute="leading" secondItem="JBK-EU-z85" secondAttribute="leading" id="DuO-Yf-EZF"/>
+                <constraint firstItem="aQN-WC-Cio" firstAttribute="height" secondItem="JBK-EU-z85" secondAttribute="height" id="EcA-PN-yfi"/>
+                <constraint firstItem="R8S-Qj-t1Q" firstAttribute="top" secondItem="aQN-WC-Cio" secondAttribute="top" id="JhW-MJ-oGe"/>
+                <constraint firstItem="R8S-Qj-t1Q" firstAttribute="height" secondItem="aQN-WC-Cio" secondAttribute="height" id="LU7-hM-avZ"/>
+                <constraint firstItem="aQN-WC-Cio" firstAttribute="top" secondItem="JBK-EU-z85" secondAttribute="bottom" id="Nyt-CZ-Vm7"/>
+                <constraint firstItem="hTS-l1-God" firstAttribute="width" secondItem="HiG-jV-3PV" secondAttribute="width" multiplier="0.85" id="Y4p-QG-GRr"/>
+                <constraint firstItem="R8S-Qj-t1Q" firstAttribute="leading" secondItem="aQN-WC-Cio" secondAttribute="trailing" id="aoM-4D-ph1"/>
+                <constraint firstItem="JBK-EU-z85" firstAttribute="width" secondItem="gTV-IL-0wX" secondAttribute="width" id="bVf-pN-wzL"/>
+                <constraint firstItem="JBK-EU-z85" firstAttribute="height" secondItem="gTV-IL-0wX" secondAttribute="height" multiplier="0.15" id="bkt-Ve-Ovc"/>
+                <constraint firstItem="HiG-jV-3PV" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="eGT-r5-1Gm"/>
+                <constraint firstItem="aQN-WC-Cio" firstAttribute="width" secondItem="JBK-EU-z85" secondAttribute="width" multiplier="0.7" id="j1f-Ds-YDh"/>
+                <constraint firstItem="R8S-Qj-t1Q" firstAttribute="width" secondItem="JBK-EU-z85" secondAttribute="width" multiplier="0.3" id="kLO-2h-EYm"/>
+                <constraint firstAttribute="trailing" secondItem="HiG-jV-3PV" secondAttribute="trailing" id="oYj-BE-Vkh"/>
+                <constraint firstItem="JBK-EU-z85" firstAttribute="top" secondItem="hTS-l1-God" secondAttribute="bottom" constant="50" id="pCa-zS-p9B"/>
+                <constraint firstItem="R8S-Qj-t1Q" firstAttribute="bottom" secondItem="HiG-jV-3PV" secondAttribute="bottom" id="scZ-ET-dKT"/>
+                <constraint firstItem="hTS-l1-God" firstAttribute="centerX" secondItem="ZTg-uK-7eu" secondAttribute="centerX" id="slD-Ti-3DR"/>
+                <constraint firstItem="HiG-jV-3PV" firstAttribute="height" secondItem="gTV-IL-0wX" secondAttribute="height" id="tg5-UO-FsF"/>
+                <constraint firstItem="JBK-EU-z85" firstAttribute="centerX" secondItem="ZTg-uK-7eu" secondAttribute="centerX" id="xC3-bp-dh5"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <size key="customSize" width="304" height="515"/>
+            <connections>
+                <outlet property="ageLabel" destination="aQN-WC-Cio" id="jZh-q7-rsA"/>
+                <outlet property="circleProfileImg" destination="hTS-l1-God" id="LVj-AK-wqm"/>
+                <outlet property="nameLabel" destination="JBK-EU-z85" id="pCj-o9-zP1"/>
+                <outlet property="profileImg" destination="HiG-jV-3PV" id="cZ8-Zc-wkk"/>
+                <outlet property="toSettingButton" destination="R8S-Qj-t1Q" id="QEa-gd-xiG"/>
+            </connections>
+            <point key="canvasLocation" x="128" y="153.5"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <image name="settings" width="32" height="32"/>
+    </resources>
+</document>

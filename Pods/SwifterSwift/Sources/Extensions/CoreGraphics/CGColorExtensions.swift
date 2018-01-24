@@ -13,19 +13,19 @@
 #endif
 
 public extension CGColor {
-
+	
 	#if !os(macOS)
 	/// SwifterSwift: UIColor.
 	public var uiColor: UIColor? {
 		return UIColor(cgColor: self)
 	}
 	#endif
-
+	
 	#if os(macOS)
 	/// SwifterSwift: NSColor.
 	public var nsColor: NSColor? {
 		return NSColor(cgColor: self)
 	}
 	#endif
-
+	
 }

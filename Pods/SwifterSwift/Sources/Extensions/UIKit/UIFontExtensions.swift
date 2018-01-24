@@ -11,17 +11,18 @@ import UIKit
 
 // MARK: - Properties
 public extension UIFont {
-
+	
 	/// SwifterSwift: Font as monospaced font
-    ///
-    ///     UIFont.preferredFont(forTextStyle: .body).monospaced
-    ///
+	///
+	///     UIFont.preferredFont(forTextStyle: .body).monospaced
+	///
 	public var monospaced: UIFont {
 		let settings = [[UIFontDescriptor.FeatureKey.featureIdentifier: kNumberSpacingType, UIFontDescriptor.FeatureKey.typeIdentifier: kMonospacedNumbersSelector]]
-
+		
 		let attributes = [UIFontDescriptor.AttributeName.featureSettings: settings]
 		let newDescriptor = fontDescriptor.addingAttributes(attributes)
 		return UIFont(descriptor: newDescriptor, size: 0)
-    }
+	}
+	
 }
 #endif

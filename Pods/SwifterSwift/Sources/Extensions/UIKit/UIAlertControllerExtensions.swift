@@ -12,7 +12,7 @@ import AudioToolbox
 
 // MARK: - Methods
 public extension UIAlertController {
-
+	
 	/// SwifterSwift: Present alert view controller in the current view controller.
 	///
 	/// - Parameters:
@@ -25,7 +25,7 @@ public extension UIAlertController {
 			AudioServicesPlayAlertSound(kSystemSoundID_Vibrate)
 		}
 	}
-
+	
 	/// SwifterSwift: Add an action to Alert
 	///
 	/// - Parameters:
@@ -40,7 +40,7 @@ public extension UIAlertController {
 		addAction(action)
 		return action
 	}
-
+	
 	/// SwifterSwift: Add a text field to Alert
 	///
 	/// - Parameters:
@@ -57,12 +57,12 @@ public extension UIAlertController {
 			}
 		}
 	}
-
+	
 }
 
 // MARK: - Initializers
 public extension UIAlertController {
-
+	
 	/// SwifterSwift: Create new alert view controller with default OK action.
 	///
 	/// - Parameters:
@@ -78,7 +78,7 @@ public extension UIAlertController {
 			view.tintColor = color
 		}
 	}
-
+	
 	/// SwifterSwift: Create new error alert view controller from Error with default OK action.
 	///
 	/// - Parameters:
@@ -94,6 +94,6 @@ public extension UIAlertController {
 			view.tintColor = color
 		}
 	}
-
+	
 }
 #endif

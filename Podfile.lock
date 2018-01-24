@@ -1,24 +1,42 @@
 PODS:
-  - Firebase (4.7.0):
-    - Firebase/Core (= 4.7.0)
-  - Firebase/Auth (4.7.0):
+  - Crashlytics (3.9.3):
+    - Fabric (~> 1.7.2)
+  - Fabric (1.7.2)
+  - Firebase (4.8.0):
+    - Firebase/Core (= 4.8.0)
+  - Firebase/Auth (4.8.0):
     - Firebase/Core
-    - FirebaseAuth (= 4.4.0)
-  - Firebase/Core (4.7.0):
+    - FirebaseAuth (= 4.4.1)
+  - Firebase/Core (4.8.0):
     - FirebaseAnalytics (= 4.0.5)
-    - FirebaseCore (= 4.0.12)
+    - FirebaseCore (= 4.0.13)
+  - Firebase/Database (4.8.0):
+    - Firebase/Core
+    - FirebaseDatabase (= 4.1.3)
+  - Firebase/Storage (4.8.0):
+    - Firebase/Core
+    - FirebaseStorage (= 2.1.1)
   - FirebaseAnalytics (4.0.5):
     - FirebaseCore (~> 4.0)
     - FirebaseInstanceID (~> 2.0)
     - GoogleToolboxForMac/NSData+zlib (~> 2.1)
     - nanopb (~> 0.3)
-  - FirebaseAuth (4.4.0):
+  - FirebaseAuth (4.4.1):
     - FirebaseAnalytics (~> 4.0)
     - GoogleToolboxForMac/NSDictionary+URLArguments (~> 2.1)
     - GTMSessionFetcher/Core (~> 1.1)
-  - FirebaseCore (4.0.12):
+  - FirebaseCore (4.0.13):
     - GoogleToolboxForMac/NSData+zlib (~> 2.1)
-  - FirebaseInstanceID (2.0.7)
+  - FirebaseDatabase (4.1.3):
+    - FirebaseAnalytics (~> 4.0)
+    - FirebaseCore (~> 4.0)
+    - leveldb-library (~> 1.18)
+  - FirebaseInstanceID (2.0.8):
+    - FirebaseCore (~> 4.0)
+  - FirebaseStorage (2.1.1):
+    - FirebaseAnalytics (~> 4.0)
+    - FirebaseCore (~> 4.0)
+    - GTMSessionFetcher/Core (~> 1.1)
   - GoogleToolboxForMac/DebugUtils (2.1.3):
     - GoogleToolboxForMac/Defines (= 2.1.3)
   - GoogleToolboxForMac/Defines (2.1.3)
@@ -30,42 +48,62 @@ PODS:
     - GoogleToolboxForMac/NSString+URLArguments (= 2.1.3)
   - GoogleToolboxForMac/NSString+URLArguments (2.1.3)
   - GTMSessionFetcher/Core (1.1.12)
-  - IQKeyboardManager (5.0.6)
+  - IQKeyboardManager (5.0.7)
+  - KeychainSwift (10.0.0)
   - Koloda (4.3.1):
     - pop (~> 1.0)
+  - leveldb-library (1.20)
+  - MZTimerLabel (0.5.4)
   - nanopb (0.3.8):
     - nanopb/decode (= 0.3.8)
     - nanopb/encode (= 0.3.8)
   - nanopb/decode (0.3.8)
   - nanopb/encode (0.3.8)
+  - Nuke (6.0)
   - pop (1.0.10)
   - QuickBlox (2.14)
+  - Quickblox-WebRTC (2.6.3):
+    - QuickBlox (>= 2.7)
   - SVProgressHUD (2.2.2)
-  - SwifterSwift (4.1.0):
-    - SwifterSwift/AppKit (= 4.1.0)
-    - SwifterSwift/CoreGraphics (= 4.1.0)
-    - SwifterSwift/CoreLocation (= 4.1.0)
-    - SwifterSwift/Foundation (= 4.1.0)
-    - SwifterSwift/SwiftStdlib (= 4.1.0)
-    - SwifterSwift/UIKit (= 4.1.0)
-  - SwifterSwift/AppKit (4.1.0)
-  - SwifterSwift/CoreGraphics (4.1.0)
-  - SwifterSwift/CoreLocation (4.1.0)
-  - SwifterSwift/Foundation (4.1.0)
-  - SwifterSwift/SwiftStdlib (4.1.0)
-  - SwifterSwift/UIKit (4.1.0)
-  - SwiftLint (0.24.0)
+  - SwifterSwift (4.1.1):
+    - SwifterSwift/AppKit (= 4.1.1)
+    - SwifterSwift/CoreGraphics (= 4.1.1)
+    - SwifterSwift/CoreLocation (= 4.1.1)
+    - SwifterSwift/Foundation (= 4.1.1)
+    - SwifterSwift/SwiftStdlib (= 4.1.1)
+    - SwifterSwift/UIKit (= 4.1.1)
+  - SwifterSwift/AppKit (4.1.1)
+  - SwifterSwift/CoreGraphics (4.1.1)
+  - SwifterSwift/CoreLocation (4.1.1)
+  - SwifterSwift/Foundation (4.1.1)
+  - SwifterSwift/SwiftStdlib (4.1.1)
+  - SwifterSwift/UIKit (4.1.1)
+  - SwiftLint (0.24.2)
+  - SwiftyGif (4.0.0)
+  - XLActionController (4.0.0):
+    - XLActionController/Core (= 4.0.0)
+  - XLActionController/Core (4.0.0)
 
 DEPENDENCIES:
+  - Crashlytics (~> 3.9.3)
+  - Fabric (~> 1.7.2)
   - Firebase
   - Firebase/Auth
   - Firebase/Core
+  - Firebase/Database
+  - Firebase/Storage
   - IQKeyboardManager
+  - KeychainSwift
   - Koloda
+  - MZTimerLabel
+  - Nuke
   - QuickBlox
+  - Quickblox-WebRTC (~> 2.6)
   - SVProgressHUD (from `https://github.com/SVProgressHUD/SVProgressHUD.git`)
   - SwifterSwift
   - SwiftLint
+  - SwiftyGif
+  - XLActionController
 
 EXTERNAL SOURCES:
   SVProgressHUD:
@@ -73,26 +111,37 @@ EXTERNAL SOURCES:
 
 CHECKOUT OPTIONS:
   SVProgressHUD:
-    :commit: bb4e4e460d4f8e2ecf20af99797f781e7cc09d8f
+    :commit: 31da76a27a06a5152ca54d26c3166350dba0361d
     :git: https://github.com/SVProgressHUD/SVProgressHUD.git
 
 SPEC CHECKSUMS:
-  Firebase: dbfb98ccec2dcfcd21ab9cc1b4981a3f3c8c5e26
+  Crashlytics: dbb07d01876c171c5ccbdf7826410380189e452c
+  Fabric: 9cd6a848efcf1b8b07497e0b6a2e7d336353ba15
+  Firebase: 710decbbc6d9d48530e9a5dba3209740c3532e05
   FirebaseAnalytics: 5b02a63ead2c3f0259cfc7f15e053e440587ecf8
-  FirebaseAuth: cdeee95b528958dbb7dcf220ad0fb804d3a284b0
-  FirebaseCore: 6cf108b63997bc08c04a1ffa55a3ac0d71a59ffc
-  FirebaseInstanceID: 148c25c986c8699e67304b114e365713dce467f2
+  FirebaseAuth: dc0dd403beca5b2b016aac89c2d0b8dad1c81926
+  FirebaseCore: 3c02ec652db3d03fdc8bc6d9154af3e20d64b6f5
+  FirebaseDatabase: 7088bfc4af2cc00231bb36e1404fc2d7509eb4dc
+  FirebaseInstanceID: 81df5805a08001e69138664bdd02c6719a9ac80f
+  FirebaseStorage: ab08d1c93a2feffa038fdd6693088b310ab1e6c6
   GoogleToolboxForMac: 2501e2ad72a52eb3dfe7bd9aee7dad11b858bd20
   GTMSessionFetcher: ebaa1f79a5366922c1735f1566901f50beba23b7
-  IQKeyboardManager: 077b7f691dfa9d69db9cff66f2bed68ebfc02d9b
+  IQKeyboardManager: 0bfa4607d39924116b5c0c8b55b5d789288b5cba
+  KeychainSwift: f9f7910449a0c0fd2cabc889121530dd2c477c33
   Koloda: 0d39b2aa188ccd1fac48d752acaf9802e683c625
+  leveldb-library: 08cba283675b7ed2d99629a4bc5fd052cd2bb6a5
+  MZTimerLabel: cd9bfb9304540ef2a9e163384fca9c978f0dbf83
   nanopb: 5601e6bca2dbf1ed831b519092ec110f66982ca3
+  Nuke: d83812262734dad51e3c498cb1c4f7923f2b78c6
   pop: 82ca6b068ce9278fd350fd9dd09482a0ce9492e6
   QuickBlox: d40cd742985908ce7809058e5a63f1e3581165a0
+  Quickblox-WebRTC: 1838368795c479dd61796a3423ce9e74a90fe939
   SVProgressHUD: 59b2d3dabacbd051576d21d32293ca7228dc18b0
-  SwifterSwift: 4d962b5d653760b85266832aff6ab6d08c1b7974
-  SwiftLint: a014c92b4664e8b13f380f8640a51bb1733778ba
+  SwifterSwift: bfcae9d659dfd306d164f13f72cad09198f30723
+  SwiftLint: 2aa21b96c8d13396a051bc1cb659d2ce1e0075b0
+  SwiftyGif: 14c0e2dddb1b51da4919b68f7ad97a1c45785460
+  XLActionController: 7e88fece1799e61357cb00b1cc67104d66ec4d2c
 
-PODFILE CHECKSUM: 5982920b5530ede27575acb3dca281cd3f15ec13
+PODFILE CHECKSUM: ebac34d44458a7cb44bd0cd8900e2161c6ab61a0
 
 COCOAPODS: 1.3.1

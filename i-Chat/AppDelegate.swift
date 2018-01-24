@@ -10,17 +10,12 @@ import UIKit
 import IQKeyboardManager
 import SVProgressHUD
 import Firebase
+import KeychainSwift
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-
-    let kQBRingThickness: CGFloat  = 1
-
-    let kQBAnswerTimeInterval: TimeInterval = 60
-
-    let kQBDialingTimeInterval: TimeInterval = 5
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
 
@@ -51,6 +46,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
         QBRTCClient.initializeRTC()
 
+        QBRTCConfig.setAnswerTimeInterval(45)
+
         QBSettings.accountKey = accountKey
 
         QBSettings.applicationID = applicationID
@@ -59,31 +56,51 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
         QBSettings.authSecret = authSecret
 
-//        QBSettings.logLevel = .debug
+        QBSettings.logLevel = .debug
 
         QBSettings.enableXMPPLogging()
 
-        QBRTCConfig.answerTimeInterval()
-        QBRTCConfig.dialingTimeInterval()
-        QBRTCConfig.setStatsReportTimeInterval(5)
-
         SVProgressHUD.setDefaultStyle(.light)
+
         SVProgressHUD.setDefaultMaskType(.clear)
 
-        // Chat Service
-        Chat.shared.config()
+        QBRTCAudioSession.instance().initialize()
 
-//        if
-//            let user = Auth.auth().currentUser,
-//            let email = user.email {
-//
-//            QuickBlox.logInSync(withUserLogin: email, password: user.uid)
-//        }
-
-        // IQKeyBoardManager
         IQKeyboardManager.shared().isEnabled = true
 
         IQKeyboardManager.shared().shouldResignOnTouchOutside = true
+
+        Database.database().isPersistenceEnabled = true
+
+        // MARK: Check if user signed in before
+        let keychain = KeychainSwift()
+
+        keychain.synchronizable = true
+
+        let animationViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "AnimationViewController")
+
+        AppDelegate.shared.window?.rootViewController = animationViewController
+
+//        if Auth.auth().currentUser != nil {
+//            
+//            guard let email = keychain.get("userEmail"),
+//                let password = keychain.get("userPassword")
+//                
+//                else { return true }
+//            
+//            QuickbloxManager.logInSync(
+//                
+//                withUserEmail: email,
+//                
+//                password: password
+//            )
+//            
+//        } else {
+//            
+//            let loginViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "LogInViewController")
+//            
+//            AppDelegate.shared.window?.rootViewController = loginViewController
+//        }
 
         return true
 
@@ -98,10 +115,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
     func applicationWillEnterForeground(_ application: UIApplication) {
-        //&& QBUUser.isAuthorized
-        if !QBChat.instance.isConnected {
-//            QBCore.instance().loginWithCurrentUser
-        }
     }
 
     func applicationDidBecomeActive(_ application: UIApplication) {

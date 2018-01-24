@@ -11,12 +11,12 @@ import UIKit
 
 // MARK: - Properties
 public extension UISegmentedControl {
-
+	
 	/// SwifterSwift: Segments titles.
 	public var segmentTitles: [String] {
 		get {
-            let range = 0..<numberOfSegments
-            return range.flatMap { titleForSegment(at: $0) }
+			let range = 0..<numberOfSegments
+			return range.flatMap { titleForSegment(at: $0) }
 		}
 		set {
 			removeAllSegments()
@@ -25,12 +25,12 @@ public extension UISegmentedControl {
 			}
 		}
 	}
-
+	
 	/// SwifterSwift: Segments images.
 	public var segmentImages: [UIImage] {
 		get {
-            let range = 0..<numberOfSegments
-            return range.flatMap { imageForSegment(at: $0) }
+			let range = 0..<numberOfSegments
+			return range.flatMap { imageForSegment(at: $0) }
 		}
 		set {
 			removeAllSegments()
@@ -39,5 +39,6 @@ public extension UISegmentedControl {
 			}
 		}
 	}
+	
 }
 #endif

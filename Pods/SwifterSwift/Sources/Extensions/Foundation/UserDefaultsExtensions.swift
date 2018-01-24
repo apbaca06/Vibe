@@ -9,7 +9,7 @@ import Foundation
 
 // MARK: - Methods
 public extension UserDefaults {
-
+	
 	/// SwifterSwift: get object from UserDefaults by using subscript
 	///
 	/// - Parameter key: key in the current user's defaults database.
@@ -21,7 +21,7 @@ public extension UserDefaults {
 			set(newValue, forKey: key)
 		}
 	}
-
+	
 	/// SwifterSwift: Float from UserDefaults.
 	///
 	/// - Parameter forKey: key to find float for.
@@ -29,7 +29,7 @@ public extension UserDefaults {
 	public func float(forKey key: String) -> Float? {
 		return object(forKey: key) as? Float
 	}
-
+	
 	/// SwifterSwift: Date from UserDefaults.
 	///
 	/// - Parameter forKey: key to find date for.
@@ -37,5 +37,5 @@ public extension UserDefaults {
 	public func date(forKey key: String) -> Date? {
 		return object(forKey: key) as? Date
 	}
-
+	
 }

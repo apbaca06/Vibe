@@ -11,18 +11,18 @@ import UIKit
 import pop
 
 open class KolodaViewAnimator {
-
+    
     public typealias AnimationCompletionBlock = ((Bool) -> Void)?
-
+    
     private weak var koloda: KolodaView?
-
+    
     public init(koloda: KolodaView) {
         self.koloda = koloda
     }
-
+    
     open func animateAppearance(_ duration: TimeInterval, completion: AnimationCompletionBlock = nil) {
         let kolodaAppearScaleAnimation = POPBasicAnimation(propertyNamed: kPOPLayerScaleXY)
-
+        
         kolodaAppearScaleAnimation?.beginTime = CACurrentMediaTime() + cardSwipeActionAnimationDuration
         kolodaAppearScaleAnimation?.duration = duration
         kolodaAppearScaleAnimation?.fromValue = NSValue(cgPoint: CGPoint(x: 0.1, y: 0.1))
@@ -30,21 +30,21 @@ open class KolodaViewAnimator {
         kolodaAppearScaleAnimation?.completionBlock = { (_, finished) in
             completion?(finished)
         }
-
+        
         let kolodaAppearAlphaAnimation = POPBasicAnimation(propertyNamed: kPOPViewAlpha)
-
+        
         kolodaAppearAlphaAnimation?.beginTime = CACurrentMediaTime() + cardSwipeActionAnimationDuration
         kolodaAppearAlphaAnimation?.fromValue = NSNumber(value: 0.0)
         kolodaAppearAlphaAnimation?.toValue = NSNumber(value: 1.0)
         kolodaAppearAlphaAnimation?.duration = duration
-
+        
         koloda?.pop_add(kolodaAppearAlphaAnimation, forKey: "kolodaAppearScaleAnimation")
         koloda?.layer.pop_add(kolodaAppearScaleAnimation, forKey: "kolodaAppearAlphaAnimation")
     }
-
+    
     open func applyReverseAnimation(_ card: DraggableCardView, completion: AnimationCompletionBlock = nil) {
         let firstCardAppearAnimation = POPBasicAnimation(propertyNamed: kPOPViewAlpha)
-
+        
         firstCardAppearAnimation?.toValue = NSNumber(value: 1.0)
         firstCardAppearAnimation?.fromValue =  NSNumber(value: 0.0)
         firstCardAppearAnimation?.duration = 1.0
@@ -52,16 +52,16 @@ open class KolodaViewAnimator {
             completion?(finished)
             card.alpha = 1.0
         }
-
+        
         card.pop_add(firstCardAppearAnimation, forKey: "reverseCardAlphaAnimation")
     }
-
+    
     open func applyScaleAnimation(_ card: DraggableCardView, scale: CGSize, frame: CGRect, duration: TimeInterval, completion: AnimationCompletionBlock = nil) {
         let scaleAnimation = POPBasicAnimation(propertyNamed: kPOPLayerScaleXY)
         scaleAnimation?.duration = duration
         scaleAnimation?.toValue = NSValue(cgSize: scale)
         card.layer.pop_add(scaleAnimation, forKey: "scaleAnimation")
-
+        
         let frameAnimation = POPBasicAnimation(propertyNamed: kPOPViewFrame)
         frameAnimation?.duration = duration
         frameAnimation?.toValue = NSValue(cgRect: frame)
@@ -72,7 +72,7 @@ open class KolodaViewAnimator {
         }
         card.pop_add(frameAnimation, forKey: "frameAnimation")
     }
-
+    
     open func applyAlphaAnimation(_ card: DraggableCardView, alpha: CGFloat, duration: TimeInterval = 0.2, completion: AnimationCompletionBlock = nil) {
         let alphaAnimation = POPBasicAnimation(propertyNamed: kPOPViewAlpha)
         alphaAnimation?.toValue = alpha
@@ -82,7 +82,7 @@ open class KolodaViewAnimator {
         }
         card.pop_add(alphaAnimation, forKey: "alpha")
     }
-
+    
     open func applyInsertionAnimation(_ cards: [DraggableCardView], completion: AnimationCompletionBlock = nil) {
         cards.forEach { $0.alpha = 0.0 }
         UIView.animate(
@@ -95,7 +95,7 @@ open class KolodaViewAnimator {
             }
         )
     }
-
+    
     open func applyRemovalAnimation(_ cards: [DraggableCardView], completion: AnimationCompletionBlock = nil) {
         UIView.animate(
             withDuration: 0.05,
@@ -107,7 +107,7 @@ open class KolodaViewAnimator {
             }
         )
     }
-
+    
     internal func resetBackgroundCardsWithCompletion(_ completion: AnimationCompletionBlock = nil) {
         UIView.animate(
             withDuration: 0.2,
@@ -120,5 +120,5 @@ open class KolodaViewAnimator {
                 completion?(finished)
         })
     }
-
+    
 }

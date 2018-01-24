@@ -10,42 +10,42 @@ import CoreGraphics
 
 // MARK: - Properties
 public extension Int {
-
+	
 	/// SwifterSwift: CountableRange 0..<Int.
 	public var countableRange: CountableRange<Int> {
 		return 0..<self
 	}
-
+	
 	/// SwifterSwift: Radian value of degree input.
 	public var degreesToRadians: Double {
 		return Double.pi * Double(self) / 180.0
 	}
-
+	
 	/// SwifterSwift: Degree value of radian input
 	public var radiansToDegrees: Double {
 		return Double(self) * 180 / Double.pi
 	}
-
+	
 	/// SwifterSwift: UInt.
 	public var uInt: UInt {
 		return UInt(self)
 	}
-
+	
 	/// SwifterSwift: Double.
 	public var double: Double {
 		return Double(self)
 	}
-
+	
 	/// SwifterSwift: Float.
 	public var float: Float {
 		return Float(self)
 	}
-
+	
 	/// SwifterSwift: CGFloat.
 	public var cgFloat: CGFloat {
 		return CGFloat(self)
 	}
-
+	
 	/// SwifterSwift: String formatted for values over ±1000 (example: 1k, -2k, 100k, 1kk, -5kk..)
 	public var kFormatted: String {
 		var sign: String {
@@ -61,12 +61,12 @@ public extension Int {
 		}
 		return String(format: "\(sign)%ikk", abs / 100000)
 	}
-
+	
 }
 
 // MARK: - Methods
 public extension Int {
-
+	
 	/// SwifterSwift: Random integer between two integer values.
 	///
 	/// - Parameters:
@@ -76,7 +76,7 @@ public extension Int {
 	public static func random(between min: Int, and max: Int) -> Int {
 		return random(inRange: min...max)
 	}
-
+	
 	/// SwifterSwift: Random integer in a closed interval range.
 	///
 	/// - Parameter range: closed interval range.
@@ -85,29 +85,30 @@ public extension Int {
 		let delta = UInt32(range.upperBound - range.lowerBound + 1)
 		return range.lowerBound + Int(arc4random_uniform(delta))
 	}
-
+	
 	/// SwifterSwift: check if given integer prime or not.
 	/// Warning: Using big numbers can be computationally expensive!
 	/// - Returns: true or false depending on prime-ness
 	public func isPrime() -> Bool {
-		guard self > 1 || self % 2 == 0 else {
-			return false
-		}
 		// To improve speed on latter loop :)
 		if self == 2 {
 			return true
+		}
+		
+		guard self > 1 && self % 2 != 0 else {
+			return false
 		}
 		// Explanation: It is enough to check numbers until
 		// the square root of that number. If you go up from N by one,
 		// other multiplier will go 1 down to get similar result
 		// (integer-wise operation) such way increases speed of operation
-		let base = Int(sqrt(Double(self)) + 1)
-		for i in Swift.stride(from: 3, to: base, by: 2) where self % i == 0 {
+		let base = Int(sqrt(Double(self)))
+		for i in Swift.stride(from: 3, through: base, by: 2) where self % i == 0 {
 			return false
 		}
 		return true
 	}
-
+	
 	/// SwifterSwift: Roman numeral string from integer (if applicable).
 	///
 	///		10.romanNumeral() -> "X"
@@ -120,10 +121,10 @@ public extension Int {
 		}
 		let romanValues = ["M", "CM", "D", "CD", "C", "XC", "L", "XL", "X", "IX", "V", "IV", "I"]
 		let arabicValues = [1000, 900, 500, 400, 100, 90, 50, 40, 10, 9, 5, 4, 1]
-
+		
 		var romanValue = ""
 		var startingValue = self
-
+		
 		for (index, romanChar) in romanValues.enumerated() {
 			let arabicValue = arabicValues[index]
 			let div = startingValue / arabicValue
@@ -136,12 +137,12 @@ public extension Int {
 		}
 		return romanValue
 	}
-
+	
 }
 
 // MARK: - Initializers
 public extension Int {
-
+	
 	/// SwifterSwift: Created a random integer between two integer values.
 	///
 	/// - Parameters:
@@ -150,14 +151,14 @@ public extension Int {
 	public init(randomBetween min: Int, and max: Int) {
 		self = Int.random(between: min, and: max)
 	}
-
+	
 	/// SwifterSwift: Create a random integer in a closed interval range.
 	///
 	/// - Parameter range: closed interval range.
 	public init(randomInRange range: ClosedRange<Int>) {
 		self = Int.random(inRange: range)
 	}
-
+	
 }
 
 // MARK: - Operators

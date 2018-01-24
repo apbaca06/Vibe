@@ -10,22 +10,22 @@ import CoreGraphics
 
 // MARK: - Properties
 public extension Float {
-
+	
 	/// SwifterSwift: Int.
 	public var int: Int {
 		return Int(self)
 	}
-
+	
 	/// SwifterSwift: Double.
 	public var double: Double {
 		return Double(self)
 	}
-
+	
 	/// SwifterSwift: CGFloat.
 	public var cgFloat: CGFloat {
 		return CGFloat(self)
 	}
-
+	
 }
 
 // MARK: - Operators

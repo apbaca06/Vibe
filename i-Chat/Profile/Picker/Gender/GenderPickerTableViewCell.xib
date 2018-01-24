@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina5_5" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="GenderPickerTableViewCell" rowHeight="50" id="KGk-i7-Jjw" customClass="GenderPickerTableViewCell" customModule="i_Chat" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="415" height="50"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="415" height="49.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="LeftLabel" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dnL-A1-uY1">
+                        <rect key="frame" x="15" y="15" width="249" height="20"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="20" id="gcM-oc-Q2o"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="9z2-mF-s6s">
+                        <rect key="frame" x="275.66666666666669" y="0.0" width="124.33333333333331" height="49.666666666666664"/>
+                        <color key="textColor" red="0.027450980390000001" green="0.62745098040000002" blue="0.76470588240000004" alpha="1" colorSpace="calibratedRGB"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <textInputTraits key="textInputTraits"/>
+                    </textField>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="9z2-mF-s6s" firstAttribute="width" secondItem="H2p-sc-9uM" secondAttribute="width" multiplier="0.3" id="0LY-aW-xsR"/>
+                    <constraint firstAttribute="bottom" secondItem="9z2-mF-s6s" secondAttribute="bottom" id="2Gg-4H-uFc"/>
+                    <constraint firstItem="dnL-A1-uY1" firstAttribute="width" secondItem="H2p-sc-9uM" secondAttribute="width" multiplier="0.6" id="9Xy-Ez-UEL"/>
+                    <constraint firstItem="9z2-mF-s6s" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="dtG-Gc-MI6"/>
+                    <constraint firstItem="dnL-A1-uY1" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="15" id="jU1-hE-bi5"/>
+                    <constraint firstAttribute="trailing" secondItem="9z2-mF-s6s" secondAttribute="trailing" constant="15" id="kCt-kK-8yg"/>
+                    <constraint firstItem="dnL-A1-uY1" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="15" id="n9X-9N-ECG"/>
+                    <constraint firstAttribute="bottom" secondItem="dnL-A1-uY1" secondAttribute="bottom" constant="14.666666666666664" id="oAH-Qv-X4b"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="leftLabel" destination="dnL-A1-uY1" id="Lqw-ur-2N1"/>
+                <outlet property="textfield" destination="9z2-mF-s6s" id="BIb-Kn-3D7"/>
+            </connections>
+            <point key="canvasLocation" x="146.5" y="42"/>
+        </tableViewCell>
+    </objects>
+</document>
