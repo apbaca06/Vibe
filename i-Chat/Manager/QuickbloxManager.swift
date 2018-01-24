@@ -15,15 +15,8 @@ import KeychainSwift
 class QuickbloxManager {
 
     static func logInSync(withUserEmail email: String, password: String) {
-
-//        let layout = UICollectionViewFlowLayout()
-//
-//        AppDelegate.shared.window?.rootViewController = HomeViewController(collectionViewLayout: layout)
-
         var error: Error?
         var uuser: QBUUser?
-
-//        SVProgressHUD.show(withStatus: NSLocalizedString("Connecting to server", comment: ""))
 
         QBRequest.logIn(withUserEmail: email, password: password, successBlock: { (response, user) in
 
@@ -37,42 +30,30 @@ class QuickbloxManager {
             QBChat.instance.connect(with: uuser!, completion: { (error) in
 
                 if error == nil {
-//                    SVProgressHUD.dismiss()
 
                     let layout = UICollectionViewFlowLayout()
-
                     AppDelegate.shared.window?.rootViewController = HomeViewController(collectionViewLayout: layout)
 
                 } else {
-
-//                    SVProgressHUD.dismiss()
-
                     DispatchQueue.main.async {
+                        
                         UIAlertController(error: error!).show()
                         let loginViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "LogInViewController")
-
                         AppDelegate.shared.window?.rootViewController = loginViewController
+                    
                     }
-
                 }
-
             })
 
         }) { (response) in
-
             SVProgressHUD.dismiss()
-
-            // Todo: Error handling
             error = response.error?.error
-
             DispatchQueue.main.async {
 
                 UIAlertController(error: error!).show()
                 let loginViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "LogInViewController")
-
                 AppDelegate.shared.window?.rootViewController = loginViewController
             }
-
         }
     }
 
@@ -82,9 +63,7 @@ class QuickbloxManager {
         let uuser = QBUUser()
 
         uuser.email = email
-
         uuser.password = password
-
         uuser.fullName = name
 
         SVProgressHUD.show(withStatus: NSLocalizedString("Signing up...", comment: ""))

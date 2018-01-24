@@ -282,12 +282,12 @@ class HomeViewController: UICollectionViewController, UICollectionViewDelegateFl
                 cell.profileImg.contentMode = .scaleAspectFill
             }
 
-            let tapGestureRecognizer =
-                UITapGestureRecognizer(target: self, action: #selector(showSelfProfile))
-
-            cell.profileImg.isUserInteractionEnabled = true
-
-            cell.profileImg.addGestureRecognizer(tapGestureRecognizer)
+//            let tapGestureRecognizer =
+//                UITapGestureRecognizer(target: self, action: #selector(showSelfProfile))
+//
+//            cell.profileImg.isUserInteractionEnabled = true
+//
+//            cell.profileImg.addGestureRecognizer(tapGestureRecognizer)
 
             return cell
 

@@ -19,7 +19,7 @@ extension HomeViewController: FriendCollectionViewControllerDelegate {
     @objc func callOther() {
 
         QBRTCAudioSession.instance().currentAudioDevice = .receiver
-
+        
         // swiftlint:disable force_cast
         let callOutViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "CallOutViewController") as! CallOutViewController
         // swiftlint:enable force_cast
@@ -56,16 +56,16 @@ extension HomeViewController: FriendCollectionViewControllerDelegate {
         }
     }
 
-    // MARK: Funtion for Profile Cell
-    @objc func showSelfProfile() {
-
-        let editProfileTableViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "EditProfileTableViewController")
-
-        let navEditProfileTableViewController = UINavigationController(rootViewController: editProfileTableViewController)
-
-        present(navEditProfileTableViewController, animated: true, completion: nil)
-
-    }
+//    // MARK: Funtion for Profile Cell
+//    @objc func showSelfProfile() {
+//
+//        let editProfileTableViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "EditProfileTableViewController")
+//
+//        let navEditProfileTableViewController = UINavigationController(rootViewController: editProfileTableViewController)
+//
+//        present(navEditProfileTableViewController, animated: true, completion: nil)
+//
+//    }
 
     @objc func toSettingPage() {
 
@@ -88,18 +88,18 @@ extension HomeViewController: KolodaViewDelegate {
     func kolodaDidRunOutOfCards(_ koloda: KolodaView) {
 
         distanceUsers = []
-//        allUsers = []
+        allUsers = []
 
-//        userProvider.runOutOfSwipeCard { (handle) in
-//            guard let preference = self.keychain.get("preference"),
-//                  let handle = handle
-//                else { return }
-//            DatabasePath
-//                .userRef
-//                .queryOrdered(byChild: "gender")
-//                .queryEqual(toValue: preference)
-//                .removeObserver(withHandle: handle)
-//        }
+        userProvider.runOutOfSwipeCard { (handle) in
+            guard let preference = self.keychain.get("preference"),
+                  let handle = handle
+                else { return }
+            DatabasePath
+                .userRef
+                .queryOrdered(byChild: "gender")
+                .queryEqual(toValue: preference)
+                .removeObserver(withHandle: handle)
+        }
 
         let alert = UIAlertController(title: NSLocalizedString("No more cards", comment: ""), message: NSLocalizedString("Please change your preference to meet more people!", comment: ""), preferredStyle: .alert)
 
@@ -127,24 +127,24 @@ extension HomeViewController: KolodaViewDataSource {
 
     func kolodaNumberOfCards(_ koloda: KolodaView) -> Int {
 
-        if distanceUsers.count == 0 {
+//        if distanceUsers.count == 0 {
 //            self.collectionView?.reloadData()
 //            let alert = UIAlertController(title: NSLocalizedString("No more cards", comment: ""), message: NSLocalizedString("Please change your preference to meet more people!", comment: ""), preferredStyle: .alert)
 //
 //            alert.addAction(title: NSLocalizedString("OK", comment: ""))
 //
 //            alert.show()
-            return distanceUsers.count
-
-        } else {
-            return distanceUsers.count
-        }
-
-//        if distanceUsers.count == 0 {
-//            return allUsers.count
+//            return distanceUsers.count
+//
 //        } else {
 //            return distanceUsers.count
 //        }
+
+        if distanceUsers.count == 0 {
+            return allUsers.count
+        } else {
+            return distanceUsers.count
+        }
     }
 
     func kolodaSpeedThatCardShouldDrag(_ koloda: KolodaView) -> DragSpeed {
@@ -154,10 +154,11 @@ extension HomeViewController: KolodaViewDataSource {
     @objc func reportUser(_ sender: UIButton) {
 
         let index = sender.tag
-        reportViewController.reportedID = self.distanceUsers[index].0.id
-
-//        guard let uid = self.keychain.get("uid")
-//            else { return }
+        if distanceUsers.count == 0 {
+            reportViewController.reportedID = self.allUsers[index].0.id
+        } else {
+            reportViewController.reportedID = self.distanceUsers[index].0.id
+        }
 
         let actionSheetController = UIAlertController(title: NSLocalizedString("Please select", comment: "" ), message: "", preferredStyle: .actionSheet)
 
