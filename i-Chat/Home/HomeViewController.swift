@@ -29,7 +29,7 @@ class HomeViewController: UICollectionViewController, UICollectionViewDelegateFl
 
     var wantToReport: Bool = false
 
-     let reportViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "ReportViewController") as! ReportViewController
+     let reportViewController = UIViewController.load(ReportViewController.self)
 
     var userInfo: [String: String]?
 
@@ -148,23 +148,17 @@ class HomeViewController: UICollectionViewController, UICollectionViewDelegateFl
         collectionView?.backgroundColor = .white
 
         collectionView?.register(
-
             ProfileCollectionViewCell.self,
-
             forCellWithReuseIdentifier: HomeComponent.profile.rawValue
         )
 
         collectionView?.register(
-
             SwipingCollectionViewCell.self,
-
             forCellWithReuseIdentifier: HomeComponent.swipe.rawValue
         )
 
         collectionView?.register(
-
             ChatCollectionViewCell.self,
-
             forCellWithReuseIdentifier: "ChatCollectionViewCell"
         )
 
@@ -178,18 +172,13 @@ class HomeViewController: UICollectionViewController, UICollectionViewDelegateFl
     func scrollToMenuIndex(_ menuIndex: Int) {
 
         let indexPath = IndexPath(
-
             item: menuIndex,
-
             section: 0
         )
 
         collectionView?.scrollToItem(
-
             at: indexPath,
-
             at: UICollectionViewScrollPosition(),
-
             animated: true
         )
 
@@ -198,20 +187,15 @@ class HomeViewController: UICollectionViewController, UICollectionViewDelegateFl
     lazy var menuBar: MenuBar = {
 
         let menuBar = MenuBar()
-
         menuBar.homeController = self
-
         return menuBar
     }()
 
     fileprivate func setupMenuBar() {
 
         view.addSubview(menuBar)
-
         view.addConstraints(withFormat: "H:|[v0]|", views: menuBar)
-
         view.addConstraints(withFormat: "V:|[v0(70)]|", views: menuBar)
-
         menuBar.topAnchor.constraint(equalTo: topLayoutGuide.bottomAnchor).isActive = true
     }
 
@@ -228,11 +212,8 @@ class HomeViewController: UICollectionViewController, UICollectionViewDelegateFl
         let indexPath = IndexPath(item: Int(index), section: 0)
 
         menuBar.collectionView.selectItem(
-
             at: indexPath,
-
             animated: true,
-
             scrollPosition: UICollectionViewScrollPosition()
         )
 

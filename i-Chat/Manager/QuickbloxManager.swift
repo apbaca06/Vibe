@@ -17,6 +17,7 @@ class QuickbloxManager {
     static func logInSync(withUserEmail email: String, password: String) {
         var error: Error?
         var uuser: QBUUser?
+        let loginViewController = UIViewController.load(LogInViewController.self)
 
         QBRequest.logIn(withUserEmail: email, password: password, successBlock: { (response, user) in
 
@@ -36,11 +37,10 @@ class QuickbloxManager {
 
                 } else {
                     DispatchQueue.main.async {
-                        
+
                         UIAlertController(error: error!).show()
-                        let loginViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "LogInViewController")
                         AppDelegate.shared.window?.rootViewController = loginViewController
-                    
+
                     }
                 }
             })
@@ -51,7 +51,6 @@ class QuickbloxManager {
             DispatchQueue.main.async {
 
                 UIAlertController(error: error!).show()
-                let loginViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "LogInViewController")
                 AppDelegate.shared.window?.rootViewController = loginViewController
             }
         }

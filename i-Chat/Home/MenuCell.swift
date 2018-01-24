@@ -12,31 +12,23 @@ import UIKit
 class MenuCell: BaseCell {
 
     let imageView: UIImageView = {
-
         let iv = UIImageView()
-
         iv.image = UIImage(named: "profile")?.withRenderingMode(.alwaysTemplate)
-
         iv.tintColor = UIColor(red: 240/255, green: 200/255, blue: 8/255, alpha: 0.3)
-
         return iv
     }()
 
     override var isHighlighted: Bool {
 
         didSet {
-
             imageView.tintColor = isHighlighted ? UIColor(red: 240/255, green: 200/255, blue: 8/255, alpha: 1) : UIColor(red: 240/255, green: 200/255, blue: 8/255, alpha: 0.3)
-
         }
     }
 
     override var isSelected: Bool {
 
         didSet {
-
             imageView.tintColor = isSelected ? UIColor(red: 240/255, green: 200/255, blue: 8/255, alpha: 1) : UIColor(red: 240/255, green: 200/255, blue: 8/255, alpha: 0.3)
-
         }
 
     }

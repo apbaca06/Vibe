@@ -14,15 +14,10 @@ class MenuBar: UIView, UICollectionViewDataSource, UICollectionViewDelegate, UIC
     lazy var collectionView: UICollectionView = {
 
         let layout = UICollectionViewFlowLayout()
-
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
-
         collectionView.backgroundColor = .white
-
         collectionView.dataSource = self
-
         collectionView.delegate = self
-
         return collectionView
     }()
 
@@ -38,10 +33,11 @@ class MenuBar: UIView, UICollectionViewDataSource, UICollectionViewDelegate, UIC
         collectionView.register(MenuCell.self, forCellWithReuseIdentifier: cellId)
 
         addSubview(collectionView)
-
-       self.addConstraints(withFormat: "H:|[v0]|", views: collectionView)
-
-       self.addConstraints(withFormat: "V:|[v0(70)]|", views: collectionView)
+        collectionView.leftAnchor.constraint(equalTo: self.leftAnchor).isActive = true
+        collectionView.topAnchor.constraint(equalTo: self.topAnchor).isActive = true
+        collectionView.widthAnchor.constraint(equalTo: self.widthAnchor, multiplier: 1).isActive = true
+        collectionView.heightAnchor.constraint(equalToConstant: 70).isActive = true
+        collectionView.translatesAutoresizingMaskIntoConstraints = false
 
         let selectedIndexPath = IndexPath(item: 1, section: 0)
 

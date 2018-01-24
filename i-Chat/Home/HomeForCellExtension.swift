@@ -19,10 +19,8 @@ extension HomeViewController: FriendCollectionViewControllerDelegate {
     @objc func callOther() {
 
         QBRTCAudioSession.instance().currentAudioDevice = .receiver
-        
-        // swiftlint:disable force_cast
-        let callOutViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "CallOutViewController") as! CallOutViewController
-        // swiftlint:enable force_cast
+
+        let callOutViewController = UIViewController.load(CallOutViewController.self)
 
         self.present(callOutViewController, animated: true, completion: nil)
     }
