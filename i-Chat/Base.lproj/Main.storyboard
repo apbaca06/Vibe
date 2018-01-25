@@ -157,16 +157,16 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2bm-3b-FyB">
-                                <rect key="frame" x="19" y="627" width="337.5" height="25"/>
+                                <rect key="frame" x="19" y="626.5" width="337.5" height="25.5"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Already have an account?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="12" translatesAutoresizingMaskIntoConstraints="NO" id="ac1-yE-moF">
-                                        <rect key="frame" x="0.0" y="0.0" width="236" height="25"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="236" height="25.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Eqw-4g-Dw6">
-                                        <rect key="frame" x="236" y="0.0" width="101.5" height="25"/>
+                                        <rect key="frame" x="236" y="0.0" width="101.5" height="25.5"/>
                                         <color key="backgroundColor" red="0.94117647059999998" green="0.7843137255" blue="0.031372549020000001" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="Eqw-4g-Dw6" secondAttribute="height" multiplier="4:1" id="PNO-dz-USn"/>
@@ -1561,6 +1561,59 @@ If you have any questions about this Agreement, please contact us.</string>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZFm-9D-uwB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-991" y="2004"/>
+        </scene>
+        <!--Page View Controller-->
+        <scene sceneID="upK-Pw-Fsl">
+            <objects>
+                <pageViewController autoresizesArchivedViewToFullSize="NO" transitionStyle="pageCurl" navigationOrientation="horizontal" spineLocation="min" id="IzR-5b-FsX" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gOy-6H-GAX" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-836" y="2777"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="895-pU-BXO">
+            <objects>
+                <viewController storyboardIdentifier="LikePageViewController" id="Ndm-di-Oau" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Rn1-lQ-NIO">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <viewLayoutGuide key="safeArea" id="6dL-lB-o5k"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9l4-pu-tOn" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-188" y="2776"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="cvl-Ad-iM3">
+            <objects>
+                <viewController storyboardIdentifier="MatchPageViewController" id="n0y-8P-lnc" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="hfd-bV-sHc">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <viewLayoutGuide key="safeArea" id="pOV-Yg-0wH"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2x1-kv-Cqx" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="474" y="2776"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="erM-n9-jJG">
+            <objects>
+                <viewController storyboardIdentifier="ChatPageViewController" id="sv7-BS-wYe" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Flf-EC-ySq">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <viewLayoutGuide key="safeArea" id="NO8-ae-omt"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="35P-Pc-ukM" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1138" y="2776"/>
         </scene>
     </scenes>
     <resources>

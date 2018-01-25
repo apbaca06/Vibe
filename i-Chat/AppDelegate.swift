@@ -32,13 +32,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
         // swiftlint:disable force_cast
         let accountKey = values["accountKey"] as! String
-
         let applicationIDString = values["applicationID"] as! String
-
         let applicationID = UInt(applicationIDString)!
-
         let authKey = values["authKey"] as! String
-
         let authSecret = values["authSecret"] as! String
         // swiftlint:enable force_cast
 
@@ -50,21 +46,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         )
 
         SVProgressHUD.setDefaultStyle(.light)
-
         SVProgressHUD.setDefaultMaskType(.clear)
 
         IQKeyboardManager.shared().isEnabled = true
-
         IQKeyboardManager.shared().shouldResignOnTouchOutside = true
 
         Database.database().isPersistenceEnabled = true
 
         let animationViewController = UIViewController.load(AnimationViewController.self)
-
         AppDelegate.shared.window?.rootViewController = animationViewController
 
         return true
-
     }
 
     func applicationWillResignActive(_ application: UIApplication) {
