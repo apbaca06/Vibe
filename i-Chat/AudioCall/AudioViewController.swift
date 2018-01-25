@@ -17,11 +17,10 @@ class AudioViewController: UIViewController {
     var userInfo: [String: String]?
 
     @IBOutlet weak var nameLabel: UILabel!
-
     @IBOutlet weak var profileImgView: UIImageView!
     @IBOutlet weak var backgroundView: UIImageView!
-    var speakerOn: Bool = false
 
+    var speakerOn: Bool = false
     var mutedOn: Bool = false
 
     @IBAction func tapMute(_ sender: Any) {

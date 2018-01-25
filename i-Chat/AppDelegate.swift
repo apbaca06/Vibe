@@ -42,29 +42,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let authSecret = values["authSecret"] as! String
         // swiftlint:enable force_cast
 
-        // MARK: Set APIKey for QuickBlox
-
-        QBRTCClient.initializeRTC()
-
-        QBRTCConfig.setAnswerTimeInterval(45)
-
-        QBSettings.accountKey = accountKey
-
-        QBSettings.applicationID = applicationID
-
-        QBSettings.authKey = authKey
-
-        QBSettings.authSecret = authSecret
-
-        QBSettings.logLevel = .debug
-
-        QBSettings.enableXMPPLogging()
+        QuickbloxManager.setting(
+            accountKey: accountKey,
+            applicationID: applicationID,
+            authKey: authKey,
+            authSecret: authSecret
+        )
 
         SVProgressHUD.setDefaultStyle(.light)
 
         SVProgressHUD.setDefaultMaskType(.clear)
-
-        QBRTCAudioSession.instance().initialize()
 
         IQKeyboardManager.shared().isEnabled = true
 
@@ -72,12 +59,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
         Database.database().isPersistenceEnabled = true
 
-        // MARK: Check if user signed in before
-        let keychain = KeychainSwift()
-
-        keychain.synchronizable = true
-
-        let animationViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "AnimationViewController")
+        let animationViewController = UIViewController.load(AnimationViewController.self)
 
         AppDelegate.shared.window?.rootViewController = animationViewController
 

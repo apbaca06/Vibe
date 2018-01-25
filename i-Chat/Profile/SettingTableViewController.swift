@@ -19,8 +19,6 @@ enum SettingComponent {
 
     case search, logout
 
-    //show, slider,
-
     // MARK: Property
 
     var localizedString: String {
@@ -28,19 +26,9 @@ enum SettingComponent {
         switch self {
 
         case .search:
-
             return NSLocalizedString("Search", comment: "")
 
-//        case .show:
-//
-//            return NSLocalizedString("Show on app", comment: "")
-//
-//        case .slider:
-//
-//            return NSLocalizedString("Notification", comment: "")
-
         case .logout:
-
             return NSLocalizedString("Logout", comment: "")
 
         }
@@ -254,9 +242,6 @@ class SettingTableViewController: UITableViewController {
         case .search:
             return 4
 
-//        case .show, .slider :
-//
-//            return 0
         case .logout :
             return 1
 
@@ -385,33 +370,7 @@ class SettingTableViewController: UITableViewController {
             cell.selectionStyle = .none
 
             return cell
-    }
-
-//        case .slider:
-//
-//
-//            let cell = tableView.dequeueReusableCell(
-//                withIdentifier: "GenderPickerTableViewCell",
-//                for: indexPath
-//                ) as! GenderPickerTableViewCell
-//
-//
-//            return cell
-//
-//        case .show:
-//
-//
-//            let cell = tableView.dequeueReusableCell(
-//                withIdentifier: "LabelTableViewCell",
-//                for: indexPath
-//                ) as! LabelTableViewCell
-//            
-//
-//            cell.rightLabel.text = self.cityName
-//
-//            return cell
-//
-//        }
+        }
     }
 
 }

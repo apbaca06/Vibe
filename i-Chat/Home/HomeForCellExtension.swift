@@ -39,7 +39,7 @@ extension HomeViewController: FriendCollectionViewControllerDelegate {
             callOutViewController.reciever = user.0
             callOutViewController.chatroomID = user.1
             self.userInfo = ["Name": user.0.name, "profileImgURL": user.0.profileImgURL]
-//            CallManager.shared.audioCall(toUser: user.0)
+
             QuickbloxManager.connectQB(toUser: user.0, completionHandler: { (response) in
                 if response == true {
                     self.present(callOutViewController, animated: true, completion: nil)
@@ -50,20 +50,8 @@ extension HomeViewController: FriendCollectionViewControllerDelegate {
                     alertController.show()
                 }
             })
-//            present(callOutViewController, animated: true, completion: nil)
         }
     }
-
-//    // MARK: Funtion for Profile Cell
-//    @objc func showSelfProfile() {
-//
-//        let editProfileTableViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "EditProfileTableViewController")
-//
-//        let navEditProfileTableViewController = UINavigationController(rootViewController: editProfileTableViewController)
-//
-//        present(navEditProfileTableViewController, animated: true, completion: nil)
-//
-//    }
 
     @objc func toSettingPage() {
 

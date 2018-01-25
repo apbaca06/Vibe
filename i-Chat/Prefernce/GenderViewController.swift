@@ -56,7 +56,6 @@ class GenderViewController: UIViewController, CLLocationManagerDelegate {
             }
         }
 
-//        DatabasePath.userRef.child(uid).updateChildValues(["gender": "Female"])
     }
 
     override func viewDidLoad() {

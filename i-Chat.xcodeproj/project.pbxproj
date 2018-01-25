@@ -33,8 +33,6 @@
 		371E76C91FF0ED9A00EF7CB2 /* ProfileImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 371E76C81FF0ED9A00EF7CB2 /* ProfileImage.swift */; };
 		3724A4D5200235CE001E5EE7 /* Quickblox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3724A4D3200235C4001E5EE7 /* Quickblox.framework */; };
 		3724A4D6200235CE001E5EE7 /* QuickbloxWebRTC.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3724A4D4200235CC001E5EE7 /* QuickbloxWebRTC.framework */; };
-		372E8E101FF10355002CAC96 /* Ripple.swift in Sources */ = {isa = PBXBuildFile; fileRef = 372E8E0F1FF10355002CAC96 /* Ripple.swift */; };
-		372E8E121FF1076C002CAC96 /* Animation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 372E8E111FF1076C002CAC96 /* Animation.swift */; };
 		372E8E141FF1DD2D002CAC96 /* AgeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 372E8E131FF1DD2D002CAC96 /* AgeViewController.swift */; };
 		372F85031FFE4C4D00D6BCB1 /* State.swift in Sources */ = {isa = PBXBuildFile; fileRef = 372F85021FFE4C4D00D6BCB1 /* State.swift */; };
 		372F85051FFE552A00D6BCB1 /* EulaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 372F85041FFE552A00D6BCB1 /* EulaViewController.swift */; };
@@ -151,8 +149,6 @@
 		371E76C81FF0ED9A00EF7CB2 /* ProfileImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileImage.swift; sourceTree = "<group>"; };
 		3724A4D3200235C4001E5EE7 /* Quickblox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Quickblox.framework; sourceTree = "<group>"; };
 		3724A4D4200235CC001E5EE7 /* QuickbloxWebRTC.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = QuickbloxWebRTC.framework; sourceTree = "<group>"; };
-		372E8E0F1FF10355002CAC96 /* Ripple.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ripple.swift; sourceTree = "<group>"; };
-		372E8E111FF1076C002CAC96 /* Animation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Animation.swift; sourceTree = "<group>"; };
 		372E8E131FF1DD2D002CAC96 /* AgeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AgeViewController.swift; sourceTree = "<group>"; };
 		372F85021FFE4C4D00D6BCB1 /* State.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = State.swift; sourceTree = "<group>"; };
 		372F85041FFE552A00D6BCB1 /* EulaViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EulaViewController.swift; sourceTree = "<group>"; };
@@ -289,10 +285,10 @@
 			isa = PBXGroup;
 			children = (
 				3754E2891FE12809002604CD /* QuickbloxManager.swift */,
+				37CA181D1FE2221500C1171B /* FirebaseManager.swift */,
 				37DE5F851FEA43080017E09D /* DateFormatter.swift */,
 				370832B51FE3800200D4DC86 /* CallManager.swift */,
 				37C0FF4B1FE8BE58002EACF3 /* RingtoneManager.swift */,
-				37CA181D1FE2221500C1171B /* FirebaseManager.swift */,
 				3792B0CB1FF5ECEE00AB4838 /* UserProvider.swift */,
 				373DB9F61FEA3F480041E34E /* DatabasePath.swift */,
 			);
@@ -328,9 +324,9 @@
 				3782FBE12018814400A87106 /* LocalizedFile */,
 				371459BA1FDFD90500C1F14A /* Key */,
 				3714597E1FDFAABF00C1F14A /* AppDelegate.swift */,
+				370832AC1FE283D800D4DC86 /* Landing */,
 				37C0FF201FE7D26A002EACF3 /* Model */,
 				370832AE1FE2840E00D4DC86 /* Manager */,
-				370832AC1FE283D800D4DC86 /* Landing */,
 				376C3FB61FEBA91600EAF188 /* Prefernce */,
 				37C0FF1F1FE7D245002EACF3 /* Home */,
 				37DE5F8B1FEA61D50017E09D /* Profile */,
@@ -341,8 +337,6 @@
 				37106000200745E700D9F425 /* animation.gif */,
 				37C0FF491FE8BD34002EACF3 /* iphone.mp3 */,
 				371459821FDFAABF00C1F14A /* Main.storyboard */,
-				372E8E0F1FF10355002CAC96 /* Ripple.swift */,
-				372E8E111FF1076C002CAC96 /* Animation.swift */,
 				371459871FDFAABF00C1F14A /* LaunchScreen.storyboard */,
 				3714598A1FDFAABF00C1F14A /* Info.plist */,
 			);
@@ -823,12 +817,10 @@
 				3782FBE3201886D700A87106 /* ViewControllerExtension.swift in Sources */,
 				375F04B81FE3A787009D2671 /* HomeViewController.swift in Sources */,
 				3717DD221FE66E35003CD462 /* HomeComponent.swift in Sources */,
-				372E8E101FF10355002CAC96 /* Ripple.swift in Sources */,
 				37DE5F9D1FEB67D60017E09D /* HomeForCellExtension.swift in Sources */,
 				37A5BBA01FE6288500C4F1E6 /* ProfileCollectionViewCell.swift in Sources */,
 				373DB9F71FEA3F480041E34E /* DatabasePath.swift in Sources */,
 				37E1D1711FFB38C600EC9BA6 /* FriendCollectionViewCell.swift in Sources */,
-				372E8E121FF1076C002CAC96 /* Animation.swift in Sources */,
 				37DE5F891FEA61D00017E09D /* SwitchTableViewCell.swift in Sources */,
 				370832B81FE3806700D4DC86 /* User.swift in Sources */,
 				37990C69200780D80061E398 /* GradientColor.swift in Sources */,

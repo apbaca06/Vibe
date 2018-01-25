@@ -14,6 +14,20 @@ import KeychainSwift
 
 class QuickbloxManager {
 
+    // MARK: Set APIKey for QuickBlox
+    static func setting(accountKey: String, applicationID: UInt, authKey: String, authSecret: String) {
+        QBRTCClient.initializeRTC()
+        QBRTCConfig.setAnswerTimeInterval(45)
+        QBSettings.accountKey = accountKey
+        QBSettings.applicationID = applicationID
+        QBSettings.authKey = authKey
+        QBSettings.authSecret = authSecret
+        QBSettings.logLevel = .debug
+        QBSettings.enableXMPPLogging()
+        QBRTCAudioSession.instance().initialize()
+    }
+
+    // MARK: Login for QuickBlox
     static func logInSync(withUserEmail email: String, password: String) {
         var error: Error?
         var uuser: QBUUser?
@@ -56,6 +70,7 @@ class QuickbloxManager {
         }
     }
 
+    // MARK: Signup for QuickBlox
     static func signUpSync(name: String, email: String, password: String) {
 
         var error: Error?

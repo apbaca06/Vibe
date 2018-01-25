@@ -24,7 +24,7 @@ class RegisterViewController: UIViewController {
     var agreedByUser: Bool = false
     @IBAction func toLoginButton(_ sender: Any) {
 
-        let loginViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "LogInViewController")
+        let loginViewController = UIViewController.load(LogInViewController.self)
 
         AppDelegate.shared.window?.rootViewController = loginViewController
     }
