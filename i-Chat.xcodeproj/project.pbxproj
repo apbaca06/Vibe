@@ -43,6 +43,10 @@
 		374C782620023C8F00125EB6 /* Quickblox.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 3724A4D3200235C4001E5EE7 /* Quickblox.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		374C782720023C9700125EB6 /* QuickbloxWebRTC.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 3724A4D4200235CC001E5EE7 /* QuickbloxWebRTC.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		37537B2A2019B6B100E59C28 /* IntroPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37537B292019B6B100E59C28 /* IntroPageViewController.swift */; };
+		37537B4E201AF8F600E59C28 /* LikePageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37537B4D201AF8F500E59C28 /* LikePageViewController.swift */; };
+		37537B50201AF97100E59C28 /* MatchPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37537B4F201AF97100E59C28 /* MatchPageViewController.swift */; };
+		37537B52201B067300E59C28 /* ChatPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37537B51201B067300E59C28 /* ChatPageViewController.swift */; };
+		37537B54201B127A00E59C28 /* VibeIntroViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37537B53201B127A00E59C28 /* VibeIntroViewController.swift */; };
 		3754E2881FE122E4002604CD /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3754E2871FE122E4002604CD /* RegisterViewController.swift */; };
 		3754E28A1FE12809002604CD /* QuickbloxManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3754E2891FE12809002604CD /* QuickbloxManager.swift */; };
 		375F04B61FE3A73A009D2671 /* MenuBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 375F04B51FE3A739009D2671 /* MenuBar.swift */; };
@@ -158,6 +162,10 @@
 		372F850B1FFF307C00D6BCB1 /* NoFriendViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoFriendViewController.swift; sourceTree = "<group>"; };
 		373DB9F61FEA3F480041E34E /* DatabasePath.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabasePath.swift; sourceTree = "<group>"; };
 		37537B292019B6B100E59C28 /* IntroPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroPageViewController.swift; sourceTree = "<group>"; };
+		37537B4D201AF8F500E59C28 /* LikePageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LikePageViewController.swift; sourceTree = "<group>"; };
+		37537B4F201AF97100E59C28 /* MatchPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchPageViewController.swift; sourceTree = "<group>"; };
+		37537B51201B067300E59C28 /* ChatPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatPageViewController.swift; sourceTree = "<group>"; };
+		37537B53201B127A00E59C28 /* VibeIntroViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VibeIntroViewController.swift; sourceTree = "<group>"; };
 		3754E2871FE122E4002604CD /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		3754E2891FE12809002604CD /* QuickbloxManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuickbloxManager.swift; sourceTree = "<group>"; };
 		375F04B51FE3A739009D2671 /* MenuBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuBar.swift; sourceTree = "<group>"; };
@@ -359,6 +367,10 @@
 			isa = PBXGroup;
 			children = (
 				37537B292019B6B100E59C28 /* IntroPageViewController.swift */,
+				37537B4D201AF8F500E59C28 /* LikePageViewController.swift */,
+				37537B4F201AF97100E59C28 /* MatchPageViewController.swift */,
+				37537B51201B067300E59C28 /* ChatPageViewController.swift */,
+				37537B53201B127A00E59C28 /* VibeIntroViewController.swift */,
 			);
 			path = IntroPage;
 			sourceTree = "<group>";
@@ -801,7 +813,9 @@
 				372F850C1FFF307C00D6BCB1 /* NoFriendViewController.swift in Sources */,
 				376C3FBC1FEBAD9A00EAF188 /* SetImgViewController.swift in Sources */,
 				37A5BBA81FE628B900C4F1E6 /* ChatCollectionViewCell.swift in Sources */,
+				37537B4E201AF8F600E59C28 /* LikePageViewController.swift in Sources */,
 				375F04B61FE3A73A009D2671 /* MenuBar.swift in Sources */,
+				37537B54201B127A00E59C28 /* VibeIntroViewController.swift in Sources */,
 				37C0FF4C1FE8BE58002EACF3 /* RingtoneManager.swift in Sources */,
 				370832B61FE3800200D4DC86 /* CallManager.swift in Sources */,
 				376C3FBA1FEBACF900EAF188 /* PreferenceViewController.swift in Sources */,
@@ -815,7 +829,9 @@
 				3754E28A1FE12809002604CD /* QuickbloxManager.swift in Sources */,
 				37DE5F981FEA65B30017E09D /* LogoutTableViewCell.swift in Sources */,
 				3792B0CC1FF5ECEE00AB4838 /* UserProvider.swift in Sources */,
+				37537B50201AF97100E59C28 /* MatchPageViewController.swift in Sources */,
 				370832B01FE2847F00D4DC86 /* IncomingCallViewController.swift in Sources */,
+				37537B52201B067300E59C28 /* ChatPageViewController.swift in Sources */,
 				37B4EDD31FF7976800185785 /* MatchViewController.swift in Sources */,
 				37CA181E1FE2221500C1171B /* FirebaseManager.swift in Sources */,
 				3792B0B61FF2537000AB4838 /* AgeRangeTableViewCell.swift in Sources */,

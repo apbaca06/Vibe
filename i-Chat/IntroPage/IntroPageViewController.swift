@@ -16,17 +16,16 @@ class IntroPageViewController: UIPageViewController, UIPageViewControllerDataSou
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let matchViewController = UIViewController.load(MatchPageViewController.self)
+        let likeViewController = UIViewController.load(LikePageViewController.self)
+        let chatPageViewController = UIViewController.load(ChatPageViewController.self)
 
-        let vc1 = storyboard.instantiateViewController(withIdentifier: "vcOne")
-        let vc2 = storyboard.instantiateViewController(withIdentifier: "vcTwo")
-        let vc3 = storyboard.instantiateViewController(withIdentifier: "vcThree")
-        let vc4 = storyboard.instantiateViewController(withIdentifier: "vcFour")
+        let vibeIntroViewController = UIViewController.load(VibeIntroViewController.self)
 
-        list.append(vc1)
-        list.append(vc2)
-        list.append(vc3)
-        list.append(vc4)
+        list.append(likeViewController)
+        list.append(matchViewController)
+        list.append(chatPageViewController)
+        list.append(vibeIntroViewController)
 
         setViewControllers([list[0]], direction: .reverse, animated: true, completion: nil)
 
@@ -38,11 +37,9 @@ class IntroPageViewController: UIPageViewController, UIPageViewControllerDataSou
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
 
-        for v in view.subviews {
-            if v is UIScrollView {
+        for v in view.subviews where v is UIScrollView {
                 v.frame = view.bounds
                 break
-            }
         }
     }
 
@@ -52,14 +49,10 @@ class IntroPageViewController: UIPageViewController, UIPageViewControllerDataSou
 
         let pageControl = UIPageControl.appearance()
 
-        pageControl.pageIndicatorTintColor = UIColor.white
+        pageControl.pageIndicatorTintColor = UIColor.black
 
-        pageControl.currentPageIndicatorTintColor = UIColor(
-            red: 200.0/255,
-            green: 95.0/255,
-            blue: 95.0/255,
-            alpha: 1.0
-        )
+        pageControl.currentPageIndicatorTintColor =
+            UIColor(red: 7/255.0, green: 160/255.0, blue: 195/255.0, alpha: 1)
     }
 
     // MARK: - PageController DataSource
@@ -70,9 +63,10 @@ class IntroPageViewController: UIPageViewController, UIPageViewControllerDataSou
 
             return list[index + 1]
 
-        }
+        } else {
 
-        return nil
+            return nil
+        }
     }
 
     func pageViewController(_ pageViewController: UIPageViewController, viewControllerBefore viewController: UIViewController) -> UIViewController? {
@@ -97,4 +91,5 @@ class IntroPageViewController: UIPageViewController, UIPageViewControllerDataSou
         return 0
 
     }
+
 }

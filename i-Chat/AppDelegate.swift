@@ -53,8 +53,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
         Database.database().isPersistenceEnabled = true
 
-        let animationViewController = UIViewController.load(AnimationViewController.self)
-        AppDelegate.shared.window?.rootViewController = animationViewController
+//        let animationViewController = UIViewController.load(AnimationViewController.self)
+//        AppDelegate.shared.window?.rootViewController = animationViewController
+
+        AppDelegate.shared.window?.rootViewController = UIViewController.load(IntroPageViewController.self)
 
         return true
     }
