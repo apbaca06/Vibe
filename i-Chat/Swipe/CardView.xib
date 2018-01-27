@@ -23,7 +23,6 @@
                     <subviews>
                         <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="U3W-kD-WKx">
                             <rect key="frame" x="0.0" y="0.0" width="375" height="632"/>
-                            <color key="backgroundColor" red="0.090196078430000007" green="0.74509803919999995" blue="0.73333333329999995" alpha="1" colorSpace="calibratedRGB"/>
                         </imageView>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NGt-zP-P0i">
                             <rect key="frame" x="225" y="582" width="1" height="50"/>

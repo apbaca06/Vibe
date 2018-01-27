@@ -77,7 +77,6 @@ class IncomingCallViewController: UIViewController {
         self.name.text = name
 
         Manager.shared.loadImage(with: url, into: profileImageView)
-//        Manager.shared.loadImage(with: url, into: backgroundView)
 
     }
 

@@ -55,89 +55,90 @@ class UserProvider {
 
         guard let uid = keychain.get("uid")
             else { return }
+        DispatchQueue.global().async {
+            DatabasePath
+                .userRef
+                .child(uid)
+                .observeSingleEvent(of: .value, with: { (datasnapshot) in
 
-        DatabasePath
-            .userRef
-            .child(uid)
-            .observeSingleEvent(of: .value, with: { (datasnapshot) in
+                    let userDic = [ datasnapshot.key: datasnapshot.value]
+                    do {
+                        let currentUser =  try User(userDic)
+                        self.currentAuthUser = currentUser
 
-            let userDic = [ datasnapshot.key: datasnapshot.value]
-            do {
-                let currentUser =  try User(userDic)
-                self.currentAuthUser = currentUser
+                        self.keychain.set("\(currentUser.name)", forKey: "name")
+                        self.keychain.set("\(currentUser.profileImgURL)", forKey: "profileImgURL")
+                        self.keychain.set("\(currentUser.age)", forKey: "age")
+                        self.keychain.set("\(currentUser.cityName)", forKey: "cityName")
+                        self.keychain.set("\(currentUser.gender)", forKey: "gender")
+                        self.keychain.set("\(currentUser.minAge)", forKey: "minAge")
+                        self.keychain.set("\(currentUser.maxAge)", forKey: "maxAge")
+                        self.keychain.set("\(currentUser.preference.rawValue)", forKey: "preference")
+                        self.keychain.set("\(currentUser.maxDistance)", forKey: "maxDistance")
+                        self.keychain.set("\(currentUser.latitude)", forKey: "latitude")
+                        self.keychain.set("\(currentUser.longitude)", forKey: "longitude")
 
-                self.keychain.set("\(currentUser.name)", forKey: "name")
-                self.keychain.set("\(currentUser.profileImgURL)", forKey: "profileImgURL")
-                self.keychain.set("\(currentUser.age)", forKey: "age")
-                self.keychain.set("\(currentUser.cityName)", forKey: "cityName")
-                self.keychain.set("\(currentUser.gender)", forKey: "gender")
-                self.keychain.set("\(currentUser.minAge)", forKey: "minAge")
-                self.keychain.set("\(currentUser.maxAge)", forKey: "maxAge")
-                self.keychain.set("\(currentUser.preference.rawValue)", forKey: "preference")
-                self.keychain.set("\(currentUser.maxDistance)", forKey: "maxDistance")
-                self.keychain.set("\(currentUser.latitude)", forKey: "latitude")
-                self.keychain.set("\(currentUser.longitude)", forKey: "longitude")
-
-                guard let minAge = Int(self.keychain.get("minAge")!),
-                    let maxAge = Int(self.keychain.get("maxAge")!),
-                    let preference = self.keychain.get("preference"),
-                    let maxDistance = Int(self.keychain.get("maxDistance")!),
-                    let latitude = Double(self.keychain.get("latitude")!),
-                    let longitude = Double(self.keychain.get("longitude")!)
-                    else { return }
-
-                DatabasePath
-                    .userRef
-                    .queryOrdered(byChild: "gender")
-                    .queryEqual(toValue: preference)
-                    .observeSingleEvent(of: prefUserObserveType) { (dataSnapshot) in
-
-                        guard let datas = dataSnapshot.value as? [String: Any]
+                        guard let minAge = Int(self.keychain.get("minAge")!),
+                            let maxAge = Int(self.keychain.get("maxAge")!),
+                            let preference = self.keychain.get("preference"),
+                            let maxDistance = Int(self.keychain.get("maxDistance")!),
+                            let latitude = Double(self.keychain.get("latitude")!),
+                            let longitude = Double(self.keychain.get("longitude")!)
                             else { return }
-                        self.distanceUsers = []
-                        var allUsers: [(User, Int)] = []
 
-                        for data in datas {
+                        DatabasePath
+                            .userRef
+                            .queryOrdered(byChild: "gender")
+                            .queryEqual(toValue: preference)
+                            .observeSingleEvent(of: prefUserObserveType) { (dataSnapshot) in
 
-                            do {
-                                let userDic = [data.key: data.value]
-                                let user = try User(userDic)
+                                guard let datas = dataSnapshot.value as? [String: Any]
+                                    else { return }
+                                self.distanceUsers = []
+                                var allUsers: [(User, Int)] = []
 
-                                let location1 = CLLocation(latitude: latitude, longitude: longitude)
-                                let location2 = CLLocation(latitude: user.latitude, longitude: user.longitude)
-                                let distanceBtwn = Int((location1.distance(from: location2))/1000)
+                                for data in datas {
 
-                                if user.email != Auth.auth().currentUser?.email {
-                                    allUsers.append((user, distanceBtwn))
+                                    do {
+                                        let userDic = [data.key: data.value]
+                                        let user = try User(userDic)
+
+                                        let location1 = CLLocation(latitude: latitude, longitude: longitude)
+                                        let location2 = CLLocation(latitude: user.latitude, longitude: user.longitude)
+                                        let distanceBtwn = Int((location1.distance(from: location2))/1000)
+
+                                        if user.email != Auth.auth().currentUser?.email {
+                                            allUsers.append((user, distanceBtwn))
+                                        }
+
+                                        guard let currentUser = self.currentAuthUser
+                                            else { return }
+
+                                        if user.email != Auth.auth().currentUser?.email && user.age >= minAge && user.age <= maxAge && distanceBtwn <= maxDistance && currentUser.likeUserID.has(key: user.id) == false {
+                                            self.distanceUsers.append((user, distanceBtwn))
+                                        }
+                                    } catch {
+                                        print("Some user with not enough data!")
+                                    }
                                 }
-
-                                guard let currentUser = self.currentAuthUser
-                                else { return }
-
-                                if user.email != Auth.auth().currentUser?.email && user.age >= minAge && user.age <= maxAge && distanceBtwn <= maxDistance && currentUser.likeUserID.has(key: user.id) == false {
-                                    self.distanceUsers.append((user, distanceBtwn))
+                                guard let user = self.currentAuthUser
+                                    else { return }
+                                if self.distanceUsers.count == 0 {
+                                    self.delegate?.userProvider(self, didFetch: self.distanceUsers, didFetch: allUsers, didFetch: user)
+                                } else {
+                                    self.delegate?.userProvider(self, didFetch: self.distanceUsers, didFetch: allUsers, didFetch: user)
                                 }
-                            } catch {
-                                print("Some user with not enough data!")
-                            }
                         }
-                        guard let user = self.currentAuthUser
-                            else { return }
-                        if self.distanceUsers.count == 0 {
-                            self.delegate?.userProvider(self, didFetch: self.distanceUsers, didFetch: allUsers, didFetch: user)
-                        } else {
-                            self.delegate?.userProvider(self, didFetch: self.distanceUsers, didFetch: allUsers, didFetch: user)
-                        }
-                }
 
-            } catch {
-                print("Error", error)
-                return
+                    } catch {
+                        print("Error", error)
+                        return
+                    }
+                }) { (error)  in
+
+                    print("Error", error)
+
             }
-        }) { (error)  in
-
-            print("Error", error)
-
         }
 
     }
@@ -149,36 +150,38 @@ class UserProvider {
             let longitude = Double(self.keychain.get("longitude")!)
             else { return }
 
-        self.runOutHandel = DatabasePath
-            .userRef
-            .queryOrdered(byChild: "gender")
-            .queryEqual(toValue: preference)
-            .observe( .value) { (dataSnapshot) in
+        DispatchQueue.global().async {
+            self.runOutHandel = DatabasePath
+                .userRef
+                .queryOrdered(byChild: "gender")
+                .queryEqual(toValue: preference)
+                .observe( .value) { (dataSnapshot) in
 
-                guard let datas = dataSnapshot.value as? [String: Any]
-                    else { return }
-                var allUsers: [(User, Int)] = []
+                    guard let datas = dataSnapshot.value as? [String: Any]
+                        else { return }
+                    var allUsers: [(User, Int)] = []
 
-                for data in datas {
+                    for data in datas {
 
-                    do {
-                        let userDic = [data.key: data.value]
-                        let user = try User(userDic)
-                        let location1 = CLLocation(latitude: latitude, longitude: longitude)
-                        let location2 = CLLocation(latitude: user.latitude, longitude: user.longitude)
-                        let distanceBtwn = Int((location1.distance(from: location2))/1000)
-                        if user.email != Auth.auth().currentUser?.email {
-                            allUsers.append((user, distanceBtwn))
+                        do {
+                            let userDic = [data.key: data.value]
+                            let user = try User(userDic)
+                            let location1 = CLLocation(latitude: latitude, longitude: longitude)
+                            let location2 = CLLocation(latitude: user.latitude, longitude: user.longitude)
+                            let distanceBtwn = Int((location1.distance(from: location2))/1000)
+                            if user.email != Auth.auth().currentUser?.email {
+                                allUsers.append((user, distanceBtwn))
+                            }
+                        } catch {
+                            print("Some user with not enough data!")
                         }
-                    } catch {
-                        print("Some user with not enough data!")
                     }
-                }
 
-                guard let user = self.currentAuthUser
-                    else { return }
-                self.delegate?.userProvider(self, didFetch: [], didFetch: allUsers, didFetch: user)
-                completionHandler(self.runOutHandel)
+                    guard let user = self.currentAuthUser
+                        else { return }
+                    self.delegate?.userProvider(self, didFetch: [], didFetch: allUsers, didFetch: user)
+                    completionHandler(self.runOutHandel)
+            }
         }
     }
 

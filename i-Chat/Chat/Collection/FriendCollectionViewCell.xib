@@ -21,7 +21,7 @@
                 <rect key="frame" x="0.0" y="0.0" width="120" height="140"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="user" translatesAutoresizingMaskIntoConstraints="NO" id="8cE-wi-8E8">
+                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="8cE-wi-8E8">
                         <rect key="frame" x="10" y="10" width="100" height="100"/>
                         <constraints>
                             <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="100" id="3s0-5c-gFh"/>
@@ -46,11 +46,11 @@
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <button opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eIF-Xi-YdH">
-                        <rect key="frame" x="85" y="85" width="30" height="30"/>
+                    <button opaque="NO" contentMode="center" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eIF-Xi-YdH">
+                        <rect key="frame" x="80" y="80" width="40" height="40"/>
                         <color key="backgroundColor" red="0.027450980390000001" green="0.62745098040000002" blue="0.76470588240000004" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstAttribute="width" secondItem="eIF-Xi-YdH" secondAttribute="height" multiplier="1:1" id="tdY-so-zlM"/>
+                            <constraint firstAttribute="width" secondItem="eIF-Xi-YdH" secondAttribute="height" multiplier="1:1" id="02C-Y8-8cS"/>
                         </constraints>
                         <state key="normal" image="pickup"/>
                         <userDefinedRuntimeAttributes>
@@ -65,15 +65,14 @@
                 </subviews>
             </view>
             <constraints>
-                <constraint firstItem="eIF-Xi-YdH" firstAttribute="height" secondItem="8cE-wi-8E8" secondAttribute="height" multiplier="0.3" id="5eX-NN-tbO"/>
+                <constraint firstItem="eIF-Xi-YdH" firstAttribute="width" secondItem="8cE-wi-8E8" secondAttribute="width" multiplier="0.4" id="6O3-pH-d9U"/>
                 <constraint firstItem="8cE-wi-8E8" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="10" id="Mf9-r2-w0g"/>
                 <constraint firstItem="8cE-wi-8E8" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="10" id="NOS-xN-dxI"/>
                 <constraint firstItem="iyW-u4-Z1Q" firstAttribute="top" secondItem="8cE-wi-8E8" secondAttribute="bottom" constant="10" id="UCH-Wd-kPr"/>
                 <constraint firstItem="iyW-u4-Z1Q" firstAttribute="width" secondItem="gTV-IL-0wX" secondAttribute="width" id="VYd-H3-7KA"/>
-                <constraint firstItem="eIF-Xi-YdH" firstAttribute="bottom" secondItem="8cE-wi-8E8" secondAttribute="bottom" constant="5" id="bF3-Hl-1RM"/>
-                <constraint firstItem="eIF-Xi-YdH" firstAttribute="trailing" secondItem="8cE-wi-8E8" secondAttribute="trailing" constant="5" id="cCe-KA-czW"/>
+                <constraint firstItem="eIF-Xi-YdH" firstAttribute="bottom" secondItem="8cE-wi-8E8" secondAttribute="bottom" constant="10" id="e6x-jI-HtL"/>
+                <constraint firstItem="eIF-Xi-YdH" firstAttribute="trailing" secondItem="8cE-wi-8E8" secondAttribute="trailing" constant="10" id="fIZ-30-Kvw"/>
                 <constraint firstItem="iyW-u4-Z1Q" firstAttribute="leading" secondItem="ZTg-uK-7eu" secondAttribute="leading" id="lcW-uB-wKz"/>
-                <constraint firstItem="ZTg-uK-7eu" firstAttribute="trailing" secondItem="8cE-wi-8E8" secondAttribute="trailing" constant="10" id="rZC-gD-mTS"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <size key="customSize" width="145" height="175"/>
@@ -87,6 +86,5 @@
     </objects>
     <resources>
         <image name="pickup" width="50" height="50"/>
-        <image name="user" width="32" height="32"/>
     </resources>
 </document>

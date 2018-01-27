@@ -13,6 +13,7 @@ import Koloda
 import Nuke
 import CoreLocation
 import SVProgressHUD
+import CallKit
 
 extension HomeViewController: FriendCollectionViewControllerDelegate {
 
@@ -296,4 +297,19 @@ extension HomeViewController: CLLocationManagerDelegate {
         setupLocationManager()
         locationManager.stopUpdatingLocation()
     }
+}
+
+extension HomeViewController: CXProviderDelegate {
+
+    func providerDidReset(_ provider: CXProvider) {
+
+    }
+
+    func provider(_ provider: CXProvider, perform action: CXAnswerCallAction) {
+        action.fulfill()
+    }
+    func provider(_ provider: CXProvider, perform action: CXEndCallAction) {
+        action.fulfill()
+    }
+
 }

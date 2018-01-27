@@ -21,7 +21,7 @@ class FriendCollectionViewCell: UICollectionViewCell {
         profileImageView.image = userImage
 
 //        profileImageView.layer.cornerRadius = profileImageView.bounds.width/2
-        profileImageView.clipsToBounds = true
+//        profileImageView.clipsToBounds = true
 
 //        let image = #imageLiteral(resourceName: "pickup").withRenderingMode(.alwaysTemplate)
 //        callButton.setImage(image, for: .normal)

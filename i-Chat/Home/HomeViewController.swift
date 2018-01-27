@@ -14,13 +14,16 @@ import CoreLocation
 import Koloda
 import Nuke
 import Crashlytics
+import CallKit
 
 class HomeViewController: UICollectionViewController, UICollectionViewDelegateFlowLayout, UserProviderDelegate {
     func userProvider(_ provider: UserProvider, didFetch distanceUser: [(User, Int)], didFetch allUsers: [(User, Int)], didFetch currentUser: User) {
         self.allUsers = allUsers
         self.distanceUsers = distanceUser
         self.currentUser = currentUser
-        self.collectionView?.reloadData()
+        DispatchQueue.main.async {
+            self.collectionView?.reloadData()
+        }
     }
 
     var distanceUsers: [(User, Int)] = []
@@ -60,10 +63,14 @@ class HomeViewController: UICollectionViewController, UICollectionViewDelegateFl
         }
     }
 
+    let provider = CXProvider(configuration: CXProviderConfiguration(localizedName: "Vibe"))
+
     var imageArray: [UIImage] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        provider.setDelegate(self, queue: nil)
 
         self.locationManager.delegate = self
 
@@ -79,7 +86,9 @@ class HomeViewController: UICollectionViewController, UICollectionViewDelegateFl
 
         FirebaseManager.getFriendList(eventType: .value) { (friends) in
             self.friends = friends
-            self.collectionView?.reloadData()
+            DispatchQueue.main.async {
+                self.collectionView?.reloadData()
+            }
         }
 
         userProvider.delegate = self
@@ -293,12 +302,6 @@ class HomeViewController: UICollectionViewController, UICollectionViewDelegateFl
             cell.swipeView.dataSource = self
 
             cell.swipeView.resetCurrentCardIndex()
-
-            if distanceUsers.count != 0 {
-                cell.warningLabel.isHidden = true
-            } else {
-                cell.warningLabel.isHidden = false
-            }
 
             return cell
 

@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import CallKit
 
 extension HomeViewController: QBRTCClientDelegate {
 
@@ -24,15 +25,24 @@ extension HomeViewController: QBRTCClientDelegate {
             print("****準備接電話")
             CallManager.shared.session = session
 
-            // swiftlint:disable force_cast
-            let incomingCallViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "IncomingCallViewController") as! IncomingCallViewController
-            // swiftlint:enable force_cast
-
-            guard let dict = userInfo
+            let update = CXCallUpdate()
+            guard let dict = userInfo,
+                let name = dict["Name"],
+                let urlString = dict["profileImgURL"],
+                let url = URL(string: urlString)
                 else { return }
-            incomingCallViewController.userInfo = dict
+            update.remoteHandle = CXHandle(type: .generic, value: name)
+            provider.reportNewIncomingCall(with: UUID(), update: update, completion: { _ in })
 
-            self.present(incomingCallViewController, animated: true, completion: nil)
+//            // swiftlint:disable force_cast
+//            let incomingCallViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "IncomingCallViewController") as! IncomingCallViewController
+//            // swiftlint:enable force_cast
+//
+//            guard let dict = userInfo
+//                else { return }
+//            incomingCallViewController.userInfo = dict
+
+//            self.present(incomingCallViewController, animated: true, completion: nil)
         }
     }
 

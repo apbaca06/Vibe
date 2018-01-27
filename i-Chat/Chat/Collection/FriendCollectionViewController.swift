@@ -85,7 +85,9 @@ class FriendCollectionViewController: UIViewController, UICollectionViewDelegate
         super.viewWillAppear(animated)
         FirebaseManager.getFriendList(eventType: .value) { (friends) in
             self.users = friends
-            self.collectionView.reloadData()
+            DispatchQueue.main.async {
+                self.collectionView.reloadData()
+            }
         }
 
     }

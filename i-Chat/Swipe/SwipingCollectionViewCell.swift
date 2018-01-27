@@ -13,8 +13,6 @@ import KeychainSwift
 
 class SwipingCollectionViewCell: UICollectionViewCell {
 
-    @IBOutlet weak var warningLabel: UILabel!
-
     @IBOutlet weak var buttonView: UIView!
 
     @IBOutlet weak var dislikeButton: UIButton!

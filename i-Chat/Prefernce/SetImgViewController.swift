@@ -157,7 +157,7 @@ class SetImgViewController: UIViewController, UIImagePickerControllerDelegate, U
 
             let layout = UICollectionViewFlowLayout()
 
-            AppDelegate.shared.window?.rootViewController = HomeViewController(collectionViewLayout: layout)
+            AppDelegate.shared.window?.rootViewController = UIViewController.load(IntroPageViewController.self)
 
         } else {
 

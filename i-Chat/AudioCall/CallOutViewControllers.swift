@@ -58,7 +58,6 @@ class CallOutViewController: UIViewController {
         DatabasePath.chatroomRef.child(chatroom).updateChildValues([Date().iso8601New: "0"])
         DatabasePath.messageRef.child(Date().iso8601New).updateChildValues(["timestamp": Date().iso8601String, "text": "audio call", "from": id, "state": "0" ])
         Manager.shared.loadImage(with: url, into: recieverImg)
-//        Manager.shared.loadImage(with: url, into: backgroundImageView)
         recieverName.text = name
 
     }

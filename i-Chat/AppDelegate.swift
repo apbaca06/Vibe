@@ -52,11 +52,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         IQKeyboardManager.shared().shouldResignOnTouchOutside = true
 
         Database.database().isPersistenceEnabled = true
+        Database.database().callbackQueue = DispatchQueue.global()
 
-//        let animationViewController = UIViewController.load(AnimationViewController.self)
-//        AppDelegate.shared.window?.rootViewController = animationViewController
-
-        AppDelegate.shared.window?.rootViewController = UIViewController.load(IntroPageViewController.self)
+        let animationViewController =  UIViewController.load(AnimationViewController.self)
+        AppDelegate.shared.window?.rootViewController = animationViewController
 
         return true
     }
