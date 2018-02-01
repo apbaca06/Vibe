@@ -25,39 +25,22 @@ struct User {
     // MARK: Schema
 
     public struct Schema {
-
         public static let id = "id"
-
         public static let age = "age"
-
         public static let agePreference = "agePreference"
-
         public static let minAge = "min"
-
         public static let maxAge = "max"
-
         public static let email = "email"
-
         public static let gender = "gender"
-
         public static let cityName = "cityName"
-
         public static let location = "location"
-
         public static let latitude = "latitude"
-
         public static let longitude = "longitude"
-
         public static let maxDistance = "maxDistance"
-
         public static let name = "name"
-
         public static let preference = "preference"
-
         public static let profileImgURL = "profileImgURL"
-
         public static let qbID = "qbID"
-
     }
 
     enum Gender: String {
@@ -120,44 +103,32 @@ struct User {
 
         guard
             let objects = json as? [String: Any]
-            else {
-
-                let error: JSONError = .notObject
-
-                throw error
-
+        else {
+            let error: JSONError = .notObject
+            throw error
         }
 
         guard
             let id = objects.keys.first
-            else {
-
-                let error: JSONError = .missingValueForKey(Schema.id)
-
-                throw error
-
+        else {
+            let error: JSONError = .missingValueForKey(Schema.id)
+            throw error
         }
 
         self.id = id
 
         guard
         let object = objects.values.first as? [String: Any]
-            else {
-
-                let error: JSONError = .missingValueForKey(Schema.id)
-
-                throw error
-
+        else {
+            let error: JSONError = .missingValueForKey(Schema.id)
+            throw error
         }
 
         guard
             let age = object["age"] as? Int
-            else {
-
-                let error: JSONError = .missingValueForKey(Schema.age)
-
-                throw error
-
+        else {
+            let error: JSONError = .missingValueForKey(Schema.age)
+            throw error
         }
 
         self.age = age
@@ -167,46 +138,34 @@ struct User {
             let minAge = agePreference[Schema.minAge] as? Int,
             let maxAge = agePreference[Schema.maxAge] as? Int
 
-            else {
-
-                let error: JSONError = .missingValueForKey(Schema.agePreference)
-
-                throw error
-
+        else {
+            let error: JSONError = .missingValueForKey(Schema.agePreference)
+            throw error
         }
 
         self.minAge = minAge
-
         self.maxAge = maxAge
 
         guard
             let email = object[Schema.email] as? String
-            else {
-
-                let error: JSONError = .missingValueForKey(Schema.email)
-
-                throw error
-
+        else {
+            let error: JSONError = .missingValueForKey(Schema.email)
+            throw error
         }
 
         self.email = email
 
         guard
             let gender = object[Schema.gender] as? String
-            else {
-
-                let error: JSONError = .missingValueForKey(Schema.gender)
-
-                throw error
-
+        else {
+            let error: JSONError = .missingValueForKey(Schema.gender)
+            throw error
         }
 
         guard let genderLower = Gender(rawValue: gender)
             else {
                 let error: JSONError = .missingValueForKey(Schema.gender)
-
                 throw error
-
         }
         self.gender = genderLower
 
@@ -215,12 +174,9 @@ struct User {
             let latitude = location[Schema.latitude] as? Double,
             let longitude = location[Schema.longitude] as? Double,
             let cityName = location[Schema.cityName] as? String
-            else {
-
-                let error: JSONError = .missingValueForKey(Schema.location)
-
-                throw error
-
+        else {
+            let error: JSONError = .missingValueForKey(Schema.location)
+            throw error
         }
 
         self.latitude = latitude
@@ -229,56 +185,42 @@ struct User {
 
         guard
             let maxDistance = object[Schema.maxDistance] as? Int
-            else {
-
-                let error: JSONError = .missingValueForKey(Schema.maxDistance)
-
-                throw error
-
+        else {
+            let error: JSONError = .missingValueForKey(Schema.maxDistance)
+            throw error
         }
 
         self.maxDistance = maxDistance
 
         guard
             let name = object[Schema.name] as? String
-            else {
-
-                let error: JSONError = .missingValueForKey(Schema.name)
-
-                throw error
-
+        else {
+            let error: JSONError = .missingValueForKey(Schema.name)
+            throw error
         }
 
         self.name = name
 
         guard
             let preference = object[Schema.preference] as? String
-            else {
-
-                let error: JSONError = .missingValueForKey(Schema.preference)
-
-                throw error
-
+        else {
+            let error: JSONError = .missingValueForKey(Schema.preference)
+            throw error
         }
 
         guard let preferenceLower = Gender(rawValue: preference)
-            else {
-                let error: JSONError = .missingValueForKey(Schema.preference)
-
-                throw error
-
+        else {
+            let error: JSONError = .missingValueForKey(Schema.preference)
+            throw error
         }
 
         self.preference = preferenceLower
 
         guard
             let profileImgURL = object[Schema.profileImgURL] as? String
-            else {
-
-                let error: JSONError = .missingValueForKey(Schema.profileImgURL)
-
-                throw error
-
+        else {
+            let error: JSONError = .missingValueForKey(Schema.profileImgURL)
+            throw error
         }
 
         self.profileImgURL = profileImgURL
@@ -297,13 +239,9 @@ struct User {
 
         guard
         let likeDict = object["likeList"] as? [String: Any]
-
-            else {
-
+        else {
                 let error: JSONError = .missingValueForKey("likeList")
-
                 throw error
-
         }
         self.likeUserID = likeDict
 

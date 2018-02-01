@@ -69,13 +69,10 @@ class LogInViewController: UIViewController {
            !userPassword.isEmpty {
 
             let email = userEmail.text!
-
             let password = userPassword.text!
 
             FirebaseManager.logIn(
-
                 withEmail: email,
-
                 withPassword: password
             )
 
@@ -88,11 +85,8 @@ class LogInViewController: UIViewController {
         setUpButton()
 
         loginButton.setTitle(NSLocalizedString("Login", comment: ""), for: .normal)
-
         createButton.setTitle(NSLocalizedString("Create", comment: ""), for: .normal)
-
         forgotPasswordButton.setTitle(NSLocalizedString("Forgot password?", comment: ""), for: .normal)
-
         dontHaveAccountLabel.text = NSLocalizedString("Don't have an account?", comment: "")
 
     }
@@ -100,7 +94,6 @@ class LogInViewController: UIViewController {
     func setUpButton() {
 
         loginButton.cornerRadius = 10
-
         createButton.cornerRadius = 10
     }
 

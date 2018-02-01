@@ -109,18 +109,14 @@ class RegisterViewController: UIViewController {
         alreadyHaveLabel.text = NSLocalizedString("Already have an account?", comment: "")
 
         eulaButton.setTitle(NSLocalizedString("Tap to read EULA", comment: ""), for: .normal)
-
         setUpButton()
     }
 
     func setUpButton() {
 
         registerButton.setTitle(NSLocalizedString("Register", comment: ""), for: .normal)
-
         loginButton.setTitle(NSLocalizedString("Login", comment: ""), for: .normal)
-
         registerButton.cornerRadius = 10
-
         loginButton.cornerRadius = 10
     }
 }
@@ -128,15 +124,10 @@ class RegisterViewController: UIViewController {
 extension String {
 
     func isValidEmail() -> Bool {
-
         let emailRegEx = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,}"
-
         let emailTest = NSPredicate(format: "SELF MATCHES %@", emailRegEx)
-
         let result = emailTest.evaluate(with: self)
-
         return result
-
     }
 
 }

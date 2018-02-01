@@ -39,9 +39,7 @@ class AnimationViewController: UIViewController {
             }
 
             QuickbloxManager.logInSync(
-
                 withUserEmail: email,
-
                 password: password
             )
 
