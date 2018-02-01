@@ -21,22 +21,14 @@ extension Date {
 class AgeViewController: UIViewController {
 
     @IBOutlet weak var birthdayImage: UIImageView!
-
     @IBOutlet weak var chickenImage: UIImageView!
-
     @IBOutlet weak var decriptionLabel: UILabel!
-
     @IBOutlet weak var datePicker: UIDatePicker!
-
     @IBOutlet weak var dateLabel: UILabel!
-
     @IBOutlet weak var ageLabel: UILabel!
-
     @IBOutlet weak var button: UIButton!
 
     var formatter = DateFormatter()
-
-    let keychain = KeychainSwift()
 
     @IBAction func pickDate(_ sender: UIDatePicker) {
 
@@ -55,19 +47,6 @@ class AgeViewController: UIViewController {
         UserDefaults.standard.set(age, forKey: "Age")
 
         ageLabel.text = String(describing: age)
-
-        guard let uid = keychain.get("uid")
-            else { return }
-
-        DatabasePath.userRef.child(uid).updateChildValues(["age": age])
-        DatabasePath.userRef.child(uid).child("agePreference").updateChildValues([
-            "min": 18,
-            "max": 55
-            ])
-        DatabasePath.userRef.child(uid).updateChildValues([
-            "maxDistance": 160])
-        DatabasePath.userRef.child(uid).child("likeList").updateChildValues([
-            "test": 0])
     }
 
     override func viewDidLoad() {

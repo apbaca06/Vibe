@@ -19,6 +19,7 @@ class AnimationViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+//        animation()
 
         let gifManager2 = SwiftyGifManager(memoryLimit: 20)
         let gif2 = UIImage(gifName: "animation.gif")
@@ -52,8 +53,31 @@ class AnimationViewController: UIViewController {
         }
 
     }
+    func animation() {
+        let arrow = #imageLiteral(resourceName: "Arrow")
+        let arrowView = UIImageView.init(image: arrow)
+        arrowView.frame = CGRect(x: -50, y: self.view.center.y, width: 60, height: 30)
+        
+        view.addSubview(arrowView)
+        
+        let centerY = self.view.frame.height / 2
+        let steps = 2
+        let stepX = self.view.frame.width / CGFloat(steps)
+        let path = UIBezierPath()
+        path.move(to: CGPoint(x: 300, y: centerY))
 
-    override func viewDidAppear(_ animated: Bool) {
-
+        for i in 0...steps {
+            let x = CGFloat(i) * stepX
+            let y = Double(centerY)
+            path.addLine(to: CGPoint(x: x, y: CGFloat(y)))
+        }
+        
+        let animation = CAKeyframeAnimation(keyPath: "position")
+        animation.path = path.cgPath
+        animation.rotationMode = kCAAnimationRotateAuto
+        animation.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionLinear)
+        animation.repeatCount = MAXFLOAT
+        animation.duration = 2.8
+        arrowView.layer.add(animation, forKey: "wave")
     }
 }

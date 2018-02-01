@@ -10,36 +10,23 @@ import Foundation
 import UIKit
 import SVProgressHUD
 import Firebase
-import KeychainSwift
 import Crashlytics
 
 class PreferenceViewController: UIViewController {
 
     @IBOutlet weak var decriptionLabel: UILabel!
-
     @IBOutlet weak var maleButton: UIButton!
-
     @IBOutlet weak var womanButton: UIButton!
 
-    let keychain = KeychainSwift()
 
     @IBAction func maleAction(_ sender: UIButton) {
 
         UserDefaults.standard.set("Male", forKey: "Preference")
-
-        guard let uid = keychain.get("uid")
-            else { return }
-        DatabasePath.userRef.child(uid).updateChildValues(["preference": "Male"])
     }
 
     @IBAction func womanAction(_ sender: Any) {
 
         UserDefaults.standard.set("Female", forKey: "Preference")
-
-        guard let uid = keychain.get("uid")
-            else { return }
-
-        DatabasePath.userRef.child(uid).updateChildValues(["preference": "Female"])
     }
 
     override func viewDidLoad() {
@@ -51,7 +38,6 @@ class PreferenceViewController: UIViewController {
         super.viewWillLayoutSubviews()
 
         maleButton.cornerRadius = maleButton.bounds.width/2
-
         womanButton.cornerRadius = womanButton.bounds.width/2
 
     }

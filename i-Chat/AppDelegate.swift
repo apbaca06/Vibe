@@ -23,11 +23,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
         // MARK: Get APIKey from plist
         guard let path = Bundle.main.path(forResource: "APIKey", ofType: "plist"),
-
               let dic = NSDictionary(contentsOfFile: path) as? [String: Any],
-
               let values = dic["APIKey"] as? NSDictionary
-
         else { return true }
 
         // swiftlint:disable force_cast
@@ -52,7 +49,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         IQKeyboardManager.shared().shouldResignOnTouchOutside = true
 
         Database.database().isPersistenceEnabled = true
-        Database.database().callbackQueue = DispatchQueue.global()
+//        Database.database().callbackQueue = DispatchQueue.global()
 
         let animationViewController =  UIViewController.load(AnimationViewController.self)
         AppDelegate.shared.window?.rootViewController = animationViewController
